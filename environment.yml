@@ -1,0 +1,16 @@
+name: hvtutorial
+channels:
+  - ioam
+  - bokeh
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3
+  - notebook
+  - holoviews
+  - geoviews
+  - pandas
+  - xarray
+  - datashader
+  - selenium
+  - phantomjs
