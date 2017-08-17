@@ -14,12 +14,14 @@ Step 1: Clone the `jupytercon-2017-holoviews-tutorial <https://github.com/ioam/j
 -----------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but typically also test Firefox and Safari.
+- 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 - Clone this repository, e.g. using ``git clone https://github.com/ioam/jupytercon2017-holoviews-tutorial.git``
 - Open a terminal window inside the repository.
 
 
+
 You should plan to do a "git pull" on your clone of this repository
-sometime after Friday, July 7, in case we need to make any fixes or
+sometime in the 48 hours before the tutorial, in case we need to make any fixes or
 improvements in the meantime.
 
 
@@ -31,7 +33,7 @@ installing it using the ``environment.yml`` we have provided. If you
 don't already have it, install `conda <https://www.continuum.io/downloads>`_,
 and then create the ``hvtutorial`` environment by executing::
 
-   > conda env create -f environment.yml
+   > conda env create --force -f environment.yml
 
 When installation is complete you may activate the environment by writing::
 
