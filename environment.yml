@@ -17,3 +17,5 @@ dependencies:
   - fastparquet
   - python-snappy
   - cffi
+  - paramnb
+  - parambokeh
