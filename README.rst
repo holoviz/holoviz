@@ -1,7 +1,7 @@
 jupytercon2017-holoviews-tutorial
 =============================
 
-HoloViews with Bokeh tutorial at Jupytercon 2017
+HoloViews+Bokeh Viz to Dashboards Tutorial at Jupytercon 2017
 
 This document explains how to get your computer set up for the
 tutorial, including how to install the software libraries and data
@@ -79,6 +79,9 @@ you select and execute each notebook. (Increasing the rate limit in
 this way is required for the current 5.0 Jupyter version, but should
 not be needed in earlier or later Jupyter releases.)
 
+If you don't see the notebook appear (e.g. on some OS X versions),
+you'll need to cut and paste the URL from the console output manually.
+
 
 Step 5: Test that everything is working
 ---------------------------------------
@@ -86,7 +89,7 @@ Step 5: Test that everything is working
 You can see if everything has installed correctly by selecting the
 ``00-welcome.ipynb`` notebook and doing "Cell/Run All" in the menus.
 There may be warnings on some platforms, but you'll know it is working
-if you see the HoloViews logo after it runs ``hv.extension()``
+if you see the HoloViews logo after it runs ``hv.extension()``.
 
 
 
@@ -95,7 +98,7 @@ Preparing for the Tutorial
 
 If you want to get familiar with HoloViews before the tutorial (which
 is not a requirement), you can have a look at our new website at
-`holoviews.org <http://holoviews.org/>`_ looking through the getting
+`holoviews.org <http://holoviews.org/>`_, browsing through the getting
 started and user guides. If you want to run these examples yourself,
 you can get ahold of them by typing this command inside your conda
 environment::
@@ -107,4 +110,4 @@ You should then be inside a new folder named "holoviews-examples" in
 your current directory.  Now launch a Jupyter notebook server and dive
 into the examples::
 
-    (hvtutorial)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000 notebooks/00-welcome.ipynb
+    (hvtutorial)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000
