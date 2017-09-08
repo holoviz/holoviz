@@ -3,33 +3,36 @@ import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd
 from colorcet import cm
 from bokeh.models import WMTSTileSource
 from holoviews.operation.datashader import datashade
-from holoviews.streams import RangeXY, PlotSize
+from holoviews.streams import RangeXY
 
-hv.extension('bokeh')
+hv.extension('bokeh', logo=False)
 
-df = dd.read_parquet('../data/nyc_taxi_hours.parq/').persist()
+usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_hour','passenger_count']
+df = dd.read_parquet('../../data/nyc_taxi_hours.parq/')[usecols].persist()
+
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
 tiles = gv.WMTS(WMTSTileSource(url=url))
-tile_options = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
+options = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
+max_pass = int(df.passenger_count.max().compute()+1)
 
 class NYCTaxiExplorer(hv.streams.Stream):
     alpha      = param.Magnitude(default=0.75, doc="Alpha value for the map opacity")
     colormap   = param.ObjectSelector(default=cm["fire"], objects=[cm[k] for k in cm.keys() if not '_' in k])
-    hour       = param.Range(default=(0, 24), bounds=(0, 24))
+    hour       = param.Integer(default=None, bounds=(0, 23), doc="All hours by default; drag to select one hour")
+    passengers = param.Range(default=(0,max_pass), bounds=(0,max_pass))
     location   = param.ObjectSelector(default='dropoff', objects=['dropoff', 'pickup'])
 
     def make_view(self, x_range, y_range, **kwargs):
-        map_tiles = tiles(style=dict(alpha=self.alpha), plot=tile_options)
-        points = hv.Points(df, kdims=[self.location+'_x', self.location+'_y'], vdims=['dropoff_hour'])
-        if self.hour != (0, 24): points = points.select(dropoff_hour=self.hour)
-        taxi_trips = datashade(points, x_sampling=1, y_sampling=1, cmap=self.colormap,
-                               dynamic=False, x_range=x_range, y_range=y_range,
-                               width=1000, height=600)
+        map_tiles = tiles.opts(style=dict(alpha=self.alpha), plot=options)
+        points = hv.Points(df, kdims=[self.location+'_x', self.location+'_y'], vdims=[self.location+'_hour'])
+        selection = {self.location+"_hour":self.hour if self.hour else (0,24), "passenger_count":self.passengers}
+        taxi_trips = datashade(points.select(**selection), x_sampling=1, y_sampling=1, cmap=self.colormap,
+                               dynamic=False, x_range=x_range, y_range=y_range, width=1000, height=600)
         return map_tiles * taxi_trips
 
-selector = NYCTaxiExplorer(name="NYC Taxi Trips")
-dmap = hv.DynamicMap(selector.make_view, streams=[selector, RangeXY()])
-plot = hv.renderer('bokeh').instance(mode='server').get_plot(dmap)
+explorer = NYCTaxiExplorer(name="NYC Taxi Trips")
+dmap = hv.DynamicMap(explorer.make_view, streams=[explorer, RangeXY()])
 
-parambokeh.Widgets(selector, view_position='right', callback=selector.event,
-                   mode='server', plots=[plot.state])
+plot = hv.renderer('bokeh').instance(mode='server').get_plot(dmap)
+parambokeh.Widgets(explorer, view_position='right', callback=explorer.event, plots=[plot.state],
+                   mode='server')
