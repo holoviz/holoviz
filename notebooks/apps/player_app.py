@@ -1,6 +1,10 @@
 import dask.dataframe as dd
 import holoviews as hv
 import geoviews as gv
+import parambokeh
+import param
+
+from colorcet import cm
 
 from bokeh.models import Slider, Button
 from bokeh.layouts import layout
@@ -15,10 +19,7 @@ hv.extension('bokeh')
 renderer = hv.renderer('bokeh').instance(mode='server')
 
 # Load data
-usecols = ['tpep_pickup_datetime', 'dropoff_x', 'dropoff_y']
-ddf = dd.read_csv('../data/nyc_taxi.csv', parse_dates=['tpep_pickup_datetime'], usecols=usecols)
-ddf['hour'] = ddf.tpep_pickup_datetime.dt.hour
-ddf = ddf.persist()
+ddf = dd.read_parquet('../data/nyc_taxi_hours.parq/').persist()
 
 from bokeh.models import WMTSTileSource
 url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
@@ -26,24 +27,29 @@ wmts = gv.WMTS(WMTSTileSource(url=url))
 
 stream = hv.streams.Stream.define('HourSelect', hour=0)()
 points = hv.Points(ddf, kdims=['dropoff_x', 'dropoff_y'])
-dmap = hv.util.Dynamic(points, operation=lambda obj, hour: obj.select(hour=hour),
+dmap = hv.util.Dynamic(points, operation=lambda obj, hour: obj.select(dropoff_hour=hour).relabel('Hour of Day: %d' % hour),
                        streams=[stream])
 
 # Apply aggregation
-aggregated = aggregate(dmap, link_inputs=True)
+aggregated = aggregate(dmap, link_inputs=True, streams=[hv.streams.RangeXY], width=1200, height=600)
 
 # Shade the data
-shaded = shade(aggregated)
+class ColormapPicker(hv.streams.Stream):
+    colormap   = param.ObjectSelector(default=cm["fire"],
+                                      objects=[cm[k] for k in cm.keys() if not '_' in k])
+
+cmap_picker = ColormapPicker(rename={'colormap': 'cmap'}, name='')
+shaded = shade(aggregated, link_inputs=True, streams=[cmap_picker])
 
 # Define PointerX stream, attach to points and declare DynamicMap for cross-section and VLine
 pointer = hv.streams.PointerX(x=ddf.dropoff_x.loc[0].compute().iloc[0], source=points)
 section = hv.util.Dynamic(aggregated, operation=lambda obj, x: obj.sample(dropoff_x=x),
-                          streams=[pointer], link_inputs=False)
+                          streams=[pointer], link_inputs=False).relabel('')
 vline = hv.DynamicMap(lambda x: hv.VLine(x), streams=[pointer])
 
 # Define options
-hv.opts("RGB [width=800 height=600 xaxis=None yaxis=None] VLine (color='black' line_width=1)")
-hv.opts("Curve [width=100 yaxis=None show_frame=False] (color='black') {+framewise} Layout [shared_axes=False]")
+hv.opts("RGB [width=1200 height=600 xaxis=None yaxis=None fontsize={'title': '14pt'}] VLine (color='white' line_width=2)")
+hv.opts("Curve [width=150 yaxis=None show_frame=False] (color='black') {+framewise} Layout [shared_axes=False]")
 
 # Combine it all into a complex layout
 hvobj = (wmts * shaded * vline) << section
@@ -69,7 +75,7 @@ def animate_update():
 def animate():
     if button.label == '► Play':
         button.label = '❚❚ Pause'
-        curdoc().add_periodic_callback(animate_update, 1000)
+        curdoc().add_periodic_callback(animate_update, 500)
     else:
         button.label = '► Play'
         curdoc().remove_periodic_callback(animate_update)
@@ -77,8 +83,11 @@ def animate():
 button = Button(label='► Play', width=60)
 button.on_click(animate)
 
+widget = parambokeh.Widgets(cmap_picker, mode='raw')
+
 # Combine the bokeh plot on plot.state with the widgets
 layout = layout([
+    [widget],
     [plot.state],
     [slider, button],
 ], sizing_mode='fixed')
