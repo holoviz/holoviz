@@ -18,6 +18,6 @@ dependencies:
   - python-snappy
   - cffi
   - paramnb
-  - bokeh=0.12.7
+  - bokeh=0.12.6
   - parambokeh
   - ipywidgets<7
