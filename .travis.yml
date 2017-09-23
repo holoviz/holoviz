@@ -1,0 +1,45 @@
+# We deliberately don't use travis's language=python option because
+# we install miniconda and use conda to get python. Additionally, 
+# Travis's auto-install of python doesn't work on osx images (see
+# https://github.com/travis-ci/travis-ci/issues/4729).
+language: generic
+
+os:
+  - linux
+  - osx
+
+# get a more recent version of osx than the default image
+osx_image: xcode8.3
+
+sudo: false
+
+env:
+  - PYTHON_VERSION="2.7"
+  - PYTHON_VERSION="3.5"
+  - PYTHON_VERSION="3.6"
+
+install:
+  # Install conda
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi  
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update conda
+  - conda env create --file environment.yml python=$PYTHON_VERSION
+  - source activate anacondaviz
+  # dependencies for tests etc
+  - pip install flake8
+  - conda env export
+
+script:
+    - python download_sample_data.py
+    - python ./etc/test_notebooks.py lint
+    - python ./etc/test_notebooks.py
+
+notifications:
+  email: false
+
