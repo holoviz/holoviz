@@ -24,20 +24,7 @@ import pprint
 
 nbdir = "notebooks"
 
-run_skip = [
-#    "notebooks/00-welcome.ipynb",
-    "notebooks/01-workflow-introduction.ipynb",
-    "notebooks/02-annotating-data.ipynb",
-    "notebooks/03-customizing-visual-appearance.ipynb",
-    "notebooks/04-exploration-with-containers.ipynb",
-    "notebooks/05-working-with-tabular-data.ipynb",
-    "notebooks/06-working-with-gridded-data.ipynb",
-    "notebooks/07-custom-interactivity.ipynb",
-    "notebooks/08-operations-and-pipelines.ipynb",
-    "notebooks/09-working-with-large-datasets.ipynb",
-    "notebooks/10-parameters-and-widgets.ipynb",
-    "notebooks/11-deploying-bokeh-apps.ipynb"
-]
+run_skip = []
 
 run_allow_error = []
 
