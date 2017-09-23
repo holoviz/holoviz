@@ -1,4 +1,4 @@
-name: hvtutorial
+name: anacondaviz
 channels:
   - ioam
   - bokeh

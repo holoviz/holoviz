@@ -1,47 +1,43 @@
-jupytercon2017-holoviews-tutorial
-=============================
+.. image:: https://travis-ci.com/ContinuumIO/anacondaviz.svg?token=kUQH2Y7k6sa4cByGqypY&branch=master
+    :target: https://travis-ci.com/ContinuumIO/anacondaviz
 
-HoloViews+Bokeh Viz to Dashboards Tutorial at Jupytercon 2017
+.. image:: https://ci.appveyor.com/api/projects/status/2qh9bsiiwv1txxfm/branch/master?svg=true
+    :target: https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master
 
-This document explains how to get your computer set up for the
-tutorial, including how to install the software libraries and data
-files that we will be working with.  Because some of the data files
-are large, it's best to run through these steps *before* you leave on
-your trip, using a good internet connection.
+=====================================================
+How to solve visualization problems with Python tools
+=====================================================
+
+HoloViews, Bokeh, Dask, Datashader, etc etc, notebooks, dashboards, ...
 
 
-Step 1: Clone the `jupytercon-2017-holoviews-tutorial <https://github.com/ioam/jupytercon2017-holoviews-tutorial/blob/master/README.rst>`_ repository
+Installation
+============
+
+Step 1: Clone the `anacondaviz <https://github.com/ContinuumIO/anacondaviz/blob/master/README.rst>`_ repository
 -----------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but typically also test Firefox and Safari.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
-- Clone this repository, e.g. using ``git clone https://github.com/ioam/jupytercon2017-holoviews-tutorial.git``
+- Clone this repository, e.g. using ``git clone https://github.com/ContinuumIO/anacondaviz.git``
 - Open a terminal window inside the repository.
-
-
-
-You should plan to do a "git pull" on your clone of this repository
-sometime in the 48 hours before the tutorial, in case we need to make any fixes or
-improvements in the meantime.
-
 
 Step 2: Create a conda environment from ``environment.yml``
 -----------------------------------------------------------
 
-The easiest way to get an environment set up for the tutorial is
-installing it using the ``environment.yml`` we have provided. If you
-don't already have it, install `conda <https://www.continuum.io/downloads>`_,
-and then create the ``hvtutorial`` environment by executing::
+If you don't already have it, install `conda
+<https://www.continuum.io/downloads>`_, and then create the
+``anacondaviz`` environment by executing::
 
    > conda env create --force -f environment.yml
 
 When installation is complete you may activate the environment by writing::
 
-   > activate hvtutorial
+   > activate anacondaviz
 
 (for Windows) or::
 
-   $ source activate hvtutorial
+   $ source activate anacondaviz
 
 (for Linux and Mac). 
 
@@ -51,7 +47,7 @@ Later, when you are ready to exit the environment after the tutorial, you can ty
 
 If for some reason you want to remove the environment entirely, you can do so by writing::
 
-   > conda env remove --name hvtutorial
+   > conda env remove --name anacondaviz
 
 
 Step 3: Downloading the sample data
@@ -71,8 +67,8 @@ Step 4: Launch Jupyter Notebook
 
 You can then launch the notebook server and client::
 
-   (hvtutorial)> cd notebooks
-   (hvtutorial)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000
+   (anacondaviz)> cd notebooks
+   (anacondaviz)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000
 
 A browser window with a Jupyter Notebook instance should now open, letting
 you select and execute each notebook. (Increasing the rate limit in
@@ -91,23 +87,3 @@ You can see if everything has installed correctly by selecting the
 There may be warnings on some platforms, but you'll know it is working
 if you see the HoloViews logo after it runs ``hv.extension()``.
 
-
-
-Preparing for the Tutorial
---------------------------
-
-If you want to get familiar with HoloViews before the tutorial (which
-is not a requirement), you can have a look at our new website at
-`holoviews.org <http://holoviews.org/>`_, browsing through the getting
-started and user guides. If you want to run these examples yourself,
-you can get ahold of them by typing this command inside your conda
-environment::
-
-    (hvtutorial)> holoviews --install-examples
-    (hvtutorial)> cd holoviews-examples
-
-You should then be inside a new folder named "holoviews-examples" in
-your current directory.  Now launch a Jupyter notebook server and dive
-into the examples::
-
-    (hvtutorial)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000
