@@ -14,10 +14,10 @@ dependencies:
   - datashader
   - selenium
   - phantomjs
-#  - fastparquet
+  - fastparquet
   - python-snappy
   - cffi
   - paramnb
-  - bokeh=0.12.6
+  - bokeh=0.12.9
   - parambokeh
   - ipywidgets<7
