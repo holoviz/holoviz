@@ -5,7 +5,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3
+  - python>=3.6,<3.7
   - notebook
   - holoviews
   - geoviews

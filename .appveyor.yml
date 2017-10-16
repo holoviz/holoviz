@@ -1,17 +1,11 @@
 environment:
   matrix:
-    - PY: "2.7"
-      PYTHON: "C:\\Python27-x64"
-      CONDA: "C:\\Miniconda-x64"
-    - PY: "3.5"
-      PYTHON: "C:\\Python35-x64"
-      CONDA: "C:\\Miniconda35-x64"
     - PY: "3.6"
       PYTHON: "C:\\Python36-x64"
       CONDA: "C:\\Miniconda36-x64"
 
 install:
-  -  "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
   - "conda config --set always_yes yes --set changeps1 no"
   - "conda update -q conda"
   - "conda env create --file environment.yml python=%PY%"

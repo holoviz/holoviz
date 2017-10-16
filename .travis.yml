@@ -14,8 +14,6 @@ osx_image: xcode8.3
 sudo: false
 
 env:
-  - PYTHON_VERSION="2.7"
-  - PYTHON_VERSION="3.5"
   - PYTHON_VERSION="3.6"
 
 install:
