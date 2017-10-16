@@ -8,7 +8,15 @@
 How to solve visualization problems with Python tools
 =====================================================
 
-HoloViews, Bokeh, Dask, Datashader, etc etc, notebooks, dashboards, ...
+(WIP!) Opinionated guide:
+
+Using HoloViews, Bokeh, Dask, Datashader, etc etc, notebooks, dashboards, ...
+
+Using conda for environment
+
+I.e. here's the stuff you can do, here's the environment we currently
+recommend to do it, here's how we recommend to do it, etc etc. This
+way works: do you have a better way?
 
 
 Installation
@@ -17,7 +25,7 @@ Installation
 Step 1: Clone the `anacondaviz <https://github.com/ContinuumIO/anacondaviz/blob/master/README.rst>`_ repository
 -----------------------------------------------------------------
 
-- Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but typically also test Firefox and Safari.
+- Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 - Clone this repository, e.g. using ``git clone https://github.com/ContinuumIO/anacondaviz.git``
 - Open a terminal window inside the repository.
@@ -68,12 +76,10 @@ Step 4: Launch Jupyter Notebook
 You can then launch the notebook server and client::
 
    (anacondaviz)> cd notebooks
-   (anacondaviz)> jupyter notebook --NotebookApp.iopub_data_rate_limit=100000000
+   (anacondaviz)> jupyter notebook
 
 A browser window with a Jupyter Notebook instance should now open, letting
-you select and execute each notebook. (Increasing the rate limit in
-this way is required for the current 5.0 Jupyter version, but should
-not be needed in earlier or later Jupyter releases.)
+you select and execute each notebook.
 
 If you don't see the notebook appear (e.g. on some OS X versions),
 you'll need to cut and paste the URL from the console output manually.

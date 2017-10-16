@@ -6,7 +6,7 @@ channels:
   - defaults
 dependencies:
   - python>=3.6,<3.7
-  - notebook
+  - notebook>=5.1
   - holoviews
   - geoviews
   - pandas
