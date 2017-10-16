@@ -11,6 +11,7 @@ install:
   - "conda env create --file environment.yml python=%PY%"
   - "activate anacondaviz"
   - "conda env export"
+  - "conda list"
 
 build: off
 

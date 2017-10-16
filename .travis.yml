@@ -32,6 +32,7 @@ install:
   # dependencies for tests etc
   - pip install flake8
   - conda env export
+  - conda list
 
 script:
     - python download_sample_data.py
