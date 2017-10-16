@@ -18,6 +18,8 @@ I.e. here's the stuff you can do, here's the environment we currently
 recommend to do it, here's how we recommend to do it, etc etc. This
 way works: do you have a better way?
 
+You can see rendered-to-html notebooks on `appveyor
+<https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master/artifacts>`_.
 
 Installation
 ============
