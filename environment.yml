@@ -14,7 +14,8 @@ dependencies:
   - datashader
   - paramnb
   - parambokeh  
-  - bokeh=0.12.9
+  - bokeh=0.12.10
+  - networkx
   - selenium
   - phantomjs
   ####################################################################
