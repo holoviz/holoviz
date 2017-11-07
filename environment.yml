@@ -17,6 +17,7 @@ dependencies:
   - bokeh=0.12.10
   - networkx
   - streamz=0.2.0
+  - dask=0.15.4
   - selenium
   - phantomjs
   ####################################################################
