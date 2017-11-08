@@ -6,7 +6,6 @@ language: generic
 
 os:
   - linux
-  - osx
 
 # get a more recent version of osx than the default image
 osx_image: xcode8.3
@@ -36,7 +35,7 @@ install:
 
 script:
     - python download_sample_data.py
-    - python ./etc/test_notebooks.py lint
+    # python ./etc/test_notebooks.py lint
     - python ./etc/test_notebooks.py
 
 notifications:

@@ -1,5 +1,6 @@
 name: anacondaviz
 channels:
+  - cball
   - ioam
   - bokeh
   - conda-forge
@@ -13,8 +14,13 @@ dependencies:
   - xarray
   - datashader
   - paramnb
-  - parambokeh  
-  - bokeh=0.12.9
+  - parambokeh
+  - bokeh=0.12.10
+  - networkx
+  - streamz=0.2.0
+  - dask=0.15.4
+  - geopandas
+  - scikit-image
   - selenium
   - phantomjs
   ####################################################################
