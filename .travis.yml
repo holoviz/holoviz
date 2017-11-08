@@ -36,7 +36,7 @@ install:
 
 script:
     - python download_sample_data.py
-    - python ./etc/test_notebooks.py lint
+    # python ./etc/test_notebooks.py lint
     - python ./etc/test_notebooks.py
 
 notifications:
