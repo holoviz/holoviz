@@ -6,7 +6,6 @@ language: generic
 
 os:
   - linux
-  - osx
 
 # get a more recent version of osx than the default image
 osx_image: xcode8.3
