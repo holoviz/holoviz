@@ -4,16 +4,22 @@
 # https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
 
-os:
-  - linux
 
-# get a more recent version of osx than the default image
-osx_image: xcode8.3
-
-sudo: false
+matrix:
+  include:
+    - os: linux
+    - os: osx
+      language: generic # python doesn't seem to work on osx images
+      if: branch = master AND type != pull_request
 
 env:
   - PYTHON_VERSION="3.6"
+
+before_install:
+  # brew-installed geos interferes with cartopy?
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew uninstall --ignore-dependencies geos gdal postgis;
+    fi
 
 install:
   # Install conda
@@ -21,12 +27,13 @@ install:
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
     else
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    fi  
+    fi
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
   - conda update conda
-  - conda env create --file environment.yml python=$PYTHON_VERSION
+  # it might be faster to start from anaconda instead of miniconda
+  - travis_wait 20 conda env create --file environment.yml python=$PYTHON_VERSION
   - source activate anacondaviz
   # dependencies for tests etc
   - pip install flake8
@@ -40,4 +47,3 @@ script:
 
 notifications:
   email: false
-
