@@ -4,14 +4,13 @@
 # https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
 
-os:
-  - linux
-  - osx
 
-# get a more recent version of osx than the default image
-osx_image: xcode8.3
-
-sudo: false
+matrix:
+  include:
+    - os: linux
+    - os: osx
+      language: generic # python doesn't seem to work on osx images
+      if: branch = master AND type != pull_request
 
 env:
   - PYTHON_VERSION="3.6"
@@ -28,7 +27,7 @@ install:
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
     else
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    fi  
+    fi
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
@@ -48,4 +47,3 @@ script:
 
 notifications:
   email: false
-
