@@ -17,8 +17,9 @@ env:
   - PYTHON_VERSION="3.6"
 
 before_install:
+  # brew-installed geos interferes with cartopy?
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew uninstall geos;
+      brew uninstall --ignore-dependencies geos gdal postgis;
     fi
 
 install:
