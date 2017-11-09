@@ -1,7 +1,6 @@
 import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd
 
 from colorcet import cm
-from bokeh.models import WMTSTileSource
 from holoviews.operation.datashader import datashade
 from holoviews.streams import RangeXY
 
@@ -11,7 +10,7 @@ usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_
 df = dd.read_parquet('../../data/nyc_taxi_hours.parq/')[usecols].persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
-tiles = gv.WMTS(WMTSTileSource(url=url))
+tiles = gv.WMTS(url)
 options = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 max_pass = int(df.passenger_count.max().compute()+1)
 
@@ -24,7 +23,7 @@ class NYCTaxiExplorer(hv.streams.Stream):
 
     def make_view(self, x_range, y_range, **kwargs):
         map_tiles = tiles.opts(style=dict(alpha=self.alpha), plot=options)
-        points = hv.Points(df, kdims=[self.location+'_x', self.location+'_y'], vdims=[self.location+'_hour'])
+        points = hv.Points(df, [self.location+'_x', self.location+'_y'], self.location+'_hour')
         selection = {self.location+"_hour":self.hour if self.hour else (0,24), "passenger_count":self.passengers}
         taxi_trips = datashade(points.select(**selection), x_sampling=1, y_sampling=1, cmap=self.colormap,
                                dynamic=False, x_range=x_range, y_range=y_range, width=1000, height=600)
