@@ -1,4 +1,4 @@
-import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd
+import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd, cartopy.crs as crs
 
 from colorcet import cm
 from holoviews.operation.datashader import datashade
@@ -10,7 +10,7 @@ usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_
 df = dd.read_parquet('../../data/nyc_taxi_hours.parq/')[usecols].persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
-tiles = gv.WMTS(url)
+tiles = gv.WMTS(url,crs=crs.GOOGLE_MERCATOR)
 options = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 max_pass = int(df.passenger_count.max().compute()+1)
 
