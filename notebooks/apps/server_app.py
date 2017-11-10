@@ -5,7 +5,7 @@ from holoviews.operation.datashader import datashade
 hv.extension('bokeh')
 
 # 1. Load data and Datashade it
-ddf = dd.read_parquet('../data/nyc_taxi_hours.parq/')[['dropoff_x', 'dropoff_y']].persist()
+ddf = dd.read_parquet('../data/nyc_taxi_wide.parq')[['dropoff_x', 'dropoff_y']].persist()
 points = hv.Points(ddf, kdims=['dropoff_x', 'dropoff_y'])
 shaded = datashade(points).opts(plot=dict(width=800, height=600))
 
