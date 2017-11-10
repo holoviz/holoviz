@@ -1,10 +1,10 @@
 ---
 
 data:
-  - url: https://s3.amazonaws.com/datashader-data/nyc_taxi_hours.zip
+  - url: https://s3.amazonaws.com/datashader-data/nyc_taxi_wide.parq
     title: 'NYC Taxi Data'
     files:
-      - nyc_taxi_hours.parq
+      - nyc_taxi_wide.parq
 
   - url: http://s3.amazonaws.com/datashader-data/maccdc2012_graph.zip
     title: 'National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition'

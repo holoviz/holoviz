@@ -7,7 +7,7 @@ from holoviews.streams import RangeXY
 hv.extension('bokeh', logo=False)
 
 usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_hour','passenger_count']
-df = dd.read_parquet('../../data/nyc_taxi_hours.parq/')[usecols].persist()
+df = dd.read_parquet('../../data/nyc_taxi_wide.parq')[usecols].persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
 tiles = gv.WMTS(url,crs=crs.GOOGLE_MERCATOR)
