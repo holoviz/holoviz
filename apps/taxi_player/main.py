@@ -19,7 +19,7 @@ hv.extension('bokeh')
 renderer = hv.renderer('bokeh').instance(mode='server')
 
 # Load data
-ddf = dd.read_parquet('./data/nyc_taxi_hours.parq/').persist()
+ddf = dd.read_parquet('./data/nyc_taxi_wide.parq').persist()
 
 from bokeh.models import WMTSTileSource
 url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
