@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.com/ContinuumIO/anacondaviz.svg?token=kUQH2Y7k6sa4cByGqypY&branch=master
-    :target: https://travis-ci.com/ContinuumIO/anacondaviz
+.. image:: https://travis-ci.org/ContinuumIO/anacondaviz.svg?branch=master
+    :target: https://travis-ci.org/ContinuumIO/anacondaviz
 
 .. image:: https://ci.appveyor.com/api/projects/status/2qh9bsiiwv1txxfm/branch/master?svg=true
     :target: https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master
