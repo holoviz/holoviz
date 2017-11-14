@@ -8,15 +8,18 @@
 How to solve visualization problems with Python tools
 =====================================================
 
-(WIP!) Opinionated guide:
+This repository provides examples, demos, and training materials
+documenting how to solve visualization problems using web-based Python
+tools supported by `Anaconda <http://anaconda.com>`_, including
+`Bokeh <http://bokeh.pydata.org>`_,
+`HoloViews <http://holoviews.org>`_,
+`GeoViews <http://geo.holoviews.org>`_,
+`Datashader <https://github.com/bokeh/datashader>`_, and
+`Param <https://github.com/ioam/param>`_.
 
-Using HoloViews, Bokeh, Dask, Datashader, etc etc, notebooks, dashboards, ...
-
-Using conda for environment
-
-I.e. here's the stuff you can do, here's the environment we currently
-recommend to do it, here's how we recommend to do it, etc etc. This
-way works: do you have a better way?
+It includes a shared conda environment that ensures all these tools work together,
+facilities for downloading sample data for use with these tools, and provides
+starting points for solving your own visualization problems.
 
 You can see rendered-to-html notebooks on `appveyor
 <https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master/artifacts>`_.
@@ -30,7 +33,7 @@ Step 1: Clone the `anacondaviz <https://github.com/ContinuumIO/anacondaviz/blob/
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 - Clone this repository, e.g. using ``git clone https://github.com/ContinuumIO/anacondaviz.git``
-- Open a terminal window inside the repository.
+- Open a terminal window inside your clone of the repository.
 
 Step 2: Create a conda environment from ``environment.yml``
 -----------------------------------------------------------
@@ -77,11 +80,13 @@ Step 4: Launch Jupyter Notebook
 
 You can then launch the notebook server and client::
 
-   (anacondaviz)> cd notebooks
    (anacondaviz)> jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open, letting
-you select and execute each notebook.
+A browser window with a Jupyter Notebook instance should now open,
+letting you select and execute each notebook.  You can start with the
+ones in the "notebooks" subdirectory, as these show how to use the
+others in the "exercises" directory along with the applications in the
+"apps" directory.
 
 If you don't see the notebook appear (e.g. on some OS X versions),
 you'll need to cut and paste the URL from the console output manually.
