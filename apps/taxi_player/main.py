@@ -4,7 +4,7 @@ import geoviews as gv
 import parambokeh
 import param
 
-from colorcet import cm
+from colorcet import cm_n, fire
 
 from bokeh.models import Slider, Button
 from bokeh.layouts import layout
@@ -12,7 +12,7 @@ from bokeh.io import curdoc
 from bokeh.models import WMTSTileSource
 
 from holoviews.operation.datashader import datashade, aggregate, shade
-from holoviews.plotting.util import fire
+
 shade.cmap = fire
 
 hv.extension('bokeh')
@@ -35,8 +35,7 @@ aggregated = aggregate(dmap, link_inputs=True, streams=[hv.streams.RangeXY], wid
 
 # Shade the data
 class ColormapPicker(hv.streams.Stream):
-    colormap   = param.ObjectSelector(default=cm["fire"],
-                                      objects=[cm[k] for k in cm.keys() if not '_' in k])
+    colormap   = param.ObjectSelector(default=cm_n["fire"], objects=cm_n.values())
 
 cmap_picker = ColormapPicker(rename={'colormap': 'cmap'}, name='')
 shaded = shade(aggregated, link_inputs=True, streams=[cmap_picker])
