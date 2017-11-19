@@ -1,6 +1,6 @@
 import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd, cartopy.crs as crs
 
-from colorcet import cm
+from colorcet import cm_n
 from holoviews.operation.datashader import datashade
 from holoviews.streams import RangeXY
 
@@ -16,7 +16,7 @@ max_pass = int(df.passenger_count.max().compute()+1)
 
 class NYCTaxiExplorer(hv.streams.Stream):
     alpha      = param.Magnitude(default=0.75, doc="Alpha value for the map opacity")
-    colormap   = param.ObjectSelector(default=cm["fire"], objects=[cm[k] for k in cm.keys() if not '_' in k])
+    colormap   = param.ObjectSelector(default=cm_n["fire"], objects=cm_n.values())
     hour       = param.Integer(default=None, bounds=(0, 23), doc="All hours by default; drag to select one hour")
     passengers = param.Range(default=(0,max_pass), bounds=(0,max_pass))
     location   = param.ObjectSelector(default='dropoff', objects=['dropoff', 'pickup'])
