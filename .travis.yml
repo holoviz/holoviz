@@ -43,7 +43,26 @@ install:
 script:
     - python download_sample_data.py
     # python ./etc/test_notebooks.py lint
-    - python ./etc/test_notebooks.py
+    #- python ./etc/test_notebooks.py
+    # TODO: need to use stages and reorganize before merging
+    - conda install -c conda-forge sphinx beautifulsoup4 graphviz
+    - pip install nbsite
+    - pip install sphinx_ioam_theme
+    - cd doc/tutorial
+    - nbsite_nbpagebuild.py anacondaviz ../../notebooks .
+    - cd ..
+    - sphinx-build -b html . ./_build/html
+    - nbsite_fix_links.py _build/html
+    - cp -r ../notebooks/assets _build/html/tutorial/
+    - cd ..
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./_build/html
+  on:
+    branch: docs
 
 notifications:
   email: false
