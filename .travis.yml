@@ -54,6 +54,7 @@ script:
     - sphinx-build -b html . ./_build/html
     - nbsite_fix_links.py _build/html
     - cp -r ../notebooks/assets _build/html/tutorial/
+    - touch ./_build/html/.nojekyll
     - cd ..
 
 deploy:
