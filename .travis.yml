@@ -60,7 +60,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: ./_build/html
+  local_dir: ./doc/_build/html
   on:
     branch: docs
 
