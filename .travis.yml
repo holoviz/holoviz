@@ -49,12 +49,13 @@ script:
     - pip install nbsite
     - pip install sphinx_ioam_theme
     - cd doc/tutorial
-    - nbsite_nbpagebuild.py anacondaviz ../../notebooks .
+    - nbsite_nbpagebuild.py continuumio anacondaviz ../../notebooks .
     - cd ..
     - sphinx-build -b html . ./_build/html
     - nbsite_fix_links.py _build/html
     - cp -r ../notebooks/assets _build/html/tutorial/
     - touch ./_build/html/.nojekyll
+    - nbsite_cleandisthtml.py ./_build/html take_a_chance
     - cd ..
 
 deploy:
