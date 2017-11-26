@@ -54,6 +54,9 @@ script:
     - sphinx-build -b html . ./_build/html
     - nbsite_fix_links.py _build/html
     - cp -r ../notebooks/assets _build/html/tutorial/
+    - mkdir -p ./_build/html/json      
+    - find . -type f -name '*.json' -path "./_build" -prune -exec mv {} ./_build/html/json/ ";"
+    - find ../notebooks -type f -name '*.json' -exec mv {} ./_build/html/json/ ";"
     - touch ./_build/html/.nojekyll
     - nbsite_cleandisthtml.py ./_build/html take_a_chance
     - cd ..
