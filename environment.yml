@@ -1,4 +1,4 @@
-name: anacondaviz
+name: pyviz
 channels:
   - cball
   - ioam
