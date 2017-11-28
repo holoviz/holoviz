@@ -34,7 +34,7 @@ install:
   - conda update conda
   # it might be faster to start from anaconda instead of miniconda
   - travis_wait 20 conda env create --file environment.yml python=$PYTHON_VERSION
-  - source activate anacondaviz
+  - source activate pyviz
   # dependencies for tests etc
   - pip install flake8
   - conda env export
