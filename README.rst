@@ -1,9 +1,10 @@
 .. image:: https://travis-ci.org/pyviz/pyviz.svg?branch=master
     :target: https://travis-ci.org/pyviz/pyviz
 
-.. image:: https://ci.appveyor.com/api/projects/status/2qh9bsiiwv1txxfm/branch/master?svg=true
-    :target: https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master
+.. image:: https://ci.appveyor.com/api/projects/status/7xhtku2yjux40hwq/branch/master?svg=true
+    :target: https://ci.appveyor.com/project/pyviz/pyviz/branch/master
 
+	     
 =====================================================
 How to solve visualization problems with Python tools
 =====================================================
@@ -22,7 +23,7 @@ facilities for downloading sample data for use with these tools, and provides
 starting points for solving your own visualization problems.
 
 You can see rendered-to-html notebooks on `appveyor
-<https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master/artifacts>`_.
+<https://ci.appveyor.com/project/pyviz/pyviz/branch/master/artifacts>`_.
 
 Installation
 ============
