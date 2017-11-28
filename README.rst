@@ -2,7 +2,7 @@
     :target: https://travis-ci.org/pyviz/pyviz
 
 .. image:: https://ci.appveyor.com/api/projects/status/2qh9bsiiwv1txxfm/branch/master?svg=true
-    :target: https://ci.appveyor.com/project/ContinuumAnalytics/pyviz/branch/master
+    :target: https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master
 
 =====================================================
 How to solve visualization problems with Python tools
@@ -22,12 +22,12 @@ facilities for downloading sample data for use with these tools, and provides
 starting points for solving your own visualization problems.
 
 You can see rendered-to-html notebooks on `appveyor
-<https://ci.appveyor.com/project/ContinuumAnalytics/pyviz/branch/master/artifacts>`_.
+<https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master/artifacts>`_.
 
 Installation
 ============
 
-Step 1: Clone the `pyviz <https://github.com/ContinuumIO/pyviz/blob/master/README.rst>`_ repository
+Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
 -----------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
