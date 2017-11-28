@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/ContinuumIO/anacondaviz.svg?branch=master
-    :target: https://travis-ci.org/ContinuumIO/anacondaviz
+.. image:: https://travis-ci.org/pyviz/pyviz.svg?branch=master
+    :target: https://travis-ci.org/pyviz/pyviz
 
 .. image:: https://ci.appveyor.com/api/projects/status/2qh9bsiiwv1txxfm/branch/master?svg=true
     :target: https://ci.appveyor.com/project/ContinuumAnalytics/anacondaviz/branch/master
@@ -27,12 +27,12 @@ You can see rendered-to-html notebooks on `appveyor
 Installation
 ============
 
-Step 1: Clone the `anacondaviz <https://github.com/ContinuumIO/anacondaviz/blob/master/README.rst>`_ repository
+Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
 -----------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
-- Clone this repository, e.g. using ``git clone https://github.com/ContinuumIO/anacondaviz.git``
+- Clone this repository, e.g. using ``git clone https://github.com/pyviz/pyviz.git``
 - Open a terminal window inside your clone of the repository.
 
 Step 2: Create a conda environment from ``environment.yml``
@@ -40,17 +40,17 @@ Step 2: Create a conda environment from ``environment.yml``
 
 If you don't already have it, install `conda
 <https://www.continuum.io/downloads>`_, and then create the
-``anacondaviz`` environment by executing::
+``pyviz`` environment by executing::
 
    > conda env create --force -f environment.yml
 
 When installation is complete you may activate the environment by writing::
 
-   > activate anacondaviz
+   > activate pyviz
 
 (for Windows) or::
 
-   $ source activate anacondaviz
+   $ source activate pyviz
 
 (for Linux and Mac). 
 
@@ -60,7 +60,7 @@ Later, when you are ready to exit the environment after the tutorial, you can ty
 
 If for some reason you want to remove the environment entirely, you can do so by writing::
 
-   > conda env remove --name anacondaviz
+   > conda env remove --name pyviz
 
 
 Step 3: Downloading the sample data
@@ -80,7 +80,7 @@ Step 4: Launch Jupyter Notebook
 
 You can then launch the notebook server and client::
 
-   (anacondaviz)> jupyter notebook
+   (pyviz)> jupyter notebook
 
 A browser window with a Jupyter Notebook instance should now open,
 letting you select and execute each notebook.  You can start with the
