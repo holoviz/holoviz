@@ -5,18 +5,20 @@ PyViz
 **How to solve visualization problems with Python tools**
 
 
-This repository provides examples, demos, and training materials
-documenting how to solve visualization problems using web-based Python
-tools supported by `Anaconda <http://anaconda.com>`_, including
-`Bokeh <http://bokeh.pydata.org>`_,
-`HoloViews <http://holoviews.org>`_,
-`GeoViews <http://geo.holoviews.org>`_,
-`Datashader <https://github.com/bokeh/datashader>`_, and
-`Param <https://github.com/ioam/param>`_.
+The PyViz website and corresponding GitHub repository provide
+examples, demos, and training materials documenting how to solve
+visualization problems using web-based Python tools supported by
+`Anaconda <http://anaconda.com>`_, including `Bokeh
+<http://bokeh.pydata.org>`_, `HoloViews <http://holoviews.org>`_,
+`GeoViews <http://geo.holoviews.org>`_, `Datashader
+<https://github.com/bokeh/datashader>`_, and `Param
+<https://github.com/ioam/param>`_.
 
-It includes a shared conda environment that ensures all these tools work together,
-facilities for downloading sample data for use with these tools, and provides
-starting points for solving your own visualization problems.
+You can view the `Tutorial <tutorial/index>`_ online, or you can work
+through it interactively yourself. The repository includes a shared
+conda environment that ensures all these tools work together,
+facilities for downloading sample data for use with these tools, and
+provides starting points for solving your own visualization problems.
 
 
 Installation
