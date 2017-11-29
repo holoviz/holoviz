@@ -2,56 +2,22 @@
 Tutorial
 ********
 
-Something something work through in order something something will
-take about something hours, etc.
+This tutorial will take you through all of the steps involved in
+exploring data of many different types and sizes, building simple and
+complex figures, working with billions of data points, adding
+interactive behavior, widgets and controls, and deploying full
+dashboards and applications.
 
-Contents:
+Sections 00-13 of this tutorial have been given as a 1-day course led
+by trained instructors.  For self-paced usage, you should expect this
+material to take between 1 and 3 days if you do all of it.  Sections
+0, 1, 2, 3, and 4 contain the most crucial and basic introdutory
+material, and should take a couple of hours of study.  All later sections
+can be studied as needed or skipped if not relevant.
 
-* `00 Welcome <00_Welcome.html>`_
-   Something
-
-* `01 Workflow Introduction <01_Workflow_Introduction.html>`_
-   Something
-
-* `02 Annotating Data <02_Annotating_Data.html>`_
-   Something
-   
-* `03 Customizing Visual Appearance <03_Customizing_Visual_Appearance.html>`_
-   Something
-
-* `04 Working with Datasets <04_Working_with_Datasets.html>`_
-   Something
-   
-* `05 Working with Gridded Data <05_Working_with_Gridded_Data.html>`_
-   Something
-
-* `06 Network Graphs <06_Network_Graphs.html>`_
-   Something
-
-* `07 Geographic Data <07_Geographic_Data.html>`_
-   Something
-   
-* `08 Custom Interactivity <08_Custom_Interactivity.html>`_
-   Something
-   
-* `09 Operations and Pipelines <09_Operations_and_Pipelines.html>`_
-   Something
-   
-* `10 Working with Large Datasets <10_Working_with_Large_Datasets.html>`_
-   Something
-
-* `11 Streaming Data <11_Streaming_Data.html>`_
-   Something
-
-* `12 Parameters and Widgets <12_Parameters_and_Widgets.html>`_
-   Something
-
-* `13 Deploying Bokeh Apps <13_Deploying_Bokeh_Apps.html>`_
-   Something
-   
-* `Appendix 1 Exploration with Containers <A1_Exploration_with_Containers.html>`_
-   Something
-
+Section `00 Welcome <00_Welcome.html>`_  provides an overview of each of the
+other sections involved, so please see that for more details or to get
+started.
 
 .. toctree::
     :titlesonly:

@@ -4,21 +4,21 @@ PyViz
 
 **How to solve visualization problems with Python tools**
 
-
 The PyViz website and corresponding GitHub repository provide
 examples, demos, and training materials documenting how to solve
-visualization problems using web-based Python tools supported by
-`Anaconda <http://anaconda.com>`_, including `Bokeh
-<http://bokeh.pydata.org>`_, `HoloViews <http://holoviews.org>`_,
-`GeoViews <http://geo.holoviews.org>`_, `Datashader
-<https://github.com/bokeh/datashader>`_, and `Param
+visualization problems using interactive web-based Python tools,
+including `Bokeh <http://bokeh.pydata.org>`_, `HoloViews
+<http://holoviews.org>`_, `GeoViews <http://geo.holoviews.org>`_,
+`Datashader <https://github.com/bokeh/datashader>`_, and `Param
 <https://github.com/ioam/param>`_.
 
-You can view the `Tutorial <tutorial/index>`_ online, or you can work
-through it interactively yourself. The repository includes a shared
-conda environment that ensures all these tools work together,
-facilities for downloading sample data for use with these tools, and
-provides starting points for solving your own visualization problems.
+So far, PyViz includes:
+
+- A comprehensive `tutorial <tutorial/index>`_ showing how to use all these tools together to do a wide range of different tasks.
+- A shared environment `Conda <https://conda.io>`_ environment "pyviz" that makes it simple to install matching versions of all libraries needed for the tutorial and for using these tools in general.
+- Sample datasets to work with.
+
+You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is covered.  If it looks relevant to you, you can then follow the steps below to get the sample data and set up the environment, and you'll then be ready to work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems.
 
 
 Installation
@@ -27,12 +27,12 @@ Installation
 Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
 -----------------------------------------------------------------
 
-- Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
+- Any Linux, Mac OS X, or Windows computer with a web browser should be suitable.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 - Clone this repository, e.g. using ``git clone https://github.com/pyviz/pyviz.git``
 - Open a terminal window inside your clone of the repository.
 
-Step 2: Create a conda environment from ``environment.yml``
+Step 2: Create the ``pyviz`` conda environment from ``environment.yml``
 -----------------------------------------------------------
 
 If you don't already have it, install `conda
@@ -55,7 +55,7 @@ Later, when you are ready to exit the environment after the tutorial, you can ty
 
    > deactivate
 
-If for some reason you want to remove the environment entirely, you can do so by writing::
+If for some reason you want to remove the environment entirely, you can do so by running::
 
    > conda env remove --name pyviz
 
@@ -63,7 +63,7 @@ If for some reason you want to remove the environment entirely, you can do so by
 Step 3: Downloading the sample data
 ---------------------------
 
-In this tutorial we will be showing you how to work with some fairly
+These tutorials show you how to work with some fairly
 large datasets.  Unfortunately, that also means that you have to
 download this data. To make this as easy as possible we have provided
 a script that will download the data for you.  Simply execute in the
@@ -95,7 +95,7 @@ Step 5: Test that everything is working
 You can see if everything has installed correctly by selecting the
 ``00_Welcome.ipynb`` notebook and doing "Cell/Run All" in the menus.
 There may be warnings on some platforms, but you'll know it is working
-if you see the HoloViews logo after it runs ``hv.extension()``.
+if you see the orange HoloViews logo after it runs ``hv.extension()``.
 
 
 

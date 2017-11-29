@@ -2,8 +2,8 @@
 
 from nbsite.shared_conf import *
 
-project = u'pyviz'
-authors = u'pyviz'
+project = u'PyViz'
+authors = u'PyViz authors'
 copyright = u'2017 ' + authors
 description = 'How to solve visualization problems with Python tools.'
 
@@ -36,7 +36,6 @@ html_context.update({
     'LINKS': _NAV,
     'SOCIAL': (
         ('Gitter', '//gitter.im/ioam/holoviews'),
-        ('Twitter', '//twitter.com/holoviews'),
-        ('Github', '//github.com/ioam/holoviews'),
+        ('Github', '//github.com/pyviz/pyviz'),
     )
 })
