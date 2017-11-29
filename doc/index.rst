@@ -2,59 +2,99 @@
 PyViz
 *****
 
-.. raw:: html
-
-   <div style="width: 65%; float:left">
-
-	 
 **How to solve visualization problems with Python tools**
 
-The `Tutorial <tutorial>`_ ...
+
+This repository provides examples, demos, and training materials
+documenting how to solve visualization problems using web-based Python
+tools supported by `Anaconda <http://anaconda.com>`_, including
+`Bokeh <http://bokeh.pydata.org>`_,
+`HoloViews <http://holoviews.org>`_,
+`GeoViews <http://geo.holoviews.org>`_,
+`Datashader <https://github.com/bokeh/datashader>`_, and
+`Param <https://github.com/ioam/param>`_.
+
+It includes a shared conda environment that ensures all these tools work together,
+facilities for downloading sample data for use with these tools, and provides
+starting points for solving your own visualization problems.
 
 
-.. raw:: html
-  
-   </div>
+Installation
+============
+
+Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
+-----------------------------------------------------------------
+
+- Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
+- 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
+- Clone this repository, e.g. using ``git clone https://github.com/pyviz/pyviz.git``
+- Open a terminal window inside your clone of the repository.
+
+Step 2: Create a conda environment from ``environment.yml``
+-----------------------------------------------------------
+
+If you don't already have it, install `conda
+<https://www.continuum.io/downloads>`_, and then create the
+``pyviz`` environment by executing::
+
+   > conda env create --force -f environment.yml
+
+When installation is complete you may activate the environment by writing::
+
+   > activate pyviz
+
+(for Windows) or::
+
+   $ source activate pyviz
+
+(for Linux and Mac). 
+
+Later, when you are ready to exit the environment after the tutorial, you can type::
+
+   > deactivate
+
+If for some reason you want to remove the environment entirely, you can do so by writing::
+
+   > conda env remove --name pyviz
 
 
-.. raw:: html
-  :file: latest_news.html
+Step 3: Downloading the sample data
+---------------------------
+
+In this tutorial we will be showing you how to work with some fairly
+large datasets.  Unfortunately, that also means that you have to
+download this data. To make this as easy as possible we have provided
+a script that will download the data for you.  Simply execute in the
+root of your clone of this repository::
+
+  > python download_sample_data.py
 
 
-.. raw:: html
+Step 4: Launch Jupyter Notebook
+-------------------------------
 
-   <hr width='100%'></hr>
-	 
-   <div>
-   <div >
-     <a href="http://holoviews.org/gallery/demos/bokeh/iris_splom_example.html">
-       <img src="http://holoviews.org/_images/iris_splom_example.png" width='20%'>    </img> </a>
-     <a href="http://holoviews.org/getting_started/Gridded_Datasets.html">
-       <img src="http://assets.holoviews.org/collage/cells.png" width='22%'> </img>  </a>
-     <a href="http://holoviews.org/gallery/demos/bokeh/scatter_economic.html">
-       <img src="http://holoviews.org/_images/scatter_economic.png" width='43%'> </img>    </a>
-   </div>
+You can then launch the notebook server and client::
 
-   <div >
-     <a href="http://holoviews.org/gallery/demos/bokeh/square_limit.html">
-       <img src="http://holoviews.org/_images/square_limit.png" width='20%'> </a>
-     <a href="http://holoviews.org/gallery/demos/bokeh/bars_economic.html">
-       <img src="http://holoviews.org/_images/bars_economic.png" width='20%'> </a>
-     <a href="http://holoviews.org/gallery/demos/bokeh/texas_choropleth_example.html">
-       <img src="http://holoviews.org/_images/texas_choropleth_example.png"    width='20%'> </a>
-     <a href="http://holoviews.org/gallery/demos/bokeh/verhulst_mandelbrot.html">
-       <img src="http://holoviews.org/_images/verhulst_mandelbrot.png" width='20%'>    </a>
-   </div>
-   <div >
-       <a href="http://holoviews.org/gallery/demos/bokeh/dropdown_economic.html">
-         <img src="http://assets.holoviews.org/collage/dropdown.gif" width='31%'> </a>
-       <a href="http://holoviews.org/gallery/demos/bokeh/dragon_curve.html">
-         <img src="http://assets.holoviews.org/collage/dragon_fractal.gif" width='26%'> </a>
-       <a href="http://holoviews.org/gallery/apps/bokeh/nytaxi_hover.html">
-         <img src="http://assets.holoviews.org/collage/ny_datashader.gif" width='31%'> </a>
-   </div>
-   </div>
-   <!--   <hr width='100%'></hr> -->
+   (pyviz)> jupyter notebook
+
+A browser window with a Jupyter Notebook instance should now open,
+letting you select and execute each notebook.  You can start with the
+ones in the "notebooks" subdirectory, as these show how to use the
+others in the "exercises" directory along with the applications in the
+"apps" directory.
+
+If you don't see the notebook appear (e.g. on some OS X versions),
+you'll need to cut and paste the URL from the console output manually.
+
+
+Step 5: Test that everything is working
+---------------------------------------
+
+You can see if everything has installed correctly by selecting the
+``00_Welcome.ipynb`` notebook and doing "Cell/Run All" in the menus.
+There may be warnings on some platforms, but you'll know it is working
+if you see the HoloViews logo after it runs ``hv.extension()``.
+
 
 
 .. toctree::
