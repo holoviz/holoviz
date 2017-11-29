@@ -22,8 +22,6 @@ It includes a shared conda environment that ensures all these tools work togethe
 facilities for downloading sample data for use with these tools, and provides
 starting points for solving your own visualization problems.
 
-You can see rendered-to-html notebooks on `appveyor
-<https://ci.appveyor.com/project/pyviz/pyviz/branch/master/artifacts>`_.
 
 Installation
 ============

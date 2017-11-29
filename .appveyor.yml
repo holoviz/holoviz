@@ -18,7 +18,3 @@ build: off
 test_script:
   - "python download_sample_data.py"
   - "python etc\\test_notebooks.py"
-
-artifacts:
-  - path: 'notebooks\*.html'
-    name: notebooks
