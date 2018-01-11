@@ -4,67 +4,71 @@
 # https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
 
+stages:
+  - test
+  - doc
 
-matrix:
+jobs:
   include:
-    - os: linux
-    - os: osx
-      language: generic # python doesn't seem to work on osx images
+    - &default
+      stage: test
+      os: linux
+      env:
+        - PYTHON_VERSION="3.6"
+      install:
+        # Install conda
+        - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+          else
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+          fi
+        - bash miniconda.sh -b -p $HOME/miniconda
+        - export PATH="$HOME/miniconda/bin:$PATH"
+        - conda config --set always_yes yes --set changeps1 no
+        - conda update conda
+        # it might be faster to start from anaconda instead of miniconda
+        - travis_wait 20 conda env create --file environment.yml python=$PYTHON_VERSION
+        - source activate pyviz
+        # dependencies for tests etc
+        - pip install flake8
+        - conda env export
+        - conda list
+      script:
+          - python download_sample_data.py
+          # gipython ./etc/test_notebooks.py lint
+          - python ./etc/test_notebooks.py
+
+    - <<: *default
+      os: osx
+      before_install:
+        # brew-installed geos interferes with cartopy?
+        - brew uninstall --ignore-dependencies geos gdal postgis
       if: branch = master AND type != pull_request
+      deploy: true
 
-env:
-  - PYTHON_VERSION="3.6"
-
-before_install:
-  # brew-installed geos interferes with cartopy?
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew uninstall --ignore-dependencies geos gdal postgis;
-    fi
-
-install:
-  # Install conda
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
-    else
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    fi
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update conda
-  # it might be faster to start from anaconda instead of miniconda
-  - travis_wait 20 conda env create --file environment.yml python=$PYTHON_VERSION
-  - source activate pyviz
-  # dependencies for tests etc
-  - pip install flake8
-  - conda env export
-  - conda list
-
-script:
-    - python download_sample_data.py
-    # python ./etc/test_notebooks.py lint
-    #- python ./etc/test_notebooks.py
-    # TODO: need to use stages and reorganize before merging
-    - conda install -c conda-forge sphinx beautifulsoup4 graphviz
-    - pip install nbsite
-    - pip install sphinx_ioam_theme
-    - cd doc/tutorial
-    - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1
-    - cd ..
-    - sphinx-build -b html . ./_build/html
-    - nbsite_fix_links.py _build/html
-    - cp -r ../notebooks/assets _build/html/tutorial/
-    - touch ./_build/html/.nojekyll
-    - nbsite_cleandisthtml.py ./_build/html take_a_chance
-    - cd ..
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: ./doc/_build/html
-  on:
-    branch: docs
+    - <<: *default
+      stage: doc
+      script:
+        - python download_sample_data.py     
+        - conda install -c conda-forge sphinx beautifulsoup4 graphviz
+        - pip install nbsite
+        - pip install sphinx_ioam_theme
+        - cd doc/tutorial
+        - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1
+        - cd ..
+        - sphinx-build -b html . ./_build/html
+        - nbsite_fix_links.py _build/html
+        - cp -r ../notebooks/assets _build/html/tutorial/
+        - touch ./_build/html/.nojekyll
+        - nbsite_cleandisthtml.py ./_build/html take_a_chance
+        - cd ..
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: ./doc/_build/html
+        on:
+          tags: true
 
 notifications:
   email: false
