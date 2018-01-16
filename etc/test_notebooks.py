@@ -24,7 +24,7 @@ import pprint
 
 nbdir = "notebooks"
 
-run_skip = ['notebooks/03-customizing-visual-appearance.ipynb']
+run_skip = ['notebooks/03_Customizing_Visual_Appearance.ipynb']
 
 run_allow_error = []
 
