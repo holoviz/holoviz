@@ -35,7 +35,7 @@ jobs:
         - conda list
       script:
           - python download_sample_data.py
-          # gipython ./etc/test_notebooks.py lint
+          # python ./etc/test_notebooks.py lint
           - python ./etc/test_notebooks.py
 
     - <<: *default
