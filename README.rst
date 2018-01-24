@@ -10,11 +10,12 @@ How to solve visualization problems with Python tools
 =====================================================
 
 This repository provides examples, demos, and training materials
-documenting how to solve visualization problems using web-based Python
-tools supported by `Anaconda <http://anaconda.com>`_, including
+documenting how to solve visualization problems using Python
+tools that work with web browsers, including
 `Bokeh <http://bokeh.pydata.org>`_,
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geo.holoviews.org>`_,
+`Matplotlib <http://matplotlib.org>`_,
 `Datashader <https://github.com/bokeh/datashader>`_, and
 `Param <https://github.com/ioam/param>`_.
 
@@ -27,7 +28,7 @@ Installation
 ============
 
 Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
@@ -63,7 +64,7 @@ If for some reason you want to remove the environment entirely, you can do so by
 
 
 Step 3: Downloading the sample data
------------------------------------
+---------------------------
 
 In this tutorial we will be showing you how to work with some fairly
 large datasets.  Unfortunately, that also means that you have to
@@ -99,3 +100,12 @@ You can see if everything has installed correctly by selecting the
 There may be warnings on some platforms, but you'll know it is working
 if you see the HoloViews logo after it runs ``hv.extension()``.
 
+
+
+About pyviz.org
+---------------
+
+PyViz is a project supported in part by `Anaconda <http://anaconda.com>`_.
+All projects used here are freely available for commercial or
+non-commercial use according to a permissive open-source license as
+described in each project's website.
