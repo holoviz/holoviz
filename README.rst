@@ -27,7 +27,7 @@ Installation
 ============
 
 Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 
 - Any Linux, Mac OS X, or Windows computer with a web browser should work.  We recommend Chrome, but other browsers should also work.
 - 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
@@ -63,7 +63,7 @@ If for some reason you want to remove the environment entirely, you can do so by
 
 
 Step 3: Downloading the sample data
----------------------------
+-----------------------------------
 
 In this tutorial we will be showing you how to work with some fairly
 large datasets.  Unfortunately, that also means that you have to
