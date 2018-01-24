@@ -11,4 +11,4 @@ PyViz is a collaboration between the maintainers of
 The authors of all of these tools are working closely together to help
 make them into a coherent solution to a wide range of Python
 visualization problems, funded in part by 
-`Anaconda, Inc. <http://anaconda.com>`_, 
+`Anaconda, Inc. <http://anaconda.com>`_.

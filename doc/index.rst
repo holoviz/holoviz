@@ -15,7 +15,7 @@ including `Bokeh <http://bokeh.pydata.org>`_, `HoloViews
 So far, PyViz includes:
 
 - A comprehensive `tutorial <tutorial/index>`_ showing how to use all these tools together to do a wide range of different tasks.
-- A shared environment `Conda <https://conda.io>`_ environment "pyviz" that makes it simple to install matching versions of all libraries needed for the tutorial and for using these tools in general.
+- A shared `Conda <https://conda.io>`_ environment "pyviz" that makes it simple to install matching versions of all libraries needed for the tutorial and for using these tools in general.
 - Sample datasets to work with.
 
 You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is covered.  If it looks relevant to you, you can then follow the steps below to get the sample data and set up the environment, and you'll then be ready to work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems.
