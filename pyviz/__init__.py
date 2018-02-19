@@ -3,7 +3,6 @@ PyViz "metamodule" -- Convenience aliases and API imports for PyViz-related libr
 """
 
 import holoviews as hv                                   # noqa (API import)
-import bokeh as bk                                       # noqa (API import)
 import numpy as np                                       # noqa (API import)
 import pandas as pd                                      # noqa (API import)
 import param as pm                                       # noqa (API import)
@@ -13,6 +12,7 @@ import datashader.transfer_functions as tf               # noqa (API import)
 import holoviews.operation.datashader as hd              # noqa (API import)
 
 # Some libraries are loaded only if present; will raise error if used but not importable
+# Should consider making them fully lazily imported as well
 try:
     import geoviews as gv                                # noqa (API import)
 except ImportError:
