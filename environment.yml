@@ -12,10 +12,10 @@ dependencies:
   - geoviews
   - pandas
   - xarray
-  - datashader
+  - datashader=0.6.5
   - paramnb
   - parambokeh
-  - bokeh=0.12.10
+  - bokeh=0.12.14
   - networkx
   - streamz=0.2.0
   - dask=0.15.4
