@@ -34,13 +34,11 @@ dependencies:
   - expat=2.2.5
   - fastparquet=0.1.4
   - fiona=1.7.9
-  - fontconfig=2.12.6
   - freetype=2.8.1
   - freexl=1.0.4
   - geopandas=0.3.0
   - geos=3.6.2
   - geotiff=1.4.2
-  - gettext=0.19.8.1
   - giflib=5.1.4
   - h5netcdf=0.5.0
   - h5py=2.7.1
@@ -58,7 +56,6 @@ dependencies:
   - jedi=0.11.1
   - jinja2=2.10
   - jpeg=9b
-  - json-c=0.12.1
   - jsonschema=2.6.0
   - jupyter=1.0.0
   - jupyter_client=5.2.2
@@ -90,7 +87,6 @@ dependencies:
   - munch=2.2.0
   - nbconvert=5.3.1
   - nbformat=4.4.0
-  - ncurses=5.9
   - netcdf4=1.3.1
   - networkx=2.1
   - notebook=5.4.0
@@ -113,7 +109,6 @@ dependencies:
   - prompt_toolkit=1.0.15
   - psutil=5.4.0
   - psycopg2=2.7.3.2
-  - ptyprocess=0.5.2
   - py=1.5.2
   - pycparser=2.18
   - pyepsg=0.3.2
