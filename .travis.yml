@@ -44,7 +44,6 @@ jobs:
         # brew-installed geos interferes with cartopy?
         - brew uninstall --ignore-dependencies geos gdal postgis
       if: branch = master AND type != pull_request
-      deploy: true
 
     - <<: *default
       stage: doc
