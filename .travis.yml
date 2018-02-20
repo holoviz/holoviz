@@ -43,7 +43,7 @@ jobs:
       before_install:
         # brew-installed geos interferes with cartopy?
         - brew uninstall --ignore-dependencies geos gdal postgis
-      if: branch = fix_travis_osx AND type != pull_request
+      if: branch = master AND type != pull_request
 
     - <<: *default
       stage: doc
