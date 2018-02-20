@@ -7,7 +7,7 @@ environment:
 install:
   - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
   - "conda config --set always_yes yes --set changeps1 no"
-  - conda install "conda<4.4"
+  - "conda update conda"
   - "conda env create"
   - "activate pyviz"
   - "conda env export"

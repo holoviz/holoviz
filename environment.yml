@@ -2,8 +2,8 @@ name: pyviz
 channels:
   - cball
   - ioam
-  - bokeh
   - conda-forge
+  - bokeh  
   - defaults
 dependencies:
   - python>=3.6,<3.7
