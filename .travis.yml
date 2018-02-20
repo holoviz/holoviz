@@ -27,7 +27,7 @@ jobs:
         - conda config --set always_yes yes --set changeps1 no
         - conda update conda
         # it might be faster to start from anaconda instead of miniconda
-        - travis_wait 20 conda env create --file environment.yml python=$PYTHON_VERSION
+        - travis_wait 20 conda env create
         - source activate pyviz
         # dependencies for tests etc
         - pip install flake8
@@ -49,7 +49,7 @@ jobs:
       stage: doc
       script:
         - python download_sample_data.py     
-        - conda install -c conda-forge sphinx beautifulsoup4 graphviz
+        - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
         - pip install nbsite
         - pip install sphinx_ioam_theme
         - cd doc/tutorial
