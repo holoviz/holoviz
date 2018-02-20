@@ -6,7 +6,11 @@ language: generic
 
 stages:
   - test
+    if: (branch != pkg)
   - doc
+    if: (branch != pkg)
+  - name: conda_dev_package
+    if: (branch = pkg)
 
 jobs:
   include:
@@ -69,6 +73,26 @@ jobs:
         local_dir: ./doc/_build/html
         on:
           tags: true
+
+
+    - stage: conda_dev_package
+      os: linux
+      env:
+        - PYTHON_VERSION="3.6"
+      before_install:
+        ## use system python to install doit, then use doit to install miniconda
+        - easy_install --user doit==0.29.0 pyct && ~/.local/bin/doit install_miniconda && rm -f .doit.db
+        - export PATH="$HOME/miniconda/bin:$PATH"
+        ## install doit into miniconda
+        - conda install -y -c pyviz/label/dev -c conda-forge pyct
+        - doit ci_configure_conda
+
+      install:
+        - export VERSIONHACK=$(python -c "import subprocess;desc=subprocess.check_output(['git','describe','--long']).decode('utf8');v,commits=desc.split('-')[0:2];newv=[int(x) for x in v.split('.')];newv[-1]+=1;print('.'.join(str(x) for x in newv)+'.dev'+commits)")      
+        - doit build_conda_package --channel=pyviz/label/dev --channel=bokeh --channel=conda-forge
+      script: true
+#        - doit upload_conda_package --token=$CONDA_UPLOAD_TOKEN
+
 
 notifications:
   email: false
