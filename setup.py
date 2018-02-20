@@ -28,22 +28,16 @@ setup_args = dict(
     ],
     python_requires = ">=2.7",
     install_requires = [
-        'notebook >=5.1',
         'holoviews',
         'geoviews',
         'pandas',
         'xarray',
-        'matplotlib',
-        'xarray',
+        'colorcet',
         'datashader >=0.6.5',
-        'paramnb',
+        'param',
         'parambokeh',
-        'bokeh ==0.12.14',
-        'networkx',
-        'streamz ==0.2.0',
-        'dask ==0.15.4',
-        'geopandas',
-        'scikit-image',
+        'numpy',
+        'bokeh ==0.12.14',        
         ####################################################################
         # control over dependencies of our dependencies,
         # (e.g. optional dependencies of our dependencies, or if we
@@ -58,6 +52,17 @@ setup_args = dict(
         'pytest >=3.2'
     ],
     extras_require = {
+        'examples': [
+            'notebook >=5.1',
+            'matplotlib',
+            'paramnb',
+            'parambokeh',
+            'networkx',
+            'streamz ==0.2.0',
+            'dask ==0.15.4',
+            'geopandas',
+            'scikit-image'
+        ],
         'export_png' : [
             'selenium',
             'phantomjs',
