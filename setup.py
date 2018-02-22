@@ -1,7 +1,7 @@
 import os
 import sys
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup_args = dict(
     name='pyviz',
@@ -14,7 +14,12 @@ setup_args = dict(
     maintainer_email=" developers@pyviz.org",
     platforms=['Windows', 'Mac OS X', 'Linux'],
     license='BSD',
-    packages=['pyviz'],
+    packages=find_packages(),
+    package_data={'pyviz':'datasets.yml'},
+    include_package_data=True,
+    entry_points = {
+        'console_scripts': ['pyviz=pyviz.cmd:main'],
+    },
     url='http://pyviz.org',
     classifiers = [
         "License :: OSI Approved :: BSD License",

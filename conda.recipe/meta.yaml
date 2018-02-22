@@ -37,12 +37,11 @@ test:
     {% endfor %}
   # WIP: will replace with commands for fetching stuff etc.
   source_files:
-    - download_sample_data.py
-    - datasets.yml
     - etc/test_notebooks.py
     - notebooks/
   commands:
-    - python download_sample_data.py
+    - pyviz download_examples
+    - pyviz download_sample_data
     - python ./etc/test_notebooks.py
 
 about:
