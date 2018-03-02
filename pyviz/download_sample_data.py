@@ -266,16 +266,17 @@ def _process_dataset(dataset, output_dir, here):
             _extract_downloaded_archive(output_path)
 
 
-def main():
+def main(dest=None):
     '''Download each dataset specified by datasets.yml in this directory'''
     here = contrib_dir = path.abspath(path.join(path.split(__file__)[0]))
-    info_file = path.join(here, 'datasets.yml')
+    info_file = path.join(here, '..', 'datasets.yml')
+    if dest is None:
+        dest = here
     with open(info_file) as f:
         info = ordered_load(f.read())
         for topic, downloads in info.items():
-            output_dir = path.join(here, topic)
             for d in downloads:
-                _process_dataset(d, output_dir, here)
+                _process_dataset(d, dest, here)
 
 if __name__ == '__main__':
     main()
