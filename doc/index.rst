@@ -54,7 +54,7 @@ This will create a copy of the notebooks and related files needed for the tutori
 Step 4: Download the sample data
 --------------------------------
 
-   > pyviz --download_sample_data
+   > pyviz --download-sample-data
 
 These tutorials show you how to work with some fairly large datasets, which you will unfortunately need to download first.
 
