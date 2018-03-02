@@ -4,98 +4,77 @@ PyViz
 
 **How to solve visualization problems with Python tools**
 
-The PyViz website and corresponding GitHub repository provide
-examples, demos, and training materials documenting how to solve
-visualization problems using interactive web-based Python tools,
-including `Bokeh <http://bokeh.pydata.org>`_, `HoloViews
-<http://holoviews.org>`_, `GeoViews <http://geo.holoviews.org>`_,
-`Datashader <https://github.com/bokeh/datashader>`_, and `Param
-<https://github.com/ioam/param>`_.
+The PyViz website and corresponding GitHub repository provide examples, demos, and training materials documenting how to solve visualization problems using interactive Python-based tools in your web browser, including `Bokeh <http://bokeh.pydata.org>`_, `HoloViews <http://holoviews.org>`_, `GeoViews <http://geo.holoviews.org>`_, `Datashader <https://github.com/bokeh/datashader>`_, and `Param <https://github.com/ioam/param>`_. 
 
 So far, PyViz includes:
 
-- A comprehensive `tutorial <tutorial/index>`_ showing how to use all these tools together to do a wide range of different tasks.
-- A shared environment `Conda <https://conda.io>`_ environment "pyviz" that makes it simple to install matching versions of all libraries needed for the tutorial and for using these tools in general.
+- A `Conda <https://conda.io>`_ package "pyviz" that makes it simple to install matching versions of all the libraries.
+- A comprehensive `tutorial <tutorial/index>`_ showing how to use these tools together to do a wide range of different tasks.
 - Sample datasets to work with.
 
-You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is covered.  If it looks relevant to you, you can then follow the steps below to get the sample data and set up the environment, and you'll then be ready to work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems.
+You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is covered.  If it looks relevant to you, you can then follow the steps below to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems.
+
 
 
 Installation
 ============
 
-Step 1: Clone the `pyviz <https://github.com/pyviz/pyviz/blob/master/README.rst>`_ repository
+Step 1: Install a `Miniconda <http://conda.pydata.org/miniconda.html>`_  (or `Anaconda <https://www.continuum.io/downloads>`_) environment
 -----------------------------------------------------------------
 
-- Any Linux, Mac OS X, or Windows computer with a web browser should be suitable.  We recommend Chrome, but other browsers should also work.
-- 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
-- Clone this repository, e.g. using ``git clone https://github.com/pyviz/pyviz.git``
-- Open a terminal window inside your clone of the repository.
+Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google Chrome) should be suitable. 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 
-Step 2: Create the ``pyviz`` conda environment from ``environment.yml``
------------------------------------------------------------
+If you don't already have conda on your machine, you can get it from `Anaconda.com <http://conda.pydata.org/miniconda.html>`_, and then open a terminal window.
 
-If you don't already have it, install `conda
-<https://www.continuum.io/downloads>`_, and then create the
-``pyviz`` environment by executing::
+[OPTIONAL] If you want to keep things organized, you can then create a separate Conda environment to work in for this tutorial:
 
-   > conda env create --force -f environment.yml
+   > conda create -n pyviz-tutorial python=3.6
+   > source activate pyviz-tutorial
 
-When installation is complete you may activate the environment by writing::
-
-   > activate pyviz
-
-(for Windows) or::
-
-   $ source activate pyviz
-
-(for Linux and Mac). 
-
-Later, when you are ready to exit the environment after the tutorial, you can type::
-
-   > deactivate
-
-If for some reason you want to remove the environment entirely, you can do so by running::
-
-   > conda env remove --name pyviz
+(omitting "source" if you are on Windows).
 
 
-Step 3: Downloading the sample data
----------------------------
+Step 2: Install `pyviz`
+-----------------------
 
-These tutorials show you how to work with some fairly
-large datasets.  Unfortunately, that also means that you have to
-download this data. To make this as easy as possible we have provided
-a script that will download the data for you.  Simply execute in the
-root of your clone of this repository::
+   > conda install -c pyviz pyviz
 
-  > python download_sample_data.py
+This will install `pyviz` and all of the other libraries needed for the tutorials.
 
 
-Step 4: Launch Jupyter Notebook
+Step 3: Install the tutorials in your home directory
+----------------------------------------------------
+
+   > pyviz --install-examples pyviz-tutorial
+   > cd pyviz-tutorial
+
+This will create a copy of the notebooks and related files needed for the tutorial, into a new subdirectory `pyviz-tutorial/`.
+
+
+Step 4: Download the sample data
+--------------------------------
+
+   > pyviz --download-sample-data
+
+These tutorials show you how to work with some fairly large datasets, which you will unfortunately need to download first.
+
+
+Step 5: Launch Jupyter Notebook
 -------------------------------
 
 You can then launch the notebook server and client::
 
-   (pyviz)> jupyter notebook
+   > jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open,
-letting you select and execute each notebook.  You can start with the
-ones in the "notebooks" subdirectory, as these show how to use the
-others in the "exercises" directory along with the applications in the
-"apps" directory.
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "notebooks" subdirectory, as these show how to use the others in the "exercises" directory along with the applications in the "apps" directory. 
 
-If you don't see the notebook appear (e.g. on some OS X versions),
-you'll need to cut and paste the URL from the console output manually.
+If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
 
-Step 5: Test that everything is working
+Step 6: Test that everything is working
 ---------------------------------------
 
-You can see if everything has installed correctly by selecting the
-``00_Welcome.ipynb`` notebook and doing "Cell/Run All" in the menus.
-There may be warnings on some platforms, but you'll know it is working
-if you see the orange HoloViews logo after it runs ``hv.extension()``.
+You can see if everything has installed correctly by selecting the ``00_Welcome.ipynb`` notebook and doing "Cell/Run All" in the menus. There may be warnings on some platforms, but you'll know it is working if you see the orange HoloViews logo after it runs ``hv.extension()``. 
 
 
 
