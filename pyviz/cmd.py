@@ -7,11 +7,7 @@ import io, zipfile
 try:    from urllib.request import urlopen
 except: from urllib import urlopen
 
-
-def download_sample_data(args):
-    import pyviz.download_sample_data
-    pyviz.download_sample_data.main(args.destination)
-
+from pyviz import download_sample_data
 
 
 description = """
@@ -94,7 +90,7 @@ def main():
     args = parser.parse_args()
 
     if args.download_sample_data:
-        print("DOWNLOAD SAMPLE DATA to %s" % args.download_sample_data[0])
+        download_sample_data.main(args.download_sample_data[0])
     elif args.install_examples:
         install_examples(args.install_examples[0])
 
