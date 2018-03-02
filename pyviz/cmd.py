@@ -37,6 +37,7 @@ from pyviz import download_sample_data
 # Note: make sure to included trailing / to indicate directories!
 example_assets = ['README.rst',
                   'apps/',
+                  'data/',
                   'datasets.yml',
                   'download_sample_data.py',
                   'exercises/',
