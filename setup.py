@@ -19,6 +19,7 @@ setup_args = dict(
         'console_scripts': ['pyviz=pyviz.cmd:main'],
     },
     packages = ["pyviz"],
+    package_data={'pyviz': ['*.yml']},
     platforms=['Windows', 'Mac OS X', 'Linux'],
     license='BSD',
     url='http://pyviz.org',
