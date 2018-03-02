@@ -29,6 +29,7 @@ If you don't already have conda on your machine, you can get it from `Anaconda.c
 [OPTIONAL] If you want to keep things organized, you can then create a separate Conda environment to work in for this tutorial:
 
    > conda create -n pyviz-tutorial python=3.6
+
    > source activate pyviz-tutorial
 
 (omitting "source" if you are on Windows).
@@ -46,6 +47,7 @@ Step 3: Install the tutorials in your home directory
 ----------------------------------------------------
 
    > pyviz --install-examples pyviz-tutorial
+   
    > cd pyviz-tutorial
 
 This will create a copy of the notebooks and related files needed for the tutorial, into a new subdirectory `pyviz-tutorial/`.
