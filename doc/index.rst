@@ -38,6 +38,7 @@ Step 2: Install `pyviz` and other required libraries
 ----------------------------------------------------
 
 ::
+
    > conda install -c pyviz pyviz
 
 
@@ -45,6 +46,7 @@ Step 3: Install the tutorials in your home directory
 ----------------------------------------------------
 
 ::
+
    > pyviz --install-examples pyviz-tutorial
    > cd pyviz-tutorial
 
@@ -53,7 +55,9 @@ This will create a copy of the notebooks and related files needed for the tutori
 
 Step 4: Download the sample data
 --------------------------------
+
 ::
+
    > pyviz --download-sample-data
 
 (Small datasets come with the examples, but large ones like the NYC Taxi dataset have to be downloaded separately, which can take some time.)
