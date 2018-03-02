@@ -15,6 +15,9 @@ setup_args = dict(
     author_email= " developers@pyviz.org",
     maintainer="PyViz developers",
     maintainer_email=" developers@pyviz.org",
+    entry_points = {
+        'console_scripts': ['pyviz=pyviz.cmd:main'],
+    },
     platforms=['Windows', 'Mac OS X', 'Linux'],
     license='BSD',
     url='http://pyviz.org',
