@@ -83,10 +83,12 @@ def main():
                                      epilog=epilog)
 
     parser.add_argument('--download-sample-data', metavar='sample_data_dest',
-                        type=str, nargs=1, help='Command to download the sample data.')
+                        const="data",
+                        type=str, nargs='?', help='Command to download the sample data.')
 
     parser.add_argument('--install-examples', metavar='install_examples',
-                        type=str, nargs=1,
+                        const='pyviz_examples',
+                        type=str, nargs='?',
                         help='Install examples to the specified directory.')
 
     args = parser.parse_args()
