@@ -94,9 +94,9 @@ def main():
     args = parser.parse_args()
 
     if args.download_sample_data:
-        download_sample_data.main(args.download_sample_data[0])
+        download_sample_data.main(args.download_sample_data)
     elif args.install_examples:
-        install_examples(args.install_examples[0])
+        install_examples(args.install_examples)
 
 if __name__ == '__main__':
     main()

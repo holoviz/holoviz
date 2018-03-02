@@ -275,9 +275,8 @@ def main(dest=None):
     with open(info_file) as f:
         info = ordered_load(f.read())
         for topic, downloads in info.items():
-            output_dir = path.join(dest, topic)
             for d in downloads:
-                _process_dataset(d, output_dir, here)
+                _process_dataset(d, dest, here)
 
 if __name__ == '__main__':
     main()
