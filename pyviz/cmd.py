@@ -39,7 +39,6 @@ example_assets = ['README.rst',
                   'apps/',
                   'data/',
                   'datasets.yml',
-                  'download_sample_data.py',
                   'exercises/',
                   'images/',
                   'notebooks/']
