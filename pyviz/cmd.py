@@ -1,15 +1,3 @@
-import os
-import sys
-import argparse
-from argparse import RawTextHelpFormatter
-
-import io, zipfile
-try:    from urllib.request import urlopen
-except: from urllib import urlopen
-
-from pyviz import download_sample_data
-
-
 description = """
 Command line interface for pyviz.
 
@@ -31,6 +19,20 @@ $ pyviz --download-sample-data data
 
 This will download the sample data to the 'data' directory.
 """
+
+
+import os
+import sys
+import argparse
+from argparse import RawTextHelpFormatter
+
+import io, zipfile
+try:    from urllib.request import urlopen
+except: from urllib import urlopen
+
+from pyviz import download_sample_data
+
+
 
 # Note: make sure to included trailing / to indicate directories!
 example_assets = ['README.rst',
