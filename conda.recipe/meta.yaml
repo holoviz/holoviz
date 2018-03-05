@@ -63,7 +63,7 @@ requirements:
     - fastparquet       # Required for reading Parquet files
     - python-snappy     # Required for reading snappy-compressed Parquet files
     - pytest >=3.2      # Required by? Pinned to avoid installation problems on Windows with 3.1?
-    - ipywidgets >=6,<7 # Required for paramnb. Pinned to avoid widgets scrolling for hover text.
+    - ipywidgets=7      # Required for paramnb. Pinned to avoid JS errors for widgets
     - cffi              # Unstated dependency of fastparquet?
 
 test:
