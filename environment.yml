@@ -1,7 +1,6 @@
 name: pyviz
 channels:
   - pyviz
-  - bokeh
   - defaults
 dependencies:
   # 
