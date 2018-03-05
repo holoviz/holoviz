@@ -16,5 +16,5 @@ install:
 build: off
 
 test_script:
-  - "ren data\\nyc_taxi_50k.parq data\\nyc_taxi_wide.parq"
+  - "ren data\\nyc_taxi_50k.parq nyc_taxi_wide.parq"
   - "python etc\\test_notebooks.py"
