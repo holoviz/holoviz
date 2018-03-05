@@ -1,6 +1,6 @@
 package:
   name: pyviz
-  version: 0.9.2
+  version: 0.9.3
 
 source:
   path: ..
@@ -51,7 +51,7 @@ requirements:
     # 
     - networkx         # Required for some graph examples
     - cartopy          # Required for some GeoViews examples
-    - streamz=0.2.0    # Pinned due to StreamingDataFrame name change in 0.3.0 
+    - streamz 0.2.0    # Pinned due to StreamingDataFrame name change in 0.3.0 
     - scikit-image     # Required for datashader graphs
     - geopandas        # Required for geo data examples
     # 
@@ -63,7 +63,7 @@ requirements:
     - fastparquet       # Required for reading Parquet files
     - python-snappy     # Required for reading snappy-compressed Parquet files
     - pytest >=3.2      # Required by? Pinned to avoid installation problems on Windows with 3.1?
-    - ipywidgets=7      # Required for paramnb. Pinned to avoid JS errors for widgets
+    - ipywidgets 7      # Required for paramnb. Pinned to avoid JS errors for widgets
     - cffi              # Unstated dependency of fastparquet?
 
 test:
