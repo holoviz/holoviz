@@ -34,7 +34,8 @@ jobs:
         - conda env export
         - conda list
       script:
-          - python download_sample_data.py
+          - mv data/nyc_taxi_50k.parq data/nyc_taxi_wide.parq
+          # (same as python pyviz/download_sample_data.py, but for quick tests)
           # python ./etc/test_notebooks.py lint
           - python ./etc/test_notebooks.py
 
@@ -48,7 +49,7 @@ jobs:
     - <<: *default
       stage: doc
       script:
-        - python download_sample_data.py     
+        - python pyviz/download_sample_data.py     
         - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
         - pip install nbsite
         - pip install sphinx_ioam_theme
