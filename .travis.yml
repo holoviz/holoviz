@@ -49,7 +49,7 @@ jobs:
     - <<: *default
       stage: doc
       script:
-        - python pyviz/download_sample_data.py     
+        - python pyviz/download_sample_data.py data
         - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
         - pip install nbsite
         - pip install sphinx_ioam_theme

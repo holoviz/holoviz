@@ -272,6 +272,7 @@ def main(dest=None):
     info_file = path.join(here, 'datasets.yml')
     if dest is None:
         dest = here
+    print('Downloading to {0}'.format(path.abspath(dest)))
     with open(info_file) as f:
         info = ordered_load(f.read())
         for topic, downloads in info.items():
@@ -279,4 +280,4 @@ def main(dest=None):
                 _process_dataset(d, dest, here)
 
 if __name__ == '__main__':
-    main()
+    main(*(sys.argv[1:]))
