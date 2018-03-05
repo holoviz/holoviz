@@ -36,7 +36,7 @@ dependencies:
   - networkx         # Required for some graph examples
   - cartopy          # Required for some GeoViews examples
   - streamz=0.2.0    # Pinned due to StreamingDataFrame name change in 0.3.0
-  - skimage          # Required for datashader graphs
+  - scikit-image     # Required for datashader graphs
   - geopandas        # Required for geo data examples
   # 
   # Indirect dependencies of our direct dependencies
