@@ -8,7 +8,7 @@ except ImportError:
 
 setup_args = dict(
     name='pyviz',
-    version="0.9.5",
+    version="0.9.6",
     description='How to solve visualization problems with Python tools.',
     long_description=open('README.rst').read() if os.path.isfile('README.rst') else 'Consult README.rst',
     author= "PyViz developers",
