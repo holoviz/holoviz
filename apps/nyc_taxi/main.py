@@ -11,7 +11,7 @@ df = dd.read_parquet('../data/nyc_taxi_wide.parq')[usecols].persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
 tiles = gv.WMTS(url,crs=crs.GOOGLE_MERCATOR)
-options = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
+opts = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 max_pass = int(df.passenger_count.max().compute()+1)
 
 class NYCTaxiExplorer(hv.streams.Stream):
@@ -22,7 +22,7 @@ class NYCTaxiExplorer(hv.streams.Stream):
     location   = param.ObjectSelector(default='dropoff', objects=['dropoff', 'pickup'])
 
     def make_view(self, x_range, y_range, **kwargs):
-        map_tiles = tiles.opts(style=dict(alpha=self.alpha), plot=options)
+        map_tiles = tiles.options(alpha=self.alpha, **opts)
         points = hv.Points(df, [self.location+'_x', self.location+'_y'], self.location+'_hour')
         selection = {self.location+"_hour":self.hour if self.hour else (0,24), "passenger_count":self.passengers}
         taxi_trips = datashade(points.select(**selection), x_sampling=1, y_sampling=1, cmap=self.colormap,
