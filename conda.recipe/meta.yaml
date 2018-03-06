@@ -1,6 +1,6 @@
 package:
   name: pyviz
-  version: 0.9.6
+  version: 0.9.7
 
 source:
   path: ..
@@ -67,6 +67,7 @@ requirements:
     - pytest >=3.2      # Required by? Pinned to avoid installation problems on Windows with 3.1?
     - ipywidgets 7      # Required for paramnb. Pinned to avoid JS errors for widgets
     - cffi              # Unstated dependency of fastparquet?
+    - tornado 4.5.3     # Required for Jupyter notebook and bokeh server
 
 test:
   imports:
