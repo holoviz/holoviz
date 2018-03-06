@@ -13,3 +13,10 @@ data:
       - maccdc2012_edges.parq
       - maccdc2012_full_nodes.parq
       - maccdc2012_full_edges.parq
+
+  - url: http://github.com/ioam/holoviews/raw/master/examples/assets/diseases.csv.gz
+    title: 'Disease incidence'
+    files:
+      - diseases.csv
+
+

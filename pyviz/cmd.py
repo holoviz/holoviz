@@ -46,7 +46,7 @@ example_assets = ['README.rst',
 def install_examples(path, ref='master'):
 
     if os.path.exists(path):
-        print('%s directory already exists, please specify a different directory' % path)
+        print('%s directory already exists; overwriting current files' % path)
 
     archive_url = 'https://github.com/pyviz/pyviz/archive/{ref}.zip'.format(ref=ref)
     print('Downloading archive: %r' % archive_url)
