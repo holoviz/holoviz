@@ -8,6 +8,8 @@ source:
 build:
   noarch: python
   script: python setup.py install --single-version-externally-managed --record=record.txt
+  entry_points:
+    - pyviz = pyviz.cmd:main
 
 extra:
   channels:
@@ -69,6 +71,8 @@ requirements:
 test:
   imports:
     - pyviz
+  commands:
+    - pyviz --install-examples pyviz-tutorial
 
 about:
   home: pyviz.org
