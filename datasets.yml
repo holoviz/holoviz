@@ -17,6 +17,4 @@ data:
   - url: http://github.com/ioam/holoviews/raw/master/examples/assets/diseases.csv.gz
     title: 'Disease incidence'
     files:
-      - diseases.csv
-
-
+      - diseases.csv.gz
