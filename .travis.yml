@@ -63,12 +63,19 @@ jobs:
         - nbsite_cleandisthtml.py ./_build/html take_a_chance
         - cd ..
       deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: ./doc/_build/html
-        on:
-          tags: true
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./doc/_build/html
+          on:
+            tags: true
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./doc/_build/html
+          repo: ioam-docs/pyviz-master
+          on:
+            branch: master
 
 notifications:
   email: false
