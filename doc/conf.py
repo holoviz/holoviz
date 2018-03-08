@@ -5,7 +5,7 @@ from nbsite.shared_conf import *
 #project = u'PyViz'
 project = u"<b><span style='color:#4792cf;'>Py</span><span style='color:#fdca48;'>Viz</span></b>"
 authors = u'PyViz authors'
-copyright = u'2017 ' + authors
+copyright = u'\u00a9 2017-2018, ' + authors
 description = 'How to solve visualization problems with Python tools.'
 
 # TODO: gah, version
@@ -21,6 +21,7 @@ html_theme_options = {
 }
 
 _NAV =  (
+    ('Installation', 'installation'),
     ('Tutorial', 'tutorial/index'),
     ('FAQ', 'FAQ'),
     ('About', 'about')
