@@ -50,9 +50,7 @@ jobs:
       stage: doc
       script:
         - python pyviz/download_sample_data.py data
-        - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
-        - pip install nbsite
-        - pip install sphinx_ioam_theme
+        - conda install -c pyviz/label/dev -c conda-forge nbsite sphinx_ioam_theme
         - cd doc/tutorial
         - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1
         - cd ..
