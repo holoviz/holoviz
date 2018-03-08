@@ -79,6 +79,9 @@ jobs:
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
           repo: ioam-docs/pyviz-latest
+          on:
+            all_branches: true
+            condition: $TRAVIS_BRANCH != master
 
 notifications:
   email: false
