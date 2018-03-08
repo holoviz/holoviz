@@ -27,7 +27,7 @@ starting points for solving your own visualization problems.
 Installation
 ============
 
-See `pyviz.org <https://pyviz.org>`_ (or doc/index.rst for a github clone).
+See `pyviz.org <https://pyviz.org/installation.html>`_ (or doc/installation.rst for a github clone).
 
 
 About pyviz.org
