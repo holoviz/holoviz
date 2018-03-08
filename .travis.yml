@@ -74,6 +74,11 @@ jobs:
           repo: ioam-docs/pyviz-master
           on:
             branch: master
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./doc/_build/html
+          repo: ioam-docs/pyviz-latest
 
 notifications:
   email: false
