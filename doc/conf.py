@@ -2,7 +2,8 @@
 
 from nbsite.shared_conf import *
 
-project = u'PyViz'
+#project = u'PyViz'
+project = u"<b><span style='color:#4792cf;'>Py</span><span style='color:#fdca48;'>Viz</span></b>"
 authors = u'PyViz authors'
 copyright = u'2017 ' + authors
 description = 'How to solve visualization problems with Python tools.'
@@ -15,8 +16,8 @@ html_static_path += ['_static']
 html_theme = 'sphinx_ioam_theme'
 html_theme_options = {
     'logo':'pyviz-logo.png',
-    'favicon':'favicon.ico'
-#    'css':'pyviz.css'
+    'favicon':'favicon.ico',
+    'css':'site.css'
 }
 
 _NAV =  (

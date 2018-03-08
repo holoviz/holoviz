@@ -71,7 +71,7 @@ body{margin:0em;padding:0em;color:#2f2f2f;font-family:"Noto Sans",sans-serif;fon
 .navigation ul li.nav-link:last-child{padding-right:0}
 .navigation ul li.nav-link:last-child>a{padding-right:0}
 }
-.navigation ul li.nav-link a{color:#76AA44;display:inline-block;text-decoration:none;text-transform:uppercase}
+.navigation ul li.nav-link a{color:#fdca48;display:inline-block;text-decoration:none;text-transform:uppercase}
 @media screen and (min-width: 640px){.navigation ul li.nav-link a{padding-right:1em}
 }
 .navigation ul li.nav-link a:focus,.navigation ul li.nav-link a:hover{color:#e8e8e7}
@@ -349,7 +349,7 @@ dt a.headerlink{vertical-align:inherit}
 .toc li.current a{color:#2f2f2f;padding:.4045em 2.427em}
 .toc li.current a:hover{background-color:#fff;text-decoration:none}
 .toc li code{border:none;background:inherit;color:inherit;padding-left:0;padding-right:0}
-.toc li.on a,.toc li.current>a{color:#76AA44;padding:.809em 1.618em;font-weight:600;position:relative;background:#f4f4f4;border:none;padding-left:1.618em -4px}
+.toc li.on a,.toc li.current>a{color:#3c7cb0;padding:.809em 1.618em;font-weight:600;position:relative;background:#f4f4f4;border:none;padding-left:1.618em -4px}
 .toc li.on a:hover,.toc li.current>a:hover{background-color:#fff}
 .toc li.toctree-l2 a:hover{text-decoration:underline}
 .toc li.toctree-l2.current>a{background:#fff;padding:.4045em 2.427em}
