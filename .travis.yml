@@ -49,6 +49,7 @@ jobs:
     - <<: *default
       stage: doc
       script:
+        - python -c "import bokeh ; bokeh.sampledata.download()"
         - python pyviz/download_sample_data.py data
         - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
         - pip install nbsite
