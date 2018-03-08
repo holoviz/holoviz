@@ -327,8 +327,8 @@ div.sphinxsidebar,div.related,div.footer,#top-link{display:none}
 .section.docs .content:last-child{margin-right:0}
 .section.docs img{border:none;vertical-align:middle}
 .highlight-python{margin-bottom:20px}
-a.headerlink{visibility:visible;color:#e8e8e7;padding-left:0.2em;margin-top:-0.2em;vertical-align:text-bottom}
-a.headerlink:hover{color:#355E79;text-decoration:none}
+a.headerlink{visibility:visible;color:#fff;padding-left:0.2em;margin-top:-0.2em;vertical-align:text-bottom}
+a.headerlink:hover{color:#ddd;text-decoration:none}
 dt a.headerlink{vertical-align:inherit}
 .simple{display:inline-block;margin-bottom:.75em;padding-left:1.5em}
 .simple ~ p{clear:both}
