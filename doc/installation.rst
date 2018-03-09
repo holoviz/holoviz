@@ -8,6 +8,11 @@ Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google C
 
 If you don't already have conda on your machine, you can get it from `Anaconda.com <http://conda.pydata.org/miniconda.html>`_, and then open a terminal window.
 
+If you do have conda already, it's a good idea to update it (running it twice to get the very latest) to ensure you have the latest version::
+
+   > conda update conda
+   > conda update conda
+
 [OPTIONAL] If you want to keep things organized, you can then create a separate Conda environment to work in for this tutorial::
 
    > conda create -n pyviz-tutorial python=3.6
