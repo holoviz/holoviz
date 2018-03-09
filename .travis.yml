@@ -51,9 +51,7 @@ jobs:
       script:
         - python -c "import bokeh ; bokeh.sampledata.download()"
         - python pyviz/download_sample_data.py data
-        - conda install -c conda-forge 'sphinx<1.7' beautifulsoup4 graphviz
-        - pip install nbsite
-        - pip install sphinx_ioam_theme
+        - conda install -c pyviz/label/dev -c conda-forge nbsite sphinx_ioam_theme
         - cd doc/tutorial
         - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1
         - cd ..
@@ -64,19 +62,33 @@ jobs:
         - nbsite_cleandisthtml.py ./_build/html take_a_chance
         - cd ..
       deploy:
-        - provider: pages
+        - edge:
+            branch: v1.8.47
+          provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
           on:
             tags: true
-        - provider: pages
+        - edge:
+            branch: v1.8.47
+          provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
           repo: ioam-docs/pyviz-master
           on:
             branch: master
+        - edge:
+            branch: v1.8.47
+          provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./doc/_build/html
+          repo: ioam-docs/pyviz-latest
+          on:
+            all_branches: true
+            condition: $TRAVIS_BRANCH != master
 
 notifications:
   email: false
