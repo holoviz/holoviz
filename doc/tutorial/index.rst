@@ -17,7 +17,10 @@ can be studied as needed or skipped if not relevant.
 
 Section `00 Welcome <00_Welcome.html>`_  provides an overview of each of the
 other sections involved, so please see that for more details or to get
-started.
+started.  Section `01 Workflow Introduction <01_Workflow_Introduction>`_
+then dives in to examples of how these tools work, or you can choose
+`A2 Dashboard Workflow <A2_Dashboard_Workflow>`_ as an alternative
+introduction if you are mainly interested in dashboards.
 
 .. toctree::
     :titlesonly:
@@ -38,3 +41,4 @@ started.
     12 Parameters and Widgets <12_Parameters_and_Widgets>
     13 Deploying Bokeh Apps <13_Deploying_Bokeh_Apps>
     Appendix 1 Exploration with Containers <A1_Exploration_with_Containers>
+    Appendix 2 Dashboard Workflow <A2_Dashboard_Workflow>
