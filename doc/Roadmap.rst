@@ -159,7 +159,7 @@ well with PyViz include:
    the bulk of the shared functionality should not be a major
    undertaking and could open up interesting new applications.
 
-8. **Better integration with ``____``**: There are a lot of tools in the
+8. **Better integration with ____**: There are a lot of tools in the
    Python and other scientific software ecosystems that could be
    included in PyViz or made easily usable from it. NetworkX (already
    usable but not fully exploited yet) is just one example of many;
