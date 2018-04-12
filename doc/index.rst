@@ -45,5 +45,6 @@ You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is cov
    Introduction <self>
    Installation <installation>
    Tutorial <tutorial/index>
+   Roadmap
    FAQ
    About <about>
