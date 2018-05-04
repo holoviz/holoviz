@@ -123,6 +123,12 @@ well with PyViz include:
    -  `radial trees <https://en.wikipedia.org/wiki/Radial_tree>`__
    -  `packed
       bubbles <https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing>`__
+   -  `funnel charts <https://en.wikipedia.org/wiki/Funnel_chart>`__
+
+   (And if someone wants to write and maintain a `pie chart
+   <https://en.wikipedia.org/wiki/Pie_chart>`__ even though they are
+   nearly always the wrong thing to do, we can probably be convinced
+   to allow it. :-)
 
 5. **More extensive documentation about deployment**: PyViz includes a
    tutorial on `deployment using Bokeh
