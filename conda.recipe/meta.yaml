@@ -46,7 +46,7 @@ requirements:
     - notebook >=5.1    # Pinned to avoid rate limiting for large images with notebook=5.0
     - dask 0.15.4       # Pinned in case of future API changes
     - jupyter
-    - pandas
+    - pandas <=0.22     # Pinned to avoid incompatibility due to removal of rolling_x methods in 0.23
     - xarray
     # 
     # Directly imported dependencies of certain specialized tutorials
