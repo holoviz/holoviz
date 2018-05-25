@@ -29,6 +29,8 @@ jobs:
         # it might be faster to start from anaconda instead of miniconda
         - travis_wait 20 conda env create
         - source activate pyviz
+        # indirect dep of fiona; pinned to fix https://travis-ci.org/pyviz/pyviz/jobs/383650789#L2372
+        - conda install "poppler<=0.60.1"
         # dependencies for tests etc
         - pip install flake8
         - conda env export
