@@ -109,6 +109,7 @@ well with PyViz include:
    these common operations built on the PyViz stack so that it can be a
    more "drop-in" replacement for proprietary GIS systems.  Examples
    of desirable functionality:
+   
    - Fast geographic indexes for Datashader: NDVI, slope, aspect, hillshade
    - Fast geographic operations for Datashader
        * Zonal statistics for an ROI
