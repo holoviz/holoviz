@@ -1,4 +1,4 @@
-PyViz Roadmap, as of 4/2018
+PyViz Roadmap, as of 6/2018
 ===========================
 
 PyViz helps coordinate between numerous independent open-source
@@ -21,12 +21,12 @@ Immediate, already funded priorities for 2018 include:
 
 3. **Better widget support**:
 
--  Extensions and generalizations to the ParamBokeh library to make it
-   simpler to add interactive widgets and control their layout and
-   appearance.
--  Support for expressing dependencies between Parameters that will be
-   respected at the widget level, allowing more complex apps to be built
-   with minimal coding.
+   - Extensions and generalizations to the ParamBokeh library to make it
+     simpler to add interactive widgets and control their layout and
+     appearance.
+   - Support for expressing dependencies between Parameters that will be
+     respected at the widget level, allowing more complex apps to be built
+     with minimal coding.
 
 4. **Improved imaging, simulation, machine learning, and Earth science
    workflows**: Support for working with image and other
@@ -35,9 +35,9 @@ Immediate, already funded priorities for 2018 include:
 
 5. **Improvements to Bokeh/HoloViews drawing tools**:
 
--  Better support for collecting annotations
--  undo
--  other usability improvements
+   - Better support for collecting annotations
+   - undo
+   - other usability improvements
 
 6. **Simpler deployment of large-scale visualizations**: Automatic
    generation of slippy-map tiles for exploration of large datasets
@@ -95,7 +95,9 @@ well with PyViz include:
    `IPyVolume <https://github.com/maartenbreddels/ipyvolume>`__ and
    `Vaex <http://vaex.astro.rug.nl>`__, or by wrapping JavaScript
    libraries like `ThreeJS <https://threejs.org>`__ and
-   `CesiumJS <https://cesiumjs.org>`__.
+   `CesiumJS <https://cesiumjs.org>`__.  There's a first `prototype
+   for a CesiumJS backend now available <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__, 
+   but lots more work to do to make it practical for real use.
 
 3. **Toolbox for GIS primitives**: The PyViz stack is fully general
    purpose, supporting data of any type, and already has many advantages
@@ -105,7 +107,24 @@ well with PyViz include:
    vegetation indexes and other common manipulations of Earth-related
    data. It would be helpful to provide a well-tested collection of
    these common operations built on the PyViz stack so that it can be a
-   more "drop-in" replacement for proprietary GIS systems.
+   more "drop-in" replacement for proprietary GIS systems.  Examples
+   of desirable functionality:
+   - Fast geographic indexes for Datashader: NDVI, slope, aspect, hillshade
+   - Fast geographic operations for Datashader
+       * Zonal statistics for an ROI
+           - Percentage area by category
+           - Summary stats
+       * Hydrology tools
+           - Flow accumulation
+           - Flow direction
+           - Watershed
+       * Euclidean distance based on input geometry (lines / polygons / points)
+       * Suitability analysis (combining multiple binary aggregates into a yes/no composite)
+       * Generate contours from aggregate
+       * Calculate viewshed from aggregate
+   - Color ramps for showing elevation
+   - Bokeh interfaces for external geo data sources (GPX, KML, WMS)
+   - Datashader-based WMS Data Server (aggregating an incoming WMS query on demand)
 
 4. **Additional plot types**: HoloViews includes an extensive range of
    plot types (Elements) covering the typical visualizations used across
@@ -129,7 +148,7 @@ well with PyViz include:
    server <http://pyviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__,
    but there are many other ways to set up live Python-backed plots,
    including creating a Flask server or embedding into Django, along
-   with deploying via Heroku or Google Clouda and AWS or via the
+   with deploying via Heroku or Google Cloud and AWS or via the
    Anaconda Enterprise platform or on
    `MyBinder <https://mybinder.org>`__. Documenting and testing these
    possibilities takes time and effort, and any contributions or
