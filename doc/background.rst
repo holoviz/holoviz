@@ -38,16 +38,16 @@ to streamline the process of working with small and large datasets
 exploratory analysis, making simple widget-based tools, or building
 full-featured dashboards. The libraries in this ecosystem include:
 
--  `**Bokeh** <http://bokeh.pydata.org>`__: Interactive plotting in web
+-  `Bokeh <http://bokeh.pydata.org>`__: Interactive plotting in web
    browsers, running JavaScript but controlled by Python
--  `**HoloViews** <http://holoviews.org>`__: Declarative objects for
+-  `HoloViews <http://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
--  `**GeoViews** <http://geo.holoviews.org>`__: Visualizable geographic
+-  `GeoViews <http://geo.holoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
--  `**Datashader** <https://github.com/bokeh/datashader>`__: Rasterizing
+-  `Datashader <https://github.com/bokeh/datashader>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `**Param** <https://github.com/ioam/param>`__: Declaring
+-  `Param <https://github.com/ioam/param>`__: Declaring
    user-relevant parameters, making it simple to work with widgets
    inside and outside of a notebook context
 
@@ -70,18 +70,18 @@ plot, in a Jupyter notebook, or as a standaline application.
 Behind the scenes, these tools rely on a wide range of other open-source
 libraries for their implementation, including:
 
--  `**Pandas** <http://pandas.pydata.org>`__: Convenient computation on
+-  `Pandas <http://pandas.pydata.org>`__: Convenient computation on
    columnar datasets (used by HoloViews and datashader)
--  `**Xarray** <http://xarray>`__: Convenient computations on
+-  `Xarray <http://xarray>`__: Convenient computations on
    multidimensional array datasets (used by HoloViews and Datashader)
--  `**Dask** <http://dask.pydata.org>`__: Efficient
+-  `Dask <http://dask.pydata.org>`__: Efficient
    out-of-core/distributed computation on massive datasets (used by
    Datashader)
--  `**Numba** <http://numba.pydata.org>`__: Accelerated machine code for
+-  `Numba <http://numba.pydata.org>`__: Accelerated machine code for
    inner loops (used by Datashader)
--  `**Fastparquet** <https://fastparquet.readthedocs.io>`__: Efficient
+-  `Fastparquet <https://fastparquet.readthedocs.io>`__: Efficient
    storage for columnar data
--  `**Cartopy** <http://scitools.org.uk/cartopy>`__: Support for
+-  `Cartopy <http://scitools.org.uk/cartopy>`__: Support for
    geographical data (using a wide range of other libraries)
 
 The PyViz tutorials will guide you through the process of using these tools
@@ -120,6 +120,9 @@ tools, you can check out some of these links first if you wish:
 Getting started
 ---------------
 
-The PyViz `tutorials <tutorial/index.html>`__ are provided as Jupyter notebooks that you can run yourself, once you follow the  `installation <installation>`__ instructions.  But you can first just browse already-run versions of them `online <tutorial/index.html>`__.
-
-Have fun!
+First, you should browse through the already-run versions of the PyViz
+`tutorials <tutorial/index.html>`__ to see what they cover and how it all
+works. But everything on this website is a Jupyter Notebook that you can
+run yourself, once you follow the  `installation <installation>`__
+instructions, so the next step is to try it all out and have fun exploring
+it!
