@@ -22,7 +22,7 @@ If you do have conda already, it's a good idea to update it (running it twice to
 
 
 Step 2: Install ``pyviz`` and other required libraries
-----------------------------------------------------
+------------------------------------------------------
 
 ::
 

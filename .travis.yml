@@ -51,9 +51,9 @@ jobs:
       script:
         - python -c "import bokeh ; bokeh.sampledata.download()"
         - python pyviz/download_sample_data.py data
-        - conda install -c pyviz/label/dev -c conda-forge nbsite sphinx_ioam_theme
+        - conda install -c pyviz/label/dev -c defaults -c conda-forge nbsite sphinx_ioam_theme
         - cd doc/tutorial
-        - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1
+        - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1 0
         - cd ..
         - sphinx-build -b html . ./_build/html
         - nbsite_fix_links.py _build/html
