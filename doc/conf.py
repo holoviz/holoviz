@@ -31,7 +31,7 @@ html_context.update({
     'DESCRIPTION': description,
     'AUTHOR': authors,
     # will work without this - for canonical (so can ignore when building locally or test deploying)    
-    'WEBSITE_SERVER': 'https://pyviz.github.io/pyviz',
+    'WEBSITE_SERVER': 'http://pyviz.org',
     'VERSION': version,
     'NAV': _NAV,
     'LINKS': _NAV,
