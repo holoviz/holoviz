@@ -62,27 +62,21 @@ jobs:
         - nbsite_cleandisthtml.py ./_build/html take_a_chance
         - cd ..
       deploy:
-        - edge:
-            branch: v1.8.47
-          provider: pages
+        - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
           fqdn: pyviz.org
           on:
             tags: true
-        - edge:
-            branch: v1.8.47
-          provider: pages
+        - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
           repo: ioam-docs/pyviz-master
           on:
             branch: master
-        - edge:
-            branch: v1.8.47
-          provider: pages
+        - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./doc/_build/html
