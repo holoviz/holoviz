@@ -45,7 +45,7 @@ requirements:
     - ipython 5         # Pinned to avoid tab-completion issue in ipython=6
     - numpy
     - notebook >=5.4    # Pinned to avoid rate limiting for large images with notebook=5.0
-    - dask 0.18.1       # Pinned in case of future API changes
+    - dask 0.17.4       # Pinned for datashader compatibility
     - jupyter
     - pandas
     - xarray
