@@ -27,7 +27,8 @@ requirements:
     # 
     - bokeh 0.13.0
     - holoviews 1.10.6
-    - geoviews 1.5.1
+	- hvplot 0.2.0
+    - geoviews 1.5.2
     - datashader 0.6.6
     - param 1.6.1
     - paramnb 2.0.3
