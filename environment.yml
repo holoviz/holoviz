@@ -26,7 +26,7 @@ dependencies:
   - ipython=5        # Pinned to avoid tab-completion issue in ipython=6
   - numpy=1.13
   - notebook>=5.4    # Pinned to avoid rate limiting for large images with notebook=5.0
-  - dask=0.18.1.     # Pinned for datashader compatibility
+  - dask=0.18.1      # Pinned for future compatibility
   - jupyter
   - pandas
   - xarray
