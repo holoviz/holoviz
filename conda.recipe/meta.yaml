@@ -1,6 +1,8 @@
+{% set sdata = load_setup_py_data() %}
+
 package:
   name: pyviz
-  version: 0.9.8
+  version: {{ sdata['version'] }}
 
 source:
   path: ..
@@ -18,7 +20,7 @@ extra:
 requirements:
   build:
     - python
-    - param
+    - param >=1.7.0
     - numpy
     - setuptools
   run:

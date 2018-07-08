@@ -6,9 +6,11 @@ try:
 except ImportError:
     from distutils.core import setup
 
+import param.version
+
 setup_args = dict(
     name='pyviz',
-    version="0.9.8",
+    version=param.version.get_setup_version(__file__,'pyviz',archive_commit="$Format:%h$"),
     description='How to solve visualization problems with Python tools.',
     long_description=open('README.rst').read() if os.path.isfile('README.rst') else 'Consult README.rst',
     author= "PyViz developers",
