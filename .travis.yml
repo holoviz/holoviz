@@ -4,8 +4,17 @@
 # https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
 
+env:
+  global:
+    - LABELS_DEV="--label dev"
+    - LABELS_REL="--label dev --label main"
+
 stages:
   - test
+  - name: conda_dev_package
+    if: tag =~ ^v(\d+|\.)*[a-z]\d*$
+  - name: conda_package
+    if: tag =~ ^v(\d+|\.)*[^a-z]\d*$
   - doc
 
 jobs:
@@ -84,6 +93,36 @@ jobs:
           on:
             all_branches: true
             condition: $TRAVIS_BRANCH != master
+
+    - &conda_pkg
+      stage: conda_dev_package
+      os: linux
+      env:
+        - PYTHON_VERSION="3.6"
+        - LABELS=$LABELS_DEV
+      install:
+        # Install conda
+        - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+          else
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+          fi
+        - bash miniconda.sh -b -p $HOME/miniconda
+        - export PATH="$HOME/miniconda/bin:$PATH"
+        - conda update conda
+        - conda config --set always_yes yes --set changeps1 no
+        - conda install anaconda-client conda-build=3.10.1
+        - conda build -c pyviz conda.recipe
+      script:
+        - anaconda --token $ANACONDA_TOKEN upload $LABELS
+
+    - <<: *conda_pkg
+      stage: conda_package
+      os: linux
+      env:
+        - PYTHON_VERSION="3.6"
+        - LABELS=$LABELS_REL
+
 
 notifications:
   email: false
