@@ -7,9 +7,9 @@ dependencies:
   # Versions for pyviz-maintained packages pinned to ensure mutual compatibility
   # 
   - bokeh=0.13.0
-  - holoviews=1.10.6
+  - holoviews=1.10.7
   - geoviews=1.5.2
-  - hvplot=0.2.0
+  - hvplot=0.2.1
   - datashader=0.6.6
   - param=1.6.1
   - paramnb=2.0.3
