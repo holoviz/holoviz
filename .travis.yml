@@ -115,7 +115,7 @@ jobs:
         - conda install -c pyviz param numpy setuptools
         - conda build -c https://conda.anaconda.org/pyviz conda.recipe
       script:
-        - anaconda --token $ANACONDA_TOKEN upload $LABELS
+        - anaconda --token $ANACONDA_TOKEN upload $LABELS $(conda build -c https://conda.anaconda.org/pyviz conda.recipe --output)
 
     - <<: *conda_pkg
       stage: conda_package
