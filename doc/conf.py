@@ -8,8 +8,8 @@ authors = u'PyViz authors'
 copyright = u'\u00a9 2017-2018, ' + authors
 description = 'How to solve visualization problems with Python tools.'
 
-# TODO: should read from elsewhere after switching to autover
-version = release = '0.9.7'
+import pyviz
+version = release = pyviz.__version__
 
 html_static_path += ['_static']
 html_theme = 'sphinx_ioam_theme'
