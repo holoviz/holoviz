@@ -71,6 +71,9 @@ requirements:
     - ipywidgets 7      # Required for paramnb. Pinned to avoid JS errors for widgets
     - cffi              # Unstated dependency of fastparquet?
     - tornado 4.5.3     # Required for Jupyter notebook and bokeh server
+  run_constrained:    
+    # indirect dep of fiona; pinned to fix https://travis-ci.org/pyviz/pyviz/jobs/383650789#L2372
+    - poppler <=0.60.1
 
 test:
   imports:
