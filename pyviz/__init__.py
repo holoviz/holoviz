@@ -24,4 +24,4 @@ except ImportError:
 
 from holoviews import help                               # noqa (API import)
 
-__version__ = str(pm.Version(fpath=__file__,archive_commit="$Format:%h$", reponame='pyviz')
+__version__ = str(pm.Version(fpath=__file__,archive_commit="$Format:%h$", reponame='pyviz'))
