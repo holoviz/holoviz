@@ -16,8 +16,8 @@ tools that work with web browsers, including
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geo.holoviews.org>`_,
 `Matplotlib <http://matplotlib.org>`_,
-`Datashader <https://github.com/bokeh/datashader>`_, and
-`Param <https://github.com/ioam/param>`_.
+`Datashader <http://github.com/bokeh/datashader>`_, and
+`Param <http://github.com/ioam/param>`_.
 
 It includes a shared conda environment that ensures all these tools work together,
 facilities for downloading sample data for use with these tools, and provides
@@ -27,7 +27,7 @@ starting points for solving your own visualization problems.
 Installation
 ============
 
-See `pyviz.org <https://pyviz.org/installation.html>`_ (or doc/installation.rst for a github clone).
+See `pyviz.org <http://pyviz.org/installation.html>`_ (or doc/installation.rst for a github clone).
 
 
 About pyviz.org
