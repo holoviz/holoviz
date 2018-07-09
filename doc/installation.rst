@@ -29,8 +29,8 @@ Step 2: Install ``pyviz`` and other required libraries
    > conda install -c pyviz pyviz
 
 
-Step 3: Install the tutorials in your home directory
-----------------------------------------------------
+Step 3: Install the tutorials in your current working directory
+---------------------------------------------------------------
 
 ::
 
