@@ -56,7 +56,7 @@ You can then launch the notebook server and client::
 
    > jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "notebooks" subdirectory, as these show how to use the others in the "exercises" directory along with the applications in the "apps" directory. 
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "notebooks" subdirectory, as these show how to use the others in the "exercises" directory along with the applications in the "apps" directory.  The first notebook to load is the index page ``index.ipynb``, which makes it simple to load each of the others.
 
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
@@ -64,7 +64,7 @@ If you don't see the notebook appear (e.g. on some OS X versions), you may need 
 Step 6: Test that everything is working
 ---------------------------------------
 
-You can see if everything has installed correctly by selecting the ``00_Welcome.ipynb`` notebook and doing "Cell/Run All" in the menus. There may be warnings on some platforms, but you'll know it is working if you see the orange HoloViews logo after it runs ``hv.extension()``. 
+You can see if everything has installed correctly by selecting the ``0 - Setup`` notebook from the index and doing "Cell/Run All" in the menus. There may be warnings on some platforms, but you'll know it is working if you see the orange HoloViews logo after it runs ``hv.extension()``. 
 
 Step 7: Run the tutorials
 -------------------------
