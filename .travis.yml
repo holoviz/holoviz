@@ -58,6 +58,7 @@ jobs:
     - <<: *default
       stage: doc
       script:
+        - pip install -e . --no-deps
         - python -c "import bokeh ; bokeh.sampledata.download()"
         - python pyviz/download_sample_data.py data
         - conda install -c pyviz/label/dev -c defaults -c conda-forge nbsite sphinx_ioam_theme
