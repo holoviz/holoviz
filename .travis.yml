@@ -112,6 +112,7 @@ jobs:
         - conda config --set always_yes yes --set changeps1 no
         - conda update conda
         - conda install anaconda-client conda-build=3.10.1
+        - conda install param numpy setuptools
         - conda build -c pyviz conda.recipe
       script:
         - anaconda --token $ANACONDA_TOKEN upload $LABELS
