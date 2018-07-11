@@ -1,11 +1,7 @@
 import os
 import sys
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
+from setuptools import setup, find_packages
 import param.version
 
 setup_args = dict(
@@ -14,14 +10,14 @@ setup_args = dict(
     description='How to solve visualization problems with Python tools.',
     long_description=open('README.rst').read() if os.path.isfile('README.rst') else 'Consult README.rst',
     author= "PyViz developers",
-    author_email= " developers@pyviz.org",
+    author_email= "developers@pyviz.org",
     maintainer="PyViz developers",
-    maintainer_email=" developers@pyviz.org",
+    maintainer_email="developers@pyviz.org",
     entry_points = {
         'console_scripts': ['pyviz=pyviz.cmd:main'],
     },
-    packages = ["pyviz"],
-    package_data={'pyviz': ['*.yml']},
+    packages = find_packages(),
+    include_package_data=True,
     platforms=['Windows', 'Mac OS X', 'Linux'],
     license='BSD',
     url='http://pyviz.org',
