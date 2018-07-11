@@ -14,7 +14,7 @@ PyViz Tutorial
     01 Workflow Introduction <01_Workflow_Introduction>
     02 Annotating Data <02_Annotating_Data>
     03 Customizing Visual Appearance <03_Customizing_Visual_Appearance>
-    04 Working with Datasets <04_Working_with_Datasets>
+    04 Working with Tabular Datasets <04_Working_with_Tabular_Data>
     05 Working with Gridded Data <05_Working_with_Gridded_Data>
     06 Network Graphs <06_Network_Graphs>
     07 Geographic Data <07_Geographic_Data>
