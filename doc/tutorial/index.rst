@@ -1,7 +1,7 @@
 PyViz Tutorial
 ==============
 
-.. notebook:: pyviz ../../notebooks/index.ipynb
+.. notebook:: pyviz ../../examples/tutorial/index.ipynb
     :offset: 1
 
 .. toctree::

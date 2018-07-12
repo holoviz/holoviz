@@ -1,0 +1,22 @@
+# equivalent of travis test_packages stage (appveyor doesn't have stages)
+
+environment:
+  matrix:
+    - PY: "3.6"
+      PYTHON: "C:\\Python36-x64"
+      CONDA: "C:\\Miniconda36-x64"
+
+install:
+  - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  - "conda config --set always_yes True"
+
+build: off
+
+test_script:
+  - "conda create -n pyviz-tutorial python=3.6"
+  - "activate pyviz"
+  - "conda install -c pyviz pyviz"
+  - "pyviz examples"
+  - "cd pyviz-examples"
+  - "conda install -c pyviz/label/dev nbsmoke"
+  - "pytest --nbsmoke-run -k '.ipynb'"

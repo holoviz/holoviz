@@ -1,129 +1,154 @@
-# We deliberately don't use travis's language=python option because
-# we install miniconda and use conda to get python. Additionally, 
-# Travis's auto-install of python doesn't work on osx images (see
-# https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
 
 env:
   global:
+    - CHANS_DEV="-c pyviz/label/dev"
+    - CHANS_REL="-c pyviz"
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
+    - PYENV_VERSION=3.6
+    - PKG_TEST_PYTHON="--test-python=py36"
+    - PIN="--pin-deps"
 
 stages:
+#  - name: test_packages
+#    if: branch = packaging
+#    if: type = cron
   - test
   - name: conda_dev_package
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+    if: branch = packaging
+#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+  - name: pip_dev_package
+    if: branch = packaging
+#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$    
   - name: conda_package
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
+  # TODO: add conditions for doc build
   - doc
+  - name: unpinned_upcoming_trouble
+    if: branch = packaging
+#    if: type = cron  
+
+
+# TODO: caching
 
 jobs:
   include:
     - &default
       stage: test
       os: linux
-      env:
-        - PYTHON_VERSION="3.6"
       install:
-        # Install conda
-        - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
-          else
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-          fi
-        - bash miniconda.sh -b -p $HOME/miniconda
-        - export PATH="$HOME/miniconda/bin:$PATH"
-        - conda config --set always_yes yes --set changeps1 no
-        - conda update conda
-        # it might be faster to start from anaconda instead of miniconda
-        - travis_wait 20 conda env create
+        - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
+        - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
+        - conda config --set always_yes True
+        - conda install -c pyviz/label/dev pyctdev && doit ecosystem_setup
+      before_script:
+        - doit env_create --name=pyviz --python=$PYENV_VERSION
         - source activate pyviz
-        # dependencies for tests etc
-        - pip install flake8
-        - conda env export
-        - conda list
+        - travis_wait 20 doit develop_install $CHANS_DEV --all-extras $PIN
+        - pip install msgpack # workaround for unfortunate combo of msgpack vs msgpack-python + no conda develop command + pkg_resources checking what's installed for entrypoints + msgpack/rise conflict via conda; need to investigate
+        - doit env_capture
       script:
-          - mv data/nyc_taxi_50k.parq data/nyc_taxi_wide.parq
-          # (same as python pyviz/download_sample_data.py, but for quick tests)
-          # python ./etc/test_notebooks.py lint
-          - python ./etc/test_notebooks.py
+        # (same as python pyviz/download_sample_data.py, but for quick tests)      
+        - mv examples/data/nyc_taxi_50k.parq examples/data/nyc_taxi_wide.parq
+        - pyviz fetch-data --path=examples
+        - doit test_examples
 
     - <<: *default
-      os: osx
-      before_install:
-        # brew-installed geos interferes with cartopy?
-        - brew uninstall --ignore-dependencies geos gdal postgis
-      if: branch = master AND type != pull_request
+      stage: unpinned_upcoming_trouble
+      env: PIN=
+
+#    - &package_test
+#      <<: *default
+#      stage: test_packages
+#      before_script: true
+#      script:
+#        - mkdir $HOME/tmp && cd $HOME/tmp
+#        # TODO: pyctdev should probably support this whole thing	
+#        - conda create -n pyviz-tutorial python=3.6
+#        - source activate pyviz-tutorial
+#        - conda install -c pyviz pyviz
+#        - pyviz examples
+#        - cd pyviz-examples
+#        - conda install -c pyviz/label/dev nbsmoke
+#        - pytest --nbsmoke-run -k ".ipynb"
+
+#    - <<: *package_test
+#      os: osx
+#      # travis/osx is not set up like travis/linux      
+#      env: PYENV_VERSION=3.6.4
+#      before_install:
+#        - eval "$(pyenv init -)"
+#        - pyenv install $PYENV_VERSION
 
     - <<: *default
       stage: doc
       script:
-        - pip install -e . --no-deps
-        - python -c "import bokeh ; bokeh.sampledata.download()"
-        - python pyviz/download_sample_data.py data
-        - conda install -c pyviz/label/dev -c defaults -c conda-forge nbsite sphinx_ioam_theme
-        - cd doc/tutorial
-        - nbsite_nbpagebuild.py pyviz pyviz ../../notebooks . 1 0
-        - cd ..
-        - sphinx-build -b html . ./_build/html
-        - nbsite_fix_links.py _build/html
-        - cp -r ../notebooks/assets _build/html/tutorial/
-        - touch ./_build/html/.nojekyll # for github pages
-        - nbsite_cleandisthtml.py ./_build/html take_a_chance
-        - cd ..
+        - doit develop_install $CHANS_DEV -o doc
+        - bokeh sampledata
+        - pyviz fetch-data --path=examples
+        # TODO: need to support skip for nbsite
+        - rm -rf examples/tutorial/exercises/Exercise*
+        # note: still more nbsite simplification to go...
+        - nbsite generate-rst --org pyviz --project-name pyviz --repo pyviz --offset 1
+        - nbsite build --what=html --output=builtdocs
+        - touch ./builtdocs/.nojekyll # for github pages
+        - nbsite_cleandisthtml.py ./builtdocs take_a_chance
       deploy:
+#        - provider: pages
+#          skip_cleanup: true
+#          github_token: $GITHUB_TOKEN
+#          local_dir: ./builtdocs
+#          fqdn: pyviz.org
+#          on:
+#            tags: true
+#        - provider: pages
+#          skip_cleanup: true
+#          github_token: $GITHUB_TOKEN
+#          local_dir: ./doc/_build/html
+#          repo: ioam-docs/pyviz-master
+#          on:
+#            branch: master
         - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
-          local_dir: ./doc/_build/html
-          fqdn: pyviz.org
-          on:
-            tags: true
-        - provider: pages
-          skip_cleanup: true
-          github_token: $GITHUB_TOKEN
-          local_dir: ./doc/_build/html
-          repo: ioam-docs/pyviz-master
-          on:
-            branch: master
-        - provider: pages
-          skip_cleanup: true
-          github_token: $GITHUB_TOKEN
-          local_dir: ./doc/_build/html
-          repo: ioam-docs/pyviz-latest
+          local_dir: ./builtdocs
+          repo: ioam-docs/pyviz-tmp
           on:
             all_branches: true
             condition: $TRAVIS_BRANCH != master
 
+
+    ## dev packages
+
+    - &pip_pkg
+      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
+      stage: pip_dev_package
+      install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
+      before_script:
+        - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
+        #- doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=examples --sdist-install-build-deps
+      script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
+
     - &conda_pkg
+      <<: *default
       stage: conda_dev_package
-      os: linux
-      env:
-        - PYTHON_VERSION="3.6"
-        - LABELS=$LABELS_DEV
-      install:
-        # Install conda
-        - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
-          else
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-          fi
-        - bash miniconda.sh -b -p $HOME/miniconda
-        - export PATH="$HOME/miniconda/bin:$PATH"
-        - conda config --set always_yes yes --set changeps1 no
-        - conda update conda
-        - conda install anaconda-client conda-build=3.10.1
-        - conda install -c pyviz param numpy setuptools
-        - conda build -c https://conda.anaconda.org/pyviz conda.recipe
-      script:
-        - anaconda --token $ANACONDA_TOKEN upload $LABELS $(conda build -c https://conda.anaconda.org/pyviz conda.recipe --output)
+      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
+      before_script:
+        - doit package_build $CHANS $PKG_TEST_PYTHON $PINS --package-name pyviz --test-group=unit
+        # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
+        - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
+      script: true #doit package_upload --token=$ANACONDA_TOKEN $LABELS
+
+    ## release packages
+
+#    - <<: *pip_pkg
+#      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
+#      stage: pip_package
 
     - <<: *conda_pkg
       stage: conda_package
-      os: linux
-      env:
-        - PYTHON_VERSION="3.6"
-        - LABELS=$LABELS_REL
+      env: LABELS=$LABELS_REL CHANS=$CHANS_DEV
 
 
 notifications:

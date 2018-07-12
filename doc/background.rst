@@ -61,7 +61,7 @@ the properties of their data, we can compare that to the approach
 suggested for a software developer wanting to build a highly custom
 software application for data of different sizes:
 
-.. image:: https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/ds_hv_bokeh.png
+.. image:: assets/ds_hv_bokeh.png
     :height: 220px
 
 Here Datashader is used to make large datasets practical by rendering

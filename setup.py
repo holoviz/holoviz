@@ -1,45 +1,17 @@
-import os
-import sys
+from setuptools import setup
+import os, sys, shutil
 
-from setuptools import setup, find_packages
-import param.version
-
-setup_args = dict(
-    name='pyviz',
-    version=param.version.get_setup_version(__file__,'pyviz',archive_commit="$Format:%h$"),
-    description='How to solve visualization problems with Python tools.',
-    long_description=open('README.rst').read() if os.path.isfile('README.rst') else 'Consult README.rst',
-    author= "PyViz developers",
-    author_email= "developers@pyviz.org",
-    maintainer="PyViz developers",
-    maintainer_email="developers@pyviz.org",
-    entry_points = {
-        'console_scripts': ['pyviz=pyviz.cmd:main'],
-    },
-    packages = find_packages(),
-    include_package_data=True,
-    platforms=['Windows', 'Mac OS X', 'Linux'],
-    license='BSD',
-    url='http://pyviz.org',
-    classifiers = [
-        "License :: OSI Approved :: BSD License",
-        "Development Status :: 5 - Production/Stable",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.6",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.2",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Operating System :: OS Independent",
-        "Intended Audience :: Science/Research",
-        "Intended Audience :: Developers",
-        "Natural Language :: English",
-        "Topic :: Scientific/Engineering",
-        "Topic :: Software Development :: Libraries"]
-)
-
+import pyct.build
 
 if __name__=="__main__":
-    setup(**setup_args)
+    # TODO: hope to eliminate the examples handling from here
+    # (i.e. all lines except setup()), moving it to pyct
+    example_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                'pyviz','examples')
+    if 'develop' not in sys.argv:
+        pyct.build.examples(example_path, __file__, force=True)
+    
+    setup()
+
+    if os.path.isdir(example_path):
+        shutil.rmtree(example_path)
