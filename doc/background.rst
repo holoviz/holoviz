@@ -33,7 +33,7 @@ data they can handle, in part because Bokeh requires the data to be put
 into the web browser's limited memory space.
 
 To address these issues, we have developed a set of open-source Python
-to streamline the process of working with small and large datasets
+packages to streamline the process of working with small and large datasets
 (from a few points to billions) in a web browser, whether doing
 exploratory analysis, making simple widget-based tools, or building
 full-featured dashboards. The libraries in this ecosystem include:
@@ -45,6 +45,9 @@ full-featured dashboards. The libraries in this ecosystem include:
    high-level specifications
 -  `GeoViews <http://geo.holoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
+-  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
+   HoloViews or GeoViews objects from your Pandas, Xarray, or other
+   data structures
 -  `Datashader <https://github.com/bokeh/datashader>`__: Rasterizing
    huge datasets quickly as fixed-size images
 -  `Param <https://github.com/ioam/param>`__: Declaring
@@ -63,9 +66,10 @@ software application for data of different sizes:
 
 Here Datashader is used to make large datasets practical by rendering
 images outside the browser, either directly for a programmer or via a
-convenient high-level interface using HoloViews, and the results can be
-embedded in interactive Bokeh plots if desired, either as a static HTML
-plot, in a Jupyter notebook, or as a standaline application.
+convenient high-level interface using HoloViews (or hvPlot), and the
+results can be embedded in interactive Bokeh plots if desired, either
+as a static HTML plot, in a Jupyter notebook, or as a standaline
+application.
 
 Behind the scenes, these tools rely on a wide range of other open-source
 libraries for their implementation, including:
