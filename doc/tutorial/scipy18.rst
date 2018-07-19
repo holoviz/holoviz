@@ -8,4 +8,4 @@ SciPy 2018 tutorial
 
 -------
 
-`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/master/../../notebooks/scipy18.ipynb>`_
+`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/master/examples/scipy18.ipynb>`_
