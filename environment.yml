@@ -8,7 +8,7 @@ dependencies:
   # 
   - bokeh=1.0.0dev6
   - holoviews=1.11.0a4
-  - geoviews=v1.5.4a6
+  - geoviews=1.5.4a6
   - hvplot=0.2.1
   - datashader=0.6.7
   - panel=0.1.0a3
