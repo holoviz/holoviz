@@ -1,4 +1,4 @@
-import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd, cartopy.crs as crs
+import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, cartopy.crs as crs
 import panel as pp
 
 from colorcet import cm
