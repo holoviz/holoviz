@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   PyViz Roadmap, as of 6/2018 — PyViz 0.9.12.post1+g99f19cc documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/Roadmap.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="index.html">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="pyviz-roadmap-as-of-6-2018">
+     <h1>
+      PyViz Roadmap, as of 6/2018
+      <a class="headerlink" href="#pyviz-roadmap-as-of-6-2018" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <p>
+      PyViz helps coordinate between numerous independent open-source
+projects, each with their own developers, priorities, and agendas. In
+large part, the future of PyViz is up to a distributed team of
+developers that focus on the areas of greatest current interest and
+need, including areas that specifically get current funding.
+     </p>
+     <p>
+      Immediate, already funded priorities for 2018 include:
+     </p>
+     <ol class="arabic simple">
+      <li>
+       <strong>
+        Ongoing maintenance, improved documentation and examples
+       </strong>
+       : As
+always, there are various bugs and usability issues reported on the
+issue tracker, and we will address these as time permits.
+      </li>
+      <li>
+       <strong>
+        Better dashboard/app support
+       </strong>
+       : Making it simpler to make powerful
+dashboards starting from code that works well in a Jupyter notebook,
+including as a simple report, a notebook-backed arbitrary screen
+layout, and sharing components between notebooks and complex deployed
+apps.
+      </li>
+      <li>
+       <strong>
+        Better widget support
+       </strong>
+       :
+       <ul>
+        <li>
+         Extensions and generalizations to the ParamBokeh library to make it
+simpler to add interactive widgets and control their layout and
+appearance.
+        </li>
+        <li>
+         Support for expressing dependencies between Parameters that will be
+respected at the widget level, allowing more complex apps to be built
+with minimal coding.
+        </li>
+       </ul>
+      </li>
+      <li>
+       <strong>
+        Improved imaging, simulation, machine learning, and Earth science
+workflows
+       </strong>
+       : Support for working with image and other
+multidimensional data for visualization and machine-learning
+applications, including on HPC systems.
+      </li>
+      <li>
+       <strong>
+        Improvements to Bokeh/HoloViews drawing tools
+       </strong>
+       :
+       <ul>
+        <li>
+         Better support for collecting annotations
+        </li>
+        <li>
+         undo
+        </li>
+        <li>
+         other usability improvements
+        </li>
+       </ul>
+      </li>
+      <li>
+       <strong>
+        Simpler deployment of large-scale visualizations
+       </strong>
+       : Automatic
+generation of slippy-map tiles for exploration of large datasets
+using standard web servers
+      </li>
+      <li>
+       <strong>
+        Better Datashader integration with external plotting libraries
+(Bokeh, HoloViews, Matplotlib)
+       </strong>
+       : Datashader needs to provide
+functions for supporting hover information, legends, colorbars, and
+interactivity, which each plotting library can then use.
+      </li>
+      <li>
+       <strong>
+        HoloViews serialization
+       </strong>
+       : HoloViews uses a declarative design that
+can be represented in a purely textual form, without any Python code.
+An initial implementation allows any Param-based objects (including
+HoloViews objects) to be represented in JSON or YAML, but it needs
+some polishing before it can be put into wide use for saving and
+restoring configurations and layouts.
+      </li>
+      <li>
+       <strong>
+        Support for maintaining Python-based projects
+       </strong>
+       : As maintainers of
+a wide range of Python projects, we are working to minimize the cost
+of maintaining each one, by sharing code for tracking versions,
+making releases, providing example scripts, managing datasets,
+documenting examples, testing examples (including notebooks), and
+building websites. Projects addressing each of these areas are being
+added to the
+       <a class="reference external" href="https://github.com/pyviz">
+        PyViz Github organization
+       </a>
+       and will be documented in the main PyViz site as they become mature.
+      </li>
+     </ol>
+     <p>
+      Other things we’d like to see in PyViz or in packages designed to work
+well with PyViz include:
+     </p>
+     <ol class="arabic">
+      <li>
+       <p class="first">
+        <strong>
+         Bokeh WebGL support
+        </strong>
+        : Bokeh provides good support for working
+interactively with small datasets using an HTML Canvas (client-side
+interactivity), and when combined with Datashader it can handle
+enormous datasets by pre-rendering them to images in Python
+(server-side). However, in between these two extremes there is a
+range of data sizes that could be addressed well by the client-side
+WebGL technology. Bokeh includes some WebGL support, but it is patchy
+and not fully implemented, so it is not the default for either direct
+Bokeh usage or for Bokeh with the HoloViews API. Volunteers to
+maintain and expand the WebGL support could make a much broader range
+of data sizes practical in easily redistributable standalone HTML
+files, and could enable new classes of high-performance interactive
+features.
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Integrating 3D surface and volume rendering into PyViz
+        </strong>
+        : HoloViews
+can plot limited quantities of 3D surface or point data using
+        <a class="reference external" href="http://holoviews.org/reference/elements/matplotlib/TriSurface.html">
+         Matplotlib
+        </a>
+        or
+        <a class="reference external" href="http://holoviews.org/reference/elements/plotly/TriSurface.html">
+         Plotly
+        </a>
+        ,
+but other tools are needed for larger datasets or for volumetric
+rendering with transparent/semitransparent voxels. Improving 3D
+support could be as simple as providing examples for using existing
+tools like
+        <a class="reference external" href="https://github.com/maartenbreddels/ipyvolume">
+         IPyVolume
+        </a>
+        and
+        <a class="reference external" href="http://vaex.astro.rug.nl">
+         Vaex
+        </a>
+        , or by wrapping JavaScript
+libraries like
+        <a class="reference external" href="https://threejs.org">
+         ThreeJS
+        </a>
+        and
+        <a class="reference external" href="https://cesiumjs.org">
+         CesiumJS
+        </a>
+        .  There’s a first
+        <a class="reference external" href="http://assets.holoviews.org/demos/HoloViews_CesiumJS.html">
+         prototype
+for a CesiumJS backend now available
+        </a>
+        ,
+but lots more work to do to make it practical for real use.
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Toolbox for GIS primitives
+        </strong>
+        : The PyViz stack is fully general
+purpose, supporting data of any type, and already has many advantages
+over traditional Earth-specific approaches to dealing with data with
+latitude and longitude coordinates. However, existing GIS packages
+make certain domain-specific functionality simpler, such as computing
+vegetation indexes and other common manipulations of Earth-related
+data. It would be helpful to provide a well-tested collection of
+these common operations built on the PyViz stack so that it can be a
+more “drop-in” replacement for proprietary GIS systems.  Examples
+of desirable functionality:
+       </p>
+       <ul class="simple">
+        <li>
+         Fast geographic indexes for Datashader: NDVI, slope, aspect, hillshade
+        </li>
+        <li>
+         <dl class="first docutils">
+          <dt>
+           Fast geographic operations for Datashader
+          </dt>
+          <dd>
+           <ul class="first last">
+            <li>
+             <dl class="first docutils">
+              <dt>
+               Zonal statistics for an ROI
+              </dt>
+              <dd>
+               <ul class="first last">
+                <li>
+                 Percentage area by category
+                </li>
+                <li>
+                 Summary stats
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </li>
+            <li>
+             <dl class="first docutils">
+              <dt>
+               Hydrology tools
+              </dt>
+              <dd>
+               <ul class="first last">
+                <li>
+                 Flow accumulation
+                </li>
+                <li>
+                 Flow direction
+                </li>
+                <li>
+                 Watershed
+                </li>
+               </ul>
+              </dd>
+             </dl>
+            </li>
+            <li>
+             Euclidean distance based on input geometry (lines / polygons / points)
+            </li>
+            <li>
+             Suitability analysis (combining multiple binary aggregates into a yes/no composite)
+            </li>
+            <li>
+             Generate contours from aggregate
+            </li>
+            <li>
+             Calculate viewshed from aggregate
+            </li>
+           </ul>
+          </dd>
+         </dl>
+        </li>
+        <li>
+         Color ramps for showing elevation
+        </li>
+        <li>
+         Bokeh interfaces for external geo data sources (GPX, KML, WMS)
+        </li>
+        <li>
+         Datashader-based WMS Data Server (aggregating an incoming WMS query on demand)
+        </li>
+       </ul>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Additional plot types
+        </strong>
+        : HoloViews includes an extensive range of
+plot types (Elements) covering the typical visualizations used across
+many domains. However, there are always more that can be included,
+and some domains are not as well covered as others. Some examples
+that we’d like to include are:
+       </p>
+       <ul class="simple">
+        <li>
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Parallel_coordinates">
+          parallel
+coordinates
+         </a>
+         and
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Radar_chart">
+          radar charts
+         </a>
+         (polar parallel coordinates, or star charts)
+        </li>
+        <li>
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Treemapping">
+          treemaps
+         </a>
+        </li>
+        <li>
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Dendrogram">
+          dendrograms
+         </a>
+         and
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Cladogram">
+          cladograms
+         </a>
+        </li>
+        <li>
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Radial_tree">
+          radial trees
+         </a>
+        </li>
+        <li>
+         <a class="reference external" href="https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing">
+          packed
+bubbles
+         </a>
+        </li>
+        <li>
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Funnel_chart">
+          funnel charts
+         </a>
+        </li>
+       </ul>
+       <p>
+        (And if someone wants to write and maintain a
+        <a class="reference external" href="https://en.wikipedia.org/wiki/Pie_chart">
+         pie chart
+        </a>
+        even though they are
+nearly always the wrong thing to do, we can probably be convinced
+to allow it. :-)
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         More extensive documentation about deployment
+        </strong>
+        : PyViz includes a
+tutorial on
+        <a class="reference external" href="http://pyviz.org/tutorial/13_Deploying_Bokeh_Apps.html">
+         deployment using Bokeh
+server
+        </a>
+        ,
+but there are many other ways to set up live Python-backed plots,
+including creating a Flask server or embedding into Django, along
+with deploying via Heroku or Google Cloud and AWS or via the
+Anaconda Enterprise platform or on
+        <a class="reference external" href="https://mybinder.org">
+         MyBinder
+        </a>
+        . Documenting and testing these
+possibilities takes time and effort, and any contributions or
+examples that will help people get started and decide between the
+alternatives would be very helpful.
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Better native GUI support
+        </strong>
+        : Right now, PyViz focuses exclusively
+on tools that work well in web browsers, because it aims to support
+the entire workflow from initial exploration to delivery of fully
+functional interactive applications to other stakeholders. One
+consequence is that it doesn’t currently support the types of
+interactivity provided by Matplotlib when used with its native GUI
+backends like Qt. It should be feasible to make the interactive
+functionality in HoloViews (e.g. streams and DynamicMaps) support
+native GUI apps as well, allowing the same user code to be applied to
+a wider range of use cases.
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Altair/Vega/Vega-lite integration
+        </strong>
+        : HoloViews and Bokeh provide
+declarative syntaxes that can be expressed in purely static form, and
+it should be feasible to write a translator between them and other
+declarative libraries like Altair, Vega, and Vega-Lite. Those
+libraries are currently focused primarily on statistical
+visualizations, not covering areas like multidimensional (image-like)
+plotting where HoloViews and Bokeh are also used, but they offer a
+common interchange format that could be helpful for interoperating
+with other tools. Writing an import and export facility that covers
+the bulk of the shared functionality should not be a major
+undertaking and could open up interesting new applications.
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         Better integration with ____
+        </strong>
+        : There are a lot of tools in the
+Python and other scientific software ecosystems that could be
+included in PyViz or made easily usable from it. NetworkX (already
+usable but not fully exploited yet) is just one example of many;
+suggestions welcome!
+       </p>
+      </li>
+      <li>
+       <p class="first">
+        <strong>
+         GUI-based plot creation
+        </strong>
+        : (As in business intelligence and
+dashboarding applications.) The powerful components available
+in PyViz are ready for Python users to put together into
+visualizations and apps, but they would also make a very strong
+base for building a graphical approach for working with data, with
+drag and drop layouts, GUI-configurable mapping of data sources, and
+GUI configuration of the plot objects. HoloViews components are
+already declarative, which means that they can be mapped directly
+into GUI elements for changing their parameters dynamically. Paired
+with the new
+        <a class="reference external" href="https://github.com/ContinuumIO/intake">
+         Intake
+        </a>
+        library for declaring data sources, it would be possible to build a
+fully graphical interface for working with data that would have the
+advantage of being backed by a fully configurable, open-source set
+of plotting library elements, ensuring that when people outgrow
+the GUI framework they can easily extend and expand anything
+developed in it, unlike current business intelligence and
+dashboarding applications.
+       </p>
+      </li>
+     </ol>
+     <p>
+      If any of the functionality above is interesting to you (or you have
+ideas of your own!) and can offer help with implementation, please
+open an issue on this repository or on the specific subproject
+repository involved. And if you are lucky enough to be in a position
+to fund our developers to work on it, please contact
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        sales@anaconda.com
+       </span>
+      </code>
+      .
+     </p>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

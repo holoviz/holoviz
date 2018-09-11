@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   SciPy 2018 tutorial — PyViz 0.9.12.post1+g99f19cc documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="../_static/site.css" rel="stylesheet"/>
+  <link href="../_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="../_static/js/main.js">
+  </script>
+  <script src="../_static/nbsite.js">
+  </script>
+  <script src="../_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="../_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/tutorial/scipy18.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="../index.html">
+     <img alt="Logo" src="../_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="../index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="../installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="../FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="../about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="../search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="scipy-2018-tutorial">
+     <h1>
+      SciPy 2018 tutorial
+      <a class="headerlink" href="#scipy-2018-tutorial" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      <div class="inner_cell">
+       <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Welcome-to-the-PyViz-tutorial-at-SciPy-2018!">
+         Welcome to the PyViz tutorial at SciPy 2018!
+         <a class="anchor-link" href="#Welcome-to-the-PyViz-tutorial-at-SciPy-2018!">
+          ¶
+         </a>
+        </h2>
+        <p>
+         This tutorial will take you through all of the steps involved in exploring data of many different types and sizes, building simple and complex figures, working with billions of data points, adding interactive behavior, widgets and controls, and deploying full dashboards and applications.
+        </p>
+        <p>
+         The tutorial outlined here is given as a half-day course led by trained instructors.  For self-paced usage, you should consult the main
+         <a href="index.html">
+          tutorial index
+         </a>
+         .
+        </p>
+        <p>
+         We'll be using a wide range of open-source Python libraries, including the
+         <a href="http://anaconda.com">
+          Anaconda
+         </a>
+         -supported tools
+         <a href="http://holoviews.org">
+          HoloViews
+         </a>
+         ,
+         <a href="http://geo.holoviews.org">
+          GeoViews
+         </a>
+         ,
+         <a href="http://bokeh.pydata.org">
+          Bokeh
+         </a>
+         ,
+         <a href="https://datashader.org">
+          Datashader
+         </a>
+         , and
+         <a href="http://ioam.github.io/param">
+          Param
+         </a>
+         :
+        </p>
+        <p>
+         <img height="148" src="assets/hv_gv_bk_ds_pa.png" width="800"/>
+        </p>
+        <p>
+         These libraries have been carefully designed to work together to address a very wide range of data-analysis and visualization tasks, making it simple to discover, understand, and communicate the important properties of your data.
+        </p>
+        <p>
+         <img align="center" src="./assets/tutorial_app.gif"/>
+        </p>
+        <p>
+         This notebook serves as the homepage of the tutorial, including a table of contents listing each tutorial section. Here, timings listed in brackets ("
+         <em>
+          [2 min]
+         </em>
+         ") indicate material that will be skimmed in the live tutorial, but which can be examined later in more detail as self-paced material.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      <div class="inner_cell">
+       <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Index-and-Schedule">
+         Index and Schedule
+         <a class="anchor-link" href="#Index-and-Schedule">
+          ¶
+         </a>
+        </h2>
+        <ul>
+         <li>
+          <p>
+           <em>
+            Overview
+           </em>
+          </p>
+          <ul>
+           <li>
+            <strong>
+             10 min
+            </strong>
+            <a href="./00_Setup.html">
+             0 - Setup
+            </a>
+            : Setting up the environment and data files.
+           </li>
+           <li>
+            <strong>
+             40 min
+            </strong>
+            <a href="./01_Workflow_Introduction.html">
+             1 - Workflow Introduction
+            </a>
+            : Overview of solving a simple but complete data-science task, using each of the main PyViz tools.
+           </li>
+           <li>
+            <strong>
+             5 min
+            </strong>
+            <em>
+             Break
+            </em>
+            <br/>
+            <br/>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <p>
+           <em>
+            Making data visualizable
+           </em>
+          </p>
+          <ul>
+           <li>
+            <strong>
+             30 min
+            </strong>
+            <a href="./02_Annotating_Data.html">
+             2 - Annotating Data
+            </a>
+            : Using HoloViews Elements to make your data instantly visualizable
+           </li>
+           <li>
+            <strong>
+             20 min
+            </strong>
+            <a href="./03_Customizing_Visual_Appearance.html">
+             3 - Customizing Visual Appearance
+            </a>
+            : How to change the appearance and output format of elements.
+           </li>
+           <li>
+            <strong>
+             10 min
+            </strong>
+            <a href="../exercises/ercise-1-making-data-visualizable.html">
+             <em>
+              Exercise 1
+             </em>
+            </a>
+           </li>
+           <li>
+            <strong>
+             10 min
+            </strong>
+            <em>
+             Break
+            </em>
+            <br/>
+            <br/>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <p>
+           <em>
+            Datasets and collections of data
+           </em>
+          </p>
+          <ul>
+           <li>
+            <strong>
+             30 min
+            </strong>
+            <a href="./04_Working_with_Tabular_Data.html">
+             4 - Working with Tabular Data
+            </a>
+            : Exploring tabular/columnar data.
+           </li>
+           <li>
+            <em>
+             [2 min]
+            </em>
+            <a href="./05_Working_with_Gridded_Data.html">
+             5 - Working with Gridded Data
+            </a>
+            : Exploring a gridded (n-dimensional) dataset.
+           </li>
+           <li>
+            <strong>
+             10 min
+            </strong>
+            <a href="../exercises/ercise-2-datasets-and-collections-of-data.html">
+             <em>
+              Exercise 2
+             </em>
+            </a>
+           </li>
+           <li>
+            <em>
+             [2 min]
+            </em>
+            <a href="./06_Network_Graphs.html">
+             6 - Network Graphs
+            </a>
+            : Exploring network graph data.
+           </li>
+           <li>
+            <em>
+             [2 min]
+            </em>
+            <a href="./07_Geographic_Data.html">
+             7 - Geographic Data
+            </a>
+            : Plotting data in geographic coordinates.
+           </li>
+           <li>
+            <em>
+             [omit]
+            </em>
+            <a href="../exercises/ercise-3-networks-and-geoviews.html">
+             <em>
+              Exercise 3
+             </em>
+            </a>
+            <br/>
+            <br/>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <p>
+           <em>
+            Dynamic interactions
+           </em>
+          </p>
+          <ul>
+           <li>
+            <strong>
+             25 min
+            </strong>
+            <a href="./08_Custom_Interactivity.html">
+             8 - Custom Interactivity
+            </a>
+            : Using HoloViews "streams" to add interactivity to your visualizations.
+           </li>
+           <li>
+            <em>
+             [2 min]
+            </em>
+            <a href="./09_Operations_and_Pipelines.html">
+             9 - Operations and Pipelines
+            </a>
+            : Dynamically transforming your data as needed
+           </li>
+           <li>
+            <strong>
+             20 min
+            </strong>
+            <a href="./10_Working_with_Large_Datasets.html">
+             10 - Working with Large Datasets
+            </a>
+            : Using datasets too large to feed directly to your browser.
+           </li>
+           <li>
+            <em>
+             [2 min]
+            </em>
+            <a href="./11_Streaming_Data.html">
+             11 - Streaming Data
+            </a>
+            : Live plots of dynamically updated data sources.
+           </li>
+           <li>
+            <strong>
+             15 min
+            </strong>
+            <a href="../exercises/ercise-4-dynamic-interactions.html">
+             <em>
+              Exercise 4
+             </em>
+            </a>
+            <br/>
+            <br/>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <p>
+           <em>
+            Apps and dashboards
+           </em>
+          </p>
+          <ul>
+           <li>
+            <em>
+             [1 min]
+            </em>
+            <a href="./12_Parameters_and_Widgets.html">
+             12 - Parameters and Widgets
+            </a>
+            : Declarative custom controls
+           </li>
+           <li>
+            <em>
+             [1 min]
+            </em>
+            <a href="./13_Deploying_Bokeh_Apps.html">
+             13 - Deploying Bokeh Apps
+            </a>
+            : Deploying your visualizations using Bokeh server.
+           </li>
+           <li>
+            <em>
+             [1 min]
+            </em>
+            <a href="./A1_Exploration_with_Containers.html">
+             A1 - Exploration with Containers
+            </a>
+            : Containers that let you explore complex datasets.
+           </li>
+           <li>
+            <em>
+             [1 min]
+            </em>
+            <a href="./A2_Dashboard_Workflow.html">
+             A2 - Dashboard Workflow
+            </a>
+            : PyViz intro for people focusing on dashboards.
+           </li>
+           <li>
+            <em>
+             [omit]
+            </em>
+            <a href="../exercises/ercise-5-exporting-and-deploying-apps.html">
+             <em>
+              Exercise 5
+             </em>
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      <div class="inner_cell">
+       <div class="text_cell_render border-box-sizing rendered_html">
+        <h2 id="Related-links">
+         Related links
+         <a class="anchor-link" href="#Related-links">
+          ¶
+         </a>
+        </h2>
+        <p>
+         You will find extensive support material on the websites for each package. You may find these links particularly useful during the tutorial:
+        </p>
+        <ul>
+         <li>
+          <a href="http://holoviews.org/reference/index.html">
+           HoloViews reference gallery
+          </a>
+          : Visual reference of all elements and containers, along with some other components
+         </li>
+         <li>
+          <a href="http://holoviews.org/getting_started/index.html">
+           HoloViews getting-started guide
+          </a>
+          : Covers some of the same topics as this tutorial, but without exercises
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <hr class="docutils"/>
+     <p>
+      <a class="reference external" href="https://raw.githubusercontent.com/pyviz/pyviz/master/examples/scipy18.ipynb">
+       Right click to download this notebook from GitHub.
+      </a>
+     </p>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="../installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="../FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="../about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

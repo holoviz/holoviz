@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   PyViz 0.9.12.post1+g99f19cc documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/index.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="#">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="#">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <a class="reference internal image-reference" href="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/PyViz_logo_wm.png">
+     <img alt="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/PyViz_logo_wm.png" class="align-left" src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/PyViz_logo_wm.png" style="height: 220px;"/>
+    </a>
+    <p style="font-size:30px">
+     <b>
+      How to solve visualization problems with Python tools
+     </b>
+    </p>
+    <p>
+     The
+     <a class="reference external" href="http://pyviz.org">
+      PyViz website
+     </a>
+     and corresponding
+     <a class="reference external" href="https://github.com/pyviz/pyviz">
+      GitHub repository
+     </a>
+     provide examples, demos, and training materials documenting how to solve visualization problems using interactive Python-based tools in your web browser, including
+     <a class="reference external" href="http://bokeh.pydata.org">
+      Bokeh,
+     </a>
+     <a class="reference external" href="http://holoviews.org">
+      HoloViews,
+     </a>
+     <a class="reference external" href="http://geo.holoviews.org">
+      GeoViews,
+     </a>
+     <a class="reference external" href="https://github.com/bokeh/datashader">
+      Datashader,
+     </a>
+     and
+     <a class="reference external" href="https://github.com/ioam/param">
+      Param.
+     </a>
+    </p>
+    <p>
+     PyViz includes:
+    </p>
+    <ul class="simple">
+     <li>
+      A
+      <a class="reference external" href="https://conda.io">
+       Conda
+      </a>
+      package “pyviz” that makes it simple to install matching versions of all the libraries.
+     </li>
+     <li>
+      A comprehensive
+      <a class="reference external" href="tutorial/index">
+       tutorial
+      </a>
+      showing how to use these tools together to do a wide range of different tasks.
+     </li>
+     <li>
+      Sample datasets to work with.
+     </li>
+    </ul>
+    <p>
+     Some of the many Python tools that PyViz will help you understand and get started with:
+    </p>
+    <div style="margin:10px">
+     <a href="http://hvplot.pyviz.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/hvplot.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://holoviews.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/holoviews.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://geoviews.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/geoviews.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://datashader.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/datashader.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://bokeh.pydata.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/bokeh.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://jupyter.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/jupyter.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://matplotlib.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/matplotlib_wm.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://scitools.org.uk/cartopy">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/cartopy.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:100px"/>
+     </a>
+     <a href="https://docs.scipy.org/doc/scipy/reference">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/scipy.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://param.pyviz.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/param.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://dask.pydata.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/dask.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:140px"/>
+     </a>
+     <a href="http://numba.pydata.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/numba.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:155px"/>
+     </a>
+     <a href="http://networkx.github.io">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/networkx.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://xarray.pydata.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/xarray_wm.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:120px"/>
+     </a>
+     <a href="http://pandas.pydata.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/pandas.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:125px"/>
+     </a>
+     <a href="http://numpy.org">
+      <img src="https://raw.githubusercontent.com/pyviz/pyviz/master/notebooks/assets/numpy.png" style="margin:8px; display:inline; object-fit:scale-down; max-height:130px"/>
+     </a>
+    </div>
+    <p>
+     You can view the
+     <a class="reference external" href="tutorial/index">
+      Tutorial
+     </a>
+     online, to get an idea what is covered.  If it looks relevant to you, you can then follow the steps outlined in
+     <a class="reference external" href="installation.html">
+      Installation
+     </a>
+     to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You’ll then have simple-to-adapt starting points for solving your own visualization problems.
+    </p>
+    <div class="toctree-wrapper compound">
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   Installation — PyViz 0.9.12.post1+g99f19cc documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/installation.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="index.html">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="#">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="installation">
+     <h1>
+      Installation
+      <a class="headerlink" href="#installation" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <div class="section" id="step-1-install-a-miniconda-or-anaconda-environment">
+      <h2>
+       Step 1: Install a
+       <a class="reference external" href="http://conda.pydata.org/miniconda.html">
+        Miniconda
+       </a>
+       (or
+       <a class="reference external" href="https://www.continuum.io/downloads">
+        Anaconda
+       </a>
+       ) environment
+       <a class="headerlink" href="#step-1-install-a-miniconda-or-anaconda-environment" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google Chrome) should be suitable. 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
+      </p>
+      <p>
+       If you don’t already have conda on your machine, you can get it from
+       <a class="reference external" href="http://conda.pydata.org/miniconda.html">
+        Anaconda.com
+       </a>
+       , and then open a terminal window.
+      </p>
+      <p>
+       If you do have conda already, it’s a good idea to update it (running it twice to get the very latest) to ensure you have the latest version:
+      </p>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre>
+       </div>
+      </div>
+      <p>
+       [OPTIONAL] If you want to keep things organized, you can then create a separate Conda environment to work in for this tutorial:
+      </p>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyviz</span><span class="o">-</span><span class="n">tutorial</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span>
+<span class="o">&gt;</span> <span class="n">source</span> <span class="n">activate</span> <span class="n">pyviz</span><span class="o">-</span><span class="n">tutorial</span>
+</pre>
+       </div>
+      </div>
+      <p>
+       (omitting “source” if you are on Windows).
+      </p>
+     </div>
+     <div class="section" id="step-2-install-pyviz-and-other-required-libraries">
+      <h2>
+       Step 2: Install
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz
+        </span>
+       </code>
+       and other required libraries
+       <a class="headerlink" href="#step-2-install-pyviz-and-other-required-libraries" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pyviz</span> <span class="n">pyviz</span>
+</pre>
+       </div>
+      </div>
+     </div>
+     <div class="section" id="step-3-install-the-tutorials-in-your-current-working-directory">
+      <h2>
+       Step 3: Install the tutorials in your current working directory
+       <a class="headerlink" href="#step-3-install-the-tutorials-in-your-current-working-directory" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">pyviz</span> <span class="o">--</span><span class="n">install</span><span class="o">-</span><span class="n">examples</span> <span class="n">pyviz</span><span class="o">-</span><span class="n">tutorial</span>
+<span class="o">&gt;</span> <span class="n">cd</span> <span class="n">pyviz</span><span class="o">-</span><span class="n">tutorial</span>
+</pre>
+       </div>
+      </div>
+      <p>
+       This will create a copy of the notebooks and related files needed for the tutorial in a new subdirectory
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz-tutorial/
+        </span>
+       </code>
+       .
+      </p>
+      <p>
+       Note: If you have previously installed the examples and want to keep
+any of your own changes, rename your existing
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz-tutorial
+        </span>
+       </code>
+       directory before running the above command (which will overwrite any
+existing files).
+      </p>
+     </div>
+     <div class="section" id="step-4-download-the-sample-data">
+      <h2>
+       Step 4: Download the sample data
+       <a class="headerlink" href="#step-4-download-the-sample-data" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">pyviz</span> <span class="o">--</span><span class="n">download</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">data</span>
+</pre>
+       </div>
+      </div>
+      <p>
+       (Small datasets come with the examples, but large ones like the NYC Taxi dataset have to be downloaded separately, which can take some time.)
+      </p>
+     </div>
+     <div class="section" id="step-5-launch-jupyter-notebook">
+      <h2>
+       Step 5: Launch Jupyter Notebook
+       <a class="headerlink" href="#step-5-launch-jupyter-notebook" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       You can then launch the notebook server and client:
+      </p>
+      <div class="highlight-default notranslate">
+       <div class="highlight">
+        <pre><span></span><span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+</pre>
+       </div>
+      </div>
+      <p>
+       A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the “notebooks” subdirectory, as these show how to use the others in the “exercises” directory along with the applications in the “apps” directory.  The first notebook to load is the index page
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         index.ipynb
+        </span>
+       </code>
+       , which makes it simple to load each of the others.
+      </p>
+      <p>
+       If you don’t see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually.
+      </p>
+     </div>
+     <div class="section" id="step-6-test-that-everything-is-working">
+      <h2>
+       Step 6: Test that everything is working
+       <a class="headerlink" href="#step-6-test-that-everything-is-working" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       You can see if everything has installed correctly by selecting the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         0
+        </span>
+        <span class="pre">
+         -
+        </span>
+        <span class="pre">
+         Setup
+        </span>
+       </code>
+       notebook from the index and doing “Cell/Run All” in the menus. There may be warnings on some platforms, but you’ll know it is working if you see the orange HoloViews logo after it runs
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         hv.extension()
+        </span>
+       </code>
+       .
+      </p>
+     </div>
+     <div class="section" id="step-7-run-the-tutorials">
+      <h2>
+       Step 7: Run the tutorials
+       <a class="headerlink" href="#step-7-run-the-tutorials" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       Now you can run through the
+       <a class="reference external" href="tutorial/index.html">
+        tutorials
+       </a>
+       , learn how to use all these tools, and apply them to anything you need to visualize.  Have fun!
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="#">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>
