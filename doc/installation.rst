@@ -39,6 +39,10 @@ Step 3: Install the tutorials in your current working directory
 
 This will create a copy of the notebooks and related files needed for the tutorial in a new subdirectory ``pyviz-tutorial/``.
 
+Note: If you have previously installed the examples and want to keep
+any of your own changes, rename your existing ``pyviz-tutorial``
+directory before running the above command (which will overwrite any
+existing files).
 
 Step 4: Download the sample data
 --------------------------------
