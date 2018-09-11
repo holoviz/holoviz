@@ -10,7 +10,7 @@ dependencies:
   - holoviews=1.11.0a4
   - geoviews=1.5.4a6
   - hvplot=0.2.1
-  - datashader=0.6.7
+  - datashader=0.6.8
   - panel=0.1.0a3
   - param=1.8.0a2
   - paramnb=2.0.4
