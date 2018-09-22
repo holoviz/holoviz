@@ -20,14 +20,14 @@ stages:
 #    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: pip_dev_package
     if: branch = packaging
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$    
+#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: conda_package
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   # TODO: add conditions for doc build
   - doc
   - name: unpinned_upcoming_trouble
     if: branch = packaging
-#    if: type = cron  
+#    if: type = cron
 
 
 # TODO: caching
@@ -64,7 +64,7 @@ jobs:
 #      before_script: true
 #      script:
 #        - mkdir $HOME/tmp && cd $HOME/tmp
-#        # TODO: pyctdev should probably support this whole thing	
+#        # TODO: pyctdev should probably support this whole thing
 #        - conda create -n pyviz-tutorial python=3.6
 #        - source activate pyviz-tutorial
 #        - conda install -c pyviz pyviz
@@ -75,7 +75,7 @@ jobs:
 
 #    - <<: *package_test
 #      os: osx
-#      # travis/osx is not set up like travis/linux      
+#      # travis/osx is not set up like travis/linux
 #      env: PYENV_VERSION=3.6.4
 #      before_install:
 #        - eval "$(pyenv init -)"
