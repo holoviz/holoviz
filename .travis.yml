@@ -11,7 +11,7 @@ env:
     - PIN="--pin-deps"
 
 stages:
-  - name: test_packages
+  - name: test_user_install
     if: branch = packaging
 #    if: type = cron
   - test
@@ -62,7 +62,7 @@ jobs:
 
     - &package_test
       <<: *default
-      stage: test_packages
+      stage: test_user_install
       before_script: true
       script:
         - mkdir $HOME/tmp && cd $HOME/tmp
@@ -70,8 +70,11 @@ jobs:
         - conda create -n pyviz-tutorial python=3.6
         - source activate pyviz-tutorial
         - conda install -c pyviz pyviz
+        # TODO: swap in for the separate cmds when new packages appear
         - pyviz examples
+        - pyviz --install-examples pyviz-tutorial
         - cd pyviz-examples
+        - pyviz --download-sample-data
         - conda install -c pyviz nbsmoke
         - pytest --nbsmoke-run -k ".ipynb"
 

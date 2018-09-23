@@ -1,4 +1,4 @@
-# equivalent of travis test_packages stage (appveyor doesn't have stages)
+# equivalent of travis test_user_install stage (appveyor doesn't have stages)
 
 environment:
   matrix:
