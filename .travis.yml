@@ -16,13 +16,13 @@ stages:
 #    if: type = cron
   - test
   - name: conda_dev_package
-    if: branch = packaging
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: pip_dev_package
-    if: branch = packaging
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: conda_package
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
+  - name: pip_package
+    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$    
   # TODO: add conditions for doc build
   - doc
   - name: unpinned_upcoming_trouble
@@ -142,13 +142,13 @@ jobs:
 
     ## release packages
 
-#    - <<: *pip_pkg
-#      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
-#      stage: pip_package
+    - <<: *pip_pkg
+      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
+      stage: pip_package
 
     - <<: *conda_pkg
       stage: conda_package
-      env: LABELS=$LABELS_REL CHANS=$CHANS_DEV
+      env: LABELS=$LABELS_REL CHANS=$CHANS_REL
 
 
 notifications:
