@@ -71,8 +71,8 @@ jobs:
         - source activate pyviz-tutorial
         - conda install -c pyviz pyviz
         # TODO: swap in for the separate cmds when new packages appear
-        - pyviz examples
-        - pyviz --install-examples pyviz-tutorial
+        #- pyviz examples
+        - pyviz --install-examples pyviz-examples
         - cd pyviz-examples
         - pyviz --download-sample-data
         - conda install -c pyviz nbsmoke
