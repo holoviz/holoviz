@@ -11,8 +11,8 @@ env:
     - PIN="--pin-deps"
 
 stages:
-#  - name: test_packages
-#    if: branch = packaging
+  - name: test_packages
+    if: branch = packaging
 #    if: type = cron
   - test
   - name: conda_dev_package
@@ -22,9 +22,11 @@ stages:
   - name: conda_package
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: pip_package
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$    
-  # TODO: add conditions for doc build
-  - doc
+    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
+  - name: website_dev
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
+  - name: website_release
+    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
   - name: unpinned_upcoming_trouble
     if: branch = packaging
 #    if: type = cron
@@ -58,32 +60,34 @@ jobs:
       stage: unpinned_upcoming_trouble
       env: PIN=
 
-#    - &package_test
-#      <<: *default
-#      stage: test_packages
-#      before_script: true
-#      script:
-#        - mkdir $HOME/tmp && cd $HOME/tmp
-#        # TODO: pyctdev should probably support this whole thing
-#        - conda create -n pyviz-tutorial python=3.6
-#        - source activate pyviz-tutorial
-#        - conda install -c pyviz pyviz
-#        - pyviz examples
-#        - cd pyviz-examples
-#        - conda install -c pyviz/label/dev nbsmoke
-#        - pytest --nbsmoke-run -k ".ipynb"
-
-#    - <<: *package_test
-#      os: osx
-#      # travis/osx is not set up like travis/linux
-#      env: PYENV_VERSION=3.6.4
-#      before_install:
-#        - eval "$(pyenv init -)"
-#        - pyenv install $PYENV_VERSION
-
-    - <<: *default
-      stage: doc
+    - &package_test
+      <<: *default
+      stage: test_packages
+      before_script: true
       script:
+        - mkdir $HOME/tmp && cd $HOME/tmp
+        # TODO: pyctdev should probably support this whole thing
+        - conda create -n pyviz-tutorial python=3.6
+        - source activate pyviz-tutorial
+        - conda install -c pyviz pyviz
+        - pyviz examples
+        - cd pyviz-examples
+        - conda install -c pyviz nbsmoke
+        - pytest --nbsmoke-run -k ".ipynb"
+
+    - <<: *package_test
+      os: osx
+      # travis/osx is not set up like travis/linux
+      env: PYENV_VERSION=3.6.4
+      before_install:
+        - eval "$(pyenv init -)"
+        - pyenv install $PYENV_VERSION
+
+    - &website
+      <<: *default
+      stage: website_release
+      script:
+        # TODO: set chans according to dev/rel
         - doit develop_install $CHANS_DEV -o doc
         - bokeh sampledata
         - pyviz fetch-data --path=examples
@@ -95,28 +99,26 @@ jobs:
         - touch ./builtdocs/.nojekyll # for github pages
         - nbsite_cleandisthtml.py ./builtdocs take_a_chance
       deploy:
-#        - provider: pages
-#          skip_cleanup: true
-#          github_token: $GITHUB_TOKEN
-#          local_dir: ./builtdocs
-#          fqdn: pyviz.org
-#          on:
-#            tags: true
-#        - provider: pages
-#          skip_cleanup: true
-#          github_token: $GITHUB_TOKEN
-#          local_dir: ./doc/_build/html
-#          repo: ioam-docs/pyviz-master
-#          on:
-#            branch: master
         - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./builtdocs
-          repo: ioam-docs/pyviz-tmp
+          fqdn: pyviz.org
           on:
+            tags: true
             all_branches: true
-            condition: $TRAVIS_BRANCH != master
+           
+    - <<: *website
+      stage: website_dev
+      deploy:
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./builtdocs
+          repo: ioam-docs/pyviz-dev
+          on:
+            tags: true
+            all_branches: true
 
 
     ## dev packages
