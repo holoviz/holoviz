@@ -26,7 +26,7 @@ Step 2: Install ``pyviz`` and other required libraries
 
 ::
 
-   > conda install -c pyviz pyviz
+   > conda install -c pyviz/labe/dev pyviz
 
 
 Step 3: Install the tutorials in your current working directory and download data
