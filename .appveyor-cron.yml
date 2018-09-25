@@ -15,7 +15,7 @@ build: off
 test_script:
   - "conda create -n pyviz-tutorial python=3.6"
   - "activate pyviz"
-  - "conda install -c pyviz pyviz"
+  - "conda install -c pyviz/label/dev pyviz"
 #  - "pyviz examples"
   - "pyviz --install-examples pyviz-examples"
   - "cd pyviz-examples"

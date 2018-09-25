@@ -69,7 +69,7 @@ jobs:
         # TODO: pyctdev should probably support this whole thing
         - conda create -n pyviz-tutorial python=3.6
         - source activate pyviz-tutorial
-        - conda install -c pyviz pyviz
+        - conda install -c pyviz/label/dev pyviz
         # TODO: swap in for the separate cmds when new packages appear
         #- pyviz examples
         - pyviz --install-examples pyviz-examples
