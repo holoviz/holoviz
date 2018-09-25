@@ -70,12 +70,15 @@ jobs:
         - conda create -n pyviz-tutorial python=3.6
         - source activate pyviz-tutorial
         - conda install -c pyviz/label/dev pyviz
-        # TODO: swap in for the separate cmds when new packages appear
+        # TODO: swap "pyviz examples" in for the separate install & download cmds when new packages appear
+        # and apply same changes to appveyor-cron
         #- pyviz examples
         - pyviz --install-examples pyviz-examples
         - cd pyviz-examples
         - pyviz --download-sample-data
         - conda install -c pyviz nbsmoke
+        # TODO: this isn't a documented step
+        - bokeh sampledata
         - pytest --nbsmoke-run -k ".ipynb"
 
     - <<: *package_test
