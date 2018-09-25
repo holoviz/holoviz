@@ -18,7 +18,6 @@ install:
 build: off
 
 test_script:
-  # (same as python pyviz/download_sample_data.py, but for quick tests)
-  - "move examples/data/nyc_taxi_50k.parq examples/data/nyc_taxi_wide.parq"
+  - "move examples\\data\\nyc_taxi_50k.parq examples\\data\\nyc_taxi_wide.parq"
   - "pyviz fetch-data --path=examples"
   - "doit test_examples"
