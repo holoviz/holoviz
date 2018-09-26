@@ -65,7 +65,7 @@ jobs:
       before_script: true
       script:
         - mkdir $HOME/tmp && cd $HOME/tmp
-        # TODO: pyctdev should probably support this whole thing
+        # TODO: pyctdev should probably support this whole section
         - conda create -n pyviz-tutorial python=3.6
         - source activate pyviz-tutorial
         - conda install -c pyviz/label/dev pyviz
@@ -78,7 +78,7 @@ jobs:
         - conda install -c pyviz nbsmoke
         # TODO: this isn't a documented step
         - bokeh sampledata
-        - pytest --nbsmoke-run -k ".ipynb"
+        - pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps
 
     - <<: *package_test
       os: osx
