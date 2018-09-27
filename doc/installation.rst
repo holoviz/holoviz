@@ -29,31 +29,20 @@ Step 2: Install ``pyviz`` and other required libraries
    > conda install -c pyviz pyviz
 
 
-Step 3: Install the tutorials in your current working directory
----------------------------------------------------------------
+Step 3: Install the tutorials in your current working directory and download data
+---------------------------------------------------------------------------------
 
 ::
 
-   > pyviz --install-examples pyviz-tutorial
-   > cd pyviz-tutorial
+   > pyviz examples
+   > cd pyviz-examples
 
-This will create a copy of the notebooks and related files needed for the tutorial in a new subdirectory ``pyviz-tutorial/``.
+This will (a) create a copy of the notebooks and related files needed for the tutorial in a new subdirectory ``pyviz-examples/tutorial``, and (b) download larger sample datasets such as NYC Taxi.
 
-Note: If you have previously installed the examples and want to keep
-any of your own changes, rename your existing ``pyviz-tutorial``
-directory before running the above command (which will overwrite any
-existing files).
+If you only want to get a copy of the examples, or only want to download the data, there are individual commands `pyviz copy-examples` and `pyviz fetch-data`; run e.g. `pyviz copy-examples --help` for more info.
 
-Step 4: Download the sample data
---------------------------------
 
-::
-
-   > pyviz --download-sample-data
-
-(Small datasets come with the examples, but large ones like the NYC Taxi dataset have to be downloaded separately, which can take some time.)
-
-Step 5: Launch Jupyter Notebook
+Step 4: Launch Jupyter Notebook
 -------------------------------
 
 You can then launch the notebook server and client::
@@ -65,11 +54,11 @@ A browser window with a Jupyter Notebook instance should now open, letting you s
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
 
-Step 6: Test that everything is working
+Step 5: Test that everything is working
 ---------------------------------------
 
 You can see if everything has installed correctly by selecting the ``0 - Setup`` notebook from the index and doing "Cell/Run All" in the menus. There may be warnings on some platforms, but you'll know it is working if you see the orange HoloViews logo after it runs ``hv.extension()``. 
 
-Step 7: Run the tutorials
+Step 6: Run the tutorials
 -------------------------
 Now you can run through the `tutorials <tutorial/index.html>`_, learn how to use all these tools, and apply them to anything you need to visualize.  Have fun!
