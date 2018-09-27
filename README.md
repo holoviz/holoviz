@@ -31,11 +31,3 @@ PyViz is a project supported in part by `Anaconda <https://anaconda.com>`_.
 All projects used here are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.
-
-## Developers
-
-TODO: link to dev package, dev website
-
-TODO: tell how to trigger website/dev website build.
-
-
