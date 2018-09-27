@@ -7,12 +7,8 @@ from colorcet import cm_n
 
 hv.extension('bokeh', logo=False)
 
-try:
-    df = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','data','osm-1billion.snappy.parq')).persist()
-except:
-    # TODO: can we provide a small version of the above file?
-    print("TODO: (pointer to) instructions to download osm-1billion")
-    df = None
+# TODO: provide (pointer to) instructions to download osm-1billion?
+df = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','data','osm-1billion.snappy.parq')).persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
 map_tiles = gv.WMTS(url,crs=crs.GOOGLE_MERCATOR)
