@@ -15,8 +15,7 @@ stages:
     if: type = cron
   - test
   - name: conda_dev_package
-    if: branch = packaging
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: pip_dev_package
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: conda_package
@@ -144,7 +143,7 @@ jobs:
         - doit package_build $CHANS $PKG_TEST_PYTHON $PINS --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
-      script: true #doit package_upload --token=$ANACONDA_TOKEN $LABELS
+      script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
 
     ## release packages
 
