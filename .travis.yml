@@ -12,12 +12,10 @@ env:
 
 stages:
   - name: test_user_install
-    if: branch = packaging
-#    if: type = cron
+    if: type = cron
   - test
   - name: conda_dev_package
-    if: branch = packaging
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: pip_dev_package
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: conda_package

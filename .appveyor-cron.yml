@@ -20,5 +20,5 @@ test_script:
   - "cd pyviz-examples"
   - "pyviz --download-sample-data"
   - "conda install -c pyviz nbsmoke"
-  - bokeh sampledata
+  - "bokeh sampledata"
   - "pytest --nbsmoke-run -k '.ipynb'"
