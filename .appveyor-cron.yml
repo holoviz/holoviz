@@ -13,12 +13,7 @@ install:
 build: off
 
 test_script:
-  - "conda create -n pyviz-tutorial python=3.6"
-  - "activate pyviz"
-  - "conda install -c pyviz/label/dev pyviz"
-  - "pyviz --install-examples pyviz-examples"
-  - "cd pyviz-examples"
-  - "pyviz --download-sample-data"
-  - "conda install -c pyviz nbsmoke"
-  - "bokeh sampledata"
-  - "pytest --nbsmoke-run -k '.ipynb'"
+  - "copy dodo.py tox.ini %TMP% && cd %TMP%"
+  - "doit test_user_install_part1"
+  - "activate pyviz-tutorial"
+  - "doit test_user_install_part2"

@@ -12,7 +12,8 @@ env:
 
 stages:
   - name: test_user_install
-    if: type = cron
+    if: branch = packaging
+#    if: type = cron
   - test
   - name: conda_dev_package
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
@@ -62,21 +63,11 @@ jobs:
       stage: test_user_install
       before_script: true
       script:
-        - mkdir $HOME/tmp && cd $HOME/tmp
-        # TODO: pyctdev should probably support this whole section
-        - conda create -n pyviz-tutorial python=3.6
+        # TODO: pyctdev should just support this whole section
+        - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
+        - doit test_user_install_part1
         - source activate pyviz-tutorial
-        - conda install -c pyviz/label/dev pyviz
-        # TODO: swap "pyviz examples" in for the separate install & download cmds when new packages appear
-        # and apply same changes to appveyor-cron
-        #- pyviz examples
-        - pyviz --install-examples pyviz-examples
-        - cd pyviz-examples
-        - pyviz --download-sample-data
-        - conda install -c pyviz nbsmoke
-        # TODO: this isn't a documented step
-        - bokeh sampledata
-        - pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps
+        - doit test_user_install_part2
 
     - <<: *package_test
       os: osx
