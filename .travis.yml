@@ -90,7 +90,7 @@ jobs:
       <<: *default
       stage: website_release
       script:
-        # TODO: set chans according to dev/rel
+        # TODO: set chans according to dev/rel (has to be dev for now because website currently depends on dev)
         - doit develop_install $CHANS_DEV -o doc
         - bokeh sampledata
         - pyviz fetch-data --path=examples
