@@ -1,0 +1,40 @@
+# file created by pyctdev:
+#   /cio/mc3/bin/doit env_export2 --env-name-again=pyviz --env-file=examples/environment.yml --package-name=pyviz -c pyviz/label/dev -c defaults --pin-deps
+
+name: pyviz
+channels:
+  - pyviz/label/dev
+  - defaults
+dependencies:
+  - bokeh ==1.0.0dev6
+  - cartopy
+  - cffi
+  - dask ==0.18.2
+  - datashader ==0.6.8
+  - fastparquet
+  - geopandas
+  - geoviews ==1.5.4a6
+  - holoviews ==1.11.0a4
+  - hvplot ==0.2.1
+  - ipython ==5.*
+  - ipywidgets ==7.*
+  - jupyter
+  - netcdf4
+  - networkx
+  - notebook >=5.5
+  - numpy ==1.14.5
+  - pandas ==0.23.4
+  - panel ==0.1.0a3
+  - param ==1.8.0a2
+  - parambokeh ==0.2.3
+  - paramnb ==2.0.4
+  - phantomjs
+  - pyct
+  - python ==3.6.*
+  - python-snappy
+  - rise
+  - scikit-image
+  - selenium
+  - streamz ==0.3.0
+  - tornado ==4.5.3
+  - xarray ==0.10.3

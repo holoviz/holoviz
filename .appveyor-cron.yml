@@ -1,0 +1,19 @@
+# equivalent of travis test_user_install stage (appveyor doesn't have stages)
+
+environment:
+  matrix:
+    - PY: "3.6"
+      PYTHON: "C:\\Python36-x64"
+      CONDA: "C:\\Miniconda36-x64"
+
+install:
+  - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  - "conda install -y -c pyviz/label/dev pyctdev && doit ecosystem_setup"
+
+build: off
+
+test_script:
+  - "copy dodo.py %TMP% && copy tox.ini %TMP% && cd %TMP%"
+  - "doit test_user_install_part1"
+  - "activate pyviz-tutorial"
+  - "doit test_user_install_part2"

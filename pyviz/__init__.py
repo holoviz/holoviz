@@ -26,3 +26,19 @@ except ImportError:
 from holoviews import help                               # noqa (API import)
 
 __version__ = str(pm.Version(fpath=__file__,archive_commit="$Format:%h$", reponame='pyviz'))
+
+##
+# make pyct's example/data commands available if possible
+from functools import partial
+try:
+    from pyct.cmd import copy_examples as _copy, fetch_data as _fetch, examples as _examples
+    copy_examples = partial(_copy, 'pyviz')
+    fetch_data = partial(_fetch, 'pyviz')
+    examples = partial(_examples, 'pyviz')
+except ImportError:
+    def _missing_cmd(*args,**kw): return("install pyct to enable this command (e.g. `conda install -c pyviz pyct` or `pip install pyct[cmd]`)")
+    _copy = _fetch = _examples = _missing_cmd
+    def _err(): raise ValueError(_missing_cmd())
+    fetch_data = copy_examples = examples = _err
+del partial, _examples, _copy, _fetch
+##
