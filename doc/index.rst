@@ -54,6 +54,7 @@ You can view the `Tutorial <tutorial/index>`_ online, to get an idea what is cov
    Background <background>
    Installation <installation>
    Tutorial <tutorial/index>
+   Topics <topics/index>
    Roadmap <Roadmap>
    FAQ
    About <about>
