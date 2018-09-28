@@ -12,8 +12,7 @@ env:
 
 stages:
   - name: test_user_install
-    if: branch = packaging
-#    if: type = cron
+    if: type = cron
   - test
   - name: conda_dev_package
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
@@ -29,7 +28,6 @@ stages:
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
   - name: unpinned_upcoming_trouble
     if: type = cron
-
 
 # TODO: caching
 
@@ -114,7 +112,6 @@ jobs:
             tags: true
             all_branches: true
 
-
     ## dev packages
 
     - &pip_pkg
@@ -145,7 +142,6 @@ jobs:
     - <<: *conda_pkg
       stage: conda_package
       env: LABELS=$LABELS_REL CHANS=$CHANS_REL
-
 
 notifications:
   email: false
