@@ -13,7 +13,7 @@ install:
 build: off
 
 test_script:
-  - "copy dodo.py tox.ini %TMP% && cd %TMP%"
+  - "copy dodo.py %TMP% && copy tox.ini %TMP% && cd %TMP%"
   - "doit test_user_install_part1"
   - "activate pyviz-tutorial"
   - "doit test_user_install_part2"
