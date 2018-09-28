@@ -7,7 +7,6 @@ from colorcet import cm_n
 
 hv.extension('bokeh', logo=False)
 
-# TODO: provide (pointer to) instructions to download osm-1billion?
 df = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','data','osm-1billion.snappy.parq')).persist()
 
 url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
