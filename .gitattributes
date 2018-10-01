@@ -1,2 +1,2 @@
 pyviz/__init__.py export-subst
-setup.py export-subst
+setup.cfg export-subst
