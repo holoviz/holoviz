@@ -27,7 +27,7 @@ See [pyviz.org](http://pyviz.org/installation.html) (or doc/installation.rst for
 
 ## About pyviz.org
 
-PyViz is a project supported in part by `Anaconda <https://anaconda.com>`_.
+PyViz is a project supported in part by [Anaconda](https://anaconda.com).
 All projects used here are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.
