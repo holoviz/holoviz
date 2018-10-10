@@ -1,13 +1,15 @@
 About Us
 ========
 
-PyViz is a collaboration between the maintainers of
+PyViz is a collaboration between the maintainers of several packages,
+including
 `Bokeh <http://bokeh.pydata.org>`_,
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geo.holoviews.org>`_,
-`Datashader <https://github.com/bokeh/datashader>`_, and
-`Param <https://github.com/ioam/param>`_, including
-James A. Bednar, Philipp Rudiger, Jean-Luc Stevens, and Bryan Van de Ven.
+`hvPlot <https://hvplot.pyviz.org>`_,
+`Datashader <https://github.com/bokeh/datashader>`_,
+`Param <https://github.com/ioam/param>`_, and
+`Panel <https://panel.pyviz.org>`_.
 
 The authors of all of these tools are working closely together to help
 make them into a coherent solution to a wide range of Python
