@@ -7,8 +7,8 @@ including
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geo.holoviews.org>`_,
 `hvPlot <https://hvplot.pyviz.org>`_,
-`Datashader <https://github.com/bokeh/datashader>`_,
-`Param <https://github.com/ioam/param>`_, and
+`Datashader <https://datashader.org>`_,
+`Param <https://param.pyviz.org>`_, and
 `Panel <https://panel.pyviz.org>`_.
 
 The authors of all of these tools are working closely together to help
