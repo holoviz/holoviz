@@ -7,7 +7,7 @@ including
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geo.holoviews.org>`_,
 `hvPlot <https://hvplot.pyviz.org>`_,
-`Datashader <https://datashader.org>`_,
+`Datashader <http://datashader.org>`_,
 `Param <https://param.pyviz.org>`_, and
 `Panel <https://panel.pyviz.org>`_.
 
