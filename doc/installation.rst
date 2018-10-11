@@ -46,10 +46,10 @@ Step 4: Launch Jupyter Notebook
 
 You can then launch the notebook server and client::
 
-   > cd pyviz-examples/tutorial  
+   > cd pyviz-examples
    > jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "notebooks" subdirectory, as these show how to use the others in the "exercises" directory along with the applications in the "apps" directory.  The first notebook to load is the index page ``index.ipynb``, which makes it simple to load each of the others.
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "tutorial" subdirectory, as these show how to use the others in the "tutorial/exercises" directory along with the applications in the "tutorial/apps" directory.  Begin with ``index.ipynb``, which makes it simple to load each of the others.
 
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
