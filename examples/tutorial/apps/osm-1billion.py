@@ -1,4 +1,4 @@
-import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, panel as pp
+import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, panel as pn
 from holoviews.operation.datashader import datashade, rasterize, shade
 from holoviews.streams import RangeXY
 from colorcet import cm
@@ -25,4 +25,4 @@ class OSM(param.Parameterized):
         return hv.DynamicMap(self.tiles) * shade(raster, streams=[hv.streams.Params(self, ['cmap'])])
 
 osm = OSM(name="Open Street Map GPS")
-pp.Row(osm, osm.view).servable()
+pn.Row(osm, osm.view).servable()
