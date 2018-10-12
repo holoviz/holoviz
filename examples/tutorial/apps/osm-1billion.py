@@ -1,31 +1,28 @@
-import os
-import holoviews as hv, geoviews as gv, param, parambokeh, dask.dataframe as dd, cartopy.crs as crs
-
-from holoviews.operation.datashader import datashade
+import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, panel as pn
+from holoviews.operation.datashader import datashade, rasterize, shade
 from holoviews.streams import RangeXY
-from colorcet import cm_n
+from colorcet import cm
 
 hv.extension('bokeh', logo=False)
 
-df = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','data','osm-1billion.snappy.parq')).persist()
+df = dd.read_parquet('../../data/osm-1billion.snappy.parq').persist()
 
-url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
-map_tiles = gv.WMTS(url,crs=crs.GOOGLE_MERCATOR)
+cmaps = ['fire','bgy','bgyw','bmy','gray','kbc']
+topts = dict(width=900,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 
-opts1 = dict(width=1000, height=600, xaxis=None, yaxis=None, bgcolor='black', show_grid=False)
-opts2 = dict(width=1000, height=600, x_sampling=1, y_sampling=1, dynamic=False)
+class OSM(param.Parameterized):
+    alpha = param.Magnitude(default=0.75, doc="Map tile opacity")
+    cmap  = param.ObjectSelector(cm['fire'], objects={c:cm[c] for c in cmaps})
+    
+    @param.depends('alpha')
+    def tiles(self):
+        return gv.tile_sources.EsriImagery.options(alpha=self.alpha, **topts)
 
-class OSMExplorer(hv.streams.Stream):
-    alpha      = param.Magnitude(default=0.75, doc="Map opacity")
-    colormap   = param.ObjectSelector(default=cm_n["fire"], objects=cm_n.values())
+    @param.depends()
+    def view(self):
+        points = hv.DynamicMap(hv.Points(df, kdims=['x', 'y']))
+        raster = rasterize(points, x_sampling=1, y_sampling=1, width=900, height=600)
+        return hv.DynamicMap(self.tiles) * shade(raster, streams=[hv.streams.Params(self, ['cmap'])])
 
-    def make_view(self, x_range, y_range, **kwargs):
-        tiles  = map_tiles.options(alpha=self.alpha, **opts1)
-        points = hv.Points(df, ['x','y'])
-        return tiles * datashade(points, cmap=self.colormap, x_range=x_range, y_range=y_range, **opts2)
-
-explorer = OSMExplorer(name="Open Street Map GPS")
-dmap = hv.DynamicMap(explorer.make_view, streams=[explorer, RangeXY()])
-
-plot = hv.renderer('bokeh').instance(mode='server').get_plot(dmap)
-parambokeh.Widgets(explorer, view_position='right', callback=explorer.event, plots=[plot.state], mode='server')
+osm = OSM(name="Open Street Map GPS")
+pn.Row(osm, osm.view).servable()
