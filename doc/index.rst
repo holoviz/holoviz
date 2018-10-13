@@ -6,7 +6,7 @@
 
    <p style="font-size:30px"><b>How to solve visualization problems with Python tools</b></p>
 
-The `PyViz website <http://pyviz.org>`_ and corresponding `GitHub repository <https://github.com/pyviz/pyviz>`_ provide examples, demos, and training materials documenting how to solve visualization problems using interactive Python-based tools in your web browser, including `Bokeh, <http://bokeh.pydata.org>`_ `HoloViews, <http://holoviews.org>`_ `GeoViews, <http://geo.holoviews.org>`_ `Datashader, <https://github.com/bokeh/datashader>`_ and `Param. <https://github.com/ioam/param>`_
+The `PyViz website <http://pyviz.org>`_ and corresponding `GitHub repository <https://github.com/pyviz/pyviz>`_ provide examples, demos, and training materials documenting how to solve visualization problems using interactive Python-based tools in your web browser.
 
 PyViz includes:
 
