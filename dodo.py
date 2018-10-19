@@ -11,7 +11,7 @@ def task_test_user_install_part2():
     return {'actions':[
         "conda install -y -c pyviz/label/dev pyviz",
         "conda install -y -c pyviz nbsmoke",
-        "pyviz examples --path=.",
+        "pyviz examples --path=. --force",
         # TODO: bokeh sampledata isn't a documented step
         "bokeh sampledata",
         'pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps']}
