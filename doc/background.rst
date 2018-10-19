@@ -38,19 +38,22 @@ packages to streamline the process of working with small and large datasets
 exploratory analysis, making simple widget-based tools, or building
 full-featured dashboards. The libraries in this ecosystem include:
 
+-  `Panel <http://panel.pyviz.org>`__: Assembling objects from
+   many different libraries into a layout or app, whether in a Jupyter
+   notebook or in a standalone serveable dashboard
 -  `Bokeh <http://bokeh.pydata.org>`__: Interactive plotting in web
    browsers, running JavaScript but controlled by Python
+-  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
+   HoloViews or GeoViews objects from your Pandas, Xarray, or other
+   data structures
 -  `HoloViews <http://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
 -  `GeoViews <http://geo.holoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
--  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
-   HoloViews or GeoViews objects from your Pandas, Xarray, or other
-   data structures
--  `Datashader <https://github.com/bokeh/datashader>`__: Rasterizing
+-  `Datashader <http://datashader.org>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `Param <https://github.com/ioam/param>`__: Declaring
+-  `Param <http://param.pyviz.org>`__: Declaring
    user-relevant parameters, making it simple to work with widgets
    inside and outside of a notebook context
 
