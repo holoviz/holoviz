@@ -32,13 +32,13 @@ or create a `new issue <https://github.com/pyviz/pyviz/issues/new>`_
 While the PyViz team itself maintains a number of packages on `PyViz's
 GitHub <https://github.com/pyviz>`_, PyViz depends on and supports a
 number of other open-source libraries; for more information, see
-PyViz's `detailed background <http://pyviz.org/background.html>`_. The
-entire PyViz stack is open source, free for commercial and
-non-commercial use.
+PyViz's `detailed background <http://pyviz.org/background.html>`_.
 
-If you are lucky enough to be in a position to fund developers to work
-on PyViz, you can contact ``sales@anaconda.com``, or you can also
-collaborate with PyViz via `Quansight's open source partnerships
+The entire PyViz stack is open source, free for commercial and
+non-commercial use. However, if you are lucky enough to be in a
+position to fund developers to work on PyViz, you can contact
+``sales@anaconda.com``, or you can also collaborate with PyViz via
+`Quansight's open source partnerships
 <https://www.quansight.com/projects>`_.
 
 Additionally, some parts of the PyViz stack are able to accept
@@ -63,12 +63,6 @@ donations, e.g. `Bokeh via NumFOCUS
 
 Acknowledgements and prior funding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: http://www.anc.ed.ac.uk/anc.png
-   :height: 60px
-   :alt: ANC website
-   :align: left
-   :target: http://www.anc.ed.ac.uk
 
 The original development of core PyViz libraries was supported in part
 by:
