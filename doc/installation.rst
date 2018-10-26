@@ -50,7 +50,7 @@ You can then launch the notebook server and client::
    > jupyter notebook
 
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "tutorial" subdirectory, as these show how to use the others in the ``tutorials/exercises`` directory along with the applications in the ``tutorial/apps`` directory.  The first notebook to load is ``index.ipynb`` in ``tutorial/``, which makes it simple to load each of the others.
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the ``tutorial`` subdirectory, as these show how to use the others in the ``tutorials/exercises`` directory along with the applications in the ``tutorial/apps`` directory.  The first notebook to load is ``index.ipynb`` in ``tutorial/``, which makes it simple to subsequently load each of the others.
 
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
