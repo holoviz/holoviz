@@ -13,12 +13,12 @@ If you do have conda already, it's a good idea to update it (running it twice to
    > conda update conda
    > conda update conda
 
-[OPTIONAL] If you want to keep things organized, you can then create a separate Conda environment to work in for this tutorial::
+You should then create a separate Conda environment to work in for this tutorial::
 
    > conda create -n pyviz-tutorial python=3.6
-   > source activate pyviz-tutorial
+   > conda activate pyviz-tutorial
 
-(omitting "source" if you are on Windows).
+Depending on how your conda is set up, you may need to use "source" instead of "conda" activate, or sometimes just "activate" on Windows.
 
 
 Step 2: Install ``pyviz`` and other required libraries
@@ -49,7 +49,8 @@ You can then launch the notebook server and client::
    > cd pyviz-examples
    > jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "tutorial" subdirectory, as these show how to use the others in the "tutorial/exercises" directory along with the applications in the "tutorial/apps" directory.  Begin with ``index.ipynb``, which makes it simple to load each of the others.
+
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "tutorial" subdirectory, as these show how to use the others in the ``tutorials/exercises`` directory along with the applications in the ``tutorial/apps`` directory.  The first notebook to load is ``index.ipynb`` in ``tutorial/``, which makes it simple to load each of the others.
 
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 

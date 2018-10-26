@@ -16,12 +16,14 @@ stages:
   - test
   - name: conda_dev_package
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-  - name: pip_dev_package
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+# no pip packages until dependencies become available on pypi
+# (see https://github.com/pyviz/pyviz/issues/100)
+#  - name: pip_dev_package
+#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: conda_package
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
-  - name: pip_package
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
+#  - name: pip_package
+#    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
   - name: website_release
@@ -114,14 +116,14 @@ jobs:
 
     ## dev packages
 
-    - &pip_pkg
-      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
-      stage: pip_dev_package
-      install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
-      before_script:
-        - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
-        #- doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=examples --sdist-install-build-deps
-      script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
+#    - &pip_pkg
+#      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
+#      stage: pip_dev_package
+#      install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
+#      before_script:
+#        - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
+#        #- doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=examples --sdist-install-build-deps
+#      script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
 
     - &conda_pkg
       <<: *default
@@ -135,9 +137,9 @@ jobs:
 
     ## release packages
 
-    - <<: *pip_pkg
-      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
-      stage: pip_package
+#    - <<: *pip_pkg
+#      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
+#      stage: pip_package
 
     - <<: *conda_pkg
       stage: conda_package
