@@ -1,12 +1,12 @@
 Installation
 ============
 
-Step 1: Install a `Miniconda <http://conda.pydata.org/miniconda.html>`_  (or `Anaconda <https://www.continuum.io/downloads>`_) environment
-------------------------------------------------------------------------------------------------------------------------------------------
+Step 1: Install a `Miniconda <https://conda.io/miniconda.html>`_  (or `Anaconda <https://www.anaconda.com/downloads>`_) environment
+-----------------------------------------------------------------------------------------------------------------------------------
 
 Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google Chrome) should be suitable. 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 
-If you don't already have conda on your machine, you can get it from `Anaconda.com <http://conda.pydata.org/miniconda.html>`_, and then open a terminal window.
+If you don't already have conda on your machine, you can get it from `conda.io <https://conda.io/miniconda.html>`_, and then open a terminal window.
 
 If you do have conda already, it's a good idea to update it (running it twice to get the very latest) to ensure you have the latest version::
 
@@ -49,7 +49,8 @@ You can then launch the notebook server and client::
    > cd pyviz-examples
    > jupyter notebook
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the "tutorial" subdirectory, which will point you to various "exercises" directory along with the applications in the "apps" directory.  The first notebook to load is the index page ``index.ipynb`` in ``tutorial/``, which makes it simple to load each of the others.
+
+A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the ``tutorial`` subdirectory, as these show how to use the others in the ``tutorials/exercises`` directory along with the applications in the ``tutorial/apps`` directory.  The first notebook to load is ``index.ipynb`` in ``tutorial/``, which makes it simple to subsequently load each of the others.
 
 If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually. 
 
