@@ -21,3 +21,4 @@ test_script:
   - "pyviz fetch-data --path=examples --use-test-data"
   - "doit test_examples"
   - "pyviz clean-data --path=examples"
+  
