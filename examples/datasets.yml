@@ -6,6 +6,11 @@ data:
     files:
       - nyc_taxi_wide.parq
 
+  - url: https://s3.amazonaws.com/datashader-data/nyc_taxi.zip
+    title: 'NYC Taxi Data'
+    files:
+      - nyc_taxi.csv
+
   - url: http://s3.amazonaws.com/datashader-data/maccdc2012_graph.zip
     title: 'National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition'
     files:
