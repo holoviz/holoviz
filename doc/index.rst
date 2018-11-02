@@ -66,9 +66,9 @@
     <a href="http://pandas.pydata.org"        ><img class="pvlogo" src="assets/pandas.png" style="max-height:80px"/></a>
     <a href="http://numpy.org"                ><img class="pvlogo" src="assets/numpy.png"  style="max-height:95px"/></a>
     <a href="http://xarray.pydata.org"        ><img class="pvlogo" src="assets/xarray_wm.png"/></a>
+    <a href="https://intake.readthedocs.io"   ><img class="pvlogo" src="assets/intake.png" style="max-height:75px"/></a>
     <a href="http://dask.pydata.org"          ><img class="pvlogo" src="assets/dask.png"   style="max-height:80px"/></a>
     <a href="http://numba.pydata.org"         ><img class="pvlogo" src="assets/numba.png"  style="max-height:115px"/></a>
-    <a href="https://intake.readthedocs.io"   ><img class="pvlogo" src="assets/intake.png" style="max-height:75px"/></a>
     <a href="https://bit.ly/2OXxNfN"          ><img class="pvlogo" src="assets/scipy.png"/></a>
     </div>
 
@@ -84,7 +84,7 @@
     <a href="https://bit.ly/2OXxNfN">SciPy</a>.<br><br>
 
 
-    <br><h1>Other supported tools</h1>
+    <h1>Other supported tools</h1>
 
     <div style="margin:10px">
     <a href="http://networkx.github.io"       ><img class="pvlogo" src="assets/networkx.png"/></a>
