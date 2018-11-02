@@ -18,6 +18,7 @@ install:
 build: off
 
 test_script:
-  - "move examples\\data\\nyc_taxi_50k.parq examples\\data\\nyc_taxi_wide.parq"
-  - "pyviz fetch-data --path=examples"
+  - "pyviz fetch-data --path=examples --use-test-data"
   - "doit test_examples"
+  - "pyviz clean-data --path=examples"
+  
