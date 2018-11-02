@@ -54,9 +54,9 @@
     <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
     </div>
 
-    <p>Output from nearly every other plotting library can be used with
-    <a href="https://panel.pyviz.org">Panel</a>, including all those listed here plus anything that can generate HTML, PNG, or SVG.
-    HoloViews also supports
+    <p>Objects from nearly every other plotting library can be used with
+    <a href="https://panel.pyviz.org">Panel</a>, including specific support for all those listed here plus anything that
+    can generate HTML, PNG, or SVG.  HoloViews also supports
     <a href="https://plot.ly">Plotly</a> for 3D visualizations.<br><br>
 
 
@@ -87,25 +87,28 @@
     <h1>Other supported tools</h1>
 
     <div style="margin:10px">
+    <a href="http://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
     <a href="http://networkx.github.io"       ><img class="pvlogo" src="assets/networkx.png"/></a>
+    <a href="http://geopandas.org"            ><img class="pvlogo" src="assets/geopandas.png"/></a>
     <a href="http://scitools.org.uk/cartopy"  ><img class="pvlogo" src="assets/cartopy.png" style="max-height:70px"/></a>
     <a href="https://scitools.org.uk/iris"    ><img class="pvlogo" src="assets/iris.png"/></a>
     <a href="https://yt-project.org"          ><img class="pvlogo" src="assets/yt.png" style="max-height:70px" /></a>
     <a href="https://sympy.org"               ><img class="pvlogo" src="assets/sympy.png"/></a>
-    <a href="http://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
     <a href="http://jupyter.org"              ><img class="pvlogo" src="assets/jupyter.png"/></a>
     </div>
     
-    <p>PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
+    <p>PyViz tools both use and support declarative user-configurable
+    <a href="http://param.pyviz.org">Param</a> objects.<br>
+    PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
+    <a href="http://geopandas.org">GeoPandas</a> and
     <a href="http://scitools.org.uk/cartopy">Cartopy</a> and
     <a href="https://scitools.org.uk/iris">Iris</a>.<br>
     Panel can be used with
     <a href="https://yt-project.org">yt</a> for volumetric and physics data and
     <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
-    PyViz tools both use and support declarative
-    <a href="http://param.pyviz.org">Param</a> objects, and provide extensive support both for 
-    <a href="http://jupyter.org">Jupyter</a> notebooks as well as standalone servers and exporting to static files.<br><br>
+    PyViz tools provide extensive support for 
+    <a href="http://jupyter.org">Jupyter</a> notebooks, standalone web servers, and static exported files.<br><br>
     
     <h1>Getting started</h1>
 
@@ -113,7 +116,7 @@ The `Background <background.html>`_ page explains the PyViz approach in more det
 Or you can just skim the material in the `Tutorial <tutorial/index.html>`_ online, to get an idea what is covered by these tools.
 If what you see looks relevant to you, you can then follow the steps outlined in `Installation <installation.html>`_ to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
 
-.. No logo available yet for http://geopandas.org, http://colorcet.pyviz.org, https://vega.github.io, or https://vega.github.io/vega-lite
+.. No logo available yet for http://colorcet.pyviz.org, https://vega.github.io, or https://vega.github.io/vega-lite
 
 
 .. toctree::
