@@ -1,5 +1,5 @@
-PyViz Roadmap, as of 6/2018
-===========================
+PyViz Roadmap, as of 10/2018
+============================
 
 PyViz helps coordinate between numerous independent open-source
 projects, each with their own developers, priorities, and agendas. In
@@ -19,43 +19,27 @@ Immediate, already funded priorities for 2018 include:
    layout, and sharing components between notebooks and complex deployed
    apps.
 
-3. **Better widget support**:
-
-   - Extensions and generalizations to the ParamBokeh library to make it
-     simpler to add interactive widgets and control their layout and
-     appearance.
-   - Support for expressing dependencies between Parameters that will be
-     respected at the widget level, allowing more complex apps to be built
-     with minimal coding.
-
-4. **Improved imaging, simulation, machine learning, and Earth science
+3. **Improved imaging, simulation, machine learning, and Earth science
    workflows**: Support for working with image and other
    multidimensional data for visualization and machine-learning
    applications, including on HPC systems.
 
-5. **Improvements to Bokeh/HoloViews drawing tools**:
+4. **Improvements to Bokeh/HoloViews drawing tools**:
 
    - Better support for collecting annotations
-   - undo
    - other usability improvements
 
-6. **Simpler deployment of large-scale visualizations**: Automatic
+5. **Simpler deployment of large-scale visualizations**: Automatic
    generation of slippy-map tiles for exploration of large datasets
-   using standard web servers
+   using standard web servers. Already provided in Datashader, but
+   needs additional polishing.
 
-7. **Better Datashader integration with external plotting libraries
+6. **Better Datashader integration with external plotting libraries
    (Bokeh, HoloViews, Matplotlib)**: Datashader needs to provide
    functions for supporting hover information, legends, colorbars, and
    interactivity, which each plotting library can then use.
 
-8. **HoloViews serialization**: HoloViews uses a declarative design that
-   can be represented in a purely textual form, without any Python code.
-   An initial implementation allows any Param-based objects (including
-   HoloViews objects) to be represented in JSON or YAML, but it needs
-   some polishing before it can be put into wide use for saving and
-   restoring configurations and layouts.
-
-9. **Support for maintaining Python-based projects**: As maintainers of
+7. **Support for maintaining Python-based projects**: As maintainers of
    a wide range of Python projects, we are working to minimize the cost
    of maintaining each one, by sharing code for tracking versions,
    making releases, providing example scripts, managing datasets,
@@ -106,11 +90,12 @@ well with PyViz include:
    make certain domain-specific functionality simpler, such as computing
    vegetation indexes and other common manipulations of Earth-related
    data. It would be helpful to provide a well-tested collection of
-   these common operations built on the PyViz stack so that it can be a
-   more "drop-in" replacement for proprietary GIS systems.  Examples
-   of desirable functionality:
+   these common operations built on the PyViz stack so that it can be
+   a more "drop-in" replacement for proprietary GIS systems.  Fast
+   geographic indexes were already added to Datashader and are
+   awaiting documentation (NDVI, slope, aspect, hillshade). Other
+   desired features:
    
-   - Fast geographic indexes for Datashader: NDVI, slope, aspect, hillshade
    - Fast geographic operations for Datashader
        * Zonal statistics for an ROI
            - Percentage area by category
@@ -183,15 +168,24 @@ well with PyViz include:
    common interchange format that could be helpful for interoperating
    with other tools. Writing an import and export facility that covers
    the bulk of the shared functionality should not be a major
-   undertaking and could open up interesting new applications.
+   undertaking and could open up interesting new applications. For now,
+   Altair and Vega-lite visualizations can be specified and then used
+   directly with Panel.
 
-8. **Better integration with ____**: There are a lot of tools in the
+8. **hvPlot/HoloViews serialization**: HoloViews uses a declarative design that
+   can be represented in a purely textual form, without any Python code.
+   An initial implementation allows any Param-based objects (including
+   HoloViews objects) to be represented in JSON or YAML, but it needs
+   some polishing before it can be put into wide use for saving and
+   restoring configurations and layouts.
+
+9. **Better integration with ____**: There are a lot of tools in the
    Python and other scientific software ecosystems that could be
    included in PyViz or made easily usable from it. NetworkX (already
    usable but not fully exploited yet) is just one example of many;
    suggestions welcome!
 
-9. **GUI-based plot creation**: (As in business intelligence and
+10. **GUI-based plot creation**: (As in business intelligence and
    dashboarding applications.) The powerful components available
    in PyViz are ready for Python users to put together into
    visualizations and apps, but they would also make a very strong
