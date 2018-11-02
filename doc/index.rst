@@ -46,8 +46,9 @@
     <br>
     <div style="margin:10px">
     <a href="https://plot.ly"                 ><img class="pvlogo" src="assets/plotly.png"/></a>
-    <a href="https://altair-viz.github.io"    ><img class="pvlogo" src="assets/altair.png" style="max-height:75px"/></a>
     <a href="http://seaborn.pydata.org"       ><img class="pvlogo" src="assets/seaborn.png"/></a>
+    <a href="https://altair-viz.github.io"    ><img class="pvlogo" src="assets/altair.png" style="max-height:75px"/></a>
+    <a href="https://vega.github.io"          ><img class="pvlogo" src="assets/vega.png"/></a>
     <a href="https://plotnine.readthedocs.io" ><img class="pvlogo" src="assets/plotnine.png"/></a>
     <a href="https://graphviz.org"            ><img class="pvlogo" src="assets/graphviz.png"/></a>
     <a href="https://ggplot2.tidyverse.org"   ><img class="pvlogo" src="assets/ggplot2.png"/></a>
@@ -116,7 +117,7 @@ The `Background <background.html>`_ page explains the PyViz approach in more det
 Or you can just skim the material in the `Tutorial <tutorial/index.html>`_ online, to get an idea what is covered by these tools.
 If what you see looks relevant to you, you can then follow the steps outlined in `Installation <installation.html>`_ to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
 
-.. No logo available yet for http://colorcet.pyviz.org, https://vega.github.io, or https://vega.github.io/vega-lite
+.. No logo available yet for http://colorcet.pyviz.org or https://vega.github.io/vega-lite
 
 
 .. toctree::
