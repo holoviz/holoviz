@@ -86,9 +86,8 @@ jobs:
         - bokeh sampledata
         - pyviz fetch-data --path=examples --use-test-data
         # note: still more nbsite simplification to go...
-        - nbsite generate-rst --org pyviz --project-name pyviz --repo pyviz --offset 1 --skip '^.*Exercise.*$'
-        - nbsite build --what=html --output=builtdocs
-        - touch ./builtdocs/.nojekyll # for github pages
+        - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
+        - nbsite build --what=html --output=builtdocs --for-github
         - nbsite_cleandisthtml.py ./builtdocs take_a_chance
       deploy:
         - provider: pages
