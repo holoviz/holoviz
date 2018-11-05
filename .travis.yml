@@ -87,7 +87,7 @@ jobs:
         - pyviz fetch-data --path=examples --use-test-data
         # note: still more nbsite simplification to go...
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
-        - nbsite build --what=html --output=builtdocs --for-github
+        - nbsite build --what=html --output=builtdocs
         - nbsite_cleandisthtml.py ./builtdocs take_a_chance
       deploy:
         - provider: pages
