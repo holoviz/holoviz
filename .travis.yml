@@ -85,10 +85,8 @@ jobs:
         - doit develop_install $CHANS_DEV -o doc
         - bokeh sampledata
         - pyviz fetch-data --path=examples --use-test-data
-        # note: still more nbsite simplification to go...
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
         - nbsite build --what=html --output=builtdocs
-        - nbsite_cleandisthtml.py ./builtdocs take_a_chance
       deploy:
         - provider: pages
           skip_cleanup: true
