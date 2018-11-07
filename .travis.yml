@@ -85,13 +85,8 @@ jobs:
         - doit develop_install $CHANS_DEV -o doc
         - bokeh sampledata
         - pyviz fetch-data --path=examples --use-test-data
-        # TODO: need to support skip for nbsite
-        - rm -rf examples/tutorial/exercises/Exercise*
-        # note: still more nbsite simplification to go...
-        - nbsite generate-rst --org pyviz --project-name pyviz --repo pyviz --offset 1
-        - nbsite build --what=html --output=builtdocs
-        - touch ./builtdocs/.nojekyll # for github pages
-        - nbsite_cleandisthtml.py ./builtdocs take_a_chance
+        - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
+        - nbsite build --what=html --output=builtdocs --clean-force
       deploy:
         - provider: pages
           skip_cleanup: true
