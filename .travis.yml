@@ -86,7 +86,7 @@ jobs:
         - bokeh sampledata
         - pyviz fetch-data --path=examples --use-test-data
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
-        - nbsite build --what=html --output=builtdocs --clean-force
+        - nbsite build --what=html --output=builtdocs
       deploy:
         - provider: pages
           skip_cleanup: true
