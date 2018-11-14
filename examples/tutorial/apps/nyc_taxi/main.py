@@ -37,4 +37,4 @@ class NYCTaxiExplorer(param.Parameterized):
         return tiles * shade(agg, streams=[stream])
 
 taxi = NYCTaxiExplorer(name="NYC Taxi Trips")
-pn.Row(taxi, taxi.view()).servable()
+pn.Row(taxi.param, taxi.view()).servable()
