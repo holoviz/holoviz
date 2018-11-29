@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   About Us — PyViz 0.10.0 documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/about.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="index.html">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="#">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="about-us">
+     <h1>
+      About Us
+      <a class="headerlink" href="#about-us" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <p>
+      PyViz is a collaboration between the maintainers of several packages,
+including
+      <a class="reference external" href="http://bokeh.pydata.org">
+       Bokeh
+      </a>
+      ,
+      <a class="reference external" href="http://holoviews.org">
+       HoloViews
+      </a>
+      ,
+      <a class="reference external" href="http://geo.holoviews.org">
+       GeoViews
+      </a>
+      ,
+      <a class="reference external" href="https://hvplot.pyviz.org">
+       hvPlot
+      </a>
+      ,
+      <a class="reference external" href="http://datashader.org">
+       Datashader
+      </a>
+      ,
+      <a class="reference external" href="https://param.pyviz.org">
+       Param
+      </a>
+      , and
+      <a class="reference external" href="https://panel.pyviz.org">
+       Panel
+      </a>
+      .
+     </p>
+     <p>
+      The authors of these tools are working together closely to help make
+them into a coherent solution to a wide range of Python visualization
+problems.
+     </p>
+     <p>
+      If you like PyViz, please
+      <a class="reference external" href="http://twitter.com">
+       tweet
+      </a>
+      a screenshot
+of your latest creation, linking to
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        pyviz.org
+       </span>
+      </code>
+      and tagging it
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        #PyViz
+       </span>
+      </code>
+      along with any other library you relied on (
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        @HoloViews
+       </span>
+      </code>
+      ,
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        @Datashader
+       </span>
+      </code>
+      ,
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        @BokehPlots
+       </span>
+      </code>
+      ,
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        @Matplotlib
+       </span>
+      </code>
+      , etc.). Thanks!
+     </p>
+     <p>
+      There is an active open source community around PyViz, and
+contributions from anyone are welcome. Contributions of any sort are
+valuable, including new documentation, plus bug reports and fixes to
+code or documentation that might seem trivial (PyViz is partly about
+having as many of those ironed out as possible!). Please go ahead and
+open a
+      <a class="reference external" href="https://guides.github.com/activities/forking/">
+       pull request
+      </a>
+      or create a
+      <a class="reference external" href="https://github.com/pyviz/pyviz/issues/new">
+       new issue
+      </a>
+      :)
+     </p>
+     <p>
+      While the PyViz team itself maintains a number of packages on
+      <a class="reference external" href="https://github.com/pyviz">
+       PyViz’s
+GitHub
+      </a>
+      , PyViz depends on and supports a
+number of other open-source libraries; for more information, see
+PyViz’s
+      <a class="reference external" href="http://pyviz.org/background.html">
+       detailed background
+      </a>
+      .
+     </p>
+     <p>
+      The entire PyViz stack is open source, free for commercial and
+non-commercial use. However, if you are lucky enough to be in a
+position to fund developers to work on PyViz, you can contact
+      <code class="docutils literal notranslate">
+       <span class="pre">
+        sales@anaconda.com
+       </span>
+      </code>
+      , or you can also collaborate with PyViz via
+      <a class="reference external" href="https://www.quansight.com/projects">
+       Quansight’s open source partnerships
+      </a>
+      .
+     </p>
+     <p>
+      Additionally, some parts of the PyViz stack are able to accept
+donations, e.g.
+      <a class="reference external" href="https://numfocus.org/project/bokeh">
+       Bokeh via NumFOCUS
+      </a>
+      .
+     </p>
+     <a class="reference external image-reference" href="http://www.anaconda.com">
+      <img alt="Anaconda website" src="https://www.anaconda.com/wp-content/themes/anaconda/images/logo-dark.png" style="height: 60px;"/>
+     </a>
+     <a class="reference external image-reference" href="http://www.quansight.com">
+      <img alt="Quansight website" src="https://static.wixstatic.com/media/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.png/v1/crop/x_0,y_9,w_915,h_329/fill/w_191,h_65,al_c,q_80,usm_0.66_1.00_0.01/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.webp" style="height: 60px;"/>
+     </a>
+     <a class="reference external image-reference" href="https://numfocus.org">
+      <img alt="NumFOCUS website" src="https://numfocus.org/wp-content/uploads/2018/01/optNumFocus_LRG.png" style="height: 60px;"/>
+     </a>
+     <div class="section" id="acknowledgements-and-prior-funding">
+      <h2>
+       Acknowledgements and prior funding
+       <a class="headerlink" href="#acknowledgements-and-prior-funding" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       The original development of core PyViz libraries was supported in part
+by:
+      </p>
+      <ul class="simple">
+       <li>
+        Grants EP/F500385/1 and BB/F529254/1 to the
+        <a class="reference external" href="http://www.anc.ed.ac.uk/dtc">
+         University of Edinburgh
+Doctoral Training Centre in Neuroinformatics and Computational
+Neuroscience
+        </a>
+        from the UK Engineering
+and Physical Sciences Research Council, Biotechnology and Biological
+Sciences Research Council, and Medical Research Council.
+       </li>
+       <li>
+        The U.S. National Institutes of Mental Health under Human Brain
+Project grant 1R01-MH66991, and by the U.S. National Science
+Foundation under grant IIS-9811478.
+       </li>
+      </ul>
+      <p>
+       The PyViz team thanks Brian Thomas at Washington State University for
+donating the pyviz.org domain to the PyViz project.  If you are
+interested in Brian’s PyViz smart-home visualization tool, check out
+his
+       <a class="reference external" href="http://ieeexplore.ieee.org/document/5766889/">
+        paper
+       </a>
+       .
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="topics/index.html">
+       Topics
+      </a>
+     </li>
+     <li>
+      <a href="FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/pyviz/pyviz">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

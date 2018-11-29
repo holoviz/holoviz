@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   FAQ — PyViz 0.10.0 documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/FAQ.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="index.html">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="#">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="background.html">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="faq">
+     <h1>
+      FAQ
+      <a class="headerlink" href="#faq" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <div class="section" id="what-is-pyviz-really">
+      <h2>
+       What is PyViz, really?
+       <a class="headerlink" href="#what-is-pyviz-really" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       PyViz is about working together on many different levels:
+      </p>
+      <ul class="simple">
+       <li>
+        A set of high-level packages that make it easier to use plotting and data libraries – good starting points for doing your work!
+       </li>
+       <li>
+        A set of package authors who work together to make their packages interoperate well, to help reduce gaps and duplication between packages and improve the overall user experience.
+       </li>
+       <li>
+        A set of packages that have been verified to work well together, in matching versions, that can all be installed with one command and are continuously tested to ensure that they keep working together
+       </li>
+       <li>
+        A set of examples and tutorials that help you see how various Python packages can work together to solve a huge range of visualization problems, from common situations to tricky special cases.
+       </li>
+      </ul>
+      <p>
+       There is a specific installable package named
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz
+        </span>
+       </code>
+       , but it’s valuable mainly for its dependencies, which are installed in matching versions when
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz
+        </span>
+       </code>
+       is installed.  There is almost no code actually in PyViz, apart from the examples in the tutorials.
+      </p>
+     </div>
+     <div class="section" id="is-pyviz-a-commercial-product">
+      <h2>
+       Is PyViz a commercial product?
+       <a class="headerlink" href="#is-pyviz-a-commercial-product" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       PyViz is supported by
+       <a class="reference external" href="http://anaconda.com">
+        Anaconda, Inc.
+       </a>
+       and through partnerships with a number of commercial and government clients, but PyViz and all of its component packages are open source packages freely available for both commercial and non-commercial use.
+      </p>
+     </div>
+     <div class="section" id="wow-how-did-you-do-all-this-work">
+      <h2>
+       Wow, how did you do all this work?
+       <a class="headerlink" href="#wow-how-did-you-do-all-this-work" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       PyViz is built on a wide foundation of libraries and tools in the scientific Python ecosystem. Most of the time, we’re just pulling together existing functionality and making it simpler to access and easier to compose. We do have some projects like Datashader and Colorcet that were explicitly commissioned to fill a need (in this case, handling large data and providing a range of uniform colormaps), but mostly the underlying functionality was always there, it was just difficult to apply to typical situations in data science and analysis.
+      </p>
+     </div>
+     <div class="section" id="does-pyviz-include-3d-support">
+      <h2>
+       Does PyViz include 3D support?
+       <a class="headerlink" href="#does-pyviz-include-3d-support" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       A bit. Some historical context will probably help make this clear. Over the past 30 years or so, visualization packages and developers have been organized into two mostly non-overlapping camps dealing with either
+       <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_visualization">
+        scientific visualization
+       </a>
+       or
+       <a class="reference external" href="https://en.wikipedia.org/wiki/Information_visualization">
+        information visualization
+       </a>
+       . SciVis primarily focuses on data that is situated in the 3D space of the real world, and it thus uses variants of the three-dimensional rendering algorithms made to represent the real world in computer graphics. InfoVis primarily focuses on representing more abstract information that can be laid out in any number of ways, and for practical reasons it tends to use 2D representations where it is simple to show axes and other tools to explicitly indicate mappings from the page onto the underlying data coordinates.
+      </p>
+      <p>
+       PyViz currently focuses on the packages and applications from the InfoVis domain, and thus primarily supports two-dimensional plotting and layouts. There is some limited three-dimensional rendering in PyViz provided by
+       <a class="reference external" href="http://holoviews.org/reference/elements/matplotlib/TriSurface.html">
+        Matplotlib
+       </a>
+       and
+       <a class="reference external" href="http://holoviews.org/reference/elements/plotly/TriSurface.html">
+        Plotly
+       </a>
+       , but PyViz does not currently include comprehensive support for 3D visualizations, virtual reality, augmented reality, and related topics. See the
+       <a class="reference external" href="Roadmap">
+        PyViz Roadmap
+       </a>
+       if you would like to help broaden its coverage of these topics, or else consider using complementary packages like
+       <a class="reference external" href="http://docs.enthought.com/mayavi/mayavi">
+        MayaVi
+       </a>
+       ,
+       <a class="reference external" href="https://www.vtk.org/">
+        VTK
+       </a>
+       ,
+       <a class="reference external" href="https://github.com/maartenbreddels/ipyvolume">
+        IPyVolume
+       </a>
+       , and
+       <a class="reference external" href="http://vaex.astro.rug.nl">
+        Vaex
+       </a>
+       (a 3D-capable version of Datashader).
+      </p>
+     </div>
+     <div class="section" id="what-else-is-not-covered-well-by-pyviz">
+      <h2>
+       What else is
+       <em>
+        not
+       </em>
+       covered well by PyViz?
+       <a class="headerlink" href="#what-else-is-not-covered-well-by-pyviz" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <ul class="simple">
+       <li>
+        Native GUI apps (only browser-based approaches are included so far)
+       </li>
+       <li>
+        Domain-specific toolkits and analyses (not suitable for PyViz, but can be in affiliated repos)
+       </li>
+       <li>
+        Native JavaScript toolkits like D3 (PyViz focuses on people who want to work directly in Python, not those willing to write code in other languages to deal with their Python data)
+       </li>
+       <li>
+        Hard real-time displays (PyViz tools offer dynamic updates, but cannot enforce strict latency requirements)
+       </li>
+       <li>
+        Drag and drop visualization development (PyViz supports extensive interactivity, but does not currently have a way to build non-trivial visualizations graphically as in business intelligence apps or spreadsheets)
+       </li>
+      </ul>
+      <p>
+       See the
+       <a class="reference external" href="Roadmap">
+        Roadmap
+       </a>
+       for more details on topics that could be added in future work.
+      </p>
+     </div>
+     <div class="section" id="how-do-i-report-a-problem">
+      <h2>
+       How do I report a problem?
+       <a class="headerlink" href="#how-do-i-report-a-problem" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       For the quickest response from those who can fix things, try to identify which PyViz package is most directly involved, and then click on the appropriate logo on the
+       <a class="reference external" href="index.html">
+        PyViz home page
+       </a>
+       to find their Github site for filing issues.  If you can’t figure out which project is involved, or if your issue is with this website, the notebooks you downloaded from it, or the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pyviz
+        </span>
+       </code>
+       package itself, then please open an issue on
+       <a class="reference external" href="https://github.com/pyviz/pyviz/issues">
+        github.com/pyviz.
+       </a>
+       or chat with us on the
+       <a class="reference external" href="http://gitter.im/pyviz/pyviz">
+        Gitter channel for HoloViews.
+       </a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="topics/index.html">
+       Topics
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/pyviz/pyviz">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>

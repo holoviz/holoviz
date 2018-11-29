@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   Background: Why PyViz? — PyViz 0.10.0 documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/site.css" rel="stylesheet"/>
+  <link href="_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="_static/js/main.js">
+  </script>
+  <script src="_static/nbsite.js">
+  </script>
+  <script src="_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/background.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="index.html">
+     <img alt="Logo" src="_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        Background
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="tutorial/index.html">
+        Tutorial
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="topics/index.html">
+        Topics
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="Roadmap.html">
+        Roadmap
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="background-why-pyviz">
+     <h1>
+      Background: Why PyViz?
+      <a class="headerlink" href="#background-why-pyviz" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <p>
+      Many of the activities of a data scientist or analyst require
+visualization, but it can be difficult to assemble a set of tools that
+cover all of the tasks involved. Initial exploration needs to be in a
+flexible, open-ended environment where it is simple to try out and test
+hypotheses. Once key aspects of the data have been identified, the
+analyst might prepare a specific image or figure to share with
+colleagues or a wider audience. Or, they might need to set up an
+interactive way to share a set of data that would be unwieldy as a fixed
+figure, using interactive controls to let others explore the effects of
+certain variables. Eventually, for particularly important data or use
+cases, the analyst might get involved in a long-term project to develop
+a full-featured web application or dashboard to deploy, allowing
+decision makers to interact directly with live data streams to make
+operational decisions.
+     </p>
+     <p>
+      With Python, initial exploration is typically in a
+      <a class="reference external" href="http://jupyter.org">
+       Jupyter
+      </a>
+      notebook, using tools like Matplotlib
+and Bokeh to develop static or interactive plots. These tools support a
+simple syntax for making certain kinds of plots, but showing more
+complex relationships in data can quickly turn into a major software
+development exercise, making it difficult to achieve understanding
+during exploration. Simple apps can be built using ipywidgets to control
+these visualizations, but the resulting combinations end up being
+tightly coupled to the notebook environment, unable to migrate into a
+standalone server context with an application that can be shared more
+widely. Bokeh includes widgets that can work in both notebook and server
+environments, but these can be difficult to work with for initial
+exploration. Bokeh and Matplotlib both also have limitations on how much
+data they can handle, in part because Bokeh requires the data to be put
+into the web browser’s limited memory space.
+     </p>
+     <p>
+      To address these issues, we have developed a set of open-source Python
+packages to streamline the process of working with small and large datasets
+(from a few points to billions) in a web browser, whether doing
+exploratory analysis, making simple widget-based tools, or building
+full-featured dashboards. The libraries in this ecosystem include:
+     </p>
+     <ul class="simple">
+      <li>
+       <a class="reference external" href="http://panel.pyviz.org">
+        Panel
+       </a>
+       : Assembling objects from
+many different libraries into a layout or app, whether in a Jupyter
+notebook or in a standalone serveable dashboard
+      </li>
+      <li>
+       <a class="reference external" href="http://bokeh.pydata.org">
+        Bokeh
+       </a>
+       : Interactive plotting in web
+browsers, running JavaScript but controlled by Python
+      </li>
+      <li>
+       <a class="reference external" href="http://hvplot.pyviz.org">
+        hvPlot
+       </a>
+       : Quickly return interactive
+HoloViews or GeoViews objects from your Pandas, Xarray, or other
+data structures
+      </li>
+      <li>
+       <a class="reference external" href="http://holoviews.org">
+        HoloViews
+       </a>
+       : Declarative objects for
+instantly visualizable data, building Bokeh plots from convenient
+high-level specifications
+      </li>
+      <li>
+       <a class="reference external" href="http://geo.holoviews.org">
+        GeoViews
+       </a>
+       : Visualizable geographic
+data that that can be mixed and matched with HoloViews objects
+      </li>
+      <li>
+       <a class="reference external" href="http://datashader.org">
+        Datashader
+       </a>
+       : Rasterizing
+huge datasets quickly as fixed-size images
+      </li>
+      <li>
+       <a class="reference external" href="http://param.pyviz.org">
+        Param
+       </a>
+       : Declaring
+user-relevant parameters, making it simple to work with widgets
+inside and outside of a notebook context
+      </li>
+     </ul>
+     <p>
+      These projects can be used separately or together in a wide variety of
+different configurations to address different needs. For instance, if we
+focus on the needs of a data scientist/analyst who wants to understand
+the properties of their data, we can compare that to the approach
+suggested for a software developer wanting to build a highly custom
+software application for data of different sizes:
+     </p>
+     <a class="reference internal image-reference" href="assets/ds_hv_bokeh.png">
+      <img alt="assets/ds_hv_bokeh.png" src="assets/ds_hv_bokeh.png" style="height: 220px;"/>
+     </a>
+     <p>
+      Here Datashader is used to make large datasets practical by rendering
+images outside the browser, either directly for a programmer or via a
+convenient high-level interface using HoloViews (or hvPlot), and the
+results can be embedded in interactive Bokeh plots if desired, either
+as a static HTML plot, in a Jupyter notebook, or as a standaline
+application.
+     </p>
+     <p>
+      Behind the scenes, these tools rely on a wide range of other open-source
+libraries for their implementation, including:
+     </p>
+     <ul class="simple">
+      <li>
+       <a class="reference external" href="http://pandas.pydata.org">
+        Pandas
+       </a>
+       : Convenient computation on
+columnar datasets (used by HoloViews and datashader)
+      </li>
+      <li>
+       <a class="reference external" href="http://xarray">
+        Xarray
+       </a>
+       : Convenient computations on
+multidimensional array datasets (used by HoloViews and Datashader)
+      </li>
+      <li>
+       <a class="reference external" href="http://dask.pydata.org">
+        Dask
+       </a>
+       : Efficient
+out-of-core/distributed computation on massive datasets (used by
+Datashader)
+      </li>
+      <li>
+       <a class="reference external" href="http://numba.pydata.org">
+        Numba
+       </a>
+       : Accelerated machine code for
+inner loops (used by Datashader)
+      </li>
+      <li>
+       <a class="reference external" href="https://fastparquet.readthedocs.io">
+        Fastparquet
+       </a>
+       : Efficient
+storage for columnar data
+      </li>
+      <li>
+       <a class="reference external" href="http://scitools.org.uk/cartopy">
+        Cartopy
+       </a>
+       : Support for
+geographical data (using a wide range of other libraries)
+      </li>
+     </ul>
+     <p>
+      The PyViz tutorials will guide you through the process of using these tools
+together to build rich, high-performance, scalable, flexible, and
+deployable visualizations, apps, and dashboards, without having to use
+JavaScript or other web technologies explicitly, and without having to
+rewrite your code to move between each of the different tasks or phases
+from exploration to deployment. In each case, we’ll try to draw your
+attention to libraries and approaches that help you get the job done,
+which in turn depend on many other unseen libraries in the scientific
+Python ecosystem to do the heavy lifting.
+     </p>
+     <div class="section" id="demos">
+      <h2>
+       Demos
+       <a class="headerlink" href="#demos" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       To give you an idea what sort of functionality is possible with these
+tools, you can check out some of these links first if you wish:
+      </p>
+      <ul class="simple">
+       <li>
+        <a class="reference external" href="http://holoviews.org/reference/apps/bokeh/selection_stream.html">
+         Selection
+stream
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/reference/streams/bokeh/BoundsX.html">
+         Bounds
+stream
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/gallery/apps/bokeh/mandelbrot.html">
+         Mandelbrot
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/reference/containers/bokeh/DynamicMap.html">
+         DynamicMap
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/gallery/apps/bokeh/crossfilter.html">
+         Crossfilter
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/gallery/apps/bokeh/game_of_life.html">
+         Game of
+Life
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://holoviews.org/gallery/demos/bokeh/dragon_curve.html">
+         Dragon
+curve
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="https://anaconda.org/jbednar/nyc_taxi">
+         Datashader NYC Taxi
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="https://anaconda.org/jbednar/edge_bundling">
+         Datashader Graphs
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="http://datashader.org/topics/landsat.html">
+         Datashader Landsat
+images
+        </a>
+       </li>
+       <li>
+        <a class="reference external" href="https://anaconda.org/jbednar/opensky">
+         Datashader OpenSky
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="section" id="getting-started">
+      <h2>
+       Getting started
+       <a class="headerlink" href="#getting-started" title="Permalink to this headline">
+        ¶
+       </a>
+      </h2>
+      <p>
+       First, you should browse through the already-run versions of the PyViz
+       <a class="reference external" href="tutorial/index.html">
+        tutorials
+       </a>
+       to see what they cover and how it all
+works. But everything on this website is a Jupyter Notebook that you can
+run yourself, once you follow the
+       <a class="reference external" href="installation">
+        installation
+       </a>
+       instructions, so the next step is to try it all out and have fun exploring
+it!
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="tutorial/index.html">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="topics/index.html">
+       Topics
+      </a>
+     </li>
+     <li>
+      <a href="FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/pyviz/pyviz">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>
