@@ -52,9 +52,7 @@
     <a href="https://plotnine.readthedocs.io" ><img class="pvlogo" src="assets/plotnine.png"/></a>
     <a href="https://graphviz.org"            ><img class="pvlogo" src="assets/graphviz.png"/></a>
     <a href="https://ggplot2.tidyverse.org"   ><img class="pvlogo" src="assets/ggplot2.png"/></a>
-    <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
     </div>
-
     <p>Objects from nearly every other plotting library can be used with
     <a href="https://panel.pyviz.org">Panel</a>, including specific support for all those listed here plus anything that
     can generate HTML, PNG, or SVG.  HoloViews also supports
@@ -89,6 +87,7 @@
 
     <div style="margin:10px">
     <a href="http://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
+    <a href="http://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
     <a href="http://networkx.github.io"       ><img class="pvlogo" src="assets/networkx.png"/></a>
     <a href="http://geopandas.org"            ><img class="pvlogo" src="assets/geopandas.png"/></a>
     <a href="http://scitools.org.uk/cartopy"  ><img class="pvlogo" src="assets/cartopy.png" style="max-height:70px"/></a>
@@ -96,10 +95,13 @@
     <a href="https://yt-project.org"          ><img class="pvlogo" src="assets/yt.png" style="max-height:70px" /></a>
     <a href="https://sympy.org"               ><img class="pvlogo" src="assets/sympy.png"/></a>
     <a href="http://jupyter.org"              ><img class="pvlogo" src="assets/jupyter.png"/></a>
+    <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
     </div>
     
     <p>PyViz tools both use and support declarative user-configurable
     <a href="http://param.pyviz.org">Param</a> objects.<br>
+    <p>We recommend using perceptually uniform colormaps such as those provided by 
+    the PyViz <a href="http://colorcet.pyviz.org">Colorcet</a> library.<br>
     PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
     <a href="http://geopandas.org">GeoPandas</a> and
@@ -109,7 +111,7 @@
     <a href="https://yt-project.org">yt</a> for volumetric and physics data and
     <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
     PyViz tools provide extensive support for 
-    <a href="http://jupyter.org">Jupyter</a> notebooks, standalone web servers, and static exported files.<br><br>
+    <a href="http://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
     
     <h1>Getting started</h1>
 
