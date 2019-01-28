@@ -42,7 +42,7 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
-        - conda install -c pyviz/label/dev pyctdev && doit ecosystem_setup
+        - conda install -c pyviz "pyctdev>=0.5" pyctdev && doit ecosystem_setup
       before_script:
         - doit env_create --name=pyviz --python=$PYENV_VERSION
         - source activate pyviz
