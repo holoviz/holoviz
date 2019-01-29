@@ -15,7 +15,7 @@ stages:
     if: type = cron
   - test
   - name: conda_dev_package
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$.
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
 # no pip packages until dependencies become available on pypi
 # (see https://github.com/pyviz/pyviz/issues/100)
 #  - name: pip_dev_package
