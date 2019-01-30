@@ -125,7 +125,7 @@ jobs:
       stage: conda_dev_package
       env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
       before_script:
-        - doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
+        - travis_wait 30 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
       script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
