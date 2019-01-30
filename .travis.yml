@@ -2,7 +2,7 @@ language: generic
 
 env:
   global:
-    - CHANS_DEV="-c pyviz/label/dev"
+    - CHANS_DEV="-c pyviz/label/dev -c conda-forge"
     - CHANS_REL="-c pyviz"
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
@@ -42,11 +42,11 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
-        - conda install -c pyviz "pyctdev>=0.5" pyctdev && doit ecosystem_setup
+        - conda install -c pyviz/label/dev "pyctdev>=0.5" pyctdev && doit ecosystem_setup
       before_script:
         - doit env_create --name=pyviz --python=$PYENV_VERSION
         - source activate pyviz
-        - travis_wait 20 doit develop_install $CHANS_DEV -o recommended
+        - travis_wait 30 doit develop_install $CHANS_DEV --all-extras
         - pip install msgpack # workaround for unfortunate combination of msgpack vs msgpack-python + no conda develop command + pkg_resources checking what's installed for entrypoints + msgpack/rise conflict via conda; need to investigate
         - doit env_capture
       script:
@@ -125,7 +125,7 @@ jobs:
       stage: conda_dev_package
       env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
       before_script:
-        - doit package_build $CHANS $PKG_TEST_PYTHON $PINS --package-name pyviz --test-group=unit
+        - doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
       script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
