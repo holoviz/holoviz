@@ -3,7 +3,7 @@ language: generic
 env:
   global:
     - CHANS_DEV="-c pyviz/label/dev -c conda-forge"
-    - CHANS_REL="-c pyviz -c conda-forge"
+    - CHANS_REL="-c https://conda.anaconda.org/pyviz -c conda-forge"
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
     - PYENV_VERSION=3.6
