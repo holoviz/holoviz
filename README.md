@@ -2,9 +2,9 @@
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/7xhtku2yjux40hwq/branch/master?svg=true)](https://ci.appveyor.com/project/pyviz/pyviz/branch/master)
 [![Github tag](https://img.shields.io/github/tag/pyviz/pyviz.svg?colorB=bbcc00)](https://github.com/pyviz/pyviz/tags)
 [![PyPI version](https://img.shields.io/pypi/v/pyviz.svg?colorB=44aaff)](https://pypi.python.org/pypi/pyviz)
-[![Pyviz version](https://img.shields.io/conda/v/pyviz/pyviz.svg?colorB=00ccbb)](https://anaconda.org/pyviz/pyviz)
-[![Pyviz version](https://img.shields.io/conda/v/conda-forge/pyviz.svg?colorB=aa77dd)](https://anaconda.org/conda-forge/pyviz)
-[![Pyviz version](https://img.shields.io/conda/v/anaconda/pyviz.svg?colorB=00ccbb)](https://anaconda.org/anaconda/pyviz)
+[![Pyviz version](https://img.shields.io/conda/v/pyviz/pyviz.svg?colorB=00ccbb&style=flat)](https://anaconda.org/pyviz/pyviz)
+[![conda-forge version](https://img.shields.io/conda/v/conda-forge/pyviz.svg?label=conda%7Cconda-forge&colorB=aa77dd)](https://anaconda.org/conda-forge/pyviz)
+[![defaults version](https://img.shields.io/conda/v/anaconda/pyviz.svg?label=conda%7Cdefaults&style=flat)](https://anaconda.org/anaconda/pyviz)
 
 
 	     
