@@ -6,14 +6,10 @@
 
 |    |    |
 | --- | --- |
-| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz/pyviz.svg?branch=master)](https://travis-ci.org/pyviz/pyviz) |
-| | [![Windows Build status](https://ci.appveyor.com/api/projects/status/7xhtku2yjux40hwq/branch/master?svg=true)](https://ci.appveyor.com/project/pyviz/pyviz/branch/master) |
+| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz/pyviz.svg?branch=master)](https://travis-ci.org/pyviz/pyviz) [![Windows Build status](https://ci.appveyor.com/api/projects/status/7xhtku2yjux40hwq/branch/master?svg=true)](https://ci.appveyor.com/project/pyviz/pyviz/branch/master) |
 | Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz/pyviz.svg?colorB=bbcc00)](https://github.com/pyviz/pyviz/tags) |
-| Latest release | [![Github release](https://img.shields.io/github/release/pyviz/pyviz.svg?colorB=bbcc00)](https://github.com/pyviz/pyviz/releases) |
-| | [![PyPI version](https://img.shields.io/pypi/v/pyviz.svg?colorB=44aaff)](https://pypi.python.org/pypi/pyviz) |
-| | [![Pyviz version](https://img.shields.io/conda/v/pyviz/pyviz.svg?colorB=00ccbb&style=flat)](https://anaconda.org/pyviz/pyviz) |
-| | [![conda-forge version](https://img.shields.io/conda/v/conda-forge/pyviz.svg?label=conda%7Cconda-forge&colorB=aa77dd)](https://anaconda.org/conda-forge/pyviz) |
-| | [![defaults version](https://img.shields.io/conda/v/anaconda/pyviz.svg?label=conda%7Cdefaults&style=flat)](https://anaconda.org/anaconda/pyviz) |
+| Latest release | [![Github release](https://img.shields.io/github/release/pyviz/pyviz.svg?colorB=bbcc00)](https://github.com/pyviz/pyviz/releases) [![PyPI version](https://img.shields.io/pypi/v/pyviz.svg?colorB=44aaff)](https://pypi.python.org/pypi/pyviz) [![Pyviz version](https://img.shields.io/conda/v/pyviz/pyviz.svg?colorB=00ccbb&style=flat)](https://anaconda.org/pyviz/pyviz) [![conda-forge version](https://img.shields.io/conda/v/conda-forge/pyviz.svg?label=conda%7Cconda-forge&colorB=aa77dd)](https://anaconda.org/conda-forge/pyviz) [![defaults version](https://img.shields.io/conda/v/anaconda/pyviz.svg?label=conda%7Cdefaults&style=flat)](https://anaconda.org/anaconda/pyviz) |
+| Docs | [![gh-pages](https://img.shields.io/github/last-commit/pyviz/pyviz/gh-pages.svg)](https://github.com/pyviz/pyviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/pyviz.org.svg)](http://pyviz.org) |
 
 
 ## What is it?	     
