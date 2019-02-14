@@ -16,11 +16,11 @@ class OSM(param.Parameterized):
     
     @param.depends('alpha')
     def tiles(self):
-        return gv.tile_sources.EsriImagery.options(alpha=self.alpha, **topts)
+        return gv.tile_sources.EsriImagery.opts(alpha=self.alpha, **topts)
 
     @param.depends()
     def view(self):
-        points = hv.DynamicMap(hv.Points(df, kdims=['x', 'y']))
+        points = hv.Points(df, kdims=['x', 'y'])
         raster = rasterize(points, x_sampling=1, y_sampling=1, width=900, height=600)
         return hv.DynamicMap(self.tiles) * shade(raster, streams=[hv.streams.Params(self, ['cmap'])])
 
