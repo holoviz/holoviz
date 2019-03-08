@@ -100,7 +100,7 @@
 
     <p>PyViz tools both use and support declarative user-configurable
     <a href="https://param.pyviz.org">Param</a> objects.<br>
-    <p>We recommend using perceptually uniform colormaps such as those provided by
+    We recommend using perceptually uniform colormaps such as those provided by
     the PyViz <a href="https://colorcet.pyviz.org">Colorcet</a> library.<br>
     PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
