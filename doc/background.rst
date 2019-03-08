@@ -1,7 +1,7 @@
 Background: Why PyViz?
 ======================
 
-Many of the activities of a data scientist or analyst require
+Many of the activities of an engineer, scientist, or analyst require
 visualization, but it can be difficult to assemble a set of tools that
 cover all of the tasks involved. Initial exploration needs to be in a
 flexible, open-ended environment where it is simple to try out and test
@@ -32,20 +32,24 @@ exploration. Bokeh and Matplotlib both also have limitations on how much
 data they can handle, in part because Bokeh requires the data to be put
 into the web browser's limited memory space.
 
-To address these issues, we have developed a set of open-source Python
+
+The PyViz ecosystem
+-------------------
+
+To address all the above issues, we have developed a set of open-source Python
 packages to streamline the process of working with small and large datasets
-(from a few points to billions) in a web browser, whether doing
+(from a few points to billions or more) in a web browser, whether doing
 exploratory analysis, making simple widget-based tools, or building
-full-featured dashboards. The libraries in this ecosystem include:
+full-featured dashboards. The main libraries in this ecosystem include:
 
 -  `Panel <http://panel.pyviz.org>`__: Assembling objects from
    many different libraries into a layout or app, whether in a Jupyter
-   notebook or in a standalone serveable dashboard
+   notebook or in a standalone servable dashboard
 -  `Bokeh <http://bokeh.pydata.org>`__: Interactive plotting in web
    browsers, running JavaScript but controlled by Python
 -  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
-   HoloViews or GeoViews objects from your Pandas, Xarray, or other
-   data structures
+   Bokeh-based HoloViews or GeoViews objects from your Pandas, Xarray,
+   or other data structures
 -  `HoloViews <http://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
@@ -57,25 +61,100 @@ full-featured dashboards. The libraries in this ecosystem include:
    user-relevant parameters, making it simple to work with widgets
    inside and outside of a notebook context
 
-These projects can be used separately or together in a wide variety of
-different configurations to address different needs. For instance, if we
-focus on the needs of a data scientist/analyst who wants to understand
-the properties of their data, we can compare that to the approach
-suggested for a software developer wanting to build a highly custom
-software application for data of different sizes:
+
+Solving problems using PyViz tools
+----------------------------------
+
+Why do we say that PyViz is an ecosystem, as opposed to an application
+or a tool? The answer is that PyViz consists of a large set of loosely
+related, separately maintained components, not some single monolithic
+application. In practice, different people will use different PyViz
+tools in different ways to solve different problems.
+
+For instance, if we focus on the needs of a data scientist/analyst who
+wants to understand the properties of their data, we can compare that
+to the approach suggested for a software developer wanting to build a
+highly custom software application:
 
 .. image:: assets/ds_hv_bokeh.png
     :height: 220px
 
-Here Datashader is used to make large datasets practical by rendering
-images outside the browser, either directly for a programmer or via a
-convenient high-level interface using HoloViews (or hvPlot), and the
-results can be embedded in interactive Bokeh plots if desired, either
-as a static HTML plot, in a Jupyter notebook, or as a standaline
-application.
+Here both users are using Datashader, but in very different ways.  The
+data analyst could use the high-level interface from HoloViews or
+hvPlot, which can use Datashader when needed for large datasets,
+producing interactive Bokeh-based plots. These interactive plots can
+then be used in web browsers directly as static HTML, in Jupyter
+Notebooks for interactive sessions, or as a standalone separate
+dashboard or application. In each case the analyst pulls in some part
+of the ecosystem, as needed.
 
-Behind the scenes, these tools rely on a wide range of other open-source
-libraries for their implementation, including:
+Meanwhile, a dedicated software developer might use some of these same
+tools, perhaps by calling Datashader directly to generate bare images,
+and then optionally embedding those images into an interactive Bokeh
+plot (or perhaps directly into a report or a web page). This example
+covers only a few of the available tools , and each user can apply any
+of the tools in combination to solve a huge variety of different
+problems.
+
+
+Shortcuts, not dead ends
+------------------------
+
+As you can see, the tools are designed to solve the problems of very
+different users working on very different tasks, which reflects the
+diversity of users and needs for data visualization.  Casual users
+will often want a quick way to get something that works well enough,
+while a dedicated technical user with specialized needs will want
+detailed control over each aspect, which usually means a different and
+more low-level tool.  But because many people fall in between these
+extremes, and because individual users often travel on a trajectory
+from casual user to power user as their needs become more precise, the
+tools are also designed to transition easily between each of these
+different approaches.
+
+That is, these tools are designed to offer simplified, high-level
+interfaces that are easy ways for users to get started, but those easy
+ways should truly be starting points, not dead ends.  To illustrate
+this point, consider three different types of tools -- low level, high
+level, and layered:
+
+.. image:: assets/shortcuts.png
+    :height: 300px
+
+A low-level tool is highly configurable, with an expressive but
+relatively verbose command language that makes it possible to
+precisely control how it works. For PyViz, Bokeh is a low-level tool,
+allowing any plot or app to be built up from basic primitives. A
+high-level tool like hvPlot or like Panel's interact function uses
+much less code and a much simpler interface to make a powerful plot or
+dashboard, but what do you do if you then need to make some small
+changes in the result?
+
+Typical high-level tools will just be dead ends at this point, forcing
+you to start over if what they provide isn't what you needed. PyViz
+high-level tools are instead very systematically designed as layers on
+top of lower-level tools, where you can use the top level for anything
+that it provides, while always being able to drop down a level (or
+several if necessary!) to get the behavior you need.
+
+Panel's `interact function <https://panel.pyviz.org/user_guide/Introduction.html>`_
+provides a clear example of this approach. With one line of Panel code
+you can get a fully functional widget-based app.  But if it's not
+precisely what you want, you can then inspect what's returned, unpack
+it, rearrange and add or delete components, then use the result
+instead.  Similarly, hvPlot provides a one-line way to return complex
+HoloViews objects, which can then be inspected, pulled apart,
+reconfigured, and recomposed if/as needed. And then these HoloViews
+objects, in turn, can be used to make a Bokeh figure that again can be
+examined, modified, and used in other contexts (if desired!).
+
+             
+Building on the Python scientific ecosystem
+-------------------------------------------
+
+Beyond the specific PyViz tools, all these approaches work with and
+often rely upon a wide range of other open-source libraries for their
+implementation, including:
 
 -  `Pandas <http://pandas.pydata.org>`__: Convenient computation on
    columnar datasets (used by HoloViews and datashader)
@@ -89,17 +168,21 @@ libraries for their implementation, including:
 -  `Fastparquet <https://fastparquet.readthedocs.io>`__: Efficient
    storage for columnar data
 -  `Cartopy <http://scitools.org.uk/cartopy>`__: Support for
-   geographical data (using a wide range of other libraries)
+   geographical data (using a wide range of other lower-level libraries)
 
-The PyViz tutorials will guide you through the process of using these tools
-together to build rich, high-performance, scalable, flexible, and
-deployable visualizations, apps, and dashboards, without having to use
-JavaScript or other web technologies explicitly, and without having to
-rewrite your code to move between each of the different tasks or phases
-from exploration to deployment. In each case, we'll try to draw your
-attention to libraries and approaches that help you get the job done,
-which in turn depend on many other unseen libraries in the scientific
-Python ecosystem to do the heavy lifting.
+
+These and many other tools form the broader ecosystem that supports
+PyViz. The PyViz tutorials will guide you through the process of
+using these tools together to build rich, high-performance, scalable,
+flexible, and deployable visualizations, apps, and dashboards, without
+having to use JavaScript or other web technologies explicitly, and
+without having to rewrite your code to move between each of the
+different tasks or phases from exploration to deployment. In each
+case, we'll try to draw your attention to libraries and approaches
+that help you get the job done, which in turn depend on many other
+unseen libraries in the scientific Python ecosystem to do the heavy
+lifting.
+
 
 Demos
 -----
@@ -123,6 +206,7 @@ tools, you can check out some of these links first if you wish:
 -  `Datashader Landsat
    images <http://datashader.org/topics/landsat.html>`__
 -  `Datashader OpenSky <https://anaconda.org/jbednar/opensky>`__
+
 
 Getting started
 ---------------
