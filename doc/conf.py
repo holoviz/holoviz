@@ -25,6 +25,7 @@ _NAV =  (
     ('Topics', 'topics/index'),
     ('FAQ', 'FAQ'),
     ('About', 'about')
+    ('Community', 'community')
 )
 
 html_context.update({

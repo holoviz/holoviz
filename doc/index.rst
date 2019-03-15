@@ -29,7 +29,7 @@
     <p>These PyViz-maintained packages each make great starting points --
     <a href="https://panel.pyviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
     <a href="http://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
-    <a href="http://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and 
+    <a href="http://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and
     <a href="http://geoviews.org">GeoViews</a>   to extend HoloViews for geographic data.<br><br>
 
 
@@ -76,7 +76,7 @@
     <a href="http://dask.pydata.org">Dask</a> DataFrames and
     <a href="http://numpy.org">NumPy</a>,
     <a href="http://xarray.pydata.org">Xarray</a>, or
-    <a href="http://dask.pydata.org">Dask</a> arrays, including remote data from the 
+    <a href="http://dask.pydata.org">Dask</a> arrays, including remote data from the
     <a href="https://intake.readthedocs.io">Intake</a> data catalog library. They also use
     <a href="http://dask.pydata.org">Dask</a> and
     <a href="http://numba.pydata.org">Numba</a> to speed up computations along with algorithms and functions from
@@ -97,10 +97,10 @@
     <a href="http://jupyter.org"              ><img class="pvlogo" src="assets/jupyter.png"/></a>
     <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
     </div>
-    
+
     <p>PyViz tools both use and support declarative user-configurable
     <a href="http://param.pyviz.org">Param</a> objects.<br>
-    <p>We recommend using perceptually uniform colormaps such as those provided by 
+    <p>We recommend using perceptually uniform colormaps such as those provided by
     the PyViz <a href="http://colorcet.pyviz.org">Colorcet</a> library.<br>
     PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
@@ -110,9 +110,9 @@
     Panel can be used with
     <a href="https://yt-project.org">yt</a> for volumetric and physics data and
     <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
-    PyViz tools provide extensive support for 
+    PyViz tools provide extensive support for
     <a href="http://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
-    
+
     <h1>Getting started</h1>
 
 The `Background <background.html>`_ page explains the PyViz approach in more detail, including how these tools fit together.
@@ -135,3 +135,4 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Roadmap <Roadmap>
    FAQ
    About <about>
+   Community <community>
