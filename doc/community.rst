@@ -25,8 +25,9 @@ is missing or not behaving as expected, visit the Github issue tracker
 for the relevant project. All projects are under the PyViz 
 `GitHub organization <https://github.com/pyviz>`__.  GitHub is where
 bugs and enhancements are logged and discussed.  Search for relevant
-existing issues to comment on, or submit your own. Use the GitHub
-issue tracker for:
+existing issues to comment on, or submit your own (following these
+`guidelines <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__
+if at all possible). Use the GitHub issue tracker for:
 
   - **Bug reports** (like "The text gets cut off in a panel object.")
   - **Documentation issues** (like "I found this section unclear")
