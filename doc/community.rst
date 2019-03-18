@@ -31,6 +31,8 @@ issue tracker for:
   - **Bug reports** (like "The text gets cut off in a panel object.")
   - **Documentation issues** (like "I found this section unclear")
   - **Feature requests** (like "I think that colorcet should have a jet colormap")
+  
+For best practices on how to submit a bug report see: `Matthew Rocklin's Minimal Bug Report blog post <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__.
 
 **Do you have a quick, specific issue that likely has an immediate solution?**
 You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
@@ -48,6 +50,6 @@ out the community: Please consider making a PR to the docs, examples,
 or FAQ for that project with that information, so that a future user
 won't get stuck in the same way.
     
-And please tweet at us (@holoviews, @datashader, @pyviz_org) often to
+And please tweet at us (@holoviews, @datashader, @bokehplots, #pyviz) often to
 show off what you are making with PyViz tools and help spread the
 word!
