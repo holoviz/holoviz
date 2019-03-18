@@ -33,8 +33,6 @@ if at all possible). Use the GitHub issue tracker for:
   - **Documentation issues** (like "I found this section unclear")
   - **Feature requests** (like "I think that colorcet should have a jet colormap")
   
-For best practices on how to submit a bug report see: `Matthew Rocklin's Minimal Bug Report blog post <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__.
-
 **Do you have a quick, specific issue that likely has an immediate solution?**
 You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
 Use gitter for quick feedback while you are working on a task:
