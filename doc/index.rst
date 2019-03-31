@@ -21,15 +21,15 @@
 
     <div style="margin:10px">
     <a href="https://panel.pyviz.org"         ><img class="pvlogo" src="assets/panel.png"/></a>
-    <a href="http://hvplot.pyviz.org"         ><img class="pvlogo" src="assets/hvplot.png"/></a>
-    <a href="http://holoviews.org"            ><img class="pvlogo" src="assets/holoviews.png"/></a>
+    <a href="https://hvplot.pyviz.org"         ><img class="pvlogo" src="assets/hvplot.png"/></a>
+    <a href="https://holoviews.org"            ><img class="pvlogo" src="assets/holoviews.png"/></a>
     <a href="http://geoviews.org"             ><img class="pvlogo" src="assets/geoviews.png"/></a>
     </div>
 
     <p>These PyViz-maintained packages each make great starting points --
     <a href="https://panel.pyviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
-    <a href="http://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
-    <a href="http://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and
+    <a href="https://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
+    <a href="https://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and
     <a href="http://geoviews.org">GeoViews</a>   to extend HoloViews for geographic data.<br><br>
 
 
@@ -86,8 +86,8 @@
     <h1>Other supported tools</h1>
 
     <div style="margin:10px">
-    <a href="http://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
-    <a href="http://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
+    <a href="https://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
+    <a href="https://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
     <a href="http://networkx.github.io"       ><img class="pvlogo" src="assets/networkx.png"/></a>
     <a href="http://geopandas.org"            ><img class="pvlogo" src="assets/geopandas.png"/></a>
     <a href="http://scitools.org.uk/cartopy"  ><img class="pvlogo" src="assets/cartopy.png" style="max-height:70px"/></a>
@@ -99,9 +99,9 @@
     </div>
 
     <p>PyViz tools both use and support declarative user-configurable
-    <a href="http://param.pyviz.org">Param</a> objects.<br>
+    <a href="https://param.pyviz.org">Param</a> objects.<br>
     <p>We recommend using perceptually uniform colormaps such as those provided by
-    the PyViz <a href="http://colorcet.pyviz.org">Colorcet</a> library.<br>
+    the PyViz <a href="https://colorcet.pyviz.org">Colorcet</a> library.<br>
     PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
     <a href="http://geopandas.org">GeoPandas</a> and
@@ -119,7 +119,7 @@ The `Background <background.html>`_ page explains the PyViz approach in more det
 Or you can just skim the material in the `Tutorial <tutorial/index.html>`_ online, to get an idea what is covered by these tools.
 If what you see looks relevant to you, you can then follow the steps outlined in `Installation <installation.html>`_ to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
 
-.. No logo available yet for http://colorcet.pyviz.org or https://vega.github.io/vega-lite
+.. No logo available yet for https://colorcet.pyviz.org or https://vega.github.io/vega-lite
 
 
 .. toctree::
