@@ -16,8 +16,8 @@ them into a coherent solution to a wide range of Python visualization
 problems.
 
 If you like PyViz, please `tweet <http://twitter.com>`_ a screenshot
-of your latest creation, linking to ``pyviz.org`` and tagging it
-``#PyViz`` along with any other library you relied on (``@HoloViews``,
+of your latest creation at ``@PyViz_org``, linking to ``pyviz.org``
+along with any other library you relied on (``@HoloViews``,
 ``@Datashader``, ``@BokehPlots``, ``@Matplotlib``, etc.). Thanks!
 
 There is an active open source community around PyViz, and
