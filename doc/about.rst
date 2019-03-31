@@ -45,7 +45,7 @@ Additionally, some parts of the PyViz stack are able to accept
 donations, e.g. `Bokeh via NumFOCUS
 <https://numfocus.org/project/bokeh>`_.
 
-.. image:: https://www.anaconda.com/wp-content/themes/anaconda/images/logo-dark.png
+.. image:: https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png
    :height: 60px
    :alt: Anaconda website
    :target: http://www.anaconda.com
