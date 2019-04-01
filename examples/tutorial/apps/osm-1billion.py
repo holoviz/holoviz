@@ -25,4 +25,4 @@ class OSM(param.Parameterized):
         return hv.DynamicMap(self.tiles) * shade(raster, streams=[hv.streams.Params(self, ['cmap'])])
 
 osm = OSM(name="Open Street Map GPS")
-pn.Row(osm, osm.view).servable()
+pn.Row(osm.param, osm.view).servable()
