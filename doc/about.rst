@@ -16,8 +16,8 @@ them into a coherent solution to a wide range of Python visualization
 problems.
 
 If you like PyViz, please `tweet <http://twitter.com>`_ a screenshot
-of your latest creation, linking to ``pyviz.org`` and tagging it
-``#PyViz`` along with any other library you relied on (``@HoloViews``,
+of your latest creation at ``@PyViz_org``, linking to ``pyviz.org``
+along with any other library you relied on (``@HoloViews``,
 ``@Datashader``, ``@BokehPlots``, ``@Matplotlib``, etc.). Thanks!
 
 There is an active open source community around PyViz, and
@@ -45,7 +45,7 @@ Additionally, some parts of the PyViz stack are able to accept
 donations, e.g. `Bokeh via NumFOCUS
 <https://numfocus.org/project/bokeh>`_.
 
-.. image:: https://www.anaconda.com/wp-content/themes/anaconda/images/logo-dark.png
+.. image:: https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png
    :height: 60px
    :alt: Anaconda website
    :target: http://www.anaconda.com
