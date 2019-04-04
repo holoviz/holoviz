@@ -1,12 +1,12 @@
 Installation
 ============
 
-Step 1: Install a `Miniconda <https://conda.io/miniconda.html>`_  (or `Anaconda <https://www.anaconda.com/downloads>`_) environment
+Step 1: Install a `Miniconda <//conda.io/miniconda.html>`_  (or `Anaconda <//www.anaconda.com/downloads>`_) environment
 -----------------------------------------------------------------------------------------------------------------------------------
 
 Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google Chrome) should be suitable. 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
 
-If you don't already have conda on your machine, you can get it from `conda.io <https://conda.io/miniconda.html>`_, and then open a terminal window.
+If you don't already have conda on your machine, you can get it from `conda.io <//conda.io/miniconda.html>`_, and then open a terminal window.
 
 If you do have conda already, it's a good idea to update it (running it twice to get the very latest) to ensure you have the latest version::
 

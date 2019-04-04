@@ -1,2 +1,2 @@
-Site is built with nbsite; see http://pyviz.github.io/nbsite for
+Site is built with nbsite; see //pyviz.github.io/nbsite for
 details and instructions.

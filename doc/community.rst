@@ -12,7 +12,7 @@ methods for each type of interaction.
 
 **Have a question about how to use PyViz tools?** After the docs, your
 first stop should be
-`Stack Overflow <http://stackoverflow.com/questions/tagged/pyviz>`__. 
+`Stack Overflow <//stackoverflow.com/questions/tagged/pyviz>`__.
 Search for an existing answer to your question, or post a new one (and
 make sure you include the "**pyviz**" tag). StackOverflow is for
 *usage* questions:
@@ -23,10 +23,10 @@ make sure you include the "**pyviz**" tag). StackOverflow is for
 **Have you found an issue with a PyViz tool?** If you think something
 is missing or not behaving as expected, visit the Github issue tracker
 for the relevant project. All projects are under the PyViz 
-`GitHub organization <https://github.com/pyviz>`__.  GitHub is where
+`GitHub organization <//github.com/pyviz>`__.  GitHub is where
 bugs and enhancements are logged and discussed.  Search for relevant
 existing issues to comment on, or submit your own (following these
-`guidelines <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__
+`guidelines <//matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__
 if at all possible). Use the GitHub issue tracker for:
 
   - **Bug reports** (like "The text gets cut off in a panel object.")
@@ -34,7 +34,7 @@ if at all possible). Use the GitHub issue tracker for:
   - **Feature requests** (like "I think that colorcet should have a jet colormap")
   
 **Do you have a quick, specific issue that likely has an immediate solution?**
-You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
+You can chat with other users on the PyViz `Gitter channel <//gitter.im/pyviz/pyviz>`__.
 Use gitter for quick feedback while you are working on a task:
 
   - I'm having trouble setting up the development environment.

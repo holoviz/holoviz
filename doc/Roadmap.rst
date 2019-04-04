@@ -45,7 +45,7 @@ Immediate, already funded priorities for 2018 include:
    making releases, providing example scripts, managing datasets,
    documenting examples, testing examples (including notebooks), and
    building websites. Projects addressing each of these areas are being
-   added to the `PyViz Github organization <https://github.com/pyviz>`__
+   added to the `PyViz Github organization <//github.com/pyviz>`__
    and will be documented in the main PyViz site as they become mature.
 
    
@@ -69,18 +69,18 @@ well with PyViz include:
 
 2. **Integrating 3D surface and volume rendering into PyViz**: HoloViews
    can plot limited quantities of 3D surface or point data using
-   `Matplotlib <http://holoviews.org/reference/elements/matplotlib/TriSurface.html>`__
+   `Matplotlib <//holoviews.org/reference/elements/matplotlib/TriSurface.html>`__
    or
-   `Plotly <http://holoviews.org/reference/elements/plotly/TriSurface.html>`__,
+   `Plotly <//holoviews.org/reference/elements/plotly/TriSurface.html>`__,
    but other tools are needed for larger datasets or for volumetric
    rendering with transparent/semitransparent voxels. Improving 3D
    support could be as simple as providing examples for using existing
    tools like
-   `IPyVolume <https://github.com/maartenbreddels/ipyvolume>`__ and
-   `Vaex <http://vaex.astro.rug.nl>`__, or by wrapping JavaScript
-   libraries like `ThreeJS <https://threejs.org>`__ and
-   `CesiumJS <https://cesiumjs.org>`__.  There's a first `prototype
-   for a CesiumJS backend now available <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__, 
+   `IPyVolume <//github.com/maartenbreddels/ipyvolume>`__ and
+   `Vaex <//vaex.astro.rug.nl>`__, or by wrapping JavaScript
+   libraries like `ThreeJS <//threejs.org>`__ and
+   `CesiumJS <//cesiumjs.org>`__.  There's a first `prototype
+   for a CesiumJS backend now available <//assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__,
    but lots more work to do to make it practical for real use.
 
 3. **Toolbox for GIS primitives**: The PyViz stack is fully general
@@ -119,30 +119,30 @@ well with PyViz include:
    that we'd like to include are:
 
    -  `parallel
-      coordinates <https://en.wikipedia.org/wiki/Parallel_coordinates>`__
-      and `radar charts <https://en.wikipedia.org/wiki/Radar_chart>`__
+      coordinates <//en.wikipedia.org/wiki/Parallel_coordinates>`__
+      and `radar charts <//en.wikipedia.org/wiki/Radar_chart>`__
       (polar parallel coordinates, or star charts)
-   -  `treemaps <https://en.wikipedia.org/wiki/Treemapping>`__
-   -  `dendrograms <https://en.wikipedia.org/wiki/Dendrogram>`__ and
-      `cladograms <https://en.wikipedia.org/wiki/Cladogram>`__
-   -  `radial trees <https://en.wikipedia.org/wiki/Radial_tree>`__
+   -  `treemaps <//en.wikipedia.org/wiki/Treemapping>`__
+   -  `dendrograms <//en.wikipedia.org/wiki/Dendrogram>`__ and
+      `cladograms <//en.wikipedia.org/wiki/Cladogram>`__
+   -  `radial trees <//en.wikipedia.org/wiki/Radial_tree>`__
    -  `packed
-      bubbles <https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing>`__
-   -  `funnel charts <https://en.wikipedia.org/wiki/Funnel_chart>`__
+      bubbles <//stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing>`__
+   -  `funnel charts <//en.wikipedia.org/wiki/Funnel_chart>`__
 
    (And if someone wants to write and maintain a `pie chart
-   <https://en.wikipedia.org/wiki/Pie_chart>`__ even though they are
+   <//en.wikipedia.org/wiki/Pie_chart>`__ even though they are
    nearly always the wrong thing to do, we can probably be convinced
    to allow it. :-)
 
 5. **More extensive documentation about deployment**: PyViz includes a
    tutorial on `deployment using Bokeh
-   server <http://pyviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__,
+   server <//pyviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__,
    but there are many other ways to set up live Python-backed plots,
    including creating a Flask server or embedding into Django, along
    with deploying via Heroku or Google Cloud and AWS or via the
    Anaconda Enterprise platform or on
-   `MyBinder <https://mybinder.org>`__. Documenting and testing these
+   `MyBinder <//mybinder.org>`__. Documenting and testing these
    possibilities takes time and effort, and any contributions or
    examples that will help people get started and decide between the
    alternatives would be very helpful.
@@ -194,7 +194,7 @@ well with PyViz include:
     GUI configuration of the plot objects. HoloViews components are
     already declarative, which means that they can be mapped directly
     into GUI elements for changing their parameters dynamically. Paired
-    with the new `Intake <https://github.com/ContinuumIO/intake>`_
+    with the new `Intake <//github.com/ContinuumIO/intake>`_
     library for declaring data sources, it would be possible to build a
     fully graphical interface for working with data that would have the
     advantage of being backed by a fully configurable, open-source set

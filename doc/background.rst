@@ -17,7 +17,7 @@ decision makers to interact directly with live data streams to make
 operational decisions.
 
 With Python, initial exploration is typically in a
-`Jupyter <http://jupyter.org>`__ notebook, using tools like Matplotlib
+`Jupyter <//jupyter.org>`__ notebook, using tools like Matplotlib
 and Bokeh to develop static or interactive plots. These tools support a
 simple syntax for making certain kinds of plots, but showing more
 complex relationships in data can quickly turn into a major software
@@ -38,22 +38,22 @@ packages to streamline the process of working with small and large datasets
 exploratory analysis, making simple widget-based tools, or building
 full-featured dashboards. The libraries in this ecosystem include:
 
--  `Panel <http://panel.pyviz.org>`__: Assembling objects from
+-  `Panel <//panel.pyviz.org>`__: Assembling objects from
    many different libraries into a layout or app, whether in a Jupyter
    notebook or in a standalone serveable dashboard
--  `Bokeh <http://bokeh.pydata.org>`__: Interactive plotting in web
+-  `Bokeh <//bokeh.pydata.org>`__: Interactive plotting in web
    browsers, running JavaScript but controlled by Python
--  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
+-  `hvPlot <//hvplot.pyviz.org>`__: Quickly return interactive
    HoloViews or GeoViews objects from your Pandas, Xarray, or other
    data structures
--  `HoloViews <http://holoviews.org>`__: Declarative objects for
+-  `HoloViews <//holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
--  `GeoViews <http://geo.holoviews.org>`__: Visualizable geographic
+-  `GeoViews <//geo.holoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
--  `Datashader <http://datashader.org>`__: Rasterizing
+-  `Datashader <//datashader.org>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `Param <http://param.pyviz.org>`__: Declaring
+-  `Param <//param.pyviz.org>`__: Declaring
    user-relevant parameters, making it simple to work with widgets
    inside and outside of a notebook context
 
@@ -77,18 +77,18 @@ application.
 Behind the scenes, these tools rely on a wide range of other open-source
 libraries for their implementation, including:
 
--  `Pandas <http://pandas.pydata.org>`__: Convenient computation on
+-  `Pandas <//pandas.pydata.org>`__: Convenient computation on
    columnar datasets (used by HoloViews and datashader)
--  `Xarray <http://xarray>`__: Convenient computations on
+-  `Xarray <//xarray>`__: Convenient computations on
    multidimensional array datasets (used by HoloViews and Datashader)
--  `Dask <http://dask.pydata.org>`__: Efficient
+-  `Dask <//dask.pydata.org>`__: Efficient
    out-of-core/distributed computation on massive datasets (used by
    Datashader)
--  `Numba <http://numba.pydata.org>`__: Accelerated machine code for
+-  `Numba <//numba.pydata.org>`__: Accelerated machine code for
    inner loops (used by Datashader)
--  `Fastparquet <https://fastparquet.readthedocs.io>`__: Efficient
+-  `Fastparquet <//fastparquet.readthedocs.io>`__: Efficient
    storage for columnar data
--  `Cartopy <http://scitools.org.uk/cartopy>`__: Support for
+-  `Cartopy <//scitools.org.uk/cartopy>`__: Support for
    geographical data (using a wide range of other libraries)
 
 The PyViz tutorials will guide you through the process of using these tools
@@ -108,21 +108,21 @@ To give you an idea what sort of functionality is possible with these
 tools, you can check out some of these links first if you wish:
 
 -  `Selection
-   stream <http://holoviews.org/reference/apps/bokeh/selection_stream.html>`__
+   stream <//holoviews.org/reference/apps/bokeh/selection_stream.html>`__
 -  `Bounds
-   stream <http://holoviews.org/reference/streams/bokeh/BoundsX.html>`__
--  `Mandelbrot <http://holoviews.org/gallery/apps/bokeh/mandelbrot.html>`__
--  `DynamicMap <http://holoviews.org/reference/containers/bokeh/DynamicMap.html>`__
--  `Crossfilter <http://holoviews.org/gallery/apps/bokeh/crossfilter.html>`__
+   stream <//holoviews.org/reference/streams/bokeh/BoundsX.html>`__
+-  `Mandelbrot <//holoviews.org/gallery/apps/bokeh/mandelbrot.html>`__
+-  `DynamicMap <//holoviews.org/reference/containers/bokeh/DynamicMap.html>`__
+-  `Crossfilter <//holoviews.org/gallery/apps/bokeh/crossfilter.html>`__
 -  `Game of
-   Life <http://holoviews.org/gallery/apps/bokeh/game_of_life.html>`__
+   Life <//holoviews.org/gallery/apps/bokeh/game_of_life.html>`__
 -  `Dragon
-   curve <http://holoviews.org/gallery/demos/bokeh/dragon_curve.html>`__
--  `Datashader NYC Taxi <https://anaconda.org/jbednar/nyc_taxi>`__
--  `Datashader Graphs <https://anaconda.org/jbednar/edge_bundling>`__
+   curve <//holoviews.org/gallery/demos/bokeh/dragon_curve.html>`__
+-  `Datashader NYC Taxi <//anaconda.org/jbednar/nyc_taxi>`__
+-  `Datashader Graphs <//anaconda.org/jbednar/edge_bundling>`__
 -  `Datashader Landsat
-   images <http://datashader.org/topics/landsat.html>`__
--  `Datashader OpenSky <https://anaconda.org/jbednar/opensky>`__
+   images <//datashader.org/topics/landsat.html>`__
+-  `Datashader OpenSky <//anaconda.org/jbednar/opensky>`__
 
 Getting started
 ---------------
