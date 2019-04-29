@@ -38,7 +38,7 @@ The PyViz ecosystem
 
 To address all the above issues, we have developed a set of open-source Python
 packages to streamline the process of working with small and large datasets
-(from a few points to billions or more) in a web browser, whether doing
+(from a few datapoints to billions or more) in a web browser, whether doing
 exploratory analysis, making simple widget-based tools, or building
 full-featured dashboards. The main libraries in this ecosystem include:
 
@@ -48,7 +48,7 @@ full-featured dashboards. The main libraries in this ecosystem include:
 -  `Bokeh <http://bokeh.pydata.org>`__: Interactive plotting in web
    browsers, running JavaScript but controlled by Python
 -  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
-   Bokeh-based HoloViews or GeoViews objects from your Pandas, Xarray,
+   Bokeh-based HoloViews or GeoViews objects from Pandas, Xarray,
    or other data structures
 -  `HoloViews <http://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
@@ -81,7 +81,7 @@ highly custom software application:
 
 Here both users are using Datashader, but in very different ways.  The
 data analyst could use the high-level interface from HoloViews or
-hvPlot, which can use Datashader when needed for large datasets,
+hvPlot, implicitly using Datashader when needed for large datasets,
 producing interactive Bokeh-based plots. These interactive plots can
 then be used in web browsers directly as static HTML, in Jupyter
 Notebooks for interactive sessions, or as a standalone separate
@@ -92,7 +92,7 @@ Meanwhile, a dedicated software developer might use some of these same
 tools, perhaps by calling Datashader directly to generate bare images,
 and then optionally embedding those images into an interactive Bokeh
 plot (or perhaps directly into a report or a web page). This example
-covers only a few of the available tools , and each user can apply any
+covers only a few of the available tools, and each user can apply any
 of the tools in combination to solve a huge variety of different
 problems.
 
@@ -124,7 +124,8 @@ level, and layered:
 A low-level tool is highly configurable, with an expressive but
 relatively verbose command language that makes it possible to
 precisely control how it works. For PyViz, Bokeh is a low-level tool,
-allowing any plot or app to be built up from basic primitives. A
+allowing any plot or app to be built up from basic primitives. An
+even lower-level approach would be to write javascript directly. A
 high-level tool like hvPlot or like Panel's interact function uses
 much less code and a much simpler interface to make a powerful plot or
 dashboard, but what do you do if you then need to make some small
@@ -132,7 +133,7 @@ changes in the result?
 
 Typical high-level tools will just be dead ends at this point, forcing
 you to start over if what they provide isn't what you needed. PyViz
-high-level tools are instead very systematically designed as layers on
+high-level tools are instead systematically designed as layers on
 top of lower-level tools, where you can use the top level for anything
 that it provides, while always being able to drop down a level (or
 several if necessary!) to get the behavior you need.
