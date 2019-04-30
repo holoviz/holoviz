@@ -51,7 +51,7 @@ jobs:
         - doit env_capture
       script:
         - pyviz fetch-data --path=examples --use-test-data
-        - doit test_examples
+        - doit test_all
         - pyviz clean-data --path=examples
 
     - <<: *default
