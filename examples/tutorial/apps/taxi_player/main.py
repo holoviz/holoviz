@@ -12,7 +12,7 @@ from bokeh.layouts import layout
 from bokeh.io import curdoc
 from bokeh.models import WMTSTileSource
 
-from holoviews.operation.datashader import datashade, aggregate, shade
+from holoviews.operation.datashader import aggregate, shade
 
 
 shade.cmap = fire
@@ -23,7 +23,6 @@ renderer = hv.renderer('bokeh').instance(mode='server')
 # Load data
 ddf = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','..','data','nyc_taxi_wide.parq')).persist()
 
-from bokeh.models import WMTSTileSource
 url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
 wmts = gv.WMTS(WMTSTileSource(url=url))
 

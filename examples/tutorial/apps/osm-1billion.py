@@ -1,6 +1,5 @@
 import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, panel as pn
-from holoviews.operation.datashader import datashade, rasterize, shade
-from holoviews.streams import RangeXY
+from holoviews.operation.datashader import rasterize, shade
 from colorcet import cm
 
 hv.extension('bokeh', logo=False)
@@ -13,7 +12,7 @@ topts = dict(width=900,height=600,xaxis=None,yaxis=None,bgcolor='black',show_gri
 class OSM(param.Parameterized):
     alpha = param.Magnitude(default=0.75, doc="Map tile opacity")
     cmap  = param.ObjectSelector(cm['fire'], objects={c:cm[c] for c in cmaps})
-    
+
     @param.depends('alpha')
     def tiles(self):
         return gv.tile_sources.EsriImagery.opts(alpha=self.alpha, **topts)
