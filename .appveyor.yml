@@ -15,7 +15,7 @@ install:
   - "conda config --set channel_priority strict"  # this makes the conda solver **way** faster
   - "doit env_create --name=pyviz --python=%PY%"
   - "activate pyviz"
-  - "doit develop_install %CHANS_DEV% %PIN% --all-extras"
+  - "doit develop_install %CHANS_DEV% --all-extras"
   - "doit env_capture"
 
 build: off
