@@ -1,9 +1,8 @@
-import holoviews as hv, geoviews as gv, param, dask.dataframe as dd, cartopy.crs as crs
+import holoviews as hv, geoviews as gv, param, dask.dataframe as dd
 import panel as pn
 
 from colorcet import cm
 from holoviews.operation.datashader import rasterize, shade
-from holoviews.streams import RangeXY
 
 hv.extension('bokeh', logo=False)
 
