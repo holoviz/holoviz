@@ -1,6 +1,6 @@
 environment:
   global:
-    CHANS_DEV: "-c pyviz/label/dev"
+    CHANS_DEV: "-c conda-forge -c defaults -c pyviz/label/dev"  # this order matters because we're using strict channel priority
     PIN: "--pin-deps"
   matrix:
     - PY: "3.6"
@@ -9,7 +9,10 @@ environment:
 
 install:
   - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
-  - "conda install -y -c pyviz/label/dev pyctdev && doit ecosystem_setup"
+  - "conda config --set always_yes True"
+  - "conda install -c pyviz/label/dev pyctdev && doit ecosystem_setup"
+  - "conda config --set path_conflict warn"
+  - "conda config --set channel_priority strict"  # this makes the conda solver **way** faster
   - "doit env_create --name=pyviz --python=%PY%"
   - "activate pyviz"
   - "doit develop_install %CHANS_DEV% %PIN% --all-extras"
@@ -19,6 +22,5 @@ build: off
 
 test_script:
   - "pyviz fetch-data --path=examples --use-test-data"
-  - "doit test_examples"
+  - "doit test_all"
   - "pyviz clean-data --path=examples"
-  
