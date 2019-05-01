@@ -2,8 +2,8 @@ language: generic
 
 env:
   global:
-    - CHANS_DEV="-c pyviz/label/dev -c conda-forge"
-    - CHANS_REL="-c https://conda.anaconda.org/pyviz -c conda-forge"
+    - CHANS_DEV="-c pyviz/label/dev -c defaults -c conda-forge"
+    - CHANS_REL="-c pyviz -c defaults -c conda-forge"
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
     - PYENV_VERSION=3.6
@@ -44,6 +44,7 @@ jobs:
         - conda config --set always_yes True
         - conda install -c pyviz/label/dev "pyctdev>=0.5" && doit ecosystem_setup
         - conda config --set path_conflict warn
+        - conda config --set channel_priority strict
       before_script:
         - doit env_create --name=pyviz --python=$PYENV_VERSION
         - source activate pyviz
