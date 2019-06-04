@@ -87,7 +87,7 @@ jobs:
         - doit develop_install $CHANS_DEV -o doc
         - bokeh sampledata
         - pyviz fetch-data --path=examples
-        - nbsite generate-rst --org pyviz --project-name pyviz --offset 1 --skip '^.*Exercise.*$'
+        - nbsite generate-rst --org pyviz --project-name pyviz --offset 1
         - nbsite build --what=html --output=builtdocs
       deploy:
         - provider: pages
@@ -106,7 +106,7 @@ jobs:
           skip_cleanup: true
           github_token: $GITHUB_TOKEN
           local_dir: ./builtdocs
-          repo: ioam-docs/pyviz-dev
+          repo: pyviz-dev/pyviz
           on:
             tags: true
             all_branches: true
