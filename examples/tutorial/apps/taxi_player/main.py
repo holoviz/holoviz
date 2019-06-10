@@ -1,7 +1,6 @@
 import os
 import dask.dataframe as dd
 import holoviews as hv
-import geoviews as gv
 import parambokeh
 import param
 
@@ -13,6 +12,7 @@ from bokeh.io import curdoc
 from bokeh.models import WMTSTileSource
 
 from holoviews.operation.datashader import aggregate, shade
+from holoviews.element.tiles import EsriImagery
 
 
 shade.cmap = fire
@@ -21,10 +21,8 @@ hv.extension('bokeh')
 renderer = hv.renderer('bokeh').instance(mode='server')
 
 # Load data
-ddf = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','..','data','nyc_taxi_wide.parq')).persist()
-
-url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{Z}/{Y}/{X}.jpg'
-wmts = gv.WMTS(WMTSTileSource(url=url))
+ddf = dd.read_parquet(os.path.join(os.path.dirname(__file__),'..','..','..','data','nyc_taxi_wide.parq', engine='fastparquet')).persist()
+tiles = EsriImagery()
 
 stream = hv.streams.Stream.define('HourSelect', hour=0)()
 points = hv.Points(ddf, kdims=['dropoff_x', 'dropoff_y'])

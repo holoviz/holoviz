@@ -1,8 +1,9 @@
-import holoviews as hv, geoviews as gv, param, dask.dataframe as dd
+import holoviews as hv, param, dask.dataframe as dd
 import panel as pn
 
 from colorcet import cm
 from holoviews.operation.datashader import rasterize, shade
+from holoviews.element.tiles import StamenTerrain
 
 hv.extension('bokeh', logo=False)
 
@@ -10,6 +11,7 @@ usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_
 df = dd.read_parquet('../../data/nyc_taxi_wide.parq')[usecols].persist()
 opts = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 cmaps = ['fire','bgy','bgyw','bmy','gray','kbc']
+tiles = StamenTerrain()
 
 
 class NYCTaxiExplorer(param.Parameterized):
@@ -26,7 +28,7 @@ class NYCTaxiExplorer(param.Parameterized):
 
     @param.depends('alpha')
     def tiles(self):
-        return gv.tile_sources.StamenTerrain.options(alpha=self.alpha, **opts)
+        return tiles.options(alpha=self.alpha, **opts)
 
     def view(self,**kwargs):
         points = hv.DynamicMap(self.points)
