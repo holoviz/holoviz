@@ -8,8 +8,6 @@ from colorcet import cm_n, fire
 
 from bokeh.models import Slider, Button
 from bokeh.layouts import layout
-from bokeh.io import curdoc
-from bokeh.models import WMTSTileSource
 
 from holoviews.operation.datashader import aggregate, shade
 from holoviews.element.tiles import EsriImagery
@@ -50,7 +48,7 @@ hv.opts("RGB [width=1200 height=600 xaxis=None yaxis=None fontsize={'title': '14
 hv.opts("Curve [width=150 yaxis=None show_frame=False] (color='black') {+framewise} Layout [shared_axes=False]")
 
 # Combine it all into a complex layout
-hvobj = (wmts * shaded * vline) << section
+hvobj = (tiles * shaded * vline) << section
 
 ### Pass the HoloViews object to the renderer
 plot = renderer.get_plot(hvobj, doc=curdoc())
