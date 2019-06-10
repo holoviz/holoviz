@@ -8,7 +8,7 @@ from holoviews.element.tiles import StamenTerrain
 hv.extension('bokeh', logo=False)
 
 usecols = ['dropoff_x','dropoff_y','pickup_x','pickup_y','dropoff_hour','pickup_hour','passenger_count']
-df = dd.read_parquet('../../data/nyc_taxi_wide.parq')[usecols].persist()
+df = dd.read_parquet('../../data/nyc_taxi_wide.parq', engine='fastparquet')[usecols].persist()
 opts = dict(width=1000,height=600,xaxis=None,yaxis=None,bgcolor='black',show_grid=False)
 cmaps = ['fire','bgy','bgyw','bmy','gray','kbc']
 tiles = StamenTerrain()
