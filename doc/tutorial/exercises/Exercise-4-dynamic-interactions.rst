@@ -6,6 +6,11 @@
 Exercise-4-dynamic-interactions
 *******************************
 
+`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/master/examples/tutorial/exercises/Exercise-4-dynamic-interactions.ipynb>`_
+
+-------
+
+
 .. notebook:: pyviz ../../../examples/tutorial/exercises/Exercise-4-dynamic-interactions.ipynb
     :offset: 1
     :skip_execute: True
