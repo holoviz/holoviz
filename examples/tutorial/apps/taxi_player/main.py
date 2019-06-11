@@ -8,6 +8,7 @@ from colorcet import cm_n, fire
 
 from bokeh.models import Slider, Button
 from bokeh.layouts import layout
+from bokeh.io import curdoc
 
 from holoviews.operation.datashader import aggregate, shade
 from holoviews.element.tiles import EsriImagery
