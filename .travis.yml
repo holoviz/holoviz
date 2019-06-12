@@ -12,24 +12,20 @@ env:
 
 stages:
   - name: test_user_install
-    if: type = cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
   - test
-  - name: conda_dev_package
+  - name: package_dev
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-  - name: pip_dev_package
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-  - name: conda_package
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
-  - name: pip_package
+  - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
+    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev)
   - name: website_release
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
+    if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
-    if: type = cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
   - name: website_cron
-    if: type = cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
 
 # TODO: caching
 
@@ -63,13 +59,15 @@ jobs:
     - &package_test
       <<: *default
       stage: test_user_install
-      before_script: true
-      script:
+      before_script:
         # TODO: pyctdev should just support this whole section
         - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
         - doit test_user_install_part1
         - source activate pyviz-tutorial
-        - doit test_user_install_part2
+      script: doit test_user_install_part2_conda
+
+    - <<: *package_test
+      script: doit test_user_install_part2_pip
 
     - <<: *package_test
       os: osx
@@ -126,7 +124,7 @@ jobs:
 
     - &pip_pkg
       env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
-      stage: pip_dev_package
+      stage: package_dev
       install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
       before_script:
         - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
@@ -134,7 +132,7 @@ jobs:
 
     - &conda_pkg
       <<: *default
-      stage: conda_dev_package
+      stage: package_dev
       env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
       before_script:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
@@ -146,10 +144,10 @@ jobs:
 
     - <<: *pip_pkg
       env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
-      stage: pip_package
+      stage: package_release
 
     - <<: *conda_pkg
-      stage: conda_package
+      stage: package_release
       env: LABELS=$LABELS_REL CHANS=$CHANS_REL
 
 notifications:
