@@ -7,11 +7,19 @@ from pyctdev import *  # noqa: api
 def task_test_user_install_part1():
     return {'actions':["conda create -y -n pyviz-tutorial python=3.6"]}
 
-def task_test_user_install_part2():
+def task_test_user_install_part2_conda():
     return {'actions':[
         "conda install -y -c pyviz/label/dev pyviz",
         "conda install -y -c pyviz nbsmoke",
-        "pyviz examples --path=. --force",
+        "pyviz examples --path=. --force --use-test-data",
+        # TODO: bokeh sampledata isn't a documented step
+        "bokeh sampledata",
+        'pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps']}
+
+def task_test_user_install_part2_pip():
+    return {'actions':[
+        "pip install pyviz nbsmoke",
+        "pyviz examples --path=. --force --use-test-data",
         # TODO: bokeh sampledata isn't a documented step
         "bokeh sampledata",
         'pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps']}

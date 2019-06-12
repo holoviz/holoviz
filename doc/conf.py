@@ -12,11 +12,13 @@ import pyviz
 version = release = pyviz.__version__
 
 html_static_path += ['_static']
-html_theme = 'sphinx_ioam_theme'
+html_theme = 'sphinx_pyviz_theme'
 html_theme_options = {
-    'logo':'pyviz-logo.png',
-    'favicon':'favicon.ico',
-    'css':'site.css'
+    'logo': 'pyviz-logo.png',
+    'favicon': 'favicon.ico',
+    'custom_css': 'custom.css',
+    'primary_color': '#3c7cb0',
+    'primary_color_dark': '#1f405b',
 }
 
 _NAV =  (

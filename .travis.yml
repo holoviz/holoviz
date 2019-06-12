@@ -6,30 +6,26 @@ env:
     - CHANS_REL="-c conda-forge -c defaults -c pyviz"            # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
-    - PYENV_VERSION=3.6
+    - PYENV_VERSION=3.7
     - PKG_TEST_PYTHON="--test-python=py36"
     - PIN="--pin-deps"
 
 stages:
   - name: test_user_install
-    if: type = cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
   - test
-  - name: conda_dev_package
+  - name: package_dev
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-# no pip packages until dependencies become available on pypi
-# (see https://github.com/pyviz/pyviz/issues/100)
-#  - name: pip_dev_package
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-  - name: conda_package
+  - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
-#  - name: pip_package
-#    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
+    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev)
   - name: website_release
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
+    if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
-    if: type = cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
+  - name: website_cron
+    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
 
 # TODO: caching
 
@@ -37,6 +33,7 @@ jobs:
   include:
     - &default
       stage: test
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect" TEST="geo"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -48,13 +45,16 @@ jobs:
       before_script:
         - doit env_create --name=pyviz --python=$PYENV_VERSION
         - source activate pyviz
-        - doit develop_install $CHANS_DEV -o examples -o graph -o indirect -o tests
+        - doit develop_install $CHANS_DEV $OPTIONS -o tests
         - pip install msgpack # workaround for unfortunate combination of msgpack vs msgpack-python + no conda develop command + pkg_resources checking what's installed for entrypoints + msgpack/rise conflict via conda; need to investigate
         - doit env_capture
       script:
         - pyviz fetch-data --path=examples --use-test-data
-        - doit test_all
+        - doit test_$TEST
         - pyviz clean-data --path=examples
+
+    - <<: *default
+      env: DESC="Test geo examples" OPTIONS="-o geo" TEST="geo"
 
     - <<: *default
       stage: unpinned_upcoming_trouble
@@ -63,13 +63,17 @@ jobs:
     - &package_test
       <<: *default
       stage: test_user_install
-      before_script: true
-      script:
+      env: DESC="Test conda package on pyviz/label/dev"
+      before_script:
         # TODO: pyctdev should just support this whole section
         - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
         - doit test_user_install_part1
         - source activate pyviz-tutorial
-        - doit test_user_install_part2
+      script: doit test_user_install_part2_conda
+
+    - <<: *package_test
+      env: DESC="Test conda package on pip"
+      script: doit test_user_install_part2_pip
 
     - <<: *package_test
       os: osx
@@ -82,9 +86,10 @@ jobs:
     - &website
       <<: *default
       stage: website_release
+      env: DESC="Release website to pyviz.org"
       script:
         # TODO: set chans according to dev/rel (has to be dev for now because website currently depends on dev)
-        - doit develop_install $CHANS_DEV -o doc
+        - doit develop_install $CHANS_DEV -o doc -o geo
         - bokeh sampledata
         - pyviz fetch-data --path=examples
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1
@@ -101,6 +106,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz"
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -111,21 +117,32 @@ jobs:
             tags: true
             all_branches: true
 
+    - <<: *website
+      stage: website_cron
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz"
+      deploy:
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          local_dir: ./builtdocs
+          repo: pyviz-dev/pyviz
+          on:
+            all_branches: true
+
     ## dev packages
 
-#    - &pip_pkg
-#      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
-#      stage: pip_dev_package
-#      install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
-#      before_script:
-#        - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
-#        #- doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=examples --sdist-install-build-deps
-#      script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
+    - &pip_pkg
+      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP DESC="Package for pip"
+      stage: package_dev
+      install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
+      before_script:
+        - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
+      script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
 
     - &conda_pkg
       <<: *default
-      stage: conda_dev_package
-      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
+      stage: package_dev
+      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV DESC="Package for conda"
       before_script:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
@@ -134,12 +151,12 @@ jobs:
 
     ## release packages
 
-#    - <<: *pip_pkg
-#      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
-#      stage: pip_package
+    - <<: *pip_pkg
+      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
+      stage: package_release
 
     - <<: *conda_pkg
-      stage: conda_package
+      stage: package_release
       env: LABELS=$LABELS_REL CHANS=$CHANS_REL
 
 notifications:
