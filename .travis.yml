@@ -38,7 +38,6 @@ jobs:
     - &default
       stage: test
       os: linux
-      env: PYENV_VERSION=3.6
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
