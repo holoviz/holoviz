@@ -33,6 +33,7 @@ jobs:
   include:
     - &default
       stage: test
+      env: DESC="Test examples"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -59,6 +60,7 @@ jobs:
     - &package_test
       <<: *default
       stage: test_user_install
+      env: DESC="Test conda package on pyviz/label/dev"
       before_script:
         # TODO: pyctdev should just support this whole section
         - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
@@ -67,6 +69,7 @@ jobs:
       script: doit test_user_install_part2_conda
 
     - <<: *package_test
+      env: DESC="Test conda package on pip"
       script: doit test_user_install_part2_pip
 
     - <<: *package_test
@@ -80,9 +83,10 @@ jobs:
     - &website
       <<: *default
       stage: website_release
+      env: DESC="Release website to pyviz.org"
       script:
         # TODO: set chans according to dev/rel (has to be dev for now because website currently depends on dev)
-        - doit develop_install $CHANS_DEV -o doc
+        - doit develop_install $CHANS_DEV -o doc -o geo
         - bokeh sampledata
         - pyviz fetch-data --path=examples
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1
@@ -99,6 +103,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz"
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -111,6 +116,7 @@ jobs:
 
     - <<: *website
       stage: website_cron
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz"
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -123,7 +129,7 @@ jobs:
     ## dev packages
 
     - &pip_pkg
-      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
+      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP DESC="Package for pip"
       stage: package_dev
       install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
       before_script:
@@ -133,7 +139,7 @@ jobs:
     - &conda_pkg
       <<: *default
       stage: package_dev
-      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV
+      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV DESC="Package for conda"
       before_script:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
