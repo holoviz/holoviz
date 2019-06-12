@@ -6,7 +6,7 @@ env:
     - CHANS_REL="-c conda-forge -c defaults -c pyviz"            # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
-    - PYENV_VERSION=3.6
+    - PYENV_VERSION=3.7
     - PKG_TEST_PYTHON="--test-python=py36"
     - PIN="--pin-deps"
 
@@ -38,6 +38,7 @@ jobs:
     - &default
       stage: test
       os: linux
+      env: PYENV_VERSION=3.6
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
