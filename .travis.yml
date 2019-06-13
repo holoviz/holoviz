@@ -12,10 +12,10 @@ env:
 
 stages:
   - name: test_user_install
-    if: (type = cron) OR (commit_message =~ /^.*(do:cron).*$/)
+    if: type = cron
   - test
   - name: package_dev
-    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (commit_message =~ /^.*(pkg:dev).*$/)
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
