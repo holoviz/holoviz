@@ -72,7 +72,7 @@ jobs:
       script: doit test_user_install_part2_conda
 
     - <<: *package_test
-      env: DESC="Test conda package on pip"
+      env: DESC="Test package on pip"
       script: doit test_user_install_part2_pip
 
     - <<: *package_test
@@ -148,7 +148,6 @@ jobs:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
-        - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=geo
       script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
 
     ## release packages
