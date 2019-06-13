@@ -1,0 +1,46 @@
+name: pyviz-tutorial
+commands:
+  tutorial:
+    notebook: examples/tutorial/index.ipynb
+    env_spec: pyviz
+
+dependencies: &deps
+- bokeh >=1.2.0
+- holoviews >=1.12.3
+- hvplot >=0.4.0
+- datashader >=0.7.0
+- panel >=0.6.0
+- param >=1.9.1
+- pyct[cmd] >=0.4.6
+- ipython >=5.4.0,<=7.1.1
+- numpy >=1.16.4
+- rise
+- dask[complete] >=0.18.2
+- notebook >=5.5
+- matplotlib ==3.0.3
+- pandas >=0.23.4,<0.25.0
+- xarray >=0.11.0,<0.12
+- streamz
+- netcdf4
+- fastparquet>=0.2.1
+- selenium
+- ipywidgets
+- networkx
+- scikit-image
+- cartopy
+- geopandas
+- geoviews >=1.6.2
+- phantomjs
+- python-snappy
+- cffi
+- python
+
+packages: *deps
+
+channels:
+- conda-forge
+- defaults
+- pyviz
+
+env_specs:
+  pyviz: {}
