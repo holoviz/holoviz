@@ -1,0 +1,4 @@
+#!/bin/bash
+pyviz fetch-data --path=examples
+bokeh sampledata
+cd examples/tutorial
