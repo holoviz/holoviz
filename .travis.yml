@@ -33,7 +33,7 @@ jobs:
   include:
     - &default
       stage: test
-      env: DESC="Test examples" OPTIONS="-o graph -o indirect" TEST="most"
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect" TEST="all"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -150,6 +150,7 @@ jobs:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
+        - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=geo
       script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
 
     ## release packages
