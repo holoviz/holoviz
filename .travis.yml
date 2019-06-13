@@ -86,10 +86,9 @@ jobs:
     - &website
       <<: *default
       stage: website_release
-      env: DESC="Release website to pyviz.org"
+      env: DESC="Release website to pyviz.org" CHANS=$CHANS_REL
       script:
-        # TODO: set chans according to dev/rel (has to be dev for now because website currently depends on dev)
-        - doit develop_install $CHANS_DEV -o doc -o geo
+        - doit develop_install $CHANS -o doc -o geo -o indirect -o graph
         - bokeh sampledata
         - pyviz fetch-data --path=examples
         - nbsite generate-rst --org pyviz --project-name pyviz --offset 1
@@ -106,7 +105,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz"
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz" CHANS=$CHANS_DEV
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -133,7 +132,7 @@ jobs:
 
     - &pip_pkg
       <<: *default
-      env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP DESC="Package for pip"
+      env: DESC="Package for pip" PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
       stage: package_dev
       before_script:
         - doit ecosystem=pip ecosystem_setup
@@ -143,7 +142,7 @@ jobs:
     - &conda_pkg
       <<: *default
       stage: package_dev
-      env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV DESC="Package for conda"
+      env: DESC="Package for conda" LABELS=$LABELS_DEV CHANS=$CHANS_DEV
       before_script:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
