@@ -135,7 +135,6 @@ jobs:
       <<: *default
       env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP DESC="Package for pip"
       stage: package_dev
-      if: commit_message =~ /^.*(:pip).*$/
       before_script:
         - doit ecosystem=pip ecosystem_setup
         - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
@@ -145,7 +144,6 @@ jobs:
       <<: *default
       stage: package_dev
       env: LABELS=$LABELS_DEV CHANS=$CHANS_DEV DESC="Package for conda"
-      if: commit_message =~ /^.*(:conda).*$/
       before_script:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name pyviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
