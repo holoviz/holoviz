@@ -137,6 +137,7 @@ jobs:
       stage: package_dev
       if: commit_message =~ /^.*(:pip).*$/
       before_script:
+        - doit ecosystem=pip ecosystem_setup
         - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
       script: doit ecosystem=pip package_upload -u $PYPIUSER -p $PYPIPASS --pypi ${PYPI}
 
