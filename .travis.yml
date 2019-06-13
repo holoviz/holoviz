@@ -135,6 +135,9 @@ jobs:
       env: PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP DESC="Package for pip" PYENV_VERSION=3.6.3
       stage: package_dev
       if: commit_message =~ /^.*(:pip).*$/
+      before_install:
+        - eval "$(pyenv init -)"
+        - pyenv install $PYENV_VERSION
       install: pip install pyctdev && doit ecosystem=pip ecosystem_setup
       before_script:
         - doit ecosystem=pip package_build $PKG_TEST_PYTHON --test-group=unit --sdist-install-build-deps
