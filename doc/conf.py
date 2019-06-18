@@ -35,12 +35,12 @@ html_context.update({
     'DESCRIPTION': description,
     'AUTHOR': authors,
     # WEBSITE_SERVER is optional for tests and local builds, but allows defining a canonical URL for search engines
-    'WEBSITE_SERVER': 'http://pyviz.org',
+    'WEBSITE_SERVER': 'http://holoviz.org',
     'VERSION': version,
     'NAV': _NAV,
     'LINKS': _NAV,
     'SOCIAL': (
         ('Gitter', '//gitter.im/pyviz/pyviz'),
-        ('Github', '//github.com/pyviz/pyviz'),
+        ('Github', '//github.com/pyviz/holoviz'),
     )
 })
