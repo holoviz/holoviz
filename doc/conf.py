@@ -23,6 +23,7 @@ html_theme_options = {
 
 _NAV =  (
     ('Installation', 'installation'),
+    ('Talks', 'talks/index'),
     ('Tutorial', 'tutorial/index'),
     ('Topics', 'topics/index'),
     ('FAQ', 'FAQ'),

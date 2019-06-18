@@ -130,6 +130,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Introduction <self>
    Background <background>
    Installation <installation>
+   Talks <talks/index>
    Tutorial <tutorial/index>
    Topics <topics/index>
    Roadmap <Roadmap>
