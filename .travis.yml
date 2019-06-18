@@ -35,7 +35,7 @@ jobs:
   include:
     - &default
       stage: test
-      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests" TEST="all" CHANS=$CHANS_DEV
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests" TEST="all"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -88,7 +88,7 @@ jobs:
     - &website
       <<: *default
       stage: website_release
-      env: DESC="Release website to pyviz.org" CHANS=$CHANS_REL OPTIONS="-o doc -o geo -o indirect -o graph"
+      env: DESC="Release website to pyviz.org" OPTIONS="-o doc -o geo -o indirect -o graph"
       script:
         - bokeh sampledata
         - pyviz fetch-data --path=examples
@@ -106,7 +106,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz" CHANS=$CHANS_DEV OPTIONS="-o doc -o geo -o indirect -o graph"
+      env: DESC="Deploy dev website to pyviz-dev.github.io/pyviz" OPTIONS="-o doc -o geo -o indirect -o graph"
       deploy:
         - provider: pages
           skip_cleanup: true
