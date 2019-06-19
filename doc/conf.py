@@ -2,7 +2,6 @@
 
 from nbsite.shared_conf import *
 
-#project = u'PyViz'
 project = u"HoloViz"
 authors = u'HoloViz authors'
 copyright = u'\u00a9 2017-2019, ' + authors
