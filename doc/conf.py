@@ -3,13 +3,13 @@
 from nbsite.shared_conf import *
 
 #project = u'PyViz'
-project = u"<b><span style='color:#4792cf;'>Py</span><span style='color:#fdca48;'>Viz</span></b>"
-authors = u'PyViz authors'
-copyright = u'\u00a9 2017-2018, ' + authors
-description = 'How to solve visualization problems with Python tools.'
+project = u"HoloVix"
+authors = u'HoloViz authors'
+copyright = u'\u00a9 2017-2019, ' + authors
+description = 'High-level tools to simplify visualization in Python.'
 
-import pyviz
-version = release = pyviz.__version__
+import holoviz
+version = release = holoviz.__version__
 
 html_static_path += ['_static']
 html_theme = 'sphinx_pyviz_theme'

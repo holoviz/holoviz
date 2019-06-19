@@ -56,7 +56,7 @@ jobs:
         - holoviz clean-data --path=examples
 
     - <<: *default
-      env: DESC="Test geo examples" OPTIONS="-o geo -o test" TEST="geo"
+      env: DESC="Test geo examples" OPTIONS="-o test" TEST="geo"
 
     - <<: *default
       stage: unpinned_upcoming_trouble
@@ -88,8 +88,9 @@ jobs:
     - &website
       <<: *default
       stage: website_release
-      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o geo -o indirect -o graph"
+      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph"
       script:
+        - conda install -y geoviews geopandas
         - bokeh sampledata
         - holoviz fetch-data --path=examples
         - nbsite generate-rst --org pyviz --project-name holoviz --offset 1
@@ -106,7 +107,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o geo -o indirect -o graph"
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph"
       deploy:
         - provider: pages
           skip_cleanup: true

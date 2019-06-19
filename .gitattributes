@@ -1,2 +1,2 @@
-pyviz/__init__.py export-subst
+holoviz/__init__.py export-subst
 setup.cfg export-subst
