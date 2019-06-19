@@ -32,7 +32,7 @@ jobs:
   include:
     - &default
       stage: test
-      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests" TEST="all"
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -49,11 +49,16 @@ jobs:
         - doit env_capture
       script:
         - holoviz fetch-data --path=examples --use-test-data
-        - doit test_$TEST
+        - doit test_all
         - holoviz clean-data --path=examples
 
     - <<: *default
-      env: DESC="Test geo examples" OPTIONS="-o test" TEST="geo"
+      env: DESC="Test geo examples" OPTIONS="-o test"
+      script:
+        - conda install -y $CHANS geopandas geoviews
+        - holoviz fetch-data --path=examples --use-test-data
+        - doit test_geo
+        - holoviz clean-data --path=examples
 
     - <<: *default
       stage: unpinned_upcoming_trouble
@@ -87,7 +92,7 @@ jobs:
       stage: website_release
       env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
       script:
-        - conda install -y geoviews geopandas
+        - conda install -y $CHANS geoviews geopandas
         - bokeh sampledata
         - holoviz fetch-data --path=examples
         - nbsite generate-rst --org pyviz --project-name holoviz --offset 1
