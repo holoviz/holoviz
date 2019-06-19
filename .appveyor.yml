@@ -13,14 +13,14 @@ install:
   - "conda install -c pyviz/label/dev pyctdev && doit ecosystem_setup"
   - "conda config --set path_conflict warn"
   - "conda config --set channel_priority strict"  # this makes the conda solver **way** faster
-  - "doit env_create --name=pyviz --python=%PY%"
-  - "activate pyviz"
+  - "doit env_create --name=holoviz --python=%PY%"
+  - "activate holoviz"
   - "doit develop_install %CHANS_DEV% --all-extras"
   - "doit env_capture"
 
 build: off
 
 test_script:
-  - "pyviz fetch-data --path=examples --use-test-data"
+  - "holoviz fetch-data --path=examples --use-test-data"
   - "doit test_all"
-  - "pyviz clean-data --path=examples"
+  - "holoviz clean-data --path=examples"
