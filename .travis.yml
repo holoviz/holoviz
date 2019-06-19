@@ -21,14 +21,11 @@ stages:
   - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev)
+    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
   - name: website_release
     if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
     if: type = cron
-  - name: website_cron
-    if: type = cron
-
 # TODO: caching
 
 jobs:
@@ -115,20 +112,8 @@ jobs:
           local_dir: ./builtdocs
           repo: pyviz-dev/holoviz
           on:
-            tags: true
             all_branches: true
 
-    - <<: *website
-      stage: website_cron
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_DEV
-      deploy:
-        - provider: pages
-          skip_cleanup: true
-          github_token: $GITHUB_TOKEN
-          local_dir: ./builtdocs
-          repo: pyviz-dev/holoviz
-          on:
-            all_branches: true
 
     ## dev packages
 
