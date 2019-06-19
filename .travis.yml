@@ -88,7 +88,7 @@ jobs:
     - &website
       <<: *default
       stage: website_release
-      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph"
+      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
       script:
         - conda install -y geoviews geopandas
         - bokeh sampledata
@@ -107,7 +107,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph"
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_DEV
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -120,7 +120,7 @@ jobs:
 
     - <<: *website
       stage: website_cron
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz"
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_DEV
       deploy:
         - provider: pages
           skip_cleanup: true
