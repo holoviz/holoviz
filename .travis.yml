@@ -104,7 +104,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_DEV
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
       deploy:
         - provider: pages
           skip_cleanup: true
