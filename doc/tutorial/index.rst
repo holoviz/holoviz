@@ -10,7 +10,6 @@ PyViz Tutorial
 
     Overview <self>
     Setup <Setup>
-    Workflow Introduction <Workflow_Introduction>
     Annotating Data <Annotating_Data>
     Customizing Visual Appearance <Customizing_Visual_Appearance>
     Working with Tabular Data <Working_with_Tabular_Data>
