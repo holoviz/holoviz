@@ -1,5 +1,5 @@
-Background: Why PyViz?
-======================
+Background: Why HoloViz?
+========================
 
 Many of the activities of an engineer, scientist, or analyst require
 visualization, but it can be difficult to assemble a set of tools that
@@ -33,7 +33,7 @@ data they can handle, in part because Bokeh requires the data to be put
 into the web browser's limited memory space.
 
 
-The PyViz ecosystem
+The HoloViz ecosystem
 -------------------
 
 To address all the above issues, we have developed a set of open-source Python
@@ -62,13 +62,13 @@ full-featured dashboards. The main libraries in this ecosystem include:
    inside and outside of a notebook context
 
 
-Solving problems using PyViz tools
+Solving problems using HoloViz tools
 ----------------------------------
 
-Why do we say that PyViz is an ecosystem, as opposed to an application
-or a tool? The answer is that PyViz consists of a large set of loosely
+Why do we say that HoloViz is an ecosystem, as opposed to an application
+or a tool? The answer is that HoloViz consists of a large set of loosely
 related, separately maintained components, not some single monolithic
-application. In practice, different people will use different PyViz
+application. In practice, different people will use different HoloViz
 tools in different ways to solve different problems.
 
 For instance, if we focus on the needs of a data scientist/analyst who
@@ -123,7 +123,7 @@ level, and layered:
 
 A low-level tool is highly configurable, with an expressive but
 relatively verbose command language that makes it possible to
-precisely control how it works. For PyViz, Bokeh is a low-level tool,
+precisely control how it works. For HoloViz, Bokeh is a low-level tool,
 allowing any plot or app to be built up from basic primitives. An
 even lower-level approach would be to write javascript directly. A
 high-level tool like hvPlot or like Panel's interact function uses
@@ -132,7 +132,7 @@ dashboard, but what do you do if you then need to make some small
 changes in the result?
 
 Typical high-level tools will just be dead ends at this point, forcing
-you to start over if what they provide isn't what you needed. PyViz
+you to start over if what they provide isn't what you needed. HoloViz
 high-level tools are instead systematically designed as layers on
 top of lower-level tools, where you can use the top level for anything
 that it provides, while always being able to drop down a level (or
@@ -149,11 +149,11 @@ reconfigured, and recomposed if/as needed. And then these HoloViews
 objects, in turn, can be used to make a Bokeh figure that again can be
 examined, modified, and used in other contexts (if desired!).
 
-             
+
 Building on the Python scientific ecosystem
 -------------------------------------------
 
-Beyond the specific PyViz tools, all these approaches work with and
+Beyond the specific HoloViz tools, all these approaches work with and
 often rely upon a wide range of other open-source libraries for their
 implementation, including:
 
@@ -173,7 +173,7 @@ implementation, including:
 
 
 These and many other tools form the broader ecosystem that supports
-PyViz. The PyViz tutorials will guide you through the process of
+HoloViz. The HoloViz tutorials will guide you through the process of
 using these tools together to build rich, high-performance, scalable,
 flexible, and deployable visualizations, apps, and dashboards, without
 having to use JavaScript or other web technologies explicitly, and
@@ -212,7 +212,7 @@ tools, you can check out some of these links first if you wish:
 Getting started
 ---------------
 
-First, you should browse through the already-run versions of the PyViz
+First, you should browse through the already-run versions of the HoloViz
 `tutorials <tutorial/index.html>`__ to see what they cover and how it all
 works. But everything on this website is a Jupyter Notebook that you can
 run yourself, once you follow the  `installation <installation>`__
