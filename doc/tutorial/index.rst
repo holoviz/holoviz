@@ -1,7 +1,7 @@
-PyViz Tutorial
-==============
+HoloViz Tutorial
+================
 
-.. notebook:: pyviz ../../examples/tutorial/index.ipynb
+.. notebook:: holoviz ../../examples/tutorial/index.ipynb
     :offset: 1
 
 .. toctree::

@@ -3,16 +3,16 @@
 .. raw:: html
 
     <img src="assets/PyViz_logo_wm.png" height="150px" align="right">
-    <h1>How to visualize data in Python</h1>
+    <h1>High-level tools to simplify visualization in Python.</h1>
 
-    <p>Welcome to PyViz!  PyViz is a coordinated effort to make data visualization in Python easier to use, easier to learn, and more powerful.
+    <p>Welcome to HoloViz!  HoloViz is a coordinated effort to make data visualization in Python easier to use, easier to learn, and more powerful.
 
-    <p>Focusing on interactive plotting in web browsers, PyViz provides:
+    <p>Focusing on interactive plotting in web browsers, HoloViz provides:
 
     <ul>
     <li>High-level tools that make it easier to apply Python plotting libraries to your data.
     <li>A comprehensive <a href="tutorial/index">tutorial</a> showing how to use the available tools together to do a wide range of different tasks.
-    <li>A <a href="https://conda.io">Conda</a> metapackage "pyviz" that makes it simple to install matching versions of libraries that work well together.
+    <li>A <a href="https://conda.io">Conda</a> metapackage "holoviz" that makes it simple to install matching versions of libraries that work well together.
     <li>Sample datasets to work with.
     </ul>
 
@@ -26,7 +26,7 @@
     <a href="http://geoviews.org"             ><img class="pvlogo" src="assets/geoviews.png"/></a>
     </div>
 
-    <p>These PyViz-maintained packages each make great starting points --
+    <p>These HoloViz-maintained packages each make great starting points --
     <a href="https://panel.pyviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
     <a href="https://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
     <a href="https://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and
@@ -39,7 +39,7 @@
     <a href="http://matplotlib.org"           ><img class="pvlogo" src="assets/matplotlib_wm.png"/></a>
     <a href="http://datashader.org"           ><img class="pvlogo" src="assets/datashader.png"/></a>
     </div>
-    <p>PyViz tools provide extensive support for
+    <p>HoloViz tools provide extensive support for
     <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting,
     <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output, and
     <a href="http://datashader.org">Datashader</a>'s rendering of even the largest datasets.
@@ -71,7 +71,7 @@
     <a href="https://bit.ly/2OXxNfN"          ><img class="pvlogo" src="assets/scipy.png"/></a>
     </div>
 
-    <p>PyViz core tools work with any Python data types (lists, dictionaries, etc.), plus
+    <p>HoloViz core tools work with any Python data types (lists, dictionaries, etc.), plus
     <a href="http://pandas.pydata.org">Pandas</a> or
     <a href="http://dask.pydata.org">Dask</a> DataFrames and
     <a href="http://numpy.org">NumPy</a>,
@@ -98,11 +98,11 @@
     <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
     </div>
 
-    <p>PyViz tools both use and support declarative user-configurable
+    <p>HoloViz tools both use and support declarative user-configurable
     <a href="https://param.pyviz.org">Param</a> objects.<br>
     We recommend using perceptually uniform colormaps such as those provided by
-    the PyViz <a href="https://colorcet.pyviz.org">Colorcet</a> library.<br>
-    PyViz tools are general purpose, but also support some domain-specific datatypes like graphs from
+    the <a href="https://colorcet.pyviz.org">Colorcet</a> library.<br>
+    HoloViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
     <a href="http://geopandas.org">GeoPandas</a> and
     <a href="http://scitools.org.uk/cartopy">Cartopy</a> and
@@ -110,16 +110,14 @@
     Panel can be used with
     <a href="https://yt-project.org">yt</a> for volumetric and physics data and
     <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
-    PyViz tools provide extensive support for
+    HoloViz tools provide extensive support for
     <a href="http://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
 
     <h1>Getting started</h1>
 
-The `Background <background.html>`_ page explains the PyViz approach in more detail, including how these tools fit together.
+The `Background <background.html>`_ page explains the HoloViz approach in more detail, including how these tools fit together.
 Or you can just skim the material in the `Tutorial <tutorial/index.html>`_ online, to get an idea what is covered by these tools.
 If what you see looks relevant to you, you can then follow the steps outlined in `Installation <installation.html>`_ to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
-
-.. No logo available yet for https://colorcet.pyviz.org or https://vega.github.io/vega-lite
 
 
 .. toctree::

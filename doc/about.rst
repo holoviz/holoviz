@@ -1,11 +1,11 @@
 About Us
 ========
 
-PyViz is a collaboration between the maintainers of several packages,
+HoloViz is a collaboration between the maintainers of several packages,
 including
 `Bokeh <http://bokeh.pydata.org>`_,
 `HoloViews <http://holoviews.org>`_,
-`GeoViews <http://geo.holoviews.org>`_,
+`GeoViews <http://geoviews.org>`_,
 `hvPlot <https://hvplot.pyviz.org>`_,
 `Datashader <http://datashader.org>`_,
 `Param <https://param.pyviz.org>`_, and
@@ -15,33 +15,33 @@ The authors of these tools are working together closely to help make
 them into a coherent solution to a wide range of Python visualization
 problems.
 
-If you like PyViz, please `tweet <http://twitter.com>`_ a screenshot
-of your latest creation at ``@PyViz_org``, linking to ``pyviz.org``
+If you like HoloViz, please `tweet <http://twitter.com>`_ a screenshot
+of your latest creation at ``@PyViz_org``, linking to ``holoviz.org``
 along with any other library you relied on (``@HoloViews``,
 ``@Datashader``, ``@BokehPlots``, ``@Matplotlib``, etc.). Thanks!
 
-There is an active open source community around PyViz, and
+There is an active open source community around HoloViz, and
 contributions from anyone are welcome. Contributions of any sort are
 valuable, including new documentation, plus bug reports and fixes to
-code or documentation that might seem trivial (PyViz is partly about
+code or documentation that might seem trivial (HoloViz is partly about
 having as many of those ironed out as possible!). Please go ahead and
 open a `pull request <https://guides.github.com/activities/forking/>`_
 or create a `new issue <https://github.com/pyviz/pyviz/issues/new>`_
 :)
 
-While the PyViz team itself maintains a number of packages on `PyViz's
-GitHub <https://github.com/pyviz>`_, PyViz depends on and supports a
+While the HoloViz team itself maintains a number of packages on `HoloViz's
+GitHub <https://github.com/pyviz>`_, HoloViz depends on and supports a
 number of other open-source libraries; for more information, see
-PyViz's `detailed background <http://pyviz.org/background.html>`_.
+HoloViz's `detailed background <background.html>`_.
 
-The entire PyViz stack is open source, free for commercial and
+The entire HoloViz stack is open source, free for commercial and
 non-commercial use. However, if you are lucky enough to be in a
-position to fund developers to work on PyViz, you can contact
-``sales@anaconda.com``, or you can also collaborate with PyViz via
+position to fund developers to work on HoloViz, you can contact
+``sales@anaconda.com``, or you can also collaborate with HoloViz via
 `Quansight's open source partnerships
 <https://www.quansight.com/projects>`_.
 
-Additionally, some parts of the PyViz stack are able to accept
+Additionally, some parts of the HoloViz stack are able to accept
 donations, e.g. `Bokeh via NumFOCUS
 <https://numfocus.org/project/bokeh>`_.
 
@@ -64,7 +64,7 @@ donations, e.g. `Bokeh via NumFOCUS
 Acknowledgements and prior funding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The original development of core PyViz libraries was supported in part
+The original development of core HoloViz libraries was supported in part
 by:
 
 - Grants EP/F500385/1 and BB/F529254/1 to the `University of Edinburgh

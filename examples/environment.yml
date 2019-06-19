@@ -1,7 +1,7 @@
 # file created by pyctdev:
-#   /cio/mc3/bin/doit env_export2 --env-name-again=pyviz --env-file=examples/environment.yml --package-name=pyviz -c pyviz/label/dev -c defaults --pin-deps
+#   /cio/mc3/bin/doit env_export2 --env-name-again=pyviz --env-file=examples/environment.yml --package-name=holoviz -c holoviz/label/dev -c defaults --pin-deps
 
-name: pyviz
+name: holoviz
 channels:
   - pyviz/label/dev
   - defaults

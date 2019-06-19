@@ -1,5 +1,5 @@
 """
-PyViz "metamodule" -- Convenience aliases and API imports for PyViz-related libraries.
+HoloViz "metamodule" -- Convenience aliases and API imports for HoloViz-related libraries.
 """
 
 import holoviews as hv                                   # noqa (API import)
@@ -24,16 +24,16 @@ except ImportError:
 
 from holoviews import help                               # noqa (API import)
 
-__version__ = str(pm.Version(fpath=__file__,archive_commit="$Format:%h$", reponame='pyviz'))
+__version__ = str(pm.Version(fpath=__file__,archive_commit="$Format:%h$", reponame='holoviz'))
 
 ##
 # make pyct's example/data commands available if possible
 from functools import partial
 try:
     from pyct.cmd import copy_examples as _copy, fetch_data as _fetch, examples as _examples
-    copy_examples = partial(_copy, 'pyviz')
-    fetch_data = partial(_fetch, 'pyviz')
-    examples = partial(_examples, 'pyviz')
+    copy_examples = partial(_copy, 'holoviz')
+    fetch_data = partial(_fetch, 'holoviz')
+    examples = partial(_examples, 'holoviz')
 except ImportError:
     def _missing_cmd(*args,**kw): return("install pyct to enable this command (e.g. `conda install -c pyviz pyct` or `pip install pyct[cmd]`)")
     _copy = _fetch = _examples = _missing_cmd

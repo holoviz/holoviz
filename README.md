@@ -2,13 +2,13 @@
 
 -----------------
 
-# PyViz: How to solve visualization problems with Python tools
+# HoloViz: High-level tools to simplify visualization in Python
 
 |    |    |
 | --- | --- |
 | Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz/holoviz.svg?branch=master)](https://travis-ci.org/pyviz/holoviz) [![Windows Build status](https://img.shields.io/appveyor/ci/pyviz/holoviz/master.svg?logo=appveyor)](https://ci.appveyor.com/project/pyviz/holoviz/branch/master) |
 | Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz/holoviz/tags) |
-| Latest release | [![Github release](https://img.shields.io/github/release/pyviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz/holoviz/releases) [![PyPI version](https://img.shields.io/pypi/v/pyviz.svg?colorB=cc77dd)](https://pypi.python.org/pypi/pyviz) [![pyviz version](https://img.shields.io/conda/v/pyviz/pyviz.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/pyviz) [![conda-forge version](https://img.shields.io/conda/v/conda-forge/pyviz.svg?label=conda%7Cconda-forge&colorB=4488ff)](https://anaconda.org/conda-forge/pyviz) [![defaults version](https://img.shields.io/conda/v/anaconda/pyviz.svg?label=conda%7Cdefaults&style=flat&colorB=4488ff)](https://anaconda.org/anaconda/pyviz) |
+| Latest release | [![Github release](https://img.shields.io/github/release/pyviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz/holoviz/releases) [![PyPI version](https://img.shields.io/pypi/v/holoviz.svg?colorB=cc77dd)](https://pypi.python.org/pypi/holoviz) [![pyviz version](https://img.shields.io/conda/v/pyviz/holoviz.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/holoviz) |
 | Docs | [![gh-pages](https://img.shields.io/github/last-commit/pyviz/holoviz/gh-pages.svg)](https://github.com/pyviz/holoviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/holoviz.org.svg)](http://holoviz.org) |
 | Dependencies | [![](https://img.shields.io/website-up-down-green-red/http/status.pyviz.org.svg?label=status-dashboard)](http://status.pyviz.org/) |
 
@@ -37,7 +37,7 @@ See [holoviz.org](http://holoviz.org/installation.html) (or doc/installation.rst
 
 ## About holoviz.org
 
-PyViz is a project supported in part by [Anaconda](https://anaconda.com).
+HoloViz is a project supported in part by [Anaconda](https://anaconda.com).
 All projects used here are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.

@@ -6,7 +6,7 @@ def main(args=None):
         from . import _missing_cmd
         print(_missing_cmd())
         sys.exit(1)
-    return pyct.cmd.substitute_main('pyviz',args=args)
+    return pyct.cmd.substitute_main('holoviz',args=args)
 
 if __name__ == "__main__":
     main()
