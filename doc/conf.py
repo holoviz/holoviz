@@ -3,7 +3,7 @@
 from nbsite.shared_conf import *
 
 #project = u'PyViz'
-project = u"HoloVix"
+project = u"HoloViz"
 authors = u'HoloViz authors'
 copyright = u'\u00a9 2017-2019, ' + authors
 description = 'High-level tools to simplify visualization in Python.'

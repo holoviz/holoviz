@@ -1,5 +1,5 @@
-PyViz Tutorial
-==============
+HoloViz Tutorial
+================
 
 .. notebook:: pyviz ../../examples/tutorial/index.ipynb
     :offset: 1

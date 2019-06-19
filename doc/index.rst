@@ -119,8 +119,6 @@ The `Background <background.html>`_ page explains the PyViz approach in more det
 Or you can just skim the material in the `Tutorial <tutorial/index.html>`_ online, to get an idea what is covered by these tools.
 If what you see looks relevant to you, you can then follow the steps outlined in `Installation <installation.html>`_ to get the libraries, tutorial, and sample data on your own system so you can work through the tutorial yourself. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
 
-.. No logo available yet for https://colorcet.pyviz.org or https://vega.github.io/vega-lite
-
 
 .. toctree::
    :titlesonly:
