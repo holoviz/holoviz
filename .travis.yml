@@ -38,8 +38,10 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
+        - conda info
         - conda install -c pyviz/label/dev "pyctdev>=0.5" && doit ecosystem_setup
       before_script:
+        - conda info
         - doit env_create --name=holoviz --python=$PYENV_VERSION
         - source activate holoviz
         - doit develop_install $CHANS $OPTIONS
