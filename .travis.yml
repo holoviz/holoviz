@@ -39,9 +39,8 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
         - conda info
-        - conda install -c pyviz/label/dev "pyctdev>=0.5" && doit ecosystem_setup
+        - conda install -c pyviz "pyctdev>=0.5" && doit ecosystem_setup
       before_script:
-        - conda install conda=4.6.14
         - conda info
         - doit env_create --name=holoviz --python=$PYENV_VERSION
         - source activate holoviz
