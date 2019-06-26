@@ -24,52 +24,44 @@
     <a href="https://hvplot.pyviz.org"         ><img class="pvlogo" src="assets/hvplot.png"/></a>
     <a href="https://holoviews.org"            ><img class="pvlogo" src="assets/holoviews.png"/></a>
     <a href="http://geoviews.org"             ><img class="pvlogo" src="assets/geoviews.png"/></a>
+    <a href="http://datashader.org"           ><img class="pvlogo" src="assets/datashader.png"/></a>
+    <a href="https://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
+    <a href="https://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
+
     </div>
 
     <p>These HoloViz-maintained packages each make great starting points --
     <a href="https://panel.pyviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
     <a href="https://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
-    <a href="https://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable, and
-    <a href="http://geoviews.org">GeoViews</a>   to extend HoloViews for geographic data.<br><br>
+    <a href="https://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable,
+    <a href="http://geoviews.org">GeoViews</a> to extend HoloViews for geographic data,
+    <a href="http://datashader.org">Datashader</a> for rendering of even the largest datasets,
+    <a href="https://param.pyviz.org">Param</a> to create declarative user-configurable objects, and
+    <a href="https://colorcet.pyviz.org">Colorcet</a> for perceptually uniform colormaps.<br><br>
 
 
     <h1>Supported viz libraries</h1>
     <div style="margin:10px">
     <a href="http://bokeh.pydata.org"         ><img class="pvlogo" src="assets/bokeh.png"/></a>
     <a href="http://matplotlib.org"           ><img class="pvlogo" src="assets/matplotlib_wm.png"/></a>
-    <a href="http://datashader.org"           ><img class="pvlogo" src="assets/datashader.png"/></a>
     </div>
     <p>HoloViz tools provide extensive support for
-    <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting,
-    <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output, and
-    <a href="http://datashader.org">Datashader</a>'s rendering of even the largest datasets.
+    <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting and
+    <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output.
     <br>
-    <div style="margin:10px">
-    <a href="https://plot.ly"                 ><img class="pvlogo" src="assets/plotly.png"/></a>
-    <a href="http://seaborn.pydata.org"       ><img class="pvlogo" src="assets/seaborn.png"/></a>
-    <a href="https://altair-viz.github.io"    ><img class="pvlogo" src="assets/altair.png" style="max-height:75px"/></a>
-    <a href="https://vega.github.io"          ><img class="pvlogo" src="assets/vega.png"/></a>
-    <a href="https://plotnine.readthedocs.io" ><img class="pvlogo" src="assets/plotnine.png"/></a>
-    <a href="https://graphviz.org"            ><img class="pvlogo" src="assets/graphviz.png"/></a>
-    <a href="https://ggplot2.tidyverse.org"   ><img class="pvlogo" src="assets/ggplot2.png"/></a>
-    </div>
     <p>Objects from nearly every other plotting library can be used with
-    <a href="https://panel.pyviz.org">Panel</a>, including specific support for all those listed here plus anything that
-    can generate HTML, PNG, or SVG.  HoloViews also supports
+    <a href="https://panel.pyviz.org">Panel</a>, including specific support for
+    <a href="http://seaborn.pydata.org">seaborn</a>,
+    <a href="https://altair-viz.github.io">altair</a>,
+    <a href="https://vega.github.io">vega</a>,
+    <a href="https://plotnine.readthedocs.io">plotnine</a>,
+    <a href="https://graphviz.org">graphviz</a>,
+    <a href="https://ggplot2.tidyverse.org">ggplot2</a>,
+    plus anything that can generate HTML, PNG, or SVG.  HoloViews also supports
     <a href="https://plot.ly">Plotly</a> for 3D visualizations.<br><br>
 
 
     <h1>Supported data/compute libraries</h1>
-
-    <div style="margin:10px">
-    <a href="http://pandas.pydata.org"        ><img class="pvlogo" src="assets/pandas.png" style="max-height:80px"/></a>
-    <a href="http://numpy.org"                ><img class="pvlogo" src="assets/numpy.png"  style="max-height:95px"/></a>
-    <a href="http://xarray.pydata.org"        ><img class="pvlogo" src="assets/xarray_wm.png"/></a>
-    <a href="https://intake.readthedocs.io"   ><img class="pvlogo" src="assets/intake.png" style="max-height:75px"/></a>
-    <a href="http://dask.pydata.org"          ><img class="pvlogo" src="assets/dask.png"   style="max-height:80px"/></a>
-    <a href="http://numba.pydata.org"         ><img class="pvlogo" src="assets/numba.png"  style="max-height:115px"/></a>
-    <a href="https://bit.ly/2OXxNfN"          ><img class="pvlogo" src="assets/scipy.png"/></a>
-    </div>
 
     <p>HoloViz core tools work with any Python data types (lists, dictionaries, etc.), plus
     <a href="http://pandas.pydata.org">Pandas</a> or
@@ -85,23 +77,6 @@
 
     <h1>Other supported tools</h1>
 
-    <div style="margin:10px">
-    <a href="https://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
-    <a href="https://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
-    <a href="http://networkx.github.io"       ><img class="pvlogo" src="assets/networkx.png"/></a>
-    <a href="http://geopandas.org"            ><img class="pvlogo" src="assets/geopandas.png"/></a>
-    <a href="http://scitools.org.uk/cartopy"  ><img class="pvlogo" src="assets/cartopy.png" style="max-height:70px"/></a>
-    <a href="https://scitools.org.uk/iris"    ><img class="pvlogo" src="assets/iris.png"/></a>
-    <a href="https://yt-project.org"          ><img class="pvlogo" src="assets/yt.png" style="max-height:70px" /></a>
-    <a href="https://sympy.org"               ><img class="pvlogo" src="assets/sympy.png"/></a>
-    <a href="http://jupyter.org"              ><img class="pvlogo" src="assets/jupyter.png"/></a>
-    <a href="https://python-pillow.org"       ><img class="pvlogo" src="assets/pillow.png"/></a>
-    </div>
-
-    <p>HoloViz tools both use and support declarative user-configurable
-    <a href="https://param.pyviz.org">Param</a> objects.<br>
-    We recommend using perceptually uniform colormaps such as those provided by
-    the <a href="https://colorcet.pyviz.org">Colorcet</a> library.<br>
     HoloViz tools are general purpose, but also support some domain-specific datatypes like graphs from
     <a href="http://networkx.github.io">NetworkX</a> and geographic data from
     <a href="http://geopandas.org">GeoPandas</a> and

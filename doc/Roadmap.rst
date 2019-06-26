@@ -1,9 +1,9 @@
-PyViz Roadmap, as of 10/2018
-============================
+HoloViz Roadmap, as of 10/2018
+==============================
 
-PyViz helps coordinate between numerous independent open-source
+HoloViz helps coordinate between numerous independent open-source
 projects, each with their own developers, priorities, and agendas. In
-large part, the future of PyViz is up to a distributed team of
+large part, the future of HoloViz is up to a distributed team of
 developers that focus on the areas of greatest current interest and
 need, including areas that specifically get current funding.
 
@@ -45,12 +45,12 @@ Immediate, already funded priorities for 2018 include:
    making releases, providing example scripts, managing datasets,
    documenting examples, testing examples (including notebooks), and
    building websites. Projects addressing each of these areas are being
-   added to the `PyViz Github organization <https://github.com/pyviz>`__
-   and will be documented in the main PyViz site as they become mature.
+   added to the `HoloViz Github organization <https://github.com/pyviz>`__
+   and will be documented in the main HoloViz site as they become mature.
 
-   
-Other things we'd like to see in PyViz or in packages designed to work
-well with PyViz include:
+
+Other things we'd like to see in HoloViz or in packages designed to work
+well with HoloViz include:
 
 
 1. **Bokeh WebGL support**: Bokeh provides good support for working
@@ -67,7 +67,7 @@ well with PyViz include:
    files, and could enable new classes of high-performance interactive
    features.
 
-2. **Integrating 3D surface and volume rendering into PyViz**: HoloViews
+2. **Integrating 3D surface and volume rendering into HoloViz**: HoloViews
    can plot limited quantities of 3D surface or point data using
    `Matplotlib <http://holoviews.org/reference/elements/matplotlib/TriSurface.html>`__
    or
@@ -80,22 +80,22 @@ well with PyViz include:
    `Vaex <http://vaex.astro.rug.nl>`__, or by wrapping JavaScript
    libraries like `ThreeJS <https://threejs.org>`__ and
    `CesiumJS <https://cesiumjs.org>`__.  There's a first `prototype
-   for a CesiumJS backend now available <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__, 
+   for a CesiumJS backend now available <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__,
    but lots more work to do to make it practical for real use.
 
-3. **Toolbox for GIS primitives**: The PyViz stack is fully general
+3. **Toolbox for GIS primitives**: The HoloViz stack is fully general
    purpose, supporting data of any type, and already has many advantages
    over traditional Earth-specific approaches to dealing with data with
    latitude and longitude coordinates. However, existing GIS packages
    make certain domain-specific functionality simpler, such as computing
    vegetation indexes and other common manipulations of Earth-related
    data. It would be helpful to provide a well-tested collection of
-   these common operations built on the PyViz stack so that it can be
+   these common operations built on the HoloViz stack so that it can be
    a more "drop-in" replacement for proprietary GIS systems.  Fast
    geographic indexes were already added to Datashader and are
    awaiting documentation (NDVI, slope, aspect, hillshade). Other
    desired features:
-   
+
    - Fast geographic operations for Datashader
        * Zonal statistics for an ROI
            - Percentage area by category
@@ -135,7 +135,7 @@ well with PyViz include:
    nearly always the wrong thing to do, we can probably be convinced
    to allow it. :-)
 
-5. **More extensive documentation about deployment**: PyViz includes a
+5. **More extensive documentation about deployment**: HoloViz includes a
    tutorial on `deployment using Bokeh
    server <http://pyviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__,
    but there are many other ways to set up live Python-backed plots,
@@ -147,7 +147,7 @@ well with PyViz include:
    examples that will help people get started and decide between the
    alternatives would be very helpful.
 
-6. **Better native GUI support**: Right now, PyViz focuses exclusively
+6. **Better native GUI support**: Right now, HoloViz focuses exclusively
    on tools that work well in web browsers, because it aims to support
    the entire workflow from initial exploration to delivery of fully
    functional interactive applications to other stakeholders. One
@@ -181,13 +181,13 @@ well with PyViz include:
 
 9. **Better integration with ____**: There are a lot of tools in the
    Python and other scientific software ecosystems that could be
-   included in PyViz or made easily usable from it. NetworkX (already
+   included in HoloViz or made easily usable from it. NetworkX (already
    usable but not fully exploited yet) is just one example of many;
    suggestions welcome!
 
 10. **GUI-based plot creation**: (As in business intelligence and
     dashboarding applications.) The powerful components available
-    in PyViz are ready for Python users to put together into
+    in HoloViz are ready for Python users to put together into
     visualizations and apps, but they would also make a very strong
     base for building a graphical approach for working with data, with
     drag and drop layouts, GUI-configurable mapping of data sources, and
