@@ -12,7 +12,7 @@ HoloViz is about working together on many different levels:
 - A set of packages that have been verified to work well together, in matching versions, that can all be installed with one command and are continuously tested to ensure that they keep working together
 - A set of examples and tutorials that help you see how various Python packages can work together to solve a huge range of visualization problems, from common situations to tricky special cases.
 
-There is a specific installable package named ``pyviz``, but it's valuable mainly for its dependencies, which are installed in matching versions when ``pyviz`` is installed.  There is almost no code actually in HoloViz, apart from the examples in the tutorials.
+There is a specific installable package named ``holoviz``, but it's valuable mainly for its dependencies, which are installed in matching versions when ``holoviz`` is installed.  There is almost no code actually in HoloViz, apart from the examples in the tutorials.
 
 
 Is HoloViz a commercial product?
@@ -49,4 +49,4 @@ See the `Roadmap <Roadmap>`_ for more details on topics that could be added in f
 How do I report a problem?
 ==========================
 
-For the quickest response from those who can fix things, try to identify which HoloViz package is most directly involved, and then click on the appropriate logo on the `HoloViz home page <index.html>`_ to find their Github site for filing issues.  If you can't figure out which project is involved, or if your issue is with this website, the notebooks you downloaded from it, or the ``pyviz`` package itself, then please open an issue on `github.com/pyviz. <https://github.com/pyviz/pyviz/issues>`_ or chat with us on the `Gitter channel for HoloViews. <http://gitter.im/pyviz/pyviz>`_
+For the quickest response from those who can fix things, try to identify which HoloViz package is most directly involved, and then click on the appropriate logo on the `HoloViz home page <index.html>`_ to find their Github site for filing issues.  If you can't figure out which project is involved, or if your issue is with this website, the notebooks you downloaded from it, or the ``holoviz`` package itself, then please open an issue on `github.com/holoviz. <https://github.com/holoviz/holoviz/issues>`_ or chat with us on the `Gitter channel for HoloViews. <http://gitter.im/holoviz/holoviz>`_
