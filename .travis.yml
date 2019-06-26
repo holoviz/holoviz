@@ -39,8 +39,6 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
         - conda install -c pyviz/label/dev "pyctdev>=0.5" && doit ecosystem_setup
-        - conda config --set path_conflict warn
-        - conda config --set channel_priority strict  # this makes the conda solver **way** faster
       before_script:
         - doit env_create --name=holoviz --python=$PYENV_VERSION
         - source activate holoviz
