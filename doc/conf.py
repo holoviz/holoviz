@@ -13,7 +13,7 @@ version = release = holoviz.__version__
 html_static_path += ['_static']
 html_theme = 'sphinx_pyviz_theme'
 html_theme_options = {
-    'logo': 'pyviz-logo.png',
+    'logo': 'holoviz-logo.svg',
     'favicon': 'favicon.ico',
     'custom_css': 'custom.css',
     'primary_color': '#3c7cb0',

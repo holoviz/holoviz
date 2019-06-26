@@ -2,7 +2,7 @@
 
 .. raw:: html
 
-    <img src="assets/PyViz_logo_wm.png" height="150px" align="right">
+    <img src="assets/holoviz-logo-stacked.svg" height="150px" align="right">
     <h1>High-level tools to simplify visualization in Python.</h1>
 
     <p>Welcome to HoloViz!  HoloViz is a coordinated effort to make data visualization in Python easier to use, easier to learn, and more powerful.
