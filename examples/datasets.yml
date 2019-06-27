@@ -5,3 +5,9 @@ data:
     title: 'NYC Taxi Data'
     files:
       - nyc_taxi_wide.parq
+
+data:
+  - url: https://s3.amazonaws.com/earth-data/earthquakes.parq
+    title: 'Earthquakes over the past 19 years'
+    files:
+      - earthquakes.parq
