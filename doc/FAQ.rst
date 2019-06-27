@@ -15,6 +15,11 @@ HoloViz is about working together on many different levels:
 There is a specific installable package named ``holoviz``, but it's valuable mainly for its dependencies, which are installed in matching versions when ``holoviz`` is installed.  There is almost no code actually in HoloViz, apart from the examples in the tutorials.
 
 
+How does HoloViz relate to PyViz?
+=========================
+
+The packages in HoloViz were originally described as "PyViz" packages, but in June 2019 PyViz.org was  split off as a separate general-purpose site for all of Python visualization, with HoloViz referring to the specific packages  maintained in by the group now called HoloViz.
+
 Is HoloViz a commercial product?
 ==============================
 
@@ -49,4 +54,4 @@ See the `Roadmap <Roadmap>`_ for more details on topics that could be added in f
 How do I report a problem?
 ==========================
 
-For the quickest response from those who can fix things, try to identify which HoloViz package is most directly involved, and then click on the appropriate logo on the `HoloViz home page <index.html>`_ to find their Github site for filing issues.  If you can't figure out which project is involved, or if your issue is with this website, the notebooks you downloaded from it, or the ``holoviz`` package itself, then please open an issue on `github.com/holoviz. <https://github.com/pyviz/holoviz/issues>`_ or chat with us on the `Gitter channel for HoloViews. <http://gitter.im/pyviz/pyviz>`_
+For the quickest response from those who can fix things, try to identify which HoloViz package is most directly involved, and then click on the appropriate logo on the `HoloViz home page <index.html>`_ to find their Github site for filing issues.  If you can't figure out which project is involved, or if your issue is with this website, the notebooks you downloaded from it, or the ``holoviz`` package itself, then please open an issue on `github.com/holoviz. <https://github.com/pyviz/holoviz/issues>`_ or chat with us on the `PyViz Gitter channel. <http://gitter.im/pyviz/pyviz>`_
