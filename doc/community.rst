@@ -11,30 +11,31 @@ addressing issues. This page gives guidelines on the most effective
 methods for each type of interaction.
 
 **Have a question about how to use HoloViz tools?** After the docs, your
-first stop should be
-`Stack Overflow <http://stackoverflow.com/questions/tagged/pyviz>`__.
+first stop should be StackOverflow for 
+`HoloViz <http://stackoverflow.com/questions/tagged/holoviz>`__ or for
+older issues `PyViz <http://stackoverflow.com/questions/tagged/pyviz>`__.
 Search for an existing answer to your question, or post a new one (and
-make sure you include the "**pyviz**" tag). StackOverflow is for
+make sure you include the "**holoviz**" tag). StackOverflow is for
 *usage* questions:
 
-  - How do I do X with pyviz tools?
+  - How do I do X with holoviz tools?
   - Why am I seeing text rather than a plot?
 
 **Have you found an issue with a HoloViz tool?** If you think something
 is missing or not behaving as expected, visit the Github issue tracker
-for the relevant project. All projects are under the HoloViz
+for the relevant project. HoloViz projects are currently hosted under the PyViz
 `GitHub organization <https://github.com/pyviz>`__.  GitHub is where
 bugs and enhancements are logged and discussed.  Search for relevant
 existing issues to comment on, or submit your own (following these
 `guidelines <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__
 if at all possible). Use the GitHub issue tracker for:
 
-  - **Bug reports** (like "The text gets cut off in a panel object.")
+  - **Bug reports** (like "The text gets cut off in a Panel object.")
   - **Documentation issues** (like "I found this section unclear")
-  - **Feature requests** (like "I think that colorcet should have a jet colormap")
+  - **Feature requests** (like "I think that Colorcet should have a jet colormap")
 
 **Do you have a quick, specific issue that likely has an immediate solution?**
-You can chat with other users on the HoloViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
+You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
 Use gitter for quick feedback while you are working on a task:
 
   - I'm having trouble setting up the development environment.
@@ -49,6 +50,6 @@ out the community: Please consider making a PR to the docs, examples,
 or FAQ for that project with that information, so that a future user
 won't get stuck in the same way.
 
-And please tweet at us (@holoviews, @datashader, @bokehplots, #pyviz) often to
+And please tweet at us (@holoviews, @datashader, @holoviz_org) often to
 show off what you are making with HoloViz tools and help spread the
 word!
