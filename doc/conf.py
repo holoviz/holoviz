@@ -13,11 +13,12 @@ version = release = holoviz.__version__
 html_static_path += ['_static']
 html_theme = 'sphinx_pyviz_theme'
 html_theme_options = {
-    'logo': 'pyviz-logo.png',
+    'logo': 'holoviz-logo.svg',
     'favicon': 'favicon.ico',
     'custom_css': 'custom.css',
-    'primary_color': '#3c7cb0',
-    'primary_color_dark': '#1f405b',
+    'primary_color': '#8ba0b9',
+    'primary_color_dark': '#3e5e82',
+    'secondary_color': '#d5dde7',
 }
 
 _NAV =  (

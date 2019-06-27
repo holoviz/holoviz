@@ -1,4 +1,4 @@
-<img src="https://github.com/pyviz/holoviz/blob/master/doc/_static/pyviz-logo.png"><br>
+<img src="https://github.com/pyviz/holoviz/blob/master/doc/_static/holoviz-logo.svg"><br>
 
 -----------------
 
