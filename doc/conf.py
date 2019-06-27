@@ -16,8 +16,9 @@ html_theme_options = {
     'logo': 'holoviz-logo.svg',
     'favicon': 'favicon.ico',
     'custom_css': 'custom.css',
-    'primary_color': '#3c7cb0',
-    'primary_color_dark': '#1f405b',
+    'primary_color': '#8ba0b9',
+    'primary_color_dark': '#3e5e82',
+    'secondary_color': '#d5dde7',
 }
 
 _NAV =  (
