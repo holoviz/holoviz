@@ -1,4 +1,7 @@
+sudo: false
 language: generic
+os:
+  - linux
 
 env:
   global:
