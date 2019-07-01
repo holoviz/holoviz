@@ -10,3 +10,9 @@ data:
     title: 'Earthquakes over the past 19 years'
     files:
       - earthquakes.parq
+
+  - url: https://s3.amazonaws.com/earth-data/gpw_v4_population_density_rev11_2010_2pt5_min.zip
+    title: 'Rasterized global population in 2010'
+    files:
+      - gpw_v4_population_density_rev11_2010_2pt5_min.tif
+      - gpw_v4_population_density_rev11_2010_2pt5_min_tif_readme.txt

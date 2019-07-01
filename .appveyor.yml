@@ -21,6 +21,8 @@ install:
 build: off
 
 test_script:
+  - "xcopy examples\\data\\.data_stubs examples\\data /E /f /i"  # HACK until pyct is fixed
   - "holoviz fetch-data --path=examples --use-test-data"
+  - "pip install nbsmoke"  # for some reason the extension isn't registered properly with pytest
   - "doit test_all"
   - "holoviz clean-data --path=examples"
