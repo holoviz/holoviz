@@ -21,7 +21,8 @@ install:
 build: off
 
 test_script:
-  - "xcopy examples\\data\\.data_stubs\\earthquakes.parq examples\\data /E"  # HACK until pyct is fixed
+  - "xcopy examples\\data\\.data_stubs\\earthquakes.parq examples\\data /E /f /i"  # HACK until pyct is fixed
+  - "dir /s /b /o:gn"
   - "holoviz fetch-data --path=examples --use-test-data"
   - "doit test_all"
   - "holoviz clean-data --path=examples"
