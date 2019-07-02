@@ -1,11 +1,6 @@
 ---
 
 data:
-  - url: https://s3.amazonaws.com/datashader-data/nyc_taxi_wide.parq
-    title: 'NYC Taxi Data'
-    files:
-      - nyc_taxi_wide.parq
-
   - url: https://s3.amazonaws.com/earth-data/earthquakes.parq
     title: 'Earthquakes over the past 19 years'
     files:
