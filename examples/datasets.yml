@@ -6,8 +6,8 @@ data:
     files:
       - earthquakes.parq
 
-  - url: https://earth-data.s3.amazonaws.com/gpw-v4-population-density-rev11_2010_2pt5_min_tif.zip
+  - url: https://earth-data.s3.amazonaws.com/gpw-v4-population-density-rev11_2010_2pt5_min.zip
     title: 'Rasterized global population in 2010'
     files:
-      - gpw_v4_population_density_rev11_2010_2pt5_min.tif
+      - gpw_v4_population_density_rev11_2010_2pt5_min.nc
       - gpw_v4_population_density_rev11_2010_2pt5_min_tif_readme.txt
