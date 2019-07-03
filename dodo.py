@@ -13,7 +13,7 @@ def task_test_user_install_part2_conda():
         "holoviz examples --path=. --force --use-test-data",
         # TODO: bokeh sampledata isn't a documented step
         "bokeh sampledata",
-        'pytest --nbsmoke-run -k ".ipynb"',
+        'pytest --nbsmoke-run -k ".ipynb"']}
 
 def task_test_user_install_part2_pip():
     return {'actions':[
@@ -21,4 +21,4 @@ def task_test_user_install_part2_pip():
         "holoviz examples --path=. --force --use-test-data",
         # TODO: bokeh sampledata isn't a documented step
         "bokeh sampledata",
-        'pytest --nbsmoke-run -k ".ipynb" --ignore=tutorials/apps']}
+        'pytest --nbsmoke-run -k ".ipynb"']}
