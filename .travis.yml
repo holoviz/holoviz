@@ -5,8 +5,8 @@ os:
 
 env:
   global:
-    - CHANS_DEV="-c defaults -c pyviz/label/dev"   # this order matters because we're using strict channel priority
-    - CHANS_REL="-c defaults -c https://conda.anaconda.org/pyviz"  # this order matters because we're using strict channel priority
+    - CHANS_DEV="-c conda-forge -c defaults -c pyviz/label/dev"   # this order matters because we're using strict channel priority
+    - CHANS_REL="-c conda-forge -c defaults -c https://conda.anaconda.org/pyviz"  # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
     - PYENV_VERSION=3.7
@@ -44,6 +44,7 @@ jobs:
         - conda config --set always_yes True
         - conda install -c pyviz/label/dev "pyctdev>=0.5" && doit ecosystem_setup
         - conda config --set path_conflict warn
+        - conda config --set channel_priority strict  # this makes the conda solver **way** faster
       before_script:
         - doit env_create $CHANS --name=holoviz --python=$PYTHON_VERSION
         - source activate holoviz
