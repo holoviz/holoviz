@@ -138,7 +138,7 @@ top of lower-level tools, where you can use the top level for anything
 that it provides, while always being able to drop down a level (or
 several if necessary!) to get the behavior you need.
 
-Panel's `interact function <https://panel.pyviz.org/user_guide/Introduction.html>`_
+Panel's `interact function <https://panel.pyviz.org/user_guide/Interact.html>`_
 provides a clear example of this approach. With one line of Panel code
 you can get a fully functional widget-based app.  But if it's not
 precisely what you want, you can then inspect what's returned, unpack
