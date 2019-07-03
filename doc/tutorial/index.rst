@@ -12,7 +12,7 @@ HoloViz Tutorial
     Setup <Setup>
     Overview <Overview>
     Introduction to Panel <Introduction_to_Panel>
-    Panel_Widgets <Panel_Widgets>
+    Adding Interactivity to Panel <Panel_Interactivity>
     Using .plot <Using_.plot>
     Composing Holoviews Plots <Composing_Holoviews_Plots>
     Custom Interactivity <Custom_Interactivity>
