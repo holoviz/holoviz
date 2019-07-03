@@ -14,8 +14,6 @@ def task_test_user_install_part2_conda():
         # TODO: bokeh sampledata isn't a documented step
         "bokeh sampledata",
         'pytest --nbsmoke-run -k ".ipynb"',
-        "conda install -y -c pyviz geoviews geopandas",
-        'pytest --nbsmoke-run -k "07_Geographic_Data.ipynb" --ignore-nbsmoke-skip-run']}
 
 def task_test_user_install_part2_pip():
     return {'actions':[
