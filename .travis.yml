@@ -27,7 +27,7 @@ stages:
   - name: website_dev
     if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
   - name: website_release
-    if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
+    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
     if: type = cron
 # TODO: caching
