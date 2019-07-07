@@ -15,7 +15,7 @@ If you do have conda already, it's a good idea to update it (running it twice to
 
 You should then create a separate Conda environment to work in for this tutorial::
 
-   > conda create -n holoviz-tutorial python=3.6
+   > conda create -n holoviz-tutorial python=3.7
    > conda activate holoviz-tutorial
 
 Depending on how your conda is set up, you may need to use "source" instead of "conda" activate, or sometimes just "activate" on Windows.
