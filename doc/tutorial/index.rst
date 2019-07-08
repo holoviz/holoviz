@@ -11,10 +11,10 @@ HoloViz Tutorial
 
     Setup <Setup>
     Overview <Overview>
-    Introduction to Panel <Introduction_to_Panel>
-    Adding Interactivity to Panel <Panel_Interactivity>
-    Using .plot <Using_.plot>
-    Composing Holoviews Plots <Composing_Holoviews_Plots>
-    Custom Interactivity <Custom_Interactivity>
+    Building Panels <Building_Panels>
+    Interlinked Panels <Interlinked_Panels>
+    Basic Plotting <Basic_Plotting>
+    Composing Plots <Composing_Plots>
+    Interlinked Plots <Interlinked_Plots>
     Large Data <Large_Data>
     Advanced Dashboards <Advanced_Dashboards>
