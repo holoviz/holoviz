@@ -64,15 +64,25 @@ jobs:
     - &package_test
       <<: *default
       stage: test_user_install
-      env: DESC="Test conda package on pyviz/label/dev"
+      env: DESC="Test conda package on pyviz python 3.6"
       before_script:
         # TODO: pyctdev should just support this whole section
         - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
-        - doit test_user_install_part1
+        - doit test_user_install_part1_py36
         - source activate holoviz-tutorial
       script: doit test_user_install_part2_conda
 
-    - <<: *package_test
+    - <<: *default
+      stage: test_user_install
+      env: DESC="Test conda package on pyviz python 3.7"
+      before_script:
+        # TODO: pyctdev should just support this whole section
+        - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
+        - doit test_user_install_part1_py37
+        - source activate holoviz-tutorial
+      script: doit test_user_install_part2_conda
+
+      - <<: *package_test
       env: DESC="Test package on pip"
       script: doit test_user_install_part2_pip
 
