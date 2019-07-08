@@ -82,7 +82,7 @@ jobs:
         - source activate holoviz-tutorial
       script: doit test_user_install_part2_conda
 
-      - <<: *package_test
+    - <<: *package_test
       env: DESC="Test package on pip"
       script: doit test_user_install_part2_pip
 
