@@ -70,6 +70,7 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
         - conda install -c pyviz/label/dev "pyctdev>=0.5"
+        - conda update conda-build
       before_script:
         # TODO: pyctdev should just support this whole section
         - mkdir $HOME/tmp && cp tox.ini dodo.py $HOME/tmp && cd $HOME/tmp
