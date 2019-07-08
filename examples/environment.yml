@@ -1,6 +1,6 @@
 name: holoviz-tutorial
 channels:
-  - holoviz
+  - pyviz
   - defaults
 dependencies:
   - bokeh ==1.2.0
