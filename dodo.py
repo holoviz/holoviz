@@ -9,6 +9,7 @@ def task_test_user_install_part1():
 
 def task_test_user_install_part2_conda():
     return {'actions':[
+        "conda uninstall -y conda-build",
         "conda install -y -c pyviz holoviz",
         "pip install nbsmoke",
         "holoviz examples --path=. --force --use-test-data",
