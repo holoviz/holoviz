@@ -5,11 +5,13 @@ if "PYCTDEV_ECOSYSTEM" not in os.environ:
 from pyctdev import *  # noqa: api
 
 def task_test_user_install_part1():
-    return {'actions':["conda create -y -n holoviz-tutorial python=3.6"]}
+    return {'actions':[
+        "conda uninstall -y conda-build",
+        "conda create -y -n holoviz-tutorial python=3.6"
+    ]}
 
 def task_test_user_install_part2_conda():
     return {'actions':[
-        "conda uninstall -y conda-build",
         "conda install -y -c pyviz holoviz",
         "pip install nbsmoke",
         "holoviz examples --path=. --force --use-test-data",
