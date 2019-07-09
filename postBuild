@@ -1,0 +1,3 @@
+#!/bin/bash
+conda install -y python-snappy
+holoviz fetch-data --path=examples
