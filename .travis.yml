@@ -57,7 +57,7 @@ jobs:
         - doit test_all
         - holoviz clean-data --path=examples
 
-    - &default
+    - <<: default
       stage: test
       env: DESC="Test examples using environment.yml"
       os: linux
