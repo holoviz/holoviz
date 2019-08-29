@@ -66,7 +66,11 @@ jobs:
         - source activate holoviz-env
         - conda install -c pyviz -c defaults nbsmoke pytest flake8
         - doit env_capture
-
+      script:
+        - cp -r examples/data/.data_stubs/earthquakes.parq examples/data
+        - python -c "from pyct import cmd; cmd.fetch_data(name='holoviz', path='examples', use_test_data=True)"
+        - doit test_all
+        - holoviz clean-data --path=examples
     - <<: *default
       stage: unpinned_upcoming_trouble
       env: PIN=
