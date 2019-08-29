@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: generic
 os:
   - linux
@@ -74,7 +74,9 @@ jobs:
 
     - <<: *package_test
       env: DESC="Test package on pip"
-      script: doit test_user_install_part2_pip
+      script:
+        - sudo apt-get install snappy
+        - doit test_user_install_part2_pip
 
     - <<: *package_test
       os: osx
