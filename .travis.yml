@@ -57,6 +57,16 @@ jobs:
         - doit test_all
         - holoviz clean-data --path=examples
 
+    - &default
+      stage: test
+      env: DESC="Test examples using environment.yml"
+      os: linux
+      before_script:
+        - conda env create --name holoviz-env --file examples/environment.yml
+        - source activate holoviz-env
+        - conda install -c pyviz -c defaults nbsmoke pytest flake8
+        - doit env_capture
+
     - <<: *default
       stage: unpinned_upcoming_trouble
       env: PIN=
