@@ -1,10 +1,10 @@
 ---
 
 data:
-  - url: https://earth-data.s3.amazonaws.com/earthquakes.parq
+  - url: https://earth-data.s3.amazonaws.com/earthquakes-nosnappy.parq
     title: 'Earthquakes over the past 19 years'
     files:
-      - earthquakes.parq
+      - earthquakes-nosnappy.parq
 
   - url: https://earth-data.s3.amazonaws.com/gpw_v4_population_density_rev11_2010_2pt5_min.zip
     title: 'Rasterized global population in 2010'

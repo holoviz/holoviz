@@ -23,7 +23,6 @@ dependencies:
   - phantomjs
   - pyct
   - python ==3.6.*
-  - python-snappy
   - rise
   - scikit-image
   - selenium
