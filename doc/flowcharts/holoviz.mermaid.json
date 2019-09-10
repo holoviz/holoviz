@@ -1,0 +1,5 @@
+{
+    "theme": "default",
+    "securityLevel": "loose",
+    "themeCSS": ".label foreignObject { overflow: visible; font-size: 90%;}"
+}

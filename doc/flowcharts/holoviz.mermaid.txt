@@ -1,0 +1,74 @@
+graph TD
+linkStyle default interpolate basis
+Start[Data] --> Tabular --> TabBig(>50k rows)
+Start --> Network[Network Graph] --> NetworkX
+Start --> Streaming --> Streamz
+Start --> ND[N Dimensional] --> Xarray
+Start --> Raw --> RawBig(>50k rows)
+
+TabBig --yes--> Dask.dataframe
+TabBig --no--> Pandas
+
+RawBig --yes-->Dask.array
+RawBig --no--> Numpy
+
+Pandas --> Plot(is pandas.plot sufficient?)
+Pandas -- geospatial?--> GeoPandas --> Pandas
+Dask.dataframe --> Plot
+NetworkX --> Plot
+Xarray --> Plot
+Streamz --> Plot
+Plot --yes--> hvPlot
+Plot --no--> HoloViews
+hvPlot --> HoloViews
+Numpy --> HoloViews
+Dask.array --> HoloViews
+
+HoloViews ==need geospatial tools?===GeoViews
+HoloViews ==using colormapping?===Colorcet
+HoloViews ==large data?===Datashader
+HoloViews -->Interactive(want interactive output?)
+Interactive --yes-->3D(are you making 3D plots?)
+Interactive --no-->Matplotlib
+
+3D --yes-->Plotly
+3D --no-->Bokeh
+
+Bokeh --> Dashboard
+Plotly --> Dashboard
+Matplotlib --> Dashboard
+
+Dashboard(want to make a dashboard?) --yes--> Panel
+Dashboard --no--> Done
+Panel --> Done
+
+classDef package fill:#fa0
+class Bokeh,Colorcet,Dask.array,Dask.dataframe,Datashader,GeoPandas,GeoViews,hvPlot,HoloViews,Matplotlib,NetworkX,Numpy,Panel,Pandas,Plotly,Streamz,Xarray package
+
+style Start fill: #5c8
+style Network fill: #dd0
+style Streaming fill: #dd0
+style Raw fill: #dd0
+style Tabular fill: #dd0
+style ND fill: #dd0
+
+style Done fill: #5c8
+
+click Bokeh "https://bokeh.org"
+click Colorcet "https://colorcet.pyviz.org"
+click Dask.array "https://docs.dask.org/en/latest/array.html"
+click Dask.dataframe "https://docs.dask.org/en/latest/dataframe.html"
+click Datashader "http://datashader.org"
+click GeoPandas "http://geopandas.org"
+click GeoViews "http://geoviews.org"
+click HoloViews "https://holoviews.org"
+click hvPlot "https://hvplot.pyviz.org"
+click Matplotlib "http://matplotlib.org"
+click NetworkX "https://networkx.github.io"
+click Numpy "http://numpy.org"
+click Pandas "https://pandas.pydata.org"
+click Panel "https://panel.pyviz.org"
+click Plot "https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#basic-plotting-plot"
+click Plotly "https://plot.ly/python"
+click Streamz "https://streamz.readthedocs.io"
+click Xarray "http://xarray.pydata.org"
