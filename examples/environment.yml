@@ -31,5 +31,4 @@ dependencies:
   - scikit-image
   - selenium
   - streamz ==0.5.0
-  - testpath ==0.3.1
   - xarray ==0.12.1
