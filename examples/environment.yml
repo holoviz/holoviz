@@ -1,3 +1,6 @@
+# file created by pyctdev:
+#   doit env_export2 --env-name-again=holoviz --env-file=examples/environment.yml --package-name=holoviz -c pyviz -c defaults --pin-deps
+
 name: holoviz-tutorial
 channels:
   - pyviz
@@ -28,4 +31,5 @@ dependencies:
   - scikit-image
   - selenium
   - streamz ==0.5.0
+  - testpath ==0.3.1
   - xarray ==0.12.1
