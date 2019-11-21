@@ -1,4 +1,4 @@
-<img src="https://github.com/pyviz/holoviz/blob/master/doc/_static/holoviz-logo.svg"><br>
+<img src="https://github.com/holoviz/holoviz/blob/master/doc/_static/holoviz-logo.svg"><br>
 
 -----------------
 
@@ -6,10 +6,10 @@
 
 |    |    |
 | --- | --- |
-| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/pyviz/holoviz.svg?branch=master)](https://travis-ci.org/pyviz/holoviz) [![Windows Build status](https://img.shields.io/appveyor/ci/pyviz/holoviz/master.svg?logo=appveyor)](https://ci.appveyor.com/project/pyviz/holoviz/branch/master) |
-| Latest dev release | [![Github tag](https://img.shields.io/github/tag/pyviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz/holoviz/tags) |
-| Latest release | [![Github release](https://img.shields.io/github/release/pyviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/pyviz/holoviz/releases) [![PyPI version](https://img.shields.io/pypi/v/holoviz.svg?colorB=cc77dd)](https://pypi.python.org/pypi/holoviz) [![pyviz version](https://img.shields.io/conda/v/pyviz/holoviz.svg?colorB=4488ff&style=flat)](https://anaconda.org/pyviz/holoviz) |
-| Docs | [![gh-pages](https://img.shields.io/github/last-commit/pyviz/holoviz/gh-pages.svg)](https://github.com/pyviz/holoviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/holoviz.org.svg)](http://holoviz.org) |
+| Build Status | [![Linux/MacOS Build Status](https://travis-ci.org/holoviz/holoviz.svg?branch=master)](https://travis-ci.org/holoviz/holoviz) [![Windows Build status](https://img.shields.io/appveyor/ci/pyviz/holoviz/master.svg?logo=appveyor)](https://ci.appveyor.com/project/pyviz/holoviz/branch/master) |
+| Latest dev release | [![Github tag](https://img.shields.io/github/tag/holoviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/holoviz/holoviz/tags) |
+| Latest release | [![Github release](https://img.shields.io/github/release/holoviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/holoviz/holoviz/releases) [![PyPI version](https://img.shields.io/pypi/v/holoviz.svg?colorB=cc77dd)](https://pypi.python.org/pypi/holoviz) [![holoviz version](https://img.shields.io/conda/v/holoviz/holoviz.svg?colorB=4488ff&style=flat)](https://anaconda.org/holoviz/holoviz) |
+| Docs | [![gh-pages](https://img.shields.io/github/last-commit/holoviz/holoviz/gh-pages.svg)](https://github.com/holoviz/holoviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/holoviz.org.svg)](http://holoviz.org) |
 | Dependencies | [![](https://img.shields.io/website-up-down-green-red/http/status.pyviz.org.svg?label=status-dashboard)](http://status.pyviz.org/) |
 
 
@@ -22,8 +22,8 @@ tools that work with web browsers, including
 [HoloViews](https://holoviews.org),
 [GeoViews](http://geoviews.org),
 [Matplotlib](https://matplotlib.org),
-[Datashader](https://github.com/pyviz/datashader), and
-[Param](https://github.com/pyviz/param).
+[Datashader](https://github.com/holoviz/datashader), and
+[Param](https://github.com/holoviz/param).
 
 It includes a shared conda environment that ensures all these tools work together,
 facilities for downloading sample data for use with these tools, and provides
