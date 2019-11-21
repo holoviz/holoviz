@@ -11,7 +11,7 @@ import holoviz
 version = release = holoviz.__version__
 
 html_static_path += ['_static']
-html_theme = 'sphinx_pyviz_theme'
+html_theme = 'sphinx_holoviz_theme'
 html_theme_options = {
     'logo': 'holoviz-logo.svg',
     'favicon': 'favicon.ico',
@@ -42,6 +42,6 @@ html_context.update({
     'LINKS': _NAV,
     'SOCIAL': (
         ('Gitter', '//gitter.im/pyviz/pyviz'),
-        ('Github', '//github.com/pyviz/holoviz'),
+        ('Github', '//github.com/holoviz/holoviz'),
     )
 })

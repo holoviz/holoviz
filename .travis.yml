@@ -107,7 +107,7 @@ jobs:
       script:
         - bokeh sampledata
         - holoviz fetch-data --path=examples
-        - nbsite generate-rst --org pyviz --project-name holoviz --offset 1
+        - nbsite generate-rst --org holoviz --project-name holoviz --offset 1
         - nbsite build --what=html --output=builtdocs
       deploy:
         - provider: pages
