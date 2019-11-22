@@ -1,51 +1,54 @@
+%% Source file for .svg
+
 graph TD
 linkStyle default interpolate basis
 
-
-subgraph Data type
+subgraph Kind of data
    Tabular
    Network[Network Graph]
    Streaming
    ND[N Dimensional]
-   Other
+   Other[Other Array Data]
 end
 
-subgraph Data library
-   Numpy
-   Dask.array
+subgraph Data API
    Pandas
    GeoPandas
    Dask.dataframe
    NetworkX
    Xarray
    Streamz
+   Numpy
+   Dask.array
 end
 
-subgraph Viz extensions
-   GeoViews
-   Colorcet
-   Datashader
+subgraph HoloViz Add-ons
+   Addons[Optional:]
+   GeoViews["GeoViews (geospatial)"]
+   Colorcet["Colorcet (colormapping)"]
+   Datashader["Datashader (large data)"]
+   Panel["Panel (dashboards)"]
 end
 
-subgraph Viz backend
+subgraph Plotting library
    Bokeh
    Matplotlib
    Plotly
 end
 
-subgraph Viz API
+subgraph HoloViz API
    HoloViews
    hvPlot
 end
 
-Tabular --> TabBig(>50k rows?)
+Tabular --> TabBig{>50k rows?}
 ND --> Xarray
 Streaming --> Streamz
 Network --> NetworkX
-Other --> RawBig(>50k items?)
+Other --> RawBig{">50k items?"}
 
 TabBig --yes--> Dask.dataframe
-TabBig --no--> GeoTab(geospatial?)
+TabBig --no--> GeoTab{geospatial?}
 GeoTab --yes--> GeoPandas
 GeoTab --no--> Pandas
 
@@ -54,34 +57,28 @@ RawBig --no--> Numpy
 
 Numpy --> HoloViews
 Dask.array --> HoloViews
-Pandas --> Plot(is Pandas .plot API sufficient?)
+Pandas --> Plot{Pandas .plot API sufficient?}
 GeoPandas --> Plot
 Dask.dataframe --> Plot
 NetworkX --> Plot
 Xarray --> Plot
 Streamz --> Plot
 
-Plot --yes--> hvPlot
 Plot --no--> HoloViews
+Plot --yes--> hvPlot
 hvPlot --> HoloViews
 
-HoloViews ==need geospatial tools?===GeoViews
-HoloViews ==using colormapping?===Colorcet
-HoloViews ==large data?===Datashader
-HoloViews -->Interactive(primary form of output?)
-Interactive --Interactive figures-->3D(3D plotting required?)
-Interactive --"Printed plots"-->Matplotlib
+HoloViews -->Addons
+Addons --> Interactive{interactive plots?}
+Interactive --yes-->3D{3D plots?}
+Interactive --no-->Matplotlib
 
 3D --yes-->Plotly
 3D --no-->Bokeh
 
-Bokeh --> Dashboard
-Plotly --> Dashboard
-Matplotlib --> Dashboard
-
-Dashboard(want to make a dashboard?) --yes--> Panel
-Dashboard --no--> Done
-Panel --> Done
+Bokeh --> Visualization(View, export, or publish visualization)
+Plotly --> Visualization
+Matplotlib --> Visualization
 
 classDef data-package fill:#ffa
 class Dask.array,Dask.dataframe,GeoPandas,Pandas/GeoPandas,NetworkX,Numpy,Pandas,Streamz,Xarray data-package
@@ -95,7 +92,7 @@ style Other fill: #dd0
 style Tabular fill: #dd0
 style ND fill: #dd0
 
-style Done fill: #5c8
+style Visualization fill: #9ea
 
 click Bokeh "https://bokeh.org"
 click Colorcet "https://colorcet.pyviz.org"
