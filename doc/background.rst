@@ -17,7 +17,7 @@ decision makers to interact directly with live data streams to make
 operational decisions.
 
 With Python, initial exploration is typically in a
-`Jupyter <http://jupyter.org>`__ notebook, using tools like Matplotlib
+`Jupyter <https://jupyter.org>`__ notebook, using tools like Matplotlib
 and Bokeh to develop static or interactive plots. These tools support a
 simple syntax for making certain kinds of plots, but showing more
 complex relationships in data can quickly turn into a major software
@@ -36,30 +36,30 @@ close to the entire range of cases where data needs to be visualized.
 The HoloViz ecosystem
 -------------------
 
-_holo_: _Greek_ root, meaning _whole_, _entire_.
+*holo* : *Greek* root, meaning *whole*, *entire*.
 
 To address all the above issues, we have developed a set of open-source Python
 packages to streamline the entire process of working with small and large datasets
 (from a few datapoints to billions or more) in a web browser, whether doing
 exploratory analysis, making simple widget-based tools, or building
-multipage standalone dashboards. Building on existing plotting libraries like Bokeh
+multipage standalone dashboards. Building on existing plotting libraries like
 `Bokeh <https://bokeh.org>`__, `Matplotlib <https://matplotlib.org>`__, and
 `Plotly <https://plot.ly>`__, the HoloViz ecosystem includes a set of special-purpose tools designed to fill in the gaps and solve the whole problem of visualization:
 
--  `Panel <http://panel.pyviz.org>`__: Assembling objects from
+-  `Panel <https://panel.pyviz.org>`__: Assembling objects from
    many different libraries into a layout or app, whether in a Jupyter
    notebook or in a standalone servable dashboard
--  `hvPlot <http://hvplot.pyviz.org>`__: Quickly return interactive
-   HoloViews or GeoViews objects from Pandas, Xarray,
+-  `hvPlot <https://hvplot.pyviz.org>`__: Quickly return interactive
+   HoloViews, GeoViews or Panel objects from Pandas, Xarray,
    or other data structures
--  `HoloViews <http://holoviews.org>`__: Declarative objects for
+-  `HoloViews <https://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
--  `GeoViews <http://geo.holoviews.org>`__: Visualizable geographic
+-  `GeoViews <http://geoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
--  `Datashader <http://datashader.org>`__: Rasterizing
+-  `Datashader <https://datashader.org>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `Colorcet <http://colorcet.org>`__: A wide range of perceptually uniform or large-number categorical colormaps for use with the other libraries
+-  `Colorcet <https://colorcet.pyviz.org>`__: A wide range of perceptually uniform or large-number categorical colormaps for use with the other libraries
 
 Assuming that you have some data of some particular **Data type**, the
 chart below will help you choose a suitable Python **Data library**
@@ -69,23 +69,23 @@ for reading in the data and working with it, and then a suitable
 choose an appropriate **Plotting library** for actually rendering
 visualizations, along with a **Dashboarding library** if you need one:
 
-.. image:: holoviz.mermaid.svg
+.. image:: flowcharts/holoviz.mermaid.svg
     :width: 900px
-            
-Here, each of these steps is just a suggestion, presented here to show
-you how we designed the HoloViz tools, and how everything is _meant_
+
+Each of these steps is just a suggestion, presented here to show
+you how we designed the HoloViz tools, and how everything is *meant*
 to fit together. You are welcome to combine these tools or anything
-else from Python any way you like. For instance, you do not _have_ to
+else from Python any way you like. For instance, you do not *have* to
 use GeoPandas or GeoViews if you are working with geospatial columnar
 data; you can use regular Pandas and handle projections and other
-geospatial operations yourself. You do not _have_ to use Datashader if
+geospatial operations yourself. You do not *have* to use Datashader if
 you have large datasets; you can simply subsample or select your data
 into a small enough subset that it becomes feasible with other
-tools. You do not _have_ to use Streamz for working with streaming
+tools. You do not *have* to use Streamz for working with streaming
 data; it just makes it simpler. So please use whatever library you
 wish, now that you know what our suggestions are and how we mean it to
 fit together!
-           
+
 
 Shortcuts, not dead ends
 ------------------------
@@ -147,18 +147,18 @@ Beyond the specific HoloViz tools, all these approaches work with and
 often rely upon a wide range of other open-source libraries for their
 implementation, including:
 
--  `Pandas <http://pandas.pydata.org>`__: Convenient computation on
+-  `Pandas <https://pandas.pydata.org>`__: Convenient computation on
    columnar datasets (used by HoloViews and datashader)
--  `Xarray <http://xarray>`__: Convenient computations on
+-  `Xarray <https://xarray.pydata.org>`__: Convenient computations on
    multidimensional array datasets (used by HoloViews and Datashader)
--  `Dask <http://dask.pydata.org>`__: Efficient
+-  `Dask <https://dask.org>`__: Efficient
    out-of-core/distributed computation on massive datasets (used by
    Datashader)
--  `Numba <http://numba.pydata.org>`__: Accelerated machine code for
+-  `Numba <https://numba.pydata.org>`__: Accelerated machine code for
    inner loops (used by Datashader)
 -  `Fastparquet <https://fastparquet.readthedocs.io>`__: Efficient
    storage for columnar data
--  `Cartopy <http://scitools.org.uk/cartopy>`__: Support for
+-  `Cartopy <https://scitools.org.uk/cartopy>`__: Support for
    geographical data (using a wide range of other lower-level libraries)
 
 
@@ -182,21 +182,21 @@ To give you an idea what sort of functionality is possible with these
 tools, you can check out some of these links first if you wish:
 
 -  `Selection
-   stream <http://holoviews.org/reference/apps/bokeh/selection_stream.html>`__
+   stream <https://holoviews.org/reference/apps/bokeh/selection_stream.html>`__
 -  `Bounds
-   stream <http://holoviews.org/reference/streams/bokeh/BoundsX.html>`__
--  `Mandelbrot <http://holoviews.org/gallery/apps/bokeh/mandelbrot.html>`__
--  `DynamicMap <http://holoviews.org/reference/containers/bokeh/DynamicMap.html>`__
--  `Crossfilter <http://holoviews.org/gallery/apps/bokeh/crossfilter.html>`__
+   stream <https://holoviews.org/reference/streams/bokeh/BoundsX.html>`__
+-  `Mandelbrot <https://holoviews.org/gallery/apps/bokeh/mandelbrot.html>`__
+-  `DynamicMap <https://holoviews.org/reference/containers/bokeh/DynamicMap.html>`__
+-  `Crossfilter <https://holoviews.org/gallery/apps/bokeh/crossfilter.html>`__
 -  `Game of
-   Life <http://holoviews.org/gallery/apps/bokeh/game_of_life.html>`__
+   Life <https://holoviews.org/gallery/apps/bokeh/game_of_life.html>`__
 -  `Dragon
-   curve <http://holoviews.org/gallery/demos/bokeh/dragon_curve.html>`__
--  `Datashader NYC Taxi <https://anaconda.org/jbednar/nyc_taxi>`__
+   curve <https://holoviews.org/gallery/demos/bokeh/dragon_curve.html>`__
+-  `Datashader NYC Taxi <https://examples.pyviz.org/nyc_taxi/nyc_taxi.html>`__
 -  `Datashader Graphs <https://anaconda.org/jbednar/edge_bundling>`__
 -  `Datashader Landsat
-   images <http://datashader.org/topics/landsat.html>`__
--  `Datashader OpenSky <https://anaconda.org/jbednar/opensky>`__
+   images <https://examples.pyviz.org/landsat/landsat.html>`__
+-  `Datashader OpenSky <https://examples.pyviz.org/opensky/opensky.html>`__
 
 
 Getting started
