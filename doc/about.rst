@@ -1,14 +1,14 @@
 About Us
 ========
 
-HoloViz is a collaboration between the maintainers of several packages,
+HoloViz is a collaboration between the maintainers of several Python packages,
 including
-`Bokeh <http://bokeh.pydata.org>`_,
 `HoloViews <http://holoviews.org>`_,
 `GeoViews <http://geoviews.org>`_,
 `hvPlot <https://hvplot.pyviz.org>`_,
 `Datashader <http://datashader.org>`_,
-`Param <https://param.pyviz.org>`_, and
+`Param <https://param.pyviz.org>`_, 
+`Colorcet <https://colorcet.pyviz.org>`_, and
 `Panel <https://panel.pyviz.org>`_.
 
 The authors of these tools are working together closely to help make
@@ -16,9 +16,9 @@ them into a coherent solution to a wide range of Python visualization
 problems.
 
 If you like HoloViz, please `tweet <http://twitter.com>`_ a screenshot
-of your latest creation at ``@PyViz_org``, linking to ``holoviz.org``
+of your latest creation at ``@HoloViz_org``, linking to ``holoviz.org``
 along with any other library you relied on (``@HoloViews``,
-``@Datashader``, ``@BokehPlots``, ``@Matplotlib``, etc.). Thanks!
+``@Datashader``, ``@Panel_org``, ``@Bokeh``, ``@Matplotlib``, etc.). Thanks!
 
 There is an active open source community around HoloViz, and
 contributions from anyone are welcome. Contributions of any sort are
@@ -26,11 +26,11 @@ valuable, including new documentation, plus bug reports and fixes to
 code or documentation that might seem trivial (HoloViz is partly about
 having as many of those ironed out as possible!). Please go ahead and
 open a `pull request <https://guides.github.com/activities/forking/>`_
-or create a `new issue <https://github.com/pyviz/pyviz/issues/new>`_
+or create a `new issue <https://github.com/holoviz/holoviz/issues/new>`_
 :)
 
 While the HoloViz team itself maintains a number of packages on `HoloViz's
-GitHub <https://github.com/pyviz>`_, HoloViz depends on and supports a
+GitHub <https://github.com/holoviz>`_, HoloViz depends on and supports a
 number of other open-source libraries; for more information, see
 HoloViz's `detailed background <background.html>`_.
 
@@ -38,12 +38,7 @@ The entire HoloViz stack is open source, free for commercial and
 non-commercial use. However, if you are lucky enough to be in a
 position to fund developers to work on HoloViz, you can contact
 ``sales@anaconda.com``, or you can also collaborate with HoloViz via
-`Quansight's open source partnerships
-<https://www.quansight.com/projects>`_.
-
-Additionally, some parts of the HoloViz stack are able to accept
-donations, e.g. `Bokeh via NumFOCUS
-<https://numfocus.org/project/bokeh>`_.
+`Quansight's open source partnerships <https://www.quansight.com/projects>`_.
 
 .. image:: https://www.anaconda.com/wp-content/uploads/2018/06/cropped-Anaconda_horizontal_RGB-1-600x102.png
    :height: 60px
@@ -55,29 +50,26 @@ donations, e.g. `Bokeh via NumFOCUS
    :alt: Quansight website
    :target: http://www.quansight.com
 
-.. image:: https://numfocus.org/wp-content/uploads/2018/01/optNumFocus_LRG.png
-   :height: 60px
-   :alt: NumFOCUS website
-   :target: https://numfocus.org
-
 
 Acknowledgements and prior funding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The original development of core HoloViz libraries was supported in part
-by:
+HoloViz libraries have been supported by a variety of different funding mechanisms since 2003:
+
+- Human Brain Project grant 1R01-MH66991 to the University of Texas Department of Computer Sciences
+  from the U.S. National Institutes of Mental Health, supporting the initial development of the Param library.
 
 - Grants EP/F500385/1 and BB/F529254/1 to the `University of Edinburgh
   Doctoral Training Centre in Neuroinformatics and Computational
   Neuroscience <http://www.anc.ed.ac.uk/dtc>`_ from the UK Engineering
   and Physical Sciences Research Council, Biotechnology and Biological
-  Sciences Research Council, and Medical Research Council.
+  Sciences Research Council, and Medical Research Council, supporting the initial
+  development of the HoloViews library.
 
-- The U.S. National Institutes of Mental Health under Human Brain
-  Project grant 1R01-MH66991, and by the U.S. National Science
-  Foundation under grant IIS-9811478.
+- Contracts to Continuum Analytics, Inc. supporting the initial development of
+  GeoViews (from the UK Met Office),  Datashader and Colorcet (from In-Q-Tel), and
+  Panel (from the US Army Corps of Engineers ERDC).
 
-The PyViz team thanks Brian Thomas at Washington State University for
-donating the pyviz.org domain to the PyViz project.  If you are
-interested in Brian's PyViz smart-home visualization tool, check out
-his `paper <http://ieeexplore.ieee.org/document/5766889/>`_.
+- Contracts to Anaconda, Inc. from many other government agencies and
+  corporations, contributing to the maintenance and development of all
+  the HoloViz libraries.
