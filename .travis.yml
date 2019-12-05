@@ -89,7 +89,7 @@ jobs:
     - <<: *package_test
       env: DESC="Test package on pip"
       script:
-        - sudo apt-get install snappy
+        - sudo apt-get install libsnappy-dev
         - doit test_user_install_part2_pip
 
     - <<: *package_test
