@@ -18,6 +18,7 @@ env:
 
 stages:
   - name: test_user_install
+    if: type = cron  
   - test
   - name: package_dev
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$
