@@ -88,7 +88,8 @@ jobs:
     - <<: *package_test
       env: DESC="Test package on pip"
       script:
-#        - sudo apt-get install libsnappy-dev python3-dev
+# TODO: needs to be documented for pip users, e.g. "pip users will need to install snappy's dependencies via their system packaging tool"
+        - sudo apt-get install libsnappy-dev python3-dev
         - doit test_user_install_part2_pip
 
     - <<: *package_test
