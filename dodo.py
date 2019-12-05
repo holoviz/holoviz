@@ -18,6 +18,7 @@ def task_test_user_install_part2_conda():
 def task_test_user_install_part2_pip():
     return {'actions':[
         # would need to be documented: "pip users will need to install snappy e.g. via their system packaging tool (how to do this varies between platforms - or use conda)"
+        "conda install -y snappy",
         "pip install python-snappy",
         "pip install holoviz nbsmoke",
         "holoviz examples --path=. --force --use-test-data",
