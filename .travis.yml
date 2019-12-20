@@ -31,13 +31,13 @@ stages:
   - name: website_release
     if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
-#    if: type = cron
+    if: type = cron
 # TODO: caching
 
 jobs:
   include:
     - &default
-      stage: testTODOskipfornow
+      stage: test
       env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
       os: linux
       install:
