@@ -37,7 +37,7 @@ stages:
 jobs:
   include:
     - &default
-      stage: test
+      stage: testTODOskipfornow
       env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
       os: linux
       install:
@@ -60,7 +60,6 @@ jobs:
         - holoviz clean-data --path=examples
 
     - <<: *default
-      stage: test
       env: DESC="Test examples using environment.yml"
       os: linux
       before_script:
