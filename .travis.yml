@@ -18,14 +18,15 @@ env:
 
 stages:
   - name: test_user_install
-    if: type = cron
+#    if: type = cron
   - test
+    if: type = cron  
   - name: package_dev
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
+#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
   - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
+#    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
   - name: website_release
     if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
   - name: unpinned_upcoming_trouble
@@ -123,21 +124,21 @@ jobs:
     - <<: *website
       stage: website_dev
       env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
-      deploy:
-        - provider: pages
-          skip_cleanup: true
-          github_token: $GITHUB_TOKEN
-          local_dir: ./builtdocs
-          repo: pyviz-dev/holoviz
-          on:
-            all_branches: true
+#      deploy:
+#        - provider: pages
+#          skip_cleanup: true
+#          github_token: $GITHUB_TOKEN
+#          local_dir: ./builtdocs
+#          repo: pyviz-dev/holoviz
+#          on:
+#            all_branches: true
 
 
     ## dev packages
 
     - &pip_pkg
       <<: *default
-      env: DESC="Package for pip" PYPI=testpypi PYPIUSER=$TPPU PYPIPASS=$TPPP
+      env: DESC="Package for pip" PYPI=testpypi PYPIUSER=fail PYPIPASS=fail
       stage: package_dev
       before_script:
         - doit ecosystem=pip ecosystem_setup
@@ -152,7 +153,7 @@ jobs:
         - travis_wait 60 doit package_build $CHANS $PKG_TEST_PYTHON --package-name holoviz --test-group=unit
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
-      script: doit package_upload --token=$ANACONDA_TOKEN $LABELS
+      script: doit package_upload --token=fail $LABELS
 
     ## release packages
 
