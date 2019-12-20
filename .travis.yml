@@ -68,7 +68,7 @@ jobs:
     - <<: *package_test
       os: osx
       # travis/osx is not set up like travis/linux
-      env: PYENV_VERSION=3.6.4
+      env: DESC="Test conda package on pyviz/label/dev" PYENV_VERSION=3.6.4
       before_install:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
@@ -95,7 +95,7 @@ jobs:
 
     - &pip_pkg
       <<: *default
-      env: DESC="Package for pip" PYPI=testpypi PYPIUSER=fail PYPIPASS=fail
+      env: DESC="Package for pip" PYPI=testpypi PYPIUSER=fail PYPIPASS=fail PYENV_VERSION=3.6.7
       stage: package_dev
       before_script:
         - doit ecosystem=pip ecosystem_setup
