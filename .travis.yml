@@ -8,9 +8,10 @@ env:
     - CHANS_REL="-c conda-forge -c defaults -c https://conda.anaconda.org/pyviz"  # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
-    # TODO: is PYENV_VERSION used in more than one place?
+    # TODO: is PYENV_VERSION used in more than one place? (And document what it's for.)
     - PYENV_VERSION=3.7
     - PYTHON_VERSION=3.6
+    - NEXT_PYTHON_VERSION=3.7
     # TODO: this should probably be set based on PYTHON_VERSION
     - PKG_TEST_PYTHON="--test-python=py36"
     - PIN="--pin-deps"
@@ -74,7 +75,7 @@ jobs:
         - python -c "from pyct import cmd; cmd.clean_data(name='holoviz', path='examples')"
     - <<: *default
       stage: unpinned_upcoming_trouble
-      env: PIN= PYTHON_VERSION=
+      env: PIN= PYTHON_VERSION=$NEXT_PYTHON_VERSION
 
     - &package_test
       <<: *default
