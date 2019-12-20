@@ -17,26 +17,14 @@ env:
     - OPTIONS="-o graph -o indirect"
 
 stages:
-  - name: test_user_install
-#    if: type = cron
-  - test
-    if: type = cron  
+  - name: test
   - name: package_dev
-#    if: tag =~ ^v(\d+|\.)+[a-z]\d+$
-  - name: package_release
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-#    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
-  - name: website_release
-    if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website)
-  - name: unpinned_upcoming_trouble
-    if: type = cron
-# TODO: caching
 
 jobs:
   include:
     - &default
-      stage: test
+      stage: test123
       env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
       os: linux
       install:
@@ -58,27 +46,10 @@ jobs:
         - doit test_all
         - holoviz clean-data --path=examples
 
-    - <<: *default
-      stage: test
-      env: DESC="Test examples using environment.yml"
-      os: linux
-      before_script:
-        - conda env create --name holoviz-env --file examples/environment.yml
-        - source activate holoviz-env
-        - conda install -c pyviz -c defaults nbsmoke pytest flake8
-        - doit env_capture
-      script:
-        - cp -r examples/data/.data_stubs/earthquakes.parq examples/data
-        - python -c "from pyct import cmd; cmd.fetch_data(name='holoviz', path='examples', use_test_data=True)"
-        - doit test_all
-        - python -c "from pyct import cmd; cmd.clean_data(name='holoviz', path='examples')"
-    - <<: *default
-      stage: unpinned_upcoming_trouble
-      env: PIN=
 
     - &package_test
       <<: *default
-      stage: test_user_install
+      stage: test
       env: DESC="Test conda package on pyviz/label/dev"
       before_script:
         # TODO: pyctdev should just support this whole section
@@ -102,10 +73,9 @@ jobs:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
 
-    - &website
-      <<: *default
-      stage: website_release
-      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
+    - <<: *website
+      stage: website_dev
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
       script:
         - bokeh sampledata
         - holoviz fetch-data --path=examples
@@ -120,18 +90,6 @@ jobs:
           on:
             tags: true
             all_branches: true
-
-    - <<: *website
-      stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
-#      deploy:
-#        - provider: pages
-#          skip_cleanup: true
-#          github_token: $GITHUB_TOKEN
-#          local_dir: ./builtdocs
-#          repo: pyviz-dev/holoviz
-#          on:
-#            all_branches: true
 
 
     ## dev packages
@@ -154,16 +112,6 @@ jobs:
         # TODO: is package_test supposed to take --package-name? Seems to work with leftover conda.recipe from build.
         - doit package_test $CHANS $PKG_TEST_PYTHON --test-group=examples
       script: doit package_upload --token=fail $LABELS
-
-    ## release packages
-
-    - <<: *pip_pkg
-      env: PYPI=pypi PYPIUSER=$PPU PYPIPASS=$PPP
-      stage: package_release
-
-    - <<: *conda_pkg
-      stage: package_release
-      env: LABELS=$LABELS_REL CHANS=$CHANS_REL
 
 notifications:
   email: false
