@@ -17,7 +17,7 @@ env:
     - OPTIONS="-o graph -o indirect"
 
 stages:
-  - name: test
+  - test
   - name: package_dev
   - name: website_dev
 
