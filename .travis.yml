@@ -73,8 +73,7 @@ jobs:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
 
-    - <<: *website
-      stage: website_dev
+    - stage: website_dev
       env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
       script:
         - bokeh sampledata
