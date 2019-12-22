@@ -6,15 +6,14 @@ os:
 env:
   global:
     - CHANS_DEV="-c conda-forge -c defaults -c pyviz/label/dev"   # this order matters because we're using strict channel priority
-    - CHANS_REL="-c conda-forge -c defaults -c https://conda.anaconda.org/pyviz"  # this order matters because we're using strict channel priority
+    - CHANS_REL="-c conda-forge -c defaults -c pyviz"  # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
     - PYENV_VERSION=3.7
     - PYTHON_VERSION=3.6
     - PKG_TEST_PYTHON="--test-python=py36"
     - PIN="--pin-deps"
-    - CHANS=$CHANS_DEV
-    - OPTIONS="-o graph -o indirect"
+    - OPTIONS="-o graph -o indirect -o doc"
 
 stages:
   - name: test_user_install
@@ -36,7 +35,7 @@ jobs:
   include:
     - &default
       stage: test
-      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests" CHANS=$CHANS_DEV
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
@@ -104,7 +103,7 @@ jobs:
     - &website
       <<: *default
       stage: website_release
-      env: DESC="Release website to holoviz.org" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
+      env: DESC="Release website to holoviz.org" CHANS=$CHANS_REL
       script:
         - bokeh sampledata
         - holoviz fetch-data --path=examples
@@ -122,7 +121,7 @@ jobs:
 
     - <<: *website
       stage: website_dev
-      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" OPTIONS="-o doc -o indirect -o graph" CHANS=$CHANS_REL
+      env: DESC="Deploy dev website to pyviz-dev.github.io/holoviz" CHANS=$CHANS_REL
       deploy:
         - provider: pages
           skip_cleanup: true
