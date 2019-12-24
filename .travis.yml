@@ -15,6 +15,7 @@ env:
     # TODO: this should probably be set based on PYTHON_VERSION
     - PKG_TEST_PYTHON="--test-python=py36"
     - PIN="--pin-deps"
+    - CHANS=$CHANS_DEV
     - OPTIONS="-o graph -o indirect -o doc"
 
 stages:
@@ -37,7 +38,7 @@ jobs:
   include:
     - &default
       stage: test
-      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests" CHANS=$CHANS_DEV
+      env: DESC="Test examples" OPTIONS="-o graph -o indirect -o tests"
       os: linux
       install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
