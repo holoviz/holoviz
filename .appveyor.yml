@@ -1,6 +1,6 @@
 environment:
   global:
-    CHANS_DEV: "-c conda-forge -c defaults -c pyviz/label/dev"  # this order matters because we're using strict channel priority
+    CHANS_DEV: "-c defaults -c pyviz/label/dev"  # this order matters because we're using strict channel priority
     PIN: "--pin-deps"
   matrix:
     - PY: "3.6"

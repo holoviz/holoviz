@@ -4,8 +4,8 @@ os:
 
 env:
   global:
-    - CHANS_DEV="-c conda-forge -c defaults -c pyviz/label/dev"   # this order matters because we're using strict channel priority
-    - CHANS_REL="-c conda-forge -c defaults -c pyviz"  # this order matters because we're using strict channel priority
+    - CHANS_DEV="-c defaults -c pyviz/label/dev"   # this order matters because we're using strict channel priority
+    - CHANS_REL="-c defaults -c pyviz"  # this order matters because we're using strict channel priority
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
     # TODO: is PYENV_VERSION used in more than one place? (And document what it's for.)
