@@ -6,8 +6,8 @@ env:
     - CHANS_REL="-c https://conda.anaconda.org/pyviz -c conda-forge"
     - LABELS_DEV="--label dev"
     - LABELS_REL="--label dev --label main"
-    - PYENV_VERSION=3.6
-    - PKG_TEST_PYTHON="--test-python=py36"
+    - PYENV_VERSION=3.7
+    - PKG_TEST_PYTHON="--test-python=py37"
     - PIN="--pin-deps"
 
 stages:
@@ -72,7 +72,7 @@ jobs:
     - <<: *package_test
       os: osx
       # travis/osx is not set up like travis/linux
-      env: PYENV_VERSION=3.6.4
+      env: PYENV_VERSION=3.7
       before_install:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
