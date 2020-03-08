@@ -146,22 +146,22 @@ well with HoloViz include:
    suggestions welcome!
 
 7. **GUI-based plot creation**: (As in business intelligence and
-    dashboarding applications.) The powerful components available
-    in HoloViz are ready for Python users to put together into
-    visualizations and apps, but they would also make a very strong
-    base for building a graphical approach for working with data, with
-    drag and drop layouts, GUI-configurable mapping of data sources, and
-    GUI configuration of the plot objects. HoloViews components are
-    already declarative, which means that they can be mapped directly
-    into GUI elements for changing their parameters dynamically. Paired
-    with the new `Intake <https://github.com/ContinuumIO/intake>`_
-    library for declaring data sources, it would be possible to build a
-    fully graphical interface for working with data that would have the
-    advantage of being backed by a fully configurable, open-source set
-    of plotting library elements, ensuring that when people outgrow
-    the GUI framework they can easily extend and expand anything
-    developed in it, unlike current business intelligence and
-    dashboarding applications.
+   dashboarding applications.) The powerful components available
+   in HoloViz are ready for Python users to put together into
+   visualizations and apps, but they would also make a very strong
+   base for building a graphical approach for working with data, with
+   drag and drop layouts, GUI-configurable mapping of data sources, and
+   GUI configuration of the plot objects. HoloViews components are
+   already declarative, which means that they can be mapped directly
+   into GUI elements for changing their parameters dynamically. Paired
+   with the new `Intake <https://github.com/ContinuumIO/intake>`_
+   library for declaring data sources, it would be possible to build a
+   fully graphical interface for working with data that would have the
+   advantage of being backed by a fully configurable, open-source set
+   of plotting library elements, ensuring that when people outgrow
+   the GUI framework they can easily extend and expand anything
+   developed in it, unlike current business intelligence and
+   dashboarding applications.
 
 If any of the functionality above is interesting to you (or you have
 ideas of your own!) and can offer help with implementation, please
