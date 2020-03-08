@@ -10,10 +10,10 @@ env:
     - LABELS_REL="--label dev --label main"
     # TODO: is PYENV_VERSION used in more than one place? (And document what it's for.)
     - PYENV_VERSION=3.7
-    - PYTHON_VERSION=3.6
+    - PYTHON_VERSION=3.7
     - NEXT_PYTHON_VERSION=3.7
     # TODO: this should probably be set based on PYTHON_VERSION
-    - PKG_TEST_PYTHON="--test-python=py36"
+    - PKG_TEST_PYTHON="--test-python=py37"
     - PIN="--pin-deps"
     - CHANS=$CHANS_DEV
     - OPTIONS="-o graph -o indirect -o doc"
@@ -101,7 +101,7 @@ jobs:
     - <<: *package_test
       os: osx
       # travis/osx is not set up like travis/linux
-      env: PYENV_VERSION=3.6.4
+      env: PYENV_VERSION=3.7
       before_install:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
