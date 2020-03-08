@@ -1,4 +1,4 @@
-HoloViz Roadmap, as of 6/2019
+HoloViz Roadmap, as of 3/2020
 =============================
 
 HoloViz helps coordinate between numerous independent open-source
@@ -7,7 +7,7 @@ large part, the future of HoloViz is up to a distributed team of
 developers that focus on the areas of greatest current interest and
 need, including areas that specifically get current funding.
 
-Immediate, already funded priorities for 2019 include:
+Immediate, already funded priorities for 2020 include:
 
 1. **Ongoing maintenance, improved documentation and examples**: As
    always, there are various bugs and usability issues reported on the
@@ -18,21 +18,17 @@ Immediate, already funded priorities for 2019 include:
    multidimensional data for visualization and machine-learning
    applications, including on HPC systems.
 
-3. **Improvements to Bokeh/HoloViews drawing tools**:
-   - Better support for collecting annotations
-   - other usability improvements
-
-4. **Simpler deployment of large-scale visualizations**: Automatic
+3. **Simpler deployment of large-scale visualizations**: Automatic
    generation of slippy-map tiles for exploration of large datasets
    using standard web servers. Already provided in Datashader, but
    needs additional polishing.
 
-5. **Better Datashader integration with external plotting libraries
+4. **Better Datashader integration with external plotting libraries
    (HoloViews, Plotly, Matplotlib)**: Datashader needs to provide
    functions for supporting hover information, legends, colorbars, and
    interactivity, which each plotting library can then use.
 
-6. **Support for maintaining Python-based projects**: As maintainers of
+5. **Support for maintaining Python-based projects**: As maintainers of
    a wide range of Python projects, we are working to minimize the cost
    of maintaining each one, by sharing code for tracking versions,
    making releases, providing example scripts, managing datasets,
@@ -41,7 +37,7 @@ Immediate, already funded priorities for 2019 include:
    added to the `PyViz Github organization <https://github.com/pyviz>`__
    and will be documented as they become mature.
 
-7. **Integrating 3D surface and volume rendering into HoloViz**: HoloViews
+6. **Integrating 3D surface and volume rendering into HoloViz**: HoloViews
    can plot limited quantities of 3D surface or point data using
    `Matplotlib <http://holoviews.org/reference/elements/matplotlib/TriSurface.html>`__
    or
@@ -57,34 +53,7 @@ Immediate, already funded priorities for 2019 include:
    for a CesiumJS backend now available <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__,
    but lots more work to do to make it practical for real use.
 
-8. **Toolbox for GIS primitives**: The HoloViz stack is fully general
-   purpose, supporting data of any type, and already has many advantages
-   over traditional Earth-specific approaches to dealing with data with
-   latitude and longitude coordinates. However, existing GIS packages
-   make certain domain-specific functionality simpler, such as computing
-   vegetation indexes and other common manipulations of Earth-related
-   data. It would be helpful to provide a well-tested collection of
-   these common operations built on the HoloViz stack so that it can be
-   a more "drop-in" replacement for proprietary GIS systems.  Fast
-   geographic indexes were already added to Datashader and are
-   awaiting documentation (NDVI, slope, aspect, hillshade). Other
-   desired features:
-
-   - Fast geographic operations for Datashader
-       * Zonal statistics for an ROI
-           - Percentage area by category
-           - Summary stats
-       * Hydrology tools
-           - Flow accumulation
-           - Flow direction
-           - Watershed
-       * Euclidean distance based on input geometry (lines / polygons / points)
-       * Suitability analysis (combining multiple binary aggregates into a yes/no composite)
-       * Generate contours from aggregate
-       * Calculate viewshed from aggregate
-   - Color ramps for showing elevation
-
-9. **More extensive documentation about deployment**: HoloViz includes a
+7. **More extensive documentation about deployment**: HoloViz includes a
    tutorial on `deployment using Bokeh
    server <http://holoviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__,
    but there are many other ways to set up live Python-backed plots

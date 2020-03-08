@@ -34,7 +34,7 @@ close to the entire range of cases where data needs to be visualized.
 
 
 The HoloViz ecosystem
--------------------
+---------------------
 
 *holo* : *Greek* root, meaning *whole*, *entire*.
 
