@@ -38,6 +38,7 @@ html_context.update({
     # WEBSITE_SERVER is optional for tests and local builds, but allows defining a canonical URL for search engines
     'WEBSITE_SERVER': 'http://holoviz.org',
     'VERSION': version,
+    'GOOGLE_ANALYTICS_UA': 'UA-154795830-10',
     'NAV': _NAV,
     'LINKS': _NAV,
     'SOCIAL': (
