@@ -16,7 +16,7 @@ env:
     - PKG_TEST_PYTHON="--test-python=py37"
     - PIN="--pin-deps"
     - CHANS=$CHANS_DEV
-    - OPTIONS="-o graph -o indirect -o doc"
+    - OPTIONS="-o indirect -o doc"
 
 stages:
   - name: test_user_install
