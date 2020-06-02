@@ -11,7 +11,6 @@ env:
     # TODO: is PYENV_VERSION used in more than one place? (And document what it's for.)
     - PYENV_VERSION=3.7
     - PYTHON_VERSION=3.7
-    - NEXT_PYTHON_VERSION=3.8
     # TODO: this should probably be set based on PYTHON_VERSION
     - PKG_TEST_PYTHON="--test-python=py37"
     - PIN="--pin-deps"
@@ -30,9 +29,6 @@ stages:
     if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
   - name: website_release
     if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website) OR (commit_message =~ /\[update-docs\]/ and branch = master)
-  - name: unpinned_upcoming_trouble
-    if: type = cron
-# TODO: caching
 
 jobs:
   include:
@@ -58,10 +54,6 @@ jobs:
         - holoviz fetch-data --path=examples --use-test-data
         - doit test_all
         - holoviz clean-data --path=examples
-
-    - <<: *default
-      stage: unpinned_upcoming_trouble
-      env: PIN= PYTHON_VERSION=$NEXT_PYTHON_VERSION
 
     - &package_test
       <<: *default
