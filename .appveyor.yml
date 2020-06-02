@@ -3,9 +3,9 @@ environment:
     CHANS_DEV: "-c defaults -c pyviz/label/dev -c conda-forge"  # this order matters because we're using strict channel priority
     PIN: "--pin-deps"
   matrix:
-    - PY: "3.6"
-      PYTHON: "C:\\Python36-x64"
-      CONDA: "C:\\Miniconda36-x64"
+    - PY: "3.7"
+      PYTHON: "C:\\Python37-x64"
+      CONDA: "C:\\Miniconda37-x64"
 
 install:
   - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
