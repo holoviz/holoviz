@@ -6,29 +6,17 @@ channels:
   - pyviz
   - defaults
 dependencies:
-  - bokeh ==1.2.0
-  - cffi
-  - dask ==1.2.2
-  - datashader ==0.7.0
+  - bokeh >=2.0.1,<2.1
+  - datashader ==0.11.0
   - fastparquet
-  - holoviews ==1.12.3
-  - hvplot ==0.4.0
-  - ipython ==5.*
-  - ipywidgets
-  - matplotlib
+  - holoviews >=1.13.2,<1.14.0
+  - hvplot >=0.6.0,<0.7.0
   - netcdf4
-  - networkx
   - notebook
-  - numpy ==1.16.4
-  - pandas ==0.24.0
-  - panel ==0.6.0
-  - param ==1.9.1
-  - phantomjs
+  - panel >=0.9.5,<1.0
+  - param >=1.9.2,<2.0.0
   - pyct
-  - python ==3.6.*
+  - python ==3.7.*
   - python-snappy
   - rise
-  - scikit-image
   - selenium
-  - streamz ==0.5.0
-  - xarray ==0.12.1
