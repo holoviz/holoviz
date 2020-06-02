@@ -88,7 +88,7 @@ jobs:
     - <<: *package_test
       os: osx
       # travis/osx is not set up like travis/linux
-      env: PYENV_VERSION=3.7
+      env: PYENV_VERSION=3.7.5
       before_install:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION
