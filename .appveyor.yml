@@ -1,14 +1,16 @@
 environment:
   global:
-    CHANS_DEV: "-c defaults -c pyviz/label/dev -c conda-forge"  # this order matters because we're using strict channel priority
+    CHANS_DEV: "-c pyviz/label/dev -c defaults"  # this order matters because we're using strict channel priority
     PIN: "--pin-deps"
   matrix:
-    - PY: "3.6"
-      PYTHON: "C:\\Python36-x64"
-      CONDA: "C:\\Miniconda36-x64"
+    - PY: "3.7"
+      PYTHON: "C:\\Python37-x64"
+      CONDA: "C:\\Miniconda37-x64"
 
 install:
   - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  # workaround for miniconda/sqlite3 problem (how should we be "activating" conda?)
+  - "SET PATH=%CONDA%\\Library\\bin;%PATH%"
   - "conda config --set always_yes True"
   - "conda install -c pyviz/label/dev pyctdev && doit ecosystem_setup"
   - "conda config --set path_conflict warn"

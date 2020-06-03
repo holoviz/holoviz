@@ -11,7 +11,6 @@ env:
     # TODO: is PYENV_VERSION used in more than one place? (And document what it's for.)
     - PYENV_VERSION=3.7
     - PYTHON_VERSION=3.7
-    - NEXT_PYTHON_VERSION=3.7
     # TODO: this should probably be set based on PYTHON_VERSION
     - PKG_TEST_PYTHON="--test-python=py37"
     - PIN="--pin-deps"
@@ -30,9 +29,6 @@ stages:
     if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
   - name: website_release
     if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website) OR (commit_message =~ /\[update-docs\]/ and branch = master)
-  - name: unpinned_upcoming_trouble
-    if: type = cron
-# TODO: caching
 
 jobs:
   include:
@@ -59,23 +55,6 @@ jobs:
         - doit test_all
         - holoviz clean-data --path=examples
 
-    - <<: *default
-      env: DESC="Test examples using environment.yml"
-      os: linux
-      before_script:
-        - conda env create --name holoviz-env --file examples/environment.yml
-        - source activate holoviz-env
-        - conda install -c pyviz -c defaults nbsmoke pytest flake8
-        - doit env_capture
-      script:
-        - cp -r examples/data/.data_stubs/earthquakes.parq examples/data
-        - python -c "from pyct import cmd; cmd.fetch_data(name='holoviz', path='examples', use_test_data=True)"
-        - doit test_all
-        - python -c "from pyct import cmd; cmd.clean_data(name='holoviz', path='examples')"
-    - <<: *default
-      stage: unpinned_upcoming_trouble
-      env: PIN= PYTHON_VERSION=$NEXT_PYTHON_VERSION
-
     - &package_test
       <<: *default
       stage: test_user_install
@@ -101,7 +80,7 @@ jobs:
     - <<: *package_test
       os: osx
       # travis/osx is not set up like travis/linux
-      env: PYENV_VERSION=3.7
+      env: PYENV_VERSION=3.7.5
       before_install:
         - eval "$(pyenv init -)"
         - pyenv install $PYENV_VERSION

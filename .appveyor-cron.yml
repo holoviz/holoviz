@@ -2,12 +2,14 @@
 
 environment:
   matrix:
-    - PY: "3.6"
-      PYTHON: "C:\\Python36-x64"
-      CONDA: "C:\\Miniconda36-x64"
+    - PY: "3.7"
+      PYTHON: "C:\\Python37-x64"
+      CONDA: "C:\\Miniconda37-x64"
 
 install:
   - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  # workaround for miniconda/sqlite3 problem (how should we be "activating" conda?)
+  - "SET PATH=%CONDA%\\Library\\bin;%PATH%"
   - "conda install -y -c pyviz/label/dev pyctdev && doit ecosystem_setup"
 
 build: off
