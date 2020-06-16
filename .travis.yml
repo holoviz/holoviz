@@ -26,9 +26,9 @@ stages:
   - name: package_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$
   - name: website_dev
-    if: (tag =~ ^v(\d+|\.)+[a-z]\d+$) OR (tag = website_dev) OR (commit_message =~ /^.*(website_dev).*$/) OR (type = cron)
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
   - name: website_release
-    if: (tag =~ ^v(\d+|\.)+[^a-z]\d+$) OR (tag = website) OR (commit_message =~ /\[update-docs\]/ and branch = master)
+    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
 
 jobs:
   include:
