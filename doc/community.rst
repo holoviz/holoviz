@@ -13,13 +13,14 @@ methods for each type of interaction.
 **Have a question about how to use HoloViz tools?** After the docs, your
 first stop should be StackOverflow for 
 `HoloViz <http://stackoverflow.com/questions/tagged/holoviz>`__ or for
-older issues `PyViz <http://stackoverflow.com/questions/tagged/pyviz>`__.
+older issues `PyViz <http://stackoverflow.com/questions/tagged/pyviz>`__,
+or our `Discourse site. <https://discourse.holoviz.org>`_
 Search for an existing answer to your question, or post a new one (and
-make sure you include the "**holoviz**" tag). StackOverflow is for
-*usage* questions:
+make sure you include the "**holoviz**" tag if you are on StackOverflow).
+StackOverflow and Discourse are for *usage* questions:
 
-  - How do I do X with holoviz tools?
-  - Why am I seeing text rather than a plot?
+  - How do I do X with holoviz tools? (Preferably showing how close you've gotten so far, with code)
+  - For my own code, why am I seeing X rather than what I wanted?
 
 **Have you found an issue with a HoloViz tool?** If you think something
 is missing or not behaving as expected, visit the Github issue tracker
@@ -36,12 +37,20 @@ if at all possible). Use the GitHub issue tracker for:
 
 **Do you have a quick, specific issue that likely has an immediate solution?**
 You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
-Use gitter for quick feedback while you are working on a task:
+You can use gitter for very quick feedback while you are working on a task:
 
+  - Does anyone know if there is support for X somewhere in holoviz?
   - I'm having trouble setting up the development environment.
   - I messed up my git branches, can someone take a look?
   - Does anyone know how to make this behavior change?
 
+But note that most people who go to Gitter should really go to
+Discourse instead, taking the time to make a proper post with all the
+details. Usually on gitter our response will just be "please open a
+Discourse issue". Gitter is well suited for chatting and live
+discussion, but because it is not archived and not easily searchable,
+we discourage using it for anything else.
+    
 **Have you gotten your question answered?** If you use any of these
 mechanisms to interact with HoloViz developers and find that we answered
 your question, or even if you just looked for a long time and finally
