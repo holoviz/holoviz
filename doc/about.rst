@@ -66,7 +66,7 @@ HoloViz libraries have been supported by a variety of different funding mechanis
   Sciences Research Council, and Medical Research Council, supporting the initial
   development of the HoloViews library.
 
-- Contracts to Continuum Analytics, Inc. supporting the initial development of
+- Contracts to Anaconda, Inc. supporting the initial development of
   GeoViews (from the UK Met Office),  Datashader and Colorcet (from In-Q-Tel), and
   Panel (from the US Army Corps of Engineers ERDC).
 
