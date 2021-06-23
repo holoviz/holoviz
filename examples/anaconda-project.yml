@@ -26,7 +26,8 @@ packages:
 
 commands:
   notebooks:
-    notebook: ./tutorial/
+    notebook: .
+
 platforms:
 - linux-64
 - osx-64
