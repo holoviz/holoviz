@@ -17,7 +17,7 @@ locking_enabled: true
 env_specs:
   default:
     locked: true
-    env_spec_hash: 960730a65943d3fcfdc1dff966973f430c7e535c
+    env_spec_hash: fdcb083a7f1ecc95b1aee9644cb2d3088e18aeed
     platforms:
     - linux-64
     - osx-64
@@ -26,6 +26,7 @@ env_specs:
       all:
       - async_generator=1.10=py37h28b3542_0
       - attrs=21.2.0=pyhd3eb1b0_0
+      - babel=2.9.1=pyhd3eb1b0_0
       - backcall=0.2.0=pyhd3eb1b0_0
       - blas=1.0=mkl
       - bleach=3.3.0=pyhd3eb1b0_0
@@ -35,7 +36,7 @@ env_specs:
       - cycler=0.10.0=py37_0
       - dask-core=2021.6.0=pyhd3eb1b0_0
       - dask=2021.6.0=pyhd3eb1b0_0
-      - datashader=0.12.1=pyhd3eb1b0_1
+      - datashader=0.13.0=pyhd3eb1b0_1
       - decorator=5.0.9=pyhd3eb1b0_0
       - defusedxml=0.7.1=pyhd3eb1b0_0
       - entrypoints=0.3=py37_0
@@ -49,10 +50,15 @@ env_specs:
       - ipython_genutils=0.2.0=pyhd3eb1b0_1
       - jedi=0.17.0=py37_0
       - jinja2=3.0.0=pyhd3eb1b0_0
+      - json5=0.9.5=py_0
       - jsonschema=3.2.0=py_2
+      - jupyter-packaging=0.7.12=pyhd3eb1b0_0
       - jupyter_client=6.1.12=pyhd3eb1b0_0
+      - jupyterlab=3.0.14=pyhd3eb1b0_1
       - jupyterlab_pygments=0.1.2=py_0
+      - jupyterlab_server=2.4.0=pyhd3eb1b0_0
       - multipledispatch=0.6.0=py37_0
+      - nbclassic=0.2.6=pyhd3eb1b0_0
       - nbclient=0.5.3=pyhd3eb1b0_0
       - nbconvert=6.0.7=py37_0
       - nbformat=5.1.3=pyhd3eb1b0_0
@@ -73,9 +79,10 @@ env_specs:
       - pyparsing=2.4.7=pyhd3eb1b0_0
       - python-dateutil=2.8.1=pyhd3eb1b0_0
       - pytz=2021.1=pyhd3eb1b0_0
-      - pyviz_comms=2.0.1=pyhd3eb1b0_0
+      - pyviz_comms=2.0.2=pyhd3eb1b0_0
       - requests=2.25.1=pyhd3eb1b0_0
       - send2trash=1.5.0=pyhd3eb1b0_1
+      - six=1.16.0=pyhd3eb1b0_0
       - sortedcontainers=2.3.0=pyhd3eb1b0_0
       - tblib=1.7.0=py_0
       - testpath=0.4.4=pyhd3eb1b0_0
@@ -96,6 +103,7 @@ env_specs:
       linux-64:
       - _libgcc_mutex=0.1=main
       - _openmp_mutex=4.5=1_gnu
+      - anyio=2.2.0=py37h06a4308_1
       - argon2-cffi=20.1.0=py37h27cfd23_1
       - bokeh=2.3.2=py37h06a4308_0
       - brotlipy=0.7.0=py37h27cfd23_1003
@@ -125,6 +133,7 @@ env_specs:
       - ipython=7.22.0=py37hb070fc8_0
       - jpeg=9b=h024ee3a_2
       - jupyter_core=4.7.1=py37h06a4308_0
+      - jupyter_server=1.4.1=py37h06a4308_0
       - kiwisolver=1.3.1=py37h2531618_0
       - krb5=1.18.2=h173b8e3_0
       - lcms2=2.12=h3be6417_0
@@ -186,8 +195,8 @@ env_specs:
       - scipy=1.6.2=py37had2a1c9_1
       - setuptools=52.0.0=py37h06a4308_0
       - sip=4.19.8=py37hf484d3e_0
-      - six=1.15.0=py37h06a4308_0
       - snappy=1.1.8=he6710b0_0
+      - sniffio=1.2.0=py37h06a4308_1
       - sqlite=3.35.4=hdfb4753_0
       - tbb=2020.3=hfd86e86_0
       - terminado=0.9.4=py37h06a4308_0
@@ -200,6 +209,7 @@ env_specs:
       - zlib=1.2.11=h7b6447c_3
       - zstd=1.4.9=haebb681_0
       osx-64:
+      - anyio=2.2.0=py37hecd8cb5_1
       - appnope=0.1.2=py37hecd8cb5_1001
       - argon2-cffi=20.1.0=py37h9ed2024_1
       - bokeh=2.3.2=py37hecd8cb5_0
@@ -223,6 +233,7 @@ env_specs:
       - ipython=7.22.0=py37h01d92e1_0
       - jpeg=9b=he5867d9_2
       - jupyter_core=4.7.1=py37hecd8cb5_0
+      - jupyter_server=1.4.1=py37hecd8cb5_0
       - kiwisolver=1.3.1=py37h23ab428_0
       - krb5=1.18.2=h75d18d8_0
       - lcms2=2.12=hf1fd2bf_0
@@ -274,8 +285,8 @@ env_specs:
       - readline=8.1=h9ed2024_0
       - scipy=1.6.2=py37hd5f7400_1
       - setuptools=52.0.0=py37hecd8cb5_0
-      - six=1.15.0=py37hecd8cb5_0
       - snappy=1.1.8=hb1e8313_0
+      - sniffio=1.2.0=py37hecd8cb5_1
       - sqlite=3.35.4=hce871da_0
       - terminado=0.9.4=py37hecd8cb5_0
       - thrift=0.11.0=py37h0a44026_0
@@ -287,6 +298,7 @@ env_specs:
       - zlib=1.2.11=h1de35cc_3
       - zstd=1.4.9=h322a384_0
       win-64:
+      - anyio=2.2.0=py37haa95532_2
       - argon2-cffi=20.1.0=py37h2bbff1b_1
       - bokeh=2.3.2=py37haa95532_0
       - brotlipy=0.7.0=py37h2bbff1b_1003
@@ -312,6 +324,7 @@ env_specs:
       - ipython=7.22.0=py37hd4e2768_0
       - jpeg=9b=hb83a4c4_2
       - jupyter_core=4.7.1=py37haa95532_0
+      - jupyter_server=1.4.1=py37haa95532_0
       - kiwisolver=1.3.1=py37hd77b12b_0
       - krb5=1.18.2=hc04afaa_0
       - libcurl=7.71.1=h2a8f88b_1
@@ -364,8 +377,8 @@ env_specs:
       - scipy=1.6.2=py37h66253e8_1
       - setuptools=52.0.0=py37haa95532_0
       - sip=4.19.8=py37h6538335_0
-      - six=1.15.0=py37haa95532_0
       - snappy=1.1.8=h33f27b4_0
+      - sniffio=1.2.0=py37haa95532_1
       - sqlite=3.35.4=h2bbff1b_0
       - terminado=0.9.4=py37haa95532_0
       - thrift=0.11.0=py37h6538335_0

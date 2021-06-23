@@ -21,6 +21,8 @@ packages:
 - netcdf4
 - fastparquet
 - python-snappy
+- jupyterlab
+- fsspec=0.9.0
 
 commands:
   notebooks:
