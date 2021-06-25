@@ -51,25 +51,22 @@ the tutorial directory with:
 Step 3: Option A: Launch Jupyter Notebook
 -----------------------------------------
 
-You can then launch the classic notebook server and client::
+You can then launch the classic Jupyter notebook server and client::
 
    > anaconda-project run
 
 
 A browser window with a Jupyter Notebook instance should now open,
-letting you select and execute each notebook.  You can start with the
-ones in the ``tutorial`` subdirectory, as these show how to use the
-others in ``tutorial/exercises``.  The first notebook to load is
-``index.ipynb`` in ``tutorial/``, which makes it simple to subsequently
-load each of the others.
+letting you navigate through subdirectories and select a notebook to work on.
+In this case, look in the  ``tutorial`` subdirectory, and load ``index.ipynb``, which will let you launch each of the tutorials and exercises.
 
-If you don't see the notebook appear, you may need to cut and paste the
-URL from the console output manually.
+If you don't see the notebook appear as a new browser tab automatically, you 
+may need to cut and paste the URL from the console output manually.
 
 Step 3: Option B: Launch JupyterLab
 -----------------------------------
 
-If you prefer to use JupyterLab, you can use the following command instead::
+If you prefer to use JupyterLab rather than classic (single-page) Jupyter, you can use the following command instead::
 
    > anaconda-project run jupyter lab
 
