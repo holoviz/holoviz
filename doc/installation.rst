@@ -30,9 +30,9 @@ Step 2: Download and extract the tutorial project
 -------------------------------------------------
 
 The following steps will fetch and extract the latest version of the
-tutorial project. **SciPy 2021 tutorial attendees should make sure to run
+tutorial project. *SciPy 2021 tutorial attendees should make sure to run
 these steps the day before the tutorial to ensure they have the latest
-version of the project.**
+version of the project.*
 
 ::
 
@@ -63,8 +63,8 @@ others in ``tutorial/exercises``.  The first notebook to load is
 ``index.ipynb`` in ``tutorial/``, which makes it simple to subsequently
 load each of the others.
 
-If you don't see the notebook appear (e.g. on some OS X versions), you
-may need to cut and paste the URL from the console output manually.
+If you don't see the notebook appear, you may need to cut and paste the
+URL from the console output manually.
 
 Step 3: Option B: Launch JupyterLab
 -----------------------------------
