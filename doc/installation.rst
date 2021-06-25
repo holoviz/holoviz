@@ -30,9 +30,9 @@ Step 2: Download and extract the tutorial project
 -------------------------------------------------
 
 The following steps will fetch and extract the latest version of the
-tutorial project. *SciPy 2021 tutorial attendees should make sure to run
-these steps the day before the tutorial to ensure they have the latest
-version of the project.*
+tutorial project. *If you are attending a live tutorial or workshop,
+make sure to run these steps again the day before the tutorial to ensure
+you have the same version of the project that the presenter will use.*
 
 ::
 
