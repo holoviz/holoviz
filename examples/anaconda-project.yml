@@ -4,6 +4,8 @@ description: HoloViz Tutorial
 maintainers:
 - holoviz
 
+user_fields: [maintainers]
+
 packages:
 - python=3.8
 - numpy
