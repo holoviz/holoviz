@@ -21,6 +21,7 @@ twice to get the very latest) to ensure you have the latest version::
 You should then make sure you have `anaconda-project` installed after
 activating your chosen conda environment:
 
+::
    > conda install anaconda-project
 
 
@@ -28,9 +29,9 @@ Step 2: Download and extract the tutorial project
 -------------------------------------------------
 
 The following steps will fetch and extract the latest version of the
-tutorial project. SciPy 2021 tutorial attendees should make sure to run
+tutorial project. *SciPy 2021 tutorial attendees should make sure to run
 these steps the day before the tutorial to ensure they have the latest
-version of the project.
+version of the project.*
 
 ::
 
