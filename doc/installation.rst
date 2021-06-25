@@ -15,8 +15,8 @@ window with the conda environment activated.
 If you do have conda already, it's a good idea to update it (running it
 twice to get the very latest) to ensure you have the latest version::
 
-   > conda update conda
-   > conda update conda
+   > conda update -n base conda
+   > conda update -n base conda
 
 You should then make sure you have `anaconda-project` installed:
 
@@ -58,8 +58,8 @@ You can then launch the Jupyter notebook server and client::
 
    > anaconda-project run jupyter notebook
 
-(replace "notebook" with "lab" if you prefer Jupyter Lab to the classic
-single-pane Jupyter interface)
+(replacing "notebook" with "lab" if you prefer Jupyter Lab to the classic
+single-pane Jupyter interface).
 
 A browser tab with a Jupyter instance should now open,
 letting you navigate through subdirectories and select a notebook to work on.
