@@ -4,85 +4,87 @@ Installation
 Step 1: Install a `Miniconda <https://conda.io/miniconda.html>`_  (or `Anaconda <https://www.anaconda.com/downloads>`_) environment
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Any Linux, Mac OS X, or Windows computer with a web browser (preferably Google Chrome) should be suitable. 16GB of RAM is required for some of the examples, but most will run fine in 4GB.
+Any Linux, Mac OS X, or Windows computer with a web browser (preferably
+Google Chrome) should be suitable. 16GB of RAM is required for some of
+the examples, but most will run fine in 4GB.
 
-If you don't already have conda on your machine, you can get it from `conda.io <https://conda.io/miniconda.html>`_, and then open a terminal window.
+If you don't already have conda on your machine, you can get it from
+`conda.io <https://conda.io/miniconda.html>`_, and then open a terminal
+window with the conda environment activated.
 
-If you do have conda already, it's a good idea to update it (running it twice to get the very latest) to ensure you have the latest version::
+If you do have conda already, it's a good idea to update it (running it
+twice to get the very latest) to ensure you have the latest version::
 
-   > conda update conda
-   > conda update conda
+   > conda update -n base conda
+   > conda update -n base conda
 
-You should then create a separate Conda environment to work in for this tutorial::
-
-   > conda create -n holoviz-tutorial python=3.7
-   > conda activate holoviz-tutorial
-
-Depending on how your conda is set up, you may need to use "source" instead of "conda" activate, or sometimes just "activate" on Windows.
-
-
-Step 2: Install ``holoviz`` and other required libraries
-------------------------------------------------------
+You should then make sure you have `anaconda-project` installed:
 
 ::
 
-   > conda install -c pyviz holoviz
-
-If you have an **old version** run::
-
-   > conda update -c pyviz holoviz
+   > conda install anaconda-project
 
 
-Step 3: Install the tutorials in your current working directory and download data
----------------------------------------------------------------------------------
+Step 2: Download and extract the tutorial project
+-------------------------------------------------
+
+The following steps will fetch and extract the latest version of the
+HoloViz tutorial. The tutorial files and associated conda environment
+will be installed in the current directory, and should not affect
+any other Python environments you may have. 
+
+*If you are attending a live tutorial or workshop, make sure to run 
+these steps again the day before the tutorial to ensure you have the 
+same version of the project that the presenter will use.*
 
 ::
 
-   > holoviz examples
+   > anaconda-project download pyviz/holoviz_tutorial
 
-This will (a) create a copy of the notebooks and related files needed for the tutorial in a new subdirectory ``holoviz-examples/tutorial``, and (b) download larger sample datasets such as Earthquakes.
+If you have already run this command in the current directory, you may
+need to remove the existing `holoviz_tutorial` directory before the
+command above will execute. Once the download is completed, change to
+the tutorial directory with:
 
-If you only want to get a copy of the examples, or only want to download the data, there are individual commands ``holoviz copy-examples`` and ``holoviz fetch-data``; run e.g. ``holoviz copy-examples --help`` for more info.
+::
 
-If you have an **existing version** of the examples and wish to overwrite it, use::
-
-   > holoviz copy-examples --force
-
-
-Step 4: Option A: Launch Jupyter Notebook
------------------------------------------
-
-You can then launch the notebook server and client::
-
-   > cd holoviz-examples
-   > jupyter notebook
+     > cd holoviz_tutorial
 
 
-A browser window with a Jupyter Notebook instance should now open, letting you select and execute each notebook.  You can start with the ones in the ``tutorial`` subdirectory, as these show how to use the others in ``tutorials/exercises``.  The first notebook to load is ``index.ipynb`` in ``tutorial/``, which makes it simple to subsequently load each of the others.
+Step 3: Launch Jupyter Notebook
+-------------------------------
 
-If you don't see the notebook appear (e.g. on some OS X versions), you may need to cut and paste the URL from the console output manually.
+You can then launch the Jupyter notebook server and client::
 
-Step 4: Option B: Launch JupyterLab
------------------------------------
+   > anaconda-project run jupyter notebook
 
-We'll be using Jupyter Notebook, but if you prefer to use JupyterLab, you can install it and the extension::
+(replacing "notebook" with "lab" if you prefer Jupyter Lab to the classic
+single-pane Jupyter interface).
 
-   > conda install jupyterlab
-   > jupyter labextension install @pyviz/jupyterlab_pyviz
+A browser tab with a Jupyter instance should now open,
+letting you navigate through subdirectories and select a notebook to work on.
+In this case, go into the ``tutorial`` subdirectory and load ``index.ipynb``, 
+which will let you launch each of the tutorials and exercises.
 
-Then change directory into the examples and launch as usual::
+If you don't see Jupyter appear as a new browser tab automatically, you 
+may need to cut and paste the URL from the console output manually.
 
-   > cd holoviz-examples
-   > jupyter lab
+Step 4: Download data files and test that everything is working
+---------------------------------------------------------------
 
-A browser window with a JupyterLab instance should open.
+You can see if everything has installed correctly by selecting the
+``Setup`` notebook from the index and doing "Cell/Run All" in the
+menus. There may be warnings on some platforms, but you'll know it is
+working if you see the orange HoloViews logo after it runs
+``hv.extension()``.
 
-Step 5: Test that everything is working
----------------------------------------
-
-You can see if everything has installed correctly by selecting the ``Setup`` notebook from the index and doing "Cell/Run All" in the menus. There may be warnings on some platforms, but you'll know it is working if you see the orange HoloViews logo after it runs ``hv.extension()``.
+Running this notebook will also download the data files needed by the
+tutorial.
 
 
-Step 6: Run the tutorials
+Step 5: Run the tutorials
 -------------------------
-Now you can run through the `tutorials <tutorial/index.html>`_, learn how to use all these tools, and apply them to anything you need to visualize.  Have fun!
+
+Now you can run through the `tutorials <tutorial/index.html>`_, learn
+how to use all these tools, and apply them to anything you need to
+visualize.  Have fun!
