@@ -18,8 +18,7 @@ twice to get the very latest) to ensure you have the latest version::
    > conda update conda
    > conda update conda
 
-You should then make sure you have `anaconda-project` installed after
-activating your chosen conda environment:
+You should then make sure you have `anaconda-project` installed:
 
 ::
 
@@ -30,11 +29,13 @@ Step 2: Download and extract the tutorial project
 -------------------------------------------------
 
 The following steps will fetch and extract the latest version of the
-tutorial project. The tutorial will be installed in a new conda environment
-in this subdirectory, and will not affect your current environment.
-*If you are attending a live tutorial or workshop,
-make sure to run these steps again the day before the tutorial to ensure
-you have the same version of the project that the presenter will use.*
+HoloViz tutorial. The tutorial files and associated conda environment
+will be installed in the current directory, and should not affect
+any other Python environments you may have. 
+
+*If you are attending a live tutorial or workshop, make sure to run 
+these steps again the day before the tutorial to ensure you have the 
+same version of the project that the presenter will use.*
 
 ::
 
@@ -50,33 +51,26 @@ the tutorial directory with:
      > cd holoviz_tutorial
 
 
-Step 3: Option A: Launch Jupyter Notebook
------------------------------------------
+Step 3: Launch Jupyter Notebook
+-------------------------------
 
-You can then launch the classic Jupyter notebook server and client::
+You can then launch the Jupyter notebook server and client::
 
-   > anaconda-project run
+   > anaconda-project run jupyter notebook
 
+(replace "notebook" with "lab" if you prefer Jupyter Lab to the classic
+single-pane Jupyter interface)
 
-A browser tab with a Jupyter Notebook instance should now open,
+A browser tab with a Jupyter instance should now open,
 letting you navigate through subdirectories and select a notebook to work on.
-In this case, look in the  ``tutorial`` subdirectory, and load ``index.ipynb``, which will let you launch each of the tutorials and exercises.
+In this case, go into the ``tutorial`` subdirectory and load ``index.ipynb``, 
+which will let you launch each of the tutorials and exercises.
 
-If you don't see the notebook appear as a new browser tab automatically, you 
+If you don't see Jupyter appear as a new browser tab automatically, you 
 may need to cut and paste the URL from the console output manually.
-
-Step 3: Option B: Launch JupyterLab
------------------------------------
-
-If you prefer to use JupyterLab rather than classic (single-page) Jupyter, you can use the following command instead::
-
-   > anaconda-project run jupyter lab
-
-A browser window with a JupyterLab instance should open.
 
 Step 4: Download data files and test that everything is working
 ---------------------------------------------------------------
-
 
 You can see if everything has installed correctly by selecting the
 ``Setup`` notebook from the index and doing "Cell/Run All" in the
