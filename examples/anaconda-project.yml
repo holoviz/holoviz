@@ -1,0 +1,34 @@
+# To reproduce: install 'anaconda-project', then 'anaconda-project run'
+name: holoviz_tutorial
+description: HoloViz Tutorial
+maintainers:
+- holoviz
+
+packages:
+- python=3.7
+- numpy
+- pandas
+- dask
+- xarray
+- notebook
+- matplotlib
+- bokeh
+- holoviews
+- hvplot
+- datashader
+- panel
+- param
+- netcdf4
+- fastparquet
+- python-snappy
+- jupyterlab
+- fsspec=0.9.0
+
+commands:
+  notebooks:
+    notebook: .
+
+platforms:
+- linux-64
+- osx-64
+- win-64
