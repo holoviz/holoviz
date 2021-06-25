@@ -5,7 +5,7 @@ maintainers:
 - holoviz
 
 packages:
-- python=3.7
+- python=3.8
 - numpy
 - pandas
 - dask
