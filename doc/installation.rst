@@ -10,7 +10,7 @@ the examples, but most will run fine in 4GB.
 
 If you don't already have conda on your machine, you can get it from
 `conda.io <https://conda.io/miniconda.html>`_, and then open a terminal
-window.
+window with the conda environment activated.
 
 If you do have conda already, it's a good idea to update it (running it
 twice to get the very latest) to ensure you have the latest version::
@@ -30,7 +30,9 @@ Step 2: Download and extract the tutorial project
 -------------------------------------------------
 
 The following steps will fetch and extract the latest version of the
-tutorial project. *If you are attending a live tutorial or workshop,
+tutorial project. The tutorial will be installed in a new conda environment
+in this subdirectory, and will not affect your current environment.
+*If you are attending a live tutorial or workshop,
 make sure to run these steps again the day before the tutorial to ensure
 you have the same version of the project that the presenter will use.*
 
@@ -56,7 +58,7 @@ You can then launch the classic Jupyter notebook server and client::
    > anaconda-project run
 
 
-A browser window with a Jupyter Notebook instance should now open,
+A browser tab with a Jupyter Notebook instance should now open,
 letting you navigate through subdirectories and select a notebook to work on.
 In this case, look in the  ``tutorial`` subdirectory, and load ``index.ipynb``, which will let you launch each of the tutorials and exercises.
 
