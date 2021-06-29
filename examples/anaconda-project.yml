@@ -30,6 +30,9 @@ commands:
   notebooks:
     notebook: .
 
+# Optional, used to silence warnings about unused notebooks 
+skip_imports:
+  notebooks: True
 platforms:
 - linux-64
 - osx-64
