@@ -5,7 +5,7 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-
+channels: [pyviz/label/dev]
 packages:
 - python=3.8
 - numpy
@@ -15,16 +15,18 @@ packages:
 - notebook
 - matplotlib
 - bokeh
-- holoviews
-- hvplot
 - datashader
-- panel
 - param
 - netcdf4
 - fastparquet
 - python-snappy
 - jupyterlab
 - fsspec=0.9.0
+- hvplot=0.7.3a2 
+- panel=0.12.0rc5
+- pip:
+  - git+https://github.com/holoviz/holoviews.git@backport_1.14.5#egg=holoviews
+
 
 commands:
   notebooks:
@@ -33,7 +35,14 @@ commands:
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
   notebooks: True
+
 platforms:
 - linux-64
 - osx-64
 - win-64
+
+downloads:
+  DATA:
+    url: https://earth-data.s3.amazonaws.com/earthquakes.parq
+    description: NYC Taxi Data
+    filename: data/earthquakes.parq
