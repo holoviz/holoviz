@@ -22,8 +22,8 @@ packages:
 - python-snappy
 - jupyterlab
 - fsspec=0.9.0
-- hvplot=0.7.3a2 
-- panel=0.12.0rc5
+- hvplot=0.7.3a3 
+- panel=0.12.0rc6
 - pip:
   - git+https://github.com/holoviz/holoviews.git@backport_1.14.5#egg=holoviews
 
