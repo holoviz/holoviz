@@ -15,7 +15,7 @@ packages:
 - notebook
 - matplotlib
 - ipympl
-- bokeh
+- bokeh=2.3.3
 - datashader
 - param
 - netcdf4
@@ -32,6 +32,8 @@ packages:
 commands:
   notebooks:
     notebook: .
+  dashboard:
+    unix: panel serve tutorial/07_Dashboards.ipynb
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
