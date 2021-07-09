@@ -33,7 +33,7 @@ commands:
   notebooks:
     notebook: .
   dashboard:
-    unix: cd tutorial; panel serve 07_Dashboards.ipynb
+    unix: cd tutorial; panel serve 07_Dashboards.ipynb --show
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
