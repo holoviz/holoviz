@@ -45,7 +45,15 @@ platforms:
 - win-64
 
 downloads:
-  DATA:
+  DATA_1:
+    url: https://earth-data.s3.amazonaws.com/gpw_v4_population_density_rev11_2010_2pt5_min.zip
+    description: Population Raster
+    filename: tutorial/data/raster
+  DATA_2:
     url: https://earth-data.s3.amazonaws.com/earthquakes.parq
-    description: NYC Taxi Data
-    filename: data/earthquakes.parq
+    description: Earthquakes
+    filename: tutorial/data/earthquakes.parq
+  DATA_3:
+    url: https://github.com/holoviz/holoviz/raw/master/examples/assets/usgs_logo.png
+    description: USGS Logo
+    filename: tutorial/data/usgs.png
