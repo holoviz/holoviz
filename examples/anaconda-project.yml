@@ -31,9 +31,9 @@ packages:
 
 commands:
   notebooks:
-    notebook: .
+    notebook: ./tutorial/
   dashboard:
-    unix: panel serve tutorial/07_Dashboards.ipynb
+    unix: cd tutorial; panel serve 07_Dashboards.ipynb
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
@@ -56,4 +56,4 @@ downloads:
   DATA_3:
     url: https://github.com/holoviz/holoviz/raw/master/examples/assets/usgs_logo.png
     description: USGS Logo
-    filename: tutorial/data/usgs.png
+    filename: tutorial/data/usgs_logo.png
