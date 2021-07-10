@@ -20,7 +20,6 @@ packages:
 - param
 - netcdf4
 - fastparquet
-- python-snappy
 - jupyterlab
 - fsspec=0.9.0
 - hvplot=0.7.3a3 
@@ -50,9 +49,9 @@ downloads:
     description: Population Raster
     filename: data/raster
   DATA_2:
-    url: https://earth-data.s3.amazonaws.com/earthquakes.parq
+    url: https://datashader-data.s3.amazonaws.com/earthquakes-projected.parq
     description: Earthquakes
-    filename: data/earthquakes.parq
+    filename: data/earthquakes-projected.parq
   DATA_3:
     url: https://github.com/holoviz/holoviz/raw/master/examples/assets/usgs_logo.png
     description: USGS Logo
