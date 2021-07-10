@@ -24,15 +24,14 @@ packages:
 - fsspec=0.9.0
 - hvplot=0.7.3a3 
 - panel=0.12.0rc8
-- pip:
-  - git+https://github.com/holoviz/holoviews.git@backport_1.14.5#egg=holoviews
+- holoviews=1.14.5a2
 
 
 commands:
   notebooks:
     notebook: .
   dashboard:
-    unix: cd tutorial; panel serve 07_Dashboards.ipynb --show
+    unix: cd tutorial; panel serve 06_Dashboards.ipynb --show
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
