@@ -1,0 +1,4 @@
+panel --pre
+hvplot --pre
+datashader
+xarray
