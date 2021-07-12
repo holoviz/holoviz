@@ -17,7 +17,7 @@ locking_enabled: true
 env_specs:
   default:
     locked: true
-    env_spec_hash: 6b1e4cb671c73719b1acc6ba5014b090461b5d6d
+    env_spec_hash: 03631a522b7a0d2c3352db62d33e06139e04cac6
     platforms:
     - linux-64
     - osx-64
@@ -42,7 +42,7 @@ env_specs:
       - entrypoints=0.3=py38_0
       - fsspec=0.9.0=pyhd3eb1b0_0
       - heapdict=1.0.1=py_0
-      - holoviews=1.14.5a4=py_0
+      - holoviews=1.14.5a5=py_0
       - hvplot=0.8.0a5=py_0
       - idna=2.10=pyhd3eb1b0_0
       - importlib_metadata=3.10.0=hd3eb1b0_0
