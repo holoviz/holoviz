@@ -1,4 +1,5 @@
 #!/bin/bash
+jupyter serverextension enable panel.io.jupyter_server_extension
 cd examples
 anaconda-project prepare
 cd ..
