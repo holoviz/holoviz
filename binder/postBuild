@@ -1,0 +1,4 @@
+#!/bin/bash
+cd examples
+anaconda-project prepare
+cd ..
