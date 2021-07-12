@@ -20,3 +20,4 @@ dependencies:
   - hvplot=0.8.0a7
   - panel=0.12.0rc10
   - holoviews=1.14.5a6
+  - anaconda-project
