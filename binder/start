@@ -1,0 +1,5 @@
+#!/bin/bash
+export BOKEH_ALLOW_WS_ORIGIN=hub.gke2.mybinder.org
+jupyter trust examples/**/*.ipynb
+jupyter trust examples/**/**/*.ipynb
+exec "$@"
