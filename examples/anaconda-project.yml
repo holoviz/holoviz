@@ -24,7 +24,7 @@ packages:
 - fsspec=0.9.0
 - hvplot=0.8.0a5
 - panel=0.12.0rc10
-- holoviews=1.14.5a4
+- holoviews=1.14.5a5
 
 
 commands:
@@ -35,7 +35,7 @@ commands:
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
-  notebooks: True
+  notebooks: true
 
 platforms:
 - linux-64
