@@ -6,7 +6,8 @@ maintainers:
 
 user_fields: [maintainers]
 channels: [pyviz/label/dev]
-packages:
+
+packages: &pkgs
 - python=3.8
 - numpy
 - pandas
@@ -26,16 +27,33 @@ packages:
 - panel=0.12.0rc10
 - holoviews=1.14.5a6
 
+dependencies: *pkgs
 
 commands:
   notebooks:
     notebook: .
   dashboard:
     unix: cd tutorial; panel serve 06_Dashboards.ipynb --show
+  test:
+    unix:    pytest --nbsmoke-run -k *.ipynb --ignore envs
+    windows: pytest --nbsmoke-run -k *.ipynb --ignore envs
+    env_spec: test
+  lint:
+    unix:    pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    windows: pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    env_spec: test
 
 # Optional, used to silence warnings about unused notebooks 
 skip_imports:
   notebooks: true
+
+env_specs:
+  default: {}
+  test:
+    packages: &testpkgs
+      - nbsmoke=0.2.8
+      - pytest=4.4.1
+    dependencies: *testpkgs
 
 platforms:
 - linux-64
