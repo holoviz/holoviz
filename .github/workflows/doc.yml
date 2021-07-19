@@ -58,6 +58,7 @@ jobs:
           conda activate examples/envs/default
           pip install --no-deps --no-build-isolation -e .
           conda install -c pyviz/label/dev nbsite
+          pip install sphinx_holoviz_theme
       - name: generate rst
         run: |
           eval "$(conda shell.bash hook)"
