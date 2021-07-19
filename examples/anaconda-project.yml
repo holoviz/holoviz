@@ -35,12 +35,12 @@ commands:
   dashboard:
     unix: cd tutorial; panel serve 06_Dashboards.ipynb --show
   test:
-    unix:    pytest --nbsmoke-run -k *.ipynb --ignore envs
-    windows: pytest --nbsmoke-run -k *.ipynb --ignore envs
+    unix:    pytest --nbsmoke-run -k ".ipynb" --ignore envs
+    windows: pytest --nbsmoke-run -k ".ipynb" --ignore envs
     env_spec: test
   lint:
-    unix:    pytest --nbsmoke-lint -k *.ipynb --ignore envs
-    windows: pytest --nbsmoke-lint -k *.ipynb --ignore envs
+    unix:    pytest --nbsmoke-lint -k ".ipynb" --ignore envs
+    windows: pytest --nbsmoke-lint -k ".ipynb" --ignore envs
     env_spec: test
 
 # Optional, used to silence warnings about unused notebooks 
