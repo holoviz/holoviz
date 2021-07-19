@@ -57,7 +57,7 @@ jobs:
           cd ..
           conda activate examples/envs/default
           pip install --no-deps --no-build-isolation -e .
-          conda install -c pyviz/label/dev nbsite
+          conda install -c pyviz/label/dev nbsite "nbconvert<6.0"
           pip install sphinx_holoviz_theme
       - name: generate rst
         run: |
