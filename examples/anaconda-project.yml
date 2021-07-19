@@ -51,8 +51,8 @@ env_specs:
   default: {}
   test:
     packages: &testpkgs
-      - nbsmoke=0.2.8
-      - pytest=4.4.1
+      - nbsmoke
+      - pytest
     dependencies: *testpkgs
 
 platforms:
