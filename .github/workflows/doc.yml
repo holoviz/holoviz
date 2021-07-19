@@ -59,14 +59,12 @@ jobs:
       - name: generate rst
         run: |
           eval "$(conda shell.bash hook)"
-          cd examples
-          conda activate envs/default
+          conda activate examples/envs/default
           nbsite generate-rst --org holoviz --project-name holoviz --offset 1
       - name: build docs
         run: |
           eval "$(conda shell.bash hook)"
-          cd examples
-          conda activate envs/default
+          conda activate examples/envs/default
           nbsite build --what=html --output=builtdocs
       - name: git status
         run: |
