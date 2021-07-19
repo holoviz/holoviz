@@ -47,7 +47,7 @@ jobs:
           eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
-          conda install anaconda-project
+          conda install anaconda-project>=0.10.1
           echo "-----"
           git describe
       - name: doit env_capture
@@ -55,13 +55,13 @@ jobs:
           eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit env_capture
-      - name: doit test_flakes
+      - name: doit test_lint
         run: |
           eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit test_lint
-      - name: doit test_unit
+      - name: doit test_examples
         run: |
           eval "$(conda shell.bash hook)"
           conda activate test-environment
-          doit test_unit
+          doit test_examples

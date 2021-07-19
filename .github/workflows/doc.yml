@@ -54,7 +54,9 @@ jobs:
           conda install anaconda-project
           cd examples
           anaconda-project prepare
-          conda activate envs/default
+          cd ..
+          conda activate examples/envs/default
+          pip install --no-deps --no-build-isolation -e .
           conda install -c pyviz/label/dev nbsite
       - name: generate rst
         run: |
