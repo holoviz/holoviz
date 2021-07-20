@@ -35,9 +35,10 @@ html_theme_options = {
             "icon": "fab fa-discourse",
         },
     ]
+}
 
 templates_path = ['_templates']
-    
+
 html_context.update({
     "github_user": "holoviz",
     "github_repo": "holoviz",
