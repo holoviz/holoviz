@@ -11,38 +11,35 @@ import holoviz
 version = release = holoviz.__version__
 
 html_static_path += ['_static']
-html_theme = 'sphinx_holoviz_theme'
+
+html_css_files = [
+    'nbsite.css',
+    'css/custom.css'
+]
+
+html_theme = "pydata_sphinx_theme"
+html_logo = '_static/holoviz-logo.svg'
+html_favicon = "_static/favicon.ico"
+
 html_theme_options = {
-    'logo': 'holoviz-logo.svg',
-    'favicon': 'favicon.ico',
-    'custom_css': 'custom.css',
-    'primary_color': '#8ba0b9',
-    'primary_color_dark': '#3e5e82',
-    'secondary_color': '#d5dde7',
+    "github_url": "https://github.com/holoviz/panel",
+    "icon_links": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/HoloViz_Org",
+            "icon": "fab fa-twitter-square",
+        },
+        {
+            "name": "Discourse",
+            "url": "https://discourse.holoviz.org/",
+            "icon": "fab fa-discourse",
+        },
+    ]
 }
 
-_NAV =  (
-    ('Installation', 'installation'),
-    ('Talks', 'talks/index'),
-    ('Tutorial', 'tutorial/index'),
-    ('Topics', 'topics/index'),
-    ('FAQ', 'FAQ'),
-    ('About', 'about'),
-    ('Community', 'community'),
-)
+templates_path = ['_templates']
 
 html_context.update({
-    'PROJECT': project,
-    'DESCRIPTION': description,
-    'AUTHOR': authors,
-    # WEBSITE_SERVER is optional for tests and local builds, but allows defining a canonical URL for search engines
-    'WEBSITE_SERVER': 'http://holoviz.org',
-    'VERSION': version,
-    'GOOGLE_ANALYTICS_UA': 'UA-154795830-10',
-    'NAV': _NAV,
-    'LINKS': _NAV,
-    'SOCIAL': (
-        ('Gitter', '//gitter.im/pyviz/pyviz'),
-        ('Github', '//github.com/holoviz/holoviz'),
-    )
+    "github_user": "holoviz",
+    "github_repo": "holoviz",
 })

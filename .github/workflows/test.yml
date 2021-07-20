@@ -1,0 +1,67 @@
+name: pytest
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  test_suite:
+    name: Pytest on ${{ matrix.os }} with Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        python-version: [3.8]
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash -l {0} 
+    env:
+      DESC: "Python ${{ matrix.python-version }} tests"
+      PYTHON_VERSION: ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "100"
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: "latest"
+      - name: Fetch unshallow
+        run: git fetch --prune --tags --unshallow
+      - name: conda setup
+        run: |
+          conda config --set always_yes True
+          conda install -c pyviz "pyctdev>=0.5"
+          doit ecosystem_setup
+          doit env_create --python=${{ matrix.python-version }}
+      - name: doit develop_install
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate test-environment
+          conda list
+          conda install anaconda-project>=0.10.1
+          echo "-----"
+          git describe
+      - name: doit env_capture
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate test-environment
+          doit env_capture
+      - name: doit test_lint
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate test-environment
+          doit test_lint
+      - name: doit test_examples
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate test-environment
+          doit test_examples

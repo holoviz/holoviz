@@ -11,10 +11,14 @@ HoloViz Tutorial
 
     Setup <Setup>
     Overview <Overview>
-    Building Panels <Building_Panels>
-    Interlinked Panels <Interlinked_Panels>
-    Basic Plotting <Basic_Plotting>
+    Plotting <Plotting>
     Composing Plots <Composing_Plots>
     Interlinked Plots <Interlinked_Plots>
-    Large Data <Large_Data>
-    Advanced Dashboards <Advanced_Dashboards>
+    Interactive Pipelines Plots <Interactive_Pipelines>
+    Dashboards <Dashboards>
+
+    .. Optional content
+    ..
+      Custom Interactivity <Custom_Interactivity>
+      Custom Dashboards <Custom_Dashboards>
+      Advanced Dashboards <Advanced_Dashboards>
