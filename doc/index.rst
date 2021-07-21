@@ -1,8 +1,13 @@
 .. It would be nice to use this as a notebook index.ipynb instead, but unfortunately Jupyter doesn't seem to respect the style options required for resizing logos appropriately, even when embedding as HTML, so it's done as raw HTML here in .rst.
 
 .. raw:: html
-
     <img src="assets/holoviz-logo-stacked.svg" height="150px">
+
+High-level tools to simplify visualization in Python
+----------------------------------------------------
+
+.. raw:: html
+
     <h1>High-level tools to simplify visualization in Python.</h1>
 
     <p>Welcome to HoloViz!  HoloViz is a coordinated effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
