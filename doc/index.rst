@@ -7,9 +7,6 @@ High-level tools to simplify visualization in Python
 ----------------------------------------------------
 
 .. raw:: html
-
-    <h1>High-level tools to simplify visualization in Python.</h1>
-
     <p>Welcome to HoloViz!  HoloViz is a coordinated effort to make browser-based data visualization in Python easier to use, easier to learn, and more powerful.
 
     <p>HoloViz provides:
