@@ -44,7 +44,7 @@ High-level tools to simplify visualization in Python
     Not sure where to start? Try <a href="https://hvplot.pyviz.org">hvPlot</a> for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. And try <a href="https://panel.pyviz.org">Panel</a> if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the <a href="tutorial">tutorial</a> to see <i>all</i> the things you can do!
 
     <h2>Building on the SciPy/PyData/PyViz ecosystem</h2>
-    
+
     <p>HoloViz tools build on the many excellent visualization tools available in the scientific python ecosystem, allowing you to access their power conveniently and efficiently. The core tools make use of <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting, <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output, and <a href="https://plot.ly">Plotly</a>'s interactive 3D visualizations.  <a href="https://panel.pyviz.org">Panel</a> lets you combine any of these visualizations with output from nearly any other Python plotting library, including specific support for
     <a href="http://seaborn.pydata.org">seaborn</a>,
     <a href="https://altair-viz.github.io">altair</a>,
