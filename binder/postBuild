@@ -3,5 +3,6 @@ jupyter serverextension enable panel.io.jupyter_server_extension
 cd examples
 anaconda-project prepare
 cd data
+rm earthquakes-projected.parq
 wget -q https://s3.eu-west-1.amazonaws.com/assets.holoviews.org/data/earthquakes-projected.parq
 cd ../..
