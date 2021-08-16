@@ -22,7 +22,7 @@ html_logo = '_static/holoviz-logo.svg'
 html_favicon = "_static/favicon.ico"
 
 html_theme_options = {
-    "github_url": "https://github.com/holoviz/panel",
+    "github_url": "https://github.com/holoviz/holoviz",
     "icon_links": [
         {
             "name": "Twitter",
