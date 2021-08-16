@@ -1,7 +1,7 @@
 .. It would be nice to use this as a notebook index.ipynb instead, but unfortunately Jupyter doesn't seem to respect the style options required for resizing logos appropriately, even when embedding as HTML, so it's done as raw HTML here in .rst.
 
 .. raw:: html
-    <img src="assets/holoviz-logo-stacked.svg" height="150px">
+    <h1><img src="assets/holoviz-logo-stacked.svg" height="150px"></h1>
 
 High-level tools to simplify visualization in Python
 ----------------------------------------------------
