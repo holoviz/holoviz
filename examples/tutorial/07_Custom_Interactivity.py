@@ -11,7 +11,6 @@ import panel as pn
 
 
 df = pd.read_parquet('../data/earthquakes-projected.parq')
-df.time = df.time.astype('datetime64[ns]')
 df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]
