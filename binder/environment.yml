@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9.12
-  - numpy=1.12.5
+  - numpy=1.21.5
   - pandas=1.4.2
   - dask=2022.4.0
   - xarray=2022.3.0
