@@ -1,3 +1,4 @@
+import pathlib
 import pandas as pd
 import hvplot.pandas  # noqa
 from holoviews.element import tiles
@@ -10,7 +11,7 @@ hv.extension("bokeh")
 import panel as pn
 
 
-df = pd.read_parquet('../data/earthquakes-projected.parq')
+df = pd.read_parquet(pathlib.Path('../data/earthquakes-projected.parq'))
 df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]
