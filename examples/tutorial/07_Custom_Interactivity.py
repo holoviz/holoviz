@@ -11,7 +11,7 @@ hv.extension("bokeh")
 import panel as pn
 
 
-df = pd.read_parquet(pathlib.Path('../data/earthquakes-projected.parq'))
+df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
 df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]

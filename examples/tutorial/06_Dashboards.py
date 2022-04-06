@@ -7,7 +7,7 @@ pn.extension('tabulator', template='material', sizing_mode='stretch_width')
 
 import hvplot.pandas # noqa
 
-df = pd.read_parquet(pathlib.Path('../data/earthquakes-projected.parq'))
+df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
 df = df.set_index('time').tz_convert(None).reset_index()
 
 from holoviews.element.tiles import WEB_MERCATOR_LIMITS
