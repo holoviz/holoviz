@@ -25,9 +25,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
       - uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
@@ -39,9 +36,10 @@ jobs:
       - name: conda setup
         run: |
           conda config --set always_yes True
+          conda update -c defaults conda
           conda install -c pyviz "pyctdev>=0.5"
           doit ecosystem_setup
-          doit env_create --python=3.7
+          doit env_create --python=3.9
       - name: doit develop_install
         run: |
           eval "$(conda shell.bash hook)"
