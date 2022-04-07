@@ -1,23 +1,23 @@
 name: holoviz-tutorial
 channels:
-  - pyviz/label/dev
+  - conda-forge
 dependencies:
-  - python=3.8
-  - numpy
-  - pandas<1.3
-  - dask
-  - xarray
-  - notebook
-  - matplotlib
-  - ipympl
-  - bokeh=2.3.3
-  - datashader
-  - param
-  - netcdf4
-  - fastparquet
-  - jupyterlab
-  - fsspec=0.9.0
-  - hvplot=0.8.0a7
-  - panel=0.12.0rc10
-  - holoviews=1.14.5a6
+  - python=3.9.12
+  - numpy=1.21.5
+  - pandas=1.4.2
+  - dask=2022.4.0
+  - xarray=2022.3.0
+  - notebook=6.4.10
+  - matplotlib=3.5.1
+  - ipympl=0.8.8
+  - bokeh=2.4.2
+  - datashader=0.13.0
+  - param=1.12.1
+  - netcdf4=1.5.8
+  - fastparquet=0.8.0
+  - jupyterlab=3.3.2
+  - fsspec=2022.3.0
+  - hvplot=0.7.3
+  - panel=0.12.7
+  - holoviews=1.14.8
   - anaconda-project

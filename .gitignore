@@ -114,3 +114,7 @@ doc/**/*.json
 builtdocs/
 
 .DS_Store
+
+examples/envs
+examples/data
+examples/.projectignore

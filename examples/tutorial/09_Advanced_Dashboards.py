@@ -1,3 +1,4 @@
+import pathlib
 import colorcet as cc
 import pandas as pd
 import holoviews as hv
@@ -12,13 +13,12 @@ pn.extension()
 
 from holoviews.streams import Selection1D
 
-df = pd.read_parquet('../data/earthquakes-projected.parq')
-df.time = df.time.astype('datetime64[ns]')
+df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
 df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]
 
-ds = xr.open_dataarray('../data/raster/gpw_v4_population_density_rev11_2010_2pt5_min.nc')
+ds = xr.open_dataarray(pathlib.Path(__file__).parent.parent / 'data' / 'raster' / 'gpw_v4_population_density_rev11_2010_2pt5_min.nc')
 cleaned_ds = ds.where(ds.values != ds.nodatavals).sel(band=1)
 cleaned_ds.name = 'population'
 
