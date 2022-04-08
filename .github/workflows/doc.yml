@@ -44,21 +44,19 @@ jobs:
           conda list
           conda install anaconda-project
           cd examples
-          anaconda-project prepare
+          anaconda-project prepare --env-spec doc
           cd ..
-          conda activate examples/envs/default
-          pip install nbsite --pre
-          pip install pydata_sphinx_theme
-          pip install --no-deps --no-build-isolation -e .
+          conda activate examples/envs/doc
+          pip install --no-deps --no-build-isolation .
       - name: generate rst
         run: |
           eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
       - name: build docs
         run: |
           eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
       - name: git status
         run: |
