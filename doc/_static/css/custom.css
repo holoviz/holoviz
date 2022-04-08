@@ -34,17 +34,8 @@
     }
 }
 
-
 #scroller-right {
-    position: fixed;
-    top: 50%;
-    right: 1%;
-    max-width: 10%;
-    background: #f2f2f2;
-    padding: 0.8%;
-    transform: translate(0%, -50%);
-    border: 1px solid black;
-    font-size: smaller;
+    max-width: 14%;
 }
 
 @media (max-width: 1400px) {
@@ -57,10 +48,26 @@
     }
 }
 
-#navbar-icon-links i.fa-github-square:before {
-    color: white;
+button.toggle-button {
+    display: none;
 }
 
-.fa-discourse:before {
-    color: white;
+.toggle-hidden:not(.admonition) {
+    height: 0;
+}
+
+.tag_hide-input {
+    margin-bottom: 0 !important;
+}
+
+.toggle-hidden + .cell_output {
+    margin-top: 0 !important;
+}
+
+#binder-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

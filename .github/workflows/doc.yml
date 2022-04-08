@@ -12,8 +12,6 @@ jobs:
   build_docs:
     name: Documentation
     runs-on: 'ubuntu-latest'
-    strategy:
-      fail-fast: false
     timeout-minutes: 120
     defaults:
       run:
@@ -27,9 +25,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
       - uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
@@ -40,10 +35,8 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: conda setup
         run: |
-          conda config --set always_yes True
-          conda install -c pyviz "pyctdev>=0.5"
-          doit ecosystem_setup
-          doit env_create --python=3.7
+          conda update -n base -c defaults conda
+          conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 
       - name: doit develop_install
         run: |
           eval "$(conda shell.bash hook)"
@@ -51,22 +44,26 @@ jobs:
           conda list
           conda install anaconda-project
           cd examples
-          anaconda-project prepare
+          anaconda-project prepare --env-spec doc
           cd ..
-          conda activate examples/envs/default
-          pip install --no-deps --no-build-isolation -e .
-          conda install -c pyviz/label/dev nbsite "nbconvert<6.0"
-          pip install pydata_sphinx_theme
+          conda activate examples/envs/doc
+          pip install --no-deps --no-build-isolation .
       - name: generate rst
         run: |
           eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
       - name: build docs
         run: |
           eval "$(conda shell.bash hook)"
-          conda activate examples/envs/default
+          conda activate examples/envs/doc
           nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
+      - name: conda info/list
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate examples/envs/doc
+          conda info
+          conda list
       - name: git status
         run: |
           git status

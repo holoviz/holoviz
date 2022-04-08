@@ -5,7 +5,7 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-channels: [conda-forge]
+channels: [pyviz/label/dev,conda-forge]
 
 packages: &pkgs
 - python=3.9
@@ -17,15 +17,15 @@ packages: &pkgs
 - matplotlib
 - ipympl
 - bokeh
-- datashader
-- param
+- datashader==0.13.0
+- param==1.12.1
 - netcdf4
 - fastparquet
 - jupyterlab
 - fsspec
-- hvplot
-- panel
-- holoviews
+- hvplot==0.7.3
+- panel==0.12.7
+- holoviews==1.14.8
 
 dependencies: *pkgs
 
@@ -54,6 +54,11 @@ env_specs:
       - nbsmoke
       - pytest
     dependencies: *testpkgs
+  doc:
+    packages: &docpkgs
+      - nbsite>=0.7.1
+      - pydata-sphinx-theme
+    dependencies: *docpkgs
 
 platforms:
 - linux-64

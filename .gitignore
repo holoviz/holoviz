@@ -115,6 +115,10 @@ builtdocs/
 
 .DS_Store
 
-examples/envs
-examples/data
+examples/envs/
+examples/data/
 examples/.projectignore
+
+holoviz/examples/
+jupyter_execute/
+.version
