@@ -49,7 +49,7 @@ jobs:
           cd ..
           conda activate examples/envs/default
           pip install --no-deps --no-build-isolation -e .
-          conda install -c pyviz/label/dev nbsite "nbconvert<6.0"
+          conda install -c pyviz/label/dev -c conda-forge nbsite "nbconvert<6.0"
           pip install pydata_sphinx_theme
       - name: generate rst
         run: |
