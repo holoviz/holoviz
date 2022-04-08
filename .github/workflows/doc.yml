@@ -37,7 +37,6 @@ jobs:
         run: |
           conda update -n base -c defaults conda
           conda install -c pyviz "pyctdev>=0.5"
-          doit ecosystem_setup
           doit env_create --python=3.9
       - name: doit develop_install
         run: |
