@@ -17,15 +17,16 @@ packages: &pkgs
 - matplotlib
 - ipympl
 - bokeh
-- datashader==0.13.0
-- param==1.12.1
+- datashader==0.14.1
+- param==1.12.2
 - netcdf4
 - fastparquet
 - jupyterlab
 - fsspec
-- hvplot==0.7.3
+- hvplot==0.8.0
 - panel==0.12.7
-- holoviews==1.14.8
+- holoviews==1.14.9
+- plotly
 
 dependencies: *pkgs
 
