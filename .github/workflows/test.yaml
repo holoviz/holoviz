@@ -1,4 +1,4 @@
-name: pytest
+name: tests
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - '*'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 1 */2 SUN'  # every two months on Sunday at 4 am
 
 jobs:
   test_suite:
