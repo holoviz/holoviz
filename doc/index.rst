@@ -23,30 +23,32 @@ High-level tools to simplify visualization in Python
     <style> img.pvlogo { margin:8px; display:inline; object-fit:scale-down; max-height:85px } </style>
 
     <div style="margin:10px">
-    <a href="https://panel.pyviz.org"         ><img class="pvlogo" src="assets/panel.png"/></a>
-    <a href="https://hvplot.pyviz.org"         ><img class="pvlogo" src="assets/hvplot.png"/></a>
+    <a href="https://panel.holoviz.org"         ><img class="pvlogo" src="assets/panel.png"/></a>
+    <a href="https://hvplot.holoviz.org"         ><img class="pvlogo" src="assets/hvplot.png"/></a>
     <a href="https://holoviews.org"            ><img class="pvlogo" src="assets/holoviews.png"/></a>
-    <a href="http://geoviews.org"             ><img class="pvlogo" src="assets/geoviews.png"/></a>
-    <a href="http://datashader.org"           ><img class="pvlogo" src="assets/datashader.png"/></a>
-    <a href="https://param.pyviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
-    <a href="https://colorcet.pyviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
+    <a href="https://geoviews.org"             ><img class="pvlogo" src="assets/geoviews.png"/></a>
+    <a href="https://datashader.org"           ><img class="pvlogo" src="assets/datashader.png"/></a>
+    <a href="https://lumen.holoviz.org"           ><img class="pvlogo" src="assets/lumen.png"/></a>
+    <a href="https://param.holoviz.org"          ><img class="pvlogo" src="assets/param.png"/></a>
+    <a href="https://colorcet.holoviz.org"       ><img class="pvlogo" src="assets/colorcet.png"/></a>
     </div>
 
     <p>HoloViz provides a set of Python packages that make viz easier, more accurate, and more powerful:
-    <a href="https://panel.pyviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
-    <a href="https://hvplot.pyviz.org">hvPlot</a> to quickly generate interactive plots from your data,
+    <a href="https://panel.holoviz.org">Panel</a>  for making apps and dashboards for your plots from any supported plotting library,
+    <a href="https://hvplot.holoviz.org">hvPlot</a> to quickly generate interactive plots from your data,
     <a href="https://holoviews.org">HoloViews</a> to help you make all of your data instantly visualizable,
-    <a href="http://geoviews.org">GeoViews</a> to extend HoloViews for geographic data,
-    <a href="http://datashader.org">Datashader</a> for rendering even the largest datasets,
-    <a href="https://param.pyviz.org">Param</a> to create declarative user-configurable objects, and
-    <a href="https://colorcet.pyviz.org">Colorcet</a> for perceptually uniform colormaps.<br><br>
+    <a href="https://geoviews.org">GeoViews</a> to extend HoloViews for geographic data,
+    <a href="https://datashader.org">Datashader</a> for rendering even the largest datasets,
+    <a href="https://lumen.holoviz.org">Lumen</a> to build data-driven dashboards from a simple YAML specification,
+    <a href="https://param.holoviz.org">Param</a> to create declarative user-configurable objects, and
+    <a href="https://colorcet.holoviz.org">Colorcet</a> for perceptually uniform colormaps.<br><br>
 
-    Not sure where to start? Try <a href="https://hvplot.pyviz.org">hvPlot</a> for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. And try <a href="https://panel.pyviz.org">Panel</a> if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the <a href="tutorial">tutorial</a> to see <i>all</i> the things you can do!
+    Not sure where to start? Try <a href="https://hvplot.holoviz.org">hvPlot</a> for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. And try <a href="https://panel.holoviz.org">Panel</a> if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the <a href="tutorial">tutorial</a> to see <i>all</i> the things you can do!
 
     <h2>Building on the SciPy/PyData/PyViz ecosystem</h2>
 
-    <p>HoloViz tools build on the many excellent visualization tools available in the scientific python ecosystem, allowing you to access their power conveniently and efficiently. The core tools make use of <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting, <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output, and <a href="https://plot.ly">Plotly</a>'s interactive 3D visualizations.  <a href="https://panel.pyviz.org">Panel</a> lets you combine any of these visualizations with output from nearly any other Python plotting library, including specific support for
-    <a href="http://seaborn.pydata.org">seaborn</a>,
+    <p>HoloViz tools build on the many excellent visualization tools available in the scientific python ecosystem, allowing you to access their power conveniently and efficiently. The core tools make use of <a href="http://bokeh.pydata.org">Bokeh</a>'s interactive plotting, <a href="http://matplotlib.org">Matplotlib</a>'s publication-quality output, and <a href="https://plot.ly">Plotly</a>'s interactive 3D visualizations.  <a href="https://panel.holoviz.org">Panel</a> lets you combine any of these visualizations with output from nearly any other Python plotting library, including specific support for
+    <a href="https://seaborn.pydata.org">seaborn</a>,
     <a href="https://altair-viz.github.io">altair</a>,
     <a href="https://vega.github.io">vega</a>,
     <a href="https://plotnine.readthedocs.io">plotnine</a>,
@@ -55,26 +57,26 @@ High-level tools to simplify visualization in Python
     plus anything that can generate HTML, PNG, or SVG.
 
     <p>HoloViz tools and examples generally work with any Python standard data types (lists, dictionaries, etc.), plus
-    <a href="http://pandas.pydata.org">Pandas</a> or
-    <a href="http://dask.pydata.org">Dask</a> DataFrames and
-    <a href="http://numpy.org">NumPy</a>,
-    <a href="http://xarray.pydata.org">Xarray</a>, or
-    <a href="http://dask.pydata.org">Dask</a> arrays, including remote data from the
+    <a href="https://pandas.pydata.org">Pandas</a> or
+    <a href="https://dask.pydata.org">Dask</a> DataFrames and
+    <a href="https://numpy.org">NumPy</a>,
+    <a href="https://xarray.pydata.org">Xarray</a>, or
+    <a href="https://dask.pydata.org">Dask</a> arrays, including remote data from the
     <a href="https://intake.readthedocs.io">Intake</a> data catalog library. They also use
-    <a href="http://dask.pydata.org">Dask</a> and
-    <a href="http://numba.pydata.org">Numba</a> to speed up computations along with algorithms and functions from
+    <a href="https://dask.pydata.org">Dask</a> and
+    <a href="https://numba.pydata.org">Numba</a> to speed up computations along with algorithms and functions from
     <a href="https://bit.ly/2OXxNfN">SciPy</a>.<br><br>
 
     <p>HoloViz tools are designed for general-purpose use, but also support some domain-specific datatypes like graphs from
-    <a href="http://networkx.github.io">NetworkX</a> and geographic data from
-    <a href="http://geopandas.org">GeoPandas</a> and
-    <a href="http://scitools.org.uk/cartopy">Cartopy</a> and
+    <a href="https://networkx.github.io">NetworkX</a> and geographic data from
+    <a href="https://geopandas.org">GeoPandas</a> and
+    <a href="https://scitools.org.uk/cartopy">Cartopy</a> and
     <a href="https://scitools.org.uk/iris">Iris</a>.<br>
     Panel can be used with
     <a href="https://yt-project.org">yt</a> for volumetric and physics data and
     <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
     HoloViz tools provide extensive support for
-    <a href="http://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
+    <a href="https://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
 
     <h2>Getting started</h2>
 
