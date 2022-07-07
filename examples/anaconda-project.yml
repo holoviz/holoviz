@@ -5,7 +5,7 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-channels: [pyviz/label/dev,conda-forge]
+channels: [pyviz/label/dev,conda-forge,nodefaults]
 
 packages: &pkgs
 - python=3.9
@@ -24,8 +24,8 @@ packages: &pkgs
 - jupyterlab
 - fsspec
 - hvplot==0.8.0
-- panel==0.12.7
-- holoviews==1.14.9
+- panel==0.13.1
+- holoviews==1.15.0
 - plotly
 
 dependencies: *pkgs
@@ -57,7 +57,7 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite>=0.7.1
+      - nbsite>=0.7.2rc10
       - pydata-sphinx-theme
     dependencies: *docpkgs
 
