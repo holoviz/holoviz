@@ -28,6 +28,8 @@ packages: &pkgs
 - panel==0.13.1
 - holoviews==1.15.0
 - plotly
+# While testing the project someone got this error: ModuleNotFoundError: No module named 'jupyter_nbextensions_configurator'
+- jupyter_nbextensions_configurator
 
 dependencies: *pkgs
 
