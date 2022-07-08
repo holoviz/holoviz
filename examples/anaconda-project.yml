@@ -9,6 +9,7 @@ channels: [pyviz/label/dev,conda-forge,nodefaults]
 
 packages: &pkgs
 - python=3.9
+- packaging
 - numpy
 - pandas
 - dask
