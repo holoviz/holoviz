@@ -19,7 +19,7 @@ High-level tools to simplify visualization in Python
 
     <h2>HoloViz-maintained libraries</h2>
 
-    <style> img.pvlogo { margin:8px; display:inline; object-fit:scale-down; max-height:85px } </style>
+    <style> img.pvlogo { margin:8px; display:inline; object-fit:scale-down; max-height:75px } </style>
 
     <div style="margin:10px">
     <a href="https://panel.holoviz.org"         ><img class="pvlogo" src="assets/panel.png"/></a>
