@@ -5,10 +5,11 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-channels: [pyviz/label/dev,conda-forge]
+channels: [pyviz/label/dev,conda-forge,nodefaults]
 
 packages: &pkgs
 - python=3.9
+- packaging
 - numpy
 - pandas
 - dask
@@ -17,15 +18,18 @@ packages: &pkgs
 - matplotlib
 - ipympl
 - bokeh
-- datashader==0.13.0
-- param==1.12.1
+- datashader==0.14.1
+- param==1.12.2
 - netcdf4
 - fastparquet
 - jupyterlab
 - fsspec
-- hvplot==0.7.3
-- panel==0.12.7
-- holoviews==1.14.8
+- hvplot==0.8.0
+- panel==0.13.1
+- holoviews==1.15.0
+- plotly
+# While testing the project someone got this error: ModuleNotFoundError: No module named 'jupyter_nbextensions_configurator'
+- jupyter_nbextensions_configurator
 
 dependencies: *pkgs
 
@@ -56,8 +60,8 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite>=0.7.1
-      - pydata-sphinx-theme
+      - nbsite>=0.7.2rc10
+      - pydata-sphinx-theme<0.9.0
     dependencies: *docpkgs
 
 platforms:

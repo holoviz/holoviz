@@ -46,20 +46,22 @@ multipage standalone dashboards. Building on existing plotting libraries like
 `Bokeh <https://bokeh.org>`__, `Matplotlib <https://matplotlib.org>`__, and
 `Plotly <https://plot.ly>`__, the HoloViz ecosystem includes a set of special-purpose tools designed to fill in the gaps and solve the whole problem of visualization:
 
--  `Panel <https://panel.pyviz.org>`__: Assembling objects from
+-  `Panel <https://panel.holoviz.org>`__: Assembling objects from
    many different libraries into a layout or app, whether in a Jupyter
    notebook or in a standalone servable dashboard
--  `hvPlot <https://hvplot.pyviz.org>`__: Quickly return interactive
-   HoloViews, GeoViews or Panel objects from Pandas, Xarray,
+-  `hvPlot <https://hvplot.holoviz.org>`__: Quickly return interactive
+   HoloViews, GeoViews, or Panel objects from Pandas, Xarray,
    or other data structures
 -  `HoloViews <https://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
    high-level specifications
--  `GeoViews <http://geoviews.org>`__: Visualizable geographic
+-  `GeoViews <https://geoviews.org>`__: Visualizable geographic
    data that that can be mixed and matched with HoloViews objects
 -  `Datashader <https://datashader.org>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `Colorcet <https://colorcet.pyviz.org>`__: A wide range of perceptually uniform or large-number categorical colormaps for use with the other libraries
+-  `Lumen <https://lumen.holoviz.org>`__: Framework for visual analytics that allows users
+   to build data-driven dashboards from a simple YAML specification
+-  `Colorcet <https://colorcet.holoviz.org>`__: A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries
 
 Assuming that you have some data of some particular **Data type**, the
 chart below will help you choose a suitable Python **Data library**
@@ -136,8 +138,8 @@ it, rearrange and add or delete components, then use the result
 instead.  Similarly, hvPlot provides a one-line way to return complex
 HoloViews objects, which can then be inspected, pulled apart,
 reconfigured, and recomposed if/as needed. And then these HoloViews
-objects, in turn, can be used to make a Bokeh figure that again can be
-examined, modified, and used in other contexts (if desired!).
+objects, in turn, can be used to make a Bokeh or Matplotlib figure
+that again can be examined, modified, and used in other contexts.
 
 
 Building on the Python scientific ecosystem

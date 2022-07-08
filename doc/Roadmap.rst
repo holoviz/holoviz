@@ -1,4 +1,4 @@
-HoloViz Roadmap, as of 3/2020
+HoloViz Roadmap, as of 7/2022
 =============================
 
 HoloViz helps coordinate between numerous independent open-source
@@ -24,9 +24,10 @@ Immediate, already funded priorities for 2020 include:
    needs additional polishing.
 
 4. **Better Datashader integration with external plotting libraries
-   (HoloViews, Plotly, Matplotlib)**: Datashader needs to provide
-   functions for supporting hover information, legends, colorbars, and
-   interactivity, which each plotting library can then use.
+   (HoloViews, Plotly, Matplotlib)**: Datashader is best supported
+   in Bokeh, which can provide hover information, legends, colorbars, and
+   interactivity. Similar features can be provided for the other supported
+   plotting libraries, but will require changes to those tools.
 
 5. **Support for maintaining Python-based projects**: As maintainers of
    a wide range of Python projects, we are working to minimize the cost
@@ -35,7 +36,8 @@ Immediate, already funded priorities for 2020 include:
    documenting examples, testing examples (including notebooks), and
    building websites. Projects addressing each of these areas are being
    added to the `PyViz Github organization <https://github.com/pyviz>`__
-   and will be documented as they become mature.
+   and will either be documented as they become mature or removed if
+   they are supplanted by emerging external tools).
 
 6. **Integrating 3D surface and volume rendering into HoloViz**: HoloViews
    can plot limited quantities of 3D surface or point data using
@@ -66,25 +68,21 @@ Immediate, already funded priorities for 2020 include:
    alternatives would be very helpful.
 
 
-Other things we'd like to see in HoloViz or in packages designed to work
-well with HoloViz include:
-
-
-1. **Bokeh WebGL support**: Bokeh provides good support for working
+8. **Bokeh WebGL support**: Bokeh provides good support for working
    interactively with small datasets using an HTML Canvas (client-side
    interactivity), and when combined with Datashader it can handle
    enormous datasets by pre-rendering them to images in Python
    (server-side). However, in between these two extremes there is a
    range of data sizes that could be addressed well by the client-side
-   WebGL technology. Bokeh includes some WebGL support, but it is patchy
-   and not fully implemented, so it is not the default for either direct
-   Bokeh usage or for Bokeh with the HoloViews API. Volunteers to
-   maintain and expand the WebGL support could make a much broader range
-   of data sizes practical in easily redistributable standalone HTML
-   files, and could enable new classes of high-performance interactive
-   features.
+   WebGL technology. Bokeh has long included some WebGL support, but
+   improvements in 2021-2022 have made the WebGL support much more
+   solid and usable, and updating HoloViews to use that could bring
+   big performance improvements for midsize plots.
 
-2. **Additional plot types**: HoloViews includes an extensive range of
+Other things we'd like to see in HoloViz or in packages designed to work
+well with HoloViz include:
+
+1. **Additional plot types**: HoloViews includes an extensive range of
    plot types (Elements) covering the typical visualizations used across
    many domains. However, there are always more that can be included,
    and some domains are not as well covered as others. Some examples
@@ -101,11 +99,14 @@ well with HoloViz include:
    -  `packed
       bubbles <https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing>`__
    -  `funnel charts <https://en.wikipedia.org/wiki/Funnel_chart>`__
+   -  `donut charts <https://datavizcatalogue.com/methods/donut_chart.html>`__ (which can be abused to make a `pie chart
+   <https://en.wikipedia.org/wiki/Pie_chart>`__ if you really want)
 
-   (And if someone wants to write and maintain a `pie chart
-   <https://en.wikipedia.org/wiki/Pie_chart>`__ even though they are
-   nearly always the wrong thing to do, we can probably be convinced
-   to allow it. :-)
+2. **Interactive Matplotlib plotting**: Right now, HoloViews supports
+   Matplotlib primarily as static PNG or SVG output. Matplotlib also
+   supports interactive web-based plotting via ipympl, and supporting
+   such interactivity could help make Matplotlib be a viable
+   alternative for more use cases.
 
 3. **Better native GUI support**: Right now, HoloViz focuses exclusively
    on tools that work well in web browsers, because it aims to support
@@ -130,7 +131,7 @@ well with HoloViz include:
    the bulk of the shared functionality should not be a major
    undertaking and could open up interesting new applications. For now,
    Altair and Vega-lite visualizations can be specified and then used
-   directly with Panel.
+   directly with Panel, but not with HoloViews.
 
 5. **hvPlot/HoloViews serialization**: HoloViews uses a declarative design that
    can be represented in a purely textual form, without any Python code.
@@ -144,24 +145,6 @@ well with HoloViz include:
    included in HoloViz or made easily usable from it. NetworkX (already
    usable but not fully exploited yet) is just one example of many;
    suggestions welcome!
-
-7. **GUI-based plot creation**: (As in business intelligence and
-   dashboarding applications.) The powerful components available
-   in HoloViz are ready for Python users to put together into
-   visualizations and apps, but they would also make a very strong
-   base for building a graphical approach for working with data, with
-   drag and drop layouts, GUI-configurable mapping of data sources, and
-   GUI configuration of the plot objects. HoloViews components are
-   already declarative, which means that they can be mapped directly
-   into GUI elements for changing their parameters dynamically. Paired
-   with the new `Intake <https://github.com/ContinuumIO/intake>`_
-   library for declaring data sources, it would be possible to build a
-   fully graphical interface for working with data that would have the
-   advantage of being backed by a fully configurable, open-source set
-   of plotting library elements, ensuring that when people outgrow
-   the GUI framework they can easily extend and expand anything
-   developed in it, unlike current business intelligence and
-   dashboarding applications.
 
 If any of the functionality above is interesting to you (or you have
 ideas of your own!) and can offer help with implementation, please
