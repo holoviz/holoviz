@@ -50,7 +50,7 @@ multipage standalone dashboards. Building on existing plotting libraries like
    many different libraries into a layout or app, whether in a Jupyter
    notebook or in a standalone servable dashboard
 -  `hvPlot <https://hvplot.holoviz.org>`__: Quickly return interactive
-   HoloViews, GeoViews or Panel objects from Pandas, Xarray,
+   HoloViews, GeoViews, or Panel objects from Pandas, Xarray,
    or other data structures
 -  `HoloViews <https://holoviews.org>`__: Declarative objects for
    instantly visualizable data, building Bokeh plots from convenient
@@ -59,9 +59,9 @@ multipage standalone dashboards. Building on existing plotting libraries like
    data that that can be mixed and matched with HoloViews objects
 -  `Datashader <https://datashader.org>`__: Rasterizing
    huge datasets quickly as fixed-size images
--  `Colorcet <https://colorcet.holoviz.org>`__: A wide range of perceptually uniform or large-number categorical colormaps for use with the other libraries
--  `Lumen <https://lumen.holoviz.org>`__: Framework for visual analytics which allows users
+-  `Lumen <https://lumen.holoviz.org>`__: Framework for visual analytics that allows users
    to build data-driven dashboards from a simple YAML specification
+-  `Colorcet <https://colorcet.holoviz.org>`__: A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries
 
 Assuming that you have some data of some particular **Data type**, the
 chart below will help you choose a suitable Python **Data library**
@@ -138,8 +138,8 @@ it, rearrange and add or delete components, then use the result
 instead.  Similarly, hvPlot provides a one-line way to return complex
 HoloViews objects, which can then be inspected, pulled apart,
 reconfigured, and recomposed if/as needed. And then these HoloViews
-objects, in turn, can be used to make a Bokeh figure that again can be
-examined, modified, and used in other contexts (if desired!).
+objects, in turn, can be used to make a Bokeh or Matplotlib figure
+that again can be examined, modified, and used in other contexts.
 
 
 Building on the Python scientific ecosystem

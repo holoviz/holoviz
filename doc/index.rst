@@ -14,7 +14,6 @@ High-level tools to simplify visualization in Python
     <ul>
     <li>High-level tools that make it easier to apply Python plotting libraries to your data.
     <li>A comprehensive <a href="tutorial">tutorial</a> showing how to use the available tools together to do a wide range of different tasks.
-    <li>A <a href="https://conda.io">Conda</a> metapackage "holoviz" that makes it simple to install matching versions of libraries that work well together.
     <li>Sample datasets to work with.
     </ul>
 
@@ -43,7 +42,7 @@ High-level tools to simplify visualization in Python
     <a href="https://param.holoviz.org">Param</a> to create declarative user-configurable objects, and
     <a href="https://colorcet.holoviz.org">Colorcet</a> for perceptually uniform colormaps.<br><br>
 
-    Not sure where to start? Try <a href="https://hvplot.holoviz.org">hvPlot</a> for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. And try <a href="https://panel.holoviz.org">Panel</a> if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the <a href="tutorial">tutorial</a> to see <i>all</i> the things you can do!
+    Not sure where to start? Try <a href="https://hvplot.holoviz.org">hvPlot</a> for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. Or check out <a href="https://panel.holoviz.org">Panel</a> if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the <a href="tutorial">tutorial</a> to see <i>all</i> the things you can do!
 
     <h2>Building on the SciPy/PyData/PyViz ecosystem</h2>
 
@@ -65,18 +64,15 @@ High-level tools to simplify visualization in Python
     <a href="https://intake.readthedocs.io">Intake</a> data catalog library. They also use
     <a href="https://dask.pydata.org">Dask</a> and
     <a href="https://numba.pydata.org">Numba</a> to speed up computations along with algorithms and functions from
-    <a href="https://bit.ly/2OXxNfN">SciPy</a>.<br><br>
+    <a href="https://bit.ly/2OXxNfN">SciPy</a>, and support both GPUs and CPUs to make use of all your available hardware.<br><br>
 
     <p>HoloViz tools are designed for general-purpose use, but also support some domain-specific datatypes like graphs from
     <a href="https://networkx.github.io">NetworkX</a> and geographic data from
     <a href="https://geopandas.org">GeoPandas</a> and
     <a href="https://scitools.org.uk/cartopy">Cartopy</a> and
     <a href="https://scitools.org.uk/iris">Iris</a>.<br>
-    Panel can be used with
-    <a href="https://yt-project.org">yt</a> for volumetric and physics data and
-    <a href="https://sympy.org">SymPy</a> or LaTeX for visualizing equations.<br>
     HoloViz tools provide extensive support for
-    <a href="https://jupyter.org">Jupyter</a> notebooks, as well as for standalone web servers and exporting as static files.<br><br>
+    <a href="https://jupyter.org">Jupyter</a> notebooks, as well as for standalone Python-backed web servers and exporting visualizations or apps as images or static HTML files.<br><br>
 
     <h2>Getting started</h2>
 
