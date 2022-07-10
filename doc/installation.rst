@@ -110,6 +110,6 @@ tutorial.
 Step 5: Run the tutorials
 -------------------------
 
-Now you can run through the `tutorials <tutorial/index.rst>`_, learn
+Now you can run through the `tutorials <tutorial/index.html>`_, learn
 how to use all these tools, and apply them to anything you need to
 visualize.  Have fun!
