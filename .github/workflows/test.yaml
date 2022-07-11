@@ -28,6 +28,9 @@ jobs:
       DESC: "Python ${{ matrix.python-version }} tests"
       PYTHON_VERSION: ${{ matrix.python-version }}
     steps:
+      - name: configure Pagefile
+        if: contains(matrix.os, 'windows')
+        uses: al-cheb/configure-pagefile-action@v1.2
       - uses: actions/checkout@v2
         with:
           fetch-depth: "100"
