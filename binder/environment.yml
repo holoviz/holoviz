@@ -2,22 +2,22 @@ name: holoviz-tutorial
 channels:
   - conda-forge
 dependencies:
-  - python=3.9.12
-  - numpy=1.21.5
-  - pandas=1.4.2
-  - dask=2022.4.0
+  - python=3.9.13
+  - numpy=1.23.0
+  - pandas=1.4.3
+  - dask=2022.7.0
   - xarray=2022.3.0
   - notebook=6.4.10
   - matplotlib=3.5.1
   - ipympl=0.8.8
-  - bokeh=2.4.2
-  - datashader=0.13.0
+  - bokeh=2.4.3
+  - datashader=0.14.1
   - param=1.12.1
   - netcdf4=1.5.8
-  - fastparquet=0.8.0
+  - fastparquet=0.8.1
   - jupyterlab=3.3.2
-  - fsspec=2022.3.0
-  - hvplot=0.7.3
-  - panel=0.12.7
-  - holoviews=1.14.8
+  - fsspec=2022.5.0
+  - hvplot=0.9.1
+  - panel=0.13.1
+  - holoviews=1.15.0
   - anaconda-project
