@@ -17,7 +17,7 @@ dependencies:
   - fastparquet=0.8.1
   - jupyterlab=3.3.2
   - fsspec=2022.5.0
-  - hvplot=0.8.1
+  - hvplot=0.8.0
   - panel=0.13.1
   - holoviews=1.15.0
   - anaconda-project
