@@ -43,11 +43,14 @@ twice to get the very latest) to ensure you have the latest version::
    > conda update -n base conda
    > conda update -n base conda
 
-You should then make sure you have `anaconda-project` installed:
-
-::
+You should then make sure you have `anaconda-project` installed::
 
    > conda install anaconda-project
+
+If you're on a M1 Mac you'll currently need to direct it to use
+emulated binaries (but skip this step if not on an M1 Mac)::
+
+   > export CONDA_SUBDIR=osx-64
 
 
 Step 2: Download and extract the tutorial project
@@ -110,6 +113,6 @@ tutorial.
 Step 5: Run the tutorials
 -------------------------
 
-Now you can run through the `tutorials <tutorial/index.rst>`_, learn
+Now you can run through the `tutorials <tutorial/index.html>`_, learn
 how to use all these tools, and apply them to anything you need to
 visualize.  Have fun!
