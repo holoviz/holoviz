@@ -28,6 +28,11 @@ jobs:
       DESC: "Python ${{ matrix.python-version }} tests"
       PYTHON_VERSION: ${{ matrix.python-version }}
     steps:
+      - name: configure Page file on Windows
+        # To fix a Memory Error while reading the earthquake Parquet file
+        # See https://github.com/holoviz/holoviz/issues/309
+        if: contains(matrix.os, 'windows')
+        uses: al-cheb/configure-pagefile-action@v1.2
       - uses: actions/checkout@v2
         with:
           fetch-depth: "100"
