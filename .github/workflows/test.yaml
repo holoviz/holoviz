@@ -54,7 +54,7 @@ jobs:
           eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
-          conda install anaconda-project>=0.10.1
+          conda install -c defusco/label/dev anaconda-project=0.11.0+2
           echo "-----"
           git describe
       - name: doit env_capture
