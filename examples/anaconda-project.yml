@@ -5,7 +5,7 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-channels: [pyviz/label/dev,conda-forge,nodefaults]
+channels: [pyviz/label/dev,conda-forge]
 
 packages: &pkgs
 - python=3.9
