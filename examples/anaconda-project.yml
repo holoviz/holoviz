@@ -60,14 +60,15 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite>=0.7.2rc10
-      - pydata-sphinx-theme<0.9.0
+      - nbsite >=0.7.2rc10
+      - pydata-sphinx-theme <0.9.0
     dependencies: *docpkgs
 
 platforms:
 - linux-64
 - osx-64
 - win-64
+- osx-arm64
 
 downloads:
   DATA_1:
