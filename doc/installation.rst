@@ -45,7 +45,7 @@ twice to get the very latest) to ensure you have the latest version::
 
 You should then make sure you have `anaconda-project` installed::
 
-   > conda install anaconda-project
+   > conda install "anaconda-project>=0.11"
 
 
 
