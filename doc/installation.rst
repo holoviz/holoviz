@@ -43,10 +43,15 @@ twice to get the very latest) to ensure you have the latest version::
    > conda update -n base conda
    > conda update -n base conda
 
-You should then make sure you have `anaconda-project` installed::
+We recommend installing `anaconda-project` is a new environment, to keep
+things separate and clean. We'll create an environment called `project`, 
+please select another name if you already have an environment named this way::
 
-   > conda install "anaconda-project>=0.11"
+   > conda create -n project "anaconda-project>=0.11"
 
+Now activate this environment::
+
+   > conda activate project
 
 
 Step 2: Download and extract the tutorial project
