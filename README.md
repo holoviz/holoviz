@@ -6,7 +6,7 @@
 
 |    |    |
 | --- | --- |
-| Test suite status | [![Status](https://github.com/holoviz/holoviz/workflows/pytest/badge.svg?query=branch%3Amaster)](https://github.com/holoviz/holoviz/actions/workflows/test.yaml?query=branch%3Amaster)
+| Test suite status | [![Status](https://github.com/holoviz/holoviz/workflows/tests/badge.svg?query=branch%3Amaster)](https://github.com/holoviz/holoviz/actions/workflows/test.yaml?query=branch%3Amaster)
 | Site/Content version | [![Github tag](https://img.shields.io/github/tag/holoviz/holoviz.svg?label=tag&colorB=11ccbb)](https://github.com/holoviz/holoviz/tags) |
 | Docs | [![gh-pages](https://img.shields.io/github/last-commit/holoviz/holoviz/gh-pages.svg)](https://github.com/holoviz/holoviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/holoviz.org.svg)](http://holoviz.org) [![dev-site](https://img.shields.io/website-up-down-green-red/https/pyviz-dev.github.io/holoviz.svg?label=dev%20website)](https://pyviz-dev.github.io/holoviz/)  |
 | Status Dashboard | [![](https://img.shields.io/website-up-down-green-red/http/status.holoviz.org.svg?label=status-dashboard)](http://status.holoviz.org/) |
