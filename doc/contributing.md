@@ -90,7 +90,7 @@ The HoloViz developers rely on [pyctdev](https://github.com/pyviz-dev/pyctdev), 
 conda install -c pyviz/label/dev "pyctdev>0.5.0"
 ```
 
-Once `pyctdev` is available and you are in the cloned panel repository, you can create a new virtual environment with the `env_create` *doit* command with the appropriate channels:
+Once `pyctdev` is available and you are in the cloned (e.g. panel) repository, you can create a new virtual environment with the `env_create` *doit* command with the appropriate channels:
 
 ```bash
 doit env_create -c channel1 -c channel2 --name=dev-env --python=3.x
@@ -125,7 +125,7 @@ At this step, you should have your environment set up, being able to run tests a
 
 The *pull request* you make should reference the *issue* you are attempting to close (i.e. `Fixes #issuenumber`) and include a description of the changes you made. Changes affecting the visual properties should include screenshots or GIFs.
 
-Your *pull request* should now be reviewed by one of the project's maintainers. This may take a while given how busy the maintainers are, so try to be patient :) Once the review is done you may be required to make some changes. You may also be asked to *resolve conflicts* if the changes you made appear to conflict with changes made to the source code after you submitted the *pull request*.
+Your *pull request* should now be reviewed by one of the project's maintainers. This may take a while given how busy the maintainers are, so try to be patient :). Your pull request will be evaluated to ensure that it is within the scope of the project (again, it's a good idea to create an issue first to outline your intent and give the maintainers an opportunity to weigh in before you spend the effort creating a pull request). If it's decided to proceed, the review will be conducted, and once the review is done you may be required to make some changes. You may also be asked to *resolve conflicts* if the changes you made appear to conflict with changes made to the source code after you submitted the *pull request*.
 
 When your PR is merged, enjoy, and repeat!
 
@@ -159,7 +159,7 @@ The HoloViz group owns a few GitHub organizations:
 
 * [holoviz](https://github.com/holoviz/) is the main one where you are likely to contribute. It hosts the core packages maintained by the group.
 * [pyviz-dev](https://github.com/pyviz-dev/) hosts two main types of repositories:
-    * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them. Interestingly a few of these packages could have become pretty popular had they been more promoted. However, it was never a goal for the group that instead focused on improving data visualization with Python rather than improving the Python tooling.
+    * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
     * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process. 
 * [pyviz-topics](https://github.com/pyviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
 * [holoviz-demos](https://github.com/holoviz-demos/) hosts some demos, mostly Panel apps (TODO: are these actually used?)
@@ -291,7 +291,7 @@ Building a site with `nbsite` is usually a two-step process:
 1. `nbsite generate-rst ...` looks for notebooks in the `examples` folder and generates their corresponding *reStructuredText* files. For instance, if the notebook `examples/user_guide/Data.ipynb` is found, then the corresponding file `doc/user_guide/Data.rst` is created and includes the `NotebookDirective` that points to the notebook file to insert it in this document. A similar process applies to the notebooks found in a gallery.
 2. `nbsite build ...` executes the notebooks and builds the website.
 
-After these steps, you should find a `builtdocs` folder in the repository that contains the static site built by nbsite/sphinx.
+After these steps, you should find a `builtdocs` folder in the repository that contains the static site built by nbsite/sphinx. When the websites are built in the continuous integration system, the content of the `builtdocs` folder is pushed to a `gh-pages` branch. The details of this process can be found in the `docs.yaml` Github Action workflow of each project, located in the `.github/workflows` folder.
 
 #### File formats
 
@@ -421,7 +421,7 @@ Development releases can have different goals. Sometimes they are only meant to 
 1. Before making a proper release, you should start by making a development release. This is the first one that would be an *alpha* release. Bump the version too, e.g., `v1.9.6a1` and commit the new tag.
 1. After pushing the new tag, you can monitor the *Packages* and *Documentation* workflows. If one fails, you will have to fix that as that would be a release blocker.
 1. If the *alpha* release succeeded, it is now time to check a few things:
-    * A new version of the *dev* site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.
+    * A new version of the *dev* (built on the corresponding `pyviz-dev` repository `gh-pages` branch) site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.
     * Some packages have implemented *downstream tests*. When they do, these tests run only when a release is made. They trigger the test suite of their downstream packages (e.g., a Panel release would trigger the test suite of Param). This ensures that the release you just made didn't break some other packages of the HoloViz ecosystem. To find the results of these downstream tests, check the Github Actions page of the released package.
     * Optionally, and to make sure that the release went well, you could install the package you've released (e.g. `conda install -c pyviz/label/dev panel`) and check there's no embarrassing issue.
 1. Pause the release process if you expect feedback from others. If not, keep going.
@@ -449,7 +449,7 @@ You can tag a release from any branch, not necessarily from the main one. This i
 ```
 
 ```{tip}
-If you push a tag by mistake or the wrong tag and are lucky enough to spot that instantly, you should hurry up (really!) and cancel the *Build* and *Documentation* workflows before anything gets published/deployed. If you manage to do that, you can then remove the faulty tag.
+If you push a tag by mistake or the wrong tag and are lucky enough to spot that instantly, you should hurry up (really!) and [cancel](https://docs.github.com/en/actions/managing-workflow-runs/canceling-a-workflow) the *Build* and *Documentation* workflows before anything gets published/deployed. If you manage to do that, you can then remove the faulty tag.
 ```
 
 ### Communication
