@@ -92,6 +92,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Talks <talks/index>
    Tutorial <tutorial/index>
    Topics <topics/index>
+   Contributing <contributing>
    Roadmap <Roadmap>
    FAQ
    About <about>
