@@ -1,8 +1,8 @@
 # Contributing Guide
 
-This guide includes general guidelines on how to contribute to HoloViz. Read the [Operating Guide](TODO) if you are interested to learn how an Open-Source project like HoloViz operates.
+This guide includes general guidelines on how to contribute to HoloViz. Read the [Operating Guide](#operating-guide) if you are interested to learn how an Open-Source project like HoloViz operates.
 
-## Why contribute?
+## Contributing? Yes! Wait, but why?
 
 There are many reasons why you would contribute to the HoloViz project, including:
 
@@ -76,7 +76,7 @@ Contributing code includes:
 The HoloViz projects usually provide specific instructions to set up your environment to be ready to contribute documentation or code to the project. The instructions provided hereafter are meant to be general enough to apply to each project. Refer to the documentation of the project you are working on for more details.
 ```
 
-Before making any contribution, the first step is usually to open a [GitHub Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) that documents what you are trying to fix/improve. Once an issue is opened, a discussion can take place with the maintainers to see if what is suggested is relevant, which can orientate the action to take.
+Before making anything beyond a minimal contribution (e.g. fixing a type), the first step is usually to open a [GitHub Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) that documents what you are trying to fix/improve. Writing a good issue is important and will affect how it is going to be perceived by the project maintainers, contributors and watchers. Read for instance this [blog post](https://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports) that describes what a good issue should look like.  Once an issue is opened, a discussion can take place with the maintainers to see if what is suggested is relevant, which can orientate the action to take.
 
 The first step to working on any source code is to install Git as the source codes are stored in [Git](https://git-scm.com) source control repositories. To install Git on any platform, refer to the [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) section of the [Pro Git Book](https://git-scm.com/book/en/v2).
 
@@ -106,6 +106,12 @@ To perform an editable install of the project you are working on, including all 
 
 ```bash
 doit develop_install -c channel1 -c channel2 -o tests -o ... -o ...
+```
+
+For example:
+
+```bash
+doit develop_install -c pyviz/label/dev -c conda-forge -o tests -o examples
 ```
 
 Depending on the options you have chosen to install (usually `-o tests` for the unit tests, `-o examples` to run the examples notebooks, ...), the following commands will run:
@@ -162,7 +168,7 @@ The HoloViz group owns a few GitHub organizations:
     * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
     * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process. 
 * [pyviz-topics](https://github.com/pyviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
-* [holoviz-demos](https://github.com/holoviz-demos/) hosts some demos, mostly Panel apps (TODO: are these actually used?)
+* [holoviz-demos](https://github.com/holoviz-demos/) hosts some demos, mostly Panel apps. It is meant to be removed.
 * [holoviz-community](https://github.com/holoviz-community/) is a place for the HoloViz community to host repositories that are going to be nicely exposed under the HoloViz umbrella
 
 In more detail:
@@ -192,10 +198,10 @@ In more detail:
     * [holoviz_tasks](https://github.com/pyviz-dev/holoviz_tasks): Shared GHA workflows and tasks used to maintain the HoloViz repositories
     * more ...
 * [pyviz-topics](https://github.com/pyviz-topics/)
-    * [examples](https://github.com/pyviz-topics/examples): TODO
-    * [earthsim](https://github.com/pyviz-topics/earthsim): TODO
-    * [earthml](https://github.com/pyviz-topics/earthml): TODO
-    * [holodoodler](https://github.com/pyviz-topics/holodoodler): TODO
+    * [examples](https://github.com/pyviz-topics/examples): Home for domain-specific narrative examples using multiple PyViz projects
+    * [earthsim](https://github.com/pyviz-topics/earthsim): Project for developing Python-based workflows for specifying, launching, visualizing, and analyzing environmental simulations
+    * [earthml](https://github.com/pyviz-topics/earthml): Machine learning and visualization in Python for Earth science
+    * [holodoodler](https://github.com/pyviz-topics/holodoodler): Python application that allows interactive construction of sparse labeling for image segmentation using deep neural networks
     * more ...
 
 #### Teams
@@ -223,7 +229,7 @@ The `pyviz-topics` organization has one team:
 The core packages have their repository that, except in a few cases, all share the same structure:
 
 * The tests are nested under the package directory, e.g., at `panel/tests`. The tests are then automatically bundled in the source distribution, which makes it a little easier for repackagers to run the tests.
-* The `examples` and the `doc` folder share the same structure, e.g. you will find `panel/doc/user_guide`  and `panel/examples/user_guide`. The `examples` folder contains Jupyter Notebooks, while the `doc` folder usually contains *reStructuredText* and *Markdown* files. Check out the [documentation]() section to : TODO: pyct?
+* The `examples` and the `doc` folder share the same structure, e.g. you will find `panel/doc/user_guide`  and `panel/examples/user_guide`. The `examples` folder contains Jupyter Notebooks, while the `doc` folder usually contains *reStructuredText* and *Markdown* files. The HoloViz packages generally have `pyct` as a build dependency, which can be used to add an `examples` command to a project (e.g. `panel examples`) to make it easier for users to download the project notebooks. The `examples` folder is bundled within the package source, so users running `panel examples` get the notebooks copied from the package to a local directory. The `doc` folder isn't bundled within the package source.
 * The `.github` directory contains GitHub specific configuration files, e.g., for GitHub Actions.
 * Optional: the `conda.recipe` directory contains a conda recipe template used by the building tooling when creating a conda package.
 * Optional: the `binder` directory contains configuration files to setup [binder](https://mybinder.org/)
@@ -297,7 +303,7 @@ After these steps, you should find a `builtdocs` folder in the repository that c
 
 The documentation is currently written in a mix of three file formats:
 
-* *Jupyter Notebooks* (.ipynb): Notebooks are saved in the `examples` folder and are meant to be executed when the documentation is built, which means that the system that builds the documentation must have all the dependencies and data required to run them. Notebooks **must be cleared before being committed** to a repository. TODO: Share somewhere the `jq` command to clear the notebooks. Thanks to [MyST-NB](https://myst-nb.readthedocs.io/en/latest/), on which `nbsite` depends, *MyST Markdown* is correctly handled in notebooks.
+* *Jupyter Notebooks* (.ipynb): Notebooks are saved in the `examples` folder and are meant to be executed when the documentation is built, which means that the system that builds the documentation must have all the dependencies and data required to run them. Notebooks **must be cleared before being committed** to a repository. The team uses a [custom shell script](https://gist.github.com/maximlt/a9fa4d19ae5bff83422194ca99533faa) that leverages `jq` to strip out some data and metadata from the notebook JSON file. Thanks to [MyST-NB](https://myst-nb.readthedocs.io/en/latest/), on which `nbsite` depends, *MyST Markdown* is correctly handled in notebooks.
 * *reStructuredText* (.rst): Original file format supported by Sphinx and in which the Python documentation is written. They should be gradually replaced by *MyST Markdown* files.
 * *Markdown* (.md):  [MyST Markdown](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#syntax-core) is a Markdown extension focused on scientific and technical documentation authoring. It is easier to write and read compared to *reStructuredText*, which should be favored.
 
@@ -307,7 +313,7 @@ The HoloViz sites rely on the [PyData Sphinx Theme](https://pydata-sphinx-theme.
 
 #### Analytics
 
-Currently, none of the websites gather any analytics via *Google Analytics*. This used to be the case but was reverted because of the GDPR rules (TODO really?).
+Currently, most of the websites gather analytics via *Google Analytics*.
 
 #### Hosts
 
@@ -329,7 +335,7 @@ Scheduled Github actions have been set up to run on Sundays on most of the packa
 
 #### Lumen AE5 Monitor
 
-The [Lumen AE5 Monitor](https://monitor.pyviz.demo.anaconda.com/dashboard) is a dashboard that helps monitor TODO: what?
+The [Lumen AE5 Monitor](https://monitor.pyviz.demo.anaconda.com/dashboard) is a dashboard that helps monitor the state and performance of the deployments.
 
 #### Deployments
 
@@ -344,13 +350,25 @@ All the HoloViz websites are static websites. Yet many of their pages would actu
 It is sometimes convenient to have a place where to store data. This happens when the data is too large to be stored on a GitHub repository (storing data there isn't recommended anyway), which is pretty standard when creating a tutorial that relies on an actual data set. The HoloViz group makes use of the following AWS S3 buckets:
 
 * datashader-data
-* TODO: others?
+* TODO
 
-TODO: Who manages that?
+These buckets are managed by @jlstevens and @philippjfr.
 
 #### Domain names
 
-TODO: e.g., why is there datashader/holoviews/geoviews.org vs. hvplot/panel/lumen/param/colorcet.holoviz.org? Who takes care of that?
+Some of the sites have their own domain name:
+
+* datashader.org
+* holoviews.org
+* geoviews.org
+
+While others are available as subdomains of holoviz.org:
+
+* hvplot.holoviz.org
+* panel.holoviz.org
+* lumen.holoviz.org
+* param.holoviz.org
+* colorcet.holoviz.org
 
 ### Testing
 
@@ -430,6 +448,12 @@ Development releases can have different goals. Sometimes they are only meant to 
 1. Once the last development release has been confirmed to be in good shape, by yourself and preferably by others too (in particular, when it comes to spot-checking the website, it is best to have more than one pair of eyes looking into that!), you are ready to make the final release. You will have to bump the version again to its final number (e.g., to `v1.9.6`). Note that you may need to make another development release before the final one if you've made changes after the latest development version that are worth mentioning in the changelog.
 1. Optionally again, and to ensure the release went well, you could install the package you've released (e.g. `conda install -c pyviz panel`) and check there's no embarrassing issue.
 1. Create a Github Release. It should contain the same changelog as the one published on the website (the formatting can change).
+    * Go to the Github repository
+    * Click *Releases*
+    * Click *Tags*
+    * Click the most recent tag that you just added 
+    * Click *Create a new release*
+    * Add release notes and publish the release 
 1. Find the *conda-forge* recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you're not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.
 1. Announce the release (e.g., on Discourse, Gitter, Twitter).
 1. If the release is important (e.g., not a bug fix release), it may be worth a blog post.
@@ -456,20 +480,19 @@ If you push a tag by mistake or the wrong tag and are lucky enough to spot that 
 
 #### Users
 
-**HoloViz Users** are meant to ask their questions on the [HoloViz Discourse forum](https://discourse.holoviz.org/). This Discourse instance is managed by TODO (Philipp?).
+**HoloViz Users** are meant to ask their questions on the [HoloViz Discourse forum](https://discourse.holoviz.org/). This Discourse instance is managed by @philippjfr.
 
 #### Contributors
 
 **HoloViz Contributors** chat on multiple open channels:
 
 * Directly on Github via issues and pull requests
-* On the [PyViz Gitter](https://gitter.im/pyviz/pyviz), which is meant for brainstorming and casual chatting. An example of a discussion on Gitter would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue. This Gitter instance is managed by TODO
+* On the [PyViz Gitter](https://gitter.im/pyviz/pyviz), which is meant for brainstorming and casual chatting. An example of a discussion on Gitter would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue.
 
 **HoloViz Contributors** also have regular online meetings. These meetings are **open to anyone**:
 
-* The *HoloViz triaging meeting* takes place every Monday at TODO. Triaging consists of going through the latest opened issues and pull requests, understanding them (e.g., that may require locally reproducing a bug), replying if not already done, optionally adding a Github label (e.g. `bugs`) and finally, but most importantly to assign issues to milestones to prepare for the next releases. You can join the meeting on [Google Meet](meet.google.com/izv-ibmj-cjp) and read the notes on [HackMD](https://hackmd.io/@holoviz/minutes/edit).
-* The *HoloViz meeting* takes place every second Friday at TODO. It is a place for coordinating across the HoloViz projects. You can read the notes on [HackMD](https://hackmd.io/@holoviz/minutes/edit). TODO: Right now, they're on Zoom. Can anyone join?
-
+* The *HoloViz triaging meeting* takes place every Monday at 5 pm (GMT+2). Triaging consists of going through the latest opened issues and pull requests, understanding them (e.g., that may require locally reproducing a bug), replying if not already done, optionally adding a Github label (e.g. `bugs`) and finally, but most importantly to assign issues to milestones to prepare for the next releases. You can join the meeting on [Google Meet](meet.google.com/izv-ibmj-cjp) and read the notes on [HackMD](https://hackmd.io/@holoviz/minutes).
+* The *HoloViz meeting* takes place every second Friday at 8 am (GMT-8). It is a place for coordinating across the HoloViz projects. You can read the notes on [HackMD](https://hackmd.io/@holoviz/minutes/edit).
 
 #### Outreach
 
@@ -487,7 +510,3 @@ There are four more or less active Twitter accounts:
 * [@Panel_org](https://twitter.com/panel_org)
 * [@Datashader](https://twitter.com/datashader)
 * [@HoloViews](https://twitter.com/HoloViews)
-
-### Duties matrix
-
-The HoloViz project has assigned duties to its members...TODO
