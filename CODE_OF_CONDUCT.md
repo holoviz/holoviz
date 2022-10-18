@@ -56,7 +56,7 @@ Examples of representing our community include using an official e-mail address,
 posting via an official social media account, or acting as an appointed
 representative at an online or offline event.
 
-## Enforcement
+## Reporting
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the HoloViz Code of Conduct committee at
@@ -65,7 +65,21 @@ reported to the HoloViz Code of Conduct committee at
 * Marc Skov Madsen [@MarcSkovMadsen](https://github.com/MarcSkovMadsen)
 * Philipp Rudiger [@philippjfr](https://github.com/philippjfr)
 
-If your complaint involves anyone who is on this list, please reach out separately to one or more members of the list who have not been involved in the behavior in question. All complaints will be reviewed and investigated promptly and fairly. All Code of Conduct committee members are obligated to respect the privacy and security of the reporter of any incident. Further details of committee membership policies may be posted separately. 
+If your complaint involves anyone who is on this list, please reach out separately to one or more members of the list who have not been involved in the behavior in question. If a report involves a member of the listed committee, that member will not participate in the investigation or any decisions related to that report.
+
+If you choose to email instead of using the form, please include the following information:
+
+* Your contact info (not required, if you would like to remain anonymous please use the form)
+* Names (real, nicknames, or pseudonyms) of any individuals involved. If there were other witnesses besides you, try to include them as well
+* When and where the incident occurred. Please be as specific as possible.
+* Your account of what occurred. If there is a publicly available record (e.g. a mailing list archive or GitHub/gitter.im) please include a link
+* Any extra context you believe exists for the incident
+* If you believe this incident is ongoing
+* Any other information you believe we should have
+
+*Note*: with anonymous reports, there are inherent limits in our ability to do follow-up or collect additional information. Hence we suggest that if you would like to remain anonymous, you can also create a throw-away email address without your real name.
+
+All complaints will be reviewed and investigated promptly and fairly. All Code of Conduct committee members are obligated to respect the privacy and security of the reporter of any incident. Further details of committee membership policies may be posted separately. 
 
 ## Enforcement Guidelines
 
@@ -115,7 +129,8 @@ community.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 2.1, available at
-[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)
+version 2.1.
+
+Sections of this text also benefitted from [Django](https://www.djangoproject.com/conduct/reporting/) and [Jupyter](https://jupyter.org/governance/conduct/reporting_online.html) reporting guidelines. 
 
