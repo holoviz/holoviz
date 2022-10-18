@@ -60,12 +60,12 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the HoloViz Code of Conduct committee at
-[TODO: conduct@holoviz.org???](mailto:), or by filling out [TODO: this form]() which can be submitted anonymously. Currently, the committee consists of:
+[coc@holoviz.org](mailto:coc@holoviz.org), or by filling out [TODO: this form]() which can be submitted anonymously. Currently, the committee consists of:
 * James Bednar [@jbednar](https://github.com/jbednar)
-* TODO: ???
+* Marc Skov Madsen [@MarcSkovMadsen](https://github.com/MarcSkovMadsen)
+* Philipp Rudiger [@philippjfr](https://github.com/philippjfr)
 
-All complaints will be reviewed and investigated promptly and fairly.
-All Code of Conduct committee members are obligated to respect the privacy and security of the reporter of any incident. Further details of committee membership policies may be posted separately.
+If your complaint involves anyone who is on this list, please reach out separately to one or more members of the list who have not been involved in the behavior in question. All complaints will be reviewed and investigated promptly and fairly. All Code of Conduct committee members are obligated to respect the privacy and security of the reporter of any incident. Further details of committee membership policies may be posted separately. 
 
 ## Enforcement Guidelines
 
