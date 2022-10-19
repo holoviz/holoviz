@@ -69,15 +69,15 @@ If your complaint involves anyone who is on this list, please reach out separate
 
 If you choose to email instead of using the form, please include the following information:
 
-* Your contact info (not required, if you would like to remain anonymous please use the form)
+* Your contact info (if you would like us to be able to follow up or collect additional information)
 * Names (real, nicknames, or pseudonyms) of any individuals involved. If there were other witnesses besides you, try to include them as well
 * When and where the incident occurred. Please be as specific as possible.
 * Your account of what occurred. If there is a publicly available record (e.g. a mailing list archive or GitHub/gitter.im) please include a link
-* Any extra context you believe exists for the incident
+* Any extra context you believe is relevant for the incident
 * If you believe this incident is ongoing
 * Any other information you believe we should have
 
-*Note*: with anonymous reports, there are inherent limits in our ability to do follow-up or collect additional information. Hence we suggest that if you would like to remain anonymous, you can also create a throw-away email address without your real name.
+*Note*: with anonymous reports, there are inherent limits in our ability to do follow-up or collect additional information. If you are uncomfortable sharing your identity, consider creating a throw-away email address without your real name so that we will be able to reach you.
 
 All complaints will be reviewed and investigated promptly and fairly. All Code of Conduct committee members are obligated to respect the privacy and security of the reporter of any incident. Further details of committee membership policies may be posted separately. 
 
