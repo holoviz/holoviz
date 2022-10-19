@@ -51,10 +51,9 @@ decisions when appropriate.
 ## Scope
 
 This Code of Conduct applies within all community spaces, and also applies when
-an individual is officially representing the community in public spaces.
-Examples of representing our community include using an official e-mail address,
-posting via an official social media account, or acting as an appointed
-representative at an online or offline event.
+an individual is representing the community in public spaces.
+
+Our community consists of contributors in their efforts related to the development and distribution of any materials for the HoloViz organization. The projects in this community include the repositories in the [HoloViz GitHub organization](https://github.com/holoviz), such as Param, HoloViews, hvPlot, Panel, GeoViews, Lumen, Datashader, and Colorcet. Other efforts, whether online or in-person, undertaken by this community and coordinated through [HoloViz communication channels](https://holoviz.org/community.html) are also covered under this Code of Conduct. This code applies equally to founders, developers, mentors and new community members, in all spaces managed by HoloViz. In addition, violations of this code outside these spaces may affect a person’s ability to participate within them.
 
 ## Reporting
 
