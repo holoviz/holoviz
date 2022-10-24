@@ -33,10 +33,10 @@ jobs:
         # See https://github.com/holoviz/holoviz/issues/309
         if: contains(matrix.os, 'windows')
         uses: al-cheb/configure-pagefile-action@v1.2
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - uses: conda-incubator/setup-miniconda@v2
