@@ -7,6 +7,7 @@ HoloViz Tutorial
 
 .. toctree::
     :titlesonly:
+    :hidden:
     :maxdepth: 2
 
     Setup <Setup>
