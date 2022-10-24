@@ -40,6 +40,8 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
+          mamba-version: "*"
+          channels: pyviz/label/dev,conda-forge,nodefaults
       - name: Fetch unshallow
         run: git fetch --prune --tags --unshallow -f
       - name: Set output
@@ -47,8 +49,10 @@ jobs:
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: conda setup
         run: |
-          conda update -n base -c defaults conda
-          conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 
+          conda update -n base conda
+          conda install -n base conda-libmamba-solver
+          conda config --set experimental_solver libmamba
+          conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9
       - name: doit develop_install
         run: |
           eval "$(conda shell.bash hook)"
