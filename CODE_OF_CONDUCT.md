@@ -53,7 +53,7 @@ decisions when appropriate.
 This Code of Conduct applies within all community spaces, and also applies when
 an individual is representing the community in public spaces.
 
-Our community consists of contributors in their efforts related to the development and distribution of any materials for the HoloViz organization. The projects in this community include the repositories in the [HoloViz GitHub organization](https://github.com/holoviz), such as Param, HoloViews, hvPlot, Panel, GeoViews, Lumen, Datashader, and Colorcet. Other efforts, whether online or in-person, undertaken by this community and coordinated through [HoloViz communication channels](https://holoviz.org/community.html) are also covered under this Code of Conduct. This code applies equally to founders, developers, mentors and new community members, in all spaces managed by HoloViz. In addition, violations of this code outside these spaces may affect a person’s ability to participate within them.
+Our community consists of contributors in their efforts related to the development and distribution of any materials for the HoloViz organization. The projects in this community include the repositories in the [HoloViz GitHub organization](https://github.com/holoviz), such as Colorcet, Datashader, GeoViews, HoloViews, hvPlot, Lumen, Panel, Param. Other efforts, whether online or in-person, undertaken by this community and coordinated through [HoloViz communication channels](https://holoviz.org/community.html) are also covered under this Code of Conduct. This code applies equally to founders, developers, mentors and new community members, in all spaces managed by HoloViz. In addition, violations of this code outside these spaces may affect a person’s ability to participate within them.
 
 ## Reporting
 
@@ -70,7 +70,7 @@ If you choose to email instead of using the form, please include the following i
 
 * Your contact info (if you would like us to be able to follow up or collect additional information)
 * Names (real, nicknames, or pseudonyms) of any individuals involved. If there were other witnesses besides you, try to include them as well
-* When and where the incident occurred. Please be as specific as possible.
+* When and where the incident occurred (please be as specific as possible)
 * Your account of what occurred. If there is a publicly available record (e.g. a mailing list archive or GitHub/gitter.im) please include a link
 * Any extra context you believe is relevant for the incident
 * If you believe this incident is ongoing
