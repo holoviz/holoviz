@@ -1,1 +1,1 @@
-See [LICENSE.txt](../../../LICENSE.txt)
+See LICENSE.txt in the HoloViz repository
