@@ -64,5 +64,4 @@ The current CoCC members are listed in the [CODE_OF_CONDUCT.md](./CODE-OF-CONDUC
 The CoCC will strive for all decisions to be made by consensus. If consensus cannot be reached, the CoCC will make the decision by a vote. In order to take action, a simple majority of eligible CoCC members must vote (eligible members do not include those excluded because of conflicts of interest) and a simple majority of the votes cast need to be affirmative.
 
 ---
-Part of MVG-0.1-beta.
-Made with love by GitHub. Licensed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
+This document is based on GitHub MVG-0.1-beta, which is Licensed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
