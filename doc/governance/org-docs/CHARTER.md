@@ -16,7 +16,7 @@ The mission of the Organization is to develop open-source solutions for a wide r
 
 **3.1. Decision Making**. The Steering Committee will strive for all decisions to be made by consensus. While explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Steering Committee and nature of support and objections. The Steering Committee will document evidence of consensus in accordance with these requirements. If consensus cannot be reached, the Steering Committee will make the decision by a vote.
 
-**3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this Charter, decisions by vote require a simple majority vote of all voting members.
+**3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this Charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
 
 ## 4. Termination of Membership
 
@@ -24,7 +24,7 @@ In addition to the method set out in section 2.2, the membership of a Steering C
 
 **4.1 Resignation**. Written notice of resignation to the Steering Committee.
 
-**4.2 Unreachable Member**. If a member is unresponsive at its listed handle for more than three months the Steering Committee may vote to remove the member. In such a case, the vote will be by simple majority of the 
+**4.2 Unreachable Member**. If a member is unresponsive at its listed handle for more than three months the Steering Committee may vote to remove the member. The vote will be by simple majority of the reachable and vote-participating committee members.
 
 **4.3 Steering Committee Chair term**. Unless removed, Steering Committee Chair may be for life, as long as they adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md). The Chair may step down by issuing their resignation at any time.
 
@@ -59,7 +59,7 @@ Amendments to this charter, the [antitrust policy](./ANTITRUST.md), the [tradema
 ## 10. Code of Conduct Committee
 The Code of Conduct Committee (CoCC) will be responsible for enforcing and updating the [code of conduct](./CODE-OF-CONDUCT.md).
 
-The current CoCC members are listed in the [CODE_OF_CONDUCT.md](./CODE-OF-CONDUCT.md) file in the repository. Unless removed, CoCC members may serve for life, as long as they adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md). Voting members may be added or removed by a simple majority of the their fellow CoCC members. CoCC members are expected to recuse themselves if they have a conflict of interest, and are required to recuse themselves if they are the accused or the target of the reported behavior. CoCC members may also resign at any time. There must be at least three individuals serving on the CoCC at any time, but there is no upper limit on the number of CoCC members. If a member is unresponsive at their listed handle for more than three months the CoCC may vote to remove the member.
+The current CoCC members are listed in the [CODE_OF_CONDUCT.md](./CODE-OF-CONDUCT.md) file in the repository. Unless removed, CoCC members may serve for life, as long as they adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md). Voting members may be added or removed by a simple majority of the their fellow reachable and vote-participating CoCC members. CoCC members are expected to recuse themselves if they have a conflict of interest, and are required to recuse themselves if they are the accused or the target of the reported behavior. CoCC members may also resign at any time. There must be at least three individuals serving on the CoCC at any time, but there is no upper limit on the number of CoCC members. If a member is unresponsive at their listed handle for more than three months the CoCC may vote to remove the member.
 
 The CoCC will strive for all decisions to be made by consensus. If consensus cannot be reached, the CoCC will make the decision by a vote. In order to take action, a simple majority of eligible CoCC members must vote (eligible members do not include those excluded because of conflicts of interest) and a simple majority of the votes cast need to be affirmative.
 
