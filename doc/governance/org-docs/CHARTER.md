@@ -1,12 +1,15 @@
 # Charter for the HoloViz Organization
 
-This is the organizational charter for the HoloViz Organization (the "Organization"). By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree as follows.
+This is the organizational charter for the HoloViz Organization. The HoloViz Organization is an open-source and collaborative effort with a mission to develop solutions for a wide range of visualization problems in Python.
 
-## 1. Mission
-
-The mission of the Organization is to develop open-source solutions for a wide range of visualization problems in Python.
+## 1. Terminology
+- "HoloViz Organization" or "Organization": The entire HoloViz ecosystem of Contributors and Projects
+- "HoloViz GitHub Organization": The Github organization at https://github.com/holoviz
+- "HoloViz" repo: The specific repository at https://github.com/holoviz/holoviz
+- "HoloViz.org": The website at https://holoviz.org/
 
 ## 2. Organization Steering Committee
+By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree to the policies in this document.
 
 **2.1 Purpose**. The Steering Committee will be responsible for all technical oversight, project approval and oversight, policy oversight, and trademark management for the Organization.
 
