@@ -16,7 +16,7 @@ This project may include the following roles. Additional roles may be adopted an
 
 **1.4 Release Manager**. The Release Manager is a Maintainer with the temporary position of managing, curating milestones, and publishing a specific release. Unless otherwise delegated, the Release Manager prepares release notes and writes the blog post for the release, if needed. Due to the temporary and revolving nature of this role, it does not need to be specified in [MEMBERS.md](MEMBERS.md). Lead Maintainer or Project Owner may request a Maintainer to be Release Manager, or a Maintainer may volunteer for the role.
 
-**1.5 Contributors**. Contributors are those that have made contributions to the Project. This typically includes anyone who contributes a pull-request to the project. Contributors may not vote along with Maintainers, but can submit their input on a given topic to be considered during a consensus forming process.
+**1.5 Contributors**. Contributors are those that have made contributions to the Project. Contributors can participate in the project by submitting, reviewing, and discussing GitHub Pull Requests and Issues and participating in open and public HoloViz Organization discussions on GitHub, Discourse, Slack, Gitter, Twitter, StackOverflow, or other communication channels. Contributors may also participate in live events. Contributors may not vote along with Maintainers, but can submit their input on a given topic to be considered during a consensus forming process. Anyone can be a Contributor - they can be affiliated with a legal entity or none.
 
 ## 2. Decisions.
 
