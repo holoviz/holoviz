@@ -3,7 +3,8 @@
 This is the organizational charter for the HoloViz Organization. The HoloViz Organization is an open-source and collaborative effort with a mission to develop solutions for a wide range of visualization problems in Python.
 
 ## 1. Terminology
-- "HoloViz Organization" or "Organization": The entire HoloViz ecosystem of Contributors and Projects
+- "HoloViz" or "HoloViz Community" or "Community": The entire HoloViz ecosystem of Users, Contributors, and Projects
+- "HoloViz Organization" or "Organization": The voting members of HoloViz Committees and Projects
 - "HoloViz GitHub Organization": The Github organization at https://github.com/holoviz
 - "HoloViz" repo: The specific repository at https://github.com/holoviz/holoviz
 - "HoloViz.org": The website at https://holoviz.org/

@@ -6,7 +6,7 @@ This document provides the governance policy for the Project. Members agree to t
 
 ## 1. Project Member Roles.
 
-This project may include the following roles. Additional roles may be adopted and documented by the Project. All member role terms may be for life, as long as the members adhere to the Organization's policies.
+This project may include the following roles. Additional roles may be adopted and documented by the Project. All member role terms may be indefinite, as long as the members adhere to the Organization's policies.
 
 **1.1 Maintainer**. Maintainers are responsible for organizing activities around developing, maintaining, and updating the Project. Maintainers are also responsible for determining consensus. Maintainers are contributors that have an ongoing relationship to a project, and typically have GitHub merge permissions. Maintainers may be involved in different aspects of the Project, such as the code or the documentation. This Project may add or remove Maintainers with the approval (or simple majority vote if consensus is not reached) of the current Maintainers. When submitting substantial pull-requests, Maintainers should seek code review by another Maintainer. Maintainers may review and merge (or reject) pull-requests from Contributors, and seek Maintainers' consensus when appropriate. If a Maintainer is unresponsive at their listed handle for more than three months, the Maintainers may vote to remove the member.
 
