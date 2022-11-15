@@ -26,6 +26,7 @@ This project may include the following roles. Additional roles may be adopted an
 
 **2.3. Appeal Process**. Decisions may be appealed by opening an issue and that appeal will be considered by the Maintainers in good faith, who will respond in writing within a reasonable time. If the Maintainers deny the appeal, the appeal may be brought before the Organization Steering Committee, who will also respond in writing in a reasonable time.
 
+**2.4 Quorum**. Unless otherwise stated, a quorum for a vote can be met with at least 50% of active members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.
 ## 3. How We Work.
 
 **3.1. Openness**. Participation is open to anyone who is directly and materially affected by the activity in question. There shall be no undue financial barriers to participation.

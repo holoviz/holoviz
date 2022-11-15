@@ -21,6 +21,8 @@ By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md
 
 **3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this Charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
 
+**3.3 Quorum**. Unless otherwise stated, a quorum for a vote can be met with at least 50% of active members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.
+
 ## 4. Termination of Membership
 
 In addition to the method set out in section 2.2, the membership of a Steering Committee member will terminate if any of the following occur:
