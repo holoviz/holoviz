@@ -5,7 +5,10 @@ maintainers:
 - holoviz
 
 user_fields: [maintainers]
-channels: [pyviz/label/dev,conda-forge,defaults]
+channels:
+  - pyviz/label/dev
+  - conda-forge
+  - defaults
 
 packages: &pkgs
 - python=3.9
@@ -62,6 +65,7 @@ env_specs:
     packages: &docpkgs
       - nbsite >=0.7.2rc10
       - pydata-sphinx-theme <0.9.0
+      - docutils ==0.16.0
     dependencies: *docpkgs
 
 platforms:
