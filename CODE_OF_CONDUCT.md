@@ -59,7 +59,7 @@ Our community consists of contributors in their efforts related to the developme
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the HoloViz Code of Conduct committee at
-[coc@holoviz.org](mailto:coc@holoviz.org), or by filling out [TODO: this form]() which can be submitted anonymously. Currently, the committee consists of:
+[holoviz.conduct@gmail.com](mailto:holoviz.conduct@gmail.com), or by filling out [TODO: this form]() which can be submitted anonymously. Currently, the committee consists of:
 * James Bednar [@jbednar](https://github.com/jbednar)
 * Marc Skov Madsen [@MarcSkovMadsen](https://github.com/MarcSkovMadsen)
 * Philipp Rudiger [@philippjfr](https://github.com/philippjfr)
