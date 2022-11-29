@@ -3,10 +3,11 @@
 This is the organizational charter for the HoloViz Organization. The HoloViz Organization is an open-source and collaborative effort with a mission to develop solutions for a wide range of visualization problems in Python.
 
 ## 1. Terminology
-- "HoloViz" or "HoloViz Community" or "Community": The entire HoloViz ecosystem of Users, Contributors, and Projects
+- "HoloViz" or "HoloViz Community" or "Community": The entire HoloViz ecosystem of Users, Contributors, Projects, and communication channels
 - "HoloViz Organization" or "Organization": The voting members of HoloViz Committees and Projects
 - "HoloViz GitHub Organization": The Github organization at https://github.com/holoviz
-- "HoloViz" repo: The specific repository at https://github.com/holoviz/holoviz
+- "HoloViz Projects" or "Projects" or "Organization Projects": Repositories in the HoloViz GitHub Organization and their voting members
+- "HoloViz repo": The specific repository at https://github.com/holoviz/holoviz
 - "HoloViz.org": The website at https://holoviz.org/
 
 ## 2. Organization Steering Committee
@@ -20,7 +21,7 @@ By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md
 
 **3.1. Decision Making**. The Steering Committee will strive for all decisions to be made by consensus. While explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Steering Committee and nature of support and objections. The Steering Committee will document evidence of consensus in accordance with these requirements. If consensus cannot be reached, the Steering Committee will make the decision by a vote.
 
-**3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this Charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
+**3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
 
 **3.3 Quorum**. Unless otherwise stated, a quorum for a vote can be met with at least 50% of active members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.
 
