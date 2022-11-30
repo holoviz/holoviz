@@ -25,7 +25,7 @@ When you redistribute an unmodified copy of our software, you are not changing t
 
 ## Distribution of executable code that you have compiled, or modified code
 
-You may use any word marks, but not any Organization logos, to truthfully describe the origin of the software that you are providing, that is, that the code you are distributing is a modification of our software. You may say, for example, that "this software is derived from the source code for 'Mark' software."
+You may use any word Marks, but not any Organization logos, to truthfully describe the origin of the software that you are providing, that is, that the code you are distributing is a modification of our software. You may say, for example, that "this software is derived from the source code for 'Mark' software."
 
 Of course, you can place your own trademarks or logos on versions of the software to which you have made substantive modifications, because by modifying the software, you have become the origin of that exact version. In that case, you should not use our Marks.
 
