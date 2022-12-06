@@ -123,3 +123,5 @@ examples/output/
 holoviz/examples/
 jupyter_execute/
 .version
+
+.vscode
