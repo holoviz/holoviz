@@ -15,13 +15,13 @@ By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md
 
 **2.1 Purpose**. The Steering Committee will be responsible for all technical oversight, project approval and oversight, policy oversight, and trademark management for the Organization.
 
-**2.2 Composition**. The Steering Committee voting members are listed in the steering-committee.md file in the repository. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. The Steering Committee will appoint a Chair responsible for organizing Steering Committee activity. There is no upper limit on the number of Steering Committee members.
+**2.2 Composition**. The Steering Committee voting members are listed in the steering-committee.md file in the repository. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. There may be no less than 3 active members of the Steering Committee. If the membership count decreases to 2, all Steering Committee activity is halted, except for the election of a new member. If there are either 0 or 1 Steering Committee members, all Steering Committee activity is halted until the HoloViz Project Leads elect at least 3 total Steering Committee members in a special election that follows the 3/4 affirmative vote policy.
 
 ## 3. Voting
 
 **3.1. Decision Making**. The Steering Committee will strive for all decisions to be made by consensus. While explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Steering Committee and nature of support and objections. The Steering Committee will document evidence of consensus in accordance with these requirements. If consensus cannot be reached, the Steering Committee will make the decision by a vote.
 
-**3.2. Voting**. The Steering Committee Chair will call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
+**3.2. Voting**. Any member of the Steering Committee may call a vote with reasonable notice to the Steering Committee, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.
 
 **3.3 Quorum**. Unless otherwise stated, a quorum for a vote can be met with at least 50% of active members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.
 
@@ -32,8 +32,6 @@ In addition to the method set out in section 2.2, the membership of a Steering C
 **4.1 Resignation**. Written notice of resignation to the Steering Committee.
 
 **4.2 Unreachable Member**. If a member is unresponsive at its listed handle for more than three months the Steering Committee may vote to remove the member. The vote will be by simple majority of the reachable and vote-participating committee members.
-
-**4.3 Steering Committee Chair term**. Unless removed, Steering Committee Chair may be for life, as long as they adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md). The Chair may step down by issuing their resignation at any time.
 
 ## 5. Trademarks
 
