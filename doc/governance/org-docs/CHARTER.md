@@ -13,7 +13,16 @@ This is the organizational charter for the HoloViz Organization. The HoloViz Org
 ## 2. Organization Steering Committee
 By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree to the policies in this document.
 
-**2.1 Purpose**. The Steering Committee will be responsible for all technical oversight, project approval and oversight, policy oversight, and trademark management for the Organization.
+**2.1 Purpose**. The Steering Committee will be responsible for:
+- Admitting or removing Projects from the Organization
+- Appointing or removing members from the Steering Committee
+- Setting the overall scope, vision, policy, and direction of the Organization
+- Handling strategic collaborations with other organizations or individuals
+- Making financial decisions and setting funding strategies
+- Managing trademarks and other legal matters for the Organization
+- Making technical decisions whose implementation or impact spans across HoloViz Projects
+
+The Steering Committee is *not* responsible for software and other technical decisions that relate to individual projects.
 
 **2.2 Composition**. The Steering Committee voting members are listed in the steering-committee.md file in the repository. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. There may be no less than 3 active members of the Steering Committee. If the membership count decreases to 2, all Steering Committee activity is halted, except for the election of a new member. If there are either 0 or 1 Steering Committee members, all Steering Committee activity is halted until the HoloViz Project Leads elect at least 3 total Steering Committee members in a special election that follows the 3/4 affirmative vote policy.
 
