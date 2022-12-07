@@ -4,8 +4,8 @@ This document lists the Members of the Project. Members may be added once approv
 
 | **NAME** | **Role** | **Organization** |
 | --- | --- | --- |
-| [James Bednar](https://github.com/jbednar) | Project Lead| |
-| [Demetris Roumis](https://github.com/droumis) | Maintainer| |
+| [James Bednar](https://github.com/jbednar) | Project Lead | |
+| [Demetris Roumis](https://github.com/droumis) | Maintainer | |
 
 ---
 This document is based on GitHub MVG-0.1-beta, which is Licensed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
