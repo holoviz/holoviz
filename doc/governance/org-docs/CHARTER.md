@@ -3,17 +3,20 @@
 This is the organizational charter for the HoloViz Organization. The HoloViz Organization is an open-source and collaborative effort with a mission to develop solutions for a wide range of visualization problems in Python.
 
 ## 1. Terminology
+
 - "HoloViz" or "HoloViz Community" or "Community": The entire HoloViz ecosystem of Users, Contributors, Projects, and communication channels
 - "HoloViz Organization" or "Organization": The voting members of HoloViz Committees and Projects
-- "HoloViz GitHub Organization": The Github organization at https://github.com/holoviz
+- "HoloViz GitHub Organization": The Github organization at <https://github.com/holoviz>
 - "HoloViz Projects" or "Projects" or "Organization Projects": Repositories in the HoloViz GitHub Organization and their voting members
-- "HoloViz repo" or "HoloViz repository": The specific repository at https://github.com/holoviz/holoviz
-- "HoloViz.org": The website at https://holoviz.org/
+- "HoloViz repo" or "HoloViz repository": The specific repository at <https://github.com/holoviz/holoviz>
+- "HoloViz.org": The website at <https://holoviz.org/>
 
 ## 2. Organization Steering Committee
+
 By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md), Steering Committee members agree to the policies in this document.
 
 **2.1 Purpose**. The Steering Committee will be responsible for:
+
 - Admitting or removing Projects from the Organization
 - Appointing or removing members from the Steering Committee
 - Setting the overall scope, vision, policy, and direction of the Organization
@@ -60,19 +63,20 @@ Information disclosed in connection with any of the Organization's activities, i
 
 In order to be eligible to be an Organization project, a project must:
 
-* Be approved by the Steering Committee.
-* Agree to follow the guidance and direction of the Steering Committee.
-* Use only the following outbound licenses or agreements unless otherwise approved:
+- Be approved by the Steering Committee.
+- Agree to follow the guidance and direction of the Steering Committee.
+- Use only the following outbound licenses or agreements unless otherwise approved:
   - For code, a license on the Open Source Initiative's list of [Popular Licenses](https://opensource.org/licenses).
   - For data, a license on the Open Knowledge Foundation's list of [Recommended Conformant Licenses](http://opendefinition.org/licenses/).
   - For specifications, a community developed and maintained specification agreement, such the [Open Web Foundation Agreements](https://www.openwebfoundation.org/the-agreements) or [Community Specification Agreement](https://github.com/CommunitySpecification/1.0).
-* Include and adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md).
+- Include and adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md).
 
 ## 9. Amendments
 
 Amendments to this charter, the [antitrust policy](./ANTITRUST.md), the [trademark policy](./TRADEMARKS.md), or the [code of conduct](./CODE-OF-CONDUCT.md) may only be made with at least a 3/4 affirmative vote of the Steering Committee.
 
 ## 10. Code of Conduct Committee
+
 The Code of Conduct Committee (CoCC) will be responsible for enforcing and updating the [code of conduct](./CODE-OF-CONDUCT.md).
 
 The current CoCC members are listed in the [CODE_OF_CONDUCT.md](./CODE-OF-CONDUCT.md) file in the repository. Unless removed, CoCC members may serve for life, as long as they adhere to the Organization's policies, including the [trademark policy](./TRADEMARKS.md), the [antitrust policy](./ANTITRUST.md), and the [code of conduct](./CODE-OF-CONDUCT.md). Voting members may be added or removed by a simple majority of the their fellow reachable and vote-participating CoCC members. CoCC members are expected to recuse themselves if they have a conflict of interest, and are required to recuse themselves if they are the accused or the target of the reported behavior. CoCC members may also resign at any time. There must be at least three individuals serving on the CoCC at any time, but there is no upper limit on the number of CoCC members. If a member is unresponsive at their listed handle for more than three months the CoCC may vote to remove the member.
@@ -80,6 +84,7 @@ The current CoCC members are listed in the [CODE_OF_CONDUCT.md](./CODE-OF-CONDUC
 The CoCC will strive for all decisions to be made by consensus. If consensus cannot be reached, the CoCC will make the decision by a vote. In order to take action, a simple majority of eligible CoCC members must vote (eligible members do not include those excluded because of conflicts of interest) and a simple majority of the votes cast need to be affirmative.
 
 ## 11. Infrastructure and Account Access
+
 Upon request, all infrastructure access and associated accounts that are common to multiple HoloViz Projects must be made accessible to any member of the Steering Committee. However, one committee member may be delegated to monitor and maintain individual aspects or accounts.
 
 ---

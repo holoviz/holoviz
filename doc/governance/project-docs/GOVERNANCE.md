@@ -4,7 +4,7 @@ The "Project" is herein defined as the activities related to this specific GitHu
 
 This document provides the governance policy for the Project. Members agree to this policy and to abide by all Project polices, including the [code of conduct](../org-docs/CODE-OF-CONDUCT.md), [trademark policy](../org-docs/TRADEMARKS.md), and [antitrust policy](../org-docs/ANTITRUST.md) by adding their name to the [MEMBERS.md file](./MEMBERS.md).
 
-## 1. Project Member Roles.
+## 1. Project Member Roles
 
 This project may include the following roles. Additional roles may be adopted and documented by the Project. All member role terms may be indefinite, as long as the members adhere to the Organization's policies.
 
@@ -16,16 +16,17 @@ This project may include the following roles. Additional roles may be adopted an
 
 **1.5 Contributors**. Contributors are those that have made contributions to the Project. Contributors can participate in the project by submitting, reviewing, and discussing GitHub Pull Requests and Issues and participating in open and public HoloViz Organization discussions on GitHub, Discourse, Slack, Gitter, Twitter, StackOverflow, or other communication channels. Contributors may also participate in live events. Contributors may not vote along with Maintainers, but can submit their input on a given topic to be considered during a consensus forming process. Anyone can be a Contributor - they can be affiliated with a legal entity or none. Contributors typically do not have review or merge permissions for the Project, but may be granted such permissions by a Project Maintainer.
 
-## 2. Decisions.
+## 2. Decisions
 
 **2.1. Consensus-Based Decision Making**. Projects make decisions through consensus of the Maintainers. While explicit agreement of all Maintainers is preferred, it is not required for consensus. Rather, the Maintainers will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Contributors and nature of support and objections. The Maintainers will document evidence of consensus in accordance with these requirements. If consensus cannot be reached, the Maintainers will make the decision by a simple majority vote, unless otherwise stated.
 
-**2.2. Voting**. The Project Lead or Lead Maintainer may call a vote with reasonable notice to Maintainers, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this document, decisions by vote require a simple majority vote of all reachable and vote-participating members.
+**2.2. Voting**. Any Maintainer may call a vote with reasonable notice to other Maintainers, setting out a discussion period and a separate voting period. Any discussion may be conducted in person or electronically by text, voice, or video. The discussion will be open to the public. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this document, decisions by vote require a simple majority vote of all reachable and vote-participating members.
 
 **2.3. Appeal Process**. Decisions may be appealed by opening an issue and that appeal will be considered by the Maintainers in good faith, who will respond in writing within a reasonable time. If the Maintainers deny the appeal, the appeal may be brought before the Organization Steering Committee, who will also respond in writing in a reasonable time.
 
 **2.4 Quorum**. Unless otherwise stated, a quorum for a vote can be met with at least 50% of active members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.
-## 3. How We Work.
+
+## 3. How We Work
 
 **3.1. Openness**. Participation is open to anyone who is directly and materially affected by the activity in question. There shall be no undue financial barriers to participation.
 
@@ -37,15 +38,15 @@ This project may include the following roles. Additional roles may be adopted an
 
 **3.5. Written procedures**. This governance document and other materials documenting this project's development process shall be available to any interested person.
 
-## 4. No Confidentiality.
+## 4. No Confidentiality
 
 Information disclosed in connection with any Project activity, including but not limited to meetings, contributions, and submissions, is not confidential, regardless of any markings or statements to the contrary.
 
-## 5. Trademarks.
+## 5. Trademarks
 
 Any names, trademarks, logos, or goodwill developed by and associated with the Project (the "Marks") are controlled by the Organization. Maintainers may only use these Marks in accordance with the Organization's trademark policy. If a Maintainer resigns or is removed, any rights the Maintainer may have in the Marks revert to the Organization.
 
-## 6. Amendments.
+## 6. Amendments
 
 Amendments to this governance policy may be made by affirmative vote of 2/3 of all Maintainers, with approval by the Organization's Steering Committee.
 
