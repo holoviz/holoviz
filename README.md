@@ -11,6 +11,7 @@
 | Docs | [![gh-pages](https://img.shields.io/github/last-commit/holoviz/holoviz/gh-pages.svg)](https://github.com/holoviz/holoviz/tree/gh-pages) [![site](https://img.shields.io/website-up-down-green-red/http/holoviz.org.svg)](http://holoviz.org) [![dev-site](https://img.shields.io/website-up-down-green-red/https/pyviz-dev.github.io/holoviz.svg?label=dev%20website)](https://pyviz-dev.github.io/holoviz/)  |
 | Status Dashboard | [![](https://img.shields.io/website-up-down-green-red/http/status.holoviz.org.svg?label=status-dashboard)](http://status.holoviz.org/) |
 | Binder  | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/holoviz/holoviz/HEAD?labpath=examples%2Ftutorial%2F00_Setup.ipynb) |
+| Code of Conduct | [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)|
 
 
 ## What is it?
