@@ -4,7 +4,7 @@ This document lists the Members of the Project. Members may be added once approv
 
 | **NAME** | **Role** | **Organization** |
 | --- | --- | --- |
-| [James Bednar](https://github.com/jbednar) | Project Lead | |
+| [James Bednar](https://github.com/jbednar) | Project Director | |
 | [Demetris Roumis](https://github.com/droumis) | Maintainer | |
 
 ---

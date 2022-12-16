@@ -27,7 +27,7 @@ By adding their name to the [Steering Committee.md file](./STEERING-COMMITTEE.md
 
 The Steering Committee is *not* responsible for software and other technical decisions that relate to individual projects.
 
-**2.2 Composition**. The Steering Committee voting members are listed in the steering-committee.md file in the repository. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. There may be no less than 3 active members of the Steering Committee. If the membership count decreases to 2, all Steering Committee activity is halted, except for the election of a new member. If there are either 0 or 1 Steering Committee members, all Steering Committee activity is halted until the HoloViz Project Leads elect at least 3 total Steering Committee members in a special election that follows the 3/4 affirmative vote policy.
+**2.2 Composition**. The Steering Committee voting members are listed in the steering-committee.md file in the repository. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. There may be no less than 3 active members of the Steering Committee. If the membership count decreases to 2, all Steering Committee activity is halted, except for the election of a new member. If there are either 0 or 1 Steering Committee members, all Steering Committee activity is halted until the HoloViz Project Directors elect at least 3 total Steering Committee members in a special election that follows the 3/4 affirmative vote policy.
 
 ## 3. Voting
 
