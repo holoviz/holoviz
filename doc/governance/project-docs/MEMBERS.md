@@ -6,6 +6,7 @@ This document lists the Members of the Project. Members may be added once approv
 | --- | --- | --- | --- |
 | James Bednar | Project Director | [jbednar](https://github.com/jbednar) | |
 | Demetris Roumis | Maintainer | [droumis](https://github.com/droumis) | |
+| Maxime Liquet | Maintainer | [maximlt](https://github.com/maximlt) | |
 
 ---
 This document is based on GitHub MVG-0.1-beta, which is Licensed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
