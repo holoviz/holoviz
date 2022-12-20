@@ -12,6 +12,7 @@ channels:
 
 packages: &pkgs
 - python=3.9
+- jinja2>=3.0.0
 - packaging
 - numpy
 - pandas
