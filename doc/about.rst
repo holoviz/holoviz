@@ -84,8 +84,7 @@ as a community while supporting and benefiting from a diverse set of initiatives
 The governing bodies at the HoloViz Organzation level are the Steering Committee 
 and Code of Conduct Committee. The Steering Committee is responsible for 
 higher-level aspects of the Organization, such as setting the overall scope, vision, 
-policy, and direction. Read more about Organization governance 
-`here<https://github.com/holoviz/holoviz/tree/master/doc/governance/org-docs/CHARTER.md>`_.
+policy, and direction. Read more about `Organization governance <https://github.com/holoviz/holoviz/blob/master/doc/governance/org-docs/CHARTER.md>`_.
 
 Each HoloViz Project may specify their own governance that is compatible with the HoloViz
 Organization governance. As an example of governance at the HoloViz Project level, 
@@ -94,7 +93,6 @@ is the Maintainers, one of which is the Project Director, and another may be the
 Lead Maintainer. The Project Director is responsible for the overall direction and 
 scope of the Project while a Lead Maintainer is responsible for releases and 
 day-to-day technical management of the Project. Read more about this website's 
-Project's Governance
-`here<https://github.com/holoviz/holoviz/tree/master/doc/governance/project-docs/GOVERNANCE.md>`_, 
+`Project's Governance <https://github.com/holoviz/holoviz/blob/master/doc/governance/project-docs/GOVERNANCE.md>`_, 
 or find the governance for other HoloViz Projects in the appropriate 
 repository within the `HoloViz GitHub Organization <https://github.com/holoviz>`_.
