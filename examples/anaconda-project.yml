@@ -14,7 +14,8 @@ packages: &pkgs
 - python=3.9
 - jinja2>=3.0.0
 - packaging
-- numpy
+# Temporary pin to workaround https://github.com/numba/numba/issues/8615
+- numpy <1.24
 - pandas
 - dask
 - xarray
