@@ -13,7 +13,7 @@ locking_enabled: true
 env_specs:
   test:
     locked: true
-    env_spec_hash: 59d6ab570d57b414bb84e7491559998c5ae5c3bd
+    env_spec_hash: 220e28bad93c5dfbc6ccbea15afdf0d572d87371
     platforms:
     - linux-64
     - osx-64
@@ -61,7 +61,7 @@ env_specs:
       - importlib-metadata=5.2.0=pyha770c72_0
       - importlib_resources=5.10.1=pyhd8ed1ab_0
       - iniconfig=1.1.1=pyh9f0ad1d_0
-      - ipykernel=6.19.3=pyh736e0ef_0
+      - ipykernel=6.19.4=pyh736e0ef_0
       - ipympl=0.9.2=pyhd8ed1ab_0
       - ipython=8.7.0=pyhd1c38e8_0
       - ipython_genutils=0.2.0=py_1
@@ -74,7 +74,7 @@ env_specs:
       - jupyter_contrib_core=0.4.0=pyhd8ed1ab_0
       - jupyter_events=0.5.0=pyhd8ed1ab_0
       - jupyter_nbextensions_configurator=0.6.1=pyhd8ed1ab_0
-      - jupyter_server=2.0.1=pyhd8ed1ab_0
+      - jupyter_server=2.0.2=pyhd8ed1ab_0
       - jupyter_server_terminals=0.4.3=pyhd8ed1ab_0
       - jupyterlab=3.5.2=pyhd8ed1ab_0
       - jupyterlab_pygments=0.2.2=pyhd8ed1ab_0
@@ -495,8 +495,8 @@ env_specs:
       - gettext=0.21.1=h5728263_0
       - glib-tools=2.74.1=h12be248_1
       - glib=2.74.1=h12be248_1
-      - gst-plugins-base=1.21.2=h001b923_0
-      - gstreamer=1.21.2=h6b5321d_0
+      - gst-plugins-base=1.21.3=h001b923_1
+      - gstreamer=1.21.3=h6b5321d_1
       - hdf4=4.2.15=h1b1b6ef_5
       - hdf5=1.12.2=nompi_h57737ce_100
       - icu=70.1=h0e60522_0
@@ -588,7 +588,7 @@ env_specs:
       - zstd=1.5.2=h7755175_4
   doc:
     locked: true
-    env_spec_hash: 974cafa9ab1f2d0eb36e4319f8f224969ff4fbfa
+    env_spec_hash: d87f3bf6e361bffd82baebac3dc9f3150520cd2e
     platforms:
     - linux-64
     - osx-64
@@ -636,7 +636,7 @@ env_specs:
       - imagesize=1.4.1=pyhd8ed1ab_0
       - importlib-metadata=5.2.0=pyha770c72_0
       - importlib_resources=5.10.1=pyhd8ed1ab_0
-      - ipykernel=6.19.3=pyh736e0ef_0
+      - ipykernel=6.19.4=pyh736e0ef_0
       - ipympl=0.9.2=pyhd8ed1ab_0
       - ipython=8.7.0=pyhd1c38e8_0
       - ipython_genutils=0.2.0=py_1
@@ -650,7 +650,7 @@ env_specs:
       - jupyter_contrib_core=0.4.0=pyhd8ed1ab_0
       - jupyter_events=0.5.0=pyhd8ed1ab_0
       - jupyter_nbextensions_configurator=0.6.1=pyhd8ed1ab_0
-      - jupyter_server=2.0.1=pyhd8ed1ab_0
+      - jupyter_server=2.0.2=pyhd8ed1ab_0
       - jupyter_server_terminals=0.4.3=pyhd8ed1ab_0
       - jupyterlab=3.5.2=pyhd8ed1ab_0
       - jupyterlab_pygments=0.2.2=pyhd8ed1ab_0
@@ -1096,8 +1096,8 @@ env_specs:
       - glib-tools=2.74.1=h12be248_1
       - glib=2.74.1=h12be248_1
       - greenlet=2.0.1=py39h99910a6_0
-      - gst-plugins-base=1.21.2=h001b923_0
-      - gstreamer=1.21.2=h6b5321d_0
+      - gst-plugins-base=1.21.3=h001b923_1
+      - gstreamer=1.21.3=h6b5321d_1
       - hdf4=4.2.15=h1b1b6ef_5
       - hdf5=1.12.2=nompi_h57737ce_100
       - icu=70.1=h0e60522_0
@@ -1190,7 +1190,7 @@ env_specs:
       - zstd=1.5.2=h7755175_4
   default:
     locked: true
-    env_spec_hash: 7fb16e73844fd4d345248820922e031b27f5ba7d
+    env_spec_hash: cdae51467d3321480c2e1e521af49f1149499258
     platforms:
     - linux-64
     - osx-64
@@ -1236,7 +1236,7 @@ env_specs:
       - idna=3.4=pyhd8ed1ab_0
       - importlib-metadata=5.2.0=pyha770c72_0
       - importlib_resources=5.10.1=pyhd8ed1ab_0
-      - ipykernel=6.19.3=pyh736e0ef_0
+      - ipykernel=6.19.4=pyh736e0ef_0
       - ipympl=0.9.2=pyhd8ed1ab_0
       - ipython=8.7.0=pyhd1c38e8_0
       - ipython_genutils=0.2.0=py_1
@@ -1249,7 +1249,7 @@ env_specs:
       - jupyter_contrib_core=0.4.0=pyhd8ed1ab_0
       - jupyter_events=0.5.0=pyhd8ed1ab_0
       - jupyter_nbextensions_configurator=0.6.1=pyhd8ed1ab_0
-      - jupyter_server=2.0.1=pyhd8ed1ab_0
+      - jupyter_server=2.0.2=pyhd8ed1ab_0
       - jupyter_server_terminals=0.4.3=pyhd8ed1ab_0
       - jupyterlab=3.5.2=pyhd8ed1ab_0
       - jupyterlab_pygments=0.2.2=pyhd8ed1ab_0
@@ -1666,8 +1666,8 @@ env_specs:
       - gettext=0.21.1=h5728263_0
       - glib-tools=2.74.1=h12be248_1
       - glib=2.74.1=h12be248_1
-      - gst-plugins-base=1.21.2=h001b923_0
-      - gstreamer=1.21.2=h6b5321d_0
+      - gst-plugins-base=1.21.3=h001b923_1
+      - gstreamer=1.21.3=h6b5321d_1
       - hdf4=4.2.15=h1b1b6ef_5
       - hdf5=1.12.2=nompi_h57737ce_100
       - icu=70.1=h0e60522_0

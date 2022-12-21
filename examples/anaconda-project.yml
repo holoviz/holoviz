@@ -8,7 +8,7 @@ user_fields: [maintainers]
 channels:
   - pyviz/label/dev
   - conda-forge
-  - defaults
+  - nodefaults
 
 packages: &pkgs
 - python=3.9
