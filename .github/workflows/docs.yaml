@@ -51,7 +51,6 @@ jobs:
           conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 
       - name: doit develop_install
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
           conda install anaconda-project
@@ -62,17 +61,14 @@ jobs:
           pip install --no-deps --no-build-isolation .
       - name: generate rst
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate examples/envs/doc
           nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
       - name: build docs
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate examples/envs/doc
           nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
       - name: conda info/list
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate examples/envs/doc
           conda info
           conda list

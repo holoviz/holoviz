@@ -51,7 +51,6 @@ jobs:
           doit env_create --python=${{ matrix.python-version }}
       - name: doit develop_install
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           conda list
           conda install anaconda-project>=0.10.1
@@ -59,16 +58,13 @@ jobs:
           git describe
       - name: doit env_capture
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit env_capture
       - name: doit test_lint
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit test_lint
       - name: doit test_examples
         run: |
-          eval "$(conda shell.bash hook)"
           conda activate test-environment
           doit test_examples

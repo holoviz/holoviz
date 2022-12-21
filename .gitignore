@@ -125,3 +125,4 @@ jupyter_execute/
 .version
 
 .vscode
+.markdown*
