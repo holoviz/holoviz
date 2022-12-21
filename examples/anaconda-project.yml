@@ -64,7 +64,7 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite >=0.7.2rc10
+      - nbsite
       - pydata-sphinx-theme <0.9.0
       - docutils ==0.16.0
     dependencies: *docpkgs
