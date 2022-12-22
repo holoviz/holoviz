@@ -6,9 +6,9 @@ Some development efforts for HoloViz tools are done with corporate or
 government funding, but most of the documentation and community
 engagement is done on a volunteer basis. As the community of HoloViz
 users and developers continues to grow, we are trying to find
-sustainable ways of holding conversations, answering questions, and
-addressing issues. This page gives guidelines on the most effective
-methods for each type of interaction.
+sustainable ways of welcoming new members, holding conversations, 
+answering questions, and addressing issues. This page gives 
+guidelines on the most effective methods for each type of interaction.
 
 **Have a question about how to use HoloViz tools?** After the docs, your
 first stop should be StackOverflow for 
@@ -50,12 +50,29 @@ details. Usually on gitter our response will just be "please open a
 Discourse issue". Gitter is well suited for chatting and live
 discussion, but because it is not archived and not easily searchable,
 we discourage using it for anything else.
+
+**Want to become a contributor?** We hold recurring developer meetings 
+and welcome anyone interested in becoming a contributor.
+
+  - General HoloViz meeting: This occurs biweekly on Fridays and is the best option for new members to join.
+  - Issue Triaging meeting: This occurs weekly on Mondays. It starts with some quick coordination and then splits off to triage project issues.
+  - Docs meeting: This occurs biweekly on Wednesdays and is focused on anything related to the documentation. 
+
+.. raw:: html
+
+   <iframe id="calendariframe" src="https://calendar.google.com/calendar/embed?src=holoviz.calendar%40gmail.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+You can subscribe to this calendar to be notified of changes:
+
+  - `Google Calendar <https://calendar.google.com/calendar/embed?src=holoviz.calendar%40gmail.com&ctz=Europe%2FBerlin>`__
+  - `iCal <https://calendar.google.com/calendar/ical/holoviz.calendar%40gmail.com/public/basic.ics>`__
+
     
 **Have you gotten your question answered?** If you use any of these
 mechanisms to interact with HoloViz developers and find that we answered
 your question, or even if you just looked for a long time and finally
 discovered a solution, there is one important thing you can do to help
-out the community: Please consider making a PR to the docs, examples,
+out the community: Please consider making a pull request to the docs, examples,
 or FAQ for that project with that information, so that a future user
 won't get stuck in the same way.
 
