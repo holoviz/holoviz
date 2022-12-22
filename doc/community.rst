@@ -60,7 +60,7 @@ and welcome anyone interested in becoming a contributor.
 
 .. raw:: html
 
-   <iframe id="calendariframe" src="https://calendar.google.com/calendar/embed?src=holoviz.calendar%40gmail.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+   <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=Etc%2FGMT&showTitle=0&src=aG9sb3Zpei5jYWxlbmRhckBnbWFpbC5jb20&color=%23039BE5" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
 
 You can subscribe to this calendar to be notified of changes:
 
