@@ -86,6 +86,6 @@ downloads:
     description: Earthquakes
     filename: data/earthquakes-projected.parq
   DATA_3:
-    url: https://github.com/holoviz/holoviz/raw/master/examples/assets/usgs_logo.png
+    url: https://github.com/holoviz/holoviz/raw/main/examples/assets/usgs_logo.png
     description: USGS Logo
     filename: data/usgs_logo.png

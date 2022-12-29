@@ -7,7 +7,7 @@ Building a Dashboard
 ********************
 
 
-`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/master/examples/tutorial/exercises/Building_a_Dashboard.ipynb>`_
+`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/main/examples/tutorial/exercises/Building_a_Dashboard.ipynb>`_
 
 -------
 
@@ -19,4 +19,4 @@ Building a Dashboard
 
 -------
 
-`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/master/examples/tutorial/exercises/Building_a_Dashboard.ipynb>`_
+`Right click to download this notebook from GitHub. <https://raw.githubusercontent.com/pyviz/pyviz/main/examples/tutorial/exercises/Building_a_Dashboard.ipynb>`_
