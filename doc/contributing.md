@@ -240,7 +240,7 @@ The core packages have their repository that, except in a few cases, all share t
 The HoloViz projects follow the standard Github workflow:
 
 * An *issue* should be created before submitting a *pull request* (PR) unless the scope of the planned PR is minimal, such as fixing a typo.
-* *Pull requests* must be based on the main (e.g., *master*) branch and kept up to date with this branch. Merging the main branch onto the working branch is recommended instead of rebasing, particularly if you are not working alone on that branch.
+* *Pull requests* must be based on the main (e.g., *main*) branch and kept up to date with this branch. Merging the main branch onto the working branch is recommended instead of rebasing, particularly if you are not working alone on that branch.
 * *Pull requests* must be reviewed before being merged. Each project has one or more reviewer(s) assigned.
 * The commits of a *Pull request* are automatically [squashed on merge](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github#squashing-your-merge-commits). This means that you don't have to particularly well craft your commit messages in your branch as they won't be part of the main git history.
 
@@ -287,7 +287,7 @@ Now that the main files are defined, we can go through each step of a typical wo
 
 #### nbsite
 
-Most of the packages maintained by the HoloViz group have a website. Those not promoted for usage outside the group don't have a website like `pyctdev`. HoloViz being dedicated to making data visualization simpler in Python, it made sense for the group to develop a way to generate websites out of a collection of Jupyter Notebooks. As a result, [nbsite](https://github.com/pyviz-dev/nbsite) was created to achieve that goal. `nbsite` is based on [sphinx](https://www.sphinx-doc.org/en/master/) and is the tool used by all the projects to build their site. `nbsite` provides two important features:
+Most of the packages maintained by the HoloViz group have a website. Those not promoted for usage outside the group don't have a website like `pyctdev`. HoloViz being dedicated to making data visualization simpler in Python, it made sense for the group to develop a way to generate websites out of a collection of Jupyter Notebooks. As a result, [nbsite](https://github.com/pyviz-dev/nbsite) was created to achieve that goal. `nbsite` is based on [sphinx](https://www.sphinx-doc.org) and is the tool used by all the projects to build their site. `nbsite` provides two important features:
 
 * A Sphinx `NotebookDirective` allows inserting an evaluated notebook in a document. It has a few useful parameters like `offset` that takes a number that will be the number of top cells not rendered. 
 * It can build a gallery from an organized collection of Notebooks.
@@ -397,7 +397,7 @@ Making a new release is a cumbersome and delicate operation. It implies many man
 
 Releasing a new package version is, in practice, very easy:
 
-1. a commit must be tagged (e.g. `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 master`)
+1. a commit must be tagged (e.g. `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`)
 2. that tag must be pushed (e.g. `git push origin v1.9.6a1`)
 
 And that's it, as soon as a new tag is pushed, the *Packages* and *Documentation* Github Actions get triggered, and start building the packages and the documentation, and deploy them.
@@ -461,7 +461,7 @@ Development releases can have different goals. Sometimes they are only meant to 
 ```{note}
 Bumping the version of a package depends on the package's nature:
 * Non-pure Python packages, e.g., Panel or GeoViews as they include JavaScript/TypeScript extensions, need their `package.json` and `package-lock.json` files to be updated, manually bumping the version in those files (e.g., from `1.9.5` to `1.9.6-a.1`). Note that the version scheme isn't the same as the Python version scheme.
-* Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 master`.
+* Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`.
 ```
 
 ```{note}
