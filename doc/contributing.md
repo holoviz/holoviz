@@ -489,10 +489,7 @@ If you push a tag by mistake or the wrong tag and are lucky enough to spot that 
 * Directly on Github via issues and pull requests
 * On the [PyViz Gitter](https://gitter.im/pyviz/pyviz), which is meant for brainstorming and casual chatting. An example of a discussion on Gitter would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue.
 
-**HoloViz Contributors** also have regular online meetings. These meetings are **open to anyone**:
-
-* The *HoloViz triaging meeting* takes place every Monday at 5 pm (GMT+2). Triaging consists of going through the latest opened issues and pull requests, understanding them (e.g., that may require locally reproducing a bug), replying if not already done, optionally adding a Github label (e.g. `bugs`) and finally, but most importantly to assign issues to milestones to prepare for the next releases. You can join the meeting on [Google Meet](meet.google.com/izv-ibmj-cjp) and read the notes on [HackMD](https://hackmd.io/@holoviz/minutes).
-* The *HoloViz meeting* takes place every second Friday at 8 am (GMT-8). It is a place for coordinating across the HoloViz projects. You can read the notes on [HackMD](https://hackmd.io/@holoviz/minutes/edit).
+**HoloViz Contributors** also have regular online meetings. These meetings are **open to anyone**. Please see the [Community](https://holoviz.org/community.html) page for a calendar and description of the meetings.
 
 #### Outreach
 
