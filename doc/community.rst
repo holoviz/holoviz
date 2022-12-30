@@ -19,8 +19,8 @@ Search for an existing answer to your question, or post a new one (and
 make sure you include the "**holoviz**" tag if you are on StackOverflow).
 StackOverflow and Discourse are for *usage* questions:
 
-  - How do I do X with holoviz tools? (Preferably showing how close you've gotten so far, with code)
-  - For my own code, why am I seeing X rather than what I wanted?
+- How do I do X with holoviz tools? (Preferably showing how close you've gotten so far, with code)
+- For my own code, why am I seeing X rather than what I wanted?
 
 **Have you found an issue with a HoloViz tool?** If you think something
 is missing or not behaving as expected, visit the Github issue tracker
@@ -31,18 +31,18 @@ existing issues to comment on, or submit your own (following these
 `guidelines <http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports>`__
 if at all possible). Use the GitHub issue tracker for:
 
-  - **Bug reports** (like "The text gets cut off in a Panel object.")
-  - **Documentation issues** (like "I found this section unclear")
-  - **Feature requests** (like "I think that Colorcet should have a jet colormap")
+- **Bug reports** (like "The text gets cut off in a Panel object.")
+- **Documentation issues** (like "I found this section unclear")
+- **Feature requests** (like "I think that Colorcet should have a jet colormap")
 
 **Do you have a quick, specific issue that likely has an immediate solution?**
 You can chat with other users on the PyViz `Gitter channel <https://gitter.im/pyviz/pyviz>`__.
 You can use gitter for very quick feedback while you are working on a task:
 
-  - Does anyone know if there is support for X somewhere in holoviz?
-  - I'm having trouble setting up the development environment.
-  - I messed up my git branches, can someone take a look?
-  - Does anyone know how to make this behavior change?
+- Does anyone know if there is support for X somewhere in holoviz?
+- I'm having trouble setting up the development environment.
+- I messed up my git branches, can someone take a look?
+- Does anyone know how to make this behavior change?
 
 But note that most people who go to Gitter should really go to
 Discourse instead, taking the time to make a proper post with all the
@@ -54,9 +54,11 @@ we discourage using it for anything else.
 **Want to become a contributor?** We hold recurring developer meetings 
 and welcome anyone interested in becoming a contributor.
 
-  - General HoloViz meeting: This occurs biweekly on Fridays and is the best option for new members to join.
-  - Issue Triaging meeting: This occurs weekly on Mondays. It starts with some quick coordination and then splits off to triage project issues.
-  - Docs meeting: This occurs biweekly on Wednesdays and is focused on anything related to the documentation. 
+- General HoloViz meeting: This occurs biweekly on Fridays and is the best option for new members to join.
+- Issue Triaging meeting: This occurs weekly on Mondays. It starts with some quick coordination and then splits off to triage project issues.
+- Docs meeting: This occurs biweekly on Wednesdays and is focused on anything related to the documentation. 
+
+Meeting notes are available on `hackmd.io/@holoviz/minutes <https://hackmd.io/@holoviz/minutes>`__
 
 .. raw:: html
 
@@ -76,6 +78,6 @@ out the community: Please consider making a pull request to the docs, examples,
 or FAQ for that project with that information, so that a future user
 won't get stuck in the same way.
 
-And please tweet at us (@holoviews, @datashader, @holoviz_org) often to
+And please tweet at us (@holoviews, @datashader, @Panel_org, @holoviz_org) often to
 show off what you are making with HoloViz tools and help spread the
 word!
