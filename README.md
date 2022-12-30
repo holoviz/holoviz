@@ -1,4 +1,4 @@
-<img src="doc/_static/holoviz-logo.svg"><br>
+<img src="https://github.com/holoviz/holoviz/tree/main/doc/_static/holoviz-logo.svg"><br>
 
 -----------------
 
@@ -13,32 +13,32 @@
 | Binder  | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/holoviz/holoviz/HEAD?labpath=examples%2Ftutorial%2F00_Setup.ipynb) |
 | Code of Conduct | [![Based on Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)|
 
-
 ## What is HoloViz?
 
-HoloViz provides high-level tools that are designed to work together to solve the entire problem of visualization, from conducting exploratory data analysis to deploying complex dashboards.
+HoloViz provides high-level Python tools that are designed to work together to solve the entire problem of visualization, from conducting exploratory data analysis to deploying complex dashboards.
 
 The core HoloViz projects are:
 
-- [hvPlot](https://hvplot.holoviz.org): interactive plotting built on Bokeh, Matplotlib, and Plotly
-- [HoloViews](https://holoviews.org): declarative high-level data description and plotting
-- [GeoViews](http://geoviews.org): geographic data extension for HoloViews
-- [Datashader](https://datashader.org): server-side rendering of large datasets
-- [Colorcet](https://colorcet.holoviz.org/): perceptually based colormapping
-- [Panel](https://panel.holoviz.org): interactive apps and dashboards
-- [Lumen](https://lumen.holoviz.org/): no-code apps and dashboards
-- [Param](https://param.holoviz.org): declarative parameter-based coding
+- [Panel](https://panel.holoviz.org): Create interactive dashboards in Jupyter notebooks or standalone apps
+- [hvPlot](https://hvplot.holoviz.org): Quickly and interactively explore data with a familiar API
+- [HoloViews](https://holoviews.org): Visualize and analyze using high-level and meaningful descriptions of data
+- [GeoViews](http://geoviews.org): Extend HoloViews for geographic data
+- [Datashader](https://datashader.org): Render big data images in a browser
+- [Lumen](https://lumen.holoviz.org/): Construct no-code dashboards from simple YAML specifications
+- [Colorcet](https://colorcet.holoviz.org/): Plot with perceptually based colormaps
+- [Param](https://param.holoviz.org): Declaratively code in Python
 
 All HoloViz projects are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.
+
 ## What is the purpose of this specific repository?
 
 This repository provides an entry point for the HoloViz ecosystem.
 The best way to experience this repository is on 
 [HoloViz.org](https://holoviz.org). 
 
-This website it provides:
+This website provides:
 1. Introduction to the HoloViz organization and its projects
 2. Guidance for which HoloViz tools to start with given different use cases
 3. Demonstrations of using multiple HoloViz tools in a single workflow
