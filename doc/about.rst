@@ -84,7 +84,7 @@ as a community while supporting and benefiting from a diverse set of initiatives
 The governing bodies at the HoloViz Organzation level are the Steering Committee 
 and Code of Conduct Committee. The Steering Committee is responsible for 
 higher-level aspects of the Organization, such as setting the overall scope, vision, 
-policy, and direction. Read more about `Organization governance <https://github.com/holoviz/holoviz/blob/master/doc/governance/org-docs/CHARTER.md>`_.
+policy, and direction. Read more about `Organization governance <https://github.com/holoviz/holoviz/blob/main/doc/governance/org-docs/CHARTER.md>`_.
 
 Each HoloViz Project may specify their own governance that is compatible with the HoloViz
 Organization governance. As an example of governance at the HoloViz Project level, 
