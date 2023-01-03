@@ -21,7 +21,7 @@ The core HoloViz projects are:
 
 - [Panel](https://panel.holoviz.org): Create interactive dashboards in Jupyter notebooks or standalone apps
 - [hvPlot](https://hvplot.holoviz.org): Quickly and interactively explore data with a familiar API
-- [HoloViews](https://holoviews.org): Visualize and analyze using high-level and meaningful descriptions of data TODO: fix this **********
+- [HoloViews](https://holoviews.org): Visualize while you analyze by declaring data properties
 - [GeoViews](http://geoviews.org): Extend HoloViews for geographic data
 - [Datashader](https://datashader.org): Render big data images in a browser
 - [Lumen](https://lumen.holoviz.org/): Construct no-code dashboards from simple YAML specifications
