@@ -19,7 +19,7 @@ html_css_files = [
 ]
 
 html_theme = "pydata_sphinx_theme"
-html_logo = '_static/holoviz-logo.svg'
+html_logo = '_static/holoviz-logo-unstacked.svg'
 html_favicon = "_static/favicon.ico"
 
 html_theme_options.update({
