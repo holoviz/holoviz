@@ -28,6 +28,74 @@ The core HoloViz projects are:
 - [Colorcet](https://colorcet.holoviz.org/): Plot with perceptually based colormaps
 - [Param](https://param.holoviz.org): Declaratively code in Python
 
+<table align="center">
+<tr>
+
+  <td>
+    <a href="https://panel.holoviz.org/">
+    <img src="./examples/assets/panel.png"
+         alt="Panel Logo" width="125"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="https://hvplot.holoviz.org/">
+    <img src="./examples/assets/hvplot.png"
+         alt="hvPlot Logo" width="125"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="https://holoviews.org/">
+    <img src="./examples/assets/holoviews.png"
+         alt="HoloViews Logo" width="125"/>
+    </a>
+  </td>
+  
+   <td>
+    <a href="https://geoviews.org/">
+    <img src="./examples/assets/geoviews.png"
+         alt="GeoViews Logo" width="125"/>
+    </a>
+  </td>
+
+ </tr>
+ <tr>
+
+  <td>
+    <a href="https://datashader.com/">
+    <img src="./examples/assets/datashader.png"
+         alt="Datashader Logo" width="125"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="https://lumen.holoviz.org/">
+    <img src="./examples/assets/lumen.png"
+         alt="Lumen Logo" width="125"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="https://colorcet.holoviz.org/">
+    <img src="./examples/assets/colorcet.png"
+         alt="Colorcet Logo" width="125"/>
+    </a>
+  </td>
+
+  <td>
+    <a href="https://param.holoviz.org/">
+    <img src="./examples/assets/param.png"
+         alt="Param Logo" width="125"/>
+    </a>
+  </td>
+
+</tr>
+</table>
+
+
+
+
 All HoloViz projects are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.
