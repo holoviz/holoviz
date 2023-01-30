@@ -46,7 +46,8 @@ jobs:
         run: git fetch --prune --tags --unshallow
       - name: conda setup
         run: |
-          conda config --set always_yes True
+          conda install conda-libmamba-solver
+          conda config --set solver libmamba
           conda install -c pyviz "pyctdev>=0.5"
           doit env_create --python=${{ matrix.python-version }}
       - name: doit develop_install

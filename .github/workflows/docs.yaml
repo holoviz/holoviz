@@ -48,6 +48,8 @@ jobs:
       - name: conda setup
         run: |
           conda update -n base -c defaults conda
+          conda install conda-libmamba-solver
+          conda config --set solver libmamba
           conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 
       - name: doit develop_install
         run: |
