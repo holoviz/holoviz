@@ -47,6 +47,7 @@ jobs:
       - name: conda setup
         run: |
           conda update -n base -c defaults conda
+          conda activate base
           conda install conda-libmamba-solver
           conda config --set solver libmamba
           conda install -c pyviz "pyctdev>=0.5"
