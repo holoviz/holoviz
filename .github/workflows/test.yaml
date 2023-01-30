@@ -46,19 +46,11 @@ jobs:
         run: git fetch --prune --tags --unshallow
       - name: conda setup
         run: |
-          conda update -n base -c defaults conda
           conda activate base
           conda install conda-libmamba-solver
           conda config --set solver libmamba
           conda install -c pyviz "pyctdev>=0.5"
-          doit env_create --python=${{ matrix.python-version }}
-      - name: doit develop_install
-        run: |
-          conda activate test-environment
-          conda list
-          conda install anaconda-project>=0.10.1
-          echo "-----"
-          git describe
+          conda create -c pyviz --name test-environment python=${{ matrix.python-version }} pyctdev anaconda-project>=0.10.1
       - name: doit env_capture
         run: |
           conda activate test-environment
