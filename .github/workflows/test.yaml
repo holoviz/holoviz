@@ -46,6 +46,7 @@ jobs:
         run: git fetch --prune --tags --unshallow
       - name: conda setup
         run: |
+          conda update -n base -c defaults conda
           conda install conda-libmamba-solver
           conda config --set solver libmamba
           conda install -c pyviz "pyctdev>=0.5"
