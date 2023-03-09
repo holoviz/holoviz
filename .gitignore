@@ -108,7 +108,7 @@ ENV/
 # these files normally shouldn't be checked in as they should be
 # dynamically built from notebooks
 doc/**/*.rst
-doc/**/*.ipynb
+# doc/**/*.ipynb
 doc/**/*.json
 # this dir contains the whole website and should not be checked in on main
 builtdocs/
