@@ -167,7 +167,7 @@ The HoloViz group owns a few GitHub organizations:
 * [pyviz-dev](https://github.com/pyviz-dev/) hosts two main types of repositories:
     * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
     * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process. 
-* [pyviz-topics](https://github.com/pyviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
+* [holoviz-topics](https://github.com/holoviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
 * [holoviz-demos](https://github.com/holoviz-demos/) hosts some demos, mostly Panel apps. It is meant to be removed.
 * [holoviz-community](https://github.com/holoviz-community/) is a place for the HoloViz community to host repositories that are going to be nicely exposed under the HoloViz umbrella
 
@@ -197,11 +197,11 @@ In more detail:
     * [pyviz-dev.github.io](https://github.com/pyviz-dev/pyviz-dev.github.io): Index of all sites on pyviz-dev
     * [holoviz_tasks](https://github.com/pyviz-dev/holoviz_tasks): Shared GHA workflows and tasks used to maintain the HoloViz repositories
     * more ...
-* [pyviz-topics](https://github.com/pyviz-topics/)
-    * [examples](https://github.com/pyviz-topics/examples): Home for domain-specific narrative examples using multiple PyViz projects
-    * [earthsim](https://github.com/pyviz-topics/earthsim): Project for developing Python-based workflows for specifying, launching, visualizing, and analyzing environmental simulations
-    * [earthml](https://github.com/pyviz-topics/earthml): Machine learning and visualization in Python for Earth science
-    * [holodoodler](https://github.com/pyviz-topics/holodoodler): Python application that allows interactive construction of sparse labeling for image segmentation using deep neural networks
+* [holoviz-topics](https://github.com/holoviz-topics/)
+    * [examples](https://github.com/holoviz-topics/examples): Home for domain-specific narrative examples using multiple PyViz projects
+    * [earthsim](https://github.com/holoviz-topics/earthsim): Project for developing Python-based workflows for specifying, launching, visualizing, and analyzing environmental simulations
+    * [earthml](https://github.com/holoviz-topics/earthml): Machine learning and visualization in Python for Earth science
+    * [holodoodler](https://github.com/holoviz-topics/holodoodler): Python application that allows interactive construction of sparse labeling for image segmentation using deep neural networks
     * more ...
 
 #### Teams
@@ -215,9 +215,9 @@ The `pyviz-dev` organization has one team:
 
 * `pyviz-dev`: PyViz Developers
 
-The `pyviz-topics` organization has one team:
+The `holoviz-topics` organization has one team:
 
-* `pyviz-dev`: Developers on PyViz Topics
+* `pyviz-dev`: Developers on HoloViz Topics
 
 #### Developer account
 
