@@ -9,3 +9,4 @@ repos:
     hooks:
       - id: clean-notebook
         args: [-i, slideshow, --keep-empty] # ignore RISE slideshow metadata and keep empty cells
+        
