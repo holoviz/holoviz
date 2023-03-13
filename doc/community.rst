@@ -46,12 +46,12 @@ for discussions.
 
 **Developer meetings** are shown in the calendar widget below.
 
-- General HoloViz meeting: This occurs biweekly on Fridays and is the best
+- General HoloViz meeting: This occurs biweekly and is the best
   option for new members to join.
-- Issue Triaging meeting: This occurs weekly on Mondays. It starts with some
+- Issue Triaging meeting: This occurs weekly. It starts with some
   quick coordination and then splits off to triage project issues, so please
-  join on time.
-- Docs meeting: This occurs biweekly on Wednesdays and is focused on anything
+  join at the beginning.
+- Docs meeting: This occurs biweekly and is focused on anything
   related to the documentation. 
 
 Meeting notes are available on `hackmd.io/@holoviz/minutes
