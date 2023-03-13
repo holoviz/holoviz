@@ -1,0 +1,11 @@
+
+# This is the configuration for pre-commit, a local framework for managing pre-commit hooks
+#   Check out the docs at: https://pre-commit.com/
+
+default_stages: [commit]
+repos:
+-   repo: https://github.com/hoxbro/clean_notebook
+    rev: v0.1.8
+    hooks:
+      - id: clean-notebook
+        args: [-i, slideshow, --keep-empty] # ignore RISE slideshow metadata and keep empty cells
