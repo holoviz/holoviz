@@ -35,21 +35,7 @@ number of other open-source libraries; for more information, see
 HoloViz's `detailed background <background.html>`_.
 
 The entire HoloViz stack is open source, free for commercial and
-non-commercial use. However, if you are lucky enough to be in a
-position to fund developers to work on HoloViz, you can contact
-``sales@anaconda.com``, or you can also collaborate with HoloViz via
-`Quansight's open source partnerships <https://www.quansight.com/projects>`_.
-
-.. image:: https://know.anaconda.com/rs/387-XNW-688/images/2020_Anaconda_Logo_RGB_Corporate.png
-   :height: 60px
-   :alt: Anaconda website
-   :target: http://www.anaconda.com
-
-.. image:: https://static.wixstatic.com/media/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.png/v1/crop/x_0,y_9,w_915,h_329/fill/w_191,h_65,al_c,q_80,usm_0.66_1.00_0.01/095d2c_2508c560e87d436ea00357abc404cf1d~mv2.webp
-   :height: 60px
-   :alt: Quansight website
-   :target: http://www.quansight.com
-
+non-commercial use.
 
 Acknowledgements and prior funding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
