@@ -11,6 +11,7 @@ This document lists the members of the Organization's Steering Committee. Voting
 | Marc Skov Madsen  | [MarcSkovMadsen](https://github.com/MarcSkovMadsen) |
 | Dharhas Pothina  | [dharhas](https://github.com/dharhas) |
 | Rich Signell | [rsignell-usgs](https://github.com/rsignell-usgs) |
+| Scott Christensen | [sdc50](https://github.com/sdc50) |
 
 ---
 This document is based on GitHub MVG-0.1-beta, which is Licensed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
