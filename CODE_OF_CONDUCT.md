@@ -107,7 +107,7 @@ information)
 other witnesses besides you, try to include them as well
 * When and where the incident occurred (please be as specific as possible)
 * Your account of what occurred. If there is a publicly available record (e.g. a
-mailing list archive or GitHub/Gitter) please include a link
+mailing list archive or GitHub/Discourse/Discord) please include a link
 * Any extra context you believe is relevant for the incident
 * If you believe this incident is ongoing
 * Any other information you believe we should have

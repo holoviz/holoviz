@@ -443,7 +443,7 @@ Development releases can have different goals. Sometimes they are only meant to 
     * Some packages have implemented *downstream tests*. When they do, these tests run only when a release is made. They trigger the test suite of their downstream packages (e.g., a Panel release would trigger the test suite of Param). This ensures that the release you just made didn't break some other packages of the HoloViz ecosystem. To find the results of these downstream tests, check the Github Actions page of the released package.
     * Optionally, and to make sure that the release went well, you could install the package you've released (e.g. `conda install -c pyviz/label/dev panel`) and check there's no embarrassing issue.
 1. Pause the release process if you expect feedback from others. If not, keep going.
-1. In practice making *beta* releases appear to be quite rare. However, making a *release candidate*, in particular before making a release that incorporates breaking changes, is recommended. After making a *release candidate* you should announce it (e.g., on Discourse, Gitter, Twitter) so that users can try it out and provide feedback.
+1. In practice making *beta* releases appear to be quite rare. However, making a *release candidate*, in particular before making a release that incorporates breaking changes, is recommended. After making a *release candidate* you should announce it (e.g., on Discourse, Discord, Twitter) so that users can try it out and provide feedback.
 1. It is not required to update the changelog for a development release. However, a final release should come with an updated changelog, which means that at some point before making the last development release, you will have to merge an updated changelog. Updating the changelog is a process that depends on the package being released. Look for files such as `CHANGELOG.md` in the repository and update them accordingly to their format. Crafting a good changelog is an important step in the release process. Users will read it to find out what's new and, in particular, what may potentially break their code. Don't forget to mention all the people who have contributed to the release since the last one.
 1. Once the last development release has been confirmed to be in good shape, by yourself and preferably by others too (in particular, when it comes to spot-checking the website, it is best to have more than one pair of eyes looking into that!), you are ready to make the final release. You will have to bump the version again to its final number (e.g., to `v1.9.6`). Note that you may need to make another development release before the final one if you've made changes after the latest development version that are worth mentioning in the changelog.
 1. Optionally again, and to ensure the release went well, you could install the package you've released (e.g. `conda install -c pyviz panel`) and check there's no embarrassing issue.
@@ -455,7 +455,7 @@ Development releases can have different goals. Sometimes they are only meant to 
     * Click *Create a new release*
     * Add release notes and publish the release 
 1. Find the *conda-forge* recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you're not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.
-1. Announce the release (e.g., on Discourse, Gitter, Twitter).
+1. Announce the release (e.g., on Discourse, Discord, Twitter).
 1. If the release is important (e.g., not a bug fix release), it may be worth a blog post.
 
 ```{note}
@@ -487,7 +487,7 @@ If you push a tag by mistake or the wrong tag and are lucky enough to spot that 
 **HoloViz Contributors** chat on multiple open channels:
 
 * Directly on Github via issues and pull requests
-* On the [PyViz Gitter](https://gitter.im/pyviz/pyviz), which is meant for brainstorming and casual chatting. An example of a discussion on Gitter would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue.
+* On the [Discord](https://discord.gg/rb6gPXbdAr), which is meant for brainstorming and casual chatting. An example of a discussion on Discord would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue.
 
 **HoloViz Contributors** also have regular online meetings. These meetings are **open to anyone**. Please see the [Community](https://holoviz.org/community.html) page for a calendar and description of the meetings.
 
