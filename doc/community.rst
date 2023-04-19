@@ -38,11 +38,10 @@ on Twitter at the following accounts: `@HoloViz_org
 <https://twitter.com/datashader>`__, and `@Panel_org
 <https://twitter.com/Panel_org>`__.
 
-**Real-time chat** for *contributors* occurs on our `Gitter channel
-<https://gitter.im/pyviz/pyviz>`__. This platform is good for quick and simple
-questions or comments, but Gitter is not archived or easily searchable so the
-`HoloViz Discourse forum <https://discourse.holoviz.org>`__ is a better place
-for discussions.
+**Real-time chat** for *contributors* occurs on our `Discord channel
+<https://discord.gg/rb6gPXbdAr>`__. This platform is good for quick and simple
+questions or comments. Please note the `HoloViz Discourse forum <https://discourse.holoviz.org>`__ is a better place
+for persisting and openly sharing code samples and solutions.
 
 **Developer meetings** are shown in the calendar widget below.
 
