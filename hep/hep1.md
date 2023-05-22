@@ -90,7 +90,8 @@ of life at the end of June, the minimum support Python version will increase to
 3.8 for their next releases.
 
 The current Bokeh release (3.1.0) supports minimum Python of 3.8 and the next
-release (3.2.0) will support minimum Python 3.9. All HoloViz projects should
+release (3.2.0) will support minimum Python 3.9. All HoloViz projects (except
+Colorcet and Param which are covered above) should
 drop support for Python 3.7 as soon as possible to support a minimum Python of
 3.8. Following release of Bokeh 3.2.0 there should be one further release per
 HoloViz project that supports Python 3.8 and then the minimum Python version
