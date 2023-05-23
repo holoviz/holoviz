@@ -104,3 +104,4 @@ Changes to this document shall be recorded below:
 | Date	     | Change      |
 | ---------- | ----------- |
 | 2023-04-19 | First draft |
+| 2023-05-23 | Accepted    |
