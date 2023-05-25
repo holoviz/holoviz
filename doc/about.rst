@@ -37,7 +37,7 @@ HoloViz's `detailed background <background.html>`_.
 The entire HoloViz stack is open source, free for commercial and
 non-commercial use.
 
-Acknowledgements and prior funding
+Acknowledgements and funding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 HoloViz libraries have been supported by a variety of different funding mechanisms since 2003:
