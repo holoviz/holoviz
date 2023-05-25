@@ -12,6 +12,7 @@
 | Status Dashboard | [![](https://img.shields.io/website-up-down-green-red/http/status.holoviz.org.svg?label=status-dashboard)](http://status.holoviz.org/) |
 | Binder  | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/holoviz/holoviz/HEAD?labpath=examples%2Ftutorial%2F00_Setup.ipynb) |
 | Code of Conduct | [![Based on Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)|
+| Fiscal Sponsor |[![Powered by NumFOCUS]( https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A )](http://numfocus.org)|
 
 ## What is HoloViz?
 
@@ -99,6 +100,27 @@ The core HoloViz projects are:
 All HoloViz projects are freely available for commercial or
 non-commercial use according to a permissive open-source license as
 described in each project's website.
+
+[//]: # (numfocus-fiscal-sponsor-attribution)
+
+HoloViz uses a [custom open governance model](./GOVERNANCE.md) and is fiscally sponsored by [NumFOCUS](https://numfocus.org/). Consider making a [tax-deductible donation](https://numfocus.org/donate-to-holoviz) to help the project pay for developer time, professional services, travel, workshops, and a variety of other needs. 
+
+<div align="center">
+  <a href="<PROJECT_NUMFOCUS_SPONSORSHIP_LINK>">
+    <img width="300px" 
+         src="https://raw.githubusercontent.com/numfocus/templates/master/images/numfocus-logo.png" 
+         align="center">
+  </a>
+</div>
+<br>
+<details>
+<summary> More about donations</summary>
+
+NumFOCUS is a 501(c)(3) non-profit charity in the United States; as such, donations to
+NumFOCUS are tax-deductible as allowed by law. As with any donation, you should
+consult with your personal tax adviser or the IRS about your particular tax situation.
+
+</details>
 
 ## What is the purpose of this specific repository?
 
