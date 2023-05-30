@@ -60,7 +60,7 @@ HoloViz libraries have been supported by a variety of different funding mechanis
   many other government agencies and corporations contributing to the maintenance
   and development of all the HoloViz libraries.
 
-- |NFbadge|: In early 2023, NumFOCUS became the fiscal sponsor for HoloViz. NumFOCUS is a 
+- |NFbadge|: NumFOCUS has been the fiscal sponsor for HoloViz since May 2023. NumFOCUS is a 
   nonprofit dedicated to supporting the open-source scientific computing community.
   If you like HoloViz and want to support our mission, please consider making a 
   `donation <https://numfocus.org/donate-to-holoviz>`__ to support our efforts.
