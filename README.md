@@ -103,24 +103,24 @@ described in each project's website.
 
 [//]: # (numfocus-fiscal-sponsor-attribution)
 
-HoloViz uses a [custom open governance model](./GOVERNANCE.md) and is fiscally sponsored by [NumFOCUS](https://numfocus.org/). Consider making a [tax-deductible donation](https://numfocus.org/donate-to-holoviz) to help the project pay for developer time, professional services, travel, workshops, and a variety of other needs. 
-
-<div align="center">
-  <a href="<PROJECT_NUMFOCUS_SPONSORSHIP_LINK>">
-    <img width="300px" 
-         src="https://raw.githubusercontent.com/numfocus/templates/master/images/numfocus-logo.png" 
-         align="center">
-  </a>
-</div>
-<br>
+HoloViz uses a [custom open governance model](./GOVERNANCE.md) and is fiscally sponsored by [NumFOCUS](https://numfocus.org/). Consider making a [tax-deductible donation](https://numfocus.org/donate-to-holoviz) to help the project pay for developer time, professional services, travel, workshops, and a variety of other needs.  
 <details>
-<summary> More about donations</summary>
+<summary> NumFOCUS donation details</summary>
 
 NumFOCUS is a 501(c)(3) non-profit charity in the United States; as such, donations to
 NumFOCUS are tax-deductible as allowed by law. As with any donation, you should
 consult with your personal tax adviser or the IRS about your particular tax situation.
 
 </details>
+
+<div align="center">
+  <a href="<PROJECT_NUMFOCUS_SPONSORSHIP_LINK>">
+    <img width="200px" 
+         src="https://raw.githubusercontent.com/numfocus/templates/master/images/numfocus-logo.png" 
+         align="center">
+  </a>
+</div>
+<br>
 
 ## What is the purpose of this specific repository?
 
