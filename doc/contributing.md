@@ -84,7 +84,7 @@ As an external contributor, you do not have permission to submit code directly t
 
 The HoloViz developers rely on [Conda](https://conda.io/docs/intro.html) to manage their virtual environments. We **recommend** you install Conda too to have an experience as close as possible to those of the core developers. To install Conda on any platform, you can [install Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
 
-The HoloViz developers rely on [pyctdev](https://github.com/pyviz-dev/pyctdev), a custom developer tool that facilitates maintaining all of the holoviz projects. pyctdev is an extension of the task running tool [doit](https://pydoit.org/). We **recommend** that you install `pyctdev`:
+The HoloViz developers rely on [pyctdev](https://github.com/holoviz-dev/pyctdev), a custom developer tool that facilitates maintaining all of the holoviz projects. pyctdev is an extension of the task running tool [doit](https://pydoit.org/). We **recommend** that you install `pyctdev`:
 
 ```bash
 conda install -c pyviz/label/dev "pyctdev>0.5.0"
@@ -164,7 +164,7 @@ It is crucial to keep in mind that nothing lasts forever and that, at some point
 The HoloViz group owns a few GitHub organizations:
 
 * [holoviz](https://github.com/holoviz/) is the main one where you are likely to contribute. It hosts the core packages maintained by the group.
-* [pyviz-dev](https://github.com/pyviz-dev/) hosts two main types of repositories:
+* [holoviz-dev](https://github.com/holoviz-dev/) hosts two main types of repositories:
     * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
     * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process. 
 * [holoviz-topics](https://github.com/holoviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
@@ -186,16 +186,16 @@ In more detail:
     * [Spatialpandas](https://github.com/holoviz/spatialpandas): Pandas extension arrays for spatial/geometric operations
     * [pyviz_comms](https://github.com/holoviz/pyviz_comms): Bidirectional communication for the HoloViz ecosystem
     * [jupyter-panel-proxy](https://github.com/holoviz/jupyter-panel-proxy): Jupyter Server Proxy for Panel
-* [pyviz-dev](https://github.com/pyviz-dev/)
+* [holoviz-dev](https://github.com/holoviz-dev/)
     * [nbsite](https://github.com/holoviz/nbsite): Build a tested, sphinx-based website from notebooks
-    * [nbsmoke](https://github.com/pyviz-dev/nbsmoke): Basic notebook checks. Do they run? Do they contain lint?
-    * [pyctdev](https://github.com/pyviz-dev/pyctdev): Python packaging Common Tasks for Developers
-    * [autover](https://github.com/pyviz-dev/autover): Provides consistent and up-to-date version strings for Python packages. 
-    * [pyct](https://github.com/pyviz-dev/pyct): Python packaging Common Tasks
-    * [blog](https://github.com/pyviz-dev/blog): The HoloViz blog
-    * [status-dashboard](https://github.com/pyviz-dev/status-dashboard): Status Dashboard for HoloViz Project
-    * [pyviz-dev.github.io](https://github.com/pyviz-dev/pyviz-dev.github.io): Index of all sites on pyviz-dev
-    * [holoviz_tasks](https://github.com/pyviz-dev/holoviz_tasks): Shared GHA workflows and tasks used to maintain the HoloViz repositories
+    * [nbsmoke](https://github.com/holoviz-dev/nbsmoke): Basic notebook checks. Do they run? Do they contain lint?
+    * [pyctdev](https://github.com/holoviz-dev/pyctdev): Python packaging Common Tasks for Developers
+    * [autover](https://github.com/holoviz-dev/autover): Provides consistent and up-to-date version strings for Python packages. 
+    * [pyct](https://github.com/holoviz-dev/pyct): Python packaging Common Tasks
+    * [blog](https://github.com/holoviz-dev/blog): The HoloViz blog
+    * [status-dashboard](https://github.com/holoviz-dev/status-dashboard): Status Dashboard for HoloViz Project
+    * [holoviz-dev.github.io](https://github.com/holoviz-dev/holoviz-dev.github.io): Index of all sites on holoviz-dev
+    * [holoviz_tasks](https://github.com/holoviz-dev/holoviz_tasks): Shared GHA workflows and tasks used to maintain the HoloViz repositories
     * more ...
 * [holoviz-topics](https://github.com/holoviz-topics/)
     * [examples](https://github.com/holoviz-topics/examples): Home for domain-specific narrative examples using multiple PyViz projects
@@ -211,13 +211,13 @@ The `holoviz` organization has two teams:
 * `holoviz-dev`: Team that will manage the HoloViz contents
 * `Triaging team`: Contributors able to triage open issues on HoloViz projects
 
-The `pyviz-dev` organization has one team:
+The `holoviz-dev` organization has one team:
 
-* `pyviz-dev`: PyViz Developers
+* `holoviz-dev`: PyViz Developers
 
 The `holoviz-topics` organization has one team:
 
-* `pyviz-dev`: Developers on HoloViz Topics
+* `holoviz-dev`: Developers on HoloViz Topics
 
 #### Developer account
 
@@ -262,7 +262,7 @@ Of course, this is not a strict requirement, and you can decide to use `pip` ins
 
 #### Pyctdev
 
-[pyctdev](https://github.com/pyviz-dev/pyctdev) stands for *python packaging common tasks for developers*, it is a developer tool built by the HoloViz group in an attempt to simplify managing Python projects, by providing a way to declare how to run the usual tasks required to maintain a project, such as running its unit tests or building its documentation, and by standardizing the way to execute these tasks with e.g. `doit test_unit` or `doit build_website`. `pyctdev` relies on [doit](https://pydoit.org/) to provide a command-line interface to developers (e.g. `doit test_unit`) and can be as such seen as an extension of `doit`. `doit` allows to register *tasks* that consist of a sequence of *actions*, an action being either a command line instruction (e.g. `flake8 .`) or the execution of a Python function. `pyctdev` comes with various common Python tasks dedicated to manage a project, such as the `develop_install` task (executed with `doit develop_install`) that will install the project in development mode with its optional development dependencies.
+[pyctdev](https://github.com/holoviz-dev/pyctdev) stands for *python packaging common tasks for developers*, it is a developer tool built by the HoloViz group in an attempt to simplify managing Python projects, by providing a way to declare how to run the usual tasks required to maintain a project, such as running its unit tests or building its documentation, and by standardizing the way to execute these tasks with e.g. `doit test_unit` or `doit build_website`. `pyctdev` relies on [doit](https://pydoit.org/) to provide a command-line interface to developers (e.g. `doit test_unit`) and can be as such seen as an extension of `doit`. `doit` allows to register *tasks* that consist of a sequence of *actions*, an action being either a command line instruction (e.g. `flake8 .`) or the execution of a Python function. `pyctdev` comes with various common Python tasks dedicated to manage a project, such as the `develop_install` task (executed with `doit develop_install`) that will install the project in development mode with its optional development dependencies.
 
 By unifying the way to execute these common tasks, `pyctdev` makes it easier to work across the HoloViz projects. It also makes it easier to work across environments, as the commands to execute should be the same whether you execute them locally or in a CI environment. In addition, `pyctdev` supports developing with either pip or conda, a unique feature. In practice, however, `pyctdev` is an ambitious project. While it has proven useful to the HoloViz group, it is yet another tool to learn for contributors and maintain for the group. We still **recommend** that you use `pyctdev` to have a development experience closer to the core maintainers. If you feel constrained by the tooling abstraction that is `pyctdev,` you can ignore it and reach out to the tools you are most comfortable with. In that case, you will have to inspect the files of the project you are contributing to and find what tasks you need to run. In each core HoloViz repository, you will find a few files that are of importance for `doit/pyctdev`:
 
@@ -287,7 +287,7 @@ Now that the main files are defined, we can go through each step of a typical wo
 
 #### nbsite
 
-Most of the packages maintained by the HoloViz group have a website. Those not promoted for usage outside the group don't have a website like `pyctdev`. HoloViz being dedicated to making data visualization simpler in Python, it made sense for the group to develop a way to generate websites out of a collection of Jupyter Notebooks. As a result, [nbsite](https://github.com/pyviz-dev/nbsite) was created to achieve that goal. `nbsite` is based on [sphinx](https://www.sphinx-doc.org) and is the tool used by all the projects to build their site. `nbsite` provides two important features:
+Most of the packages maintained by the HoloViz group have a website. Those not promoted for usage outside the group don't have a website like `pyctdev`. HoloViz being dedicated to making data visualization simpler in Python, it made sense for the group to develop a way to generate websites out of a collection of Jupyter Notebooks. As a result, [nbsite](https://github.com/holoviz-dev/nbsite) was created to achieve that goal. `nbsite` is based on [sphinx](https://www.sphinx-doc.org) and is the tool used by all the projects to build their site. `nbsite` provides two important features:
 
 * A Sphinx `NotebookDirective` allows inserting an evaluated notebook in a document. It has a few useful parameters like `offset` that takes a number that will be the number of top cells not rendered. 
 * It can build a gallery from an organized collection of Notebooks.
@@ -323,7 +323,7 @@ The HoloViz websites are usually hosted on *GitHub Pages*. The deployment proces
 
 Most HoloViz projects have both the main site - the one meant to be visited by users and that is in line with the latest official release - and a dev site that can be updated at any time and is meant to be used by the HoloViz developers for testing purposes, and in particular making sure that the documentation build works as expected before making a new release.
 
-This page references all the HoloViz dev sites: https://pyviz-dev.github.io/. A link to the dev site is also usually available in the README file of each project.
+This page references all the HoloViz dev sites: https://holoviz-dev.github.io/. A link to the dev site is also usually available in the README file of each project.
 
 ### Monitoring
 
@@ -374,9 +374,9 @@ While others are available as subdomains of holoviz.org:
 
 While `pyctdev` acts as the task runner, other tools run the tests. There are four main kinds of tests that a HoloViz project may run:
 
-* *Linters*: running programs that check Python source files for errors and styling issues. Most HoloViz projects rely on [Flake8](https://flake8.pycqa.org) and use the `doit test_flakes` command. Some projects may rely on [pre-commit](https://pre-commit.com/) to run the linters on every commit to avoid having the CI fail in linting issues, which are best found locally. Notebooks can also be linted, this is done either by [nbsmoke](https://github.com/pyviz-dev/nbsmoke) or [nbqa](https://nbqa.readthedocs.io/).
+* *Linters*: running programs that check Python source files for errors and styling issues. Most HoloViz projects rely on [Flake8](https://flake8.pycqa.org) and use the `doit test_flakes` command. Some projects may rely on [pre-commit](https://pre-commit.com/) to run the linters on every commit to avoid having the CI fail in linting issues, which are best found locally. Notebooks can also be linted, this is done either by [nbsmoke](https://github.com/holoviz-dev/nbsmoke) or [nbqa](https://nbqa.readthedocs.io/).
 * *Unit tests*: the HoloViz projects rely on [pytest](https://docs.pytest.org/) to run their unit tests, sometimes with some additional pytest plugins. [pytest-cov](https://pytest-cov.readthedocs.io/) usage is pretty standard across the projects, as it provides an easy way to produce coverage reports that can then automatically be uploaded to the [Codecov](https://about.codecov.io/) service. The `doit test_unit` command is usually the one that will run these tests.
-* *Example tests*: the examples tests and the notebooks tests, in which the notebooks found in the `/examples` folder are all executed. Note that their output is not compared with any reference. Instead, the tests only fail if an error is raised while running the notebooks. The projects rely on pytest and either [nbsmoke](https://github.com/pyviz-dev/nbsmoke) or [nbval](https://nbval.readthedocs.io). The `doit test_examples` command is usually the one that will run these tests.
+* *Example tests*: the examples tests and the notebooks tests, in which the notebooks found in the `/examples` folder are all executed. Note that their output is not compared with any reference. Instead, the tests only fail if an error is raised while running the notebooks. The projects rely on pytest and either [nbsmoke](https://github.com/holoviz-dev/nbsmoke) or [nbval](https://nbval.readthedocs.io). The `doit test_examples` command is usually the one that will run these tests.
 * *UI tests*: some projects may rely on [Playwright](https://playwright.dev/python/) and [pytest-playwright](https://github.com/microsoft/playwright-pytest) to run tests that check that things get displayed as expected in a browser and those interactions between the client and the backend work as expected. The `doit test_ui` command is usually the one that will run these tests.
 
 ```{note}
@@ -439,7 +439,7 @@ Development releases can have different goals. Sometimes they are only meant to 
 1. Before making a proper release, you should start by making a development release. This is the first one that would be an *alpha* release. Bump the version too, e.g., `v1.9.6a1` and commit the new tag.
 1. After pushing the new tag, you can monitor the *Packages* and *Documentation* workflows. If one fails, you will have to fix that as that would be a release blocker.
 1. If the *alpha* release succeeded, it is now time to check a few things:
-    * A new version of the *dev* (built on the corresponding `pyviz-dev` repository `gh-pages` branch) site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.
+    * A new version of the *dev* (built on the corresponding `holoviz-dev` repository `gh-pages` branch) site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.
     * Some packages have implemented *downstream tests*. When they do, these tests run only when a release is made. They trigger the test suite of their downstream packages (e.g., a Panel release would trigger the test suite of Param). This ensures that the release you just made didn't break some other packages of the HoloViz ecosystem. To find the results of these downstream tests, check the Github Actions page of the released package.
     * Optionally, and to make sure that the release went well, you could install the package you've released (e.g. `conda install -c pyviz/label/dev panel`) and check there's no embarrassing issue.
 1. Pause the release process if you expect feedback from others. If not, keep going.
