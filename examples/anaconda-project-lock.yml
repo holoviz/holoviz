@@ -17,7 +17,7 @@ locking_enabled: true
 env_specs:
   test:
     locked: true
-    env_spec_hash: be6656b285fd6abb73ba28510720fb2957a75d9c
+    env_spec_hash: 7044a00d21a6c81d4753b89aa488e1438db29163
     platforms:
     - linux-64
     - osx-64
@@ -103,6 +103,7 @@ env_specs:
       - nbformat=5.9.0=pyhd8ed1ab_0
       - nbsmoke=0.6.1a1=py_0
       - nest-asyncio=1.5.6=pyhd8ed1ab_0
+      - nomkl=1.0=h5ca1d4c_0
       - notebook-shim=0.2.3=pyhd8ed1ab_0
       - notebook=6.5.4=pyha770c72_0
       - overrides=7.3.1=pyhd8ed1ab_0
@@ -117,7 +118,7 @@ env_specs:
       - pkgutil-resolve-name=1.3.10=pyhd8ed1ab_0
       - platformdirs=3.8.0=pyhd8ed1ab_0
       - plotly=5.15.0=pyhd8ed1ab_0
-      - pluggy=1.0.0=pyhd8ed1ab_5
+      - pluggy=1.2.0=pyhd8ed1ab_0
       - pooch=1.7.0=pyha770c72_3
       - prometheus_client=0.17.0=pyhd8ed1ab_0
       - prompt-toolkit=3.0.38=pyha770c72_0
@@ -669,7 +670,6 @@ env_specs:
       - hdf4=4.2.15=h1334946_6
       - hdf5=1.14.0=nompi_h918d9b7_103
       - icu=72.1=h63175ca_0
-      - intel-openmp=2023.1.0=h57928b3_46319
       - ipykernel=6.23.3=pyh6817e22_0
       - ipython=8.14.0=pyh08f2357_0
       - jupyter_core=5.3.1=py39hcbf5309_0
@@ -680,11 +680,11 @@ env_specs:
       - libabseil=20230125.2=cxx17_h63175ca_2
       - libaec=1.0.6=h63175ca_1
       - libarrow=12.0.0=h5f84808_8_cpu
-      - libblas=3.9.0=17_win64_mkl
+      - libblas=3.9.0=17_win64_openblas
       - libbrotlicommon=1.0.9=hcfcfb64_8
       - libbrotlidec=1.0.9=hcfcfb64_8
       - libbrotlienc=1.0.9=hcfcfb64_8
-      - libcblas=3.9.0=17_win64_mkl
+      - libcblas=3.9.0=17_win64_openblas
       - libclang13=15.0.7=default_h77d9078_2
       - libclang=15.0.7=default_h77d9078_2
       - libcrc32c=1.1.2=h0e60522_0
@@ -692,15 +692,16 @@ env_specs:
       - libdeflate=1.18=hcfcfb64_0
       - libevent=2.1.12=h3671451_1
       - libffi=3.4.2=h8ffe710_5
+      - libflang=5.0.0=h6538335_20180525
       - libglib=2.76.3=he8f3873_0
       - libgoogle-cloud=2.11.0=hec1a1f0_1
       - libgrpc=1.55.1=h0c1e3fa_1
-      - libhwloc=2.9.1=nocuda_h15da153_6
       - libiconv=1.17=h8ffe710_0
       - libjpeg-turbo=2.1.5.1=hcfcfb64_0
-      - liblapack=3.9.0=17_win64_mkl
+      - liblapack=3.9.0=17_win64_openblas
       - libnetcdf=4.9.2=nompi_ha5afab8_105
       - libogg=1.3.4=h8ffe710_1
+      - libopenblas=0.3.23=pthreads_hc140b1d_0
       - libpng=1.6.39=h19919ed_0
       - libprotobuf=4.23.2=h1975477_5
       - libsodium=1.0.18=h8d14728_1
@@ -715,6 +716,7 @@ env_specs:
       - libxml2=2.11.4=hc3477c8_0
       - libzip=1.9.2=h519de47_1
       - libzlib=1.2.13=hcfcfb64_5
+      - llvm-meta=5.0.0=0
       - llvmlite=0.40.0=py39hd28a505_0
       - lz4-c=1.9.4=hcfcfb64_0
       - lz4=4.3.2=py39hf617134_0
@@ -726,13 +728,13 @@ env_specs:
       - markupsafe=2.1.3=py39ha55989b_0
       - matplotlib-base=3.7.1=py39haf65ace_0
       - matplotlib=3.7.1=py39hcbf5309_0
-      - mkl=2022.1.0=h6a75c08_874
       - msgpack-python=1.0.5=py39h1f6ef14_0
       - msys2-conda-epoch=20160418=1
       - netcdf4=1.6.4=nompi_py39h5f77c00_100
       - numba=0.57.0=py39hadaa1c4_2
       - numpy=1.24.3=py39h816b6a6_0
       - openjpeg=2.5.0=ha2aaf27_2
+      - openmp=5.0.0=vc14_1
       - openssl=3.1.1=hcfcfb64_1
       - orc=1.8.4=h08d22ad_0
       - pandas=2.0.2=py39h1679cfb_0
@@ -742,7 +744,6 @@ env_specs:
       - ply=3.11=py_1
       - psutil=5.9.5=py39ha55989b_0
       - pthread-stubs=0.4=hcd874cb_1001
-      - pthreads-win32=2.9.1=hfa6e2cd_3
       - pyarrow=12.0.0=py39hca4e8af_8_cpu
       - pyqt5-sip=12.11.0=py39h99910a6_3
       - pyqt=5.15.7=py39hb77abff_3
@@ -759,7 +760,6 @@ env_specs:
       - send2trash=1.8.2=pyh08f2357_0
       - sip=6.7.9=py39h99910a6_0
       - snappy=1.1.10=hfb803bf_0
-      - tbb=2021.9.0=h91493d7_0
       - terminado=0.17.0=pyh08f2357_0
       - tk=8.6.12=h8ffe710_0
       - toml=0.10.2=pyhd8ed1ab_0
@@ -780,7 +780,7 @@ env_specs:
       - zstd=1.5.2=h12be248_6
   doc:
     locked: true
-    env_spec_hash: d871a5a98ccd1f9e9f1e39aa677a20f30174c02f
+    env_spec_hash: 7a24095dfd43ef2d1827d6d449f4ded4ebe252a1
     platforms:
     - linux-64
     - osx-64
@@ -871,6 +871,7 @@ env_specs:
       - nbformat=5.9.0=pyhd8ed1ab_0
       - nbsite=0.8.1=py_0
       - nest-asyncio=1.5.6=pyhd8ed1ab_0
+      - nomkl=1.0=h5ca1d4c_0
       - notebook-shim=0.2.3=pyhd8ed1ab_0
       - notebook=6.5.4=pyha770c72_0
       - overrides=7.3.1=pyhd8ed1ab_0
@@ -1466,7 +1467,6 @@ env_specs:
       - hdf4=4.2.15=h1334946_6
       - hdf5=1.14.0=nompi_h918d9b7_103
       - icu=72.1=h63175ca_0
-      - intel-openmp=2023.1.0=h57928b3_46319
       - ipykernel=6.23.3=pyh6817e22_0
       - ipython=8.14.0=pyh08f2357_0
       - jupyter_core=5.3.1=py39hcbf5309_0
@@ -1477,11 +1477,11 @@ env_specs:
       - libabseil=20230125.2=cxx17_h63175ca_2
       - libaec=1.0.6=h63175ca_1
       - libarrow=12.0.0=h5f84808_8_cpu
-      - libblas=3.9.0=17_win64_mkl
+      - libblas=3.9.0=17_win64_openblas
       - libbrotlicommon=1.0.9=hcfcfb64_8
       - libbrotlidec=1.0.9=hcfcfb64_8
       - libbrotlienc=1.0.9=hcfcfb64_8
-      - libcblas=3.9.0=17_win64_mkl
+      - libcblas=3.9.0=17_win64_openblas
       - libclang13=15.0.7=default_h77d9078_2
       - libclang=15.0.7=default_h77d9078_2
       - libcrc32c=1.1.2=h0e60522_0
@@ -1489,15 +1489,16 @@ env_specs:
       - libdeflate=1.18=hcfcfb64_0
       - libevent=2.1.12=h3671451_1
       - libffi=3.4.2=h8ffe710_5
+      - libflang=5.0.0=h6538335_20180525
       - libglib=2.76.3=he8f3873_0
       - libgoogle-cloud=2.11.0=hec1a1f0_1
       - libgrpc=1.55.1=h0c1e3fa_1
-      - libhwloc=2.9.1=nocuda_h15da153_6
       - libiconv=1.17=h8ffe710_0
       - libjpeg-turbo=2.1.5.1=hcfcfb64_0
-      - liblapack=3.9.0=17_win64_mkl
+      - liblapack=3.9.0=17_win64_openblas
       - libnetcdf=4.9.2=nompi_ha5afab8_105
       - libogg=1.3.4=h8ffe710_1
+      - libopenblas=0.3.23=pthreads_hc140b1d_0
       - libpng=1.6.39=h19919ed_0
       - libprotobuf=4.23.2=h1975477_5
       - libsodium=1.0.18=h8d14728_1
@@ -1512,6 +1513,7 @@ env_specs:
       - libxml2=2.11.4=hc3477c8_0
       - libzip=1.9.2=h519de47_1
       - libzlib=1.2.13=hcfcfb64_5
+      - llvm-meta=5.0.0=0
       - llvmlite=0.40.0=py39hd28a505_0
       - lz4-c=1.9.4=hcfcfb64_0
       - lz4=4.3.2=py39hf617134_0
@@ -1523,13 +1525,13 @@ env_specs:
       - markupsafe=2.1.3=py39ha55989b_0
       - matplotlib-base=3.7.1=py39haf65ace_0
       - matplotlib=3.7.1=py39hcbf5309_0
-      - mkl=2022.1.0=h6a75c08_874
       - msgpack-python=1.0.5=py39h1f6ef14_0
       - msys2-conda-epoch=20160418=1
       - netcdf4=1.6.4=nompi_py39h5f77c00_100
       - numba=0.57.0=py39hadaa1c4_2
       - numpy=1.24.3=py39h816b6a6_0
       - openjpeg=2.5.0=ha2aaf27_2
+      - openmp=5.0.0=vc14_1
       - openssl=3.1.1=hcfcfb64_1
       - orc=1.8.4=h08d22ad_0
       - pandas=2.0.2=py39h1679cfb_0
@@ -1539,7 +1541,6 @@ env_specs:
       - ply=3.11=py_1
       - psutil=5.9.5=py39ha55989b_0
       - pthread-stubs=0.4=hcd874cb_1001
-      - pthreads-win32=2.9.1=hfa6e2cd_3
       - pyarrow=12.0.0=py39hca4e8af_8_cpu
       - pyqt5-sip=12.11.0=py39h99910a6_3
       - pyqt=5.15.7=py39hb77abff_3
@@ -1557,7 +1558,6 @@ env_specs:
       - sip=6.7.9=py39h99910a6_0
       - snappy=1.1.10=hfb803bf_0
       - sqlalchemy=2.0.16=py39ha55989b_0
-      - tbb=2021.9.0=h91493d7_0
       - terminado=0.17.0=pyh08f2357_0
       - tk=8.6.12=h8ffe710_0
       - toml=0.10.2=pyhd8ed1ab_0
@@ -1578,7 +1578,7 @@ env_specs:
       - zstd=1.5.2=h12be248_6
   default:
     locked: true
-    env_spec_hash: 33efac8b508030c3bfe68ddb0472b05bf1dd63d6
+    env_spec_hash: b2b85cda1c49aae5e578e66f6340479995bab4a6
     platforms:
     - linux-64
     - osx-64
@@ -1662,6 +1662,7 @@ env_specs:
       - nbconvert=7.6.0=pyhd8ed1ab_0
       - nbformat=5.9.0=pyhd8ed1ab_0
       - nest-asyncio=1.5.6=pyhd8ed1ab_0
+      - nomkl=1.0=h5ca1d4c_0
       - notebook-shim=0.2.3=pyhd8ed1ab_0
       - notebook=6.5.4=pyha770c72_0
       - overrides=7.3.1=pyhd8ed1ab_0
@@ -2225,7 +2226,6 @@ env_specs:
       - hdf4=4.2.15=h1334946_6
       - hdf5=1.14.0=nompi_h918d9b7_103
       - icu=72.1=h63175ca_0
-      - intel-openmp=2023.1.0=h57928b3_46319
       - ipykernel=6.23.3=pyh6817e22_0
       - ipython=8.14.0=pyh08f2357_0
       - jupyter_core=5.3.1=py39hcbf5309_0
@@ -2236,11 +2236,11 @@ env_specs:
       - libabseil=20230125.2=cxx17_h63175ca_2
       - libaec=1.0.6=h63175ca_1
       - libarrow=12.0.0=h5f84808_8_cpu
-      - libblas=3.9.0=17_win64_mkl
+      - libblas=3.9.0=17_win64_openblas
       - libbrotlicommon=1.0.9=hcfcfb64_8
       - libbrotlidec=1.0.9=hcfcfb64_8
       - libbrotlienc=1.0.9=hcfcfb64_8
-      - libcblas=3.9.0=17_win64_mkl
+      - libcblas=3.9.0=17_win64_openblas
       - libclang13=15.0.7=default_h77d9078_2
       - libclang=15.0.7=default_h77d9078_2
       - libcrc32c=1.1.2=h0e60522_0
@@ -2248,15 +2248,16 @@ env_specs:
       - libdeflate=1.18=hcfcfb64_0
       - libevent=2.1.12=h3671451_1
       - libffi=3.4.2=h8ffe710_5
+      - libflang=5.0.0=h6538335_20180525
       - libglib=2.76.3=he8f3873_0
       - libgoogle-cloud=2.11.0=hec1a1f0_1
       - libgrpc=1.55.1=h0c1e3fa_1
-      - libhwloc=2.9.1=nocuda_h15da153_6
       - libiconv=1.17=h8ffe710_0
       - libjpeg-turbo=2.1.5.1=hcfcfb64_0
-      - liblapack=3.9.0=17_win64_mkl
+      - liblapack=3.9.0=17_win64_openblas
       - libnetcdf=4.9.2=nompi_ha5afab8_105
       - libogg=1.3.4=h8ffe710_1
+      - libopenblas=0.3.23=pthreads_hc140b1d_0
       - libpng=1.6.39=h19919ed_0
       - libprotobuf=4.23.2=h1975477_5
       - libsodium=1.0.18=h8d14728_1
@@ -2271,6 +2272,7 @@ env_specs:
       - libxml2=2.11.4=hc3477c8_0
       - libzip=1.9.2=h519de47_1
       - libzlib=1.2.13=hcfcfb64_5
+      - llvm-meta=5.0.0=0
       - llvmlite=0.40.0=py39hd28a505_0
       - lz4-c=1.9.4=hcfcfb64_0
       - lz4=4.3.2=py39hf617134_0
@@ -2282,13 +2284,13 @@ env_specs:
       - markupsafe=2.1.3=py39ha55989b_0
       - matplotlib-base=3.7.1=py39haf65ace_0
       - matplotlib=3.7.1=py39hcbf5309_0
-      - mkl=2022.1.0=h6a75c08_874
       - msgpack-python=1.0.5=py39h1f6ef14_0
       - msys2-conda-epoch=20160418=1
       - netcdf4=1.6.4=nompi_py39h5f77c00_100
       - numba=0.57.0=py39hadaa1c4_2
       - numpy=1.24.3=py39h816b6a6_0
       - openjpeg=2.5.0=ha2aaf27_2
+      - openmp=5.0.0=vc14_1
       - openssl=3.1.1=hcfcfb64_1
       - orc=1.8.4=h08d22ad_0
       - pandas=2.0.2=py39h1679cfb_0
@@ -2298,7 +2300,6 @@ env_specs:
       - ply=3.11=py_1
       - psutil=5.9.5=py39ha55989b_0
       - pthread-stubs=0.4=hcd874cb_1001
-      - pthreads-win32=2.9.1=hfa6e2cd_3
       - pyarrow=12.0.0=py39hca4e8af_8_cpu
       - pyqt5-sip=12.11.0=py39h99910a6_3
       - pyqt=5.15.7=py39hb77abff_3
@@ -2315,7 +2316,6 @@ env_specs:
       - send2trash=1.8.2=pyh08f2357_0
       - sip=6.7.9=py39h99910a6_0
       - snappy=1.1.10=hfb803bf_0
-      - tbb=2021.9.0=h91493d7_0
       - terminado=0.17.0=pyh08f2357_0
       - tk=8.6.12=h8ffe710_0
       - toml=0.10.2=pyhd8ed1ab_0

@@ -37,6 +37,8 @@ packages: &pkgs
 - jupyter_nbextensions_configurator
 # To avoid problems seen here: https://github.com/holoviz/holoviews/issues/5699
 - jupyter_client<8
+# We don't want to download mkl packages (which are large) mainly seen on Windows
+- nomkl
 
 dependencies: *pkgs
 
