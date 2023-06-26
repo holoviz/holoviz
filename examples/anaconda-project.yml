@@ -14,8 +14,7 @@ packages: &pkgs
 - python=3.9
 - jinja2>=3.0.0
 - packaging
-# Temporary pin to workaround https://github.com/numba/numba/issues/8615
-- numpy <1.24
+- numpy
 - pandas
 - dask
 - xarray
@@ -23,18 +22,23 @@ packages: &pkgs
 - matplotlib
 - ipympl
 - bokeh
-- datashader==0.14.1
-- param==1.12.2
+- datashader==0.15.0
+- param==1.13.0
 - netcdf4
 - fastparquet
 - jupyterlab
 - fsspec
-- hvplot==0.8.0
-- panel==0.13.1
-- holoviews==1.15.0
+- hvplot==0.8.3
+- panel==1.1.1
+- holoviews==1.16.2
+- pyviz_comms >=2.3.2
 - plotly
 # While testing the project someone got this error: ModuleNotFoundError: No module named 'jupyter_nbextensions_configurator'
 - jupyter_nbextensions_configurator
+# To avoid problems seen here: https://github.com/holoviz/holoviews/issues/5699
+- jupyter_client<8
+# We don't want to download mkl packages (which are large) mainly seen on Windows
+- nomkl
 
 dependencies: *pkgs
 
@@ -52,7 +56,7 @@ commands:
     windows: pytest --nbsmoke-lint -k ".ipynb" --ignore envs
     env_spec: test
 
-# Optional, used to silence warnings about unused notebooks 
+# Optional, used to silence warnings about unused notebooks
 skip_imports:
   notebooks: true
 
@@ -65,8 +69,7 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite
-      - pydata-sphinx-theme <0.9.0
+      - nbsite ==0.8.1
       - docutils ==0.16.0
     dependencies: *docpkgs
 
