@@ -31,6 +31,7 @@ packages: &pkgs
 - hvplot==0.8.3
 - panel==1.1.1
 - holoviews==1.16.2
+- pyviz_comms >=2.3.2
 - plotly
 # While testing the project someone got this error: ModuleNotFoundError: No module named 'jupyter_nbextensions_configurator'
 - jupyter_nbextensions_configurator
