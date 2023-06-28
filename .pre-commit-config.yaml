@@ -5,7 +5,7 @@
 default_stages: [commit]
 repos:
 -   repo: https://github.com/hoxbro/clean_notebook
-    rev: v0.1.8
+    rev: v0.1.10
     hooks:
       - id: clean-notebook
         args: [-i, slideshow, --keep-empty] # ignore RISE slideshow metadata and keep empty cells
