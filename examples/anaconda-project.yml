@@ -22,14 +22,14 @@ packages: &pkgs
 - matplotlib
 - ipympl
 - bokeh
-- datashader==0.15.0
+- datashader==0.15.1
 - param==1.13.0
 - netcdf4
 - fastparquet
 - jupyterlab
 - fsspec
 - hvplot==0.8.3
-- panel==1.1.1
+- panel==1.2.0
 - holoviews==1.16.2
 - pyviz_comms >=2.3.2
 - plotly
@@ -69,7 +69,7 @@ env_specs:
     dependencies: *testpkgs
   doc:
     packages: &docpkgs
-      - nbsite ==0.8.1
+      - nbsite ==0.8.2
       - docutils ==0.16.0
     dependencies: *docpkgs
 
