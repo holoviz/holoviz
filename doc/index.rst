@@ -86,7 +86,6 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    :hidden:
    :maxdepth: 2
 
-   Introduction <self>
    Background <background>
    Installation <installation>
    Talks <talks/index>
