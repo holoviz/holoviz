@@ -13,11 +13,6 @@ version = release  = base_version(holoviz.__version__)
 
 html_static_path += ['_static']
 
-html_css_files = [
-    'nbsite.css',
-    'css/custom.css'
-]
-
 html_theme = "pydata_sphinx_theme"
 html_logo = '_static/holoviz-logo-unstacked.svg'
 html_favicon = "_static/favicon.ico"
@@ -37,8 +32,6 @@ html_theme_options.update({
         },
     ]
 })
-
-templates_path += ['_templates']
 
 html_context.update({
     # Used to add binder links to the latest released tag.
