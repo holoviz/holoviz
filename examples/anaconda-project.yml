@@ -33,12 +33,13 @@ packages: &pkgs
 - holoviews==1.16.2
 - pyviz_comms >=2.3.2
 - plotly
-# While testing the project someone got this error: ModuleNotFoundError: No module named 'jupyter_nbextensions_configurator'
-- jupyter_nbextensions_configurator
-# To avoid problems seen here: https://github.com/holoviz/holoviews/issues/5699
-- jupyter_client<8
 # We don't want to download mkl packages (which are large) mainly seen on Windows
 - nomkl
+# Docs deps, that used to be in a `doc` environment but locking is so slow.
+- nbsite ==0.8.3rc1
+# Test deps, that used to be in a `test` env, same reasons.
+- pytest
+- nbsmoke
 
 dependencies: *pkgs
 
@@ -50,28 +51,22 @@ commands:
   test:
     unix:    pytest --nbsmoke-run -k ".ipynb" --ignore envs
     windows: pytest --nbsmoke-run -k ".ipynb" --ignore envs
-    env_spec: test
   lint:
     unix:    pytest --nbsmoke-lint -k ".ipynb" --ignore envs
     windows: pytest --nbsmoke-lint -k ".ipynb" --ignore envs
-    env_spec: test
+  conda_list:
+    unix: conda list
+    windows: conda list
+  doc_rst:
+    unix: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
+    windows: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
+  doc_build:
+    unix: nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
+    windows: nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
 
 # Optional, used to silence warnings about unused notebooks
 skip_imports:
   notebooks: true
-
-env_specs:
-  default: {}
-  test:
-    packages: &testpkgs
-      - nbsmoke
-      - pytest
-    dependencies: *testpkgs
-  doc:
-    packages: &docpkgs
-      - nbsite ==0.8.2
-      - docutils ==0.16.0
-    dependencies: *docpkgs
 
 platforms:
 - linux-64
