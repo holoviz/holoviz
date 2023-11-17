@@ -34,28 +34,28 @@ The core HoloViz projects are:
 
   <td>
     <a href="https://panel.holoviz.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/panel.png"
+    <img src="examples/assets/panel.png"
          alt="Panel Logo" width="125"/>
     </a>
   </td>
 
   <td>
     <a href="https://hvplot.holoviz.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/hvplot.png"
+    <img src="examples/assets/hvplot.png"
          alt="hvPlot Logo" width="125"/>
     </a>
   </td>
 
   <td>
     <a href="https://holoviews.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/holoviews.png"
+    <img src="examples/assets/holoviews.png"
          alt="HoloViews Logo" width="125"/>
     </a>
   </td>
   
    <td>
     <a href="https://geoviews.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/geoviews.png"
+    <img src="examples/assets/geoviews.png"
          alt="GeoViews Logo" width="125"/>
     </a>
   </td>
@@ -65,28 +65,28 @@ The core HoloViz projects are:
 
   <td>
     <a href="https://datashader.com/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/datashader.png"
+    <img src="examples/assets/datashader.png"
          alt="Datashader Logo" width="125"/>
     </a>
   </td>
 
   <td>
     <a href="https://lumen.holoviz.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/lumen.png"
+    <img src="examples/assets/lumen.png"
          alt="Lumen Logo" width="125"/>
     </a>
   </td>
 
   <td>
     <a href="https://colorcet.holoviz.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/colorcet.png"
+    <img src="examples/assets/colorcet.png"
          alt="Colorcet Logo" width="125"/>
     </a>
   </td>
 
   <td>
     <a href="https://param.holoviz.org/">
-    <img src="https://github.com/holoviz/holoviz/blob/main/examples/assets/param.png"
+    <img src="examples/assets/param.png"
          alt="Param Logo" width="125"/>
     </a>
   </td>
