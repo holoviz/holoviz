@@ -36,6 +36,10 @@ html_theme_options.update({
         },
     ],
     "header_links_before_dropdown": 15,  # no dropdown menu basically
+    "secondary_sidebar_items": [
+        "github-stars-button",
+        "page-toc",
+    ],
 })
 
 html_context.update({
