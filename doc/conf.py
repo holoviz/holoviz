@@ -34,7 +34,8 @@ html_theme_options.update({
             "url": "https://discourse.holoviz.org/",
             "icon": "fab fa-discourse",
         },
-    ]
+    ],
+    "header_links_before_dropdown": 15,  # no dropdown menu basically
 })
 
 html_context.update({

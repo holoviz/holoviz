@@ -90,6 +90,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Installation <installation>
    Talks <talks/index>
    Tutorial <tutorial/index>
+   Blog <https://blog.holoviz.org/>
    Topics <topics/index>
    Contributing <contributing>
    Roadmap <Roadmap>
