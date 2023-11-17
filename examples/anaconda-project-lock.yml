@@ -17,7 +17,7 @@ locking_enabled: true
 env_specs:
   default:
     locked: true
-    env_spec_hash: 09026020103ddae5cbea7e37e0d2932cf71b45e5
+    env_spec_hash: aa328b1f4d9e4f646ce1d1ee157f7dcfcca1a27b
     platforms:
     - linux-64
     - osx-64
@@ -237,7 +237,7 @@ env_specs:
       - debugpy=1.8.0=py39h3d6467e_1
       - docutils=0.19=py39hf3d152e_1
       - expat=2.5.0=hcb278e6_1
-      - fastparquet=2023.10.1=py39h44dd56e_0
+      - fastparquet=2023.7.0=py39h0f8d45d_0
       - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
       - font-ttf-inconsolata=3.000=h77eed37_0
       - font-ttf-source-code-pro=2.038=h77eed37_0
@@ -340,7 +340,7 @@ env_specs:
       - openjpeg=2.5.0=hfec8fc6_2
       - openssl=1.1.1w=hd590300_0
       - orc=1.8.2=hfdbbad2_2
-      - pandas=2.1.3=py39hddac248_0
+      - pandas=2.0.3=py39h40cae4c_1
       - pandoc=3.1.3=h32600fe_0
       - parquet-cpp=1.5.1=2
       - pcre2=10.42=hcad00b1_0
@@ -406,7 +406,7 @@ env_specs:
       - cytoolz=0.12.2=py39hdc70f33_1
       - debugpy=1.8.0=py39h840bb9f_1
       - docutils=0.19=py39h6e9494a_1
-      - fastparquet=2023.10.1=py39h5b4affa_0
+      - fastparquet=2023.7.0=py39h57e1da4_0
       - fonttools=4.44.3=py39ha09f3b3_0
       - freetype=2.12.1=h60636b9_2
       - gflags=2.2.2=hb1e8313_1004
@@ -485,7 +485,7 @@ env_specs:
       - openjpeg=2.5.0=ha4da562_3
       - openssl=3.1.4=hd75f5a5_0
       - orc=1.9.0=hd1092d7_4
-      - pandas=2.1.3=py39h5d65943_0
+      - pandas=2.0.3=py39h11b3245_1
       - pandoc=3.1.3=h9d075a6_0
       - pillow=10.1.0=py39hdd30358_0
       - psutil=5.9.5=py39hdc70f33_1
@@ -541,7 +541,7 @@ env_specs:
       - cytoolz=0.12.2=py39h0f82c59_1
       - debugpy=1.8.0=py39hb198ff7_1
       - docutils=0.19=py39h2804cbe_1
-      - fastparquet=2023.10.1=py39h373d45f_0
+      - fastparquet=2023.7.0=py39h8a366b7_0
       - fonttools=4.44.3=py39h17cfd9d_0
       - freetype=2.12.1=hadb7bae_2
       - gflags=2.2.2=hc88da5d_1004
@@ -620,7 +620,7 @@ env_specs:
       - openjpeg=2.5.0=h4c1507b_3
       - openssl=3.1.4=h0d3ecfb_0
       - orc=1.9.0=h7c018df_4
-      - pandas=2.1.3=py39hf8cecc8_0
+      - pandas=2.0.3=py39h6b13a34_1
       - pandoc=3.1.3=hce30654_0
       - pillow=10.1.0=py39h755f0b7_0
       - psutil=5.9.5=py39h0f82c59_1
@@ -677,7 +677,7 @@ env_specs:
       - cytoolz=0.12.2=py39ha55989b_1
       - debugpy=1.8.0=py39h99910a6_1
       - docutils=0.19=py39hcbf5309_1
-      - fastparquet=2023.10.1=py39hd88c2e4_0
+      - fastparquet=2023.7.0=py39hbaa61f9_0
       - fonttools=4.44.3=py39ha55989b_0
       - freetype=2.12.1=hdaf720e_2
       - gettext=0.21.1=h5728263_0
@@ -765,7 +765,7 @@ env_specs:
       - openmp=5.0.0=vc14_1
       - openssl=3.1.4=hcfcfb64_0
       - orc=1.9.0=hf0b6bd4_4
-      - pandas=2.1.3=py39h32e6231_0
+      - pandas=2.0.3=py39h1679cfb_1
       - pandoc=3.1.3=h57928b3_0
       - pcre2=10.42=h17e33f8_0
       - pillow=10.1.0=py39h368b509_0

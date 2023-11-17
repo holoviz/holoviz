@@ -40,6 +40,9 @@ packages: &pkgs
 # Test deps, that used to be in a `test` env, same reasons.
 - pytest
 - nbsmoke
+# To get things running
+- pandas ==2.0.3
+- fastparquet ==2023.7.0
 
 dependencies: *pkgs
 
@@ -58,11 +61,11 @@ commands:
     unix: conda list
     windows: conda list
   doc_rst:
-    unix: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
-    windows: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
+    unix: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc
+    windows: nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc
   doc_build:
-    unix: nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
-    windows: nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
+    unix: nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc
+    windows: nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc
 
 # Optional, used to silence warnings about unused notebooks
 skip_imports:
