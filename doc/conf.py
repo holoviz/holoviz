@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import subprocess
 
 from nbsite.shared_conf import *
 
@@ -8,8 +9,11 @@ copyright_years['start_year'] = '2017'
 copyright = copyright_fmt.format(**copyright_years)
 description = 'High-level tools to simplify visualization in Python.'
 
-import holoviz
-version = release  = base_version(holoviz.__version__)
+ret = subprocess.run([
+    'git', 'describe', '--long', '--match', "v[0-9]*.[0-9]*.[0-9]*", '--dirty'
+], text=True, capture_output=True, check=True)
+version = release  = base_version(ret.stdout.strip()[1:])
+
 
 html_static_path += ['_static']
 
