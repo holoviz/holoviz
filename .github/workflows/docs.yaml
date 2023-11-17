@@ -51,7 +51,11 @@ jobs:
       DISPLAY: ":99.0"
     steps:
       - name: Install humor sans fonts for XKCD Matplotlib plots
-        run:  sudo apt-get update -y  &&  sudo apt-get install -y fonts-humor-sans 
+        run:  |
+          sudo apt-get update -y  &&  sudo apt-get install -y fonts-humor-sans fonts-comic-neue
+          mkdir -p ~/.local/share/fonts
+          wget -nc https://github.com/ipython/xkcd-font/blob/master/xkcd-script/font/xkcd-script.ttf?raw=true -O ~/.local/share/fonts/xkcd-Script.ttf || true
+          fc-cache -f -v
       - uses: actions/checkout@v3
         with:
           fetch-depth: "100"
