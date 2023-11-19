@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import subprocess
 
 from nbsite.shared_conf import *
 
@@ -8,15 +9,13 @@ copyright_years['start_year'] = '2017'
 copyright = copyright_fmt.format(**copyright_years)
 description = 'High-level tools to simplify visualization in Python.'
 
-import holoviz
-version = release  = base_version(holoviz.__version__)
+ret = subprocess.run([
+    'git', 'describe', '--long', '--match', "v[0-9]*.[0-9]*.[0-9]*", '--dirty'
+], text=True, capture_output=True, check=True)
+version = release  = base_version(ret.stdout.strip()[1:])
+
 
 html_static_path += ['_static']
-
-html_css_files = [
-    'nbsite.css',
-    'css/custom.css'
-]
 
 html_theme = "pydata_sphinx_theme"
 html_logo = '_static/holoviz-logo-unstacked.svg'
@@ -35,10 +34,13 @@ html_theme_options.update({
             "url": "https://discourse.holoviz.org/",
             "icon": "fab fa-discourse",
         },
-    ]
+    ],
+    "header_links_before_dropdown": 6,
+    "secondary_sidebar_items": [
+        "github-stars-button",
+        "page-toc",
+    ],
 })
-
-templates_path += ['_templates']
 
 html_context.update({
     # Used to add binder links to the latest released tag.

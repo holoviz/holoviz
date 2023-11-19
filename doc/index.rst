@@ -86,11 +86,11 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    :hidden:
    :maxdepth: 2
 
-   Introduction <self>
    Background <background>
    Installation <installation>
    Talks <talks/index>
    Tutorial <tutorial/index>
+   Blog <https://blog.holoviz.org/>
    Topics <topics/index>
    Contributing <contributing>
    Roadmap <Roadmap>

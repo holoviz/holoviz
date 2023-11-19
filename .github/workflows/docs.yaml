@@ -50,6 +50,12 @@ jobs:
       MOZ_HEADLESS: 1
       DISPLAY: ":99.0"
     steps:
+      - name: Install humor sans fonts for XKCD Matplotlib plots
+        run:  |
+          sudo apt-get update -y  &&  sudo apt-get install -y fonts-humor-sans fonts-comic-neue ttf-mscorefonts-installer
+          mkdir -p ~/.local/share/fonts
+          wget -nc https://github.com/ipython/xkcd-font/blob/master/xkcd-script/font/xkcd-script.ttf?raw=true -O ~/.local/share/fonts/xkcd-Script.ttf || true
+          sudo fc-cache -f -v
       - uses: actions/checkout@v3
         with:
           fetch-depth: "100"
@@ -63,32 +69,16 @@ jobs:
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: conda setup
         run: |
-          conda activate base
-          conda install conda-libmamba-solver
           conda config --set solver libmamba
-          conda create -n test-environment -c pyviz/label/dev -c conda-forge python=3.9 anaconda-project
-      - name: doit develop_install
-        run: |
-          conda activate test-environment
-          conda list
-          cd examples
-          anaconda-project prepare --env-spec doc
-          cd ..
-          conda activate examples/envs/doc
-          pip install --no-deps --no-build-isolation .
+          conda install anaconda-project
+      - name: prepare
+        run: anaconda-project prepare --directory examples
+      - name: conda list
+        run: anaconda-project run --directory examples conda_list
       - name: generate rst
-        run: |
-          conda activate examples/envs/doc
-          nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs
+        run: anaconda-project run --directory examples doc_rst
       - name: build docs
-        run: |
-          conda activate examples/envs/doc
-          nbsite build --what=html --output=builtdocs --org holoviz --project-name holoviz
-      - name: conda info/list
-        run: |
-          conda activate examples/envs/doc
-          conda info
-          conda list
+        run: anaconda-project run --directory examples doc_build
       - name: git status
         run: |
           git status
