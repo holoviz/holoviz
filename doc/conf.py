@@ -35,7 +35,7 @@ html_theme_options.update({
             "icon": "fab fa-discourse",
         },
     ],
-    "header_links_before_dropdown": 15,  # no dropdown menu basically
+    "header_links_before_dropdown": 6,
     "secondary_sidebar_items": [
         "github-stars-button",
         "page-toc",
