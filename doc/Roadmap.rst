@@ -104,8 +104,7 @@ well with HoloViz include:
    -  `packed
       bubbles <https://stackoverflow.com/questions/46131572/making-a-non-overlapping-bubble-chart-in-matplotlib-circle-packing>`__
    -  `funnel charts <https://en.wikipedia.org/wiki/Funnel_chart>`__
-   -  `donut charts <https://datavizcatalogue.com/methods/donut_chart.html>`__ (which can be abused to make a `pie chart
-   <https://en.wikipedia.org/wiki/Pie_chart>`__ if you really want)
+   -  `donut charts <https://datavizcatalogue.com/methods/donut_chart.html>`__ (which can be abused to make a `pie chart <https://en.wikipedia.org/wiki/Pie_chart>`__ if you really want)
 
 7. **Interactive Matplotlib plotting**: Right now, HoloViews supports
    Matplotlib primarily as static PNG or SVG output. Matplotlib also
