@@ -66,10 +66,9 @@ well with HoloViz include:
    visualization of various large, multidimensional datasets from data-intensive
    research domains, including on HPC systems.
 
-4. **Simpler deployment of large-scale visualizations**: Automatic
-   generation of slippy-map tiles for exploration of large datasets
-   using standard web servers. Already provided in Datashader, but
-   needs additional polishing.
+4. **Better deployment and exploration of large-scale visualizations**: For
+   instance, with improvements to automatic generation of tiles for exploration
+   of large datasets using standard web servers.
 
 5. **Integrating 3D surface and volume rendering into HoloViz**: HoloViews
    can plot limited quantities of 3D surface or point data using
