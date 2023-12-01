@@ -30,7 +30,7 @@ Currently ongoing or scheduled priorities include:
     annotations as a first-class component the HoloViz tools, easily added onto
     plots and dashboards so that users can denote regions of interest in some
     space (e.g. a time range on a timeseries plot), storing, restoring, and
-    displaying that information in editable form.
+    displaying that information in editable form. See https://github.com/holoviz/holonote for the work as it develops.
 
 Other targets needed in HoloViz or in packages designed to work well with
 HoloViz include:
