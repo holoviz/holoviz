@@ -61,10 +61,10 @@ well with HoloViz include:
    solid and usable, and updating HoloViews to use that could bring
    big performance improvements for midsize plots.
 
-3. **Improved imaging, simulation, machine learning, and Earth science
-   workflows**: Support for working with image and other
-   multidimensional data for visualization and machine-learning
-   applications, including on HPC systems.
+3. **New and improved workflow examples in biomedical and Earth science,
+   especially utilizing machine learning**: Demonstrations for handling and
+   visualization of various large, multidimensional datasets from data-intensive
+   research domains, including on HPC systems.
 
 4. **Simpler deployment of large-scale visualizations**: Automatic
    generation of slippy-map tiles for exploration of large datasets
