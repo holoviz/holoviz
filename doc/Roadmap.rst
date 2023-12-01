@@ -136,18 +136,10 @@ well with HoloViz include:
    Altair and Vega-lite visualizations can be specified and then used
    directly with Panel, but not with HoloViews.
 
-10. **hvPlot/HoloViews serialization**: HoloViews uses a declarative design that
-   can be represented in a purely textual form, without any Python code.
-   An initial implementation allows any Param-based objects (including
-   HoloViews objects) to be represented in JSON or YAML, but it needs
-   some polishing before it can be put into wide use for saving and
-   restoring configurations and layouts.
+11. **Multiple selection groups**: HoloViews currently supports a single
+   selection group. Multiple selection groups would allow for more flexible use
+   of, and comparison between, selections.
 
-11. **Better integration with ____**: There are a lot of tools in the
-   Python and other scientific software ecosystems that could be
-   included in HoloViz or made easily usable from it. NetworkX (already
-   usable but not fully exploited yet) is just one example of many;
-   suggestions welcome!
 
 If any of the functionality above is interesting to you (or you have
 ideas of your own!) and can offer help with implementation, please
