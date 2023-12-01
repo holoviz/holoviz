@@ -114,7 +114,7 @@ HoloViz include:
    native GUI apps as well, allowing the same user code to be applied to a wider
    range of use cases.
 
-9.  **Altair/Vega/Vega-lite integration**: HoloViews and Bokeh provide
+9. **Altair/Vega/Vega-lite integration**: HoloViews and Bokeh provide
    declarative syntaxes that can be expressed in purely static form, and it
    should be feasible to write a translator between them and other declarative
    libraries like Altair, Vega, and Vega-Lite. Those libraries are currently
