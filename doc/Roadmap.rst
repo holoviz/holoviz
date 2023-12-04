@@ -126,11 +126,13 @@ HoloViz include:
     before it can be put into wide use for saving and restoring configurations
     and layouts.
 
-10. **Multiple selection groups**: HoloViews currently supports a single
-    selection group. Multiple selection groups would allow for more flexible use
-    of, and comparison between, selections.
+10. **Independent selection groups**: HoloViews currently supports a single
+    selection group. There is no current support for multiple, fully independent
+    selection groups within the same display - each group with its own identity
+    and selection-based actions. Support for multiple independent groups would
+    allow for more flexible use of, and comparison between, selections.
 
-11. **Intuitive drilldown support**: In a drilldown action, the user
+11. **Easy to configure drilldown support**: In a drilldown action, the user
     interacts in some way with one main plot (usually some low-dimensional
     reduction of the full data) selecting one (or sometimes multiple) item(s)
     that determine what is shown in another separate plot (usually a less
