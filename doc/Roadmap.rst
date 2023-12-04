@@ -32,7 +32,7 @@ Currently ongoing or scheduled priorities include:
     space (e.g. a time range on a timeseries plot), storing, restoring, and
     displaying that information in editable form. See https://github.com/holoviz/holonote for the work as it develops.
 
-Other targets needed in HoloViz or in packages designed to work well with
+Other goals for HoloViz or packages designed to work well with
 HoloViz include:
 
 1.  **More extensive documentation about deployment**: HoloViz includes a
