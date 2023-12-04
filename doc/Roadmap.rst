@@ -46,26 +46,16 @@ HoloViz include:
     that will help people get started and decide between the alternatives would
     be very helpful.
 
-2.  **Bokeh WebGL support**: Bokeh provides good support for working
-    interactively with small datasets using an HTML Canvas (client-side
-    interactivity), and when combined with Datashader it can handle enormous
-    datasets by pre-rendering them to images in Python (server-side). However, in
-    between these two extremes there is a range of data sizes that could be
-    addressed well by the client-side WebGL technology. Bokeh has long included
-    some WebGL support, but improvements in 2021-2022 have made the WebGL support
-    much more solid and usable, and updating HoloViews to use that could bring
-    big performance improvements for midsize plots.
-
-3.  **New and improved workflow examples in biomedical and Earth sciences,
+2.  **New and improved workflow examples in biomedical and Earth sciences,
     especially utilizing machine learning**: Demonstrations for handling and
     visualization of various large, multidimensional datasets from data-intensive
     research domains, including on HPC systems.
 
-4.  **Better deployment and exploration of large-scale visualizations**: For
+3.  **Better deployment and exploration of large-scale visualizations**: For
     instance, with improvements to automatic generation of tiles for exploration
     of large datasets using standard web servers.
 
-5.  **Integrating 3D surface and volume rendering into HoloViz**: HoloViews can
+4.  **Integrating 3D surface and volume rendering into HoloViz**: HoloViews can
     plot limited quantities of 3D surface or point data using `Matplotlib
     <http://holoviews.org/reference/elements/matplotlib/TriSurface.html>`__ or
     `Plotly <http://holoviews.org/reference/elements/plotly/TriSurface.html>`__,
@@ -79,7 +69,7 @@ HoloViz include:
     <http://assets.holoviews.org/demos/HoloViews_CesiumJS.html>`__, but lots more
     work to do to make it practical for real use.
 
-6.  **Additional plot types**: HoloViews includes an extensive range of plot
+5.  **Additional plot types**: HoloViews includes an extensive range of plot
     types (Elements) covering the typical visualizations used across many
     domains. However, there are always more that can be included, and some
     domains are not as well covered as others. Some examples that we'd like to
@@ -99,12 +89,12 @@ HoloViz include:
     -  `donut charts <https://datavizcatalogue.com/methods/donut_chart.html>`__
        (which can be abused to make a pie chart if you really want)
 
-7.  **Interactive Matplotlib plotting**: Right now, HoloViews supports Matplotlib
+6.  **Interactive Matplotlib plotting**: Right now, HoloViews supports Matplotlib
     primarily as static PNG or SVG output. Matplotlib also supports interactive
     web-based plotting via ipympl, and supporting such interactivity could help
     make Matplotlib be a viable alternative for more use cases. 
 
-8.  **Better native GUI support**: Right now, HoloViz focuses exclusively on
+7.  **Better native GUI support**: Right now, HoloViz focuses exclusively on
     tools that work well in web browsers, because it aims to support the entire
     workflow from initial exploration to delivery of fully functional interactive
     applications to other stakeholders. One consequence is that it doesn't
@@ -114,7 +104,7 @@ HoloViz include:
     native GUI apps as well, allowing the same user code to be applied to a wider
     range of use cases.
 
-9.  **Altair/Vega/Vega-lite integration**: HoloViews and Bokeh provide
+8.  **Altair/Vega/Vega-lite integration**: HoloViews and Bokeh provide
     declarative syntaxes that can be expressed in purely static form, and it
     should be feasible to write a translator between them and other declarative
     libraries like Altair, Vega, and Vega-Lite. Those libraries are currently
@@ -127,18 +117,18 @@ HoloViz include:
     visualizations can be specified and then used directly with Panel, but not
     with HoloViews.
 
-10. **hvPlot/HoloViews serialization**: HoloViews uses a declarative design
+9.  **hvPlot/HoloViews serialization**: HoloViews uses a declarative design
     that can be represented in a purely textual form, without any Python code. An
     initial implementation allows any Param-based objects (including HoloViews
     objects) to be represented in JSON or YAML, but it needs some polishing
     before it can be put into wide use for saving and restoring configurations
     and layouts.
 
-11. **Multiple selection groups**: HoloViews currently supports a single
+10. **Multiple selection groups**: HoloViews currently supports a single
     selection group. Multiple selection groups would allow for more flexible use
     of, and comparison between, selections.
 
-12. **Intuitive drilldown support**: In a drilldown action, the user
+11. **Intuitive drilldown support**: In a drilldown action, the user
     interacts in some way with one main plot (usually some low-dimensional
     reduction of the full data) selecting one (or sometimes multiple) item(s)
     that determine what is shown in another separate plot (usually a less
@@ -146,7 +136,7 @@ HoloViz include:
     drilldown will either require a new API or adaptation of link_selections to
     safely handle the state prior to any selection.
    
-13. **Better integration with ____**: There are a lot of tools in the
+12. **Better integration with ____**: There are a lot of tools in the
     Python and other scientific software ecosystems that could be included in
     HoloViz or made easily usable from it. NetworkX (already usable but not fully
     exploited yet) is just one example of many; suggestions welcome!
