@@ -56,7 +56,7 @@ HoloViz include:
     much more solid and usable, and updating HoloViews to use that could bring
     big performance improvements for midsize plots.
 
-3.  **New and improved workflow examples in biomedical and Earth science,
+3.  **New and improved workflow examples in biomedical and Earth sciences,
     especially utilizing machine learning**: Demonstrations for handling and
     visualization of various large, multidimensional datasets from data-intensive
     research domains, including on HPC systems.
