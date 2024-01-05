@@ -93,7 +93,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Blog <https://blog.holoviz.org/>
    Topics <topics/index>
    Contributing <contributing>
-   HEP <hep/index>
+   HEPs <heps/index>
    Roadmap <Roadmap>
    FAQ
    About <about>
