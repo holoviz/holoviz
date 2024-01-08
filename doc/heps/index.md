@@ -8,4 +8,5 @@ important features or processes that apply to all HoloViz Open Source projects.
 :maxdepth: 1
 
 hep1
+hep2
 ```
