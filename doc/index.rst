@@ -91,7 +91,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Talks <talks/index>
    Tutorial <tutorial/index>
    Blog <https://blog.holoviz.org/>
-   Topics <topics/index>
+   Examples <https://examples.holoviz.org/>
    Contributing <contributing>
    Roadmap <Roadmap>
    FAQ
