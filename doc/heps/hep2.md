@@ -25,7 +25,7 @@ Aside from certain exceptional cases, the Projects do not backport changes to pr
 
 ## Distribution
 
-HoloViz maintainers are responsible for distributing the Projects on these platforms:
+HoloViz release managers are responsible for distributing the Projects on these platforms:
 
 - Pre-releases are distributed on [PyPI](https://pypi.org) and on the *pyviz/label/dev* channel of [Anaconda.org](https://anaconda.org).
 - Final versions are distributed on [PyPI](https://pypi.org), and on the  *conda-forge* and *defaults* channels of [Anaconda.org](https://anaconda.org).
