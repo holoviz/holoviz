@@ -22,9 +22,6 @@ The Projects can deliver three types of pre-releases / development versions:
 
 Aside from certain exceptional cases, the Projects do not backport changes to previous major or minor releases.
 
-## Release process
-
-Releasing a new version consists of packaging the software and distributing it. The Projects are set up to automatically perform this process on a Continuous Integration (CI) system (e.g. Github Actions). The process is triggered automatically when a new tag (of the form `v1.2.3`) is pushed to the Git repository. The tag message should be of the form `Version x.x.x` for final releases and `Version x.x.x. alpha1/beta1/RC1` for pre-releases.
 
 ## Distribution
 
