@@ -16,12 +16,11 @@ The Projects can deliver three types of pre-releases / development versions:
 
 - `alpha` (e.g. `1.2.3a1`): Projects can deliver alpha releases for users to benefit from and/or test bug fixes and new features, early in the development phase of a new version. alpha releases are common across the Projects.
 - `beta` (e.g. `1.2.3b1`): Projects can deliver beta releases for the same reasons, except they indicate the project is in a more advanced development phase of a new version. beta releases are not common across the Projects, they're more likely to be useful when a major release is in development, to progressively deliver large new features and API breaking changes.
-- `release candidate` (e.g. `1.2.3rc1`): Projects must deliver a release candidate version before the final release.
+- `release candidate` (e.g. `1.2.3rc1`): Projects must deliver at least one release candidate version before the final release and Projects should not add new features between release candidates. There is no expectation from Projects to announce their release candidates to a wide audience and wait some time before making a final release. However, Projects are encouraged to adopt that approach when they prepare an important release, typically a major or a significant minor release.
 
 ## Supported versions
 
 Aside from certain exceptional cases, the Projects do not backport changes to previous major or minor releases.
-
 
 ## Distribution
 
