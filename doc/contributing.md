@@ -452,7 +452,7 @@ Before making a release, consider the following tasks:
 
 5. **Final Release**
    - Confirm the last development release's stability, preferably with multiple reviews.
-   - Bump the version in relevant files (e.g., `__init__.py`) to the final number (e.g., `v1.9.6`).
+   - Bump the version in relevant files to the final number (e.g., `v1.9.6`).
    - Optionally, re-install the package (`conda install -c pyviz panel`) to check for issues.
 
 6. **Github Release**
