@@ -440,6 +440,12 @@ There are a few tasks that are worth paying attention to before making a release
 
 Development releases can have different goals. Sometimes they are only meant to be pre-releases made right before an actual release to make sure everything is alright. Sometimes they are made to be shared with stakeholders (e.g., a specific contributor, a customer, a dependent project, etc.). Depending on your situation, you might decide to pause the release process in the procedure detailed below between two development releases, waiting for feedback.
 
+```{note}
+Bumping the version of a package depends on the package's nature:
+* Non-pure Python packages, e.g., Panel or GeoViews as they include JavaScript/TypeScript extensions, need their `package.json` and `package-lock.json` files to be updated, manually bumping the version in those files (e.g., from `1.9.5` to `1.9.6-a.1`). Note that the version scheme isn't the same as the Python version scheme.
+* Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`.
+```
+
 1. Before making a proper release, you should start by making a development release. This is the first one that would be an *alpha* release. Bump the version too, e.g., `v1.9.6a1` and commit the new tag.
 1. After pushing the new tag, you can monitor the *Packages* and *Documentation* workflows. If one fails, you will have to fix that as that would be a release blocker.
 1. If the *alpha* release succeeded, it is now time to check a few things:
@@ -461,12 +467,6 @@ Development releases can have different goals. Sometimes they are only meant to 
 1. Find the *conda-forge* recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you're not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.
 1. Announce the release (e.g., on Discourse, Discord, Twitter).
 1. If the release is important (e.g., not a bug fix release), it may be worth a blog post.
-
-```{note}
-Bumping the version of a package depends on the package's nature:
-* Non-pure Python packages, e.g., Panel or GeoViews as they include JavaScript/TypeScript extensions, need their `package.json` and `package-lock.json` files to be updated, manually bumping the version in those files (e.g., from `1.9.5` to `1.9.6-a.1`). Note that the version scheme isn't the same as the Python version scheme.
-* Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`.
-```
 
 ```{note}
 Development releases are cheap, don't hesitate to make as many as required! It's also fine if a development release only makes it to one of the two distribution platforms (PyPi or Anaconda.org). They're not meant to be for end-users but development purposes only.
