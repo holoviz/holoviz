@@ -1,8 +1,22 @@
-# HEP 1: Python version support
+<table>
+<tr><td> Title </td><td> Python Version Support </td></tr>
+<tr><td> Status </td><td> Accepted </td></tr>
+<tr><td> Author(s) </td><td> Ian Thomas </td></tr>
+<tr><td> Created </td><td> April 19, 2023</td></tr>
+<tr><td> Accepted </td><td> May 23, 2023</td></tr>
+<tr><td> Last Updated </td><td> March 15, 2024</td></tr>
+<tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/362 </td></tr>
+<tr><td> Implementation </td><td> NA </td></tr>
+</table>
+
+
+> Note: HEP 1 was updated on March 15, 2024 by Demetris Roumis to align with the updated HEP format, proposed by HEP 0. If there is any discrepency between the reformatted HEP 1 and the original HEP 1, the original HEP 1 takes precedence.
+
+
+## Summary
 
 This enhancement proposal describes the possible policy that HoloViz projects
-might adopt for support of Python versions. It is currently a discussion
-document and has not yet been accepted.
+might adopt for support of Python versions.
 
 ## Background
 
@@ -38,7 +52,8 @@ will be released in October. NumPy's previous release (1.24.2) supported Python
 release (3.1.0) supported Python 3.8 to 3.11, and the next release (3.2.0) will
 support Python 3.9 to 3.11.
 
-## Policy
+## Specification/Policy
+
 
 Ideally HoloViz projects should support as many Python releases as are
 reasonably possible. Support for a new Python release should ideally occur on
@@ -77,7 +92,7 @@ For 3 the geospatial dependencies often cause problems by not being available
 as wheels on PyPI and being difficult to resolve on conda. The HoloViz policy
 should be the same as that of 2 above for uniformity.
 
-## Illustration
+## Illustration 
 
 To illustrate the proposed policy, this is what it means for the remainder of
 2023.
@@ -94,14 +109,7 @@ release (3.2.0) will support minimum Python 3.9. All HoloViz projects (except
 Colorcet and Param which are covered above) should
 drop support for Python 3.7 as soon as possible to support a minimum Python of
 3.8. Following release of Bokeh 3.2.0 there should be one further release per
-HoloViz project that supports Python 3.8 and then the minimum Python version
-for each should increase to 3.9.
+HoloViz project that supports Python
 
-## Revisions
-
-Changes to this document shall be recorded below:
-
-| Date	     | Change      |
-| ---------- | ----------- |
-| 2023-04-19 | First draft |
-| 2023-05-23 | Accepted    |
+## Copyright
+This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
