@@ -4,7 +4,7 @@
 
 ## What is a HEP?
 
-A HEP is a HoloViz Enhancement Proposal, a design document that proposes a major change to the HoloViz ecosystem. These changes can be technical or address the social aspects of the organization, like governance or conduct. HEPs should provide a concise specification and rationale for the proposed change. HEPs serve as the principal means for proposing significant changes to the HoloViz ecosystem, enabling the community to engage in informed decision-making while also documenting the proposals and the processes behind these decisions.
+A HEP is a HoloViz Enhancement Proposal, a design document that provides information to the HoloViz community or proposes a change for which widespread attention and consensus is warranted. These changes can be technical or address the social aspects of the organization, like governance or conduct. HEPs should provide a concise specification and rationale for the proposed change. HEPs serve as the principal means for proposing significant changes to the HoloViz ecosystem, enabling the community to engage in informed decision-making while also documenting the proposals and the processes behind these decisions.
 
 HEPs are maintained as text files using Markdown for formatting in the [HoloViz/HoloViz](https://github.com/holoviz/holoviz) repository. Their revision history is a historical record of the proposed change.
 
