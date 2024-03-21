@@ -13,13 +13,17 @@
 </table>
 
 
-> Note: HEP 1 was updated on March 15, 2024 by Demetris Roumis to align with the updated HEP format, proposed by HEP 0. If there is any discrepency between the reformatted HEP 1 and the original HEP 1, the original HEP 1 takes precedence.
+> Note: HEP 1 was updated on March 15, 2024 by Demetris Roumis to align with the updated HEP format, proposed by HEP 0. Notably, he added the table above and the 'Resolution' section below. If there is any discrepency between the reformatted HEP 1 and the original HEP 1, the original HEP 1 takes precedence.
 
 
 ## Summary
 
 This enhancement proposal describes the possible policy that HoloViz projects
 might adopt for support of Python versions.
+
+## Resolution
+
+The community decided to adopt a Python version support policy for HoloViz projects that aims to support as many active Python releases as reasonably possible, with specific policies tailored for projects with few dependencies, those tightly coupled to Bokeh, and those with geospatial dependencies, ensuring alignment with dependent libraries' support cycles.
 
 ## Background
 
