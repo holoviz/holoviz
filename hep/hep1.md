@@ -110,7 +110,7 @@ release (3.2.0) will support minimum Python 3.9. All HoloViz projects (except
 Colorcet and Param which are covered above) should
 drop support for Python 3.7 as soon as possible to support a minimum Python of
 3.8. Following release of Bokeh 3.2.0 there should be one further release per
-HoloViz project that supports Python
+HoloViz project that supports Python.
 
 ## Copyright
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
