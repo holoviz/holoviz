@@ -16,6 +16,7 @@ version = release  = base_version(ret.stdout.strip()[1:])
 
 
 html_static_path += ['_static']
+templates_path += ['_templates']
 
 html_theme = "pydata_sphinx_theme"
 html_logo = '_static/holoviz-logo-unstacked.svg'
@@ -35,11 +36,11 @@ html_theme_options.update({
             "icon": "fab fa-discourse",
         },
     ],
-    "header_links_before_dropdown": 6,
     "secondary_sidebar_items": [
         "github-stars-button",
         "page-toc",
     ],
+    "navbar_center": ["nav-bar-holoviz"],
 })
 
 html_context.update({
@@ -48,3 +49,6 @@ html_context.update({
     'github_user': 'holoviz',
     'github_repo': 'holoviz',
 })
+
+# Uncomment to turn off notebook execution.
+nb_execution_mode = "off"
