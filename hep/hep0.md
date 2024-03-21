@@ -1,3 +1,5 @@
+# HEP 0 - HEP Purpose, Policy, and Guidelines
+
 <table>
 <tr><td> Identifier </td><td> HEP 0 </td>
 <tr><td> Title </td><td> HEP Purpose, Policy, and Guidelines </td>
@@ -52,10 +54,12 @@ In unusual and controversial cases where consensus has not been possible to achi
 
 ## HEP Format
 
-All HEPs should begin with a top-level table with the following information:
+All HEPs should begin with markdown title-level heading in the format of '# HEP {Identifier} - {Title}'. The identifier should remain a placeholder until a core developer has reviewed the pull request and assigned a number. The `Title` should match the entry in the table below.
+
+Next, each HEP should include a table with the following information:
 
 <table>
-<tr><td> Identifier </td><td> [Number to be assigned by HoloViz Developer upon HEP acceptance] </td>
+<tr><td> Identifier </td><td> [Number to be assigned by HoloViz core developer upon HEP acceptance] </td>
 <tr><td> Title </td><td> A short title of the proposal </td>
 <tr><td> Status </td><td> Draft | Proposed | Accepted | Rejected | Deferred | Implemented | Superseded </td></tr>
 <tr><td> Author(s) </td><td> Full Name [email is optional] </td></tr>
