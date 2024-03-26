@@ -54,8 +54,11 @@ In unusual and controversial cases where consensus has not been possible to achi
 
 ## HEP Format
 
+
+### Title
 All HEPs should begin with markdown title-level heading in the format of '# HEP {Identifier} - {Title}'. The identifier should remain a placeholder until a core developer has reviewed the pull request and assigned a number. The `Title` should match the entry in the table below.
 
+### Table
 Next, each HEP should include a table with the following information:
 
 <table>
@@ -69,29 +72,33 @@ Next, each HEP should include a table with the following information:
 <tr><td> Implementation </td><td> link to the PR for the implementation, NA if not available </td></tr>
 </table>
 
-This table should be followed by a **Summary** section and then
-additional sections as needed by the proposal. Some sections that may be
+### Summary
+The table should be followed by a **Summary** section.
+
+### Specification
+If a HEP is perscriptive in nature (providing explicit guidelines or rules to follow), a **Specification** or **Policy** section is required to convey the technical details of the proposed enhancement.
+
+### Optional Sections
+Some sections that may be
 included if appropriate for the proposal include:
 
-    * Specification/Policy -- The technical details of the proposed enhancement.
-    * Motivation -- Why the proposed change or formalization is needed.
-    * Rationale -- Why particular decisions were made in the proposal.
-    * Backwards Compatibility -- Will the proposed change break existing
-      packages or workflows.
-    * Alternatives -- Any alternatives considered during the design.
-    * Sample Implementation/Illustration -- Links to prototype or a sample implementation of
-      the proposed change.
-    * FAQ -- Frequently asked questions (and answers to them).
-    * Resolution -- A short summary of the decision made by the community.
-    * Reference -- Any references used in the design of the HEP.
+- **Motivation/Background**: Why the proposed change or formalization is needed.
+- **Rationale**: Why particular decisions were made in the proposal.
+- **Backwards Compatibility**: Will the proposed change break existing packages or workflows.
+- **Alternatives**: Any alternatives considered during the design.
+- **Sample Implementation/Illustration**: Links to prototype or a sample implementation of the proposed change.
+- **FAQ**: Frequently asked questions (and answers to them).
+- **Resolution**: A short summary of the decision process conducted with the community.
+- **Reference**: Any references used in the design of the HEP.
 
-A final **Copyright** section is also required.
+### Copyright
+A final **Copyright** section is required.
 
 ## Pronunciation
 HEP is to be pronounced `/hep/`.
 
 ## Reference
-Much of this document was adapted from [CEP 1](https://github.com/conda-incubator/ceps/blob/main/cep-1.md) by the conda community. The [Numpy](https://numpy.org/neps/nep-0000.html) and [Python](https://peps.python.org/pep-0001/) versions of enhancement proposal guidelines were also referenced for inspiration.
+A significant portion of this document was adapted from [CEP 1](https://github.com/conda-incubator/ceps/blob/main/cep-1.md) by the conda community. The [Numpy](https://numpy.org/neps/nep-0000.html) and [Python](https://peps.python.org/pep-0001/) versions of enhancement proposal guidelines were also referenced for inspiration.
 
 ## Copyright
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
