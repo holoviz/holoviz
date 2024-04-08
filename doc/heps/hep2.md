@@ -1,10 +1,23 @@
 # HEP 2: Release and deprecation policies
 
-This HEP describes the release and deprecation policies adopted by the HoloViz Projects. While two HEPs could have be written to describe these policies separately, it is deemed that they are enough intertwined to be addressed together (e.g. in which kind of final release can a feature be deprecated/removed?).
+<table>
+<tr><td> Identifier </td><td> HEP 2 </td>
+<tr><td> Title </td><td> Release and deprecation policies </td>
+<tr><td> Status </td><td> Draft </td></tr>
+<tr><td> Author(s) </td><td> Maxime Liquet </td></tr>
+<tr><td> Created </td><td> TBD </td></tr>
+<tr><td> Updated </td><td> - </td></tr>
+<tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/388 </td></tr>
+<tr><td> Implementation </td><td> NA </td></tr>
+</table>
 
-The overall goal of the HEP is to ensure that these policies are **consistently applied across the Projects**, which will help provide a **consistent user experience** and **help contributors and maintainers make decisions**.
+## Summary
 
-The Projects already follow a pretty consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, the HEP introduces new and well defined guidelines. Making it easier for Projects to deprecate features is **key to their long-term maintenance**.
+This HEP describes the release and deprecation policies adopted by the HoloViz Projects. While two HEPs could have be written to describe these policies separately, it is deemed that they are enough intertwined to be addressed together (e.g. to answer questions such as in which kind of final release can a feature be deprecated/removed?).
+
+The overall goal of the HEP is to ensure that these policies are **consistently applied across the Projects**, which will help provide a **consistent user experience** and **help contributors and maintainers make decisions**. We also aim to adopt **standard practices**.
+
+The Projects already follow a pretty consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, and without clear guidelines this has sometimes led to long and unproductive discussions. The HEP aims to improve this by introducing new and well defined guidelines. Making it easier for Projects to deprecate features is **key to their long-term maintenance**.
 
 ## Release policy
 
@@ -26,14 +39,14 @@ The Projects can deliver three types of pre-releases / development versions:
 
 ### Supported versions
 
-Aside from certain exceptional cases, the Projects do not backport changes to previous major or minor releases.
+Aside from certain exceptional cases, the Projects are not expected to backport changes to previous major or minor releases.
 
 ### Distribution
 
 HoloViz release managers are responsible for distributing the Projects on these platforms:
 
 - Pre-releases are distributed on [PyPI](https://pypi.org) and on the *pyviz/label/dev* channel of [Anaconda.org](https://anaconda.org).
-- Final versions are distributed on [PyPI](https://pypi.org), and on the  *conda-forge* and *defaults* channels of [Anaconda.org](https://anaconda.org).
+- Final versions are distributed on [PyPI](https://pypi.org), and on the  *conda-forge* and *pyviz* channels of [Anaconda.org](https://anaconda.org).
 
 ### Release cadence
 
@@ -43,9 +56,9 @@ Major regressions in a release should be fixed and released in a new patch versi
 
 ## Backwards compatibility
 
-The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, this includes for instance Colorcet or Param. Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. hvPlot). These Projects are not expected to be as stable, they change more quickly. 
+The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, for instance, Colorcet or Param. Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. Lumen). These Projects are not expected to be as stable, they change more quickly. 
 
-Overall, the HoloViz Projects are known to be stable and their users have built this expectation. The functionalities they provide are generally not moved or removed lightly. Maintainers should aim to keep the Projects stable; moving or removing a feature from a code base must be motivated by a significant maintenance cost, in particular when it is done outside of a major release.
+Overall, the HoloViz Projects are known to be stable and their users have built this expectation. The functionalities they provide are generally not moved or removed lightly. Maintainers should aim to keep the Projects stable; moving or removing a feature from a code base **must** be motivated, in particular when it is done outside of a major release.
 
 ## Deprecation policy
 
@@ -53,7 +66,7 @@ Overall, the HoloViz Projects are known to be stable and their users have built 
 
 The goal of deprecating a feature is often to reduce the long-term maintenance burden of a Project. However, the act itself of deprecating a feature - the deprecation cycle - is a process that requires many actions be undertaken by the maintainers of a Project, starting from when they begin discussing the deprecation to when they remove the deprecated feature, which will potentially be done by other maintainers multiple years later. Given the complexity of the process and its somewhat remote benefits, without clear guidelines it's easy for maintainers to make mistakes, potentially affecting the user experience.
 
-At the time of writing this HEP the Projects do not have a clear plan for their deprecation cycle. They also often adopt non-standard practices. For instance, many Projects display deprecation warnings using the logging API provided by Param (`param.main.param.warning(...)`), while in the Python ecosystem it is much more common to user the function `warnings.warn` from the standard library. With this function, users can easily control the behavior of these warnings (e.g. hide them, turn them into errors).
+At the time of writing this HEP the Projects do not have a clear plan for their deprecation cycle. They also often adopt non-standard practices. For instance, many Projects display deprecation warnings using the logging API provided by Param (`param.main.param.warning(...)`), while in the Python ecosystem it is much more common to use the function `warnings.warn` from the standard library. With this function, users can easily control the behavior of these warnings (e.g. hide them, turn them into errors).
 
 ### Deprecation cycle guidelines
 
@@ -61,24 +74,74 @@ The Projects can deprecate a feature in any type of final release (patch, minor,
 
 - Motivate the best they can why the feature is deprecated (e.g. old and unused API) in an issue or in the *Pull Request* (PR) deprecating the feature.
 - Reach a consensus among the maintainers of the Project on the deprecation.
-- Make sure that PR deprecating the feature is approved by at least another maintainer, who should check that the indications below have been followed.
+- Make sure that the PR deprecating the feature is approved by at least another maintainer, who should check that the indications below have been followed.
 
  Maintainers have to make sure that their users are well informed of the deprecation. They **must** mention the deprecation in the following ways:
 
-- Programmatic warning: The `warnings` module from the standard library must be used to emit a deprecation warning (`import warnings; warnings.warn(...)`). The warning message must indicate that the feature is deprecated (it can indicate which version deprecated it) and that it is going to be removed in a future version, without indicating in which version exactly (see why below). The warning type must be a subclass of `DeprecationWarning`, `PendingDeprecationWarning`, or `FutureWarning`. `stacklevel` must be set so the warning appears in the correct place. For example:  `warnings.warn('Function foo is deprecated since Panel 1.2.3 and will be removed in a future release, use bar instead.', DeprecationWarning, stacklevel=3)`. When a programmatic warning cannot be implemented, the PR deprecating the feature must clearly explain why.
-- Docstring (if applicable): the docstring of the deprecated feature must be updated to mention the deprecation; when possible the [`deprecated`](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-deprecated) Sphinx directive should be used.
-- Documentation: all usage of the deprecated feature must be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation.
-- Release notes: the release notes must list the deprecated feature.
-- Repository: all the open issues an PRs associated with the deprecated feature must be closed.
+- Implement a programmatic warning, if not applicable the PR deprecating the feature **must** clearly explain why:
+  - The warning **must** be emitted using one of these two utilities:
+    - The `warn` function from the `warnings` module:
+
+    ```python
+    from warnings import warn
+
+    def foo():
+      warn(
+        "Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.",
+        category=FutureWarning, stacklevel=2,
+      )
+      ...
+    ```
+
+    - The `deprecated` decorator added in Python 3.13 ([PEP 702](https://peps.python.org/pep-0702/)) to the `warnings` module, backported to previous Python versions via the [typing_extensions](https://github.com/python/typing_extensions).
+
+    ```python
+    from typing_extensions import deprecated
+
+    @deprecated(
+      "Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.",
+      category=FutureWarning,
+    )
+    def foo():
+      ...
+    ```
+
+    The `deprecated` decorator not only emits a run-time warning, it also enables static type checkers to warn when they encounter usage of an object decorated with `deprecated`. This comes with various benefits, for example, VSCode users will see the deprecated objects crossed out in their code. Therefore, when possible, `deprecated` should be preferred over `warn`.
+
+  - The warning message:
+    - **Must** indicate that the feature is deprecated and is going to be removed in a future version.
+    - If applicable, **must** suggest replacement APIs.
+    - Can indicate in which version the feature was deprecated.
+    - Can indicate before which version the feature is going to be remove, however, maintainers **must** ensure that the deprecation duration (see below) is going to be respected, and that no obsolete warning will be released (e.g. feature announced to be removed in version 1.1 but is still present in 1.1).
+
+  - The warning type:
+  
+    - **Must** be a subclass of `DeprecationWarning`, `FutureWarning`, or `PendingDeprecationWarning`.
+    - **Must** be defined based on this approach (see the Appendix for more details):
+
+      1. Start by emitting a `DeprecationWarning`, to inform Library Developers, and some Data Analysts.
+      2. After 12 months, upgrade to a `FutureWarning`, to inform all users.
+
+      Exceptions are allowed but should in practice be very rare:
+
+      - Start by emitting a `PendingDeprecationWarning` for deprecations that might be reverted or are expected to be extremely noisy.
+      - Don't upgrade to a `FutureWarning` when the feature removed is meant for Library Developers only.
+      - Emit directly a `FutureWarning` when the feature removed is meant for Data Analysts only.
+
+  - `stacklevel` **must** be set so the warning appears in the correct place. Projects can implement a utiliy like the private Pandas' function [`find_stack_level`](https://github.com/pandas-dev/pandas/blob/b8a4691647a8850d681409c5dd35a12726cd94a1/pandas/util/_exceptions.py#L34) to automatically infer the right `stacklevel` number.
+
+- Documentation: all usage of the deprecated feature **must** be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation.
+- Release notes: the release notes **must** list the deprecated feature.
+- Repository: all the open issues an PRs associated with the deprecated feature **must** be closed.
 
 When the deprecation involves the user having to change their code in a significant way (typically in a major release), maintainers should consider writing a migration guide.
 
-When a feature has been deprecated, its warning and documentation must stay in place for some time long enough to let most users find out about it. For example, Panel users who lock the dependencies of their application should be given sufficient time between the deprecation of a feature and its removal so as not to miss the deprecation warnings and be left with broken code, once they attempt to upgrade their version of Panel to the latest. A deprecated feature **can only be removed 18 months after users have been informed of its deprecation**. This period, introduced by this HEP, factors in the facts that:
+When a feature has been deprecated, its warning and documentation **must** stay in place for some time long enough to let most users find out about it. For example, Panel users who lock the dependencies of their application should be given sufficient time between the deprecation of a feature and its removal so as not to miss the deprecation warnings and be left with broken code, once they attempt to upgrade their version of Panel to the latest. A deprecated feature **can only be removed 18 months after users have been informed of its deprecation**. This period, introduced by this HEP, factors in the facts that:
 
 - Users cannot build expectations about when in time a feature is going to be removed if the deprecation indicates a version number (e.g. `'This feature will be removed in version 1.2.3'`) as the Projects don't release new versions based on a regular cadence.
 - Many HoloViz users are not professional software developers/engineers; they use Python to help them accomplish their work and as such touch code less frequently.
 
-Maintainers are encouraged to create a table of deprecated features (e.g. in an *Issue*) that includes the dates after which these features can be removed, and check regularly this table not to miss the opportunity to remove a deprecated feature.
+Maintainers are encouraged to list the Project's active deprecations (e.g. in an *Issue*, or in the [website](https://github.com/holoviz/param/pull/922)) with enough information to infer when these deprecated features can be removed from the code base, and check regularly this listing not to miss the opportunity to remove a deprecated feature.
 
 When the time to remove the deprecated feature has come, maintainers **must**:
 
@@ -87,9 +150,35 @@ When the time to remove the deprecated feature has come, maintainers **must**:
 - Include the change in a major or minor release.
 - Close all open related issues and PRs.
 
-### Detour on Python warnings
+### Test suite guidelines
 
-Python provides the `warnings` module whose `warn` function is usually called by developers to issue warnings. These warnings can be filtered by users running the code. The default warning filter has the following entries (in order of precedence):
+The Projects **must** be set up so that their test suite fails when they trigger deprecation warnings emitted by other HoloViz projects.
+
+## Appendix: Detour on Python warnings applied to HoloViz
+
+### Warning types
+
+Python defines the following [warning types](https://docs.python.org/3/library/warnings.html#warning-categories):
+
+| Class                     | Description                                                                                                                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Warning`                   | This is the base class of all warning category classes. It is a subclass of Exception.                                                                                        |
+| `UserWarning`               | The default category for warn().                                                                                                                                              |
+| `DeprecationWarning`        | Base category for warnings about deprecated features when those warnings are intended for other Python developers (ignored by default, unless triggered by code in `__main__`). |
+| `SyntaxWarning`             | Base category for warnings about dubious syntactic features.                                                                                                                  |
+| `RuntimeWarning`            | Base category for warnings about dubious runtime features.                                                                                                                    |
+| `FutureWarning`             | Base category for warnings about deprecated features when those warnings are intended for end users of applications that are written in Python.                               |
+| `PendingDeprecationWarning` | Base category for warnings about features that will be deprecated in the future (ignored by default).                                                                         |
+| `ImportWarning`             | Base category for warnings triggered during the process of importing a module (ignored by default).                                                                           |
+| `UnicodeWarning`            | Base category for warnings related to Unicode.                                                                                                                                |
+| `BytesWarning`              | Base category for warnings related to bytes and bytearray.                                                                                                                    |
+| `ResourceWarning`           | Base category for warnings related to resource usage (ignored by default).                                                                                                    |
+
+The warnings defined to be used when deprecating a feature are `DeprecationWarning`, `FutureWarning`, and `PendingDeprecationWarning`.
+
+### Warnings filters and `stacklevel`
+
+Python provides the `warnings` module whose `warn` function is usually called by developers to issue warnings. These warnings can be filtered by users when running some code. The default warning filter has the following entries (in order of precedence):
 
 ```
 default::DeprecationWarning:__main__
@@ -98,6 +187,8 @@ ignore::PendingDeprecationWarning
 ignore::ImportWarning
 ignore::ResourceWarning
 ```
+
+Note that the default filters can be overriden by setting the `-W` flag when calling the `python` executable or via the `PYTHONWARNINGS` environment variable.
 
 The default filters imply that in a regular context `PendingDeprecationWarning` will not be seen by the user while `FutureWarning` will always be seen. `DeprecationWarning` is treated specially, warnings of these types are only seen when they are triggered by and points to code in `__main__`, the latter depending on the value of `stacklevel`.
 
@@ -108,7 +199,7 @@ The `stacklevel` parameter of `warnings.warn` specifies how many levels of the c
 import warnings
 
 def foo():
-    warnings.warn('The function foo is deprecated, use foo2().')
+    warnings.warn('The function foo is deprecated.')
 
 foo()
 ```
@@ -117,8 +208,8 @@ Executing this script displays:
 
 ```
 ❯ python3 foo.py
-/private/tmp/mod1.py:4: UserWarning: The function foo is deprecated, use foo2().
-  warnings.warn('The function foo is deprecated, use foo2().')
+/private/tmp/mod1.py:4: UserWarning: The function foo is deprecated.
+  warnings.warn('The function foo is deprecated.')
 ```
 
 While this doesn't look too bad, this is in fact far from being ideal as the user doesn't know from where `foo` was called from (it's trivial in this example, far less in large code bases!). The correct value for `stacklevel` in this case would be `2`:
@@ -128,7 +219,7 @@ While this doesn't look too bad, this is in fact far from being ideal as the use
 import warnings
 
 def foo():
-    warnings.warn('The function foo is deprecated, use foo2().', stacklevel=2)
+    warnings.warn('The function foo is deprecated.', stacklevel=2)
 
 foo()
 ```
@@ -136,7 +227,7 @@ foo()
 Which displays the line where `foo` is called, making it a lot easier for the user to update their code:
 
 ```
-/private/tmp/mod1.py:6: UserWarning: The function foo is deprecated, use foo2().
+/private/tmp/mod1.py:6: UserWarning: The function foo is deprecated.
   foo()
 ```
 
@@ -174,13 +265,45 @@ Call bottom:
   bottom()
 ```
 
-Given how we ran the code the namespace (`__name__`) of `mod1.py` is `__main__`, which is what allows `DeprecationWarning`s to be displayed. However, calling `top()` didn't display any `DeprecationWarning` as the warning is associated to a code line in `mod2.py` and not `mod1.py` (`__main__`). Calling `bottom()` did show the warning as its associated call line is in `__main__`.
+Before diving into what happens line by line, note that `stacklevel` is set to `2` in the `bottom` function. This means that the warning will be associated to the line that called `bottom()`.
+
+We first call `top()`, that calls `bottom()`, that emits a warning. This warning is associated with the line `return bottom()` in `mod2.py`. There, the module namespace is `mod2` and not `__main__`, so the `DeprecationWarning` **is not displayed**.
+
+We then call `bottom()` which emits a warning associated with the line `bottom()` in `mod1.py`. Given how we ran this code with `python mod1.py`, the module namespace is `__main__` in `mod1.py`, so the `DeprecationWarning` **is displayed**. 
 
 `stacklevel` affects greatly how `DeprecationWarning`s end up being displayed. Running the same code above with `stacklevel=1` (remember, that's its default value) leads to no warning being displayed, since they will all be associated to a code line in `mod2.py`. Setting `stacklevel=3` will display a warning when executing `top()` but not when executing `bottom()`. Since it is obviously easy to get this wrong, libraries like Pandas have developed their own [utility function](https://github.com/pandas-dev/pandas/blob/9008ee5810c09bc907b5fdc36fc3c1dff4a50c55/pandas/util/_exceptions.py#L34) to automatically infer the right value.
 
-The namespace is also `__main__` when users execute Python code in the REPL and in an IPython shell, which means that this also applies to code being run in Jupyter Notebooks. This is important to note as HoloViz users often run their code directly in a notebook.
 
-The namespace **is not `__main__`** in files served by Panel/Bokeh as their namespace is set to `bokeh_app_<uuid>` internally. The namespace of *setup* files (`--setup mysetup.py`) processed by Panel is also renamed internally.
+### `DeprecationWarning` and HoloViz users
+
+As we saw above, `DeprecationWarning` is filtered in a special way, let's see what this means for HoloViz users.
+
+#### Notebooks/scripts and utility modules/packages
+
+The namespace value is `__main__` when users execute Python code in the REPL and in an IPython shell, which means that this also applies to code being run in Jupyter Notebooks, so this is identical to running a script with `python script.py`.
+
+Take this simple example, where the user is working on a script or in a Notebook but is importing code from some utility module or a package they have implemented. The `my_panel_thing()` function is using a deprecated Panel pane that emits a `DeprecationWarning` when instantiated. The deprecation warning is going to be emitted in the scope of `util.py` where the module namespace is `util` and not `__main__`, therefore, it won't be displayed when they run the script or the notebook.
+
+```python
+# Untitled1039.ipynb
+from util import my_panel_thing
+
+my_panel_thing()
+```
+
+```python
+# util.py
+import panel as pn
+
+def my_panel_thing():
+  return pn.DeprecatedPane("YOLO")
+```
+
+#### Panel apps
+
+Another important use case in the HoloViz ecosystem is deploying a Panel application. When an application is deployed with the `<panel serve ...` command, the module namespace of the served files is not `__main__` but is set internally to something like `bokeh_app_<uuid>`. The namespace of *setup* files (`--setup mysetup.py`) processed by Panel is also renamed internally. Therefore, Panel users serving their app with `panel serve` will not be able to see any warnings of type `DeprecationWarning`.
+
+This can be easily verified serving this little app with `panel serve app.py`, the warning doesn't get displayed. Note it is possible to display it by serving the app with `python -Wdefault -m panel serve app.py`.
 
 ```python
 # app.py
@@ -191,6 +314,59 @@ warnings.warn('Not displayed :(', DeprecationWarning)
 pn.panel('Hello world!').servable()
 ```
 
-Serving the app above with `panel serve app.py` will not show the warning. It is possible to display it by serving the app with `python -Wdefault -m panel serve app.py`.
+#### Pytest
 
-...
+Pytest automatically catches all warnings during test execution and displays them at the end of the session. The issues listed above with `DeprecationWarning`s displayed only in a certain scope don't apply in this case, these warnings are always displayed by Pytest.
+
+
+#### Two types of HoloViz users
+
+We can define two types of HoloViz users:
+
+- Library Developers: depend on HoloViz projects to develop their own library (this includes HoloViz projects themselves as they depend on each other, like Panel with Param)
+- Data Analysts: use HoloViz projects to perform some sort of data analysis, often by writing code in a Notebook or in scripts they run directly or by building and serving a Panel app.
+
+When a HoloViz project deprecates a feature and starts emitting a warning, it is possible it will impact both types of users, however they different wishes when it comes to deprecation warnings:
+
+- Library Developers don't wish the warnings to be propagated to their own users, or at the very least not immediately. Instead, they will usually catch the warnings when running their test suite. They want to be given sufficient time to update and release their code, before the feature is removed or before the warning starts to be displayed to their own users.
+- Data Analysts should be warned when a feature is deprecated but also should be given an easy way to hide these warnings.
+
+`DeprecationWarning` is the warning type intended for other Python developers, it's certainly the warning type used the most in the Python ecosystem. However, as we've just seen, Data Analysts won't always be set up to see this warning.
+
+#### Consequences
+
+HoloViz users who:
+
+- don't test their code with Pytest (quite likely for Data Analysts)
+- and, don't override the default Python warning filters (even more likely)
+
+won't be notified of `DeprecationWarning`s even if their code directly uses a feature emitting this warning when:
+
+- they serve a Panel app with `panel serve`
+- or, run a script/Notebook that imports a utility module/package that calls a deprecated feature emitting `DeprecationWarning`
+
+### Outcome
+
+Based on the fact that a non-negligeable fraction of HoloViz users may entirely miss `DeprecationWarning`s, we suggest adopting a tiered approach:
+
+1. Start by emitting a `DeprecationWarning`, to inform Library Developers, and some Data Analysts.
+2. After 12 months, upgrade to a `FutureWarning`, to inform all users.
+
+Exceptions are allowed but should in practice be very rare:
+
+- Start by emitting a `PendingDeprecationWarning` for deprecations that might be reverted or are expected to be extremely noisy.
+- Don't upgrade to a `FutureWarning` when the feature removed is meant for Library Developers only.
+- Emit directly a `FutureWarning` when the feature removed is meant for Data Analysts only.
+
+
+## Copyright
+
+This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
+
+
+TODO:
+- [x] Highlight we want to follow standard practices (to help external contributors)
+- [x] Make an appendix with the Python warnings
+- [x] Pytest changes the default filters
+- find_stack_level could check whether in Panel/Bokeh serve and raise it to the top level
+- [ ] The test suite of the Projects must be set up to fail when a deprecation warning of another HoloViz library is emitted.
