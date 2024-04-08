@@ -15,13 +15,25 @@
 
 This HEP describes the release and deprecation policies adopted by the HoloViz Projects. While two HEPs could have be written to describe these policies separately, it is deemed that they are enough intertwined to be addressed together (e.g. to answer questions such as in which kind of final release can a feature be deprecated/removed?).
 
+The Projects already follow a pretty consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, and without clear guidelines this has sometimes led to long and unproductive discussions. The HEP aims to improve this by introducing new and well defined guidelines. Making it easier for Projects to deprecate features is **key to their long-term maintenance**.
+
 The overall goal of the HEP is to ensure that these policies are **consistently applied across the Projects**, which will help provide a **consistent user experience** and **help contributors and maintainers make decisions**. We also aim to adopt **standard practices**.
+
+## Motivation
 
 The Projects already follow a pretty consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, and without clear guidelines this has sometimes led to long and unproductive discussions. The HEP aims to improve this by introducing new and well defined guidelines. Making it easier for Projects to deprecate features is **key to their long-term maintenance**.
 
-## Release policy
+Indeed, the goal of deprecating a feature is often to reduce the long-term maintenance burden of a Project. However, the act itself of deprecating a feature - the deprecation cycle - is a process that requires many actions be undertaken by the maintainers of a Project, starting from when they begin discussing the deprecation to when they remove the deprecated feature, which will potentially be done by other maintainers multiple years later. Given the complexity of the process and its somewhat remote benefits, without clear guidelines it's easy for maintainers to make mistakes, potentially affecting the user experience.
 
-### Versioning
+At the time of writing this HEP the Projects do not have a clear plan for their deprecation cycle. They also often adopt non-standard practices. For instance, many Projects display deprecation warnings using the logging API provided by Param (`param.main.param.warning(...)`), while in the Python ecosystem it is much more common to use the function `warnings.warn` from the standard library. With this function, users can easily control the behavior of these warnings (e.g. hide them, turn them into errors).
+
+The overall goal of the HEP is to ensure that these policies are **consistently applied across the Projects**, which will help provide a **consistent user experience** and **help contributors and maintainers make decisions**. We also aim to adopt **standard practices**.
+
+## Specification
+
+### Release policy
+
+#### Versioning
 
 The Projects deliver final releases with a version number of the form `<major>.<minor>.<patch>` (e.g. `1.2.3`):
 
@@ -37,38 +49,32 @@ The Projects can deliver three types of pre-releases / development versions:
 - `beta` (e.g. `1.2.3b1`): Projects can deliver beta releases for the same reasons, except they indicate the project is in a more advanced development phase of a new version. beta releases are not common across the Projects, they're more likely to be useful when a major release is in development, to progressively deliver large new features and API breaking changes.
 - `release candidate` (e.g. `1.2.3rc1`): Projects must deliver at least one release candidate version before the final release and Projects should not add new features between release candidates. There is no expectation from Projects to announce their release candidates to a wide audience and wait some time before making a final release. However, Projects are encouraged to adopt that approach when they prepare an important release, typically a major or a significant minor release.
 
-### Supported versions
+#### Supported versions
 
 Aside from certain exceptional cases, the Projects are not expected to backport changes to previous major or minor releases.
 
-### Distribution
+#### Distribution
 
 HoloViz release managers are responsible for distributing the Projects on these platforms:
 
 - Pre-releases are distributed on [PyPI](https://pypi.org) and on the *pyviz/label/dev* channel of [Anaconda.org](https://anaconda.org).
 - Final versions are distributed on [PyPI](https://pypi.org), and on the  *conda-forge* and *pyviz* channels of [Anaconda.org](https://anaconda.org).
 
-### Release cadence
+#### Release cadence
 
 The Projects have not adopted a regular release cadence; a new release happens whenever maintainers find it is appropriate. A Project is free to adopt a regular release cadence.
 
 Major regressions in a release should be fixed and released in a new patch version as soon as possible.
 
-## Backwards compatibility
+### Backwards compatibility
 
 The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, for instance, Colorcet or Param. Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. Lumen). These Projects are not expected to be as stable, they change more quickly. 
 
 Overall, the HoloViz Projects are known to be stable and their users have built this expectation. The functionalities they provide are generally not moved or removed lightly. Maintainers should aim to keep the Projects stable; moving or removing a feature from a code base **must** be motivated, in particular when it is done outside of a major release.
 
-## Deprecation policy
+### Deprecation policy
 
-### Background
-
-The goal of deprecating a feature is often to reduce the long-term maintenance burden of a Project. However, the act itself of deprecating a feature - the deprecation cycle - is a process that requires many actions be undertaken by the maintainers of a Project, starting from when they begin discussing the deprecation to when they remove the deprecated feature, which will potentially be done by other maintainers multiple years later. Given the complexity of the process and its somewhat remote benefits, without clear guidelines it's easy for maintainers to make mistakes, potentially affecting the user experience.
-
-At the time of writing this HEP the Projects do not have a clear plan for their deprecation cycle. They also often adopt non-standard practices. For instance, many Projects display deprecation warnings using the logging API provided by Param (`param.main.param.warning(...)`), while in the Python ecosystem it is much more common to use the function `warnings.warn` from the standard library. With this function, users can easily control the behavior of these warnings (e.g. hide them, turn them into errors).
-
-### Deprecation cycle guidelines
+#### Deprecation cycle guidelines
 
 The Projects can deprecate a feature in any type of final release (patch, minor, or major). However, before implementing the deprecation, they **must**:
 
@@ -150,7 +156,7 @@ When the time to remove the deprecated feature has come, maintainers **must**:
 - Include the change in a major or minor release.
 - Close all open related issues and PRs.
 
-### Test suite guidelines
+#### Test suite guidelines
 
 The Projects **must** be set up so that their test suite fails when they trigger deprecation warnings emitted by other HoloViz projects.
 
@@ -362,11 +368,3 @@ Exceptions are allowed but should in practice be very rare:
 ## Copyright
 
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
-
-
-TODO:
-- [x] Highlight we want to follow standard practices (to help external contributors)
-- [x] Make an appendix with the Python warnings
-- [x] Pytest changes the default filters
-- find_stack_level could check whether in Panel/Bokeh serve and raise it to the top level
-- [ ] The test suite of the Projects must be set up to fail when a deprecation warning of another HoloViz library is emitted.
