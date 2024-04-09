@@ -89,6 +89,7 @@ included if appropriate for the proposal include:
 - **Sample Implementation/Illustration**: Links to prototype or a sample implementation of the proposed change.
 - **FAQ**: Frequently asked questions (and answers to them).
 - **Resolution**: A short summary of the decision process conducted with the community.
+- **Compliance**: Any mechanisms that promote adherence to HEP guidelines, favoring automation when possible.
 - **Reference**: Any references used in the design of the HEP.
 
 ### Copyright
