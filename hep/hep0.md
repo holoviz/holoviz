@@ -73,7 +73,10 @@ Next, each HEP should include a table with the following information:
 </table>
 
 ### Summary
-The table should be followed by a **Summary** section.
+A concise overview of the HEP.
+
+### Resolution (if applicable)
+A concise summary of the technical plan of action.
 
 ### Specification
 If a HEP is perscriptive in nature (providing explicit guidelines or rules to follow), a **Specification** or **Policy** section is required to convey the technical details of the proposed enhancement.
@@ -82,13 +85,12 @@ If a HEP is perscriptive in nature (providing explicit guidelines or rules to fo
 Some sections that may be
 included if appropriate for the proposal include:
 
-- **Motivation/Background**: Why the proposed change or formalization is needed.
+- **Motivation/Background**: Why the proposed change or formalization is needed (beyond what is covered in the Summary).
 - **Rationale**: Why particular decisions were made in the proposal.
 - **Backwards Compatibility**: Will the proposed change break existing packages or workflows.
 - **Alternatives**: Any alternatives considered during the design.
 - **Sample Implementation/Illustration**: Links to prototype or a sample implementation of the proposed change.
 - **FAQ**: Frequently asked questions (and answers to them).
-- **Resolution**: A short summary of the decision process conducted with the community.
 - **Compliance**: Any mechanisms that promote adherence to HEP guidelines, favoring automation when possible.
 - **Reference**: Any references used in the design of the HEP.
 
