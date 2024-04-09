@@ -73,7 +73,7 @@ Next, each HEP should include a table with the following information:
 </table>
 
 ### Summary
-A concise overview of the HEP.
+A concise overview of the HEP's content.
 
 ### Resolution (if applicable)
 A concise summary of the technical plan of action.
