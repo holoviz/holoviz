@@ -13,11 +13,7 @@
 
 ## Summary
 
-This HEP describes the release and deprecation policies adopted by the HoloViz Projects. While two HEPs could have be written to describe these policies separately, it is deemed that they are enough intertwined to be addressed together (e.g. to answer questions such as in which kind of final release can a feature be deprecated/removed?).
-
-The Projects already follow a pretty consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, and without clear guidelines this has sometimes led to long and unproductive discussions. The HEP aims to improve this by introducing new and well defined guidelines. Making it easier for Projects to deprecate features is **key to their long-term maintenance**.
-
-The overall goal of the HEP is to ensure that these policies are **consistently applied across the Projects**, which will help provide a **consistent user experience** and **help contributors and maintainers make decisions**. We also aim to adopt **standard practices**.
+This HEP outlines unified release and deprecation policies for the HoloViz Projects. It addresses key questions about the lifecycle of features, including deprecation and removal timelines. The HEP formalizes existing release procedures and introduces well-defined deprecation guidelines to streamline long-term maintenance and decision-making processes, aiming for consistency across projects and an improved user experience.
 
 ## Motivation
 
