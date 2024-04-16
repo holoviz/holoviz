@@ -3,10 +3,10 @@
 <table>
 <tr><td> Identifier </td><td> HEP 0 </td>
 <tr><td> Title </td><td> HEP Purpose, Policy, and Guidelines </td>
-<tr><td> Status </td><td> Proposed </td></tr>
+<tr><td> Status </td><td> Accepted </td></tr>
 <tr><td> Author(s) </td><td> Demetris Roumis </td></tr>
 <tr><td> Created </td><td> March 18, 2024</td></tr>
-<tr><td> Updated </td><td> March 19, 2024</td></tr>
+<tr><td> Updated </td><td> April 15, 2024</td></tr>
 <tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/395#issuecomment-2007702201 </td></tr>
 <tr><td> Implementation </td><td> NA </td></tr>
 </table>
