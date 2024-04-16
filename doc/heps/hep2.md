@@ -164,17 +164,9 @@ Python defines the following [warning types](https://docs.python.org/3/library/w
 
 | Class                     | Description                                                                                                                                                                   |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Warning`                   | This is the base class of all warning category classes. It is a subclass of Exception.                                                                                        |
-| `UserWarning`               | The default category for warn().                                                                                                                                              |
 | `DeprecationWarning`        | Base category for warnings about deprecated features when those warnings are intended for other Python developers (ignored by default, unless triggered by code in `__main__`). |
-| `SyntaxWarning`             | Base category for warnings about dubious syntactic features.                                                                                                                  |
-| `RuntimeWarning`            | Base category for warnings about dubious runtime features.                                                                                                                    |
 | `FutureWarning`             | Base category for warnings about deprecated features when those warnings are intended for end users of applications that are written in Python.                               |
 | `PendingDeprecationWarning` | Base category for warnings about features that will be deprecated in the future (ignored by default).                                                                         |
-| `ImportWarning`             | Base category for warnings triggered during the process of importing a module (ignored by default).                                                                           |
-| `UnicodeWarning`            | Base category for warnings related to Unicode.                                                                                                                                |
-| `BytesWarning`              | Base category for warnings related to bytes and bytearray.                                                                                                                    |
-| `ResourceWarning`           | Base category for warnings related to resource usage (ignored by default).                                                                                                    |
 
 The warnings defined to be used when deprecating a feature are `DeprecationWarning`, `FutureWarning`, and `PendingDeprecationWarning`.
 
