@@ -72,7 +72,7 @@ Overall, the HoloViz Projects are known to be stable and their users have built 
 
 #### Deprecation cycle guidelines
 
-The Projects can deprecate a feature in any type of final release (patch, minor, or major). However, before implementing the deprecation, they **must**:
+The Projects **must** deprecate a feature in a major of minor type of release (not patch). However, before implementing the deprecation, they **must**:
 
 - Motivate the best they can why the feature is deprecated (e.g. old and unused API) in an issue or in the *Pull Request* (PR) deprecating the feature.
 - Reach a consensus among the maintainers of the Project on the deprecation.
