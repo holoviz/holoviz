@@ -72,15 +72,17 @@ Overall, the HoloViz Projects are known to be stable and their users have built 
 
 #### Deprecation cycle guidelines
 
-The Projects **must** deprecate a feature in a major of minor type of release (not patch). However, before implementing the deprecation, they **must**:
+The following guidelines are meant to be consumed by maintainers of the Projects, who can use them as templates in PRs or while preparing a release. Note that while the goal of the HEP is to enforce a set of rules to ensure a more consistent deprecation cycle across the Projects, there will always be exceptions to the rules that this HEP does not prevent.
 
-- Motivate the best they can why the feature is deprecated (e.g. old and unused API) in an issue or in the *Pull Request* (PR) deprecating the feature.
-- Reach a consensus among the maintainers of the Project on the deprecation.
-- Make sure that the PR deprecating the feature is approved by at least another maintainer, who should check that the indications below have been followed.
+1. Before implementing a deprecation, maintainers:
 
- Maintainers have to make sure that their users are well informed of the deprecation. They **must** mention the deprecation in the following ways:
+  - [ ] **Must** motivate the best they can why the feature is deprecated (e.g. old and unused API) in an issue or in the *Pull Request* (PR) deprecating the feature.
+  - [ ] **Must** reach a consensus among the maintainers of the Project on the deprecation.
 
-- Implement a programmatic warning, if not applicable the PR deprecating the feature **must** clearly explain why:
+2. Maintainers have to make sure that their users are well informed of the deprecation. They **must** implement the deprecation in the following way:
+
+- [ ] Implement a programmatic warning, if not applicable the PR deprecating the feature **must** clearly explain why.
+
   - The warning **must** be emitted using one of these two utilities:
     - The `warn` function from the `warnings` module:
 
@@ -111,10 +113,11 @@ The Projects **must** deprecate a feature in a major of minor type of release (n
     The `deprecated` decorator not only emits a run-time warning, it also enables static type checkers to warn when they encounter usage of an object decorated with `deprecated`. This comes with various benefits, for example, VSCode users will see the deprecated objects crossed out in their code. Therefore, when possible, `deprecated` should be preferred over `warn`.
 
   - The warning message:
+
     - **Must** indicate that the feature is deprecated and is going to be removed in a future version.
-    - If applicable, **must** suggest replacement APIs.
+    - **Must** suggest replacement APIs, if applicable.
     - Can indicate in which version the feature was deprecated.
-    - Can indicate before which version the feature is going to be remove, however, maintainers **must** ensure that the deprecation duration (see below) is going to be respected, and that no obsolete warning will be released (e.g. feature announced to be removed in version 1.1 but is still present in 1.1).
+    - Can indicate before which version the feature is going to be remove, however, maintainers should ensure that the deprecation period (see below) is not going to be too to short, and that no obsolete warning will be released (e.g. feature announced to be removed in version 1.1 but is still present in 1.1).
 
   - The warning type:
   
@@ -132,25 +135,26 @@ The Projects **must** deprecate a feature in a major of minor type of release (n
 
   - `stacklevel` **must** be set so the warning appears in the correct place. Projects can implement a utiliy like the private Pandas' function [`find_stack_level`](https://github.com/pandas-dev/pandas/blob/b8a4691647a8850d681409c5dd35a12726cd94a1/pandas/util/_exceptions.py#L34) to automatically infer the right `stacklevel` number.
 
-- Documentation: all usage of the deprecated feature **must** be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation.
-- Release notes: the release notes **must** list the deprecated feature.
-- Repository: all the open issues an PRs associated with the deprecated feature **must** be closed.
+- [ ] Documentation: all usage of the deprecated feature **must** be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation. When the deprecation involves the user having to change their code in a significant way (typically in a major release), maintainers should consider writing a migration guide.
 
-When the deprecation involves the user having to change their code in a significant way (typically in a major release), maintainers should consider writing a migration guide.
+3. When the deprecation is fully implemented, maintainers:
 
-When a feature has been deprecated, its warning and documentation **must** stay in place for some time long enough to let most users find out about it. For example, Panel users who lock the dependencies of their application should be given sufficient time between the deprecation of a feature and its removal so as not to miss the deprecation warnings and be left with broken code, once they attempt to upgrade their version of Panel to the latest. A deprecated feature **can only be removed 18 months after users have been informed of its deprecation**. This period, introduced by this HEP, factors in the facts that:
+- [ ] **Must** make sure that the PR deprecating the feature is approved by at least another maintainer, who should check that the approach above has been followed.
+- [ ] **Must** close all the open issues an PRs associated with the deprecated feature.
 
-- Users cannot build expectations about when in time a feature is going to be removed if the deprecation indicates a version number (e.g. `'This feature will be removed in version 1.2.3'`) as the Projects don't release new versions based on a regular cadence.
-- Many HoloViz users are not professional software developers/engineers; they use Python to help them accomplish their work and as such touch code less frequently.
+4. When releasing the deprecation, maintainers:
 
-Maintainers are encouraged to list the Project's active deprecations (e.g. in an *Issue*, or in the [website](https://github.com/holoviz/param/pull/922)) with enough information to infer when these deprecated features can be removed from the code base, and check regularly this listing not to miss the opportunity to remove a deprecated feature.
+- [ ] **Must** include it in a major of minor release, not in a patch release.
+- [ ] **Must** list the deprecated feature in the release notes.
+- [ ] Are encouraged to list the Project's active deprecations (e.g. on the [website](https://github.com/holoviz/param/pull/922, in an *Issue*)) with enough information to infer when these deprecated features can be removed from the code base, and check regularly this listing not to miss the opportunity to remove a deprecated feature.
 
-When the time to remove the deprecated feature has come, maintainers **must**:
+5. When removing the deprecated feature, maintainers:
 
-- Remove it from the code base and documentation.
-- Mention the removal in the release notes.
-- Include the change in a major or minor release.
-- Close all open related issues and PRs.
+  - [ ] **Must** ensure the removal isn't made *too soon* to let the maximum number of users find out about the deprecation. The recommendation is to observe a **minimum period of 6 months** between the release of the deprecation (a minimum period has been chosen in favor of a number of releases as no Project has adopted a regular release cadence).
+  - [ ] **Must** include the change in a major or minor release, not in a patch release.
+  - [ ] **Must** remove it from the code base and documentation.
+  - [ ] **Must** mention the removal in the release notes.
+  - [ ] **Must** close all open related issues and PRs.
 
 #### Test suite guidelines
 
