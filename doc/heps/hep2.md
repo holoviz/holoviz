@@ -71,6 +71,8 @@ Overall, the HoloViz Projects are known to be stable and their users have built 
 
 ### Deprecation policy
 
+The deprecation policy applies to what each Project considers to be its user-facing public API.
+
 #### Deprecation cycle guidelines
 
 The following guidelines are meant to be consumed by maintainers of the Projects, who can use them as templates in PRs or while preparing a release. Note that while the goal of the HEP is to enforce a set of rules to ensure a more consistent deprecation cycle across the Projects, there will always be exceptions to the rules that this HEP does not prevent.
