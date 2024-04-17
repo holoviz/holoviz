@@ -55,6 +55,7 @@ HoloViz release managers are responsible for distributing the Projects on these 
 
 - Pre-releases are distributed on [PyPI](https://pypi.org) and on the *pyviz/label/dev* channel of [Anaconda.org](https://anaconda.org).
 - Final versions are distributed on [PyPI](https://pypi.org), and on the  *conda-forge* and *pyviz* channels of [Anaconda.org](https://anaconda.org).
+- Release candidates before a major release and all final releases are distributed as Github releases.
 
 #### Release cadence
 
