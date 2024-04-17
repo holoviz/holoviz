@@ -125,7 +125,7 @@ The following guidelines are meant to be consumed by maintainers of the Projects
     - **Must** be defined based on this approach (see the Appendix for more details):
 
       1. Start by emitting a `DeprecationWarning`, to inform Library Developers, and some Data Analysts.
-      2. After 12 months, upgrade to a `FutureWarning`, to inform all users.
+      2. After a few months, upgrade to a `FutureWarning`, to inform all users.
 
       Exceptions are allowed but should in practice be very rare:
 
@@ -151,6 +151,7 @@ The following guidelines are meant to be consumed by maintainers of the Projects
 5. When removing the deprecated feature, maintainers:
 
   - [ ] **Must** ensure the removal isn't made *too soon* to let the maximum number of users find out about the deprecation. The recommendation is to observe a **minimum period of 6 months** between the release of the deprecation (a minimum period has been chosen in favor of a number of releases as no Project has adopted a regular release cadence).
+  - [ ] **Must** ensure the warning was programmatically emitted at a level sufficient enough for users to see it.
   - [ ] **Must** include the change in a major or minor release, not in a patch release.
   - [ ] **Must** remove it from the code base and documentation.
   - [ ] **Must** mention the removal in the release notes.
