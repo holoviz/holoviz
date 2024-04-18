@@ -147,7 +147,7 @@ The following guidelines are meant to be consumed by maintainers of the Projects
 
 4. When releasing the deprecation, maintainers:
 
-- [ ] **Must** include it in a major of minor release, not in a patch release.
+- [ ] **Must** include it in a major or minor release, not in a patch release.
 - [ ] **Must** list the deprecated feature in the release notes.
 - [ ] Are encouraged to list the Project's active deprecations (e.g. on the [website](https://github.com/holoviz/param/pull/922, in an *Issue*)) with enough information to infer when these deprecated features can be removed from the code base, and check regularly this listing not to miss the opportunity to remove a deprecated feature.
 
