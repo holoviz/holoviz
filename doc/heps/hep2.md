@@ -86,34 +86,38 @@ The following guidelines are meant to be consumed by maintainers of the Projects
 
 - [ ] Implement a programmatic warning, if not applicable the PR deprecating the feature **must** clearly explain why.
 
-  - The warning **must** be emitted using one of these two utilities:
-    - The `warn` function from the `warnings` module:
+  - The warning **must** be emitted using one or a combination of these two utilities:
+
+    - The `deprecated` decorator added in Python 3.13 ([PEP 702](https://peps.python.org/pep-0702/)) to the `warnings` module, and backported to previous Python versions via the [typing_extensions](https://github.com/python/typing_extensions) package, can be used to mark *functions*, *classes*, and *overloads* as deprecated. This decoration has two features:
+
+      1. It enables *static type* checkers to warn when they encounter usage of an object decorated with `@deprecated`. This comes with various benefits, for example, VSCode users will see the deprecated objects crossed out in their code.
+      2. When `category` is **not set to `None`** (default is `DeprecationWarning`), a *run-time* warning is also emitted.
+
+      The `@deprecated` decorator should be used when possible, in combination with `warnings.warn` when `category` is set to `None`.
+
+      ```python
+      from typing_extensions import deprecated
+
+      @deprecated(
+        "Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.",
+        category=FutureWarning,
+      )
+      def foo():
+        ...
+      ```
+
+    - The `warn` function from the `warnings` only emits a run-time warning. It is however more versatile than `@deprecated` and can be used, for example, to deprecate a keyword parameter.
 
     ```python
     from warnings import warn
 
-    def foo():
+    def foo(a, b=None):
       warn(
-        "Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.",
+        "The keyword parameter `b` of function foo is deprecated since version 1.1.1 and will be removed in a future release.",
         category=FutureWarning, stacklevel=2,
       )
       ...
     ```
-
-    - The `deprecated` decorator added in Python 3.13 ([PEP 702](https://peps.python.org/pep-0702/)) to the `warnings` module, backported to previous Python versions via the [typing_extensions](https://github.com/python/typing_extensions).
-
-    ```python
-    from typing_extensions import deprecated
-
-    @deprecated(
-      "Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.",
-      category=FutureWarning,
-    )
-    def foo():
-      ...
-    ```
-
-    The `deprecated` decorator not only emits a run-time warning, it also enables static type checkers to warn when they encounter usage of an object decorated with `deprecated`. This comes with various benefits, for example, VSCode users will see the deprecated objects crossed out in their code. Therefore, when possible, `deprecated` should be preferred over `warn`.
 
   - The warning message:
 
