@@ -37,7 +37,7 @@ The Projects deliver final releases with a version number of the form `<major>.<
 - `minor` releases (e.g. 0.**1**.1 -> 0.**2**.0) should not have API changes that affect most users. API changes in minor releases should be rare, but are not unheard of, particularly for recently added functionality whose API is still being refined, or for bugs found in older code that can't be fixed without changing API at least slightly.
 - `major` releases (e.g. **0**.2.0 -> **1**.0.0)  will typically break APIs, but should normally include significant new functionality to motivate users to update their code. Major breaking API changes should be postponed to a major release and paired with significant user-visible advantages.
 
-While this versioning scheme is inspired by [Semantic Versioning](https://semver.org/) (*SemVer*), like many other Python projects, **the HoloViz Projects do not strictly follow it** as incompatible (aka breaking) API changes are not limited to `major` releases.
+While this versioning scheme is inspired by [Semantic Versioning](https://semver.org/) (*SemVer*), like many other Python projects, **the HoloViz Projects do not strictly follow it** as incompatible (aka breaking) API changes are not limited to `major` releases. The HoloViz versioning scheme is in fact more accurately captured by the newly coined [Intended Effort Versioning](https://jacobtomlinson.dev/effver/) (*EffVer* for short) scheme.
 
 The Projects can deliver three types of pre-releases / development versions:
 
