@@ -142,6 +142,8 @@ The following guidelines are meant to be consumed by maintainers of the Projects
 
   - `stacklevel`, or `skip_file_prefixes` starting from Python 3.12, **must** be set when calling `warnings.warn` so the warning message references the right deprecated code line. Projects can implement a utility like the private Pandas' function [`find_stack_level`](https://github.com/pandas-dev/pandas/blob/b8a4691647a8850d681409c5dd35a12726cd94a1/pandas/util/_exceptions.py#L34) to automatically infer the right `stacklevel` number. Python 3.12 added the `skip_file_prefixes` to `warnings.warn` that could be used in place of setting `stacklevel` manually or with `find_stack_level`, with e.g. `skip_file_prefixes=os.path.dirname(importlib.util.find_spec(<package_name>).origin)`.
 
+- [ ] Docstring (when applicable): the docstring of the deprecated feature **must** be updated to mention the deprecation. The [deprecated](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-deprecated) Sphinx directive should be used when available
+
 - [ ] Documentation: all usage of the deprecated feature **must** be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation. When the deprecation involves the user having to change their code in a significant way (typically in a major release), maintainers should consider writing a migration guide.
 
 3. When the deprecation is fully implemented, maintainers:
