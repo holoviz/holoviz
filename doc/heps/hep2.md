@@ -358,7 +358,7 @@ won't be notified of `DeprecationWarning`s even if their code directly uses a fe
 Based on the fact that a non-negligeable fraction of HoloViz users may entirely miss `DeprecationWarning`s, we suggest adopting a tiered approach:
 
 1. Start by emitting a `DeprecationWarning`, to inform Library Developers, and some Data Analysts.
-2. After 12 months, upgrade to a `FutureWarning`, to inform all users.
+2. After a few months, upgrade to a `FutureWarning`, to inform all users.
 
 Exceptions are allowed but should in practice be very rare:
 
