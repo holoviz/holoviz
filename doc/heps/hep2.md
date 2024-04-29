@@ -198,7 +198,7 @@ ignore::ResourceWarning
 
 Note that the default filters can be overriden by setting the `-W` flag when calling the `python` executable or via the `PYTHONWARNINGS` environment variable.
 
-The default filters imply that in a regular context `PendingDeprecationWarning` will not be seen by the user, while `FutureWarning` will always be seen. `DeprecationWarning` is treated specially; warnings of these types are only seen when they are triggered by and points to code in `__main__`, the latter depending on the value of `stacklevel`.
+The default filters imply that in a regular context `PendingDeprecationWarning` will not be seen by the user, while `FutureWarning` will always be seen. `DeprecationWarning` is treated specially; warnings of these types are displayed only if `warn` is called by code located in the `__main__` namespace and if `warn` is configured to emit the warning in the `__main__` namespace, the latter depending on the value of `stacklevel`.
 
 The `stacklevel` parameter of `warnings.warn` specifies how many levels of the call stack to skip when displaying the warning message, helping to identify the actual source of the warning in the code. Its default value is `1`, meaning that no level is skipped. Let's see how it works with a few examples:
 
