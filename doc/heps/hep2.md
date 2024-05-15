@@ -47,7 +47,7 @@ The Projects can deliver three types of pre-releases / development versions:
 
 #### Supported versions
 
-Aside from certain exceptional cases, the Projects are not expected to backport changes to previous major or minor releases.
+Aside from certain exceptional cases (such as major security vulnerabilities), the Projects are not expected to backport changes to previous major or minor releases.
 
 #### Distribution
 
