@@ -65,7 +65,7 @@ Major regressions in a release should be fixed and released in a new patch versi
 
 ### Backwards compatibility
 
-The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, for instance, Colorcet or Param. Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. Lumen). These Projects are not expected to be as stable, and will change much more quickly. 
+The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, for instance, [Colorcet](https://github.com/holoviz/colorcet) or [Param](https://github.com/holoviz/param). Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. [Lumen](https://github.com/holoviz/lumen)). These Projects are not expected to be as stable, and will change much more quickly. 
 
 Overall, the HoloViz Projects are known to be stable and their users have built this expectation. The functionalities they provide are generally not moved or removed lightly. Maintainers should aim to keep the Projects stable; moving or removing a feature from a code base **must** be motivated, in particular when it is done outside of a major release.
 
@@ -90,7 +90,7 @@ The following guidelines are meant to be consumed by maintainers of the Projects
 
     - The `deprecated` decorator added in Python 3.13 ([PEP 702](https://peps.python.org/pep-0702/)) to the `warnings` module, and backported to previous Python versions via the [typing_extensions](https://github.com/python/typing_extensions) package, can be used to mark *functions*, *classes*, and *overloads* as deprecated. This decoration has two features:
 
-      1. It enables *static type* checkers to warn when they encounter usage of an object decorated with `@deprecated`. This comes with various benefits, for example, VSCode users will see the deprecated objects crossed out in their code.
+      1. It enables *static type* checkers to warn when they encounter usage of an object decorated with `@deprecated`. This comes with various benefits, for example, [LSP](https://en.wikipedia.org/wiki/Language_Server_Protocol) (like pylance in VSCode) users will see the deprecated objects crossed out in their code.
       2. When `category` is **not set to `None`** (default is `DeprecationWarning`), a *run-time* warning is also emitted.
 
       The `@deprecated` decorator should be used when possible, in combination with `warnings.warn` when `category` is set to `None`.
