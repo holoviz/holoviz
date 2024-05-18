@@ -13,7 +13,7 @@ Currently ongoing or scheduled priorities include:
 
 Other goals for HoloViz or packages designed to work well with HoloViz include:
 
-1.  **More extensive documentation about deployment**: HoloViz includes a tutorial on `deployment using Bokeh server <http://holoviz.org/tutorial/13_Deploying_Bokeh_Apps.html>`__, but there are many other ways to set up live Python-backed plots and Panel dashboards or apps, including creating a Flask server or embedding into Django, along with deploying via Heroku or Google Cloud and AWS or via the Anaconda Enterprise platform or on `MyBinder <https://mybinder.org>`__. Documenting and testing these possibilities takes time and effort, and any contributions or examples that will help people get started and decide between the alternatives would be very helpful.
+1.  **More extensive documentation about deployment**: Done.
 
 2.  **New and improved workflow examples in biomedical and Earth sciences, especially utilizing machine learning**: Demonstrations for handling and visualization of various large, multidimensional datasets from data-intensive research domains, including on HPC systems.
 
