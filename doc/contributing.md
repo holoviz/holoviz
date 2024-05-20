@@ -428,57 +428,54 @@ The core HoloViz packages are also made available on two other conda channels:
 ```{note}
 Development releases are only available on PyPi and the conda `pyviz` channel. To install the latest development release, e.g., Panel execute `pip install panel --pre` or `conda install -c pyviz/label/dev panel`.
 ```
+### Before Releasing
 
-#### Before releasing
+Before making a release, consider the following tasks:
 
-There are a few tasks that are worth paying attention to before making a release:
-* You should have made some decisions about what should go in that release and check later that these decided changes (bug fixes, new features, documentation, etc.) are indeed merged. This is best managed by setting Github *Milestones* to issues.
-* You should make sure that the test suite passes.
-* A new release is a good opportunity to check that **there are no alarming warnings** emitted while the tests suite runs. Missing a deprecation warning could mean that you would have to make a new release soon after this one!
+- Ensure that decisions regarding release content are reflected in Github Milestones.
+- Confirm the test suite passes successfully.
+- Check for alarming warnings during the test suite execution to avoid missing critical issues.
+  
+### Detailed Process
 
-#### Detailed process
+1. **Development Release (Alpha)**
+   - For non-pure Python packages with JavaScript/TypeScript extensions (e.g., Panel, GeoViews), manually update `package.json` and `package-lock.json` to bump the version (e.g., from `1.9.5` to `1.9.6-a.1`).
+   - For pure Python packages, create a new tag using `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`.
+  
+2. **Post-Alpha Checks**
+   - Monitor *Packages* and *Documentation* workflows; fix failures if any.
+   - Verify the new version of the *dev* site and downstream tests on Github Actions.
 
-Development releases can have different goals. Sometimes they are only meant to be pre-releases made right before an actual release to make sure everything is alright. Sometimes they are made to be shared with stakeholders (e.g., a specific contributor, a customer, a dependent project, etc.). Depending on your situation, you might decide to pause the release process in the procedure detailed below between two development releases, waiting for feedback.
+3. **Beta and Release Candidate (Optional)**
+   - Making *beta* releases is rare; consider a *release candidate* for significant changes.
+   - Announce *release candidate* for user feedback.
 
-1. Before making a proper release, you should start by making a development release. This is the first one that would be an *alpha* release. Bump the version too, e.g., `v1.9.6a1` and commit the new tag.
-1. After pushing the new tag, you can monitor the *Packages* and *Documentation* workflows. If one fails, you will have to fix that as that would be a release blocker.
-1. If the *alpha* release succeeded, it is now time to check a few things:
-    * A new version of the *dev* (built on the corresponding `holoviz-dev` repository `gh-pages` branch) site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.
-    * Some packages have implemented *downstream tests*. When they do, these tests run only when a release is made. They trigger the test suite of their downstream packages (e.g., a Panel release would trigger the test suite of Param). This ensures that the release you just made didn't break some other packages of the HoloViz ecosystem. To find the results of these downstream tests, check the Github Actions page of the released package.
-    * Optionally, and to make sure that the release went well, you could install the package you've released (e.g. `conda install -c pyviz/label/dev panel`) and check there's no embarrassing issue.
-1. Pause the release process if you expect feedback from others. If not, keep going.
-1. In practice making *beta* releases appear to be quite rare. However, making a *release candidate*, in particular before making a release that incorporates breaking changes, is recommended. After making a *release candidate* you should announce it (e.g., on Discourse, Discord, Twitter) so that users can try it out and provide feedback.
-1. It is not required to update the changelog for a development release. However, a final release should come with an updated changelog, which means that at some point before making the last development release, you will have to merge an updated changelog. Updating the changelog is a process that depends on the package being released. Look for files such as `CHANGELOG.md` in the repository and update them accordingly to their format. Crafting a good changelog is an important step in the release process. Users will read it to find out what's new and, in particular, what may potentially break their code. Don't forget to mention all the people who have contributed to the release since the last one.
-1. Once the last development release has been confirmed to be in good shape, by yourself and preferably by others too (in particular, when it comes to spot-checking the website, it is best to have more than one pair of eyes looking into that!), you are ready to make the final release. You will have to bump the version again to its final number (e.g., to `v1.9.6`). Note that you may need to make another development release before the final one if you've made changes after the latest development version that are worth mentioning in the changelog.
-1. Optionally again, and to ensure the release went well, you could install the package you've released (e.g. `conda install -c pyviz panel`) and check there's no embarrassing issue.
-1. Create a Github Release. It should contain the same changelog as the one published on the website (the formatting can change).
-    * Go to the Github repository
-    * Click *Releases*
-    * Click *Tags*
-    * Click the most recent tag that you just added 
-    * Click *Create a new release*
-    * Add release notes and publish the release 
-1. Find the *conda-forge* recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you're not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.
-1. Announce the release (e.g., on Discourse, Discord, Twitter).
-1. If the release is important (e.g., not a bug fix release), it may be worth a blog post.
+4. **Changelog Update**
+   - Update the changelog file (e.g., `CHANGELOG.md`) before the final release with contributions since the last one.
+   - Craft a comprehensive changelog as it aids users in understanding what's new and potential code breakages.
 
-```{note}
-Bumping the version of a package depends on the package's nature:
-* Non-pure Python packages, e.g., Panel or GeoViews as they include JavaScript/TypeScript extensions, need their `package.json` and `package-lock.json` files to be updated, manually bumping the version in those files (e.g., from `1.9.5` to `1.9.6-a.1`). Note that the version scheme isn't the same as the Python version scheme.
-* Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with `git tag -m "Version 1.9.6 alpha1" v1.9.6a1 main`.
-```
+5. **Final Release**
+   - Confirm the last development release's stability, preferably with multiple reviews.
+   - Bump the version in relevant files to the final number (e.g., `v1.9.6`).
+   - Optionally, re-install the package (`conda install -c pyviz panel`) to check for issues.
 
-```{note}
-Development releases are cheap, don't hesitate to make as many as required! It's also fine if a development release only makes it to one of the two distribution platforms (PyPi or Anaconda.org). They're not meant to be for end-users but development purposes only.
-```
+6. **Github Release**
+   - Go to the Github repository ➜ Click *Releases* ➜ Click *Tags* ➜ Click the most recent tag that you just added ➜ Click *Create a new release* ➜ Add release notes and publish the release.
 
-```{tip}
-You can tag a release from any branch, not necessarily from the main one. This is useful if you have to maintain multiple versions simultaneously (e.g., 2.* and 3.*).
-```
+7. **Conda-Forge Recipe Update**
+   - Update the *conda-forge* recipe (e.g., `meta.yaml`) for the released package.
+   - Check and update build/runtime dependencies and their version pins.
+   - If not a maintainer, add yourself and inform existing maintainers of the ready PR.
 
-```{tip}
-If you push a tag by mistake or the wrong tag and are lucky enough to spot that instantly, you should hurry up (really!) and [cancel](https://docs.github.com/en/actions/managing-workflow-runs/canceling-a-workflow) the *Build* and *Documentation* workflows before anything gets published/deployed. If you manage to do that, you can then remove the faulty tag.
-```
+8. **Announce Release**
+   - Announce the release on relevant platforms (Discourse, Discord, Twitter).
+   - Consider a blog post for significant releases.
+
+### Additional Notes
+
+- Development releases are for development purposes, and making many is encouraged.
+- You can tag a release from any branch, useful for maintaining multiple versions simultaneously.
+- If a mistaken tag is pushed, act promptly to cancel workflows and remove the faulty tag.
 
 ### Credentials
 
