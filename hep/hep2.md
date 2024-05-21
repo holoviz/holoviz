@@ -3,9 +3,9 @@
 <table>
 <tr><td> Identifier </td><td> HEP 2 </td>
 <tr><td> Title </td><td> Release and deprecation policies </td>
-<tr><td> Status </td><td> Draft </td></tr>
+<tr><td> Status </td><td> Accepted </td></tr>
 <tr><td> Author(s) </td><td> Maxime Liquet </td></tr>
-<tr><td> Created </td><td> TBD </td></tr>
+<tr><td> Created </td><td> May 21, 2024 </td></tr>
 <tr><td> Updated </td><td> - </td></tr>
 <tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/388 </td></tr>
 <tr><td> Implementation </td><td> NA </td></tr>
