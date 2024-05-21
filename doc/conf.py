@@ -48,3 +48,6 @@ html_context.update({
     'github_user': 'holoviz',
     'github_repo': 'holoviz',
 })
+
+# Uncomment to turn off notebook execution.
+# nb_execution_mode = "off"

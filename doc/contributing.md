@@ -219,10 +219,12 @@ The `holoviz-topics` organization has one team:
 
 * `holoviz-dev`: Developers on HoloViz Topics
 
-#### Developer account
+#### Service account
 
-* [HoloViz Developers](https://github.com/holoviz-developers): Account to use for automated actions on HoloViz projects
-* [PyViz Developers](https://github.com/pyviz-developers)
+The Github account [`holoviz-developers`](https://github.com/holoviz-developers) is a service account used for automated actions on HoloViz projects. For example, this account has a *Personal Access Token* with *repo* permission to:
+
+- Deploy development sites from one repository (e.g. holoviz/panel) to another (holoviz-dev/panel).
+- Allow the downstream tests workflow to trigger workflows in other repositories.
 
 #### Repository structure
 
@@ -313,7 +315,9 @@ The HoloViz sites rely on the [PyData Sphinx Theme](https://pydata-sphinx-theme.
 
 #### Analytics
 
-Currently, most of the websites gather analytics via *Google Analytics*.
+Data used to be collected using *Google Analytics*, even if nothing much was actually done in practice with this data. Starting from 2024 *Google Analytics* was dropped in favor of *GoatCounter* that is more respectful to user privacy, and unlikr *Google Analytics* is in fact compliant with GDPR.
+
+The data collected with *GoatCounter* is available at https://holoviz.goatcounter.com.
 
 #### Hosts
 
@@ -475,6 +479,10 @@ You can tag a release from any branch, not necessarily from the main one. This i
 ```{tip}
 If you push a tag by mistake or the wrong tag and are lucky enough to spot that instantly, you should hurry up (really!) and [cancel](https://docs.github.com/en/actions/managing-workflow-runs/canceling-a-workflow) the *Build* and *Documentation* workflows before anything gets published/deployed. If you manage to do that, you can then remove the faulty tag.
 ```
+
+### Credentials
+
+Shared credentials are stored in a 1Password vault. Get in touch with one of the owners to get access: @droumis, @philippjfr, and @maximlt.
 
 ### Communication
 
