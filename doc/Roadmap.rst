@@ -44,4 +44,4 @@ Other goals for HoloViz or packages designed to work well with HoloViz include:
    
 11. **Better integration with ____**: There are a lot of tools in the Python and other scientific software ecosystems that could be included in HoloViz or made easily usable from it. NetworkX (already usable but not fully exploited yet) is just one example of many; suggestions welcome!
 
-If any of the functionality above is interesting to you (or you have ideas of your own!) and can offer help with implementation, please open an issue on this repository or on the specific subproject repository involved.
+If any of the functionality above is interesting to you (or you have ideas of your own!) and you would like to help with implementation, please open an issue on this repository or on the specific subproject repository involved.
