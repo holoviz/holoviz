@@ -1,4 +1,5 @@
 # To reproduce: install 'anaconda-project', then 'anaconda-project run'
+name: holoviz_tutorial
 description: HoloViz Tutorial
 maintainers:
 - holoviz
@@ -9,7 +10,6 @@ channels:
   - conda-forge
   - nodefaults
 
-name: holoviz_tutorial
 packages: &pkgs
 - python=3.12
 - jinja2>=3.0.0
