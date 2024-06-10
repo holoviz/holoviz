@@ -12,7 +12,6 @@ import panel as pn
 
 
 df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
-df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]
 high_mag_quakes = most_severe.hvplot.points(x='easting', y='northing', c='mag', 
@@ -82,7 +81,7 @@ def vline_callback(index):
     if not index:
         return hv.VLine(0).opts(alpha=0)
     row = most_severe.iloc[index[0]]
-    return hv.VLine(row.time).opts(line_width=2, color='black')
+    return hv.VLine(row.name).opts(line_width=2, color='black')
 
 temporal_vline = hv.DynamicMap(vline_callback, streams=[selection_stream])
 
