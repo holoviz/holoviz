@@ -34,8 +34,7 @@ df = pd.read_parquet(os.path.join(THIS_DIR, '..', 'earthquakes.parq'))
 
 cleaned_df = df.copy()
 cleaned_df['mag'] = df.mag.where(df.mag > 0)
-cleaned_df = cleaned_df.set_index("time")
-cleaned_df.index = pd.to_datetime(cleaned_df.index)
+cleaned_df['time'] = pd.to_datetime(cleaned_df['time'])
 
 x, y = lon_lat_to_easting_northing(cleaned_df.longitude, cleaned_df.latitude)
 cleaned_projected = cleaned_df.join([pd.DataFrame({'easting': x}), pd.DataFrame({'northing': y})])
