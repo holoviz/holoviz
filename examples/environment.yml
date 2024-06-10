@@ -1,0 +1,31 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - ipykernel
+      - jinja2
+      - packaging
+      - numpy
+      - dask
+      - xarray
+      - notebook
+      - matplotlib>=3
+      - ipympl
+      - bokeh
+      - datashader>=0.15.1
+      - param>=1.13.0
+      - netcdf4
+      - jupyterlab
+      - fsspec
+      - hvplot>=0.8.3
+      - panel>=1.2.0,!=1.4.3
+      - holoviews>=1.16.2
+      - pyviz_comms
+      - plotly
+      - pyarrow
+      - pandas>=2.2.2
+  - ipykernel
+variables: {}
+name: holoviz-tutorial
