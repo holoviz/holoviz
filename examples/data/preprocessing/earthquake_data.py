@@ -4,6 +4,7 @@ import calendar
 import datetime as dt
 import requests
 
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 URL = "https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime={start}&endtime={end}&minmagnitude=2.0&orderby=time"
 
 for yr in range(2000, 2019):
@@ -29,18 +30,18 @@ df.to_parquet('../earthquakes.parq', engine='pyarrow')
 # Reprojected, cleaned and gzip (not snappy)
 
 
-# import numpy as np
-# import pandas as pd
-# from holoviews.util.transform import lon_lat_to_easting_northing
+import numpy as np
+import pandas as pd
+from holoviews.util.transform import lon_lat_to_easting_northing
 
-# df = pd.read_parquet('../data/earthquakes.parq')
-# #df.time = df.time.astype('datetime64[ns]')
+df = pd.read_parquet(os.path.join(THIS_DIR, '../earthquakes.parq'))
+#df.time = df.time.astype('datetime64[ns]')
 
-# cleaned_df = df.copy()
-# cleaned_df['mag'] = df.mag.where(df.mag > 0)
-# cleaned_df = cleaned_df.reset_index()
+cleaned_df = df.copy()
+cleaned_df['mag'] = df.mag.where(df.mag > 0)
+cleaned_df = cleaned_df.reset_index()
 
-# x, y = lon_lat_to_easting_northing(cleaned_df.longitude, cleaned_df.latitude)
-# cleaned_projected = cleaned_df.join([pd.DataFrame({'easting': x}), pd.DataFrame({'northing': y})])
+x, y = lon_lat_to_easting_northing(cleaned_df.longitude, cleaned_df.latitude)
+cleaned_projected = cleaned_df.join([pd.DataFrame({'easting': x}), pd.DataFrame({'northing': y})])
 
-# cleaned_projected.to_parquet('../data/earthquakes-projected.parq', engine='pyarrow', compression='gzip', file_scheme='simple')
+cleaned_projected.to_parquet(os.path.join(THIS_DIR, "earthquakes-projected.parq"), engine='pyarrow', compression='gzip')
