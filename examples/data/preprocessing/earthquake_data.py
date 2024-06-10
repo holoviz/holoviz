@@ -24,7 +24,7 @@ for i in range(2000, 2019):
         df = pd.read_csv('%d_%d.csv' % (i, m), dtype={'nst': 'float64'})
         dfs.append(df)
 df = pd.concat(dfs, sort=True)
-df.to_parquet('../earthquakes.parq', 'fastparquet')
+df.to_parquet('../earthquakes.parq', engine='pyarrow')
 
 # Reprojected, cleaned and gzip (not snappy)
 
