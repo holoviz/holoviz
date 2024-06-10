@@ -43,4 +43,4 @@ df.to_parquet('../earthquakes.parq', engine='pyarrow')
 # x, y = lon_lat_to_easting_northing(cleaned_df.longitude, cleaned_df.latitude)
 # cleaned_projected = cleaned_df.join([pd.DataFrame({'easting': x}), pd.DataFrame({'northing': y})])
 
-# cleaned_projected.to_parquet('../data/earthquakes-projected.parq', 'fastparquet', compression='gzip', file_scheme='simple')
+# cleaned_projected.to_parquet('../data/earthquakes-projected.parq', engine='pyarrow', compression='gzip', file_scheme='simple')
