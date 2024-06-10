@@ -80,7 +80,7 @@ downloads:
     description: Population Raster
     filename: data/raster
   DATA_2:
-    url: https://datashader-data.s3.amazonaws.com/earthquakes-projected.parq
+    url: https://datasets.holoviz.org/earthquakes/v1/earthquakes-projected.parq
     description: Earthquakes
     filename: data/earthquakes-projected.parq
   DATA_3:
