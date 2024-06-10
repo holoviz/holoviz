@@ -3,6 +3,7 @@ import pandas as pd
 import calendar
 import datetime as dt
 import requests
+from holoviews.util.transform import lon_lat_to_easting_northing
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 URL = "https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime={start}&endtime={end}&minmagnitude=2.0&orderby=time"
@@ -28,11 +29,6 @@ df = pd.concat(dfs, sort=True)
 df.to_parquet('../earthquakes.parq', engine='pyarrow')
 
 # Reprojected, cleaned and gzip (not snappy)
-
-
-import numpy as np
-import pandas as pd
-from holoviews.util.transform import lon_lat_to_easting_northing
 
 df = pd.read_parquet(os.path.join(THIS_DIR, '../earthquakes.parq'))
 #df.time = df.time.astype('datetime64[ns]')
