@@ -26,18 +26,18 @@ for i in range(2000, 2019):
         df = pd.read_csv('%d_%d.csv' % (i, m), dtype={'nst': 'float64'})
         dfs.append(df)
 df = pd.concat(dfs, sort=True)
-df.to_parquet('../earthquakes.parq', engine='pyarrow')
+df.to_parquet(os.path.join(THIS_DIR, '..', 'earthquakes.parq'), engine='pyarrow')
 
 # Reprojected, cleaned and gzip (not snappy)
 
-df = pd.read_parquet(os.path.join(THIS_DIR, '../earthquakes.parq'))
-#df.time = df.time.astype('datetime64[ns]')
+df = pd.read_parquet(os.path.join(THIS_DIR, '..', 'earthquakes.parq'))
 
 cleaned_df = df.copy()
 cleaned_df['mag'] = df.mag.where(df.mag > 0)
-cleaned_df = cleaned_df.reset_index()
+cleaned_df = cleaned_df.set_index("time")
+cleaned_df.index = pd.to_datetime(cleaned_df.index)
 
 x, y = lon_lat_to_easting_northing(cleaned_df.longitude, cleaned_df.latitude)
 cleaned_projected = cleaned_df.join([pd.DataFrame({'easting': x}), pd.DataFrame({'northing': y})])
 
-cleaned_projected.to_parquet(os.path.join(THIS_DIR, "earthquakes-projected.parq"), engine='pyarrow', compression='gzip')
+cleaned_projected.to_parquet(os.path.join(THIS_DIR, '..', "earthquakes-projected.parq"), engine='pyarrow', compression='gzip')
