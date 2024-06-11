@@ -6,43 +6,40 @@ maintainers:
 
 user_fields: [maintainers]
 channels:
-  - pyviz/label/dev
+  - pyviz
   - conda-forge
   - nodefaults
 
 packages: &pkgs
-- python=3.9
-- jinja2>=3.0.0
+- python=3.10
+- jinja2
 - packaging
 - numpy
-- pandas
+- pandas>=2.2.2
 - dask
 - xarray
 - notebook
-- matplotlib
+- matplotlib>=3
 - ipympl
 - bokeh
-- datashader==0.15.1
-- param==1.13.0
+- datashader>=0.15.1
+- param>=1.13.0
 - netcdf4
-- fastparquet
 - jupyterlab
 - fsspec
-- hvplot==0.8.3
-- panel==1.2.0
-- holoviews==1.16.2
-- pyviz_comms >=2.3.2
+- hvplot>=0.8.3
+- panel>=1.2.0,!=1.4.3
+- holoviews>=1.16.2
+- pyviz_comms
 - plotly
 # We don't want to download mkl packages (which are large) mainly seen on Windows
 - nomkl
 # Docs deps, that used to be in a `doc` environment but locking is so slow.
-- nbsite ==0.8.3rc1
+- nbsite
 # Test deps, that used to be in a `test` env, same reasons.
 - pytest
 - nbsmoke
-# To get things running
-- pandas ==2.0.3
-- fastparquet ==2023.7.0
+- pyarrow
 
 dependencies: *pkgs
 
@@ -79,11 +76,11 @@ platforms:
 
 downloads:
   DATA_1:
-    url: https://earth-data.s3.amazonaws.com/gpw_v4_population_density_rev11_2010_2pt5_min.zip
+    url: https://datasets.holoviz.org/population/v1/gpw_v4_population_density_rev11_2010_2pt5_min.zip
     description: Population Raster
     filename: data/raster
   DATA_2:
-    url: https://datashader-data.s3.amazonaws.com/earthquakes-projected.parq
+    url: https://datasets.holoviz.org/earthquakes/v1/earthquakes-projected.parq
     description: Earthquakes
     filename: data/earthquakes-projected.parq
   DATA_3:

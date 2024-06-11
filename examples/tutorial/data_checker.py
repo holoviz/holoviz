@@ -16,7 +16,7 @@ def check_data(file_path='../data/earthquakes-projected.parq'):
 
     try:
         columns = ['depth', 'id', 'latitude', 'longitude', 'mag', 'place', 'time', 'type']
-        data = pd.read_parquet(path, columns=columns, engine='fastparquet')
+        data = pd.read_parquet(path, columns=columns, engine='pyarrow')
         data.head()
         print("Data exists and is readable!")       
     except RuntimeError as e:
