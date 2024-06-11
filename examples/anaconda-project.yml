@@ -76,11 +76,11 @@ platforms:
 
 downloads:
   DATA_1:
-    url: https://earth-data.s3.amazonaws.com/gpw_v4_population_density_rev11_2010_2pt5_min.zip
+    url: https://datasets.holoviz.org/population/v1/gpw_v4_population_density_rev11_2010_2pt5_min.zip
     description: Population Raster
     filename: data/raster
   DATA_2:
-    url: https://datashader-data.s3.amazonaws.com/earthquakes-projected.parq
+    url: https://datasets.holoviz.org/earthquakes/v1/earthquakes-projected.parq
     description: Earthquakes
     filename: data/earthquakes-projected.parq
   DATA_3:

@@ -14,7 +14,6 @@ pn.extension()
 from holoviews.streams import Selection1D
 
 df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
-df = df.set_index(df.time)
 
 most_severe = df[df.mag >= 7]
 
@@ -68,7 +67,7 @@ def vline_callback(index):
     if not index:
         return hv.VLine(0)
     row = most_severe.iloc[index[0]]
-    return hv.VLine(row.time).opts(line_width=1, color='black')
+    return hv.VLine(row.name).opts(line_width=1, color='black')
 
 dist_slider = pn.widgets.FloatSlider(name='Degree Distance', value=0.5, start=0.1, end=2)
 
@@ -92,7 +91,7 @@ def affected_population(index, distance):
     mean_density = cleaned_ds.sel(x=slice(lon-hdist, lon+hdist), y=slice(lat+hdist, lat-hdist)).mean().item()
     population = (lat_dist * lon_dist) * mean_density
     return 'Approximate population around {place}, where a magnitude {mag} earthquake hit on {date} is {pop:.0f}.'.format(
-        pop=population, mag=sel.mag, place=sel.place, date=sel.time)
+        pop=population, mag=sel.mag, place=sel.place, date=sel.name)
 
 def bounds(index, value):
     if not index:

@@ -8,15 +8,15 @@ pn.extension('tabulator', template='material', sizing_mode='stretch_width')
 import hvplot.pandas # noqa
 
 df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
-df = df.set_index('time').tz_convert(None).reset_index()
+df = df.reset_index()
 
 WEB_MERCATOR_LIMITS = (-20037508.342789244, 20037508.342789244)
 
 subset_df = df[
     (df['northing']  < WEB_MERCATOR_LIMITS[1]) &
     (df['mag']       > 4) &
-    (df['time']     >= pd.Timestamp('2017-01-01')) &
-    (df['time']     <= pd.Timestamp('2018-01-01'))]
+    (df['time']     >= '2017-01-01') &
+    (df['time']     <= '2018-01-01')]
 
 date_subrange = pn.widgets.DateRangeSlider(name='Date', 
                                         start=subset_df.time.iloc[0], 
