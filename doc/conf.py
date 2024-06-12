@@ -14,6 +14,7 @@ ret = subprocess.run([
 ], text=True, capture_output=True, check=True)
 version = release  = base_version(ret.stdout.strip()[1:])
 
+exclude_patterns = ['governance/project-docs/*.md']
 
 html_static_path += ['_static']
 

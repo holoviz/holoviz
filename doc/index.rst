@@ -92,6 +92,7 @@ If what you see looks relevant to you, you can then follow the steps outlined in
    Blog <https://blog.holoviz.org/>
    Examples <https://examples.holoviz.org/>
    Contributing <contributing>
+   Governance <governance/index>
    Roadmap <Roadmap>
    FAQ
    About <about>
