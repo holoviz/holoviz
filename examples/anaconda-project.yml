@@ -6,32 +6,26 @@ maintainers:
 
 user_fields: [maintainers]
 channels:
-  - pyviz
   - conda-forge
   - nodefaults
+  - pyviz
 
 packages: &pkgs
 - python=3.10
-- jinja2
-- packaging
-- numpy
-- pandas>=2.2.2
+- datashader>=0.16.2
+- holoviews>=1.19.0
+- hvplot>=0.10.0
+- panel>=1.4.4,<1.5.0
+- param>=2.1.0,<3.0
 - dask
-- xarray
-- notebook
-- matplotlib>=3
-- ipympl
-- bokeh
-- datashader>=0.15.1
-- param>=1.13.0
-- netcdf4
 - jupyterlab
+- matplotlib-base>=3
+- ipympl
 - fsspec
-- hvplot>=0.8.3
-- panel>=1.2.0,!=1.4.3
-- holoviews>=1.16.2
-- pyviz_comms
+- netcdf4
 - plotly
+- pyarrow
+- xarray
 # We don't want to download mkl packages (which are large) mainly seen on Windows
 - nomkl
 # Docs deps, that used to be in a `doc` environment but locking is so slow.
@@ -39,7 +33,6 @@ packages: &pkgs
 # Test deps, that used to be in a `test` env, same reasons.
 - pytest
 - nbsmoke
-- pyarrow
 
 dependencies: *pkgs
 
