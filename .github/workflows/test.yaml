@@ -13,41 +13,32 @@ on:
 
 jobs:
   test_suite:
-    name: Pytest on ${{ matrix.os }} with Python ${{ matrix.python-version }}
+    name: Pytest on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-        python-version: [3.9]
     timeout-minutes: 60
     defaults:
       run:
         shell: bash -l {0} 
-    env:
-      DESC: "Python ${{ matrix.python-version }} tests"
-      PYTHON_VERSION: ${{ matrix.python-version }}
     steps:
       - name: configure Page file on Windows
         # To fix a Memory Error while reading the earthquake Parquet file
         # See https://github.com/holoviz/holoviz/issues/309
         if: contains(matrix.os, 'windows')
         uses: al-cheb/configure-pagefile-action@v1.2
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: "100"
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           miniconda-version: "latest"
       - name: Fetch unshallow
         run: git fetch --prune --tags --unshallow
-      - name: conda setup
-        run: |
-          conda config --set solver libmamba
-          conda install "anaconda-project>=0.10.1"
+      - name: install anaconda-project
+        run: conda install "anaconda-project>=0.10.1"
       - name: prepare
         run: anaconda-project prepare --directory examples  
       - name: conda list
