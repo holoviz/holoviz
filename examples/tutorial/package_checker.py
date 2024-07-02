@@ -16,9 +16,12 @@ def get_required_versions(yaml_path):
         packages = data['packages']
         version_dict = {}
         for package in packages:
-            if '==' in package:
-                pkg, version = package.split('==')
-                version_dict[pkg] = version
+            for delimiter in ['==', '>=']:
+                if delimiter in package:
+                    pkg, version = package.split(delimiter)
+                    version = version.split(',')[0]
+                    version_dict[pkg] = version
+                    break
         return version_dict
 
 def check_packages(packages, yaml_path='../anaconda-project.yml'):
