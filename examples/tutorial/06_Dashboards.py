@@ -7,7 +7,7 @@ pn.extension('tabulator', template='bootstrap', sizing_mode='stretch_width')
 
 import hvplot.pandas # noqa
 
-df = pd.read_parquet(pathlib.Path('../data/earthquakes-projected.parq'))
+df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
 df.index = df.index.tz_localize(None)
 df = df.reset_index()
 
