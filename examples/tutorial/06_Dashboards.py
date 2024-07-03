@@ -1,13 +1,14 @@
-import pathlib
 import pandas as pd
 import panel as pn
 import holoviews as hv
+
+from data_checker import DATASET_PATHS
 
 pn.extension('tabulator', template='bootstrap', sizing_mode='stretch_width')
 
 import hvplot.pandas # noqa
 
-df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
+df = pd.read_parquet(DATASET_PATHS['earthquakes'])
 df.index = df.index.tz_localize(None)
 df = df.reset_index()
 

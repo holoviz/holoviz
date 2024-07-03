@@ -13,7 +13,9 @@ pn.extension()
 
 from holoviews.streams import Selection1D
 
-df = pd.read_parquet(pathlib.Path(__file__).parent.parent / 'data' / 'earthquakes-projected.parq')
+from data_checker import DATASET_PATHS
+
+df = pd.read_parquet(DATASET_PATHS['earthquakes'])
 
 most_severe = df[df.mag >= 7]
 
