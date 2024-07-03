@@ -1,7 +1,16 @@
 import pathlib
 import pandas as pd
 
-def check_data(file_path='../data/earthquakes-projected.parq'):
+THIS_DIR = pathlib.Path(__file__).parent
+DATA_DIR = THIS_DIR / '..' / 'data'
+DATASET_PATHS = {
+    "earthquakes": DATA_DIR / 'earthquakes-projected.parq',
+    "population_density": DATA_DIR / 'raster' / 'gpw_v4_population_density_rev11_2010_2pt5_min.nc',
+    
+}
+
+
+def check_data(file_path=DATASET_PATHS["earthquakes"]):
     """
     Checks if the data file exists and reads it.
 
