@@ -1,4 +1,3 @@
-import pathlib
 import pandas as pd
 import hvplot.pandas  # noqa
 from holoviews.element import tiles
