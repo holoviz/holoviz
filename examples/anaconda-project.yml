@@ -19,6 +19,7 @@ packages: &pkgs
 - param>=2.1.0,<3.0
 - dask
 - jupyterlab
+- notebook
 - matplotlib-base>=3
 - ipympl
 - fsspec
