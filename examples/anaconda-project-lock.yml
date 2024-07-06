@@ -10,10 +10,6 @@
 # Set to false to ignore locked versions.
 #
 locking_enabled: true
-
-#
-# A key goes in here for each env spec.
-#
 env_specs:
   default:
     locked: true
@@ -232,7 +228,7 @@ env_specs:
       - brotli=1.1.0=hd590300_1
       - bzip2=1.0.8=hd590300_5
       - c-ares=1.28.1=hd590300_0
-      - ca-certificates=2024.6.2=hbcca054_0
+      - ca-certificates=2024.7.4=hbcca054_0
       - cffi=1.16.0=py310h2fee648_0
       - cftime=1.6.4=py310h261611a_0
       - contourpy=1.2.1=py310hd41b1e2_0
@@ -311,7 +307,7 @@ env_specs:
       - lz4-c=1.9.4=hcb278e6_0
       - lz4=4.3.3=py310h350c4a5_0
       - markupsafe=2.1.5=py310h2372a71_0
-      - matplotlib-base=3.9.0=py310h0b1de36_0
+      - matplotlib-base=3.8.4=py310hef631a5_2
       - msgpack-python=1.0.8=py310h25c7140_0
       - ncurses=6.5=h59595ed_0
       - netcdf4=1.7.1=nompi_py310hf3005e6_101
@@ -330,14 +326,13 @@ env_specs:
       - python=3.10.14=hd12c33a_0_cpython
       - pyyaml=6.0.1=py310h2372a71_1
       - pyzmq=26.0.3=py310h6883aea_0
-      - qhull=2020.2=h4bd325d_2
       - re2=2023.09.01=h7f4b329_2
       - readline=8.2=h8228510_1
       - rpds-py=0.18.1=py310he421c4c_0
       - s2n=1.4.16=he19d79f_0
       - scipy=1.14.0=py310h93e2701_0
       - send2trash=1.8.3=pyh0d859eb_0
-      - snappy=1.2.0=hdb0a2a9_1
+      - snappy=1.2.1=ha2e4443_0
       - sqlalchemy=2.0.31=py310hc51659f_0
       - terminado=0.18.1=pyh0d859eb_0
       - tk=8.6.13=noxft_h4845f30_101
@@ -352,19 +347,19 @@ env_specs:
       - zstd=1.5.6=ha6fb4c9_0
       osx-64:
       - argon2-cffi-bindings=21.2.0=py310h6729b98_4
-      - aws-c-auth=0.7.22=h2f80047_6
-      - aws-c-cal=0.6.15=hd73d8db_1
+      - aws-c-auth=0.7.22=he52cbe7_7
+      - aws-c-cal=0.7.0=hd73d8db_0
       - aws-c-common=0.9.23=hfdf4475_0
       - aws-c-compression=0.2.18=hd73d8db_7
       - aws-c-event-stream=0.4.2=ha5205da_14
-      - aws-c-http=0.8.2=hc7634fe_3
-      - aws-c-io=0.14.9=h2089a17_3
+      - aws-c-http=0.8.2=hf609411_4
+      - aws-c-io=0.14.9=h9f49e27_5
       - aws-c-mqtt=0.10.4=hcc4e2a5_7
-      - aws-c-s3=0.5.10=h7347a4b_4
+      - aws-c-s3=0.6.0=h8fdb93b_0
       - aws-c-sdkutils=0.1.16=hd73d8db_3
       - aws-checksums=0.1.18=hd73d8db_7
-      - aws-crt-cpp=0.26.12=hc167df4_1
-      - aws-sdk-cpp=1.11.329=h4fac305_6
+      - aws-crt-cpp=0.27.1=h7746516_1
+      - aws-sdk-cpp=1.11.329=h735c9e6_7
       - azure-core-cpp=1.12.0=hf8dbe3c_0
       - azure-identity-cpp=1.8.0=h906f3f0_1
       - azure-storage-blobs-cpp=12.11.0=h5f32033_1
@@ -376,7 +371,7 @@ env_specs:
       - brotli=1.1.0=h0dc2134_1
       - bzip2=1.0.8=h10d778d_5
       - c-ares=1.28.1=h10d778d_0
-      - ca-certificates=2024.6.2=h8857fd0_0
+      - ca-certificates=2024.7.4=h8857fd0_0
       - cffi=1.16.0=py310hdca579f_0
       - cftime=1.6.4=py310hde789be_0
       - contourpy=1.2.1=py310hb3b189b_0
@@ -399,10 +394,10 @@ env_specs:
       - lerc=4.0.0=hb486fe8_0
       - libabseil=20240116.2=cxx17_hc1bcbd7_0
       - libaec=1.1.3=h73e2aa4_0
-      - libarrow-acero=16.1.0=hf036a51_10_cpu
-      - libarrow-dataset=16.1.0=hf036a51_10_cpu
-      - libarrow-substrait=16.1.0=h85bc590_10_cpu
-      - libarrow=16.1.0=hf554272_10_cpu
+      - libarrow-acero=16.1.0=hf036a51_12_cpu
+      - libarrow-dataset=16.1.0=hf036a51_12_cpu
+      - libarrow-substrait=16.1.0=h85bc590_12_cpu
+      - libarrow=16.1.0=h2098311_12_cpu
       - libblas=3.9.0=22_osx64_openblas
       - libbrotlicommon=1.1.0=h0dc2134_1
       - libbrotlidec=1.1.0=h0dc2134_1
@@ -410,7 +405,7 @@ env_specs:
       - libcblas=3.9.0=22_osx64_openblas
       - libcrc32c=1.1.2=he49afe7_0
       - libcurl=8.8.0=hf9fcc65_1
-      - libcxx=17.0.6=h8d2f0da_2
+      - libcxx=17.0.6=heb59cac_3
       - libdeflate=1.20=h49d49c5_0
       - libedit=3.1.20191231=h0678c8f_2
       - libev=4.33=h10d778d_2
@@ -418,8 +413,8 @@ env_specs:
       - libffi=3.4.2=h0d85af4_5
       - libgfortran5=13.2.0=h2873a65_3
       - libgfortran=5.0.0=13_2_0_h97931a8_3
-      - libgoogle-cloud-storage=2.25.0=ha1c69e0_0
-      - libgoogle-cloud=2.25.0=h721cda5_0
+      - libgoogle-cloud-storage=2.26.0=h9e84e37_0
+      - libgoogle-cloud=2.26.0=h721cda5_0
       - libgrpc=1.62.2=h384b2fc_0
       - libiconv=1.17=hd75f5a5_2
       - libjpeg-turbo=3.0.0=h0dc2134_1
@@ -428,7 +423,7 @@ env_specs:
       - libnetcdf=4.9.2=nompi_h7334405_114
       - libnghttp2=1.58.0=h64cf6d3_1
       - libopenblas=0.3.27=openmp_hfef2a42_0
-      - libparquet=16.1.0=h904a336_10_cpu
+      - libparquet=16.1.0=h904a336_12_cpu
       - libpng=1.6.43=h92b6c6a_0
       - libprotobuf=4.25.3=h4e4d658_0
       - libre2-11=2023.09.01=h81f5012_2
@@ -448,7 +443,7 @@ env_specs:
       - lz4-c=1.9.4=hf0c8a7f_0
       - lz4=4.3.3=py310hf99a7a4_0
       - markupsafe=2.1.5=py310hb372a2b_0
-      - matplotlib-base=3.9.0=py310h56dc6a7_0
+      - matplotlib-base=3.8.4=py310h7ea1ff3_2
       - msgpack-python=1.0.8=py310h5334dd0_0
       - ncurses=6.5=h5846eda_0
       - netcdf4=1.7.1=nompi_py310ha109cee_101
@@ -469,12 +464,11 @@ env_specs:
       - python=3.10.14=h00d2728_0_cpython
       - pyyaml=6.0.1=py310h6729b98_1
       - pyzmq=26.0.3=py310he0bbd50_0
-      - qhull=2020.2=h940c156_2
       - re2=2023.09.01=hb168e87_2
       - readline=8.2=h9e318b2_1
       - rpds-py=0.18.1=py310h12a1ced_0
       - scipy=1.14.0=py310h35d8cac_0
-      - snappy=1.2.0=h6dc393e_1
+      - snappy=1.2.1=he1e6707_0
       - sqlalchemy=2.0.31=py310h936d840_0
       - tk=8.6.13=h1abcd95_1
       - tornado=6.4.1=py310h936d840_0
@@ -488,19 +482,19 @@ env_specs:
       - zstd=1.5.6=h915ae27_0
       osx-arm64:
       - argon2-cffi-bindings=21.2.0=py310h2aa6e3c_4
-      - aws-c-auth=0.7.22=h3776fb2_6
-      - aws-c-cal=0.6.15=h94d0942_1
+      - aws-c-auth=0.7.22=haa5a189_7
+      - aws-c-cal=0.7.0=h94d0942_0
       - aws-c-common=0.9.23=h99b78c6_0
       - aws-c-compression=0.2.18=h94d0942_7
       - aws-c-event-stream=0.4.2=he43e89f_14
-      - aws-c-http=0.8.2=h4f006d9_3
-      - aws-c-io=0.14.9=ha70251c_3
+      - aws-c-http=0.8.2=h638bd1a_4
+      - aws-c-io=0.14.9=hf0e3e08_5
       - aws-c-mqtt=0.10.4=h80c1ce3_7
-      - aws-c-s3=0.5.10=h6cb31ac_4
+      - aws-c-s3=0.6.0=h11f64d3_0
       - aws-c-sdkutils=0.1.16=h94d0942_3
       - aws-checksums=0.1.18=h94d0942_7
-      - aws-crt-cpp=0.26.12=h431af13_1
-      - aws-sdk-cpp=1.11.329=h617e15d_6
+      - aws-crt-cpp=0.27.1=hd9c8ee4_1
+      - aws-sdk-cpp=1.11.329=hc791d49_7
       - azure-core-cpp=1.12.0=hd01fc5c_0
       - azure-identity-cpp=1.8.0=h0a11218_1
       - azure-storage-blobs-cpp=12.11.0=h77cc766_1
@@ -512,7 +506,7 @@ env_specs:
       - brotli=1.1.0=hb547adb_1
       - bzip2=1.0.8=h93a5062_5
       - c-ares=1.28.1=h93a5062_0
-      - ca-certificates=2024.6.2=hf0a4a13_0
+      - ca-certificates=2024.7.4=hf0a4a13_0
       - cffi=1.16.0=py310hdcd7c05_0
       - cftime=1.6.4=py310hb3e58dc_0
       - contourpy=1.2.1=py310h21239e6_0
@@ -535,10 +529,10 @@ env_specs:
       - lerc=4.0.0=h9a09cb3_0
       - libabseil=20240116.2=cxx17_hebf3989_0
       - libaec=1.1.3=hebf3989_0
-      - libarrow-acero=16.1.0=h00cdb27_10_cpu
-      - libarrow-dataset=16.1.0=h00cdb27_10_cpu
-      - libarrow-substrait=16.1.0=hc68f6b8_10_cpu
-      - libarrow=16.1.0=hcc492dc_10_cpu
+      - libarrow-acero=16.1.0=h00cdb27_12_cpu
+      - libarrow-dataset=16.1.0=h00cdb27_12_cpu
+      - libarrow-substrait=16.1.0=hc68f6b8_12_cpu
+      - libarrow=16.1.0=h7a61798_12_cpu
       - libblas=3.9.0=22_osxarm64_openblas
       - libbrotlicommon=1.1.0=hb547adb_1
       - libbrotlidec=1.1.0=hb547adb_1
@@ -546,7 +540,7 @@ env_specs:
       - libcblas=3.9.0=22_osxarm64_openblas
       - libcrc32c=1.1.2=hbdafb3b_0
       - libcurl=8.8.0=h7b6f9a7_1
-      - libcxx=17.0.6=he7857fb_2
+      - libcxx=17.0.6=h0812c0d_3
       - libdeflate=1.20=h93a5062_0
       - libedit=3.1.20191231=hc8eb9b7_2
       - libev=4.33=h93a5062_2
@@ -554,8 +548,8 @@ env_specs:
       - libffi=3.4.2=h3422bc3_5
       - libgfortran5=13.2.0=hf226fd6_3
       - libgfortran=5.0.0=13_2_0_hd922786_3
-      - libgoogle-cloud-storage=2.25.0=h3fa5b87_0
-      - libgoogle-cloud=2.25.0=hfe08963_0
+      - libgoogle-cloud-storage=2.26.0=h1466eeb_0
+      - libgoogle-cloud=2.26.0=hfe08963_0
       - libgrpc=1.62.2=h9c18a4f_0
       - libiconv=1.17=h0d3ecfb_2
       - libjpeg-turbo=3.0.0=hb547adb_1
@@ -564,7 +558,7 @@ env_specs:
       - libnetcdf=4.9.2=nompi_he469be0_114
       - libnghttp2=1.58.0=ha4dd798_1
       - libopenblas=0.3.27=openmp_h6c19121_0
-      - libparquet=16.1.0=hcf52c46_10_cpu
+      - libparquet=16.1.0=hcf52c46_12_cpu
       - libpng=1.6.43=h091b4b1_0
       - libprotobuf=4.25.3=hbfab5d5_0
       - libre2-11=2023.09.01=h7b2c953_2
@@ -584,7 +578,7 @@ env_specs:
       - lz4-c=1.9.4=hb7217d7_0
       - lz4=4.3.3=py310haecba8d_0
       - markupsafe=2.1.5=py310hd125d64_0
-      - matplotlib-base=3.9.0=py310heb73f16_0
+      - matplotlib-base=3.8.4=py310hedb7998_2
       - msgpack-python=1.0.8=py310he1a186f_0
       - ncurses=6.5=hb89a1cb_0
       - netcdf4=1.7.1=nompi_py310hae0c4a6_101
@@ -605,12 +599,11 @@ env_specs:
       - python=3.10.14=h2469fbe_0_cpython
       - pyyaml=6.0.1=py310h2aa6e3c_1
       - pyzmq=26.0.3=py310h16e08c9_0
-      - qhull=2020.2=hc021e02_2
       - re2=2023.09.01=h4cba328_2
       - readline=8.2=h92ec313_1
       - rpds-py=0.18.1=py310h947b723_0
       - scipy=1.14.0=py310h7057308_0
-      - snappy=1.2.0=hd04f947_1
+      - snappy=1.2.1=hd02b534_0
       - sqlalchemy=2.0.31=py310ha6dd24b_0
       - tk=8.6.13=h5083fa2_1
       - tornado=6.4.1=py310ha6dd24b_0
@@ -624,26 +617,26 @@ env_specs:
       - zstd=1.5.6=hb46c0d2_0
       win-64:
       - argon2-cffi-bindings=21.2.0=py310h8d17308_4
-      - aws-c-auth=0.7.22=ha1d026d_6
-      - aws-c-cal=0.6.15=hea5f451_1
+      - aws-c-auth=0.7.22=hbd1ec33_7
+      - aws-c-cal=0.7.0=hea5f451_0
       - aws-c-common=0.9.23=h2466b09_0
       - aws-c-compression=0.2.18=hea5f451_7
       - aws-c-event-stream=0.4.2=ha301515_14
-      - aws-c-http=0.8.2=hb4b72d7_3
-      - aws-c-io=0.14.9=h5ec1eae_3
+      - aws-c-http=0.8.2=h0d3dc49_4
+      - aws-c-io=0.14.9=h5623c2f_5
       - aws-c-mqtt=0.10.4=haec3ea0_7
-      - aws-c-s3=0.5.10=h7545387_4
+      - aws-c-s3=0.6.0=hce3953d_0
       - aws-c-sdkutils=0.1.16=hea5f451_3
       - aws-checksums=0.1.18=hea5f451_7
-      - aws-crt-cpp=0.26.12=h90a6bef_1
-      - aws-sdk-cpp=1.11.329=h31ee193_6
+      - aws-crt-cpp=0.27.1=h161bee7_1
+      - aws-sdk-cpp=1.11.329=h14d4fcd_7
       - blosc=1.21.6=h85f69ea_0
       - brotli-bin=1.1.0=hcfcfb64_1
       - brotli-python=1.1.0=py310h00ffb61_1
       - brotli=1.1.0=hcfcfb64_1
       - bzip2=1.0.8=hcfcfb64_5
       - c-ares=1.28.1=hcfcfb64_0
-      - ca-certificates=2024.6.2=h56e8100_0
+      - ca-certificates=2024.7.4=h56e8100_0
       - cffi=1.16.0=py310h8d17308_0
       - cftime=1.6.4=py310hb0944cc_0
       - click=8.1.7=win_pyh7428d3b_0
@@ -666,10 +659,10 @@ env_specs:
       - lerc=4.0.0=h63175ca_0
       - libabseil=20240116.2=cxx17_h63175ca_0
       - libaec=1.1.3=h63175ca_0
-      - libarrow-acero=16.1.0=he0c23c2_10_cpu
-      - libarrow-dataset=16.1.0=he0c23c2_10_cpu
-      - libarrow-substrait=16.1.0=h1f0e801_10_cpu
-      - libarrow=16.1.0=h08bbd85_10_cpu
+      - libarrow-acero=16.1.0=he0c23c2_12_cpu
+      - libarrow-dataset=16.1.0=he0c23c2_12_cpu
+      - libarrow-substrait=16.1.0=h1f0e801_12_cpu
+      - libarrow=16.1.0=h71c6bf6_12_cpu
       - libblas=3.9.0=22_win64_openblas
       - libbrotlicommon=1.1.0=hcfcfb64_1
       - libbrotlidec=1.1.0=hcfcfb64_1
@@ -681,15 +674,15 @@ env_specs:
       - libevent=2.1.12=h3671451_1
       - libffi=3.4.2=h8ffe710_5
       - libflang=5.0.0=h6538335_20180525
-      - libgoogle-cloud-storage=2.25.0=hce61461_0
-      - libgoogle-cloud=2.25.0=h5e7cea3_0
+      - libgoogle-cloud-storage=2.26.0=he5eb982_0
+      - libgoogle-cloud=2.26.0=h5e7cea3_0
       - libgrpc=1.62.2=h5273850_0
       - libiconv=1.17=hcfcfb64_2
       - libjpeg-turbo=3.0.0=hcfcfb64_1
       - liblapack=3.9.0=22_win64_openblas
       - libnetcdf=4.9.2=nompi_h92078aa_114
       - libopenblas=0.3.27=pthreads_hc140b1d_0
-      - libparquet=16.1.0=h178134c_10_cpu
+      - libparquet=16.1.0=h178134c_12_cpu
       - libpng=1.6.43=h19919ed_0
       - libprotobuf=4.25.3=h503648d_0
       - libre2-11=2023.09.01=hf8d8778_2
@@ -714,7 +707,7 @@ env_specs:
       - m2w64-gmp=6.1.0=2
       - m2w64-libwinpthread-git=5.0.0.4634.697f757=2
       - markupsafe=2.1.5=py310h8d17308_0
-      - matplotlib-base=3.9.0=py310h37e0a56_0
+      - matplotlib-base=3.8.4=py310hadb10a8_2
       - msgpack-python=1.0.8=py310hc19bc0b_0
       - msys2-conda-epoch=20160418=1
       - netcdf4=1.7.1=nompi_py310h0a2a089_101
@@ -737,12 +730,11 @@ env_specs:
       - pywinpty=2.0.13=py310h00ffb61_0
       - pyyaml=6.0.1=py310h8d17308_1
       - pyzmq=26.0.3=py310h656833d_0
-      - qhull=2020.2=h70d2c02_2
       - re2=2023.09.01=hd3b24a8_2
       - rpds-py=0.18.1=py310hc226416_0
       - scipy=1.14.0=py310h46043a1_0
       - send2trash=1.8.3=pyh5737063_0
-      - snappy=1.2.0=hfb803bf_1
+      - snappy=1.2.1=h23299a8_0
       - sqlalchemy=2.0.31=py310ha8f682b_0
       - terminado=0.18.1=pyh5737063_0
       - tk=8.6.13=h5226925_1
