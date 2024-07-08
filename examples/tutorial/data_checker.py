@@ -14,8 +14,8 @@ def check_data(file_path='../data/earthquakes-projected.parq'):
 
     # Hack to make Nebari installation work for SciPy 2024; can be deleted after the conference
     try:
-        source = Path("/shared/scipy/hvplot-and-panel")
-        dest = Path("../data")
+        source = pathlib.Path("/shared/scipy/hvplot-and-panel")
+        dest = pathlib.Path("../data")
         data_path = dest / "earthquakes-projected.parq"
         if source.exists() and not data_path.exists():
             for path in source.glob("*"):
