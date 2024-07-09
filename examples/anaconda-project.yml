@@ -13,7 +13,7 @@ channels:
 packages: &pkgs
 - python=3.10
 - datashader>=0.16.2
-- holoviews>=1.19.0
+- holoviews>=1.19.1
 - hvplot>=0.10.0
 - panel>=1.4.4,<1.5.0
 - param>=2.1.0,<3.0
