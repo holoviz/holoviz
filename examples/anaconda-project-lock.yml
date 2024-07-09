@@ -13,7 +13,7 @@ locking_enabled: true
 env_specs:
   default:
     locked: true
-    env_spec_hash: 267de16e03aa46167840e00d80257f535a8f5d19
+    env_spec_hash: ffe533e7eb384b596e9f2c723977254a7a465cb3
     platforms:
     - linux-64
     - osx-64
@@ -42,13 +42,13 @@ env_specs:
       - colorcet=3.1.0=pyhd8ed1ab_0
       - comm=0.2.2=pyhd8ed1ab_0
       - cycler=0.12.1=pyhd8ed1ab_0
-      - dask-core=2024.6.2=pyhd8ed1ab_0
-      - dask-expr=1.1.6=pyhd8ed1ab_0
-      - dask=2024.6.2=pyhd8ed1ab_0
+      - dask-core=2024.7.0=pyhd8ed1ab_0
+      - dask-expr=1.1.7=pyhd8ed1ab_0
+      - dask=2024.7.0=pyhd8ed1ab_0
       - datashader=0.16.2=pyhd8ed1ab_0
       - decorator=5.1.1=pyhd8ed1ab_0
       - defusedxml=0.7.1=pyhd8ed1ab_0
-      - distributed=2024.6.2=pyhd8ed1ab_0
+      - distributed=2024.7.0=pyhd8ed1ab_0
       - entrypoints=0.4=pyhd8ed1ab_0
       - exceptiongroup=1.2.0=pyhd8ed1ab_2
       - executing=2.0.1=pyhd8ed1ab_0
@@ -56,7 +56,7 @@ env_specs:
       - fsspec=2024.6.1=pyhff2d567_0
       - h11=0.14.0=pyhd8ed1ab_0
       - h2=4.1.0=pyhd8ed1ab_0
-      - holoviews=1.19.0=pyhd8ed1ab_0
+      - holoviews=1.19.1=pyhd8ed1ab_0
       - hpack=4.0.0=pyh9f0ad1d_0
       - httpcore=1.0.5=pyhd8ed1ab_0
       - httpx=0.27.0=pyhd8ed1ab_0
@@ -165,7 +165,7 @@ env_specs:
       - stack_data=0.6.2=pyhd8ed1ab_0
       - tabulate=0.9.0=pyhd8ed1ab_1
       - tblib=3.0.0=pyhd8ed1ab_0
-      - tenacity=8.4.2=pyhd8ed1ab_0
+      - tenacity=8.5.0=pyhd8ed1ab_0
       - tinycss2=1.3.0=pyhd8ed1ab_0
       - tomli=2.0.1=pyhd8ed1ab_0
       - toolz=0.12.1=pyhd8ed1ab_0
@@ -330,7 +330,7 @@ env_specs:
       - readline=8.2=h8228510_1
       - rpds-py=0.18.1=py310he421c4c_0
       - s2n=1.4.16=he19d79f_0
-      - scipy=1.14.0=py310h93e2701_0
+      - scipy=1.14.0=py310h93e2701_1
       - send2trash=1.8.3=pyh0d859eb_0
       - snappy=1.2.1=ha2e4443_0
       - sqlalchemy=2.0.31=py310hc51659f_0
@@ -378,7 +378,7 @@ env_specs:
       - cytoolz=0.12.3=py310hb372a2b_0
       - debugpy=1.8.2=py310he0a0c5d_0
       - docutils=0.19=py310h2ec42d9_1
-      - fonttools=4.53.0=py310h936d840_0
+      - fonttools=4.53.1=py310h936d840_0
       - freetype=2.12.1=h60636b9_2
       - gflags=2.2.2=hb1e8313_1004
       - glog=0.7.1=h2790a97_0
@@ -467,7 +467,7 @@ env_specs:
       - re2=2023.09.01=hb168e87_2
       - readline=8.2=h9e318b2_1
       - rpds-py=0.18.1=py310h12a1ced_0
-      - scipy=1.14.0=py310h35d8cac_0
+      - scipy=1.14.0=py310h35d8cac_1
       - snappy=1.2.1=he1e6707_0
       - sqlalchemy=2.0.31=py310h936d840_0
       - tk=8.6.13=h1abcd95_1
@@ -513,7 +513,7 @@ env_specs:
       - cytoolz=0.12.3=py310hd125d64_0
       - debugpy=1.8.2=py310hcf9f62a_0
       - docutils=0.19=py310hbe9552e_1
-      - fonttools=4.53.0=py310ha6dd24b_0
+      - fonttools=4.53.1=py310ha6dd24b_0
       - freetype=2.12.1=hadb7bae_2
       - gflags=2.2.2=hc88da5d_1004
       - glog=0.7.1=heb240a5_0
@@ -602,7 +602,7 @@ env_specs:
       - re2=2023.09.01=h4cba328_2
       - readline=8.2=h92ec313_1
       - rpds-py=0.18.1=py310h947b723_0
-      - scipy=1.14.0=py310h7057308_0
+      - scipy=1.14.0=py310h7057308_1
       - snappy=1.2.1=hd02b534_0
       - sqlalchemy=2.0.31=py310ha6dd24b_0
       - tk=8.6.13=h5083fa2_1
@@ -644,7 +644,7 @@ env_specs:
       - cytoolz=0.12.3=py310h8d17308_0
       - debugpy=1.8.2=py310h9e98ed7_0
       - docutils=0.19=py310h5588dad_1
-      - fonttools=4.53.0=py310ha8f682b_0
+      - fonttools=4.53.1=py310ha8f682b_0
       - freetype=2.12.1=hdaf720e_2
       - greenlet=3.0.3=py310h00ffb61_0
       - hdf4=4.2.15=h5557f11_7
@@ -732,7 +732,7 @@ env_specs:
       - pyzmq=26.0.3=py310h656833d_0
       - re2=2023.09.01=hd3b24a8_2
       - rpds-py=0.18.1=py310hc226416_0
-      - scipy=1.14.0=py310h46043a1_0
+      - scipy=1.14.0=py310h46043a1_1
       - send2trash=1.8.3=pyh5737063_0
       - snappy=1.2.1=h23299a8_0
       - sqlalchemy=2.0.31=py310ha8f682b_0
