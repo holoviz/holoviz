@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>Building a Dashboard — HoloViz 0.17.3 documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/scroller.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/sphinx_highlight.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/exercises/Building_a_Dashboard';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../../_static/holoviz-logo-unstacked.svg"/>
+<script>document.write(`<img src="../../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../talks/index.html">Talks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../talks/index.html">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Custom_Interactivity.html">  Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Custom_Dashboards.html">  Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Advanced_Dashboards.html">  Advanced Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community.html">Community</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Building a Dashboard</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="building-a-dashboard">
+<h1>Building a Dashboard<a class="headerlink" href="#building-a-dashboard" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz/pyviz/main/examples/tutorial/exercises/Building_a_Dashboard.ipynb">Right click to download this notebook from GitHub.</a></p>
+<hr class="docutils"/>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'katex'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">hvplot.pandas</span> <span class="c1"># noqa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="non-interactive-components">
+<h2>Non-interactive components<a class="headerlink" href="#non-interactive-components" title="Permalink to this heading">#</a></h2>
+<p>In this exercise you will first construct a number of Panel components and then lay them out as a non-interactive Panel dashboard, using the usual earthquakes dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'../../data/earthquakes-projected.parq'</span><span class="p">))</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'mag'</span><span class="p">,</span> <span class="s1">'depth'</span><span class="p">,</span> <span class="s1">'latitude'</span><span class="p">,</span> <span class="s1">'longitude'</span><span class="p">,</span> <span class="s1">'place'</span><span class="p">,</span> <span class="s1">'type'</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">most_severe</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-logo">
+<h3>The logo<a class="headerlink" href="#the-logo" title="Permalink to this heading">#</a></h3>
+<p>The first component of the dashboard is an image of the US Geological Survey logo. Start by declaring a pane containing the logo and assign it to the <code class="docutils literal notranslate"><span class="pre">logo</span></code> variable. Also set a width to ensure the logo doesn’t appear too big.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logo_url</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'../../assets/usgs_logo.png'</span><span class="p">)</span>
+
+<span class="c1">## Define a panel component containing the logo</span>
+<span class="n">logo</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1">## Display it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logo</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">logo_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">logo</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="richter-scale-equation">
+<h3>Richter scale equation<a class="headerlink" href="#richter-scale-equation" title="Permalink to this heading">#</a></h3>
+<p>Next we will create a component to display the equation for the Richter scale definition. Declare the appropriate pane and assign it to the <code class="docutils literal notranslate"><span class="pre">equation</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equation_string</span> <span class="o">=</span> <span class="s1">'$M_L = log_</span><span class="si">{10}</span><span class="s1">A - log_</span><span class="si">{10}</span><span class="s1"> A_0(\delta)$'</span>
+
+<span class="c1">## Define a panel component containing the equation (Hint: Use the LaTeX pane)</span>
+<span class="n">equation</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1">## Display it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">equation</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">LaTeX</span><span class="p">(</span><span class="n">equation_string</span><span class="p">)</span>
+<span class="n">equation</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="list-the-strongest-earthquakes">
+<h3>List the strongest earthquakes<a class="headerlink" href="#list-the-strongest-earthquakes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2000</span>
+
+<span class="k">def</span> <span class="nf">strongest_earthquakes_fn</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="n">year_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">year_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'mag'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">][[</span><span class="s1">'place'</span><span class="p">,</span> <span class="s1">'mag'</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1">## Create a panel component by calling the function with a particular year</span>
+<span class="n">strongest_earthquakes</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1">## Display it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">strongest_earthquakes</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">strongest_earthquakes_fn</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+<span class="n">strongest_earthquakes</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="display-an-iframe-of-a-google-map">
+<h3>Display an iframe of a Google Map<a class="headerlink" href="#display-an-iframe-of-a-google-map" title="Permalink to this heading">#</a></h3>
+<details><summary>Hint</summary><br/>
+<p>An iframe is an HTML tag.</p>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gmap_fn</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="n">yearly_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">)]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">yearly_df</span><span class="o">.</span><span class="n">mag</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">strongest</span> <span class="o">=</span> <span class="n">yearly_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">strongest</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">strongest</span><span class="o">.</span><span class="n">latitude</span>
+    <span class="k">return</span> <span class="s2">"""</span>
+<span class="s2">    &lt;iframe width="300" height="300" src="https://maps.google.com/maps?q=</span><span class="si">{lat}</span><span class="s2">,</span><span class="si">{lon}</span><span class="s2">&amp;z=6&amp;output=embed"</span>
+<span class="s2">    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&gt;&lt;/iframe&gt;</span>
+<span class="s2">    """</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">)</span>
+
+<span class="c1">## Create a panel component by calling the function with a particular year and wrapping it in the appropriate pane</span>
+<span class="n">gmap</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1">## Display it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<p>This example solution displays the map for the <code class="docutils literal notranslate"><span class="pre">year</span></code> (by default is the year 2000):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gmap</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">gmap_fn</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+<span class="n">gmap</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="a-plot">
+<h3>A plot<a class="headerlink" href="#a-plot" title="Permalink to this heading">#</a></h3>
+<p>Here we create a plot from the <code class="docutils literal notranslate"><span class="pre">year_df</span></code> dataframe with <code class="docutils literal notranslate"><span class="pre">.hvplot</span></code>, create a Panel component, and assign it to the <code class="docutils literal notranslate"><span class="pre">plot</span></code> variable. We can visualize the distribution of earthquake magnitudes over the year by plotting the <code class="docutils literal notranslate"><span class="pre">time</span></code> variable on the <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis and the <code class="docutils literal notranslate"><span class="pre">mag</span></code> variable on the <code class="docutils literal notranslate"><span class="pre">y</span></code>-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+
+<span class="c1">## Create a plot and assign it to the plot variable</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1">## Display it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<p>This example solution uses concepts covered in the plotting section of the tutorial:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">year_df</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'time'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'mag'</span><span class="p">)</span>
+<span class="n">plot</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="composing-the-static-dashboard">
+<h3>Composing the static dashboard<a class="headerlink" href="#composing-the-static-dashboard" title="Permalink to this heading">#</a></h3>
+<p>Now that we have defined all the different components, it is time to lay them out into the overall dashboard.</p>
+<p>Arrange the following components into a dashboard using the <code class="docutils literal notranslate"><span class="pre">Row</span></code> and <code class="docutils literal notranslate"><span class="pre">Column</span></code> panels:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">logo</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">equation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strongest_earthquakes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gmap</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot</span></code></p></li>
+</ul>
+<details><summary><br/>Hint</summary>
+<p>Remember that you can nest panel <code class="docutils literal notranslate"><span class="pre">Row</span></code> and <code class="docutils literal notranslate"><span class="pre">Column</span></code> layouts and use <code class="docutils literal notranslate"><span class="pre">HSpacer</span></code> and <code class="docutils literal notranslate"><span class="pre">VSpacer</span></code> objects to adjust spacing as necessary.</p>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Static Dashboard combining all the elements above.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Example Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2000</span>
+
+<span class="n">logo</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">logo_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">equation</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">LaTeX</span><span class="p">(</span><span class="n">equation_string</span><span class="p">)</span>
+<span class="n">strongest_earthquakes</span> <span class="o">=</span> <span class="n">strongest_earthquakes_fn</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<span class="n">gmap</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">gmap_fn</span><span class="p">(</span><span class="n">year</span><span class="p">),</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">year_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">year_df</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'time'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'mag'</span><span class="p">)</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="s1">'# Strongest Earthquakes in the Year </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">year</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">header</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">HSpacer</span><span class="p">(),</span> <span class="n">logo</span><span class="p">)</span>
+
+<span class="n">body_row1</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'### Richter scale definition'</span><span class="p">,</span> <span class="n">equation</span><span class="p">,</span> <span class="s1">'### Strongest Earthquake'</span><span class="p">,</span> <span class="n">gmap</span><span class="p">),</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'### Strongest Earthquakes'</span><span class="p">,</span> <span class="n">strongest_earthquakes</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">body_row1</span><span class="p">,</span><span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'### Magnitude Plot'</span><span class="p">,</span> <span class="n">plot</span><span class="p">)))</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+<section id="a-dashboard-with-interactive-widgets">
+<h3>A dashboard with interactive widgets<a class="headerlink" href="#a-dashboard-with-interactive-widgets" title="Permalink to this heading">#</a></h3>
+<p>Having learned about how to create interactive components, we can now integrate them into dashboards. Here is one of the interactive plots from the last exercise:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth_slider</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Minimum depth'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
+
+<span class="n">dfi</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="n">most_severe</span><span class="p">)</span>
+<span class="n">depth_filtered</span> <span class="o">=</span> <span class="n">dfi</span><span class="p">[</span><span class="n">dfi</span><span class="p">[</span><span class="s1">'depth'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">depth_slider</span><span class="p">]</span>
+<span class="n">depth_filtered_plot</span> <span class="o">=</span> <span class="n">depth_filtered</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'mag'</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'scatter'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#depth_filtered_plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Have a look at this object to remind you what it represents.</p>
+<section id="adding-a-title-and-description">
+<h4>Adding a title and description<a class="headerlink" href="#adding-a-title-and-description" title="Permalink to this heading">#</a></h4>
+<p>Using the following markdown description of this plot, create a dashboard that integrates it together with an appropriate title, USGS logo and the interactive plot itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_description_markdown</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">This plot filters earthquakes according to the minimum depth slider and displays the magnitude of the filtered earthquakes over time. Note that only earthquakes with a magnitude `&gt;7` are shown.</span>
+<span class="s2">"""</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="s1">'# Earthquake magnitude as function of depth'</span><span class="p">)</span>
+<span class="n">header</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">HSpacer</span><span class="p">(),</span> <span class="n">logo</span><span class="p">)</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">plot_description_markdown</span><span class="p">),</span> <span class="n">depth_filtered_plot</span><span class="p">)</span>
+</pre></div>
+</div>
+<!--</details>--></section>
+</section>
+<section id="a-dashboard-filtering-over-year">
+<h3>A dashboard filtering over year<a class="headerlink" href="#a-dashboard-filtering-over-year" title="Permalink to this heading">#</a></h3>
+<p>Now let us make a dashboard driven by a year slider. Create a integer slider that ranges from year 2000 to 2018 called <code class="docutils literal notranslate"><span class="pre">year_slider</span></code>.</p>
+<details><summary><br/>Hint</summary>
+<p>You can use a <code class="docutils literal notranslate"><span class="pre">pn.widgets.IntSlider</span></code> to select the year.</p>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year_slider</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Display the slider</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year_slider</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Year'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">year_slider</span>
+</pre></div>
+</div>
+<!--</details>--><p>Now let’s look at how the <code class="docutils literal notranslate"><span class="pre">strongest_earthquakes_fn</span></code> displays a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> for the most severe earthquakes in a given year:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">most_severe_2000</span> <span class="o">=</span> <span class="n">most_severe</span><span class="p">[</span><span class="n">most_severe</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+<span class="n">most_severe_2000</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'mag'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[[</span><span class="s1">'time'</span><span class="p">,</span> <span class="s1">'place'</span><span class="p">,</span> <span class="s1">'mag'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this as an example, create an equivalent table driven by <code class="docutils literal notranslate"><span class="pre">year_slider</span></code>, by declaring a filtered interactive <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">year_rdf</span></code>. The handle on the result should be called <code class="docutils literal notranslate"><span class="pre">year_table</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the table above but with a selectable year using year_slider</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year_slider</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Year'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">rdf</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">rx</span><span class="p">(</span><span class="n">most_severe</span><span class="p">)</span>
+<span class="n">year_rdf</span> <span class="o">=</span> <span class="n">rdf</span><span class="p">[</span><span class="n">rdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year_slider</span><span class="p">]</span>
+<span class="n">year_table</span> <span class="o">=</span> <span class="n">year_rdf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'mag'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[[</span><span class="s1">'time'</span><span class="p">,</span> <span class="s1">'place'</span><span class="p">,</span> <span class="s1">'mag'</span><span class="p">]]</span>
+<span class="n">year_table</span>
+</pre></div>
+</div>
+<!--</details>--><p>Now create a scatter plot from <code class="docutils literal notranslate"><span class="pre">year_rdf</span></code> with red cross (<code class="docutils literal notranslate"><span class="pre">x</span></code>) markers of size <code class="docutils literal notranslate"><span class="pre">50</span></code> called <code class="docutils literal notranslate"><span class="pre">year_scatter</span></code>.</p>
+<details><summary><br/>Hint</summary>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">hvplot</span></code> call with <code class="docutils literal notranslate"><span class="pre">kind='scatter'</span></code>. You also need to set the <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> keywords and set <code class="docutils literal notranslate"><span class="pre">size=50</span></code>.</p>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an interactive scatter called year_scatter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year_rdf</span> <span class="o">=</span> <span class="n">rdf</span><span class="p">[</span><span class="n">rdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year_slider</span><span class="p">]</span>
+<span class="n">year_scatter</span> <span class="o">=</span> <span class="n">year_rdf</span><span class="o">.</span><span class="n">mag</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'scatter'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">year_scatter</span>
+</pre></div>
+</div>
+<!--</details>--><section id="putting-these-components-together">
+<h4>Putting these components together<a class="headerlink" href="#putting-these-components-together" title="Permalink to this heading">#</a></h4>
+<p>Now using the terminal methods on our interactive dataframe together with a panel Markdown title and the <code class="docutils literal notranslate"><span class="pre">Row</span></code> and <code class="docutils literal notranslate"><span class="pre">Column</span></code> layout, we can now put <code class="docutils literal notranslate"><span class="pre">year_slider</span></code>, <code class="docutils literal notranslate"><span class="pre">year_table</span></code> and <code class="docutils literal notranslate"><span class="pre">year_scatter</span></code> together into a dashboard.</p>
+<details><summary><br/>Hint</summary>
+<p>Remember that you can use the <code class="docutils literal notranslate"><span class="pre">.panel()</span></code> method on an interactive output to get the display without the slider. A single <code class="docutils literal notranslate"><span class="pre">year_slider</span></code> can then be displayed by a <code class="docutils literal notranslate"><span class="pre">pn.Column</span></code>.</p>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build a dashboard using year_slider, year_table and year_scatter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!--<details><summary>Solution</summary><br>-->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>year_rdf = rdf[rdf.index.year == year_slider]
+
+year_table = year_rdf.sort_values('mag', ascending=False).reset_index().iloc[:5][['time', 'place', 'mag']]
+year_scatter = year_rdf.mag.hvplot(kind='scatter', color='red', marker='x', size=50)
+pn.Column('# Earthquake magnitudes by year ',
+          year_slider,
+          pn.Row(pn.panel(year_table,   show_widgets=False),
+                 pn.panel(year_scatter, show_widgets=False))).servable()
+&lt;!--&lt;/details&gt;--&gt;
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/holoviz/main/examples/../tutorial/exercises/Building_a_Dashboard.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz/pyviz/main/examples/tutorial/exercises/Building_a_Dashboard.ipynb">Right click to download this notebook from GitHub.</a></p>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item"><div class="github-star-badge">
+<a href="https://github.com/holoviz/holoviz">
+<img alt="Support us with a star on GitHub" src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&amp;label=Star%20on%20%20GitHub%E2%AD%90"/>
+</a>
+</div></div>
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-interactive-components">Non-interactive components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-logo">The logo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#richter-scale-equation">Richter scale equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-the-strongest-earthquakes">List the strongest earthquakes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#display-an-iframe-of-a-google-map">Display an iframe of a Google Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-plot">A plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composing-the-static-dashboard">Composing the static dashboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dashboard-with-interactive-widgets">A dashboard with interactive widgets</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-title-and-description">Adding a title and description</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dashboard-filtering-over-year">A dashboard filtering over year</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-these-components-together">Putting these components together</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item"><p class="nbsite-copyright-last-updated">
+<span class="copyright">
+            © Copyright 2017-2024 Holoviz contributors.
+    </span>
+<span class="last-updated">Last updated on 2024-07-09.</span><br/>
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

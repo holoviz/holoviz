@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>HoloViz Tutorial — HoloViz 0.17.3 documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/scroller.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<script src="../_static/sphinx_highlight.js"></script>
+<script src="../_static/clipboard.min.js"></script>
+<script src="../_static/copybutton.js"></script>
+<script src="../_static/design-tabs.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/index';</script>
+<link href="../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../about.html" rel="author" title="About these documents"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="Setup.html" rel="next" title="Setup"/>
+<link href="../talks/index.html" rel="prev" title="HoloViz Talk"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../_static/holoviz-logo-unstacked.svg"/>
+<script>document.write(`<img src="../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../talks/index.html">Talks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../talks/index.html">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Custom_Interactivity.html">  Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Custom_Dashboards.html">  Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Advanced_Dashboards.html">  Advanced Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community.html">Community</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">HoloViz Tutorial</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="holoviz-tutorial">
+<h1>HoloViz Tutorial<a class="headerlink" href="#holoviz-tutorial" title="Permalink to this heading">#</a></h1>
+<p>Welcome to HoloViz tutorial! In this tutorial, you will make an interactive dashboard like in the image below. You will go through the steps involved in exploring data of different types and sizes, building simple and complex figures, adding interactive behavior and widgets, and deploying full applications. While the tutorial dataset describes earthquake events, the same principles that you will employ in this tutorial can be used for visualization tasks across any domain.</p>
+<p>We’ll be using a wide range of open-source Python libraries, but focusing on the tools we help maintain as part of the HoloViz project, which include:
+<a class="reference external" href="https://panel.holoviz.org">Panel</a>,
+<a class="reference external" href="https://hvplot.holoviz.org">hvPlot</a>,
+<a class="reference external" href="https://holoviews.org">HoloViews</a>,
+<a class="reference external" href="https://geoviews.org">GeoViews</a>,
+<a class="reference external" href="https://datashader.org">Datashader</a>,
+<a class="reference external" href="https://lumen.holoviz.org">Lumen</a>,
+<a class="reference external" href="https://param.holoviz.org">Param</a>, and
+<a class="reference external" href="https://colorcet.holoviz.org">Colorcet</a>.</p>
+<img src="../assets/dashboard.png" width="65%/"/>
+<p>This notebook serves as the homepage of the tutorial, including a table of contents letting you launch each tutorial section.</p>
+<section id="index-and-schedule">
+<h2>Index and Schedule<a class="headerlink" href="#index-and-schedule" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Introduction and setup</strong></p>
+<ul>
+<li><p>  <strong>5 min</strong>  <a class="reference internal" href="Setup.html"><span class="doc std std-doc">Setup</span></a>: Setting up the environment and data files.</p></li>
+<li><p><strong>10 min</strong>  <a class="reference internal" href="Overview.html"><span class="doc std std-doc">Overview</span></a>: Overview of the HoloViz tools, philosophy, and approach.</p></li>
+</ul>
+</li>
+<li><p><strong>The <code class="docutils literal notranslate"><span class="pre">.plot</span></code> API: a data-centric approach to visualization</strong></p>
+<ul>
+<li><p><strong>30 min</strong>  <a class="reference internal" href="Plotting.html"><span class="doc std std-doc">Plotting</span></a>: Quick introduction to the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> interface.</p></li>
+<li><p><strong>20 min</strong>  <a class="reference internal" href="Composing_Plots.html"><span class="doc std std-doc">Composing Plots</span></a>: Overlaying and laying out <code class="docutils literal notranslate"><span class="pre">.hvplot</span></code> outputs to show relationships.</p></li>
+<li><p><strong>15 min</strong>     <a class="reference internal" href="exercises/Plotting.html"><span class="doc std std-doc"><em>Exercise 1</em></span></a>: Building some <code class="docutils literal notranslate"><span class="pre">.hvplot</span></code> visualizations and composing them together</p></li>
+</ul>
+</li>
+<li><p><strong>Building interactivity</strong></p>
+<ul>
+<li><p><strong>20 min</strong>  <a class="reference internal" href="Interlinked_Plots.html"><span class="doc std std-doc">Interlinked Plots</span></a>: Creating linkages between plots</p></li>
+<li><p><strong>15 min</strong>    <a class="reference internal" href="exercises/Linking_Plots.html"><span class="doc std std-doc"><em>Exercise 2</em></span></a>: Linking the plots from the first exercise</p></li>
+<li><p><strong>20 min</strong>  <a class="reference internal" href="Interactive_Pipelines.html"><span class="doc std std-doc">Reactive Pipelines</span></a>: Creating reactive pipelines that display data, controlled by widgets</p></li>
+<li><p><strong>15 min</strong>     <a class="reference internal" href="exercises/Building_Pipelines.html"><span class="doc std std-doc"><em>Exercise 3</em></span></a>: Building your own pipelines and visualizations controlled by widgets.</p></li>
+</ul>
+</li>
+<li><p><strong>Building dashboards using Panel</strong></p>
+<ul>
+<li><p><strong>30 min</strong>  <a class="reference internal" href="Dashboards.html"><span class="doc std std-doc">Dashboards</span></a>: How to make apps and dashboards from Python objects.</p></li>
+<li><p><strong>30 min</strong>     <a class="reference internal" href="exercises/Building_a_Dashboard.html"><span class="doc std std-doc"><em>Exercise 4</em></span></a>: Using a mix of visualizable types, create a panel and serve it.</p></li>
+</ul>
+</li>
+<li><p><strong>Advanced dashboards</strong> (optional)</p>
+<ul>
+<li><p><strong>15 min</strong>  <a class="reference internal" href="Custom_Interactivity.html"><span class="doc std std-doc">Custom Interactivity</span></a>: Customizing interactivity in detail.</p></li>
+<li><p><strong>15 min</strong>  <a class="reference internal" href="Custom_Dashboards.html"><span class="doc std std-doc">Custom Dashboards</span></a>: Building fully custom dashboards.</p></li>
+<li><p><strong>15 min</strong>  <a class="reference internal" href="Advanced_Dashboards.html"><span class="doc std std-doc">Advanced Dashboards</span></a>: Building complex dashboards.</p></li>
+<li><p><strong>30 min</strong>     <a class="reference internal" href="exercises/Advanced_Dashboarding.html"><span class="doc std std-doc"><em>Exercise 5</em></span></a>: Build your own, advanced dashboard.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<div id="scroller-right">This web page was generated from a Jupyter notebook and not all interactivity will work on this website. <a href="https://raw.githubusercontent.com/holoviz/holoviz/main/examples/../tutorial/index.ipynb">Right click to download and run locally</a> for full Python-backed interactivity.</div><div class="toctree-wrapper compound">
+</div>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../talks/index.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">HoloViz Talk</p>
+</div>
+</a>
+<a class="right-next" href="Setup.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Setup</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item"><div class="github-star-badge">
+<a href="https://github.com/holoviz/holoviz">
+<img alt="Support us with a star on GitHub" src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&amp;label=Star%20on%20%20GitHub%E2%AD%90"/>
+</a>
+</div></div>
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index-and-schedule">Index and Schedule</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item"><p class="nbsite-copyright-last-updated">
+<span class="copyright">
+            © Copyright 2017-2024 Holoviz contributors.
+    </span>
+<span class="last-updated">Last updated on 2024-07-09.</span><br/>
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>Charter for the HoloViz Organization — HoloViz 0.17.3 documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/scroller.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/sphinx_highlight.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'governance/org-docs/CHARTER';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../../_static/holoviz-logo-unstacked.svg"/>
+<script>document.write(`<img src="../../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../talks/index.html">Talks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../talks/index.html">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Interactivity.html">  Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Dashboards.html">  Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Advanced_Dashboards.html">  Advanced Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community.html">Community</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Charter for the HoloViz Organization</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="charter-for-the-holoviz-organization">
+<h1>Charter for the HoloViz Organization<a class="headerlink" href="#charter-for-the-holoviz-organization" title="Permalink to this heading">#</a></h1>
+<p>This is the organizational charter for the HoloViz Organization. The HoloViz Organization is an open-source and collaborative effort with a mission to develop visualization solutions for Python.</p>
+<section id="terminology">
+<h2>1. Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>“HoloViz” or “HoloViz Community” or “Community”: The entire HoloViz ecosystem of Users, Contributors, Projects, and communication channels</p></li>
+<li><p>“HoloViz Organization” or “Organization”: The voting members of HoloViz Committees and Projects</p></li>
+<li><p>“HoloViz GitHub Organization”: The GitHub organization at <a class="github reference external" href="https://github.com/holoviz">holoviz</a></p></li>
+<li><p>“HoloViz Projects” or “Projects” or “Organization Projects”: Repositories in the HoloViz GitHub Organization and their voting members</p></li>
+<li><p>“HoloViz repo” or “HoloViz repository”: The specific repository at <a class="github reference external" href="https://github.com/holoviz/holoviz">holoviz/holoviz</a></p></li>
+<li><p>“HoloViz.org”: The website at <a class="reference external" href="https://holoviz.org/">https://holoviz.org/</a></p></li>
+</ul>
+</section>
+<section id="organization-steering-committee">
+<h2>2. Organization Steering Committee<a class="headerlink" href="#organization-steering-committee" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="STEERING-COMMITTEE.html"><span class="doc std std-doc">Steering Committee.md file</span></a> Steering Committee members agree to the policies in this document.</p>
+<p><strong>2.1 Purpose</strong>. The Steering Committee will be responsible for:</p>
+<ul class="simple">
+<li><p>Admitting or removing Projects from the Organization</p></li>
+<li><p>Appointing or removing members from the Steering Committee</p></li>
+<li><p>Setting the overall scope, vision, policy, and direction of the Organization</p></li>
+<li><p>Handling strategic collaborations with other organizations or individuals</p></li>
+<li><p>Making financial decisions and setting funding strategies</p></li>
+<li><p>Managing trademarks and other legal matters for the Organization</p></li>
+<li><p>Making technical decisions whose implementation or impact spans across HoloViz Projects</p></li>
+</ul>
+<p>The Steering Committee is <em>not</em> responsible for software and other technical decisions that relate to individual projects.</p>
+<p><strong>2.2 Composition</strong>. The Steering Committee voting members are listed in this repository’s <a class="reference internal" href="STEERING-COMMITTEE.html"><span class="doc std std-doc">Steering-Committee.md file</span></a>. Voting members may be added or removed by no less than 3/4 affirmative vote of the Steering Committee. There may be no less than 3 active members of the Steering Committee. If the membership count decreases to 2, all Steering Committee activity is halted, except for the election of a new member. If there are either 0 or 1 Steering Committee members, all Steering Committee activity is halted until the HoloViz Project Directors elect at least 3 total Steering Committee members in a special election that follows the 3/4 affirmative vote policy.</p>
+</section>
+<section id="voting">
+<h2>3. Voting<a class="headerlink" href="#voting" title="Permalink to this heading">#</a></h2>
+<p><strong>3.1 Decision Making</strong>. The Steering Committee will strive for all decisions to be made by consensus. While the explicit agreement of the entire Steering Committee is preferred, it is not required for consensus. Rather, the Steering Committee will determine consensus based on their good faith consideration of several factors, including the dominant view of the Steering Committee and the nature of support and objections. In general, a consensus is defined by the absence of strong objections. If consensus cannot be reached, the Steering Committee will make the decision by a vote.</p>
+<p><strong>3.2 Voting</strong>. Any member of the Steering Committee may call a vote with reasonable notice to the Steering Committee, setting out a reasonable deadline by which to cast a vote (at least 3 working days). Any discussion may be conducted in person or electronically by text, voice, or video. The vote must take place in such a way that all Committee members are notified that there is a vote and understand how to cast a vote. Individual vote counts should be recorded in a consistent and publicly accessible format that includes the date, proposer, description, and amount (in the case of financial matters). In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.</p>
+<p>For example, a Committee member decides to call for a vote on a financial issue that did not reach a consensus. This member files an issue on the HoloViz repository that details the context, states precisely what an affirmative (“+1”) or negative (“-1”) vote means in regards to the issue being voted on, tags other members of the Committee by their handle (@…), starts the issue title with “VOTE:”, and adds the “vote” tag. This proposing member also specifies a date by which votes will be tallied - 1 week beyond the posting date. In this example, 7 Committee members vote by the deadline, of which 5 vote affirmative, and therefore the issue is considered carried and closed.</p>
+<p>Here is an example for using a GitHub issue for voting:
+<img alt="example-vote" src="../../_images/example-org-vote.png"/></p>
+<p><strong>3.3 Quorum</strong>. Unless otherwise stated, a quorum for a vote can be met with the participation of at least 50% of Steering Committee members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active Steering Committee members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes to pass. Alternatively, if there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes to pass.</p>
+</section>
+<section id="termination-of-membership">
+<h2>4. Termination of Membership<a class="headerlink" href="#termination-of-membership" title="Permalink to this heading">#</a></h2>
+<p>In addition to the method set out in section 2.2, the membership of a Steering Committee member will terminate if any of the following occur:</p>
+<p><strong>4.1 Resignation</strong>. Written notice of resignation to the Steering Committee.</p>
+<p><strong>4.2 Unreachable Member</strong>. If a member is unresponsive at its listed handle for more than three months the Steering Committee may vote to remove the member. The vote will be by simple majority of vote-participating committee members.</p>
+</section>
+<section id="trademarks">
+<h2>5. Trademarks<a class="headerlink" href="#trademarks" title="Permalink to this heading">#</a></h2>
+<p>Any names, trademarks, service marks, logos, mascots, or similar indicators of source or origin and the goodwill associated with them arising out of the Organization’s activities or Organization projects’ activities (the “Marks”), are controlled by the Organization. Steering Committee members may only use the Marks in accordance with the Organization’s <a class="reference internal" href="TRADEMARKS.html"><span class="doc std std-doc">trademark policy</span></a>. If a Steering Committee member is terminated or removed from the Steering Committee, any rights the Steering Committee member may have in the Marks revert to the Organization.</p>
+</section>
+<section id="antitrust-policy">
+<h2>6. Antitrust Policy<a class="headerlink" href="#antitrust-policy" title="Permalink to this heading">#</a></h2>
+<p>The Steering Committee is bound by the Organization’s <a class="reference internal" href="ANTITRUST.html"><span class="doc std std-doc">antitrust policy</span></a>.</p>
+</section>
+<section id="no-confidentiality">
+<h2>7. No Confidentiality<a class="headerlink" href="#no-confidentiality" title="Permalink to this heading">#</a></h2>
+<p>Information disclosed in connection with any of the Organization’s activities, including but not limited to meetings, Contributions, and submissions, is not confidential, regardless of any markings or statements to the contrary.</p>
+</section>
+<section id="project-criteria">
+<h2>8. Project Criteria<a class="headerlink" href="#project-criteria" title="Permalink to this heading">#</a></h2>
+<p>To become a HoloViz Project, it must:</p>
+<ul class="simple">
+<li><p>Be approved by the Steering Committee.</p></li>
+<li><p>Agree to follow the guidance and direction of the Steering Committee.</p></li>
+<li><p>Use only the following outbound licenses or agreements unless otherwise approved:</p>
+<ul>
+<li><p>For code, a license on the Open Source Initiative’s list of <a class="reference external" href="https://opensource.org/licenses">Popular Licenses</a>.</p></li>
+<li><p>For data, a license on the Open Knowledge Foundation’s list of <a class="reference external" href="http://opendefinition.org/licenses/">Recommended Conformant Licenses</a>.</p></li>
+<li><p>For specifications, a community-developed and maintained specification agreement, such as the <a class="reference external" href="https://www.openwebfoundation.org/the-agreements">Open Web Foundation Agreements</a> or <a class="reference external" href="https://github.com/CommunitySpecification/1.0">Community Specification Agreement</a>.</p></li>
+</ul>
+</li>
+<li><p>Include and adhere to the Organization’s policies, including the <a class="reference internal" href="TRADEMARKS.html"><span class="doc std std-doc">trademark policy</span></a>, the <a class="reference internal" href="ANTITRUST.html"><span class="doc std std-doc">antitrust policy</span></a>, and the <a class="reference internal" href="CODE-OF-CONDUCT.html"><span class="doc std std-doc">code of conduct</span></a>.</p></li>
+</ul>
+</section>
+<section id="amendments">
+<h2>9. Amendments<a class="headerlink" href="#amendments" title="Permalink to this heading">#</a></h2>
+<p>Amendments to this charter, the <a class="reference internal" href="ANTITRUST.html"><span class="doc std std-doc">antitrust policy</span></a>, the <a class="reference internal" href="TRADEMARKS.html"><span class="doc std std-doc">trademark policy</span></a>, or the <a class="reference internal" href="CODE-OF-CONDUCT.html"><span class="doc std std-doc">code of conduct</span></a> may only be made with at least a 3/4 affirmative vote of the Steering Committee.</p>
+</section>
+<section id="code-of-conduct-committee">
+<h2>10. Code of Conduct Committee<a class="headerlink" href="#code-of-conduct-committee" title="Permalink to this heading">#</a></h2>
+<p>The Code of Conduct Committee (CoCC) will be responsible for enforcing and updating the <a class="reference internal" href="CODE-OF-CONDUCT.html"><span class="doc std std-doc">code of conduct</span></a>.</p>
+<p>The current CoCC members are listed in the <a class="reference internal" href="CODE-OF-CONDUCT.html"><span class="doc std std-doc">CODE_OF_CONDUCT.md</span></a> file in the repository. Unless removed, CoCC members may serve indefinitely, as long as they adhere to the Organization’s policies, including the <a class="reference internal" href="TRADEMARKS.html"><span class="doc std std-doc">trademark policy</span></a>, the <a class="reference internal" href="ANTITRUST.html"><span class="doc std std-doc">antitrust policy</span></a>, and the <a class="reference internal" href="CODE-OF-CONDUCT.html"><span class="doc std std-doc">code of conduct</span></a>. Voting members may be added or removed by a simple majority of their fellow reachable and vote-participating CoCC members. CoCC members are expected to recuse themselves if they have a conflict of interest, and are required to recuse themselves if they are the accused or the target of the reported behavior. CoCC members may also resign at any time. There must be at least 3 individuals serving on the CoCC at any time, but there is no upper limit on the number of CoCC members. If a member is unresponsive at their listed handle for more than 3 months, the CoCC may vote to remove the member.</p>
+<p>The CoCC will strive for all decisions to be made by consensus. If consensus cannot be reached, the CoCC will make the decision by a vote. To take action, a simple majority of eligible CoCC members must vote (eligible members do not include those excluded because of conflicts of interest) and a simple majority of the votes cast need to be affirmative.</p>
+</section>
+<section id="infrastructure-and-account-access">
+<h2>11. Infrastructure and Account Access<a class="headerlink" href="#infrastructure-and-account-access" title="Permalink to this heading">#</a></h2>
+<p>Upon request by a Steering Committee member, accounts related to the HoloViz Organization or any HoloViz Project must be made accessible to the requester. An exception is granted for accounts that contain information relating to code of conduct reports, of which the Code of Conduct Committee has sole custody.</p>
+<hr class="docutils"/>
+<p>This document is based on GitHub MVG-0.1-beta, which is Licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0 License</a>.</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item"><div class="github-star-badge">
+<a href="https://github.com/holoviz/holoviz">
+<img alt="Support us with a star on GitHub" src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&amp;label=Star%20on%20%20GitHub%E2%AD%90"/>
+</a>
+</div></div>
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">1. Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-steering-committee">2. Organization Steering Committee</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voting">3. Voting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#termination-of-membership">4. Termination of Membership</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trademarks">5. Trademarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antitrust-policy">6. Antitrust Policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-confidentiality">7. No Confidentiality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-criteria">8. Project Criteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amendments">9. Amendments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct-committee">10. Code of Conduct Committee</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-and-account-access">11. Infrastructure and Account Access</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item"><p class="nbsite-copyright-last-updated">
+<span class="copyright">
+            © Copyright 2017-2024 Holoviz contributors.
+    </span>
+<span class="last-updated">Last updated on 2024-07-09.</span><br/>
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>Governance Policy — HoloViz 0.17.3 documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/scroller.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/sphinx_highlight.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'governance/project-docs/GOVERNANCE';</script>
+<link href="../../_static/favicon.ico" rel="shortcut icon"/>
+<link href="../../about.html" rel="author" title="About these documents"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="../../index.html">
+<img alt="Logo image" class="logo__image only-light" src="../../_static/holoviz-logo-unstacked.svg"/>
+<script>document.write(`<img src="../../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../background.html">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="../../community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../background.html">Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../talks/index.html">Talks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../talks/index.html">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Interactivity.html">  Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Dashboards.html">  Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Advanced_Dashboards.html">  Advanced Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community.html">Community</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Governance Policy</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="governance-policy">
+<h1>Governance Policy<a class="headerlink" href="#governance-policy" title="Permalink to this heading">#</a></h1>
+<p>The “Project” is herein defined as the activities related to this specific GitHub repository <a class="reference external" href="https://github.com/holoviz/holoviz"><code class="docutils literal notranslate"><span class="pre">HoloViz</span></code></a>, within the <code class="docutils literal notranslate"><span class="pre">HoloViz</span></code> GitHub Organization. The purpose of this repository is primarily to host the development activities of the HoloViz.org website. This repository also hosts the HoloViz Organization governance documents, that apply to the wider HoloViz ecosystem.</p>
+<p>This document provides the governance policy for the Project. Members agree to this policy and to abide by all Project policies, including the <a class="reference internal" href="../org-docs/CODE-OF-CONDUCT.html"><span class="doc std std-doc">code of conduct</span></a>, <a class="reference internal" href="../org-docs/TRADEMARKS.html"><span class="doc std std-doc">trademark policy</span></a>, and <a class="reference internal" href="../org-docs/ANTITRUST.html"><span class="doc std std-doc">antitrust policy</span></a> by adding their name to the <a class="reference internal" href="MEMBERS.html"><span class="doc std std-doc">MEMBERS.md file</span></a>.</p>
+<section id="project-member-roles">
+<h2>1. Project Member Roles<a class="headerlink" href="#project-member-roles" title="Permalink to this heading">#</a></h2>
+<p>This project may include the following roles. Additional roles may be adopted and documented by the Project. All member role terms may be indefinite, as long as the members adhere to the Organization’s policies.</p>
+<p><strong>1.1 Contributors</strong>. Contributors are those that have made contributions to the Project. Contributors can participate in the project by submitting, reviewing, and discussing GitHub Pull Requests and Issues. Contributors may also participate in public discussions and presentations relating to the Project, either online or during in-person events. Contributors may not vote along with Maintainers but they can submit their input on a given topic to be considered during a consensus-seeking process. Anyone can be a Contributor - they can be affiliated with a legal entity or none. Contributors typically do not have merge permissions for the Project, but may be granted such permissions by a Project Maintainer. However, as a Contributor, this ability to merge carries no expectation to review contributions.</p>
+<p><strong>1.2 Maintainer</strong>. Maintainers are responsible for organizing activities around developing, maintaining, and updating the Project. Specifically, this includes making decisions about software and other technical aspects in code, services, documentation, or other materials that solely relate to this Project. Maintainers are also responsible for determining consensus. Maintainers are contributors that have an ongoing relationship to a project, and typically have GitHub merge permissions. Maintainers are involved in different aspects of the Project, such as the code or the documentation. When submitting substantial pull-requests, Maintainers should seek code review by another Maintainer. Maintainers are expected to review and merge (or reject) pull-requests and seek other Maintainers’ consensus when appropriate. This Project may add or remove Maintainers with the approval (or simple majority vote if consensus is not reached) of the current Maintainers. If a Maintainer is unresponsive at their listed handle for more than three months, the Maintainers may vote to remove the member following applicable policy and regardless of any further titles held (such as Lead Maintainer or Project Director).</p>
+<p><strong>1.3 Lead Maintainer</strong>. The Lead Maintainer is a Maintainer who is responsible for the day-to-day technical management of the Project, in addition to the responsibilities of a Maintainer. The Lead Maintainer is expected to make new releases unless the task has not been further delegated. The Lead Maintainer must maintain a high level of involvement in all other activities of the Project, such as advocacy, planning, support, review, and development. The Maintainers may elect or remove a Lead Maintainer through consensus or a simple majority vote if consensus is not met.</p>
+<p><strong>1.4 Project Director</strong>. The Project Director is a Maintainer who is responsible for setting the overall direction and scope of the Project, in addition to the responsibilities of a Maintainer. The Project Director must maintain a high level of involvement in all other activities of the Project, such as advocacy, planning, support, review, and development. The Project Director will assume or delegate the duties of a vacant Lead Maintainer position. The Project Director should defer to the consensus-seeking process and vote results of the Maintainers. In exceptional cases, the Project Director may veto a vote result, with a written explanation. The Maintainers may appeal and hold a vote to override the veto, which is carried by a 3/4 vote. This right to an appeal process for the Maintainers does not apply to votes relating to the admission of new Maintainers, for which a veto by the Project Director will be final. Maintainers may elect or remove a Project Director by a 4/5 vote.</p>
+</section>
+<section id="decisions">
+<h2>2. Decisions<a class="headerlink" href="#decisions" title="Permalink to this heading">#</a></h2>
+<p><strong>2.1. Consensus-Based Decision Making</strong>. Projects make decisions through the consensus of the Maintainers. While the explicit agreement of all Maintainers is preferred, it is not required for consensus. Rather, the Maintainers will determine consensus based on their good faith consideration of a number of factors, including the dominant view of the Maintainers and nature of support and objections. In general, consensus is defined by the absence of strong objections. If consensus cannot be reached, the Maintainers will make the decision by vote.</p>
+<p><strong>2.2. Voting</strong>. Any Maintainer may call a vote with reasonable notice to other Maintainers, setting out a reasonable deadline by which to cast a vote (at least 3 working days). Any discussion may be conducted in person or electronically by text, voice, or video. The vote must take place in such a way that all Maintainers are notified that there is a vote and understand how to cast a vote. Individual vote counts should be recorded in a consistent and publicly accessible format that includes the date, proposer, and description. In any vote, each voting representative will have one vote. Except as specifically noted elsewhere in this charter, decisions by vote require a simple majority vote of all reachable and vote-participating members.</p>
+<p>For example, a Maintainer decides to call for a vote on a technical issue that did not previously reach consensus. This Maintainer files an issue on the Project repository that clearly details the context, states precisely what an affirmative (“+1”) or negative (“-1”) vote means in regards to the issue being voted on, tags other Maintainers of the Project by their handle (@…), starts the issue title with “VOTE:”, and adds the “vote” tag. This proposing Maintainer also specifies a date by which a votes will be tallied - 1 week beyond the posting date. In this example, 7 Maintainers vote by the deadline, of which 5 vote affirmative, and therefore the issue is considered carried and the issue is closed.</p>
+<p>Here is an example for using a GitHub issue for voting:
+<img alt="example-vote" src="../../_images/example-org-vote.png"/></p>
+<p><strong>2.3. Appeal Process</strong>. Decisions may be appealed by opening an issue and that appeal will be considered by the Maintainers in good faith, who will respond in writing within a reasonable time. If the Maintainers deny the appeal, the appeal may be brought before the Organization Steering Committee, who will determine if the issue falls within their jurisdiction and respond in writing in a reasonable time.</p>
+<p><strong>2.4 Quorum</strong>. Unless otherwise stated, a quorum for a vote can be met with the participation of at least 50% of Maintainers, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active Maintainers, at least 5 must vote; if 5 vote, there must be 3 affirmative votes. If there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes.</p>
+</section>
+<section id="how-we-work">
+<h2>3. How We Work<a class="headerlink" href="#how-we-work" title="Permalink to this heading">#</a></h2>
+<p><strong>3.1. Openness</strong>. Participation is open to anyone who is directly and materially affected by the activity in question. There shall be no undue financial barriers to participation.</p>
+<p><strong>3.2. Balance</strong>. The development process should balance the interests of Maintainers, Contributors, and other stakeholders. Maintainers and Contributors from diverse interest categories shall be sought with the objective of achieving balance.</p>
+<p><strong>3.3. Coordination and Harmonization</strong>. Good faith efforts shall be made to resolve potential conflicts or incompatibility between releases in this Project.</p>
+<p><strong>3.4. Consideration of Views and Objections</strong>. Prompt consideration shall be given to the written views and objections of all Maintainers and Contributors.</p>
+<p><strong>3.5. Written procedures</strong>. This governance document and other materials documenting this project’s development process shall be available to any interested person.</p>
+</section>
+<section id="no-confidentiality">
+<h2>4. No Confidentiality<a class="headerlink" href="#no-confidentiality" title="Permalink to this heading">#</a></h2>
+<p>Information disclosed in connection with any Project activity, including but not limited to meetings, contributions, and submissions, is not confidential, regardless of any markings or statements to the contrary.</p>
+</section>
+<section id="trademarks">
+<h2>5. Trademarks<a class="headerlink" href="#trademarks" title="Permalink to this heading">#</a></h2>
+<p>Any names, trademarks, logos, or goodwill developed by and associated with the Project (the “Marks”) are controlled by the Organization. Maintainers may only use these Marks in accordance with the Organization’s trademark policy. If a Maintainer resigns or is removed, any rights the Maintainer may have in the Marks revert to the Organization.</p>
+</section>
+<section id="amendments">
+<h2>6. Amendments<a class="headerlink" href="#amendments" title="Permalink to this heading">#</a></h2>
+<p>Amendments to this governance policy may be made by an affirmative vote of 2/3 of all Maintainers, with approval by the Organization’s Steering Committee.</p>
+<hr class="docutils"/>
+<p>This document is based on GitHub MVG-0.1-beta, which is Licensed under the <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY 4.0 License</a>.</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item"><div class="github-star-badge">
+<a href="https://github.com/holoviz/holoviz">
+<img alt="Support us with a star on GitHub" src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&amp;label=Star%20on%20%20GitHub%E2%AD%90"/>
+</a>
+</div></div>
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-member-roles">1. Project Member Roles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decisions">2. Decisions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-work">3. How We Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-confidentiality">4. No Confidentiality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trademarks">5. Trademarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amendments">6. Amendments</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item"><p class="nbsite-copyright-last-updated">
+<span class="copyright">
+            © Copyright 2017-2024 Holoviz contributors.
+    </span>
+<span class="last-updated">Last updated on 2024-07-09.</span><br/>
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>

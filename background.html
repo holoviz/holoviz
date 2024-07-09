@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
+<title>Background: Why HoloViz? — HoloViz 0.17.3 documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/graphviz.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" rel="stylesheet" type="text/css"/>
+<link href="_static/nbsite.css" rel="stylesheet" type="text/css"/>
+<link href="_static/notebook.css" rel="stylesheet" type="text/css"/>
+<link href="_static/gallery.css" rel="stylesheet" type="text/css"/>
+<link href="_static/alert.css" rel="stylesheet" type="text/css"/>
+<link href="_static/dataframe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/scroller.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" rel="preload"/>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/sphinx_highlight.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/design-tabs.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'background';</script>
+<link href="_static/favicon.ico" rel="shortcut icon"/>
+<link href="about.html" rel="author" title="About these documents"/>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="talks/index.html" rel="next" title="HoloViz Talk"/>
+<link href="index.html" rel="prev" title="High-level tools to simplify visualization in Python"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search the docs ..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search the docs ..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+<label class="sidebar-toggle primary-toggle" for="__primary">
+<span class="fa-solid fa-bars"></span>
+</label>
+<div class="navbar-header-items__start">
+<div class="navbar-item">
+<a class="navbar-brand logo" href="index.html">
+<img alt="Logo image" class="logo__image only-light" src="_static/holoviz-logo-unstacked.svg"/>
+<script>document.write(`<img src="_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+</div>
+<div class="col-lg-9 navbar-header-items">
+<div class="me-auto navbar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="navbar-header-items__end">
+<div class="navbar-item navbar-persistent--container">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+</div>
+<label class="sidebar-toggle secondary-toggle" for="__secondary">
+<span class="fa-solid fa-outdent"></span>
+</label>
+</div>
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+<div class="sidebar-header-items__center">
+<div class="navbar-item"><nav class="navbar-nav">
+<p aria-label="Site Navigation" aria-level="1" class="sidebar-header-items__title" role="heading">
+    Site Navigation
+  </p>
+<ul class="bd-navbar-elements navbar-nav">
+<li class="nav-item current active">
+<a class="nav-link nav-internal" href="#">
+                        Background
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="talks/index.html">
+                        Talks
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="tutorial/index.html">
+                        Tutorial
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://blog.holoviz.org/">
+                        Blog
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-external" href="https://examples.holoviz.org/">
+                        Examples
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="contributing.html">
+                        Contributing
+                      </a>
+</li>
+<div class="nav-item dropdown">
+<button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                    More
+                </button>
+<div class="dropdown-menu">
+<li class="nav-item">
+<a class="nav-link nav-internal" href="Roadmap.html">
+                        Roadmap
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="FAQ.html">
+                        FAQ
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+</li>
+<li class="nav-item">
+<a class="nav-link nav-internal" href="community.html">
+                        Community
+                      </a>
+</li>
+</div>
+</div>
+</ul>
+</nav></div>
+</div>
+<div class="sidebar-header-items__end">
+<div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+<div class="navbar-item"><ul aria-label="Icon Links" class="navbar-icon-links navbar-nav">
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/holoviz/holoviz" rel="noopener" target="_blank" title="GitHub"><span><i class="fa-brands fa-square-github"></i></span>
+<label class="sr-only">GitHub</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://twitter.com/HoloViz_Org" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
+<label class="sr-only">Twitter</label></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discourse.holoviz.org/" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+<label class="sr-only">Discourse</label></a>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item"><nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+<div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="talks/index.html">Talks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="talks/index.html">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorial/index.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Custom_Interactivity.html">  Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Custom_Dashboards.html">  Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Advanced_Dashboards.html">  Advanced Dashboards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">Community</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item">
+<nav aria-label="Breadcrumbs">
+<ul aria-label="Breadcrumb" class="bd-breadcrumbs" role="navigation">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">Background: Why HoloViz?</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section id="background-why-holoviz">
+<h1>Background: Why HoloViz?<a class="headerlink" href="#background-why-holoviz" title="Permalink to this heading">#</a></h1>
+<p>Many of the activities of an engineer, scientist, or analyst require
+visualization, but it can be difficult to assemble a set of tools that
+cover all of the tasks involved. Initial exploration needs to be in a
+flexible, open-ended environment where it is simple to try out and test
+hypotheses. Once key aspects of the data have been identified, the
+analyst might prepare a specific image or figure to share with
+colleagues or a wider audience. Or, they might need to set up an
+interactive way to share a set of data that would be unwieldy as a fixed
+figure, using interactive controls to let others explore the effects of
+certain variables. Eventually, for particularly important data or use
+cases, the analyst might get involved in a long-term project to develop
+a full-featured web application or dashboard to deploy, allowing
+decision makers to interact directly with live data streams to make
+operational decisions.</p>
+<p>With Python, initial exploration is typically in a
+<a class="reference external" href="https://jupyter.org">Jupyter</a> notebook, using tools like Matplotlib
+and Bokeh to develop static or interactive plots. These tools support a
+simple syntax for making certain kinds of plots, but showing more
+complex relationships in data can quickly turn into a major software
+development exercise, making it difficult to achieve understanding
+during exploration. Various toolkits like Bokeh, Dash, and ipywidgets
+allow building apps to control and explore these visualizations
+interactively rather than recoding each time, but again outside of a
+small range of simple functions building the app itself becomes a
+major software development exercise. Plotting libraries also have
+limitations on how much data they can handle, especially if they
+require that all of the data be present in the web browser’s limited
+memory space. It is thus difficult to find tools that support anything
+close to the entire range of cases where data needs to be visualized.</p>
+<section id="the-holoviz-ecosystem">
+<h2>The HoloViz ecosystem<a class="headerlink" href="#the-holoviz-ecosystem" title="Permalink to this heading">#</a></h2>
+<p><em>holo</em> : <em>Greek</em> root, meaning <em>whole</em>, <em>entire</em>.</p>
+<p>To address all the above issues, we have developed a set of open-source Python
+packages to streamline the entire process of working with small and large datasets
+(from a few datapoints to billions or more) in a web browser, whether doing
+exploratory analysis, making simple widget-based tools, or building
+multipage standalone dashboards. Building on existing plotting libraries like
+<a class="reference external" href="https://bokeh.org">Bokeh</a>, <a class="reference external" href="https://matplotlib.org">Matplotlib</a>, and
+<a class="reference external" href="https://plot.ly">Plotly</a>, the HoloViz ecosystem includes a set of special-purpose tools designed to fill in the gaps and solve the whole problem of visualization:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://panel.holoviz.org">Panel</a>: Assembling objects from
+many different libraries into a layout or app, whether in a Jupyter
+notebook or in a standalone servable dashboard</p></li>
+<li><p><a class="reference external" href="https://hvplot.holoviz.org">hvPlot</a>: Quickly return interactive
+HoloViews, GeoViews, or Panel objects from Pandas, Xarray,
+or other data structures</p></li>
+<li><p><a class="reference external" href="https://holoviews.org">HoloViews</a>: Declarative objects for
+instantly visualizable data, building Bokeh plots from convenient
+high-level specifications</p></li>
+<li><p><a class="reference external" href="https://geoviews.org">GeoViews</a>: Visualizable geographic
+data that that can be mixed and matched with HoloViews objects</p></li>
+<li><p><a class="reference external" href="https://datashader.org">Datashader</a>: Rasterizing
+huge datasets quickly as fixed-size images</p></li>
+<li><p><a class="reference external" href="https://lumen.holoviz.org">Lumen</a>: Framework for visual analytics that allows users
+to build data-driven dashboards from a simple YAML specification</p></li>
+<li><p><a class="reference external" href="https://colorcet.holoviz.org">Colorcet</a>: A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries</p></li>
+</ul>
+<p>Assuming that you have some data of some particular <strong>Data type</strong>, the
+chart below will help you choose a suitable Python <strong>Data library</strong>
+for reading in the data and working with it, and then a suitable
+<strong>HoloViz API</strong> for specifying plots of that type of data, including
+<strong>optional HoloViz libraries</strong>.  Given these choices, you can then
+choose an appropriate <strong>Plotting library</strong> for actually rendering
+visualizations, along with a <strong>Dashboarding library</strong> if you need one:</p>
+<a class="reference internal image-reference" href="_images/holoviz.mermaid.svg"><img alt="_images/holoviz.mermaid.svg" src="_images/holoviz.mermaid.svg" width="900px"/></a>
+<p>Each of these steps is just a suggestion, presented here to show
+you how we designed the HoloViz tools, and how everything is <em>meant</em>
+to fit together. You are welcome to combine these tools or anything
+else from Python any way you like. For instance, you do not <em>have</em> to
+use GeoPandas or GeoViews if you are working with geospatial columnar
+data; you can use regular Pandas and handle projections and other
+geospatial operations yourself. You do not <em>have</em> to use Datashader if
+you have large datasets; you can simply subsample or select your data
+into a small enough subset that it becomes feasible with other
+tools. You do not <em>have</em> to use Streamz for working with streaming
+data; it just makes it simpler. So please use whatever library you
+wish, now that you know what our suggestions are and how we mean it to
+fit together!</p>
+</section>
+<section id="shortcuts-not-dead-ends">
+<h2>Shortcuts, not dead ends<a class="headerlink" href="#shortcuts-not-dead-ends" title="Permalink to this heading">#</a></h2>
+<p>As you can see, the tools are designed to solve the problems of very
+different users working on very different tasks, which reflects the
+diversity of users and needs for data visualization.  Casual users
+will often want a quick way to get something that works well enough,
+while a dedicated technical user with specialized needs will want
+detailed control over each aspect, which usually means a different and
+more low-level tool.  But because many people fall in between these
+extremes, and because individual users often travel on a trajectory
+from casual user to power user as their needs become more precise, the
+tools are also designed to transition easily between each of these
+different approaches.</p>
+<p>That is, these tools are designed to offer simplified, high-level
+interfaces that are easy ways for users to get started, but those easy
+ways should truly be starting points, not dead ends.  To illustrate
+this point, consider three different types of tools – low level, high
+level, and layered:</p>
+<a class="reference internal image-reference" href="assets/shortcuts.png"><img alt="assets/shortcuts.png" src="assets/shortcuts.png" style="height: 300px;"/></a>
+<p>A low-level tool is highly configurable, with an expressive but
+relatively verbose command language that makes it possible to
+precisely control how it works. For HoloViz, Bokeh is a low-level tool,
+allowing any plot or app to be built up from basic primitives. An
+even lower-level approach would be to write javascript directly. A
+high-level tool like hvPlot or like Panel’s interact function uses
+much less code and a much simpler interface to make a powerful plot or
+dashboard, but what do you do if you then need to make some small
+changes in the result?</p>
+<p>Typical high-level tools will just be dead ends at this point, forcing
+you to start over if what they provide isn’t what you needed. HoloViz
+high-level tools are instead systematically designed as layers on
+top of lower-level tools, where you can use the top level for anything
+that it provides, while always being able to drop down a level (or
+several if necessary!) to get the behavior you need.</p>
+<p>Panel’s <a class="reference external" href="https://panel.pyviz.org/user_guide/Interact.html">interact function</a>
+provides a clear example of this approach. With one line of Panel code
+you can get a fully functional widget-based app.  But if it’s not
+precisely what you want, you can then inspect what’s returned, unpack
+it, rearrange and add or delete components, then use the result
+instead.  Similarly, hvPlot provides a one-line way to return complex
+HoloViews objects, which can then be inspected, pulled apart,
+reconfigured, and recomposed if/as needed. And then these HoloViews
+objects, in turn, can be used to make a Bokeh or Matplotlib figure
+that again can be examined, modified, and used in other contexts.</p>
+</section>
+<section id="building-on-the-python-scientific-ecosystem">
+<h2>Building on the Python scientific ecosystem<a class="headerlink" href="#building-on-the-python-scientific-ecosystem" title="Permalink to this heading">#</a></h2>
+<p>Beyond the specific HoloViz tools, all these approaches work with and
+often rely upon a wide range of other open-source libraries for their
+implementation, including:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org">Pandas</a>: Convenient computation on
+columnar datasets (used by HoloViews and datashader)</p></li>
+<li><p><a class="reference external" href="https://xarray.pydata.org">Xarray</a>: Convenient computations on
+multidimensional array datasets (used by HoloViews and Datashader)</p></li>
+<li><p><a class="reference external" href="https://dask.org">Dask</a>: Efficient
+out-of-core/distributed computation on massive datasets (used by
+Datashader)</p></li>
+<li><p><a class="reference external" href="https://numba.pydata.org">Numba</a>: Accelerated machine code for
+inner loops (used by Datashader)</p></li>
+<li><p><a class="reference external" href="https://fastparquet.readthedocs.io">Fastparquet</a>: Efficient
+storage for columnar data</p></li>
+<li><p><a class="reference external" href="https://scitools.org.uk/cartopy">Cartopy</a>: Support for
+geographical data (using a wide range of other lower-level libraries)</p></li>
+</ul>
+<p>These and many other tools form the broader ecosystem that supports
+HoloViz. The HoloViz tutorials will guide you through the process of
+using these tools together to build rich, high-performance, scalable,
+flexible, and deployable visualizations, apps, and dashboards, without
+having to use JavaScript or other web technologies explicitly, and
+without having to rewrite your code to move between each of the
+different tasks or phases from exploration to deployment. In each
+case, we’ll try to draw your attention to libraries and approaches
+that help you get the job done, which in turn depend on many other
+unseen libraries in the scientific Python ecosystem to do the heavy
+lifting.</p>
+</section>
+<section id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Permalink to this heading">#</a></h2>
+<p>To give you an idea what sort of functionality is possible with these
+tools, you can check out some of these links first if you wish:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://holoviews.org/reference/apps/bokeh/selection_stream.html">Selection
+stream</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/reference/streams/bokeh/BoundsX.html">Bounds
+stream</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/gallery/apps/bokeh/mandelbrot.html">Mandelbrot</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/reference/containers/bokeh/DynamicMap.html">DynamicMap</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/gallery/apps/bokeh/crossfilter.html">Crossfilter</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/gallery/apps/bokeh/game_of_life.html">Game of
+Life</a></p></li>
+<li><p><a class="reference external" href="https://holoviews.org/gallery/demos/bokeh/dragon_curve.html">Dragon
+curve</a></p></li>
+<li><p><a class="reference external" href="https://examples.pyviz.org/nyc_taxi/nyc_taxi.html">Datashader NYC Taxi</a></p></li>
+<li><p><a class="reference external" href="https://anaconda.org/jbednar/edge_bundling">Datashader Graphs</a></p></li>
+<li><p><a class="reference external" href="https://examples.pyviz.org/landsat/landsat.html">Datashader Landsat
+images</a></p></li>
+<li><p><a class="reference external" href="https://examples.pyviz.org/opensky/opensky.html">Datashader OpenSky</a></p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>First, you should browse through the already-run versions of the HoloViz
+<a class="reference external" href="tutorial/index.html">tutorials</a> to see what they cover and how it all
+works. But everything on this website is a Jupyter Notebook that you can
+run yourself, once you follow the  <a class="reference external" href="installation">installation</a>
+instructions, so the next step is to try it all out and have fun exploring
+it!</p>
+</section>
+</section>
+</article>
+<footer class="bd-footer-article">
+<div class="footer-article-items footer-article__inner">
+<div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="index.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">High-level tools to simplify visualization in Python</p>
+</div>
+</a>
+<a class="right-next" href="talks/index.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">HoloViz Talk</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div></div>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item"><div class="github-star-badge">
+<a href="https://github.com/holoviz/holoviz">
+<img alt="Support us with a star on GitHub" src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&amp;label=Star%20on%20%20GitHub%E2%AD%90"/>
+</a>
+</div></div>
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> On this page
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-holoviz-ecosystem">The HoloViz ecosystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortcuts-not-dead-ends">Shortcuts, not dead ends</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-on-the-python-scientific-ecosystem">Building on the Python scientific ecosystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demos">Demos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+<footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+<div class="footer-items__start">
+<div class="footer-item"><p class="nbsite-copyright-last-updated">
+<span class="copyright">
+            © Copyright 2017-2024 Holoviz contributors.
+    </span>
+<span class="last-updated">Last updated on 2024-07-09.</span><br/>
+</p></div>
+</div>
+<div class="footer-items__end">
+<div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+</div>
+</div>
+</footer>
+</body>
+</html>
