@@ -188,7 +188,6 @@ The core packages have their repository that, except in a few cases, all share t
 * The tests are nested under the package directory, e.g., at `panel/tests`. The tests are then automatically bundled in the source distribution, which makes it a little easier for repackagers to run the tests.
 * The `examples` and the `doc` folder share the same structure, e.g. you will find `panel/doc/user_guide`  and `panel/examples/user_guide`. The `examples` folder contains Jupyter Notebooks, while the `doc` folder usually contains *reStructuredText* and *Markdown* files. The HoloViz packages generally have `pyct` as a build dependency, which can be used to add an `examples` command to a project (e.g. `panel examples`) to make it easier for users to download the project notebooks. The `examples` folder is bundled within the package source, so users running `panel examples` get the notebooks copied from the package to a local directory. The `doc` folder isn't bundled within the package source.
 * The `.github` directory contains GitHub specific configuration files, e.g., for GitHub Actions.
-* Optional: the `conda.recipe` directory contains a conda recipe template used by the building tooling when creating a conda package.
 * Optional: the `binder` directory contains configuration files to setup [binder](https://mybinder.org/)
 
 
