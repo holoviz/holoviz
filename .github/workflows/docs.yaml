@@ -49,6 +49,9 @@ jobs:
       MPLBACKEND: "Agg"
       MOZ_HEADLESS: 1
       DISPLAY: ":99.0"
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: "eu-west-1"
     steps:
       - name: Install humor sans fonts for XKCD Matplotlib plots
         run:  |
@@ -66,7 +69,9 @@ jobs:
         run: git fetch --prune --tags --unshallow -f
       - name: Set output
         id: vars
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+        run: |
+          echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+          echo "fdatetime=$(date +%Y%m%d-%H%M)" >> $GITHUB_OUTPUT
       - name: install anaconda-project
         run: conda install "anaconda-project>=0.10.1"
       - name: prepare
@@ -101,3 +106,18 @@ jobs:
           publish_dir: ./builtdocs
           cname: holoviz.org
           force_orphan: true
+      # Upload the tutorial
+      - name: git clean
+        run: git clean -fxd .
+      - name: anaconda-project archive
+        run: anaconda-project archive --directory examples holoviz_tutorial.zip
+      - name: save old
+        run: cp holoviz_tutorial.zip holoviz_tutorial_${{ steps.vars.outputs.fdatetime }}_${{ steps.vars.outputs.tag }}.zip
+      - name: Upload tutorial
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        run: aws s3 cp ./holoviz_tutorial_${{ steps.vars.outputs.fdatetime }}_${{ steps.vars.outputs.tag }}.zip s3://assets.holoviz.org/holoviz/tutorial/
+      - name: Upload tutorial
+        if: |
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
+          (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
+        run: aws s3 cp ./holoviz_tutorial.zip s3://assets.holoviz.org/holoviz/tutorial/
