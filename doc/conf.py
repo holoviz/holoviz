@@ -14,6 +14,9 @@ ret = subprocess.run([
 ], text=True, capture_output=True, check=True)
 version = release  = base_version(ret.stdout.strip()[1:])
 
+extensions += [
+    'nbsite.analytics',
+]
 
 html_static_path += ['_static']
 
@@ -51,3 +54,7 @@ html_context.update({
 
 # Uncomment to turn off notebook execution.
 # nb_execution_mode = "off"
+
+nbsite_analytics = {
+    'goatcounter_holoviz': True,
+}
