@@ -38,7 +38,7 @@ The Steering Committee is *not* responsible for software and other technical dec
 For example, a Committee member decides to call for a vote on a financial issue that did not reach a consensus. This member files an issue on the HoloViz repository that details the context, states precisely what an affirmative ("+1") or negative ("-1") vote means in regards to the issue being voted on, tags other members of the Committee by their handle (@...), starts the issue title with "VOTE:", and adds the "vote" tag. This proposing member also specifies a date by which votes will be tallied - 1 week beyond the posting date. In this example, 7 Committee members vote by the deadline, of which 5 vote affirmative, and therefore the issue is considered carried and closed.
 
 Here is an example for using a GitHub issue for voting:
-![example-vote](../../_static/example-org-vote.png)
+![example-vote](../../../_static/example-org-vote.png)
 
 **3.3 Quorum**. Unless otherwise stated, a quorum for a vote can be met with the participation of at least 50% of Steering Committee members, and at minimum, 2 participants. For example, in a vote requiring a simple majority, with 10 active Steering Committee members, at least 5 must vote; if 5 vote, there must be 3 affirmative votes to pass. Alternatively, if there are 3 active members, at least 2 must vote; if 2 vote there must be 2 affirmative votes to pass.
 

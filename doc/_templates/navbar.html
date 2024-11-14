@@ -1,0 +1,103 @@
+<nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        {% for item in custom_toc %}
+            {% if item.children %}
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        {{ item.title }}
+                    </button>
+                    <div class="dropdown-menu">
+                        {% for child in item.children %}
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="{{ child.href }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    <a class="nav-link {% if item.href.startswith('http') %}nav-external{% else %}nav-internal{% endif %}" href="{{ item.href }}">
+                        {{ item.title }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
+
+<!-- <nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        {% for item in custom_toc %}
+            {% if item.children %}
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        {{ item.title }}
+                    </button>
+                    <div class="dropdown-menu">
+                        {% for child in item.children %}
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="{{ child.href }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="{{ item.href }}">{{ item.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav> -->
+
+
+<!-- <nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="start.html">Start here</a>
+        </li>
+        <div class="nav-item dropdown">
+            <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">Learn</button>
+            <div class="dropdown-menu">
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="learn/tutorial/index.html">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="learn/talks/index.html">Talks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="learn/faq.html">FAQ</a>
+                </li>
+            </div>
+        </div>
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="community.html">Community</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="contribute.html">Contribute</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+        </li>
+        <div class="nav-item dropdown">
+            <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">About us</button>
+            <div class="dropdown-menu">
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="about/governance/index.html">Governance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="about/roadmap.html">Roadmap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-internal" href="about/funding.html">Funding</a>
+                </li>
+            </div>
+        </div>
+    </ul>
+</nav> -->
