@@ -82,52 +82,9 @@ The first step to working on any source code is to install Git as the source cod
 
 As an external contributor, you do not have permission to submit code directly to any of the repositories. Github offers you to fork the repository, which will create a copy of the repository, on which you will have the right to work freely. Follow [these instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to find out how to fork and clone a repository.
 
-The HoloViz developers rely on [Conda](https://conda.io/docs/intro.html) to manage their virtual environments. We **recommend** you install Conda too to have an experience as close as possible to those of the core developers. To install Conda on any platform, you can [install Miniconda](https://docs.conda.io/en/latest/miniconda.html).
+The HoloViz developers rely on [Pixi](https://pixi.sh/latest), a developer tool that facilitates maintaining all of the holoviz projects. See [](#### Pixi) for more details.
 
-The HoloViz developers rely on [pyctdev](https://github.com/holoviz-dev/pyctdev), a custom developer tool that facilitates maintaining all of the holoviz projects. pyctdev is an extension of the task running tool [doit](https://pydoit.org/). We **recommend** that you install `pyctdev`:
-
-```bash
-conda install -c pyviz/label/dev "pyctdev>0.5.0"
-```
-
-Once `pyctdev` is available and you are in the cloned (e.g. panel) repository, you can create a new virtual environment with the `env_create` *doit* command with the appropriate channels:
-
-```bash
-doit env_create -c channel1 -c channel2 --name=dev-env --python=3.x
-```
-
-Don't forget to activate this environment:
-
-```bash
-conda activate dev-env
-```
-
-To perform an editable install of the project you are working on, including all the dependencies required to run the full unit test suite, run the `develop_install` with the appropriate channels and options:
-
-```bash
-doit develop_install -c channel1 -c channel2 -o tests -o ... -o ...
-```
-
-For example:
-
-```bash
-doit develop_install -c pyviz/label/dev -c conda-forge -o tests -o examples
-```
-
-Depending on the options you have chosen to install (usually `-o tests` for the unit tests, `-o examples` to run the examples notebooks, ...), the following commands will run:
-
-* The unit tests: `doit test_unit.`
-* The examples tests: `doit test_examples.`
-
-```{warning}
-The *options* and *commands* are not standardized across the HoloViz projects. Refer to the project documentation for the exact commands to run.
-```
-
-```{hint}
-The reference sources to find out which commands to run to install the correct dependencies and to execute the tests and other tasks are the **Github Actions Workflows** files that you can find in the `.github` folder of each repository.
-```
-
-At this step, you should have your environment set up, being able to run tests and a clone of the source repository. The next step is to create a branch and start making changes. Before committing these changes, make sure the tests still pass by running them. The HoloViz source codes are stringent concerning styling (e.g., they're not using [black](https://github.com/psf/black)). Try to write code that follows the style of the surrounding code. Once you are done with your changes, you can commit them. It is good practice to break down big changes into smaller chunks, and each chunk has its own commit with a message that summarizes it. Now you can push the branch to your clone and create a *pull request* from your clone to the original repository. This [Github Gist](https://gist.github.com/Chaser324/ce0505fbed06b947d962) describes these GitHub steps in more detail.
+After you have cloned the repo and set up Pixi, the next step is to create a branch and start making changes. Before committing these changes, make sure the tests still pass by running them with `pixi run test-unit` and passes the `lint` with `pixi run lint`. Once you are done with your changes, you can commit them. It is good practice to break down big changes into smaller chunks, and each chunk has its own commit with a message that summarizes it. Now you can push the branch to your clone and create a *pull request* from your clone to the original repository. This [Github Gist](https://gist.github.com/Chaser324/ce0505fbed06b947d962) describes these GitHub steps in more detail.
 
 The *pull request* you make should reference the *issue* you are attempting to close (i.e. `Fixes #issuenumber`) and include a description of the changes you made. Changes affecting the visual properties should include screenshots or GIFs.
 
