@@ -53,7 +53,7 @@ HoloViz users are recommended to ask their usage questions on the [HoloViz Disco
 Answering questions on the HoloViz Discourse Forum, or even just trying to answer some random questions, is a very good way to learn how to use the HoloViz tools.
 ```
 
-Some users also ask questions on [StackOverflow](https://stackoverflow.com/), which isn't much monitored by the HoloViz team, so we would greatly appreciate any help there. 
+Some users also ask questions on [StackOverflow](https://stackoverflow.com/), which isn't much monitored by the HoloViz team, so we would greatly appreciate any help there.
 
 ### Outreach
 
@@ -82,7 +82,7 @@ The first step to working on any source code is to install Git as the source cod
 
 As an external contributor, you do not have permission to submit code directly to any of the repositories. Github offers you to fork the repository, which will create a copy of the repository, on which you will have the right to work freely. Follow [these instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to find out how to fork and clone a repository.
 
-The HoloViz developers rely on [Conda](https://conda.io/docs/intro.html) to manage their virtual environments. We **recommend** you install Conda too to have an experience as close as possible to those of the core developers. To install Conda on any platform, you can [install Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
+The HoloViz developers rely on [Conda](https://conda.io/docs/intro.html) to manage their virtual environments. We **recommend** you install Conda too to have an experience as close as possible to those of the core developers. To install Conda on any platform, you can [install Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 The HoloViz developers rely on [pyctdev](https://github.com/holoviz-dev/pyctdev), a custom developer tool that facilitates maintaining all of the holoviz projects. pyctdev is an extension of the task running tool [doit](https://pydoit.org/). We **recommend** that you install `pyctdev`:
 
@@ -124,7 +124,7 @@ The *options* and *commands* are not standardized across the HoloViz projects. R
 ```
 
 ```{hint}
-The reference sources to find out which commands to run to install the correct dependencies and to execute the tests and other tasks are the **Github Actions Workflows** files that you can find in the `.github` folder of each repository. 
+The reference sources to find out which commands to run to install the correct dependencies and to execute the tests and other tasks are the **Github Actions Workflows** files that you can find in the `.github` folder of each repository.
 ```
 
 At this step, you should have your environment set up, being able to run tests and a clone of the source repository. The next step is to create a branch and start making changes. Before committing these changes, make sure the tests still pass by running them. The HoloViz source codes are stringent concerning styling (e.g., they're not using [black](https://github.com/psf/black)). Try to write code that follows the style of the surrounding code. Once you are done with your changes, you can commit them. It is good practice to break down big changes into smaller chunks, and each chunk has its own commit with a message that summarizes it. Now you can push the branch to your clone and create a *pull request* from your clone to the original repository. This [Github Gist](https://gist.github.com/Chaser324/ce0505fbed06b947d962) describes these GitHub steps in more detail.
@@ -394,6 +394,7 @@ Releasing a new package version is, in practice, very easy:
 2. that tag must be pushed (e.g. `git push origin v1.9.6a1`)
 
 And that's it, as soon as a new tag is pushed, the *Packages* and *Documentation* Github Actions get triggered, and start building the packages and the documentation, and deploy them.
+The two actions are split up into two jobs: `build` and `publish`. For the packaging action, after all packages are built, it will wait to ask for approval before publishing them.
 
 ```{note}
 Version tags must start with a lowercase `v` and have a period in them, e.g. `v2.0`, `v0.9.8` or `v0.1` and may include the [PEP440](https://peps.python.org/pep-0440/) prerelease identifiers of `a` (alpha), `b` (beta) or `rc` (release candidate) allowing tags such as `v2.0.a3`, `v0.9.8.b3` or `v0.1.rc5`.
@@ -450,9 +451,9 @@ Bumping the version of a package depends on the package's nature:
     * Go to the Github repository
     * Click *Releases*
     * Click *Tags*
-    * Click the most recent tag that you just added 
+    * Click the most recent tag that you just added
     * Click *Create a new release*
-    * Add release notes and publish the release 
+    * Add release notes and publish the release
 1. Find the *conda-forge* recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you're not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.
 1. Announce the release (e.g., on Discourse, Discord, Twitter).
 1. If the release is important (e.g., not a bug fix release), it may be worth a blog post.
