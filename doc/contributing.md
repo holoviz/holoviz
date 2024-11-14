@@ -495,8 +495,6 @@ Shared credentials are stored in a 1Password vault. Get in touch with one of the
 
 The HoloViz project maintains a blog at https://blog.holoviz.org/ where new major releases are announced.
 
-The former PyViz-named blog is still alive at http://blog.pyviz.org/.
-
 ##### Twitter
 
 There are four more or less active Twitter accounts:
