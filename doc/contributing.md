@@ -369,16 +369,12 @@ While others are available as subdomains of holoviz.org:
 
 ### Testing
 
-While `pyctdev` acts as the task runner, other tools run the tests. There are four main kinds of tests that a HoloViz project may run:
+There are four main kinds of tests that a HoloViz project may run:
 
-* *Linters*: running programs that check Python source files for errors and styling issues. Most HoloViz projects rely on [Flake8](https://flake8.pycqa.org) and use the `doit test_flakes` command. Some projects may rely on [pre-commit](https://pre-commit.com/) to run the linters on every commit to avoid having the CI fail in linting issues, which are best found locally. Notebooks can also be linted, this is done either by [nbsmoke](https://github.com/holoviz-dev/nbsmoke) or [nbqa](https://nbqa.readthedocs.io/).
-* *Unit tests*: the HoloViz projects rely on [pytest](https://docs.pytest.org/) to run their unit tests, sometimes with some additional pytest plugins. [pytest-cov](https://pytest-cov.readthedocs.io/) usage is pretty standard across the projects, as it provides an easy way to produce coverage reports that can then automatically be uploaded to the [Codecov](https://about.codecov.io/) service. The `doit test_unit` command is usually the one that will run these tests.
-* *Example tests*: the examples tests and the notebooks tests, in which the notebooks found in the `/examples` folder are all executed. Note that their output is not compared with any reference. Instead, the tests only fail if an error is raised while running the notebooks. The projects rely on pytest and either [nbsmoke](https://github.com/holoviz-dev/nbsmoke) or [nbval](https://nbval.readthedocs.io). The `doit test_examples` command is usually the one that will run these tests.
-* *UI tests*: some projects may rely on [Playwright](https://playwright.dev/python/) and [pytest-playwright](https://github.com/microsoft/playwright-pytest) to run tests that check that things get displayed as expected in a browser and those interactions between the client and the backend work as expected. The `doit test_ui` command is usually the one that will run these tests.
-
-```{note}
-We would like not to have to maintain nbsmoke anymore and instead rely on nbqa and nbval.
-```
+* *Linters and Code formatter*: running programs that check Python source files for errors and styling issues. Most HoloViz projects rely on [Ruff](https://docs.astral.sh/ruff) in combination with [pre-commit](https://pre-commit.com/) to run the linters on every commit. You can run lint with `pixi run lint` and the `pre-commit` hook can be installed with `pre-commit run lint-install`.
+* *Unit tests*: the HoloViz projects rely on [pytest](https://docs.pytest.org/) to run their unit tests, sometimes with some additional pytest plugins. The `pixi run test-unit` will run these tests.
+* *Example tests*: the examples tests and the notebooks tests, in which the notebooks found in the `/examples` or `/doc` folder are all executed. Note that their output is not compared with any reference. Instead, the tests only fail if an error is raised while running the notebooks. The projects rely on pytest and [nbval](https://nbval.readthedocs.io). The `pixi run test-example` will run these tests.
+* *UI tests*: some projects may rely on [Playwright](https://playwright.dev/python/) and [pytest-playwright](https://github.com/microsoft/playwright-pytest) to run tests that check that things get displayed as expected in a browser and those interactions between the client and the backend work as expected. The `pixi run test-ui` command will run these tests.
 
 ### Releasing
 
