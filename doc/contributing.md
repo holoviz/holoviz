@@ -122,8 +122,8 @@ The HoloViz group owns a few GitHub organizations:
 
 * [holoviz](https://github.com/holoviz/) is the main one where you are likely to contribute. It hosts the core packages maintained by the group.
 * [holoviz-dev](https://github.com/holoviz-dev/) hosts two main types of repositories:
-    * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `nbsmoke`, `pyctdev`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
-    * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process. 
+    * Packages that support maintaining the core HoloViz packages, including, for instance, `nbsite`, `pyct` and `autover`. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.
+    * Repositories that are only used to host *dev* builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process.
 * [holoviz-topics](https://github.com/holoviz-topics/) hosts repositories that demonstrate concrete usage of the HoloViz tools.
 * [holoviz-demos](https://github.com/holoviz-demos/) hosts some demos, mostly Panel apps. It is meant to be removed.
 * [holoviz-community](https://github.com/holoviz-community/) is a place for the HoloViz community to host repositories that are going to be nicely exposed under the HoloViz umbrella
@@ -145,9 +145,7 @@ In more detail:
     * [jupyter-panel-proxy](https://github.com/holoviz/jupyter-panel-proxy): Jupyter Server Proxy for Panel
 * [holoviz-dev](https://github.com/holoviz-dev/)
     * [nbsite](https://github.com/holoviz/nbsite): Build a tested, sphinx-based website from notebooks
-    * [nbsmoke](https://github.com/holoviz-dev/nbsmoke): Basic notebook checks. Do they run? Do they contain lint?
-    * [pyctdev](https://github.com/holoviz-dev/pyctdev): Python packaging Common Tasks for Developers
-    * [autover](https://github.com/holoviz-dev/autover): Provides consistent and up-to-date version strings for Python packages. 
+    * [autover](https://github.com/holoviz-dev/autover): Provides consistent and up-to-date version strings for Python packages.
     * [pyct](https://github.com/holoviz-dev/pyct): Python packaging Common Tasks
     * [blog](https://github.com/holoviz-dev/blog): The HoloViz blog
     * [status-dashboard](https://github.com/holoviz-dev/status-dashboard): Status Dashboard for HoloViz Project
