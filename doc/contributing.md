@@ -355,17 +355,17 @@ These buckets are managed by @jlstevens and @philippjfr.
 
 Some of the sites have their own domain name:
 
-* datashader.org
-* holoviews.org
-* geoviews.org
+* [datashader.org](https://datashader.org)
+* [holoviews.org](https://holoviews.org)
+* [geoviews.org](https://geoviews.org)
 
 While others are available as subdomains of holoviz.org:
 
-* hvplot.holoviz.org
-* panel.holoviz.org
-* lumen.holoviz.org
-* param.holoviz.org
-* colorcet.holoviz.org
+* [hvplot.holoviz.org](https://hvplot.holoviz.org)
+* [panel.holoviz.org](https://panel.holoviz.org)
+* [lumen.holoviz.org](https://lumen.holoviz.org)
+* [param.holoviz.org](https://param.holoviz.org)
+* [colorcet.holoviz.org](https://colorcet.holoviz.org)
 
 ### Testing
 
