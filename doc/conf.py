@@ -146,7 +146,7 @@ html_context.update({
 })
 
 # Uncomment to turn off notebook execution.
-nb_execution_mode = "off"
+# nb_execution_mode = "off"
 
 nbsite_analytics = {
     'goatcounter_holoviz': True,
