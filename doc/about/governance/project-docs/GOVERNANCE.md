@@ -25,7 +25,7 @@ This project may include the following roles. Additional roles may be adopted an
 For example, a Maintainer decides to call for a vote on a technical issue that did not previously reach consensus. This Maintainer files an issue on the Project repository that clearly details the context, states precisely what an affirmative ("+1") or negative ("-1") vote means in regards to the issue being voted on, tags other Maintainers of the Project by their handle (@...), starts the issue title with "VOTE:", and adds the "vote" tag. This proposing Maintainer also specifies a date by which a votes will be tallied - 1 week beyond the posting date. In this example, 7 Maintainers vote by the deadline, of which 5 vote affirmative, and therefore the issue is considered carried and the issue is closed.
 
 Here is an example for using a GitHub issue for voting:
-![example-vote](../../_static/example-org-vote.png)
+![example-vote](../../../_static/example-org-vote.png)
 
 **2.3. Appeal Process**. Decisions may be appealed by opening an issue and that appeal will be considered by the Maintainers in good faith, who will respond in writing within a reasonable time. If the Maintainers deny the appeal, the appeal may be brought before the Organization Steering Committee, who will determine if the issue falls within their jurisdiction and respond in writing in a reasonable time.
 
