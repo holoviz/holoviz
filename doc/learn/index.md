@@ -4,6 +4,6 @@
 :maxdepth: 2
 
 Presentations <presentations/index>
-Tutorial <tutorial_link>
+Tutorial <tutorial/index>
 Background <background>
 FAQ <FAQ>
