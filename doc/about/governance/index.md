@@ -19,7 +19,8 @@ day-to-day technical management of the Project. Find the governance for other Ho
 repository within the [HoloViz GitHub Organization](https://github.com/holoviz).
 
 
-## Organizational Governance (Applies to the entire HoloViz Organization and all projects)
+## Organizational Governance
+_**Applies to the entire HoloViz Organization and all projects**_
 
 - [CHARTER](org-docs/CHARTER.md)
 - [ANTITRUST](org-docs/ANTITRUST.md)
@@ -27,7 +28,8 @@ repository within the [HoloViz GitHub Organization](https://github.com/holoviz).
 - [STEERING-COMMITTEE](org-docs/STEERING-COMMITTEE.md)
 - [TRADEMARKS](org-docs/TRADEMARKS.md)
 
-## Project Governance (Applies to the HoloViz.org Project repository)
+## Project Governance
+_**Applies to the HoloViz.org Project repository**_
 
 - [CONTRIBUTING](project-docs/CONTRIBUTING.md)
 - [GOVERNANCE](project-docs/GOVERNANCE.md)
