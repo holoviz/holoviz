@@ -41,14 +41,23 @@ _**Applies to the HoloViz.org Project repository**_
 ```{toctree}
 :maxdepth: 2
 :hidden:
-:titlesonly:
+:caption: Organization-Level
 
 org-docs/CHARTER
 org-docs/ANTITRUST
 org-docs/CODE-OF-CONDUCT
 org-docs/STEERING-COMMITTEE
 org-docs/TRADEMARKS
-project-docs/CONTRIBUTING
-project-docs/GOVERNANCE
-project-docs/LICENSE
-project-docs/MEMBERS
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Project-Level
+
+org-docs/CHARTER
+org-docs/ANTITRUST
+org-docs/CODE-OF-CONDUCT
+org-docs/STEERING-COMMITTEE
+org-docs/TRADEMARKS
+```
