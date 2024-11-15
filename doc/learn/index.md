@@ -1,10 +1,10 @@
 # Learn
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 
 :hidden:
 :titlesonly:
 
-Talks <talks/index>
+Presentations <presentations/index>
 Tutorial <tutorial/index>
 Background <background>
