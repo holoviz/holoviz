@@ -8,7 +8,7 @@ If you like HoloViz, please [tweet](http://twitter.com) a screenshot of your lat
 
 There is an active open source community around HoloViz, and contributions from anyone are welcome. Contributions of any sort are valuable, including new documentation, plus bug reports and fixes to code or documentation that might seem trivial (HoloViz is partly about having as many of those ironed out as possible!). Please go ahead and open a [pull request](https://guides.github.com/activities/forking/) or create a [new issue](https://github.com/holoviz/holoviz/issues/new) :)
 
-While the HoloViz team itself maintains a number of packages on [HoloViz's GitHub](https://github.com/holoviz), HoloViz depends on and supports a number of other open-source libraries; for more information, see HoloViz's [detailed background](background.html).
+While the HoloViz team itself maintains a number of packages on [HoloViz's GitHub](https://github.com/holoviz), HoloViz depends on and supports a number of other open-source libraries; for more information, see HoloViz's [detailed background](../learn/background).
 
 The entire HoloViz stack is open source, free for commercial and non-commercial use.
 
