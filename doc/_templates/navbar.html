@@ -10,7 +10,7 @@
                     <div class="dropdown-menu">
                         {% for child in item.children %}
                             <li class="nav-item">
-                                <a class="nav-link nav-internal" href="{{ child.href }}">{{ child.title }}</a>
+                                <a class="nav-link nav-internal" href="{{ get_relative_uri(pagename, child.href.rstrip('.html')) }}">{{ child.title }}</a>
                             </li>
                         {% endfor %}
                     </div>
@@ -18,9 +18,11 @@
             {% else %}
                 <!-- Regular link for items without children -->
                 <li class="nav-item">
-                    <a class="nav-link {% if item.href.startswith('http') %}nav-external{% else %}nav-internal{% endif %}" href="{{ item.href }}">
-                        {{ item.title }}
-                    </a>
+                    {% if item.href.startswith('http') %}
+                    <a class="nav-link nav-external" href="{{ item.href }}">{{ item.title }}</a>
+                    {% else %}
+                    <a class="nav-link nav-internal" href="{{ get_relative_uri(pagename, item.href.rstrip('.html')) }}">{{ item.title }}</a>
+                    {% endif %}
                 </li>
             {% endif %}
         {% endfor %}

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
 
+from nbsite.shared_conf import setup as nbsite_setup
 from nbsite.shared_conf import *
 
 from bs4 import BeautifulSoup
@@ -14,20 +15,13 @@ from sphinx import addnodes
 #         # Add structured TOC to the template context
 #         context['custom_toc'] = parse_toc_html(rendered_toc)
 
-import pprint
 
 def html_page_context(app, pagename, templatename, context, doctree):
-    # Only generate TOC for the 'index' page
-    if pagename == "index":
-        rendered_toc = build_and_render_full_toc(app.builder)
-        parsed_toc = parse_toc_html(rendered_toc)
-        
-        # Print the structure to verify it's correct
-        print("Custom TOC Structure:")
-        pprint.pprint(parsed_toc)
-        
-        # Add structured TOC to the template context
-        context['custom_toc'] = parsed_toc
+    parsed_toc = get_parsed_toc_from_builder(app.builder)
+
+    # Add structured TOC to the template context
+    context['custom_toc'] = parsed_toc
+    context['get_relative_uri'] = app.builder.get_relative_uri
 
 
 def build_and_render_full_toc(builder):
@@ -88,8 +82,17 @@ def parse_toc_html(toc_html):
         print(f"Failed to parse TOC: {exc}")
         return []
 
-def setup(app):
-    app.connect('html-page-context', html_page_context)
+
+def get_parsed_toc_from_builder(builder):
+    rendered_toc = build_and_render_full_toc(builder)
+    parsed_toc = parse_toc_html(rendered_toc)
+            
+    # Print the structure to verify it's correct
+    # import pprint
+    # print("Custom TOC Structure:")
+    # pprint.pprint(parsed_toc)
+
+    return parsed_toc
 
 
 project = "HoloViz"
@@ -151,3 +154,10 @@ html_context.update({
 nbsite_analytics = {
     'goatcounter_holoviz': True,
 }
+
+
+def setup(app):
+    # Don't forget to call nbsite setup otherwise things like
+    # the NotebookDirective aren't registered.
+    nbsite_setup(app)
+    app.connect('html-page-context', html_page_context)
