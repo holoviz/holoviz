@@ -155,6 +155,14 @@ nbsite_analytics = {
     'goatcounter_holoviz': True,
 }
 
+rediraffe_redirects = {
+    # When the navbar was reworked
+    'background': 'learn/background',
+    'talks': 'learn/presentations/Overview',
+    'contributing': 'contribute',
+    'roadmap': 'about/roadmap',
+    'FAQ': 'learn/FAQ',
+}
 
 def setup(app):
     # Don't forget to call nbsite setup otherwise things like
