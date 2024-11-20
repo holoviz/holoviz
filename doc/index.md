@@ -6,7 +6,7 @@ Welcome to HoloViz! HoloViz is a coordinated effort to make browser-based data v
 HoloViz provides:
 
 - High-level tools that make it easier to apply Python plotting libraries to your data.
-- A comprehensive [tutorial](learn/tutorial/index) showing how to use the available tools together to do a wide range of different tasks.
+- A comprehensive [tutorial](tutorial/index) showing how to use the available tools together to do a wide range of different tasks.
 - Sample datasets to work with.
 
 ## HoloViz-maintained libraries
@@ -35,7 +35,7 @@ HoloViz provides a set of Python packages that make visualization easier, more a
 - [Param](https://param.holoviz.org): to create declarative user-configurable objects.
 - [Colorcet](https://colorcet.holoviz.org): for perceptually uniform colormaps.
 
-Not sure where to start? Try [hvPlot](https://hvplot.holoviz.org) for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. Or check out [Panel](https://panel.holoviz.org) if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the [tutorial](learn/tutorial/index) to see *all* the things you can do!
+Not sure where to start? Try [hvPlot](https://hvplot.holoviz.org) for quick and easy one-line plots of your Pandas, Xarray, Dask, and other data types. Or check out [Panel](https://panel.holoviz.org) if you already have visualizations you want to turn into apps or shareable dashboards. Or just work your way through the [tutorial](tutorial/index) to see *all* the things you can do!
 
 ## Building on the SciPy/PyData ecosystem
 
@@ -55,7 +55,7 @@ HoloViz tools provide extensive support for [Jupyter](https://jupyter.org) noteb
 
 ## Getting Started
 
-The [Background](learn/background) page explains the HoloViz approach in more detail, including how these tools fit together. Or you can just skim the material in the [Tutorial](learn/tutorial/index) online, to get an idea of what is covered by these tools. If what you see looks relevant to you, you can work through the tutorial on your own system. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
+The [Background](learn/background) page explains the HoloViz approach in more detail, including how these tools fit together. Or you can just skim the material in the [Tutorial](tutorial/index) online, to get an idea of what is covered by these tools. If what you see looks relevant to you, you can work through the tutorial on your own system. You'll then have simple-to-adapt starting points for solving your own visualization problems using Python.
 
 ```{toctree}
 :maxdepth: 2
@@ -63,8 +63,10 @@ The [Background](learn/background) page explains the HoloViz approach in more de
 :titlesonly:
 
 Learn <learn/index>
+Tutorial <tutorial/index>
 Examples <https://examples.holoviz.org/>
 Community <community>
 Contribute <contribute>
 Blog <https://blog.holoviz.org/>
 About <about/index>
+```
