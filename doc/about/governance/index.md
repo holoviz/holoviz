@@ -55,9 +55,8 @@ org-docs/TRADEMARKS
 :hidden:
 :caption: Project-Level
 
-org-docs/CHARTER
-org-docs/ANTITRUST
-org-docs/CODE-OF-CONDUCT
-org-docs/STEERING-COMMITTEE
-org-docs/TRADEMARKS
+project-docs/CONTRIBUTING
+project-docs/GOVERNANCE
+project-docs/LICENSE
+project-docs/MEMBERS
 ```

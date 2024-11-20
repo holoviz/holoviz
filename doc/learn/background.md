@@ -61,4 +61,4 @@ Explore these demos to see what's possible with HoloViz tools:
 
 ## Getting Started
 
-Browse the already-run versions of the HoloViz [tutorials](tutorial/index) to see what they cover. Then run the tutorials yourself and start exploring!
+Browse the already-run versions of the HoloViz [tutorials](../tutorial/index) to see what they cover. Then run the tutorials yourself and start exploring!
