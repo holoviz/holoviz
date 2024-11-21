@@ -18,6 +18,7 @@ The entire HoloViz stack is open source, free for commercial and non-commercial 
 :hidden:
 :titlesonly:
 
+About Us <self>
 Governance <governance/index>
 HEPs <heps/index>
 Roadmap <roadmap>
