@@ -19,12 +19,17 @@ Tutorial
     Overview <Overview>
     Plotting <Plotting>
     Composing Plots <Composing_Plots>
+    Exercise 1 <exercises/Plotting>
     Interlinked Plots <Interlinked_Plots>
+    Exercise 2 <exercises/Linking_Plots>
     Interactive Pipelines <Interactive_Pipelines>
+    Exercise 3 <exercises/Building_Pipelines>
     Dashboards <Dashboards>
+    Exercise 4 <exercises/Building_a_Dashboard>
     Custom Interactivity <Custom_Interactivity>
     Custom Dashboards <Custom_Dashboards>
     Advanced Dashboards <Advanced_Dashboards>
+    Exercise 5 <exercises/Advanced_Dashboarding>
 
 
 -------
