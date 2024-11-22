@@ -164,6 +164,10 @@ rediraffe_redirects = {
     'FAQ': 'learn/FAQ',
 }
 
+# Customize as its default is for all the other HoloViz sites.
+nbsite_hv_sidebar_dropdown['dropdown_value'] = {'text': 'HoloViz Sites'}
+del nbsite_hv_sidebar_dropdown['others']
+
 def setup(app):
     # Don't forget to call nbsite setup otherwise things like
     # the NotebookDirective aren't registered.
