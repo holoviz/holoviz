@@ -26,7 +26,7 @@ jobs:
     name: Run pre-commit hooks
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: "1"
       - name: set PY
@@ -73,7 +73,7 @@ jobs:
           echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
           echo "fdatetime=$(date +%Y%m%d-%H%M)" >> $GITHUB_OUTPUT
       - name: install anaconda-project
-        run: conda install "anaconda-project>=0.10.1"
+        run: conda install "anaconda-project>=0.11"
       - name: prepare
         run: anaconda-project prepare --directory examples
       - name: conda list
