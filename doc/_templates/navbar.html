@@ -1,0 +1,30 @@
+<nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        {% for item in custom_toc %}
+            {% if item.children %}
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        {{ item.title }}
+                    </button>
+                    <div class="dropdown-menu">
+                        {% for child in item.children %}
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="{{ get_relative_uri(pagename, child.href.rstrip('.html')) }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    {% if item.href.startswith('http') %}
+                    <a class="nav-link nav-external" href="{{ item.href }}">{{ item.title }}</a>
+                    {% else %}
+                    <a class="nav-link nav-internal" href="{{ get_relative_uri(pagename, item.href.rstrip('.html')) }}">{{ item.title }}</a>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
