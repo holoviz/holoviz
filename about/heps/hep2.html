@@ -1,0 +1,1375 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HEP 2: Release and deprecation policies &#8212; HoloViz 0.17.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsite.css?v=d9d93254" />
+    <link rel="stylesheet" type="text/css" href="../../_static/notebook.css?v=19946987" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css?v=0a3248cd" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alert.css?v=c26666be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/dataframe.css?v=a0f274c1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/scroller.css?v=2dcde208" />
+    <link rel="stylesheet" type="text/css" href="../../_static/hv-sidebar-dropdown.css?v=3e2b0152" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=f04cce2a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script async="async" data-goatcounter="https://holoviz.goatcounter.com/count" src="../../_static/js/goatcounter.js?v=f53f84b8"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'about/heps/hep2';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HoloViz Roadmap, as of 11/2024" href="../roadmap.html" />
+    <link rel="prev" title="HEP 1 - Python Version Support" href="hep1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="2024-11-22"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/holoviz-logo-unstacked.svg" class="logo__image only-light" alt="HoloViz 0.17.4 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="HoloViz 0.17.4 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../../community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../../contribute.html">Contribute</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../../community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../../contribute.html">Contribute</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><!-- Adapted from sidebar-nav-bs.html (1.15.2) with the following changes
+
+  - Commented out the tag that adds the "Section Navigation" title
+  - Call generate_toctree_html with startdepth=0
+
+Please update this file when required when bumping the max pin of pydata-sphinx-theme.
+-->
+
+
+<nav class="bd-docs-nav bd-links"
+      aria-label="Section Navigation">
+  <!-- <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p> -->
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learn/index.html">Learn</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../learn/presentations/index.html">Presentations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../learn/presentations/Overview.html">HoloViz Overview</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learn/FAQ.html">FAQ</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/index.html">Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/exercises/Plotting.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/exercises/Linking_Plots.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/exercises/Building_Pipelines.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Interactivity.html">Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Custom_Dashboards.html">Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">About</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html">About Us</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../governance/index.html">Governance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../governance/org-docs/CHARTER.html">Charter for the HoloViz Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/org-docs/ANTITRUST.html">Antitrust Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/org-docs/CODE-OF-CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/org-docs/STEERING-COMMITTEE.html">Steering Committee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/org-docs/TRADEMARKS.html">Trademarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/project-docs/CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/project-docs/GOVERNANCE.html">Governance Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/project-docs/LICENSE.html">License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../governance/project-docs/MEMBERS.html">Maintainers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">HEPs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hep0.html">HEP 0 - HEP Purpose, Policy, and Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hep1.html">HEP 1 - Python Version Support</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">HEP 2: Release and deprecation policies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../funding.html">Funding</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div class="hv-sb-dd">
+  <div class="btn-group">
+    
+    <span class="btn hv-sb-dd-value">HoloViz Sites</span>
+    
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden"></span>
+    </button>
+    <ul class="dropdown-menu">
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone servable dashboard">Panel<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://hvplot.holoviz.org" target="_blank" title="Quickly return interactive HoloViews, GeoViews, or Panel objects from Pandas, Xarray, or other data structures">hvPlot<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://holoviews.org" target="_blank" title="Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications">HoloViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://geoviews.org" target="_blank" title="Visualizable geographic data that that can be mixed and matched with HoloViews objects">GeoViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://datashader.org" target="_blank" title="Rasterizing huge datasets quickly as fixed-size images">Datashader<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Make your Python code clearer and more reliable by declaring Parameters">Param<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://lumen.holoviz.org" target="_blank" title="Framework for visual analytics that allows users to build data-driven dashboards from a simple YAML specification">Lumen<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://colorcet.holoviz.org" target="_blank" title="A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries">Colorcet<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+</div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">About Us</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">HoloViz Enhancement Proposals (HEPs)</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">HEP 2:...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="hep-2-release-and-deprecation-policies">
+<h1>HEP 2: Release and deprecation policies<a class="headerlink" href="#hep-2-release-and-deprecation-policies" title="Link to this heading">#</a></h1>
+<table>
+<tr><td> Identifier </td><td> HEP 2 </td>
+<tr><td> Title </td><td> Release and deprecation policies </td>
+<tr><td> Status </td><td> Accepted </td></tr>
+<tr><td> Author(s) </td><td> Maxime Liquet </td></tr>
+<tr><td> Created </td><td> May 21, 2024 </td></tr>
+<tr><td> Updated </td><td> - </td></tr>
+<tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/388 </td></tr>
+<tr><td> Implementation </td><td> NA </td></tr>
+</table>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This HEP outlines unified release and deprecation policies for the HoloViz Projects. It addresses key questions about the lifecycle of features, including deprecation and removal timelines. The HEP formalizes existing release procedures and introduces well-defined deprecation guidelines to streamline long-term maintenance and decision-making processes, aiming for consistency across projects and an improved user experience.</p>
+</section>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>The Projects already follow a relatively consistent procedure when it comes to releases, which this HEP formalizes. However, the Projects have applied various approaches for their deprecation cycle, and the lack of clear guidelines has sometimes led to long and unproductive discussions. The HEP aims to improve the situation by introducing new and well-defined guidelines for releases and deprecations.</p>
+<p>In particular, making it easier for Projects to deprecate features is <strong>key to their long-term maintenance</strong>.  Indeed, the goal of deprecating a feature is often to reduce the long-term maintenance burden of a Project. However, the act itself of deprecating a feature - the deprecation cycle - is a process that requires many actions be undertaken by the maintainers of a Project, starting from when they begin discussing the deprecation to when they remove the deprecated feature, which will potentially be done by other maintainers multiple months or years later. Given the complexity of the process and its somewhat remote benefits, without clear guidelines it is easy for maintainers to make mistakes, potentially affecting the user experience.</p>
+<p>At the time of writing this HEP, the Projects do not have a clear plan for their deprecation cycle. They also often adopt non-standard practices. For instance, many Projects display deprecation warnings using the logging API provided by Param (<code class="docutils literal notranslate"><span class="pre">param.main.param.warning(...)</span></code>) that builds on the standard library’s logging module, while elsewhere in the Python ecosystem it is much more common to use the <code class="docutils literal notranslate"><span class="pre">warn</span></code> function from the standard library’s <code class="docutils literal notranslate"><span class="pre">warnings</span></code> module. With the <code class="docutils literal notranslate"><span class="pre">warn</span></code> function, users can easily control the behavior of the warnings (e.g. hide them, turn them into errors).</p>
+<p>The overall goal of this HEP is to ensure that these policies are <strong>consistently applied across the Projects</strong>, which will help provide a <strong>consistent user experience</strong> and <strong>help contributors and maintainers make decisions</strong>. We also aim to adopt <strong>standard practices</strong>.</p>
+</section>
+<section id="specification">
+<h2>Specification<a class="headerlink" href="#specification" title="Link to this heading">#</a></h2>
+<section id="release-policy">
+<h3>Release policy<a class="headerlink" href="#release-policy" title="Link to this heading">#</a></h3>
+<section id="versioning">
+<h4>Versioning<a class="headerlink" href="#versioning" title="Link to this heading">#</a></h4>
+<p>The Projects deliver final releases with a version number of the form <code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">1.2.3</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">patch</span></code> releases (e.g. 0.1.<strong>0</strong> -&gt; 0.1.<strong>1</strong>) should never intentionally and rarely, if ever, unintentionally break API or remove functionality. Should be safe to upgrade to the latest patch release if you encounter any problems.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minor</span></code> releases (e.g. 0.<strong>1</strong>.1 -&gt; 0.<strong>2</strong>.0) should not have API changes that affect most users. API changes in minor releases should be rare, but are not unheard of, particularly for recently added functionality whose API is still being refined, or for bugs found in older code that can’t be fixed without changing API at least slightly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">major</span></code> releases (e.g. <strong>0</strong>.2.0 -&gt; <strong>1</strong>.0.0)  will typically break some APIs and/or remove functionality, but they will also often include significant new functionality to motivate users to update their code. Major breaking API changes should be postponed to a major release and (ideally) paired with significant user-visible advantages.</p></li>
+</ul>
+<p>While this versioning scheme was inspired by <a class="reference external" href="https://semver.org/">Semantic Versioning</a> (<em>SemVer</em>), as for many other Python projects, <strong>the HoloViz Projects do not strictly follow SemVer</strong> in that incompatible (aka breaking) API changes are not limited to <code class="docutils literal notranslate"><span class="pre">major</span></code> releases. The HoloViz versioning scheme is in fact more accurately captured by the newly coined <a class="reference external" href="https://jacobtomlinson.dev/effver/">Intended Effort Versioning</a> (<em>EffVer</em> for short) scheme.</p>
+<p>The Projects can deliver three types of pre-releases / development versions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">1.2.3a1</span></code>): Projects can deliver alpha releases for users to benefit from and/or test bug fixes and new features, at any point in the development phase of a new version. alpha releases are common across the Projects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beta</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">1.2.3b1</span></code>): Projects can deliver beta releases for the same reasons, except they indicate the project is in a more advanced development phase of a new version. beta releases are not common across the Projects. They are more likely to be useful when a major release is in development, to progressively deliver large new features and API breaking changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">release</span> <span class="pre">candidate</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">1.2.3rc1</span></code>): Projects must deliver at least one release candidate version before the final release and Projects should not add new features between release candidates. There is no expectation from Projects to announce their release candidates to a wide audience or to wait some time before making a final release. For major or significant minor releases, getting wider feedback in this way before release is encouraged.</p></li>
+</ul>
+</section>
+<section id="supported-versions">
+<h4>Supported versions<a class="headerlink" href="#supported-versions" title="Link to this heading">#</a></h4>
+<p>Aside from certain exceptional cases (such as major security vulnerabilities), the Projects are not expected to backport changes to previous major or minor releases.</p>
+</section>
+<section id="distribution">
+<h4>Distribution<a class="headerlink" href="#distribution" title="Link to this heading">#</a></h4>
+<p>HoloViz release managers are responsible for distributing the Projects on these platforms:</p>
+<ul class="simple">
+<li><p>Pre-releases are distributed on <a class="reference external" href="https://pypi.org">PyPI</a> and on the <em>pyviz/label/dev</em> channel of <a class="reference external" href="https://anaconda.org">Anaconda.org</a>.</p></li>
+<li><p>Final versions are distributed on <a class="reference external" href="https://pypi.org">PyPI</a>, and on the  <em>conda-forge</em> and <em>pyviz</em> channels of <a class="reference external" href="https://anaconda.org">Anaconda.org</a>, and (in many cases) on the <em>main</em> channel as well.</p></li>
+<li><p>Release candidates before a major release and all final releases are distributed as Github releases.</p></li>
+</ul>
+</section>
+<section id="release-cadence">
+<h4>Release cadence<a class="headerlink" href="#release-cadence" title="Link to this heading">#</a></h4>
+<p>The Projects have not adopted a regular release cadence; a new release happens whenever maintainers find it is appropriate. A Project is free to adopt a regular release cadence.</p>
+<p>Major regressions in a release should be fixed and released in a new patch version as soon as possible.</p>
+</section>
+</section>
+<section id="backwards-compatibility">
+<h3>Backwards compatibility<a class="headerlink" href="#backwards-compatibility" title="Link to this heading">#</a></h3>
+<p>The HoloViz Projects serve different purposes in the ecosystem. Some are more foundational and have been in place for a long time, for instance, <a class="reference external" href="https://github.com/holoviz/colorcet">Colorcet</a> or <a class="reference external" href="https://github.com/holoviz/param">Param</a>. Given their position, these Projects should be treated with extra care when it comes to backwards compatibility. For instance, maintainers of these Projects should favor making breaking changes in major releases and adopting longer deprecation periods. On the other hand, some Projects are newer and have an API that is still being gradually refined (e.g. <a class="reference external" href="https://github.com/holoviz/lumen">Lumen</a>). These Projects are not expected to be as stable, and will change much more quickly.</p>
+<p>Overall, the HoloViz Projects are known to be stable and their users have built this expectation. The functionalities they provide are generally not moved or removed lightly. Maintainers should aim to keep the Projects stable; moving or removing a feature from a code base <strong>must</strong> be motivated, in particular when it is done outside of a major release.</p>
+</section>
+<section id="deprecation-policy">
+<h3>Deprecation policy<a class="headerlink" href="#deprecation-policy" title="Link to this heading">#</a></h3>
+<p>The deprecation policy applies to what each Project considers to be its user-facing public API.</p>
+<section id="deprecation-cycle-guidelines">
+<h4>Deprecation cycle guidelines<a class="headerlink" href="#deprecation-cycle-guidelines" title="Link to this heading">#</a></h4>
+<p>The following guidelines are meant to be consumed by maintainers of the Projects, who can use them as templates in PRs or while preparing a release. Note that while the goal of the HEP is to enforce a set of rules to ensure a more consistent deprecation cycle across the Projects, there will always be exceptions to the rules that this HEP does not prevent.</p>
+<ol class="arabic simple">
+<li><p>Before implementing a deprecation, maintainers:</p></li>
+</ol>
+<ul class="simple">
+<li><p>[ ] <strong>Must</strong> motivate the best they can why the feature is deprecated (e.g. old and unused API) in an issue or in the <em>Pull Request</em> (PR) deprecating the feature.</p></li>
+<li><p>[ ] <strong>Must</strong> reach a consensus among the maintainers of the Project on the deprecation.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Maintainers have to make sure that their users are well informed of the deprecation. They <strong>must</strong> implement the deprecation in the following way:</p></li>
+</ol>
+<ul>
+<li><p>[ ] Implement a programmatic warning; if not applicable the PR deprecating the feature <strong>must</strong> clearly explain why.</p>
+<ul>
+<li><p>The warning <strong>must</strong> be emitted using one or a combination of these two utilities:</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">deprecated</span></code> decorator added in Python 3.13 (<a class="reference external" href="https://peps.python.org/pep-0702/">PEP 702</a>) to the <code class="docutils literal notranslate"><span class="pre">warnings</span></code> module, and backported to previous Python versions via the <a class="reference external" href="https://github.com/python/typing_extensions">typing_extensions</a> package, can be used to mark <em>functions</em>, <em>classes</em>, and <em>overloads</em> as deprecated. This decoration has two features:</p>
+<ol class="arabic simple">
+<li><p>It enables <em>static type</em> checkers to warn when they encounter usage of an object decorated with <code class="docutils literal notranslate"><span class="pre">&#64;deprecated</span></code>. This comes with various benefits, for example, <a class="reference external" href="https://en.wikipedia.org/wiki/Language_Server_Protocol">LSP</a> (like pylance in VSCode) users will see the deprecated objects crossed out in their code.</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">category</span></code> is <strong>not set to <code class="docutils literal notranslate"><span class="pre">None</span></code></strong> (default is <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>), a <em>run-time</em> warning is also emitted.</p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;deprecated</span></code> decorator should be used when possible, in combination with <code class="docutils literal notranslate"><span class="pre">warnings.warn</span></code> when <code class="docutils literal notranslate"><span class="pre">category</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">deprecated</span>
+
+<span class="nd">@deprecated</span><span class="p">(</span>
+  <span class="s2">&quot;Function foo is deprecated since version 1.1.1 and will be removed in a future release, use bar instead.&quot;</span><span class="p">,</span>
+  <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">warn</span></code> function from the <code class="docutils literal notranslate"><span class="pre">warnings</span></code> only emits a run-time warning. It is however more versatile than <code class="docutils literal notranslate"><span class="pre">&#64;deprecated</span></code> and can be used, for example, to deprecate a keyword parameter.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="n">warn</span><span class="p">(</span>
+    <span class="s2">&quot;The keyword parameter `b` of function foo is deprecated since version 1.1.1 and will be removed in a future release.&quot;</span><span class="p">,</span>
+    <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+  <span class="p">)</span>
+  <span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>The warning message:</p>
+<ul class="simple">
+<li><p><strong>Must</strong> indicate that the feature is deprecated and is going to be removed in a future version.</p></li>
+<li><p><strong>Must</strong> suggest replacement APIs, if applicable.</p></li>
+<li><p>Can indicate in which version the feature was deprecated.</p></li>
+<li><p>Can indicate before which version the feature is going to be removed. However, maintainers should ensure that the deprecation period (see below) is not going to be too short, and that no obsolete warning will be released (e.g. feature announced to be removed in version 1.1 but is still present in 1.1).</p></li>
+</ul>
+</li>
+<li><p>The warning type:</p>
+<ul>
+<li><p><strong>Must</strong> be a subclass of <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>, <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code>, or <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code>.</p></li>
+<li><p><strong>Must</strong> be defined based on this approach (see the Appendix for more details):</p>
+<ol class="arabic simple">
+<li><p>Start by emitting a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>, to inform Library Developers, and some Data Analysts.</p></li>
+<li><p>After a few months, upgrade to a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code>, to inform all users.</p></li>
+</ol>
+<p>Exceptions are allowed but should in practice be very rare:</p>
+<ul class="simple">
+<li><p>Start by emitting a <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code> for deprecations that might be reverted or are expected to be extremely noisy.</p></li>
+<li><p>Don’t upgrade to a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> when the feature removed is meant for Library Developers only.</p></li>
+<li><p>Emit directly a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> when the feature removed is meant for Data Analysts only.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stacklevel</span></code>, or <code class="docutils literal notranslate"><span class="pre">skip_file_prefixes</span></code> starting from Python 3.12, <strong>must</strong> be set when calling <code class="docutils literal notranslate"><span class="pre">warnings.warn</span></code> so the warning message references the right deprecated code line. Projects can implement a utility like the private Pandas’ function <a class="reference external" href="https://github.com/pandas-dev/pandas/blob/b8a4691647a8850d681409c5dd35a12726cd94a1/pandas/util/_exceptions.py#L34"><code class="docutils literal notranslate"><span class="pre">find_stack_level</span></code></a> to automatically infer the right <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> number. Python 3.12 added the <code class="docutils literal notranslate"><span class="pre">skip_file_prefixes</span></code> to <code class="docutils literal notranslate"><span class="pre">warnings.warn</span></code> that could be used in place of setting <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> manually or with <code class="docutils literal notranslate"><span class="pre">find_stack_level</span></code>, with e.g. <code class="docutils literal notranslate"><span class="pre">skip_file_prefixes=os.path.dirname(importlib.util.find_spec(&lt;package_name&gt;).origin)</span></code>.</p></li>
+</ul>
+</li>
+<li><p>[ ] Docstring (when applicable): the docstring of the deprecated feature <strong>must</strong> be updated to mention the deprecation. The <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-deprecated">deprecated</a> Sphinx directive should be used when available</p></li>
+<li><p>[ ] Documentation: all usage of the deprecated feature <strong>must</strong> be removed from the documentation, except from the section that serves as the reference API. Special cases (e.g. major API change) will need extra documentation. When the deprecation involves the user having to change their code in a significant way (typically in a major release), maintainers should consider writing a migration guide.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>When the deprecation is fully implemented, maintainers:</p></li>
+</ol>
+<ul class="simple">
+<li><p>[ ] <strong>Must</strong> make sure that the PR deprecating the feature is approved by at least another maintainer, who should check that the approach above has been followed.</p></li>
+<li><p>[ ] <strong>Must</strong> close all the open issues and PRs associated with the deprecated feature.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>When releasing the deprecation, maintainers:</p></li>
+</ol>
+<ul class="simple">
+<li><p>[ ] <strong>Must</strong> include it in a major or minor release, not in a patch release.</p></li>
+<li><p>[ ] <strong>Must</strong> list the deprecated feature in the release notes.</p></li>
+<li><p>[ ] Are encouraged to list the Project’s active deprecations (e.g. on the [website](https://github.com/holoviz/param/pull/922, in an <em>Issue</em>)) with enough information to infer when these deprecated features can be removed from the code base, and check this listing regularly so as not to miss the opportunity to remove a deprecated feature.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>When removing the deprecated feature, maintainers:</p></li>
+</ol>
+<ul class="simple">
+<li><p>[ ] <strong>Must</strong> ensure the removal is not made <em>too soon</em>, to let the maximum number of users find out about the deprecation. The recommendation is to observe a <strong>minimum period of 6 months</strong> between the release of the deprecation (a minimum period has been chosen in favor of a number of releases as no Project has adopted a regular release cadence).</p></li>
+<li><p>[ ] <strong>Must</strong> ensure the warning was programmatically emitted at a level sufficient enough for users to see it.</p></li>
+<li><p>[ ] <strong>Must</strong> include the change in a major or minor release, not in a patch release.</p></li>
+<li><p>[ ] <strong>Must</strong> remove it from the code base and documentation.</p></li>
+<li><p>[ ] <strong>Must</strong> mention the removal in the release notes.</p></li>
+<li><p>[ ] <strong>Must</strong> close all open related issues and PRs.</p></li>
+</ul>
+</section>
+<section id="test-suite-guidelines">
+<h4>Test suite guidelines<a class="headerlink" href="#test-suite-guidelines" title="Link to this heading">#</a></h4>
+<p>The Projects <strong>must</strong> be set up so that their test suite fails when they trigger deprecation warnings emitted by other HoloViz projects.</p>
+</section>
+</section>
+</section>
+<section id="appendix-detour-on-python-warnings-applied-to-holoviz">
+<h2>Appendix: Detour on Python warnings applied to HoloViz<a class="headerlink" href="#appendix-detour-on-python-warnings-applied-to-holoviz" title="Link to this heading">#</a></h2>
+<section id="warning-types">
+<h3>Warning types<a class="headerlink" href="#warning-types" title="Link to this heading">#</a></h3>
+<p>Python defines the following <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warning-categories">warning types</a>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></p></td>
+<td><p>Base category for warnings about deprecated features when those warnings are intended for other Python developers (ignored by default, unless triggered by code in <code class="docutils literal notranslate"><span class="pre">__main__</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code></p></td>
+<td><p>Base category for warnings about deprecated features when those warnings are intended for end users of applications that are written in Python.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code></p></td>
+<td><p>Base category for warnings about features that will be deprecated in the future (ignored by default).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The warnings defined to be used when deprecating a feature are <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>, <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code>, and <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code>.</p>
+</section>
+<section id="warnings-filters-and-stacklevel">
+<h3>Warnings filters and <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code><a class="headerlink" href="#warnings-filters-and-stacklevel" title="Link to this heading">#</a></h3>
+<p>Python provides the <code class="docutils literal notranslate"><span class="pre">warnings</span></code> module whose <code class="docutils literal notranslate"><span class="pre">warn</span></code> function is usually called by developers to issue warnings. These warnings can be filtered by users when running some code. The default warning filter has the following entries (in order of precedence):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="p">::</span><span class="ne">DeprecationWarning</span><span class="p">:</span><span class="n">__main__</span>
+<span class="n">ignore</span><span class="p">::</span><span class="ne">DeprecationWarning</span>
+<span class="n">ignore</span><span class="p">::</span><span class="ne">PendingDeprecationWarning</span>
+<span class="n">ignore</span><span class="p">::</span><span class="ne">ImportWarning</span>
+<span class="n">ignore</span><span class="p">::</span><span class="ne">ResourceWarning</span>
+</pre></div>
+</div>
+<p>Note that the default filters can be overriden by setting the <code class="docutils literal notranslate"><span class="pre">-W</span></code> flag when calling the <code class="docutils literal notranslate"><span class="pre">python</span></code> executable or via the <code class="docutils literal notranslate"><span class="pre">PYTHONWARNINGS</span></code> environment variable.</p>
+<p>The default filters imply that in a regular context <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code> will not be seen by the user, while <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> will always be seen. <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> is treated specially; warnings of these types are displayed only if <code class="docutils literal notranslate"><span class="pre">warn</span></code> is called by code located in the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> namespace and if <code class="docutils literal notranslate"><span class="pre">warn</span></code> is configured to emit the warning in the <code class="docutils literal notranslate"><span class="pre">__main__</span></code> namespace, the latter depending on the value of <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">warnings.warn</span></code> specifies how many levels of the call stack to skip when displaying the warning message, helping to identify the actual source of the warning in the code. Its default value is <code class="docutils literal notranslate"><span class="pre">1</span></code>, meaning that no level is skipped. Let’s see how it works with a few examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mod1.py</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The function foo is deprecated.&#39;</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Executing this script displays:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>❯ python3 foo.py
+/private/tmp/mod1.py:4: UserWarning: The function foo is deprecated.
+  warnings.warn(&#39;The function foo is deprecated.&#39;)
+</pre></div>
+</div>
+<p>While this doesn’t look too bad, this is in fact far from being ideal as the user doesn’t know from where <code class="docutils literal notranslate"><span class="pre">foo</span></code> was called from (it’s trivial in this example, far less in large code bases!). The correct value for <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> in this case would be <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mod1.py</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The function foo is deprecated.&#39;</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Which displays the line where <code class="docutils literal notranslate"><span class="pre">foo</span></code> is called, making it a lot easier for the user to update their code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mod1</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">The</span> <span class="n">function</span> <span class="n">foo</span> <span class="ow">is</span> <span class="n">deprecated</span><span class="o">.</span>
+  <span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Let’s now look at an example that will help us better understand when <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s are displayed or not:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mod1.py</span>
+<span class="kn">from</span> <span class="nn">mod2</span> <span class="kn">import</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Call top:&#39;</span><span class="p">)</span>
+<span class="n">top</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Call bottom:&#39;</span><span class="p">)</span>
+<span class="n">bottom</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># mod2.py</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="k">def</span> <span class="nf">top</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">bottom</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">bottom</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;bottom is deprecated&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We run this code with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mod1.py</span></code> which displays:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Call</span> <span class="n">top</span><span class="p">:</span>
+
+<span class="n">Call</span> <span class="n">bottom</span><span class="p">:</span>
+<span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mod1</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span> <span class="ne">DeprecationWarning</span><span class="p">:</span> <span class="n">bottom</span> <span class="ow">is</span> <span class="n">deprecated</span>
+  <span class="n">bottom</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Before diving into what happens line by line, note that <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> is set to <code class="docutils literal notranslate"><span class="pre">2</span></code> in the <code class="docutils literal notranslate"><span class="pre">bottom</span></code> function. This means that the warning will be associated to the line that called <code class="docutils literal notranslate"><span class="pre">bottom()</span></code>.</p>
+<p>We first call <code class="docutils literal notranslate"><span class="pre">top()</span></code>, that calls <code class="docutils literal notranslate"><span class="pre">bottom()</span></code>, that emits a warning. This warning is associated with the line <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">bottom()</span></code> in <code class="docutils literal notranslate"><span class="pre">mod2.py</span></code>. There, the module namespace is <code class="docutils literal notranslate"><span class="pre">mod2</span></code> and not <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, so the <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> <strong>is not displayed</strong>.</p>
+<p>We then call <code class="docutils literal notranslate"><span class="pre">bottom()</span></code> which emits a warning associated with the line <code class="docutils literal notranslate"><span class="pre">bottom()</span></code> in <code class="docutils literal notranslate"><span class="pre">mod1.py</span></code>. Given how we ran this code with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">mod1.py</span></code>, the module namespace is <code class="docutils literal notranslate"><span class="pre">__main__</span></code> in <code class="docutils literal notranslate"><span class="pre">mod1.py</span></code>, so the <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> <strong>is displayed</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> affects greatly how <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s end up being displayed. Running the same code above with <code class="docutils literal notranslate"><span class="pre">stacklevel=1</span></code> (remember, that’s its default value) leads to no warning being displayed, since they will all be associated to a code line in <code class="docutils literal notranslate"><span class="pre">mod2.py</span></code>. Setting <code class="docutils literal notranslate"><span class="pre">stacklevel=3</span></code> will display a warning when executing <code class="docutils literal notranslate"><span class="pre">top()</span></code> but not when executing <code class="docutils literal notranslate"><span class="pre">bottom()</span></code>. Since it is obviously easy to get this wrong, libraries like Pandas have developed their own <a class="reference external" href="https://github.com/pandas-dev/pandas/blob/9008ee5810c09bc907b5fdc36fc3c1dff4a50c55/pandas/util/_exceptions.py#L34">utility function</a> to automatically infer the right value.</p>
+</section>
+<section id="deprecationwarning-and-holoviz-users">
+<h3><code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> and HoloViz users<a class="headerlink" href="#deprecationwarning-and-holoviz-users" title="Link to this heading">#</a></h3>
+<p>As we saw above, <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> is filtered in a special way, let’s see what this means for HoloViz users.</p>
+<section id="notebooks-scripts-and-utility-modules-packages">
+<h4>Notebooks/scripts and utility modules/packages<a class="headerlink" href="#notebooks-scripts-and-utility-modules-packages" title="Link to this heading">#</a></h4>
+<p>The namespace value is <code class="docutils literal notranslate"><span class="pre">__main__</span></code> when users execute Python code in the REPL and in an IPython shell, which means that this also applies to code being run in Jupyter Notebooks, so this is identical to running a script with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script.py</span></code>.</p>
+<p>Take this simple example, where the user is working on a script or in a Notebook but is importing code from some utility module or a package they have implemented. The <code class="docutils literal notranslate"><span class="pre">my_panel_thing()</span></code> function is using a deprecated Panel pane that emits a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> when instantiated. The deprecation warning is going to be emitted in the scope of <code class="docutils literal notranslate"><span class="pre">util.py</span></code> where the module namespace is <code class="docutils literal notranslate"><span class="pre">util</span></code> and not <code class="docutils literal notranslate"><span class="pre">__main__</span></code>, therefore, it won’t be displayed when they run the script or the notebook.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Untitled1039.ipynb</span>
+<span class="kn">from</span> <span class="nn">util</span> <span class="kn">import</span> <span class="n">my_panel_thing</span>
+
+<span class="n">my_panel_thing</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># util.py</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="k">def</span> <span class="nf">my_panel_thing</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="n">DeprecatedPane</span><span class="p">(</span><span class="s2">&quot;YOLO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="panel-apps">
+<h4>Panel apps<a class="headerlink" href="#panel-apps" title="Link to this heading">#</a></h4>
+<p>Another important use case in the HoloViz ecosystem is deploying a Panel application. When an application is deployed with the <code class="docutils literal notranslate"><span class="pre">&lt;panel</span> <span class="pre">serve</span> <span class="pre">...</span></code> command, the module namespace of the served files is not <code class="docutils literal notranslate"><span class="pre">__main__</span></code> but is set internally to something like <code class="docutils literal notranslate"><span class="pre">bokeh_app_&lt;uuid&gt;</span></code>. The namespace of <em>setup</em> files (<code class="docutils literal notranslate"><span class="pre">--setup</span> <span class="pre">mysetup.py</span></code>) processed by Panel is also renamed internally. Therefore, Panel users serving their app with <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">serve</span></code> will not be able to see any warnings of type <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>.</p>
+<p>This can be easily verified serving this little app with <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">serve</span> <span class="pre">app.py</span></code>, the warning doesn’t get displayed. Note it is possible to display it by serving the app with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-Wdefault</span> <span class="pre">-m</span> <span class="pre">panel</span> <span class="pre">serve</span> <span class="pre">app.py</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># app.py</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Not displayed :(&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+<span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">servable</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="pytest">
+<h4>Pytest<a class="headerlink" href="#pytest" title="Link to this heading">#</a></h4>
+<p>Pytest automatically catches all warnings during test execution and displays them at the end of the session. The issues listed above with <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s displayed only in a certain scope don’t apply in this case; these warnings are always displayed by Pytest.</p>
+</section>
+<section id="two-types-of-holoviz-users">
+<h4>Two types of HoloViz users<a class="headerlink" href="#two-types-of-holoviz-users" title="Link to this heading">#</a></h4>
+<p>We can define two types of HoloViz users:</p>
+<ul class="simple">
+<li><p>Library Developers: depend on HoloViz projects to develop their own library (this includes HoloViz projects themselves as they depend on each other, like Panel with Param)</p></li>
+<li><p>Data Analysts: use HoloViz projects to perform some sort of data analysis, often by writing code in a Notebook or in scripts they run directly or by building and serving a Panel app.</p></li>
+</ul>
+<p>When a HoloViz project deprecates a feature and starts emitting a warning, it is possible it will impact both types of users, however they have different expectations when it comes to deprecation warnings:</p>
+<ul class="simple">
+<li><p>Library Developers don’t typically wish the warnings to be propagated to their own users, or at the very least not immediately. Instead, they will usually catch the warnings when running their test suite internally. They want to be given sufficient time to update and release their code, before the feature is removed or before the warning starts to be displayed to their own users.</p></li>
+<li><p>Data Analysts should be warned when a feature they use directly is deprecated, but also should be given an easy way to hide these warnings.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> is the warning type intended for other Python developers; it’s certainly the warning type used the most in the Python ecosystem. However, as we’ve just seen, Data Analysts won’t always be set up to see this warning.</p>
+</section>
+<section id="consequences">
+<h4>Consequences<a class="headerlink" href="#consequences" title="Link to this heading">#</a></h4>
+<p>HoloViz users who:</p>
+<ul class="simple">
+<li><p>don’t test their code with Pytest (quite likely for Data Analysts)</p></li>
+<li><p>and, don’t override the default Python warning filters (even more likely)</p></li>
+</ul>
+<p>won’t be notified of <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s even if their code directly uses a feature emitting this warning when:</p>
+<ul class="simple">
+<li><p>they serve a Panel app with <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">serve</span></code></p></li>
+<li><p>or, run a script/Notebook that imports a utility module/package that calls a deprecated feature emitting <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="outcome">
+<h3>Outcome<a class="headerlink" href="#outcome" title="Link to this heading">#</a></h3>
+<p>Based on the fact that a non-negligeable fraction of HoloViz users may entirely miss <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s, we suggest adopting a tiered approach:</p>
+<ol class="arabic simple">
+<li><p>Start by emitting a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>, to inform Library Developers, and some Data Analysts.</p></li>
+<li><p>After a few months, upgrade to a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code>, to inform all users.</p></li>
+</ol>
+<p>Exceptions are allowed but should in practice be very rare:</p>
+<ul class="simple">
+<li><p>Start by emitting a <code class="docutils literal notranslate"><span class="pre">PendingDeprecationWarning</span></code> for deprecations that might be reverted or are expected to be extremely noisy.</p></li>
+<li><p>Don’t upgrade to a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> when the feature removed is meant for Library Developers only.</p></li>
+<li><p>Emit directly a <code class="docutils literal notranslate"><span class="pre">FutureWarning</span></code> when the feature removed is meant for Data Analysts only.</p></li>
+</ul>
+</section>
+</section>
+<section id="copyright">
+<h2>Copyright<a class="headerlink" href="#copyright" title="Link to this heading">#</a></h2>
+<p>This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hep1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HEP 1 - Python Version Support</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../roadmap.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HoloViz Roadmap, as of 11/2024</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div class="github-star-badge">
+    <a href="https://github.com/holoviz/holoviz">
+        <img src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&label=Star%20on%20%20GitHub%E2%AD%90" alt="Support us with a star on GitHub">
+    </a>
+</div></div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specification">Specification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-policy">Release policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning">Versioning</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-versions">Supported versions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution">Distribution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#release-cadence">Release cadence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backwards-compatibility">Backwards compatibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-policy">Deprecation policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-cycle-guidelines">Deprecation cycle guidelines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-suite-guidelines">Test suite guidelines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-detour-on-python-warnings-applied-to-holoviz">Appendix: Detour on Python warnings applied to HoloViz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-types">Warning types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warnings-filters-and-stacklevel">Warnings filters and <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecationwarning-and-holoviz-users"><code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> and HoloViz users</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooks-scripts-and-utility-modules-packages">Notebooks/scripts and utility modules/packages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#panel-apps">Panel apps</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytest">Pytest</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-types-of-holoviz-users">Two types of HoloViz users</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outcome">Outcome</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copyright">Copyright</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="nbsite-copyright-last-updated">
+    <span class="copyright">
+            &copy; Copyright 2017-2024 Holoviz contributors.
+    </span>
+    <span class="last-updated">Last updated on 2024-11-22.</span><br>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

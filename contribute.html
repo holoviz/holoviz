@@ -1,0 +1,1559 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contributing Guide &#8212; HoloViz 0.17.4 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/nbsite.css?v=d9d93254" />
+    <link rel="stylesheet" type="text/css" href="_static/notebook.css?v=19946987" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css?v=0a3248cd" />
+    <link rel="stylesheet" type="text/css" href="_static/alert.css?v=c26666be" />
+    <link rel="stylesheet" type="text/css" href="_static/dataframe.css?v=a0f274c1" />
+    <link rel="stylesheet" type="text/css" href="_static/scroller.css?v=2dcde208" />
+    <link rel="stylesheet" type="text/css" href="_static/hv-sidebar-dropdown.css?v=3e2b0152" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=f04cce2a"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script async="async" data-goatcounter="https://holoviz.goatcounter.com/count" src="_static/js/goatcounter.js?v=f53f84b8"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About Us" href="about/index.html" />
+    <link rel="prev" title="The HoloViz community" href="community.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="2024-11-22"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/holoviz-logo-unstacked.svg" class="logo__image only-light" alt="HoloViz 0.17.4 documentation - Home"/>
+    <script>document.write(`<img src="_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="HoloViz 0.17.4 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="">Contribute</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/heps/index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="">Contribute</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/heps/index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="about/funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><!-- Adapted from sidebar-nav-bs.html (1.15.2) with the following changes
+
+  - Commented out the tag that adds the "Section Navigation" title
+  - Call generate_toctree_html with startdepth=0
+
+Please update this file when required when bumping the max pin of pydata-sphinx-theme.
+-->
+
+
+<nav class="bd-docs-nav bd-links"
+      aria-label="Section Navigation">
+  <!-- <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p> -->
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="learn/index.html">Learn</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="learn/presentations/index.html">Presentations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="learn/presentations/Overview.html">HoloViz Overview</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="learn/background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learn/FAQ.html">FAQ</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorial/index.html">Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/index.html">Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/exercises/Plotting.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/exercises/Linking_Plots.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/exercises/Building_Pipelines.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Custom_Interactivity.html">Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Custom_Dashboards.html">Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/Advanced_Dashboards.html">Advanced Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="community.html">Community</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contribute</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="about/index.html">About</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="about/index.html">About Us</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="about/governance/index.html">Governance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/org-docs/CHARTER.html">Charter for the HoloViz Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/org-docs/ANTITRUST.html">Antitrust Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/org-docs/CODE-OF-CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/org-docs/STEERING-COMMITTEE.html">Steering Committee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/org-docs/TRADEMARKS.html">Trademarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/project-docs/CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/project-docs/GOVERNANCE.html">Governance Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/project-docs/LICENSE.html">License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/governance/project-docs/MEMBERS.html">Maintainers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="about/heps/index.html">HEPs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="about/heps/hep0.html">HEP 0 - HEP Purpose, Policy, and Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/heps/hep1.html">HEP 1 - Python Version Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about/heps/hep2.html">HEP 2: Release and deprecation policies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about/funding.html">Funding</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div class="hv-sb-dd">
+  <div class="btn-group">
+    
+    <span class="btn hv-sb-dd-value">HoloViz Sites</span>
+    
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden"></span>
+    </button>
+    <ul class="dropdown-menu">
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone servable dashboard">Panel<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://hvplot.holoviz.org" target="_blank" title="Quickly return interactive HoloViews, GeoViews, or Panel objects from Pandas, Xarray, or other data structures">hvPlot<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://holoviews.org" target="_blank" title="Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications">HoloViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://geoviews.org" target="_blank" title="Visualizable geographic data that that can be mixed and matched with HoloViews objects">GeoViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://datashader.org" target="_blank" title="Rasterizing huge datasets quickly as fixed-size images">Datashader<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Make your Python code clearer and more reliable by declaring Parameters">Param<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://lumen.holoviz.org" target="_blank" title="Framework for visual analytics that allows users to build data-driven dashboards from a simple YAML specification">Lumen<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://colorcet.holoviz.org" target="_blank" title="A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries">Colorcet<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+</div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Contributing Guide</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-guide">
+<h1>Contributing Guide<a class="headerlink" href="#contributing-guide" title="Link to this heading">#</a></h1>
+<p>This guide includes general guidelines on how to contribute to HoloViz. Read the <a class="reference internal" href="#operating-guide">Operating Guide</a> if you are interested to learn how an Open-Source project like HoloViz operates.</p>
+<section id="contributing-yes-wait-but-why">
+<h2>Contributing? Yes! Wait, but why?<a class="headerlink" href="#contributing-yes-wait-but-why" title="Link to this heading">#</a></h2>
+<p>There are many reasons why you would contribute to the HoloViz project, including:</p>
+<ul class="simple">
+<li><p>You appreciate the HoloViz project, its mission and values, and would like to help</p></li>
+<li><p>You are a user of one of the HoloViz packages and need a bug to be fixed or a new feature to be implemented, and you are willing to tackle that in some ways</p></li>
+<li><p>You are looking for some open-source experience</p></li>
+<li><p>You have been reading one of the HoloViz websites and found something to improve, even just a simple typo</p></li>
+<li><p>…</p></li>
+</ul>
+<p>These reasons, or whatever reason brought you here, are all valid to our eyes. We <strong>welcome anyone</strong> who wishes to contribute, and as you will see, there are <strong>many</strong> ways to contribute!</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Contributing to the HoloViz project might even get you a job, which has been the case for a couple of HoloViz members.</p>
+</div>
+</section>
+<section id="what-and-how-to-contribute">
+<h2>What and how to contribute?<a class="headerlink" href="#what-and-how-to-contribute" title="Link to this heading">#</a></h2>
+<p>If you end up on this page it is quite likely that you are interested in contributing code to HoloViz. However, as you will see, there are many other areas where you could contribute, and in some of these areas, the HoloViz project would really appreciate some help!</p>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
+<p>Each core HoloViz package has its own website. Maintaining the content of these websites is a lot of work, and you can easily help by:</p>
+<ul class="simple">
+<li><p>submitting a PR to fix a typo</p></li>
+<li><p>submitting a PR to clarify a section</p></li>
+<li><p>submitting a PR to document an undocumented feature</p></li>
+<li><p>submitting a PR to update a section that should have been updated</p></li>
+<li><p>…</p></li>
+</ul>
+<p>How the websites look and feel can also be improved. If you happen to have some front-end development expertise, your help would be greatly appreciated.</p>
+<p>Finally, the documentation also lies within the code, and in Python, it is found in the so-called <em>docstrings</em> that accompany modules, classes, methods and functions. You can easily improve the docstrings by:</p>
+<ul class="simple">
+<li><p>submitting a PR to fix a typo</p></li>
+<li><p>submitting a PR to clarify a definition</p></li>
+<li><p>submitting a PR to fix or document the default value of a parameter</p></li>
+<li><p>…</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Documentation fixes/improvements that are of a small scope usually do not need an issue to be opened beforehand. If you don’t have the time to open a pull request, we would appreciate it if you could record your suggestion in an issue on Github. That would already be an excellent contribution!</p>
+</div>
+</section>
+<section id="support">
+<h3>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h3>
+<p>HoloViz users are recommended to ask their usage questions on the <a class="reference external" href="https://discourse.holoviz.org/">HoloViz Discourse Forum</a>. This forum is only helpful if questions can find answers, and you can be the one writing that answer, which will make somebody else’s life so much easier! The HoloViz team members monitor the forum and try to contribute regularly, yet the more we are, the better.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Answering questions on the HoloViz Discourse Forum, or even just trying to answer some random questions, is a very good way to learn how to use the HoloViz tools.</p>
+</div>
+<p>Some users also ask questions on <a class="reference external" href="https://stackoverflow.com/">StackOverflow</a>, which isn’t much monitored by the HoloViz team, so we would greatly appreciate any help there.</p>
+</section>
+<section id="outreach">
+<h3>Outreach<a class="headerlink" href="#outreach" title="Link to this heading">#</a></h3>
+<p>Before addressing how to contribute code to HoloViz, it is important to mention that a beneficial way to contribute to HoloViz is by communicating more about it. Tweeting, writing blog posts, creating Youtube videos, presenting your work with one or more of the HoloViz tools, etc., are all outreach activities that serve the purpose of HoloViz.</p>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h3>
+<p>Contributing code includes:</p>
+<ul class="simple">
+<li><p>fixing an existing bug: the recommended practice is to add one or more unit test(s) that would have failed before the bug fix was implemented.</p></li>
+<li><p>adding a new feature: again, the recommended practice is to add unit test(s) to test the new feature’s functionality.</p></li>
+<li><p>improving performance: while slow code isn’t necessarily a bug, users always appreciate faster code. Performance improvements should be demonstrated by some benchmark comparing the performance before and after the changes.</p></li>
+<li><p>adding tests: test coverage can always be improved. Adding tests is a good way for beginners to contribute to a project and familiarize themselves with its code base and workflows.</p></li>
+<li><p>refactoring: refactoring can be a good way to improve a code base.</p></li>
+</ul>
+</section>
+<section id="developer-instructions">
+<h3>Developer Instructions<a class="headerlink" href="#developer-instructions" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The HoloViz projects usually provide specific instructions to set up your environment to be ready to contribute documentation or code to the project. The instructions provided hereafter are meant to be general enough to apply to each project. Refer to the documentation of the project you are working on for more details.</p>
+</div>
+<p>Before making anything beyond a minimal contribution (e.g. fixing a typo), the first step is usually to open a <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues">GitHub Issue</a> that documents what you are trying to fix/improve. Writing a good issue is important and will affect how it is going to be perceived by the project maintainers, contributors and watchers. Read for instance this <a class="reference external" href="https://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">blog post</a> that describes what a good issue should look like.  Once an issue is opened, a discussion can take place with the maintainers to see if what is suggested is relevant, which can orientate the action to take.</p>
+<p>The first step to working on any source code is to install Git as the source codes are stored in <a class="reference external" href="https://git-scm.com">Git</a> source control repositories. To install Git on any platform, refer to the <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Installing Git</a> section of the <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git Book</a>.</p>
+<p>As an external contributor, you do not have permission to submit code directly to any of the repositories. Github offers you to fork the repository, which will create a copy of the repository, on which you will have the right to work freely. Follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">these instructions</a> to find out how to fork and clone a repository.</p>
+<p>The HoloViz developers rely on <a class="reference external" href="https://conda.io/docs/intro.html">Conda</a> to manage their virtual environments. We <strong>recommend</strong> you install Conda too to have an experience as close as possible to those of the core developers. To install Conda on any platform, you can <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">install Miniconda</a>.</p>
+<p>The HoloViz developers rely on <a class="reference external" href="https://github.com/holoviz-dev/pyctdev">pyctdev</a>, a custom developer tool that facilitates maintaining all of the holoviz projects. pyctdev is an extension of the task running tool <a class="reference external" href="https://pydoit.org/">doit</a>. We <strong>recommend</strong> that you install <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>pyviz/label/dev<span class="w"> </span><span class="s2">&quot;pyctdev&gt;0.5.0&quot;</span>
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> is available and you are in the cloned (e.g. panel) repository, you can create a new virtual environment with the <code class="docutils literal notranslate"><span class="pre">env_create</span></code> <em>doit</em> command with the appropriate channels:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doit<span class="w"> </span>env_create<span class="w"> </span>-c<span class="w"> </span>channel1<span class="w"> </span>-c<span class="w"> </span>channel2<span class="w"> </span>--name<span class="o">=</span>dev-env<span class="w"> </span>--python<span class="o">=</span><span class="m">3</span>.x
+</pre></div>
+</div>
+<p>Don’t forget to activate this environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>dev-env
+</pre></div>
+</div>
+<p>To perform an editable install of the project you are working on, including all the dependencies required to run the full unit test suite, run the <code class="docutils literal notranslate"><span class="pre">develop_install</span></code> with the appropriate channels and options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doit<span class="w"> </span>develop_install<span class="w"> </span>-c<span class="w"> </span>channel1<span class="w"> </span>-c<span class="w"> </span>channel2<span class="w"> </span>-o<span class="w"> </span>tests<span class="w"> </span>-o<span class="w"> </span>...<span class="w"> </span>-o<span class="w"> </span>...
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>doit<span class="w"> </span>develop_install<span class="w"> </span>-c<span class="w"> </span>pyviz/label/dev<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-o<span class="w"> </span>tests<span class="w"> </span>-o<span class="w"> </span>examples
+</pre></div>
+</div>
+<p>Depending on the options you have chosen to install (usually <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">tests</span></code> for the unit tests, <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">examples</span></code> to run the examples notebooks, …), the following commands will run:</p>
+<ul class="simple">
+<li><p>The unit tests: <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_unit.</span></code></p></li>
+<li><p>The examples tests: <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_examples.</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>options</em> and <em>commands</em> are not standardized across the HoloViz projects. Refer to the project documentation for the exact commands to run.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The reference sources to find out which commands to run to install the correct dependencies and to execute the tests and other tasks are the <strong>Github Actions Workflows</strong> files that you can find in the <code class="docutils literal notranslate"><span class="pre">.github</span></code> folder of each repository.</p>
+</div>
+<p>At this step, you should have your environment set up, being able to run tests and a clone of the source repository. The next step is to create a branch and start making changes. Before committing these changes, make sure the tests still pass by running them. The HoloViz source codes are stringent concerning styling (e.g., they’re not using <a class="reference external" href="https://github.com/psf/black">black</a>). Try to write code that follows the style of the surrounding code. Once you are done with your changes, you can commit them. It is good practice to break down big changes into smaller chunks, and each chunk has its own commit with a message that summarizes it. Now you can push the branch to your clone and create a <em>pull request</em> from your clone to the original repository. This <a class="reference external" href="https://gist.github.com/Chaser324/ce0505fbed06b947d962">Github Gist</a> describes these GitHub steps in more detail.</p>
+<p>The <em>pull request</em> you make should reference the <em>issue</em> you are attempting to close (i.e. <code class="docutils literal notranslate"><span class="pre">Fixes</span> <span class="pre">#issuenumber</span></code>) and include a description of the changes you made. Changes affecting the visual properties should include screenshots or GIFs.</p>
+<p>Your <em>pull request</em> should now be reviewed by one of the project’s maintainers. This may take a while given how busy the maintainers are, so try to be patient :). Your pull request will be evaluated to ensure that it is within the scope of the project (again, it’s a good idea to create an issue first to outline your intent and give the maintainers an opportunity to weigh in before you spend the effort creating a pull request). If it’s decided to proceed, the review will be conducted, and once the review is done you may be required to make some changes. You may also be asked to <em>resolve conflicts</em> if the changes you made appear to conflict with changes made to the source code after you submitted the <em>pull request</em>.</p>
+<p>When your PR is merged, enjoy, and repeat!</p>
+</section>
+</section>
+<section id="operating-guide">
+<span id="id1"></span><h2>Operating guide<a class="headerlink" href="#operating-guide" title="Link to this heading">#</a></h2>
+<p>The HoloViz project consists of:</p>
+<ul class="simple">
+<li><p>Several core packages (including Panel, Lumen, HoloViews, GeoViews, Datashader, hvPlot, Colorcet, and Param) that must be maintained, tested, documented, etc.</p></li>
+<li><p>A group of people collaborating to make the project better.</p></li>
+</ul>
+<p>This section of the guide describes how that system works.</p>
+<section id="pyviz">
+<h3>PyViz<a class="headerlink" href="#pyviz" title="Link to this heading">#</a></h3>
+<p>The HoloViz project was previously named <em>PyViz</em> but the Python community suggested that it wasn’t that appropriate and as such <em>PyViz</em> was renamed <em>HoloViz</em>, inspired by HoloViews. As renaming is a lot of work and can potentially break some systems, you will still find references to PyViz here and there. Notably, in the installation guide of each HoloViz package where the recommended installation command with conda is <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pyviz</span> <span class="pre">package</span></code>.</p>
+<p><em>PyViz</em>, or <a class="reference external" href="https://pyviz.org/">PyViz.org</a>, is now a community project of its own. It is a fully open guide to all Python visualization tools. The HoloViz group maintains the <a class="reference external" href="https://github.com/pyviz">pyviz</a> organization, but only for historical reasons, as it is meant to be shared by the whole Python visualization community.</p>
+</section>
+<section id="github-git">
+<h3>GitHub/Git<a class="headerlink" href="#github-git" title="Link to this heading">#</a></h3>
+<section id="organisations-and-repositories">
+<h4>Organisations and repositories<a class="headerlink" href="#organisations-and-repositories" title="Link to this heading">#</a></h4>
+<p>HoloViz consists of several Python projects. All these projects are version-controlled with <a class="reference external" href="https://git-scm.com/">Git</a> and hosted on GitHub. Having all the projects hosted on GitHub means that HoloViz can rely on all the excellent features Github freely provides to open-source projects, including easy collaboration through <em>Issues and Pull Requests (PR)</em>, continuous integration (CI) with <em>GitHub Actions (GHA)</em> and documentation hosting with <em>GitHub Pages</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is crucial to keep in mind that nothing lasts forever and that, at some point, HoloViz may be forced to rely on other platforms or services. The more HoloViz relies on GitHub, the more difficult any transition to another system is.</p>
+</div>
+<p>The HoloViz group owns a few GitHub organizations:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/holoviz/">holoviz</a> is the main one where you are likely to contribute. It hosts the core packages maintained by the group.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/">holoviz-dev</a> hosts two main types of repositories:</p>
+<ul>
+<li><p>Packages that support maintaining the core HoloViz packages, including, for instance, <code class="docutils literal notranslate"><span class="pre">nbsite</span></code>, <code class="docutils literal notranslate"><span class="pre">nbsmoke</span></code>, <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code>, <code class="docutils literal notranslate"><span class="pre">pyct</span></code> and <code class="docutils literal notranslate"><span class="pre">autover</span></code>. These support packages were developed when no alternative, or satisfying alternative, was available at the time the group needed them.</p></li>
+<li><p>Repositories that are only used to host <em>dev</em> builds of the core packages websites, i.e., no actual work is done on these repositories. They just get updated automatically in a CI process.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/">holoviz-topics</a> hosts repositories that demonstrate concrete usage of the HoloViz tools.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-demos/">holoviz-demos</a> hosts some demos, mostly Panel apps. It is meant to be removed.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-community/">holoviz-community</a> is a place for the HoloViz community to host repositories that are going to be nicely exposed under the HoloViz umbrella</p></li>
+</ul>
+<p>In more detail:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/holoviz/">holoviz</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/holoviz/holoviz">holoviz</a>: HoloViz website and tutorial</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/hvplot">hvPlot</a>: A high-level plotting API for pandas, dask, xarray, and networkx built on HoloViews</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/panel">Panel</a>: A high-level app and dashboarding solution for Python</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/Lumen">Lumen</a>: Illuminate your data.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/holoviews">HoloViews</a>: With Holoviews, your data visualizes itself.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/geoviews">GeoViews</a>: Simple, concise geographical visualization in Python</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/datashader">Datashader</a>: Quickly and accurately render even the largest data.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/colorcet">Colorcet</a>: A set of useful perceptually uniform colormaps for plotting scientific data</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/param">Param</a>: Make your Python code clearer and more reliable by declaring Parameters</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/spatialpandas">Spatialpandas</a>: Pandas extension arrays for spatial/geometric operations</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/pyviz_comms">pyviz_comms</a>: Bidirectional communication for the HoloViz ecosystem</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz/jupyter-panel-proxy">jupyter-panel-proxy</a>: Jupyter Server Proxy for Panel</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/">holoviz-dev</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/holoviz/nbsite">nbsite</a>: Build a tested, sphinx-based website from notebooks</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/nbsmoke">nbsmoke</a>: Basic notebook checks. Do they run? Do they contain lint?</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/pyctdev">pyctdev</a>: Python packaging Common Tasks for Developers</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/autover">autover</a>: Provides consistent and up-to-date version strings for Python packages.</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/pyct">pyct</a>: Python packaging Common Tasks</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/blog">blog</a>: The HoloViz blog</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/status-dashboard">status-dashboard</a>: Status Dashboard for HoloViz Project</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/holoviz-dev.github.io">holoviz-dev.github.io</a>: Index of all sites on holoviz-dev</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-dev/holoviz_tasks">holoviz_tasks</a>: Shared GHA workflows and tasks used to maintain the HoloViz repositories</p></li>
+<li><p>more …</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/">holoviz-topics</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/examples">examples</a>: Home for domain-specific narrative examples using multiple PyViz projects</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/earthsim">earthsim</a>: Project for developing Python-based workflows for specifying, launching, visualizing, and analyzing environmental simulations</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/earthml">earthml</a>: Machine learning and visualization in Python for Earth science</p></li>
+<li><p><a class="reference external" href="https://github.com/holoviz-topics/holodoodler">holodoodler</a>: Python application that allows interactive construction of sparse labeling for image segmentation using deep neural networks</p></li>
+<li><p>more …</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="teams">
+<h4>Teams<a class="headerlink" href="#teams" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">holoviz</span></code> organization has two teams:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">holoviz-dev</span></code>: Team that will manage the HoloViz contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Triaging</span> <span class="pre">team</span></code>: Contributors able to triage open issues on HoloViz projects</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">holoviz-dev</span></code> organization has one team:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">holoviz-dev</span></code>: PyViz Developers</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">holoviz-topics</span></code> organization has one team:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">holoviz-dev</span></code>: Developers on HoloViz Topics</p></li>
+</ul>
+</section>
+<section id="service-account">
+<h4>Service account<a class="headerlink" href="#service-account" title="Link to this heading">#</a></h4>
+<p>The Github account <a class="reference external" href="https://github.com/holoviz-developers"><code class="docutils literal notranslate"><span class="pre">holoviz-developers</span></code></a> is a service account used for automated actions on HoloViz projects. For example, this account has a <em>Personal Access Token</em> with <em>repo</em> permission to:</p>
+<ul class="simple">
+<li><p>Deploy development sites from one repository (e.g. holoviz/panel) to another (holoviz-dev/panel).</p></li>
+<li><p>Allow the downstream tests workflow to trigger workflows in other repositories.</p></li>
+</ul>
+</section>
+<section id="repository-structure">
+<h4>Repository structure<a class="headerlink" href="#repository-structure" title="Link to this heading">#</a></h4>
+<p>The core packages have their repository that, except in a few cases, all share the same structure:</p>
+<ul class="simple">
+<li><p>The tests are nested under the package directory, e.g., at <code class="docutils literal notranslate"><span class="pre">panel/tests</span></code>. The tests are then automatically bundled in the source distribution, which makes it a little easier for repackagers to run the tests.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">examples</span></code> and the <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder share the same structure, e.g. you will find <code class="docutils literal notranslate"><span class="pre">panel/doc/user_guide</span></code>  and <code class="docutils literal notranslate"><span class="pre">panel/examples/user_guide</span></code>. The <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder contains Jupyter Notebooks, while the <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder usually contains <em>reStructuredText</em> and <em>Markdown</em> files. The HoloViz packages generally have <code class="docutils literal notranslate"><span class="pre">pyct</span></code> as a build dependency, which can be used to add an <code class="docutils literal notranslate"><span class="pre">examples</span></code> command to a project (e.g. <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">examples</span></code>) to make it easier for users to download the project notebooks. The <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder is bundled within the package source, so users running <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">examples</span></code> get the notebooks copied from the package to a local directory. The <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder isn’t bundled within the package source.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.github</span></code> directory contains GitHub specific configuration files, e.g., for GitHub Actions.</p></li>
+<li><p>Optional: the <code class="docutils literal notranslate"><span class="pre">conda.recipe</span></code> directory contains a conda recipe template used by the building tooling when creating a conda package.</p></li>
+<li><p>Optional: the <code class="docutils literal notranslate"><span class="pre">binder</span></code> directory contains configuration files to setup <a class="reference external" href="https://mybinder.org/">binder</a></p></li>
+</ul>
+</section>
+<section id="git-workflow">
+<h4>Git workflow<a class="headerlink" href="#git-workflow" title="Link to this heading">#</a></h4>
+<p>The HoloViz projects follow the standard Github workflow:</p>
+<ul class="simple">
+<li><p>An <em>issue</em> should be created before submitting a <em>pull request</em> (PR) unless the scope of the planned PR is minimal, such as fixing a typo.</p></li>
+<li><p><em>Pull requests</em> must be based on the main (e.g., <em>main</em>) branch and kept up to date with this branch. Merging the main branch onto the working branch is recommended instead of rebasing, particularly if you are not working alone on that branch.</p></li>
+<li><p><em>Pull requests</em> must be reviewed before being merged. Each project has one or more reviewer(s) assigned.</p></li>
+<li><p>The commits of a <em>Pull request</em> are automatically <a class="reference external" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github#squashing-your-merge-commits">squashed on merge</a>. This means that you don’t have to particularly well craft your commit messages in your branch as they won’t be part of the main git history.</p></li>
+</ul>
+</section>
+</section>
+<section id="tooling">
+<h3>Tooling<a class="headerlink" href="#tooling" title="Link to this heading">#</a></h3>
+<section id="conda">
+<h4>Conda<a class="headerlink" href="#conda" title="Link to this heading">#</a></h4>
+<p>The HoloViz group relies heavily on the <a class="reference external" href="https://conda.io/docs/intro.html">conda package manager</a> for the following reasons:</p>
+<ul class="simple">
+<li><p>The HoloViz group consists of people who have a scientific background. Installing the Python scientific libraries was at some point a complicated task to achieve with <code class="docutils literal notranslate"><span class="pre">pip</span></code> as these libraries usually depend on binary dependencies that need to be compiled, a step that pip delegates to whatever tool is installed on your machine. <code class="docutils literal notranslate"><span class="pre">conda</span></code> was created to solve this exact problem and the HoloViz group was an early user of this solution. While it’s important to note that installing scientific libraries with <code class="docutils literal notranslate"><span class="pre">pip</span></code> has become a smoother experience (notably because more wheels are being distributed), installing some packages like those of the Python geo-stack (<code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproj</span></code>, etc.) still proves to be challenging, and <code class="docutils literal notranslate"><span class="pre">conda</span></code> <em>usually</em> provides a better experience.</p></li>
+<li><p>The core maintainers of the HoloViz group are employed by <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, and as such, it makes sense for the group to use <code class="docutils literal notranslate"><span class="pre">conda</span></code></p></li>
+<li><p>Some HoloViz-maintained packages such as <code class="docutils literal notranslate"><span class="pre">Panel</span></code> require software like <code class="docutils literal notranslate"><span class="pre">node.js</span></code>, which <code class="docutils literal notranslate"><span class="pre">pip</span></code> cannot install. In contrast, they can be installed with <code class="docutils literal notranslate"><span class="pre">conda</span></code>. <code class="docutils literal notranslate"><span class="pre">conda</span></code> allows to create a complete dev environment without having to install other software from another way, e.g., with <code class="docutils literal notranslate"><span class="pre">brew</span></code> on macOS.</p></li>
+</ul>
+<p>To contribute to HoloViz, we <strong>recommend</strong> that you use <code class="docutils literal notranslate"><span class="pre">conda</span></code>. You would have a closer experience with the maintainers, and they will be in a better position to help you set up your dev environment and debug whatever issue you may encounter.</p>
+<p>To install Conda on any platform, see the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html">Download conda</a> section of the <a class="reference external" href="https://conda.io/docs/index.html">conda documentation</a>.</p>
+<p>Of course, this is not a strict requirement, and you can decide to use <code class="docutils literal notranslate"><span class="pre">pip</span></code> instead!</p>
+</section>
+<section id="pyctdev">
+<h4>Pyctdev<a class="headerlink" href="#pyctdev" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://github.com/holoviz-dev/pyctdev">pyctdev</a> stands for <em>python packaging common tasks for developers</em>, it is a developer tool built by the HoloViz group in an attempt to simplify managing Python projects, by providing a way to declare how to run the usual tasks required to maintain a project, such as running its unit tests or building its documentation, and by standardizing the way to execute these tasks with e.g. <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_unit</span></code> or <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">build_website</span></code>. <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> relies on <a class="reference external" href="https://pydoit.org/">doit</a> to provide a command-line interface to developers (e.g. <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_unit</span></code>) and can be as such seen as an extension of <code class="docutils literal notranslate"><span class="pre">doit</span></code>. <code class="docutils literal notranslate"><span class="pre">doit</span></code> allows to register <em>tasks</em> that consist of a sequence of <em>actions</em>, an action being either a command line instruction (e.g. <code class="docutils literal notranslate"><span class="pre">flake8</span> <span class="pre">.</span></code>) or the execution of a Python function. <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> comes with various common Python tasks dedicated to manage a project, such as the <code class="docutils literal notranslate"><span class="pre">develop_install</span></code> task (executed with <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">develop_install</span></code>) that will install the project in development mode with its optional development dependencies.</p>
+<p>By unifying the way to execute these common tasks, <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> makes it easier to work across the HoloViz projects. It also makes it easier to work across environments, as the commands to execute should be the same whether you execute them locally or in a CI environment. In addition, <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> supports developing with either pip or conda, a unique feature. In practice, however, <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> is an ambitious project. While it has proven useful to the HoloViz group, it is yet another tool to learn for contributors and maintain for the group. We still <strong>recommend</strong> that you use <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> to have a development experience closer to the core maintainers. If you feel constrained by the tooling abstraction that is <code class="docutils literal notranslate"><span class="pre">pyctdev,</span></code> you can ignore it and reach out to the tools you are most comfortable with. In that case, you will have to inspect the files of the project you are contributing to and find what tasks you need to run. In each core HoloViz repository, you will find a few files that are of importance for <code class="docutils literal notranslate"><span class="pre">doit/pyctdev</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dodo.py</span></code> is a Python module that allows adding per-project <code class="docutils literal notranslate"><span class="pre">doit</span></code> tasks. Refer to <a class="reference external" href="https://pydoit.org/contents.html">its documentation</a> to learn how to add or modify a task. A quick way to identify a task is to find a Python function named <code class="docutils literal notranslate"><span class="pre">task_something</span></code>, <code class="docutils literal notranslate"><span class="pre">doit</span></code> makes it available as a command line subcommand with <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">something</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> is the classic install file of the <a class="reference external" href="https://setuptools.pypa.io">setuptools</a> build backend. It is the <strong>single source of truth of all the dependencies</strong>. In this file, you will find:</p>
+<ul>
+<li><p>the list of the runtime dependencies required by the package in the <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> key.</p></li>
+<li><p>multiple extra dependency groups are required to run different tasks in the <code class="docutils literal notranslate"><span class="pre">extras_require</span></code> key. For instance, the <code class="docutils literal notranslate"><span class="pre">doc</span></code> extra group would like the dependencies required to build the documentation site.</p></li>
+<li><p>in the <code class="docutils literal notranslate"><span class="pre">extras_require</span></code> key, you will also find the dependencies required at the <em>build</em> time like <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> is the configuration file of <a class="reference external" href="https://tox.wiki">tox</a> and where you will find the <strong>configuration of the <code class="docutils literal notranslate"><span class="pre">doit</span></code> commands</strong>. Indeed <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> creates tasks out of the commands it contains and uses <code class="docutils literal notranslate"><span class="pre">tox</span></code> directly in some cases (it vendors a version of it).</p></li>
+</ul>
+<p>Now that the main files are defined, we can go through each step of a typical workflow with <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code>, assuming that you are in a cloned repository:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pyviz/label/dev</span> <span class="pre">pyctdev</span></code>: to start things off, you need to install <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code>. It is available on the <code class="docutils literal notranslate"><span class="pre">pyviz</span></code> channel, and we recommend installing a dev release from the dev channel <code class="docutils literal notranslate"><span class="pre">pyviz/label/dev</span></code> to get a more up-to-date version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">env_create</span> <span class="pre">-c</span> <span class="pre">pyviz</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--python=3.8</span> <span class="pre">--name=my_dev_env</span></code>: once <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> is installed, you can run the <code class="docutils literal notranslate"><span class="pre">env_create</span></code> command to create a conda environment that will have the Python version and the name you want, and will fetch packages from the channels you have listed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">my_dev_env</span></code>: to activate the environment you’ve just created.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">-c</span> <span class="pre">pyviz</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">develop_install</span> <span class="pre">-o</span> <span class="pre">tests</span> <span class="pre">-o</span> <span class="pre">examples</span></code>: the <code class="docutils literal notranslate"><span class="pre">develop_install</span></code> executes three actions, (1) it installs the <em>build</em> dependencies (including, e.g., <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>), (2) it installs the <em>runtime</em> dependencies and the extra dependencies that are listed with the <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag (in the example that would be the <em>tests</em> and <em>examples</em> groups of dependencies), and (3) it installs the package you’re working on in <em>editable</em> mode (with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--no-deps</span> <span class="pre">--no-build-isolation</span> <span class="pre">-e</span> <span class="pre">.</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_flakes</span></code> (or sometimes <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_lint</span></code>): run linting on the project code source, e.g., with <code class="docutils literal notranslate"><span class="pre">flake8</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_unit</span></code>: run the Python unit tests, i.e., the tests you will find in the <code class="docutils literal notranslate"><span class="pre">/tests</span></code> folder, most likely with <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_examples</span></code>: smoke test the  <em>examples</em>, i.e., the notebooks you will find in the <code class="docutils literal notranslate"><span class="pre">/examples</span></code> folder.</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h3>Documentation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="nbsite">
+<h4>nbsite<a class="headerlink" href="#nbsite" title="Link to this heading">#</a></h4>
+<p>Most of the packages maintained by the HoloViz group have a website. Those not promoted for usage outside the group don’t have a website like <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code>. HoloViz being dedicated to making data visualization simpler in Python, it made sense for the group to develop a way to generate websites out of a collection of Jupyter Notebooks. As a result, <a class="reference external" href="https://github.com/holoviz-dev/nbsite">nbsite</a> was created to achieve that goal. <code class="docutils literal notranslate"><span class="pre">nbsite</span></code> is based on <a class="reference external" href="https://www.sphinx-doc.org">sphinx</a> and is the tool used by all the projects to build their site. <code class="docutils literal notranslate"><span class="pre">nbsite</span></code> provides two important features:</p>
+<ul class="simple">
+<li><p>A Sphinx <code class="docutils literal notranslate"><span class="pre">NotebookDirective</span></code> allows inserting an evaluated notebook in a document. It has a few useful parameters like <code class="docutils literal notranslate"><span class="pre">offset</span></code> that takes a number that will be the number of top cells not rendered.</p></li>
+<li><p>It can build a gallery from an organized collection of Notebooks.</p></li>
+</ul>
+<p>Building a site with <code class="docutils literal notranslate"><span class="pre">nbsite</span></code> is usually a two-step process:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nbsite</span> <span class="pre">generate-rst</span> <span class="pre">...</span></code> looks for notebooks in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder and generates their corresponding <em>reStructuredText</em> files. For instance, if the notebook <code class="docutils literal notranslate"><span class="pre">examples/user_guide/Data.ipynb</span></code> is found, then the corresponding file <code class="docutils literal notranslate"><span class="pre">doc/user_guide/Data.rst</span></code> is created and includes the <code class="docutils literal notranslate"><span class="pre">NotebookDirective</span></code> that points to the notebook file to insert it in this document. A similar process applies to the notebooks found in a gallery.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nbsite</span> <span class="pre">build</span> <span class="pre">...</span></code> executes the notebooks and builds the website.</p></li>
+</ol>
+<p>After these steps, you should find a <code class="docutils literal notranslate"><span class="pre">builtdocs</span></code> folder in the repository that contains the static site built by nbsite/sphinx. When the websites are built in the continuous integration system, the content of the <code class="docutils literal notranslate"><span class="pre">builtdocs</span></code> folder is pushed to a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch. The details of this process can be found in the <code class="docutils literal notranslate"><span class="pre">docs.yaml</span></code> Github Action workflow of each project, located in the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> folder.</p>
+</section>
+<section id="file-formats">
+<h4>File formats<a class="headerlink" href="#file-formats" title="Link to this heading">#</a></h4>
+<p>The documentation is currently written in a mix of three file formats:</p>
+<ul class="simple">
+<li><p><em>Jupyter Notebooks</em> (.ipynb): Notebooks are saved in the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder and are meant to be executed when the documentation is built, which means that the system that builds the documentation must have all the dependencies and data required to run them. Notebooks <strong>must be cleared before being committed</strong> to a repository. The team uses a <a class="reference external" href="https://gist.github.com/maximlt/a9fa4d19ae5bff83422194ca99533faa">custom shell script</a> that leverages <code class="docutils literal notranslate"><span class="pre">jq</span></code> to strip out some data and metadata from the notebook JSON file. Thanks to <a class="reference external" href="https://myst-nb.readthedocs.io/en/latest/">MyST-NB</a>, on which <code class="docutils literal notranslate"><span class="pre">nbsite</span></code> depends, <em>MyST Markdown</em> is correctly handled in notebooks.</p></li>
+<li><p><em>reStructuredText</em> (.rst): Original file format supported by Sphinx and in which the Python documentation is written. They should be gradually replaced by <em>MyST Markdown</em> files.</p></li>
+<li><p><em>Markdown</em> (.md):  <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#syntax-core">MyST Markdown</a> is a Markdown extension focused on scientific and technical documentation authoring. It is easier to write and read compared to <em>reStructuredText</em>, which should be favored.</p></li>
+</ul>
+</section>
+<section id="theme">
+<h4>Theme<a class="headerlink" href="#theme" title="Link to this heading">#</a></h4>
+<p>The HoloViz sites rely on the <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/">PyData Sphinx Theme</a> for their theme.</p>
+</section>
+<section id="analytics">
+<h4>Analytics<a class="headerlink" href="#analytics" title="Link to this heading">#</a></h4>
+<p>Data used to be collected using <em>Google Analytics</em>, even if nothing much was actually done in practice with this data. Starting from 2024 <em>Google Analytics</em> was dropped in favor of <em>GoatCounter</em> that is more respectful to user privacy, and unlikr <em>Google Analytics</em> is in fact compliant with GDPR.</p>
+<p>The data collected with <em>GoatCounter</em> is available at https://holoviz.goatcounter.com.</p>
+</section>
+<section id="hosts">
+<h4>Hosts<a class="headerlink" href="#hosts" title="Link to this heading">#</a></h4>
+<p>The HoloViz websites are usually hosted on <em>GitHub Pages</em>. The deployment process involves pushing the website built to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch, which is watched by GitHub and will trigger a site update on change. This process is based on Git and comes with some size limitations, which means that it wasn’t possible to deploy HoloViews’ website this way, which is instead hosted on AWS S3.</p>
+</section>
+<section id="dev-sites">
+<h4>Dev sites<a class="headerlink" href="#dev-sites" title="Link to this heading">#</a></h4>
+<p>Most HoloViz projects have both the main site - the one meant to be visited by users and that is in line with the latest official release - and a dev site that can be updated at any time and is meant to be used by the HoloViz developers for testing purposes, and in particular making sure that the documentation build works as expected before making a new release.</p>
+<p>This page references all the HoloViz dev sites: https://holoviz-dev.github.io/. A link to the dev site is also usually available in the README file of each project.</p>
+</section>
+</section>
+<section id="monitoring">
+<h3>Monitoring<a class="headerlink" href="#monitoring" title="Link to this heading">#</a></h3>
+<section id="status-dashboard-and-scheduled-workflows">
+<h4>Status dashboard and scheduled workflows<a class="headerlink" href="#status-dashboard-and-scheduled-workflows" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://status.holoviz.org/">HoloViz Status dashboard</a> is a site that lets you glance at the status of the packages and repositories maintained by the HoloViz group. It also includes the status of other packages important to HoloViz, e.g., Bokeh. The dashboard primarily consists of badges that report various indicators, such as the status of the latest CI test runs, the latest version available on PyPi, whether the documentation is up or not, etc.</p>
+<p>Scheduled Github actions have been set up to run on Sundays on most of the packages maintained by the group. This means that checking the <em>Status Dashboard</em> on a Monday morning is the right time to get an appreciation of the state of the test/build/docs workflows across the projects.</p>
+</section>
+<section id="lumen-ae5-monitor">
+<h4>Lumen AE5 Monitor<a class="headerlink" href="#lumen-ae5-monitor" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://monitor.pyviz.demo.anaconda.com/dashboard">Lumen AE5 Monitor</a> is a dashboard that helps monitor the state and performance of the deployments.</p>
+</section>
+<section id="deployments">
+<h4>Deployments<a class="headerlink" href="#deployments" title="Link to this heading">#</a></h4>
+<p>All the HoloViz websites are static websites. Yet many of their pages would actually require an active Python kernel to be fully interactive. I.e., any datashader examples on HoloViews’ website would require a kernel to show users that data shading is done every time their plot changes. Some websites have implemented deployments to show users how the tools behave in a fully interactive environment. As the core HoloViz members are employed by Anaconda, they have access to an Anaconda product named <a class="reference external" href="https://www.anaconda.com/products/enterprise">Enterprise Data Science Platform</a> (also called <em>AE5</em>) that is a platform to, among other things, allow to easily develop and deploy projects, like for instance Jupyter Notebooks or Panel apps. The HoloViz group has set up an AE5 instance and used it to deploy applications for the following websites:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://panel.holoviz.org/">Panel</a>: the <em>Gallery</em> applications are deployed this way. They are then iframed on Panel’s site.</p></li>
+<li><p><a class="reference external" href="https://examples.pyviz.org/">Examples</a>: this site offers users to run read-only Jupyter Notebooks and web apps like Panel apps (look for <em>View a running version of this notebook.</em> in the example header).</p></li>
+</ul>
+</section>
+<section id="data-storage">
+<h4>Data Storage<a class="headerlink" href="#data-storage" title="Link to this heading">#</a></h4>
+<p>It is sometimes convenient to have a place where to store data. This happens when the data is too large to be stored on a GitHub repository (storing data there isn’t recommended anyway), which is pretty standard when creating a tutorial that relies on an actual data set. The HoloViz group makes use of the following AWS S3 buckets:</p>
+<ul class="simple">
+<li><p>datashader-data</p></li>
+<li><p>TODO</p></li>
+</ul>
+<p>These buckets are managed by &#64;jlstevens and &#64;philippjfr.</p>
+</section>
+<section id="domain-names">
+<h4>Domain names<a class="headerlink" href="#domain-names" title="Link to this heading">#</a></h4>
+<p>Some of the sites have their own domain name:</p>
+<ul class="simple">
+<li><p>datashader.org</p></li>
+<li><p>holoviews.org</p></li>
+<li><p>geoviews.org</p></li>
+</ul>
+<p>While others are available as subdomains of holoviz.org:</p>
+<ul class="simple">
+<li><p>hvplot.holoviz.org</p></li>
+<li><p>panel.holoviz.org</p></li>
+<li><p>lumen.holoviz.org</p></li>
+<li><p>param.holoviz.org</p></li>
+<li><p>colorcet.holoviz.org</p></li>
+</ul>
+</section>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h3>
+<p>While <code class="docutils literal notranslate"><span class="pre">pyctdev</span></code> acts as the task runner, other tools run the tests. There are four main kinds of tests that a HoloViz project may run:</p>
+<ul class="simple">
+<li><p><em>Linters</em>: running programs that check Python source files for errors and styling issues. Most HoloViz projects rely on <a class="reference external" href="https://flake8.pycqa.org">Flake8</a> and use the <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_flakes</span></code> command. Some projects may rely on <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to run the linters on every commit to avoid having the CI fail in linting issues, which are best found locally. Notebooks can also be linted, this is done either by <a class="reference external" href="https://github.com/holoviz-dev/nbsmoke">nbsmoke</a> or <a class="reference external" href="https://nbqa.readthedocs.io/">nbqa</a>.</p></li>
+<li><p><em>Unit tests</em>: the HoloViz projects rely on <a class="reference external" href="https://docs.pytest.org/">pytest</a> to run their unit tests, sometimes with some additional pytest plugins. <a class="reference external" href="https://pytest-cov.readthedocs.io/">pytest-cov</a> usage is pretty standard across the projects, as it provides an easy way to produce coverage reports that can then automatically be uploaded to the <a class="reference external" href="https://about.codecov.io/">Codecov</a> service. The <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_unit</span></code> command is usually the one that will run these tests.</p></li>
+<li><p><em>Example tests</em>: the examples tests and the notebooks tests, in which the notebooks found in the <code class="docutils literal notranslate"><span class="pre">/examples</span></code> folder are all executed. Note that their output is not compared with any reference. Instead, the tests only fail if an error is raised while running the notebooks. The projects rely on pytest and either <a class="reference external" href="https://github.com/holoviz-dev/nbsmoke">nbsmoke</a> or <a class="reference external" href="https://nbval.readthedocs.io">nbval</a>. The <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_examples</span></code> command is usually the one that will run these tests.</p></li>
+<li><p><em>UI tests</em>: some projects may rely on <a class="reference external" href="https://playwright.dev/python/">Playwright</a> and <a class="reference external" href="https://github.com/microsoft/playwright-pytest">pytest-playwright</a> to run tests that check that things get displayed as expected in a browser and those interactions between the client and the backend work as expected. The <code class="docutils literal notranslate"><span class="pre">doit</span> <span class="pre">test_ui</span></code> command is usually the one that will run these tests.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We would like not to have to maintain nbsmoke anymore and instead rely on nbqa and nbval.</p>
+</div>
+</section>
+<section id="releasing">
+<h3>Releasing<a class="headerlink" href="#releasing" title="Link to this heading">#</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Releasing a new version of a package is an operation that needs to be done with care, a broken release can adversely affect many users.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Making a new release is a cumbersome and delicate operation. It implies many manual steps and has a cost on the general Python ecosystem, e.g., someone needs to update the <em>conda-forge</em> release). So make sure that a release is needed before making one, and try not to mess it up too badly ;)</p>
+</div>
+<section id="quick-intro">
+<h4>Quick intro<a class="headerlink" href="#quick-intro" title="Link to this heading">#</a></h4>
+<p>Releasing a new package version is, in practice, very easy:</p>
+<ol class="arabic simple">
+<li><p>a commit must be tagged (e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-m</span> <span class="pre">&quot;Version</span> <span class="pre">1.9.6</span> <span class="pre">alpha1&quot;</span> <span class="pre">v1.9.6a1</span> <span class="pre">main</span></code>)</p></li>
+<li><p>that tag must be pushed (e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">v1.9.6a1</span></code>)</p></li>
+</ol>
+<p>And that’s it, as soon as a new tag is pushed, the <em>Packages</em> and <em>Documentation</em> Github Actions get triggered, and start building the packages and the documentation, and deploy them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Version tags must start with a lowercase <code class="docutils literal notranslate"><span class="pre">v</span></code> and have a period in them, e.g. <code class="docutils literal notranslate"><span class="pre">v2.0</span></code>, <code class="docutils literal notranslate"><span class="pre">v0.9.8</span></code> or <code class="docutils literal notranslate"><span class="pre">v0.1</span></code> and may include the <a class="reference external" href="https://peps.python.org/pep-0440/">PEP440</a> prerelease identifiers of <code class="docutils literal notranslate"><span class="pre">a</span></code> (alpha), <code class="docutils literal notranslate"><span class="pre">b</span></code> (beta) or <code class="docutils literal notranslate"><span class="pre">rc</span></code> (release candidate) allowing tags such as <code class="docutils literal notranslate"><span class="pre">v2.0.a3</span></code>, <code class="docutils literal notranslate"><span class="pre">v0.9.8.b3</span></code> or <code class="docutils literal notranslate"><span class="pre">v0.1.rc5</span></code>.</p>
+</div>
+</section>
+<section id="distributions">
+<h4>Distributions<a class="headerlink" href="#distributions" title="Link to this heading">#</a></h4>
+<p>The goal of making a release is to distribute a new package version.</p>
+<p>The HoloViz group automatically builds and publishes package distributions directly to two platforms:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/">PyPi</a>: source distribution and wheel</p></li>
+<li><p><a class="reference external" href="https://anaconda.org/">Anaconda.org</a>: conda package</p></li>
+</ul>
+<p>Conda packages are distributed to the <a class="reference external" href="https://anaconda.org/pyviz/repo">pyviz</a> channel. This allows the HoloViz group to be sure that new packages are available instantaneously to the users as soon as they are published.</p>
+<p>The core HoloViz packages are also made available on two other conda channels:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">defaults</span></code>: most of the core HoloViz packages are made available on this channel managed by Anaconda (the company)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>: the HoloViz members, helped by other contributors, maintain the conda-forge recipes of the packages they publish.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Development releases are only available on PyPi and the conda <code class="docutils literal notranslate"><span class="pre">pyviz</span></code> channel. To install the latest development release, e.g., Panel execute <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">panel</span> <span class="pre">--pre</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pyviz/label/dev</span> <span class="pre">panel</span></code>.</p>
+</div>
+</section>
+<section id="before-releasing">
+<h4>Before releasing<a class="headerlink" href="#before-releasing" title="Link to this heading">#</a></h4>
+<p>There are a few tasks that are worth paying attention to before making a release:</p>
+<ul class="simple">
+<li><p>You should have made some decisions about what should go in that release and check later that these decided changes (bug fixes, new features, documentation, etc.) are indeed merged. This is best managed by setting Github <em>Milestones</em> to issues.</p></li>
+<li><p>You should make sure that the test suite passes.</p></li>
+<li><p>A new release is a good opportunity to check that <strong>there are no alarming warnings</strong> emitted while the tests suite runs. Missing a deprecation warning could mean that you would have to make a new release soon after this one!</p></li>
+</ul>
+</section>
+<section id="detailed-process">
+<h4>Detailed process<a class="headerlink" href="#detailed-process" title="Link to this heading">#</a></h4>
+<p>Development releases can have different goals. Sometimes they are only meant to be pre-releases made right before an actual release to make sure everything is alright. Sometimes they are made to be shared with stakeholders (e.g., a specific contributor, a customer, a dependent project, etc.). Depending on your situation, you might decide to pause the release process in the procedure detailed below between two development releases, waiting for feedback.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bumping the version of a package depends on the package’s nature:</p>
+<ul class="simple">
+<li><p>Non-pure Python packages, e.g., Panel or GeoViews as they include JavaScript/TypeScript extensions, need their <code class="docutils literal notranslate"><span class="pre">package.json</span></code> and <code class="docutils literal notranslate"><span class="pre">package-lock.json</span></code> files to be updated, manually bumping the version in those files (e.g., from <code class="docutils literal notranslate"><span class="pre">1.9.5</span></code> to <code class="docutils literal notranslate"><span class="pre">1.9.6-a.1</span></code>). Note that the version scheme isn’t the same as the Python version scheme.</p></li>
+<li><p>Pure Python packages (and non-pure Python packages once manually bumped) just need a new tag, done with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-m</span> <span class="pre">&quot;Version</span> <span class="pre">1.9.6</span> <span class="pre">alpha1&quot;</span> <span class="pre">v1.9.6a1</span> <span class="pre">main</span></code>.</p></li>
+</ul>
+</div>
+<ol class="arabic simple">
+<li><p>Before making a proper release, you should start by making a development release. This is the first one that would be an <em>alpha</em> release. Bump the version too, e.g., <code class="docutils literal notranslate"><span class="pre">v1.9.6a1</span></code> and commit the new tag.</p></li>
+<li><p>After pushing the new tag, you can monitor the <em>Packages</em> and <em>Documentation</em> workflows. If one fails, you will have to fix that as that would be a release blocker.</p></li>
+<li><p>If the <em>alpha</em> release succeeded, it is now time to check a few things:</p>
+<ul class="simple">
+<li><p>A new version of the <em>dev</em> (built on the corresponding <code class="docutils literal notranslate"><span class="pre">holoviz-dev</span></code> repository <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch) site should have been built. You should spot-check it, trying to find errors that could have occurred while the notebooks ran, for instance.</p></li>
+<li><p>Some packages have implemented <em>downstream tests</em>. When they do, these tests run only when a release is made. They trigger the test suite of their downstream packages (e.g., a Panel release would trigger the test suite of Param). This ensures that the release you just made didn’t break some other packages of the HoloViz ecosystem. To find the results of these downstream tests, check the Github Actions page of the released package.</p></li>
+<li><p>Optionally, and to make sure that the release went well, you could install the package you’ve released (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pyviz/label/dev</span> <span class="pre">panel</span></code>) and check there’s no embarrassing issue.</p></li>
+</ul>
+</li>
+<li><p>Pause the release process if you expect feedback from others. If not, keep going.</p></li>
+<li><p>In practice making <em>beta</em> releases appear to be quite rare. However, making a <em>release candidate</em>, in particular before making a release that incorporates breaking changes, is recommended. After making a <em>release candidate</em> you should announce it (e.g., on Discourse, Discord, Twitter) so that users can try it out and provide feedback.</p></li>
+<li><p>It is not required to update the changelog for a development release. However, a final release should come with an updated changelog, which means that at some point before making the last development release, you will have to merge an updated changelog. Updating the changelog is a process that depends on the package being released. Look for files such as <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> in the repository and update them accordingly to their format. Crafting a good changelog is an important step in the release process. Users will read it to find out what’s new and, in particular, what may potentially break their code. Don’t forget to mention all the people who have contributed to the release since the last one.</p></li>
+<li><p>Once the last development release has been confirmed to be in good shape, by yourself and preferably by others too (in particular, when it comes to spot-checking the website, it is best to have more than one pair of eyes looking into that!), you are ready to make the final release. You will have to bump the version again to its final number (e.g., to <code class="docutils literal notranslate"><span class="pre">v1.9.6</span></code>). Note that you may need to make another development release before the final one if you’ve made changes after the latest development version that are worth mentioning in the changelog.</p></li>
+<li><p>Optionally again, and to ensure the release went well, you could install the package you’ve released (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">pyviz</span> <span class="pre">panel</span></code>) and check there’s no embarrassing issue.</p></li>
+<li><p>Create a Github Release. It should contain the same changelog as the one published on the website (the formatting can change).</p>
+<ul class="simple">
+<li><p>Go to the Github repository</p></li>
+<li><p>Click <em>Releases</em></p></li>
+<li><p>Click <em>Tags</em></p></li>
+<li><p>Click the most recent tag that you just added</p></li>
+<li><p>Click <em>Create a new release</em></p></li>
+<li><p>Add release notes and publish the release</p></li>
+</ul>
+</li>
+<li><p>Find the <em>conda-forge</em> recipe of the package you released and update it if required. Pay attention to the build and runtime dependencies and their version pins. If you’re not yet a maintainer, add yourself to the list of maintainers and ping an existing maintainer, letting them know the PR is ready and that you have added yourself as a maintainer.</p></li>
+<li><p>Announce the release (e.g., on Discourse, Discord, Twitter).</p></li>
+<li><p>If the release is important (e.g., not a bug fix release), it may be worth a blog post.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Development releases are cheap, don’t hesitate to make as many as required! It’s also fine if a development release only makes it to one of the two distribution platforms (PyPi or Anaconda.org). They’re not meant to be for end-users but development purposes only.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can tag a release from any branch, not necessarily from the main one. This is useful if you have to maintain multiple versions simultaneously (e.g., 2.* and 3.*).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you push a tag by mistake or the wrong tag and are lucky enough to spot that instantly, you should hurry up (really!) and <a class="reference external" href="https://docs.github.com/en/actions/managing-workflow-runs/canceling-a-workflow">cancel</a> the <em>Build</em> and <em>Documentation</em> workflows before anything gets published/deployed. If you manage to do that, you can then remove the faulty tag.</p>
+</div>
+</section>
+</section>
+<section id="credentials">
+<h3>Credentials<a class="headerlink" href="#credentials" title="Link to this heading">#</a></h3>
+<p>Shared credentials are stored in a 1Password vault. Get in touch with one of the owners to get access: &#64;droumis, &#64;philippjfr, and &#64;maximlt.</p>
+</section>
+<section id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Link to this heading">#</a></h3>
+<section id="users">
+<h4>Users<a class="headerlink" href="#users" title="Link to this heading">#</a></h4>
+<p><strong>HoloViz Users</strong> are meant to ask their questions on the <a class="reference external" href="https://discourse.holoviz.org/">HoloViz Discourse forum</a>. This Discourse instance is managed by &#64;philippjfr.</p>
+</section>
+<section id="contributors">
+<h4>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h4>
+<p><strong>HoloViz Contributors</strong> chat on multiple open channels:</p>
+<ul class="simple">
+<li><p>Directly on Github via issues and pull requests</p></li>
+<li><p>On the <a class="reference external" href="https://discord.gg/rb6gPXbdAr">Discord</a>, which is meant for brainstorming and casual chatting. An example of a discussion on Discord would be when the maintainer of a library that relies on a HoloViz package has in mind a suggestion for an improvement and requires a first assessment before opening an issue.</p></li>
+</ul>
+<p><strong>HoloViz Contributors</strong> also have regular online meetings. These meetings are <strong>open to anyone</strong>. Please see the <a class="reference external" href="https://holoviz.org/community.html">Community</a> page for a calendar and description of the meetings.</p>
+</section>
+<section id="id3">
+<h4>Outreach<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<section id="blogs">
+<h5>Blogs<a class="headerlink" href="#blogs" title="Link to this heading">#</a></h5>
+<p>The HoloViz project maintains a blog at https://blog.holoviz.org/ where new major releases are announced.</p>
+<p>The former PyViz-named blog is still alive at http://blog.pyviz.org/.</p>
+</section>
+<section id="twitter">
+<h5>Twitter<a class="headerlink" href="#twitter" title="Link to this heading">#</a></h5>
+<p>There are four more or less active Twitter accounts:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://twitter.com/holoviz_org">&#64;Holoviz_org</a></p></li>
+<li><p><a class="reference external" href="https://twitter.com/panel_org">&#64;Panel_org</a></p></li>
+<li><p><a class="reference external" href="https://twitter.com/datashader">&#64;Datashader</a></p></li>
+<li><p><a class="reference external" href="https://twitter.com/HoloViews">&#64;HoloViews</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="community.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The HoloViz community</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="about/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">About Us</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div class="github-star-badge">
+    <a href="https://github.com/holoviz/holoviz">
+        <img src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&label=Star%20on%20%20GitHub%E2%AD%90" alt="Support us with a star on GitHub">
+    </a>
+</div></div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-yes-wait-but-why">Contributing? Yes! Wait, but why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-how-to-contribute">What and how to contribute?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outreach">Outreach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-instructions">Developer Instructions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-guide">Operating guide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyviz">PyViz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-git">GitHub/Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#organisations-and-repositories">Organisations and repositories</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teams</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#service-account">Service account</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git workflow</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tooling">Tooling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conda">Conda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyctdev">Pyctdev</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nbsite">nbsite</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-formats">File formats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#theme">Theme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analytics">Analytics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hosts">Hosts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-sites">Dev sites</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring">Monitoring</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#status-dashboard-and-scheduled-workflows">Status dashboard and scheduled workflows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lumen-ae5-monitor">Lumen AE5 Monitor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deployments">Deployments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-storage">Data Storage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-names">Domain names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#releasing">Releasing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-intro">Quick intro</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions">Distributions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#before-releasing">Before releasing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-process">Detailed process</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#credentials">Credentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication">Communication</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#users">Users</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Outreach</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#blogs">Blogs</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#twitter">Twitter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="nbsite-copyright-last-updated">
+    <span class="copyright">
+            &copy; Copyright 2017-2024 Holoviz contributors.
+    </span>
+    <span class="last-updated">Last updated on 2024-11-22.</span><br>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
