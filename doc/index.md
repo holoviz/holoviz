@@ -31,7 +31,7 @@ HoloViz provides a set of Python packages that make visualization easier, more a
 - [HoloViews](https://holoviews.org): to help you make all of your data instantly visualizable.
 - [GeoViews](https://geoviews.org): to extend HoloViews for geographic data.
 - [Datashader](https://datashader.org): for rendering even the largest datasets.
-- [Lumen](https://lumen.holoviz.org): to build data-driven dashboards from a simple YAML specification.
+- [Lumen](https://lumen.holoviz.org): to build data-driven dashboards from a simple YAML specification that's well suited to modern AI tools like LLMs.
 - [Param](https://param.holoviz.org): to create declarative user-configurable objects.
 - [Colorcet](https://colorcet.holoviz.org): for perceptually uniform colormaps.
 

@@ -6,7 +6,7 @@ Currently ongoing or scheduled priorities include:
 
 1. **Ongoing maintenance, improved documentation and examples**: Address various bugs and usability issues reported on the issue tracker as time permits.
 
-2. **Better Datashader integration with external plotting libraries (HoloViews, Plotly, Matplotlib)**: Improve integration so external plotting programs can support user-friendly features like hover information, legends, and colorbars.
+2. **Better Datashader integration with external plotting libraries (HoloViews, Plotly, Matplotlib)**: Improve integration so external plotting programs can support user-friendly features like hover information, legends, and colorbars. See the [Datashader Instant Inspection project](https://github.com/orgs/holoviz/projects/9) for progress.
 
 3. **Support for managing annotations**: Develop annotations as a first-class component in HoloViz tools, allowing users to add annotations to plots and dashboards. See [holonote on GitHub](https://github.com/holoviz/holonote) for progress.
 
