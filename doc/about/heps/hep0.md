@@ -48,7 +48,7 @@ The HEP proposer is responsible for following the discussion on the pull request
 When the proposer determines that the HEP is ready, they must notify the HoloViz core developers that it is ready for a formal review (e.g., in a comment on the pull request, using `@holoviz-dev`). This message must also describe any major points of contention and how they were resolved. 
 
 #### Review and Resolution
-A HoloViz core developer will then formally review the pull request for format, scope, and evidence of consensus. They may also notify other interested parties to weigh in on the HEP. If consensus has been reached, the HoloViz core developer will update the status of the pull request, assign a HEP number, add a link to the discussion in the [HEP table](accepted_heps.md), and merge it. All HEPs will be resolved as either 'rejected', 'accepted', or 'deferred' depending on the consensus of the community.
+A HoloViz core developer will then formally review the pull request for format, scope, and evidence of consensus. They may also notify other interested parties to weigh in on the HEP. If consensus has been reached, the HoloViz core developer will update the status of the pull request, assign a HEP number, add a link to the discussion in the [HEP table](index.md), and merge it. All HEPs will be resolved as either 'rejected', 'accepted', or 'deferred' depending on the consensus of the community.
 
 In unusual and controversial cases where consensus has not been possible to achieve, a HoloViz core developer may ask the steering committee to take a HEP up for vote, following the policies described in [CHARTER.md](https://github.com/holoviz/holoviz/blob/main/doc/governance/org-docs/CHARTER.md).
 

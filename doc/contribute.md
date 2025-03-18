@@ -92,6 +92,7 @@ Your *pull request* should now be reviewed by one of the project's maintainers. 
 
 When your PR is merged, enjoy, and repeat!
 
+(operating-guide)=
 ## Operating guide
 
 The HoloViz project consists of:
