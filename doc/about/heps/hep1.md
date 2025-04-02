@@ -7,13 +7,15 @@
 <tr><td> Author(s) </td><td> Ian Thomas </td></tr>
 <tr><td> Created </td><td> April 19, 2023</td></tr>
 <tr><td> Accepted </td><td> May 23, 2023</td></tr>
-<tr><td> Last Updated </td><td> March 15, 2024</td></tr>
+<tr><td> Last Updated </td><td> March 18, 2025</td></tr>
 <tr><td> Discussion </td><td> https://github.com/holoviz/holoviz/pull/362 </td></tr>
 <tr><td> Implementation </td><td> NA </td></tr>
 </table>
 
 
 > Note: HEP 1 was updated on March 15, 2024 by Demetris Roumis to align with the updated HEP format, proposed by HEP 0. Notably, he added the table above and the 'Resolution' section below. If there is any discrepency between the reformatted HEP 1 and the original HEP 1, the original HEP 1 takes precedence.
+
+> Note: HEP 1 was updated on March 18, 2025 by Maxime Liquet to specify that projects must not drop support for an old Python version in a patch release.
 
 
 ## Summary
@@ -98,6 +100,9 @@ dropping it themselves.
 For 3 the geospatial dependencies often cause problems by not being available
 as wheels on PyPI and being difficult to resolve on conda. The HoloViz policy
 should be the same as that of 2 above for uniformity.
+
+The HoloViz projects must not drop support for an old Python version in a patch
+release, but in a minor or major release.
 
 ## Illustration 
 
