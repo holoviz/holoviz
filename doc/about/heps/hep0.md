@@ -52,6 +52,9 @@ A HoloViz core developer will then formally review the pull request for format, 
 
 In unusual and controversial cases where consensus has not been possible to achieve, a HoloViz core developer may ask the steering committee to take a HEP up for vote, following the policies described in [CHARTER.md](https://github.com/holoviz/holoviz/blob/main/doc/governance/org-docs/CHARTER.md).
 
+#### Amending Existing HEPs
+Once a HEP has been accepted, there may be cases where amendments are needed due to implementation challenges discovered after acceptance, community feedback during implementation, evolving requirements or best practices, error corrections or clarifications. For minor amendments (corrections, clarifications, or small adjustments that don't change the core intent), the original author or a core developer may submit a pull request with the changes and update the "Updated" date in the HEP table. For significant amendments that substantially alter the original proposal, a new HEP should be created that explicitly references and potentially supersedes the original. This ensures that major changes receive the same level of community review as the original proposal. In either case, the amendment process should follow similar community consensus principles as outlined in the original submission process.
+
 ## HEP Format
 
 
