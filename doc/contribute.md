@@ -155,7 +155,7 @@ In more detail:
     * [pyviz_comms](https://github.com/holoviz/pyviz_comms): Bidirectional communication for the HoloViz ecosystem
     * [jupyter-panel-proxy](https://github.com/holoviz/jupyter-panel-proxy): Jupyter Server Proxy for Panel
 * [holoviz-dev](https://github.com/holoviz-dev/)
-    * [nbsite](https://github.com/holoviz/nbsite): Build a tested, sphinx-based website from notebooks
+    * [nbsite](https://github.com/holoviz-dev/nbsite): Build a tested, sphinx-based website from notebooks
     * [nbsmoke](https://github.com/holoviz-dev/nbsmoke): Basic notebook checks: Do they run ok? Do they contain lint?
     * [autover](https://github.com/holoviz-dev/autover): Provides consistent and up-to-date version strings for Python packages.
     * [pyct](https://github.com/holoviz-dev/pyct): Python packaging Common Tasks
