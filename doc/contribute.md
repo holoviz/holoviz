@@ -292,9 +292,6 @@ The [HoloViz Status dashboard](https://status.holoviz.org/) is a site that lets 
 
 Scheduled Github actions have been set up to run on Sundays on most of the packages maintained by the group. This means that checking the *Status Dashboard* on a Monday morning is the right time to get an appreciation of the state of the test/build/docs workflows across the projects.
 
-#### Lumen AE5 Monitor
-
-The [Lumen AE5 Monitor](https://monitor.pyviz.demo.anaconda.com/dashboard) is a dashboard that helps monitor the state and performance of the deployments.
 
 #### Deployments
 
