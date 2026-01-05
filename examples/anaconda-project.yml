@@ -29,8 +29,6 @@ packages: &pkgs
 - xarray
 # We don't want to download mkl packages (which are large) mainly seen on Windows
 - nomkl
-# Required for numpy+openblas on macOS (fixes missing libgfortran.5.dylib error on the CI)
-- libgfortran5
 # Docs deps, that used to be in a `doc` environment but locking is so slow.
 - nbsite>=0.8.7
 # Test deps, that used to be in a `test` env, same reasons.
