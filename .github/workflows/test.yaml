@@ -40,7 +40,7 @@ jobs:
       - name: install anaconda-project
         run: conda install "anaconda-project>=0.11"
       - name: prepare
-        run: anaconda-project prepare --refresh --directory examples
+        run: anaconda-project prepare --directory examples  
       - name: conda list
         run: anaconda-project run --directory examples conda_list  
       - name: lint
