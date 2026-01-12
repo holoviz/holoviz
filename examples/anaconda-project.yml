@@ -17,7 +17,7 @@ packages: &pkgs
 - hvplot>=0.10.0
 - panel>=1.4.4,<1.5.0
 - param>=2.1.0,<3.0
-- dask
+- dask<2025
 - jupyterlab
 - notebook
 - matplotlib-base>=3
@@ -27,8 +27,6 @@ packages: &pkgs
 - plotly
 - pyarrow
 - xarray
-# We don't want to download mkl packages (which are large) mainly seen on Windows
-- nomkl
 # Docs deps, that used to be in a `doc` environment but locking is so slow.
 - nbsite>=0.8.7
 # Test deps, that used to be in a `test` env, same reasons.
