@@ -17,7 +17,7 @@ locking_enabled: true
 env_specs:
   default:
     locked: true
-    env_spec_hash: d11d21a1d5b74a25ad305e547b3aa314a0355abb
+    env_spec_hash: 3368b85930bff66db374a509d82b89018cede5ac
     platforms:
     - linux-64
     - osx-64
@@ -113,7 +113,7 @@ env_specs:
       - nbsmoke=0.5.0=pyh9f0ad1d_0
       - nest-asyncio=1.6.0=pyhd8ed1ab_1
       - notebook-shim=0.2.4=pyhd8ed1ab_1
-      - notebook=7.5.1=pyhcf101f3_0
+      - notebook=7.5.2=pyhcf101f3_0
       - overrides=7.7.0=pyhd8ed1ab_1
       - packaging=25.0=pyh29332c3_1
       - pandocfilters=1.5.0=pyhd8ed1ab_0
@@ -135,7 +135,7 @@ env_specs:
       - pyflakes=3.4.0=pyhd8ed1ab_0
       - pygments=2.19.2=pyhd8ed1ab_0
       - pyparsing=3.3.1=pyhcf101f3_0
-      - pytest=9.0.2=pyhcf101f3_0
+      - pytest=8.4.2=pyhcf101f3_1
       - python-dateutil=2.9.0.post0=pyhe01879c_2
       - python-fastjsonschema=2.21.2=pyhe01879c_0
       - python-json-logger=2.0.7=pyhd8ed1ab_0
