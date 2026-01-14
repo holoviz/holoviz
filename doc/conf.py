@@ -23,6 +23,9 @@ def html_page_context(app, pagename, templatename, context, doctree):
     context['custom_toc'] = parsed_toc
     context['get_relative_uri'] = app.builder.get_relative_uri
 
+    # Remove prev navigation from homepage
+    if 'learn/index' in pagename:
+        context['prev'] = None
 
 def build_and_render_full_toc(builder):
     """Build and render the full TOC HTML from the master document."""

@@ -155,7 +155,7 @@ In more detail:
     * [pyviz_comms](https://github.com/holoviz/pyviz_comms): Bidirectional communication for the HoloViz ecosystem
     * [jupyter-panel-proxy](https://github.com/holoviz/jupyter-panel-proxy): Jupyter Server Proxy for Panel
 * [holoviz-dev](https://github.com/holoviz-dev/)
-    * [nbsite](https://github.com/holoviz/nbsite): Build a tested, sphinx-based website from notebooks
+    * [nbsite](https://github.com/holoviz-dev/nbsite): Build a tested, sphinx-based website from notebooks
     * [nbsmoke](https://github.com/holoviz-dev/nbsmoke): Basic notebook checks: Do they run ok? Do they contain lint?
     * [autover](https://github.com/holoviz-dev/autover): Provides consistent and up-to-date version strings for Python packages.
     * [pyct](https://github.com/holoviz-dev/pyct): Python packaging Common Tasks
@@ -292,9 +292,6 @@ The [HoloViz Status dashboard](https://status.holoviz.org/) is a site that lets 
 
 Scheduled Github actions have been set up to run on Sundays on most of the packages maintained by the group. This means that checking the *Status Dashboard* on a Monday morning is the right time to get an appreciation of the state of the test/build/docs workflows across the projects.
 
-#### Lumen AE5 Monitor
-
-The [Lumen AE5 Monitor](https://monitor.pyviz.demo.anaconda.com/dashboard) is a dashboard that helps monitor the state and performance of the deployments.
 
 #### Deployments
 

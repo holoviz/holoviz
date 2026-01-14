@@ -23,11 +23,11 @@ HEPs are maintained as text files using Markdown for formatting in the [HoloViz/
 
 ## Policy
 ### Core Developers
-There are several references in this HEP to 'core developers'. This term refers to the currently active HoloViz core team members, collectively described by the combined MEMBERS.md files ([example](https://github.com/holoviz/holoviz/blob/main/doc/governance/project-docs/MEMBERS.md
+There are several references in this HEP to 'core developers'. This term refers to the currently active HoloViz core team members, collectively described by the combined MEMBERS.md files ([example](https://github.com/holoviz/holoviz/blob/main/doc/about/governance/project-docs/MEMBERS.md
 )) in each of the HoloViz repositories. The core developers are reachable on HoloViz [GitHub](https://github.com/holoviz/holoviz) or [Discord](https://discord.gg/rb6gPXbdAr) with the handle: `@holoviz-dev`.
 
 ### Steering Committee
-There are several references in this HEP to the 'steering committee'. The currently active HoloViz steering committee is listed in [STEERING-COMMITTEE.md](https://github.com/holoviz/holoviz/blob/main/doc/governance/org-docs/STEERING-COMMITTEE.md), and is governed by [CHARTER.md](https://github.com/holoviz/holoviz/blob/main/doc/governance/org-docs/CHARTER.md). The steering committee members are reachable on HoloViz [GitHub](https://github.com/holoviz/holoviz) or [Discord](https://discord.gg/rb6gPXbdAr) with the handle: `@steering-committee`.
+There are several references in this HEP to the 'steering committee'. The currently active HoloViz steering committee is listed in [STEERING-COMMITTEE.md](https://github.com/holoviz/holoviz/blob/main/doc/about/governance/org-docs/STEERING-COMMITTEE.md), and is governed by [CHARTER.md](https://github.com/holoviz/holoviz/blob/main/doc/about/governance/org-docs/CHARTER.md). The steering committee members are reachable on HoloViz [GitHub](https://github.com/holoviz/holoviz) or [Discord](https://discord.gg/rb6gPXbdAr) with the handle: `@steering-committee`.
 
 ### Workflow
 #### Initiation
@@ -104,7 +104,7 @@ A final **Copyright** section is required.
 HEP is to be pronounced `/hep/`.
 
 ## Reference
-A significant portion of this document was adapted from [CEP 1](https://github.com/conda-incubator/ceps/blob/main/cep-1.md) by the conda community. The [Numpy](https://numpy.org/neps/nep-0000.html) and [Python](https://peps.python.org/pep-0001/) versions of enhancement proposal guidelines were also referenced for inspiration.
+A significant portion of this document was adapted from [CEP 1](https://github.com/conda-incubator/ceps/blob/main/cep-0001.md) by the conda community. The [Numpy](https://numpy.org/neps/nep-0000.html) and [Python](https://peps.python.org/pep-0001/) versions of enhancement proposal guidelines were also referenced for inspiration.
 
 ## Copyright
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
