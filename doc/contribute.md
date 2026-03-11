@@ -34,7 +34,11 @@ If you are a new contributor and are contributing a PR though, you can use AI to
 - Add screenshots or screen recordings (before changes and after changes) must be included
 - Cite sources and docs you referenced with working links
 
-Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs. Maintainers reserve the right to close PRs they deem low-effort or AI-generated without review.
+Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs.
+
+Separately, please refrain from tagging maintainers shortly after opening a PR/issue, as reviews will happen when time allows. Only bump a PR/issue that has been open for a longer period of time (weeks) without a response.
+
+Maintainers reserve the right to close PRs they deem low-effort or AI-generated without review.
 
 Let's continue building a meaningful community!
 
