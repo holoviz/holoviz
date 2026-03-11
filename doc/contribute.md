@@ -23,7 +23,7 @@ Contributing to the HoloViz project might even get you a job, which has been the
 
 As an example, Andrew saw a cool chart online and tried to reproduce it with HoloViews, but noticed that the labels' text color doesn't cycle through alongside the points' color. This motivated him to [create an issue to report it](https://github.com/holoviz/holoviews/issues/5887) and separately [create a PR to fix it](https://github.com/holoviz/holoviews/pull/5888).
 
-Remember, contributions don't just have to be Pull Request(s) (PR)s either! Filing bugs, helping others on Discord or Discourse, writing blog posts, or sharing things you built on social media all count! See below more ideas!
+Remember, contributions don't just have to be Pull Request(s) (PR)s either! Filing bugs, helping others on Discord or Discourse, writing blog posts, or sharing things you built on social media all count! See below for more ideas!
 
 If you are a new contributor and are contributing a PR though, you can use AI tools (in fact HoloViz has its own [MCP](https://marcskovmadsen.github.io/holoviz-mcp/)), **but you must follow these rules in the PR description**:
 
@@ -34,7 +34,7 @@ If you are a new contributor and are contributing a PR though, you can use AI to
 - Screenshots or screen recordings (before changes and after changes) must be included
 - Cite sources and docs you referenced with working links
 
-Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs.
+Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs, they may be closed, especially if it is your first time contributing to HoloViz.
 
 Separately, please refrain from tagging maintainers shortly after opening a PR/issue, as reviews will happen when time allows. Only bump a PR/issue that has been open for a longer period of time (weeks) without a response.
 
