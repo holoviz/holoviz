@@ -17,6 +17,29 @@ These reasons, or whatever reason brought you here, are all valid in our eyes. W
 Contributing to the HoloViz project might even get you a job, which has been the case for a couple of HoloViz members.
 ```
 
+## Using AI README
+
+## Using AI README
+
+**Maintainers are humans and have finite time and energy to review contributions**. As such, they need to prioritize their work, and they may not have the time to review all contributions, especially if they are of low effort. We especially value contributions that arise from real user use cases, i.e. actually using HoloViz packages like Lumen, Panel, HoloViews, hvPlot, Datashader, and others to build something you care about, but encounter a bug or missing feature.
+
+As an example, Andrew saw a cool chart online and tried to reproduce it with HoloViews, but noticed that the labels' text color doesn't cycle through alongside the points' color. This motivated him to [create an issue to report it](https://github.com/holoviz/holoviews/issues/5887) and separately [create a PR to fix it](https://github.com/holoviz/holoviews/pull/5888).
+
+Remember, contributions don't just have to be Pull Request(s) (PR)s either! Filing bugs, helping others on Discord or Discourse, writing blog posts, or sharing things you built on social media all count! See below more ideas!
+
+If you are a new contributor and are contributing a PR though, you can use AI tools (in fact HoloViz has its own [MCP](https://marcskovmadsen.github.io/holoviz-mcp/), **but they must follow these rules in the PR description**:
+
+- Follow the repos' PR template
+- Explain what motivated the PR (were you trying to achieve something, but encountered ...?)
+- Do NOT list out what changed, unless you want to bring attention to specific changes
+- Include reproduction steps, ideally an Minimal Reproducible Verifiable Example
+- Add screenshots or screen recordings (before changes and after changes) must be included
+- Cite sources and docs you referenced with working links
+
+Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs. Maintainers reserve the right to close PRs they deem low-effort or AI-generated without review.
+
+Let's continue building a meaningful community!
+
 ## What and how to contribute?
 
 If you end up on this page it is quite likely that you are interested in contributing code to HoloViz. However, as you will see, there are many other areas where you could contribute, and in some of these areas, the HoloViz project would really appreciate some help!
