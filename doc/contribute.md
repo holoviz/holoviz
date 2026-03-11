@@ -30,8 +30,8 @@ If you are a new contributor and are contributing a PR though, you can use AI to
 - Follow the repos' PR template
 - Explain what motivated the PR (were you trying to achieve something, but encountered ...?)
 - Do NOT list out what changed, unless you want to bring attention to specific changes
-- Include reproduction steps, ideally an Minimal Reproducible Verifiable Example
-- Add screenshots or screen recordings (before changes and after changes) must be included
+- Include reproduction steps, ideally a Minimal Reproducible Verifiable Example
+- Screenshots or screen recordings (before changes and after changes) must be included
 - Cite sources and docs you referenced with working links
 
 Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs.
