@@ -19,8 +19,6 @@ Contributing to the HoloViz project might even get you a job, which has been the
 
 ## Using AI README
 
-## Using AI README
-
 **Maintainers are humans and have finite time and energy to review contributions**. As such, they need to prioritize their work, and they may not have the time to review all contributions, especially if they are of low effort. We especially value contributions that arise from real user use cases, i.e. actually using HoloViz packages like Lumen, Panel, HoloViews, hvPlot, Datashader, and others to build something you care about, but encounter a bug or missing feature.
 
 As an example, Andrew saw a cool chart online and tried to reproduce it with HoloViews, but noticed that the labels' text color doesn't cycle through alongside the points' color. This motivated him to [create an issue to report it](https://github.com/holoviz/holoviews/issues/5887) and separately [create a PR to fix it](https://github.com/holoviz/holoviews/pull/5888).
