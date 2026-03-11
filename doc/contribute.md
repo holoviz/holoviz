@@ -25,7 +25,7 @@ As an example, Andrew saw a cool chart online and tried to reproduce it with Hol
 
 Remember, contributions don't just have to be Pull Request(s) (PR)s either! Filing bugs, helping others on Discord or Discourse, writing blog posts, or sharing things you built on social media all count! See below more ideas!
 
-If you are a new contributor and are contributing a PR though, you can use AI tools (in fact HoloViz has its own [MCP](https://marcskovmadsen.github.io/holoviz-mcp/)), **but they must follow these rules in the PR description**:
+If you are a new contributor and are contributing a PR though, you can use AI tools (in fact HoloViz has its own [MCP](https://marcskovmadsen.github.io/holoviz-mcp/)), **but you must follow these rules in the PR description**:
 
 - Follow the repos' PR template
 - Explain what motivated the PR (were you trying to achieve something, but encountered ...?)
