@@ -1,0 +1,497 @@
+<svg id="mermaid-1574472439590" width="1180.3828125" xmlns="http://www.w3.org/2000/svg" height="1910.8297119140625" viewBox="0 0 1180.3828125 1910.8297119140625"><style>
+
+
+
+#mermaid-1574472439590 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  color: #333; }
+
+#mermaid-1574472439590 .label text {
+  fill: #333; }
+
+#mermaid-1574472439590 .node rect,
+#mermaid-1574472439590 .node circle,
+#mermaid-1574472439590 .node ellipse,
+#mermaid-1574472439590 .node polygon {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1px; }
+
+#mermaid-1574472439590 .node .label {
+  text-align: center; }
+
+#mermaid-1574472439590 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1574472439590 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1574472439590 .edgePath .path {
+  stroke: #666;
+  stroke-width: 1.5px; }
+
+#mermaid-1574472439590 .edgeLabel {
+  background-color: white;
+  text-align: center; }
+
+#mermaid-1574472439590 .cluster rect {
+  fill: #eaf2fb;
+  stroke: #26a;
+  stroke-width: 1px; }
+
+#mermaid-1574472439590 .cluster text {
+  fill: #333; }
+
+#mermaid-1574472439590 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 12px;
+  background: #eaf2fb;
+  border: 1px solid #26a;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1574472439590 .actor {
+  stroke: #999;
+  fill: #eee; }
+
+#mermaid-1574472439590 text.actor {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1574472439590 .actor-line {
+  stroke: #666; }
+
+#mermaid-1574472439590 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1574472439590 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1574472439590 #arrowhead {
+  fill: #333; }
+
+#mermaid-1574472439590 .sequenceNumber {
+  fill: white; }
+
+#mermaid-1574472439590 #sequencenumber {
+  fill: #333; }
+
+#mermaid-1574472439590 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1574472439590 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1574472439590 .labelBox {
+  stroke: #999;
+  fill: #eee; }
+
+#mermaid-1574472439590 .labelText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1574472439590 .loopText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1574472439590 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #999; }
+
+#mermaid-1574472439590 .note {
+  stroke: #777700;
+  fill: #ffa; }
+
+#mermaid-1574472439590 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 14px; }
+
+#mermaid-1574472439590 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1574472439590 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1574472439590 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1574472439590 .mermaid-main-font {
+  font-family: "trebuchet ms", verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1574472439590 .section0 {
+  fill: #80b3e6; }
+
+#mermaid-1574472439590 .section2 {
+  fill: #80b3e6; }
+
+#mermaid-1574472439590 .section1,
+#mermaid-1574472439590 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1574472439590 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1574472439590 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1574472439590 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1574472439590 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1574472439590 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+
+#mermaid-1574472439590 .grid .tick {
+  stroke: #e6e6e6;
+  opacity: 0.3;
+  shape-rendering: crispEdges; }
+#mermaid-1574472439590   .grid .tick text {
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1574472439590 .today {
+  fill: none;
+  stroke: #d42;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1574472439590 .task {
+  stroke-width: 2; }
+
+#mermaid-1574472439590 .taskText {
+  text-anchor: middle;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .taskText:not([font-size]) {
+  font-size: 11px; }
+
+#mermaid-1574472439590 .taskTextOutsideRight {
+  fill: #333;
+  text-anchor: start;
+  font-size: 11px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .taskTextOutsideLeft {
+  fill: #333;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1574472439590 .task.clickable {
+  cursor: pointer; }
+
+#mermaid-1574472439590 .taskText.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1574472439590 .taskTextOutsideLeft.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+#mermaid-1574472439590 .taskTextOutsideRight.clickable {
+  cursor: pointer;
+  fill: #003163 !important;
+  font-weight: bold; }
+
+
+#mermaid-1574472439590 .taskText0,
+#mermaid-1574472439590 .taskText1,
+#mermaid-1574472439590 .taskText2,
+#mermaid-1574472439590 .taskText3 {
+  fill: white; }
+
+#mermaid-1574472439590 .task0,
+#mermaid-1574472439590 .task1,
+#mermaid-1574472439590 .task2,
+#mermaid-1574472439590 .task3 {
+  fill: #26a;
+  stroke: #1a4d80; }
+
+#mermaid-1574472439590 .taskTextOutside0,
+#mermaid-1574472439590 .taskTextOutside2 {
+  fill: #333; }
+
+#mermaid-1574472439590 .taskTextOutside1,
+#mermaid-1574472439590 .taskTextOutside3 {
+  fill: #333; }
+
+
+#mermaid-1574472439590 .active0,
+#mermaid-1574472439590 .active1,
+#mermaid-1574472439590 .active2,
+#mermaid-1574472439590 .active3 {
+  fill: #eee;
+  stroke: #1a4d80; }
+
+#mermaid-1574472439590 .activeText0,
+#mermaid-1574472439590 .activeText1,
+#mermaid-1574472439590 .activeText2,
+#mermaid-1574472439590 .activeText3 {
+  fill: #333 !important; }
+
+
+#mermaid-1574472439590 .done0,
+#mermaid-1574472439590 .done1,
+#mermaid-1574472439590 .done2,
+#mermaid-1574472439590 .done3 {
+  stroke: #666;
+  fill: #bbb;
+  stroke-width: 2; }
+
+#mermaid-1574472439590 .doneText0,
+#mermaid-1574472439590 .doneText1,
+#mermaid-1574472439590 .doneText2,
+#mermaid-1574472439590 .doneText3 {
+  fill: #333 !important; }
+
+
+#mermaid-1574472439590 .crit0,
+#mermaid-1574472439590 .crit1,
+#mermaid-1574472439590 .crit2,
+#mermaid-1574472439590 .crit3 {
+  stroke: #b1361b;
+  fill: #d42;
+  stroke-width: 2; }
+
+#mermaid-1574472439590 .activeCrit0,
+#mermaid-1574472439590 .activeCrit1,
+#mermaid-1574472439590 .activeCrit2,
+#mermaid-1574472439590 .activeCrit3 {
+  stroke: #b1361b;
+  fill: #eee;
+  stroke-width: 2; }
+
+#mermaid-1574472439590 .doneCrit0,
+#mermaid-1574472439590 .doneCrit1,
+#mermaid-1574472439590 .doneCrit2,
+#mermaid-1574472439590 .doneCrit3 {
+  stroke: #b1361b;
+  fill: #bbb;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1574472439590 .milestone {
+  transform: rotate(45deg) scale(0.8, 0.8); }
+
+#mermaid-1574472439590 .milestoneText {
+  font-style: italic; }
+
+#mermaid-1574472439590 .doneCritText0,
+#mermaid-1574472439590 .doneCritText1,
+#mermaid-1574472439590 .doneCritText2,
+#mermaid-1574472439590 .doneCritText3 {
+  fill: #333 !important; }
+
+#mermaid-1574472439590 .activeCritText0,
+#mermaid-1574472439590 .activeCritText1,
+#mermaid-1574472439590 .activeCritText2,
+#mermaid-1574472439590 .activeCritText3 {
+  fill: #333 !important; }
+
+#mermaid-1574472439590 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: #333;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 g.classGroup text {
+  fill: #999;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family);
+  font-size: 10px; }
+#mermaid-1574472439590   g.classGroup text .title {
+    font-weight: bolder; }
+
+#mermaid-1574472439590 g.classGroup rect {
+  fill: #eee;
+  stroke: #999; }
+
+#mermaid-1574472439590 g.classGroup line {
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #eee;
+  opacity: 0.5; }
+
+#mermaid-1574472439590 .classLabel .label {
+  fill: #999;
+  font-size: 10px; }
+
+#mermaid-1574472439590 .relation {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1574472439590 #compositionStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #compositionEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #aggregationStart {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #aggregationEnd {
+  fill: #eee;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #dependencyStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #dependencyEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #extensionStart {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 #extensionEnd {
+  fill: #999;
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 .commit-id,
+#mermaid-1574472439590 .commit-msg,
+#mermaid-1574472439590 .branch-label {
+  fill: lightgrey;
+  color: lightgrey;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .pieTitleText {
+  text-anchor: middle;
+  font-size: 25px;
+  fill: #333;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 .slice {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 g.stateGroup text {
+  fill: #999;
+  stroke: none;
+  font-size: 10px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+#mermaid-1574472439590 g.stateGroup text {
+  fill: #999;
+  stroke: none;
+  font-size: 10px; }
+
+#mermaid-1574472439590 g.stateGroup .state-title {
+  font-weight: bolder;
+  fill: black; }
+
+#mermaid-1574472439590 g.stateGroup rect {
+  fill: #eee;
+  stroke: #999; }
+
+#mermaid-1574472439590 g.stateGroup line {
+  stroke: #999;
+  stroke-width: 1; }
+
+#mermaid-1574472439590 .transition {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1574472439590 .stateGroup .composit {
+  fill: white;
+  border-bottom: 1px; }
+
+#mermaid-1574472439590 .state-note {
+  stroke: #777700;
+  fill: #ffa; }
+#mermaid-1574472439590   .state-note text {
+    fill: black;
+    stroke: none;
+    font-size: 10px; }
+
+#mermaid-1574472439590 .stateLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #eee;
+  opacity: 0.5; }
+
+#mermaid-1574472439590 .stateLabel text {
+  fill: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-family: var(--mermaid-font-family); }
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial';
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive; }
+
+#mermaid-1574472439590 .label foreignObject { overflow: visible; font-weight: bold; font-size: 90%; }
+:root { --mermaid-font-family: "trebuchet ms", verdana, arial;}
+#mermaid-1574472439590 .data-package &gt; * { fill:#ffa !important; }
+#mermaid-1574472439590 .viz-package &gt; * { fill:#fa0 !important; }</style><style>#mermaid-1574472439590 {
+    color: rgba(0, 0, 0, 0.65);
+    font: ;
+  }</style><g transform="translate(0, 0)"><g class="output"><g class="clusters"><g class="cluster" id="subGraph4" transform="translate(347.4443359375,1038.923439025879)" style="opacity: 1;"><rect width="593.599609375" height="182" x="-296.7998046875" y="-91"></rect><g class="label" transform="translate(0, -77)" id="mermaid-1574472439590Text"><g transform="translate(-35.6796875,-10.5)"><foreignObject width="71.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">HoloViz API</div></foreignObject></g></g></g><g class="cluster" id="subGraph3" transform="translate(191.8046875,1766.329689025879)" style="opacity: 1;"><rect width="367.609375" height="91" x="-183.8046875" y="-45.5"></rect><g class="label" transform="translate(0, -31.5)" id="mermaid-1574472439590Text"><g transform="translate(-47.25,-10.5)"><foreignObject width="94.5" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Plotting library</div></foreignObject></g></g></g><g class="cluster" id="subGraph2" transform="translate(667.28515625,1225.423439025879)" style="opacity: 1;"><rect width="987.90625" height="91" x="-493.953125" y="-45.5"></rect><g class="label" transform="translate(0, -31.5)" id="mermaid-1574472439590Text"><g transform="translate(-50.6171875,-10.5)"><foreignObject width="101.234375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">HoloViz Add-ons</div></foreignObject></g></g></g><g class="cluster" id="subGraph1" transform="translate(604.55859375,572.6656265258789)" style="opacity: 1;"><rect width="1123.6171875" height="91" x="-561.80859375" y="-45.5"></rect><g class="label" transform="translate(0, -31.5)" id="mermaid-1574472439590Text"><g transform="translate(-26.515625,-10.5)"><foreignObject width="53.03125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Data API</div></foreignObject></g></g></g><g class="cluster" id="subGraph0" transform="translate(592.357421875,53.5)" style="opacity: 1;"><rect width="1160.05078125" height="91" x="-580.025390625" y="-45.5"></rect><g class="label" transform="translate(0, -31.5)" id="mermaid-1574472439590Text"><g transform="translate(-38.34375,-10.5)"><foreignObject width="76.6875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Kind of data</div></foreignObject></g></g></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M367.330078125,74L367.330078125,78.16666666666667C367.330078125,82.33333333333333,367.330078125,90.66666666666667,367.330078125,99C367.330078125,107.33333333333333,367.330078125,115.66666666666667,367.4134114583333,124.08333358764646C367.4967447916667,132.50000050862627,367.6634114583333,141.00000101725257,367.7467447916666,145.2500012715657L367.83007812499994,149.50000152587884" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32065)" style="fill:none"></path><defs><marker id="arrowhead32065" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M949.890625,74L949.890625,78.16666666666667C949.890625,82.33333333333333,949.890625,90.66666666666667,949.890625,99C949.890625,107.33333333333333,949.890625,115.66666666666667,949.890625,133.63632837931314C949.890625,151.60599009195963,949.890625,179.21198018391928,949.890625,208.5679702758789C949.890625,237.92396036783853,949.890625,269.02995045979816,949.890625,300.5437526702881C949.890625,332.057554880778,949.890625,363.97916920979816,949.890625,395.90078353881836C949.890625,427.82239786783856,949.890625,459.7440121968587,949.890625,481.62148602803546C949.890625,503.4989598592122,949.890625,515.3322931925455,949.890625,525.4156265258789C949.890625,535.4989598592123,949.890625,543.8322931925455,949.890625,547.9989598592123L949.890625,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32066)" style="fill:none"></path><defs><marker id="arrowhead32066" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1095.875,74L1095.875,78.16666666666667C1095.875,82.33333333333333,1095.875,90.66666666666667,1095.875,99C1095.875,107.33333333333333,1095.875,115.66666666666667,1095.875,133.63632837931314C1095.875,151.60599009195963,1095.875,179.21198018391928,1095.875,208.5679702758789C1095.875,237.92396036783853,1095.875,269.02995045979816,1095.875,300.5437526702881C1095.875,332.057554880778,1095.875,363.97916920979816,1095.875,395.90078353881836C1095.875,427.82239786783856,1095.875,459.7440121968587,1095.875,481.62148602803546C1095.875,503.4989598592122,1095.875,515.3322931925455,1095.875,525.4156265258789C1095.875,535.4989598592123,1095.875,543.8322931925455,1095.875,547.9989598592123L1095.875,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32067)" style="fill:none"></path><defs><marker id="arrowhead32067" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M788.1640625,74L788.1640625,78.16666666666667C788.1640625,82.33333333333333,788.1640625,90.66666666666667,788.1640625,99C788.1640625,107.33333333333333,788.1640625,115.66666666666667,788.1640625,133.63632837931314C788.1640625,151.60599009195963,788.1640625,179.21198018391928,788.1640625,208.5679702758789C788.1640625,237.92396036783853,788.1640625,269.02995045979816,788.1640625,300.5437526702881C788.1640625,332.057554880778,788.1640625,363.97916920979816,788.1640625,395.90078353881836C788.1640625,427.82239786783856,788.1640625,459.7440121968587,788.1640625,481.62148602803546C788.1640625,503.4989598592122,788.1640625,515.3322931925455,788.1640625,525.4156265258789C788.1640625,535.4989598592123,788.1640625,543.8322931925455,788.1640625,547.9989598592123L788.1640625,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32068)" style="fill:none"></path><defs><marker id="arrowhead32068" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M110.53515625,74L110.53515625,78.16666666666667C110.53515625,82.33333333333333,110.53515625,90.66666666666667,110.53515625,99C110.53515625,107.33333333333333,110.53515625,115.66666666666667,110.53515625,133.63632837931314C110.53515625,151.60599009195963,110.53515625,179.21198018391928,110.53515625,208.5679702758789C110.53515625,237.92396036783853,110.53515625,269.02995045979816,110.61848958333333,290.5829456329346C110.70182291666667,312.13594080607095,110.86848958333333,324.1359410603841,110.95182291666667,330.13594118754065L111.03515625000001,336.1359413146972" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32069)" style="fill:none"></path><defs><marker id="arrowhead32069" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M410.84234973568095,222.12366436343996L448.7735726964008,235.12571039482626C486.70479565712066,248.12775642621258,562.5672415785604,274.1318484889852,600.4984645392801,303.0947016848816C638.4296875,332.057554880778,638.4296875,363.97916920979816,638.4296875,395.90078353881836C638.4296875,427.82239786783856,638.4296875,459.7440121968587,638.4296875,481.62148602803546C638.4296875,503.4989598592122,638.4296875,515.3322931925455,638.4296875,525.4156265258789C638.4296875,535.4989598592123,638.4296875,543.8322931925455,638.4296875,547.9989598592123L638.4296875,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32070)" style="fill:none"></path><defs><marker id="arrowhead32070" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M367.830078125,265.13593597412097L367.7467447916667,270.96927007039375C367.6634114583333,276.8026041666666,367.4967447916667,288.4692723592122,367.4967447916667,300.58385658264154C367.4967447916667,312.6984408060709,367.6634114583333,325.2609410603839,367.7467447916667,331.5421911875405L367.830078125,337.823441314697" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32071)" style="fill:none"></path><defs><marker id="arrowhead32071" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M400.09386259566384,422.714344344034L414.20321882971984,434.20622470767483C428.3125750637759,445.69810507131564,456.5312875318879,468.6818657985973,470.64064376594393,486.0904128289048C484.75,503.4989598592122,484.75,515.3322931925455,484.75,525.4156265258789C484.75,535.4989598592123,484.75,543.8322931925455,484.75,547.9989598592123L484.75,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32072)" style="fill:none"></path><defs><marker id="arrowhead32072" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M363.0415689813605,450.1896181451785L362.33542206780044,457.1022862086286C361.62927515424036,464.01495427207857,360.2169813271202,477.84029039897877,359.51083441356013,490.6696251290955C358.8046875,503.4989598592122,358.8046875,515.3322931925455,358.8046875,525.4156265258789C358.8046875,535.4989598592123,358.8046875,543.8322931925455,358.8046875,547.9989598592123L358.8046875,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32073)" style="fill:none"></path><defs><marker id="arrowhead32073" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M144.9542008455937,422.74658421910357L159.76652153799475,434.23309127023276C174.57884223039582,445.71959832136207,204.2034836151979,468.69261242362046,219.01580430759896,486.09578614141634C233.828125,503.4989598592122,233.828125,515.3322931925455,233.828125,525.4156265258789C233.828125,535.4989598592123,233.828125,543.8322931925455,233.828125,547.9989598592123L233.828125,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32074)" style="fill:none"></path><defs><marker id="arrowhead32074" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M110.2131909880872,455.8436620269056L110.04614874007268,461.81398944340117C109.87910649205814,467.7843168598967,109.54502199602906,479.7249716928878,109.37797974801454,491.61196577605006C109.2109375,503.4989598592122,109.2109375,515.3322931925455,109.2109375,525.4156265258789C109.2109375,535.4989598592123,109.2109375,543.8322931925455,109.2109375,547.9989598592123L109.2109375,552.1656265258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32075)" style="fill:none"></path><defs><marker id="arrowhead32075" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M109.2109375,593.1656265258789L109.2109375,597.3322931925455C109.2109375,601.4989598592123,109.2109375,609.8322931925455,109.2109375,618.1656265258789C109.2109375,626.4989598592123,109.2109375,634.8322931925455,109.2109375,660.5621109008789C109.2109375,686.2919286092123,109.2109375,729.4182306925455,109.2109375,774.2945327758789C109.2109375,819.1708348592123,109.2109375,865.7971369425455,109.2109375,895.0269546508789C109.2109375,924.2567723592123,109.2109375,936.0901056925455,109.2109375,949.5901056925455C109.2109375,963.0901056925455,109.2109375,978.2567723592123,109.2109375,993.4234390258789C109.2109375,1008.5901056925455,109.2109375,1023.7567723592123,125.25716145833333,1036.6150306683214C141.30338541666666,1049.4732889774307,173.39583333333334,1060.0231389289825,189.44205729166666,1065.2980639047585L205.48828125,1070.5729888805342" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32076)" style="fill:none"></path><defs><marker id="arrowhead32076" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M233.828125,593.1656265258789L233.828125,597.3322931925455C233.828125,601.4989598592123,233.828125,609.8322931925455,233.828125,618.1656265258789C233.828125,626.4989598592123,233.828125,634.8322931925455,233.828125,660.5621109008789C233.828125,686.2919286092123,233.828125,729.4182306925455,233.828125,774.2945327758789C233.828125,819.1708348592123,233.828125,865.7971369425455,233.828125,895.0269546508789C233.828125,924.2567723592123,233.828125,936.0901056925455,233.828125,949.5901056925455C233.828125,963.0901056925455,233.828125,978.2567723592123,233.828125,993.4234390258789C233.828125,1008.5901056925455,233.828125,1023.7567723592123,235.0912173763736,1035.5067723592122C236.35430975274724,1047.2567723592122,238.8804945054945,1055.5901056925456,240.14358688186812,1059.7567723592122L241.40667925824175,1063.923439025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32077)" style="fill:none"></path><defs><marker id="arrowhead32077" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M358.8046875,593.1656265258789L358.8046875,597.3322931925455C358.8046875,601.4989598592123,358.8046875,609.8322931925455,358.8046875,618.1656265258789C358.8046875,626.4989598592123,358.8046875,634.8322931925455,374.3189546419407,652.5410078214383C389.83322178388136,670.2497224503309,420.86175606776277,697.3338183747828,436.3760232097034,710.8758663370087L451.89029035164407,724.4179142992348" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32078)" style="fill:none"></path><defs><marker id="arrowhead32078" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M484.75,593.1656265258789L484.75,597.3322931925455C484.75,601.4989598592123,484.75,609.8322931925455,484.75,618.1656265258789C484.75,626.4989598592123,484.75,634.8322931925455,485.9987279314243,645.8156616152879C487.24745586284854,656.7990300380303,489.74491172569714,670.4324335501818,490.9936396571214,677.2491353062575L492.24236758854573,684.0658370623332" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32079)" style="fill:none"></path><defs><marker id="arrowhead32079" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M638.4296875,593.1656265258789L638.4296875,597.3322931925455C638.4296875,601.4989598592123,638.4296875,609.8322931925455,638.4296875,618.1656265258789C638.4296875,626.4989598592123,638.4296875,634.8322931925455,625.393753525433,652.0108774471452C612.3578195508659,669.1894617017448,586.2859516017319,695.2132968776108,573.2500176271649,708.2252144655439L560.2140836525979,721.2371320534768" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32080)" style="fill:none"></path><defs><marker id="arrowhead32080" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M788.1640625,593.1656265258789L788.1640625,597.3322931925455C788.1640625,601.4989598592123,788.1640625,609.8322931925455,788.1640625,618.1656265258789C788.1640625,626.4989598592123,788.1640625,634.8322931925455,753.322716684947,655.1611947733259C718.4813708698939,675.4900963541062,648.7986792397878,707.8145661823334,613.9573334247348,723.976801096447L579.1159876096817,740.1390360105606" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32081)" style="fill:none"></path><defs><marker id="arrowhead32081" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M949.890625,593.1656265258789L949.890625,597.3322931925455C949.890625,601.4989598592123,949.890625,609.8322931925455,949.890625,618.1656265258789C949.890625,626.4989598592123,949.890625,634.8322931925455,889.6451178395886,656.7114605113007C829.3996106791769,678.5906278300558,708.9085963583539,714.0156291342328,648.6630891979424,731.7281297863213L588.4175820375309,749.4406304384098" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32082)" style="fill:none"></path><defs><marker id="arrowhead32082" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1095.875,593.1656265258789L1095.875,597.3322931925455C1095.875,601.4989598592123,1095.875,609.8322931925455,1095.875,618.1656265258789C1095.875,626.4989598592123,1095.875,634.8322931925455,1012.0985006114115,657.5111974497903C928.3220012228229,680.1901017070351,760.7690024456457,717.2145768881913,676.9925030570572,735.7268144787695L593.2160036684686,754.2390520693475" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32083)" style="fill:none"></path><defs><marker id="arrowhead32083" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M447.54611925914634,817.3269801600252L425.84019052845525,833.1763899710008C404.13426179776417,849.0257997819764,360.7224043363821,880.7246194039277,339.016475605691,902.49069588157C317.310546875,924.2567723592123,317.310546875,936.0901056925455,317.310546875,949.5901056925455C317.310546875,963.0901056925455,317.310546875,978.2567723592123,317.310546875,993.4234390258789C317.310546875,1008.5901056925455,317.310546875,1023.7567723592123,310.9287288232601,1035.5067723592122C304.5469107715201,1047.2567723592122,291.7832746680403,1055.5901056925456,285.4014566163003,1059.7567723592122L279.0196385645604,1063.923439025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32084)" style="fill:none"></path><defs><marker id="arrowhead32084" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M543.2238946180332,841.8421225328457L549.267633535861,853.6056752816845C555.3113724536888,865.3692280305235,567.3988502893444,888.8963335282011,573.4425892071722,906.5765529437067C579.486328125,924.2567723592123,579.486328125,936.0901056925455,579.486328125,946.1734390258789C579.486328125,956.2567723592123,579.486328125,964.5901056925455,579.486328125,968.7567723592123L579.486328125,972.9234390258789" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32085)" style="fill:none"></path><defs><marker id="arrowhead32085" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M579.486328125,1013.9234390258789L579.486328125,1018.0901056925455C579.486328125,1022.2567723592123,579.486328125,1030.5901056925456,531.1975911458334,1041.3773439195022C482.9088541666667,1052.1645821464588,386.3313802083333,1065.4057252670386,338.0426432291667,1072.0262968273285L289.75390625,1078.6468683876185" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32086)" style="fill:none"></path><defs><marker id="arrowhead32086" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M247.62109375,1104.923439025879L247.62109375,1109.0901056925456C247.62109375,1113.2567723592122,247.62109375,1121.5901056925456,247.62109375,1129.923439025879C247.62109375,1138.2567723592122,247.62109375,1146.5901056925456,247.62109375,1154.923439025879C247.62109375,1163.2567723592122,247.62109375,1171.5901056925456,247.62109375,1179.923439025879C247.62109375,1188.2567723592122,247.62109375,1196.5901056925456,247.62109375,1200.7567723592122L247.62109375,1204.923439025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32087)" style="fill:none"></path><defs><marker id="arrowhead32087" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M247.62109375,1245.923439025879L247.62109375,1250.0901056925456C247.62109375,1254.2567723592122,247.62109375,1262.5901056925456,247.62109375,1270.923439025879C247.62109375,1279.2567723592122,247.62109375,1287.5901056925456,247.70442708333334,1296.0067723592122C247.78776041666666,1304.423439025879,247.95442708333334,1312.923439025879,248.03776041666666,1317.173439025879L248.12109375,1321.423439025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32088)" style="fill:none"></path><defs><marker id="arrowhead32088" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M210.72248491530974,1436.6732676911886L198.96600305442476,1448.7397024969705C187.2095211935398,1460.8061373027522,163.69655747176992,1484.9390069143155,152.0234089442183,1503.0054417200972C140.35026041666666,1521.071876525879,140.51692708333334,1533.071876525879,140.60026041666666,1539.071876525879L140.68359375,1545.071876525879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32089)" style="fill:none"></path><defs><marker id="arrowhead32089" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M272.0613899357169,1450.1315803401621L276.5055853630974,1459.9549630377817C280.9497807904779,1469.778345735401,289.83817164523896,1489.42511113064,294.2823670726195,1513.9366448699263C298.7265625,1538.4481786092122,298.7265625,1567.8244806925456,298.7265625,1597.200782775879C298.7265625,1626.5770848592122,298.7265625,1655.9533869425456,298.7265625,1676.558204650879C298.7265625,1697.1630223592122,298.7265625,1708.9963556925456,298.7265625,1719.079689025879C298.7265625,1729.1630223592122,298.7265625,1737.4963556925456,298.7265625,1741.6630223592122L298.7265625,1745.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32090)" style="fill:none"></path><defs><marker id="arrowhead32090" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M156.72428497762078,1634.2889977982584L160.40695623135065,1642.7957796695284C164.0896274850805,1651.3025615407987,171.45496999254024,1668.3161252833388,175.13764124627014,1682.7395738212754C178.8203125,1697.1630223592122,178.8203125,1708.9963556925456,178.8203125,1719.079689025879C178.8203125,1729.1630223592122,178.8203125,1737.4963556925456,178.8203125,1741.6630223592122L178.8203125,1745.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32091)" style="fill:none"></path><defs><marker id="arrowhead32091" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M117.70757082017008,1627.353666096049L110.0727152668084,1637.016336584354C102.43785971344671,1646.679007072659,87.16814860672336,1666.0043480492689,79.53329305336167,1681.5836852042405C71.8984375,1697.1630223592122,71.8984375,1708.9963556925456,71.8984375,1719.079689025879C71.8984375,1729.1630223592122,71.8984375,1737.4963556925456,71.8984375,1741.6630223592122L71.8984375,1745.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32092)" style="fill:none"></path><defs><marker id="arrowhead32092" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M71.8984375,1786.829689025879L71.8984375,1790.9963556925456C71.8984375,1795.1630223592122,71.8984375,1803.4963556925456,71.8984375,1811.829689025879C71.8984375,1820.1630223592122,71.8984375,1828.4963556925456,83.6418698489011,1836.829689025879C95.3853021978022,1845.1630223592122,118.8721668956044,1853.4963556925456,130.6155992445055,1857.6630223592122L142.3590315934066,1861.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32093)" style="fill:none"></path><defs><marker id="arrowhead32093" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M178.8203125,1786.829689025879L178.8203125,1790.9963556925456C178.8203125,1795.1630223592122,178.8203125,1803.4963556925456,178.8203125,1811.829689025879C178.8203125,1820.1630223592122,178.8203125,1828.4963556925456,180.7723643543956,1836.829689025879C182.7244162087912,1845.1630223592122,186.6285199175824,1853.4963556925456,188.58057177197804,1857.6630223592122L190.53262362637363,1861.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32094)" style="fill:none"></path><defs><marker id="arrowhead32094" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M298.7265625,1786.829689025879L298.7265625,1790.9963556925456C298.7265625,1795.1630223592122,298.7265625,1803.4963556925456,298.7265625,1811.829689025879C298.7265625,1820.1630223592122,298.7265625,1828.4963556925456,289.6981885302198,1836.829689025879C280.66981456043953,1845.1630223592122,262.6130666208791,1853.4963556925456,253.5846926510989,1857.6630223592122L244.5563186813187,1861.829689025879" marker-end="url(https://mermaidjs.github.io/mermaid-live-editor/#arrowhead32095)" style="fill:none"></path><defs><marker id="arrowhead32095" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(638.4296875,395.90078353881836)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(367.330078125,300.1359405517578)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(484.75,491.6656265258789)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(358.8046875,491.6656265258789)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(233.828125,491.6656265258789)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(109.2109375,491.6656265258789)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(317.310546875,993.4234390258789)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(579.486328125,912.4234390258789)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(140.18359375,1509.071876525879)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(298.7265625,1597.200782775879)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(178.8203125,1685.329689025879)" style="opacity: 1;"><g transform="translate(-10.109375,-10.5)" class="label"><foreignObject width="20.21875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(71.8984375,1685.329689025879)" style="opacity: 1;"><g transform="translate(-7.5859375,-10.5)" class="label"><foreignObject width="15.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node viz-package clickable" id="HoloViews" transform="translate(247.62109375,1084.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-42.1328125" y="-20.5" width="84.265625" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32.1328125,-10.5)"><a href="https://holoviews.org" rel="noopener"><foreignObject width="64.265625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">HoloViews</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="hvPlot" transform="translate(579.486328125,993.4234390258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-29.7578125" y="-20.5" width="59.515625" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-19.7578125,-10.5)"><a href="https://hvplot.pyviz.org" rel="noopener"><foreignObject width="39.515625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">hvPlot</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Bokeh" transform="translate(71.8984375,1766.329689025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-28.8984375" y="-20.5" width="57.796875" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.8984375,-10.5)"><a href="https://bokeh.org" rel="noopener"><foreignObject width="37.796875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Bokeh</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Matplotlib" transform="translate(298.7265625,1766.329689025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-41.8828125" y="-20.5" width="83.765625" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.8828125,-10.5)"><a href="http://matplotlib.org" rel="noopener"><foreignObject width="63.765625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Matplotlib</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Plotly" transform="translate(178.8203125,1766.329689025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-28.0234375" y="-20.5" width="56.046875" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-18.0234375,-10.5)"><a href="https://plot.ly/python" rel="noopener"><foreignObject width="36.046875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Plotly</div></foreignObject></a></g></g></g><g class="node" id="Addons" transform="translate(247.62109375,1225.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-39.2890625" y="-20.5" width="78.578125" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.2890625,-10.5)"><foreignObject width="58.578125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Optional:</div></foreignObject></g></g></g><g class="node viz-package clickable" id="GeoViews" transform="translate(416.44921875,1225.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.5390625" y="-20.5" width="159.078125" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.5390625,-10.5)"><a href="http://geoviews.org" rel="noopener"><foreignObject width="139.078125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GeoViews (geospatial)</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Colorcet" transform="translate(632.16796875,1225.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-86.1796875" y="-20.5" width="172.359375" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-76.1796875,-10.5)"><a href="https://colorcet.pyviz.org" rel="noopener"><foreignObject width="152.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Colorcet (colormapping)</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Datashader" transform="translate(852.73046875,1225.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-84.3828125" y="-20.5" width="168.765625" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-74.3828125,-10.5)"><a href="http://datashader.org" rel="noopener"><foreignObject width="148.765625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Datashader (large data)</div></foreignObject></a></g></g></g><g class="node viz-package clickable" id="Panel" transform="translate(1056.67578125,1225.423439025879)" style="opacity: 1;"><rect rx="0" ry="0" x="-69.5625" y="-20.5" width="139.125" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-59.5625,-10.5)"><a href="https://panel.pyviz.org" rel="noopener"><foreignObject width="119.125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Panel (dashboards)</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Pandas" transform="translate(358.8046875,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.8203125" y="-20.5" width="63.640625" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.8203125,-10.5)"><a href="https://pandas.pydata.org" rel="noopener"><foreignObject width="43.640625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pandas</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="GeoPandas" transform="translate(484.75,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-44.125" y="-20.5" width="88.25" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-34.125,-10.5)"><a href="https://geopandas.org" rel="noopener"><foreignObject width="68.25" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GeoPandas</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Dask.dataframe" transform="translate(638.4296875,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.5546875" y="-20.5" width="119.109375" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.5546875,-10.5)"><a href="https://docs.dask.org/en/latest/dataframe.html" rel="noopener"><foreignObject width="99.109375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Dask.dataframe</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="NetworkX" transform="translate(788.1640625,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-40.1796875" y="-20.5" width="80.359375" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-30.1796875,-10.5)"><a href="https://networkx.github.io" rel="noopener"><foreignObject width="60.359375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">NetworkX</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Xarray" transform="translate(949.890625,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.1484375" y="-20.5" width="60.296875" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.1484375,-10.5)"><a href="http://xarray.pydata.org" rel="noopener"><foreignObject width="40.296875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Xarray</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Streamz" transform="translate(1095.875,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-35.4921875" y="-20.5" width="70.984375" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-25.4921875,-10.5)"><a href="https://streamz.readthedocs.io" rel="noopener"><foreignObject width="50.984375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Streamz</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Numpy" transform="translate(109.2109375,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.4609375" y="-20.5" width="62.921875" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.4609375,-10.5)"><a href="http://numpy.org" rel="noopener"><foreignObject width="42.921875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Numpy</div></foreignObject></a></g></g></g><g class="node data-package clickable" id="Dask.array" transform="translate(233.828125,572.6656265258789)" style="opacity: 1;"><rect rx="0" ry="0" x="-43.15625" y="-20.5" width="86.3125" height="41" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-33.15625,-10.5)"><a href="https://docs.dask.org/en/latest/array.html" rel="noopener"><foreignObject width="66.3125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Dask.array</div></foreignObject></a></g></g></g><g class="node" id="Tabular" transform="translate(367.330078125,53.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-33.9296875" y="-20.5" width="67.859375" height="41" class="label-container" style="fill: #dd0;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-23.9296875,-10.5)"><foreignObject width="47.859375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Tabular</div></foreignObject></g></g></g><g class="node" id="Network" transform="translate(788.1640625,53.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-57.25" y="-20.5" width="114.5" height="41" class="label-container" style="fill: #dd0;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.25,-10.5)"><foreignObject width="94.5" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Network Graph</div></foreignObject></g></g></g><g class="node" id="Streaming" transform="translate(1095.875,53.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-41.5078125" y="-20.5" width="83.015625" height="41" class="label-container" style="fill: #dd0;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.5078125,-10.5)"><foreignObject width="63.015625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Streaming</div></foreignObject></g></g></g><g class="node" id="ND" transform="translate(949.890625,53.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-54.4765625" y="-20.5" width="108.953125" height="41" class="label-container" style="fill: #dd0;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-44.4765625,-10.5)"><foreignObject width="88.953125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">N Dimensional</div></foreignObject></g></g></g><g class="node" id="Other" transform="translate(110.53515625,53.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-63.203125" y="-20.5" width="126.40625" height="41" class="label-container" style="fill: #dd0;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-53.203125,-10.5)"><foreignObject width="106.40625" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Other Array Data</div></foreignObject></g></g></g><g class="node" id="TabBig" transform="translate(367.330078125,206.8179702758789)" style="opacity: 1;"><polygon points="57.81796875,0 115.6359375,-57.81796875 57.81796875,-115.6359375 0,-57.81796875" transform="translate(-57.81796875,57.81796875)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-33.7421875,-10.5)"><foreignObject width="67.484375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">&gt;50k rows?</div></foreignObject></g></g></g><g class="node" id="RawBig" transform="translate(110.53515625,395.90078353881836)" style="opacity: 1;"><polygon points="60.264843750000004,0 120.52968750000001,-60.264843750000004 60.264843750000004,-120.52968750000001 0,-60.264843750000004" transform="translate(-60.264843750000004,60.264843750000004)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-36.4609375,-10.5)"><foreignObject width="72.921875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">&gt;50k items?</div></foreignObject></g></g></g><g class="node" id="GeoTab" transform="translate(367.330078125,395.90078353881836)" style="opacity: 1;"><polygon points="58.577343750000004,0 117.15468750000001,-58.577343750000004 58.577343750000004,-117.15468750000001 0,-58.577343750000004" transform="translate(-58.577343750000004,58.577343750000004)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-34.5859375,-10.5)"><foreignObject width="69.171875" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">geospatial?</div></foreignObject></g></g></g><g class="node clickable" id="Plot" transform="translate(507.142578125,772.5445327758789)" style="opacity: 1;"><polygon points="104.37890625,0 208.7578125,-104.37890625 104.37890625,-208.7578125 0,-104.37890625" transform="translate(-104.37890625,104.37890625)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-85.4765625,-10.5)"><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#basic-plotting-plot" rel="noopener"><foreignObject width="170.953125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Pandas .plot API sufficient?</div></foreignObject></a></g></g></g><g class="node" id="Interactive" transform="translate(247.62109375,1397.247657775879)" style="opacity: 1;"><polygon points="76.32421875,0 152.6484375,-76.32421875 76.32421875,-152.6484375 0,-76.32421875" transform="translate(-76.32421875,76.32421875)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-54.3046875,-10.5)"><foreignObject width="108.609375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">interactive plots?</div></foreignObject></g></g></g><g class="node" id="mermaid-dom-id-3D" transform="translate(140.18359375,1597.200782775879)" style="opacity: 1;"><polygon points="52.62890625,0 105.2578125,-52.62890625 52.62890625,-105.2578125 0,-52.62890625" transform="translate(-52.62890625,52.62890625)" class="label-container"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-27.9765625,-10.5)"><foreignObject width="55.953125" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">3D plots?</div></foreignObject></g></g></g><g class="node" id="Visualization" transform="translate(200.13671875,1882.329689025879)" style="opacity: 1;"><rect rx="5" ry="5" x="-132.96875" y="-20.5" width="265.9375" height="41" class="label-container" style="fill: #9ea;"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-122.96875,-10.5)"><foreignObject width="245.9375" height="21"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">View, export, or publish visualization   |</div></foreignObject></g></g></g></g></g></g></svg>
