@@ -7,7 +7,6 @@ This document lists the members of the Organization's Steering Committee. Voting
 | James Bednar | [jbednar](https://github.com/jbednar) |
 | Philipp Rudiger  | [philippjfr](https://github.com/philippjfr) |
 | Jean-Luc Stevens  | [jlstevens](https://github.com/jlstevens) |
-| Sophia Yang  | [sophiamyang](https://github.com/sophiamyang) |
 | Marc Skov Madsen  | [MarcSkovMadsen](https://github.com/MarcSkovMadsen) |
 | Dharhas Pothina  | [dharhas](https://github.com/dharhas) |
 | Rich Signell | [rsignell-usgs](https://github.com/rsignell-usgs) |
