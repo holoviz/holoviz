@@ -17,6 +17,20 @@ These reasons, or whatever reason brought you here, are all valid in our eyes. W
 Contributing to the HoloViz project might even get you a job, which has been the case for a couple of HoloViz members.
 ```
 
+## Quick Start for New Contributors
+
+If you are new to HoloViz, here is a simple path to get started:
+
+1. Choose a package (Panel, hvPlot, HoloViews)
+2. Set up your development environment using Pixi
+3. Start with:
+   - Fixing small documentation issues
+   - Improving examples
+4. Join discussions on Discord or Discourse
+5. Open your first PR (even a small one)
+
+Tip: Start small. Even fixing a typo is a valid first contribution!
+
 ## Using AI README
 
 **Maintainers are humans and have finite time and energy to review contributions**. As such, they need to prioritize their work, and they may not have the time to review all contributions. We will be especially reluctant to take time to review submissions that seem to be of low effort on the part of the submitter. Conversely, we especially value contributions that arise from real user use cases, i.e. actually using HoloViz packages like Lumen, Panel, HoloViews, hvPlot, Datashader, and others to build something you care about, but encounter a bug or missing feature.
