@@ -66,7 +66,7 @@ Learn <learn/index>
 Tutorial <tutorial/index>
 Examples <https://examples.holoviz.org/>
 Community <community>
-Contribute <contribute>
+Contribute <contribute/index>
 Blog <https://blog.holoviz.org/>
 About <about/index>
 ```
