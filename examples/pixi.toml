@@ -1,0 +1,46 @@
+[workspace]
+name = "holoviz_tutorial"
+description = "HoloViz Tutorial"
+channels = ["conda-forge", "pyviz"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[dependencies]
+python = "3.10.*"
+datashader = ">=0.16.2"
+holoviews = ">=1.19.1"
+hvplot = ">=0.10.0"
+panel = ">=1.9.3"
+param = ">=2.1.0,<3.0"
+dask = ">=2025"
+jupyterlab = "*"
+notebook = "*"
+matplotlib-base = ">=3"
+ipympl = "*"
+fsspec = "*"
+netcdf4 = "*"
+plotly = "*"
+pyarrow = "*"
+xarray = "*"
+panel-material-ui = "*"
+nbsite = ">=0.8.7"
+pytest = "<9"
+nbsmoke = "*"
+curl = "*"
+
+[tasks]
+download-data = { cmd = """
+mkdir -p data/raster && \
+curl -fsSL -o data/raster/population.zip https://datasets.holoviz.org/population/v1/gpw_v4_population_density_rev11_2010_2pt5_min.zip && \
+unzip -o data/raster/population.zip -d data/raster && \
+rm -f data/raster/population.zip && \
+curl -fsSL -o data/earthquakes-projected.parq https://datasets.holoviz.org/earthquakes/v1/earthquakes-projected.parq && \
+curl -fsSL -o data/usgs_logo.png https://raw.githubusercontent.com/holoviz/holoviz/main/examples/assets/usgs_logo.png
+""" }
+prepare = { depends-on = ["download-data"] }
+jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
+jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
+dashboard = { cmd = "cd tutorial && panel serve 06_Dashboards.ipynb --show", depends-on = ["download-data"] }
+test = { cmd = "pytest --nbsmoke-run -k .ipynb --ignore envs", depends-on = ["download-data"] }
+lint = { cmd = "pytest --nbsmoke-lint -k .ipynb --ignore envs", depends-on = ["download-data"] }
+doc-rst = { cmd = "nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc", depends-on = ["download-data"] }
+doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc", depends-on = ["download-data"] }

@@ -1,47 +1,53 @@
-import yaml
 import pathlib
 import sys
+
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
+
 from packaging.version import Version
+from packaging.specifiers import SpecifierSet
 
-def get_required_versions(yaml_path):
+
+def get_required_versions(toml_path):
     """
-    Reads the YAML configuration and extracts all package version requirements.
-    
+    Reads the pixi.toml configuration and extracts package version requirements.
+
     Returns:
-        dict: A dictionary mapping package names to their required versions.
+        dict: A dictionary mapping package names to their version specifier strings.
     """
-    yaml_file_path = pathlib.Path(yaml_path)
-    with open(yaml_file_path, 'r') as file:
-        data = yaml.safe_load(file)
-        packages = data['packages']
-        version_dict = {}
-        for package in packages:
-            for delimiter in ['==', '>=']:
-                if delimiter in package:
-                    pkg, version = package.split(delimiter)
-                    version = version.split(',')[0]
-                    version_dict[pkg] = version
-                    break
-        return version_dict
+    toml_file_path = pathlib.Path(toml_path)
+    with open(toml_file_path, 'rb') as file:
+        data = tomllib.load(file)
+    dependencies = data.get('dependencies', {})
+    version_dict = {}
+    for pkg, version_spec in dependencies.items():
+        if version_spec and version_spec != '*':
+            version_dict[pkg] = version_spec
+    return version_dict
 
-def check_packages(packages, yaml_path='../anaconda-project.yml'):
+
+def check_packages(packages, toml_path='../pixi.toml'):
     """
-    Checks if specified packages are installed with correct versions as per the YAML configuration.
-    
+    Checks if specified packages are installed with correct versions as per the pixi.toml configuration.
+
     Args:
         packages (list): A list of package names to check.
     """
-    required_versions = get_required_versions(yaml_path)
+    required_versions = get_required_versions(toml_path)
     error_found = False
     for pkg in packages:
         try:
-            req_version = required_versions[pkg]
+            version_spec = required_versions.get(pkg)
             installed_version = sys.modules[pkg].__version__
-            if Version(installed_version) < Version(req_version):
-                print(f"Error: {pkg} expected version {req_version}, got {installed_version}")
-                error_found = True
-        except KeyError:
-            print(f"{pkg} is not installed or not specified in the YAML configuration.")
+            if version_spec:
+                specifier = SpecifierSet(version_spec.replace(".*", ""))
+                if installed_version not in specifier:
+                    print(f"Error: {pkg} version {installed_version} does not satisfy {version_spec}")
+                    error_found = True
+        except (KeyError, AttributeError):
+            print(f"{pkg} is not installed or not specified in the configuration.")
             error_found = True
 
     if not error_found:
