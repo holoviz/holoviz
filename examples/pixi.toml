@@ -6,6 +6,7 @@ platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 
 [environments]
 test = ["test"]
+lint = ["lint"]
 
 [dependencies]
 python = "3.10.*"
@@ -34,6 +35,20 @@ pip = "*"
 [feature.test.pypi-dependencies]
 bokeh_sampledata = ">=2025.0"
 
+[feature.lint.dependencies]
+pre-commit = "*"
+ruff = "*"
+codespell = "*"
+tomli = "*"
+
+[feature.lint.tasks]
+lint-install = { cmd = "pre-commit install", description = "Install pre-commit hooks" }
+format = { cmd = "ruff format .", description = "Format code with ruff" }
+check = { cmd = "ruff check .", description = "Lint code with ruff" }
+clean_notebook = { cmd = "pre-commit run --all-files", description = "Run all pre-commit hooks" }
+
+
+
 [tasks]
 download-data = { cmd = """
 mkdir -p data/raster && \
@@ -49,6 +64,6 @@ jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
 jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
 dashboard = { cmd = "cd tutorial && panel serve 06_Dashboards.ipynb --show", depends-on = ["download-data"] }
 test = { cmd = "pytest --nbsmoke-run -k .ipynb --ignore envs", depends-on = ["download-data"], default-environment = "test" }
-lint = { cmd = "pytest --nbsmoke-lint -k .ipynb --ignore envs", depends-on = ["download-data"] }
+lint = { cmd = "pytest --nbsmoke-lint -k .ipynb --ignore envs", depends-on = ["download-data", "lint-install", "clean_notebook"], default-environment = "lint" }
 doc-rst = { cmd = "nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc", depends-on = ["download-data"] }
 doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc", depends-on = ["download-data"] }
