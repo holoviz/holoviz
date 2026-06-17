@@ -127,3 +127,7 @@ jupyter_execute/
 
 .vscode
 .markdown*
+.Trash-*/
+
+# Pixi
+*.pixi/
