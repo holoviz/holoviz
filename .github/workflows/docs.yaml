@@ -38,9 +38,6 @@ jobs:
     name: Documentation
     needs: [pre_commit]
     runs-on: "ubuntu-latest"
-    defaults:
-      run:
-        working-directory: examples/
     timeout-minutes: 120
     env:
       MPLBACKEND: "Agg"
@@ -71,10 +68,13 @@ jobs:
         with:
           working-directory: examples/
       - name: prepare
+        working-directory: examples/
         run: pixi run prepare
       - name: generate rst
+        working-directory: examples/
         run: pixi run doc-rst
       - name: build docs
+        working-directory: examples/
         run: pixi run doc-build
       - name: git status
         run: |
