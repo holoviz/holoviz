@@ -35,7 +35,8 @@ unzip -o data/raster/population.zip -d data/raster && \
 rm -f data/raster/population.zip && \
 curl -fsSL -o data/earthquakes-projected.parq https://datasets.holoviz.org/earthquakes/v1/earthquakes-projected.parq && \
 curl -fsSL -o data/usgs_logo.png https://raw.githubusercontent.com/holoviz/holoviz/main/examples/assets/usgs_logo.png
-""" }
+""", outputs = ["data/"]}
+
 prepare = { depends-on = ["download-data"] }
 jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
 jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
