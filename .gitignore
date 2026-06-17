@@ -130,5 +130,4 @@ jupyter_execute/
 .Trash-*/
 
 # Pixi
-*pixi.lock
 *.pixi/
