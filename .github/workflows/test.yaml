@@ -6,10 +6,16 @@ on:
       - main
   pull_request:
     branches:
-      - '*'
+      - "*"
   workflow_dispatch:
   schedule:
-    - cron: '0 4 1 */2 SUN'  # every two months on Sunday at 4 am
+    - cron: "0 4 1 */2 SUN" # every two months on Sunday at 4 am
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test_suite:
@@ -18,32 +24,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
-    timeout-minutes: 60
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     defaults:
       run:
-        shell: bash -l {0} 
+        working-directory: examples/
+    timeout-minutes: 60
     steps:
       - name: configure Page file on Windows
         # To fix a Memory Error while reading the earthquake Parquet file
         # See https://github.com/holoviz/holoviz/issues/309
         if: contains(matrix.os, 'windows')
-        uses: al-cheb/configure-pagefile-action@v1.4
-      - uses: actions/checkout@v4
+        uses: al-cheb/configure-pagefile-action@9b6da52fb72a3c6147c1aad2df22d8d905681adc # v1.5
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           fetch-depth: "100"
-      - uses: conda-incubator/setup-miniconda@v3
-        with:
-          miniconda-version: "latest"
+          persist-credentials: false
       - name: Fetch unshallow
         run: git fetch --prune --tags --unshallow
-      - name: install anaconda-project
-        run: conda install "anaconda-project>=0.11"
+      - uses: prefix-dev/setup-pixi@5185adfbffb4bd703da3010310260805d89ebb11 # v0.9.6
+        with:
+          working-directory: examples/
       - name: prepare
-        run: anaconda-project prepare --directory examples  
-      - name: conda list
-        run: anaconda-project run --directory examples conda_list  
+        run: pixi run prepare
       - name: lint
-        run: anaconda-project run --directory examples lint
+        run: pixi run lint
       - name: test
-        run: anaconda-project run --directory examples test
+        run: pixi run test

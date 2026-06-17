@@ -3,48 +3,42 @@ name: docs
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
-      - 'v[0-9]+.[0-9]+.[0-9]+a[0-9]+'
-      - 'v[0-9]+.[0-9]+.[0-9]+b[0-9]+'
-      - 'v[0-9]+.[0-9]+.[0-9]+rc[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+a[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+b[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+rc[0-9]+"
   workflow_dispatch:
     inputs:
       target:
-        description: 'Site to build and deploy'
+        description: "Site to build and deploy"
         type: choice
         options:
-        - dev
-        - main
-        - dryrun
+          - dev
+          - main
+          - dryrun
         required: true
         default: dryrun
   schedule:
-    - cron: '0 2 1 */2 SUN'  # every two months on Sunday at 2 am
+    - cron: "0 2 1 */2 SUN" # every two months on Sunday at 2 am
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   pre_commit:
-    name: Run pre-commit hooks
-    runs-on: 'ubuntu-latest'
+    name: pre-commit
+    runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: "1"
-      - name: set PY
-        run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
-      - name: pre-commit
-        uses: pre-commit/action@v3.0.1
+      - uses: holoviz-dev/holoviz_tasks/pre-commit@1a9884850782b0b80ba2e91b573e7d63d9d3c3dc # v1.0.1
+
   build_docs:
     name: Documentation
     needs: [pre_commit]
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
     timeout-minutes: 120
-    defaults:
-      run:
-        shell: bash -l {0}
     env:
       MPLBACKEND: "Agg"
       MOZ_HEADLESS: 1
@@ -54,17 +48,15 @@ jobs:
       AWS_DEFAULT_REGION: "eu-west-1"
     steps:
       - name: Install humor sans fonts for XKCD Matplotlib plots
-        run:  |
+        run: |
           sudo apt-get update -y  &&  sudo apt-get install -y fonts-humor-sans fonts-comic-neue ttf-mscorefonts-installer
           mkdir -p ~/.local/share/fonts
           wget -nc https://github.com/ipython/xkcd-font/blob/master/xkcd-script/font/xkcd-script.ttf?raw=true -O ~/.local/share/fonts/xkcd-Script.ttf || true
           sudo fc-cache -f -v
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           fetch-depth: "100"
-      - uses: conda-incubator/setup-miniconda@v3
-        with:
-          miniconda-version: "latest"
+          persist-credentials: false
       - name: Fetch unshallow
         run: git fetch --prune --tags --unshallow -f
       - name: Set output
@@ -72,22 +64,21 @@ jobs:
         run: |
           echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
           echo "fdatetime=$(date +%Y%m%d-%H%M)" >> $GITHUB_OUTPUT
-      - name: install anaconda-project
-        run: conda install "anaconda-project>=0.11"
+      - uses: prefix-dev/setup-pixi@5185adfbffb4bd703da3010310260805d89ebb11 # v0.9.6
+        with:
+          working-directory: examples/
       - name: prepare
-        run: anaconda-project prepare --directory examples
-      - name: conda list
-        run: anaconda-project run --directory examples conda_list
+        run: pixi run prepare
       - name: generate rst
-        run: anaconda-project run --directory examples doc_rst
+        run: pixi run doc-rst
       - name: build docs
-        run: anaconda-project run --directory examples doc_build
+        run: pixi run doc-build
       - name: git status
         run: |
           git status
           git diff
       - name: Deploy dev
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'dev') ||
           (github.event_name == 'push' && (contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
@@ -100,7 +91,7 @@ jobs:
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
           (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./builtdocs
@@ -109,13 +100,19 @@ jobs:
       # Upload the tutorial
       - name: git clean
         run: git clean -fxd .
-      - name: anaconda-project archive
-        run: anaconda-project archive --directory examples holoviz_tutorial.zip
+      - name: zip tutorial
+        run: cd examples && zip -r ../holoviz_tutorial.zip . -x "data/*"
       - name: save old
-        run: cp holoviz_tutorial.zip holoviz_tutorial_${{ steps.vars.outputs.fdatetime }}_${{ steps.vars.outputs.tag }}.zip
+        env:
+          FDATETIME: ${{ steps.vars.outputs.fdatetime }}
+          TAG: ${{ steps.vars.outputs.tag }}
+        run: cp holoviz_tutorial.zip holoviz_tutorial_"$FDATETIME"_"$TAG".zip
       - name: Upload tutorial
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-        run: aws s3 cp ./holoviz_tutorial_${{ steps.vars.outputs.fdatetime }}_${{ steps.vars.outputs.tag }}.zip s3://assets.holoviz.org/holoviz/tutorial/
+        env:
+          FDATETIME: ${{ steps.vars.outputs.fdatetime }}
+          TAG: ${{ steps.vars.outputs.tag }}
+        run: aws s3 cp ./holoviz_tutorial_"$FDATETIME"_"$TAG".zip s3://assets.holoviz.org/holoviz/tutorial/
       - name: Upload tutorial
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
