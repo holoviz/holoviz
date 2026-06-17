@@ -5,7 +5,6 @@ channels = ["conda-forge", "pyviz"]
 platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 
 [environments]
-test = ["test"]
 lint = ["lint"]
 
 [dependencies]
@@ -31,8 +30,6 @@ pytest = "<9"
 nbsmoke = "*"
 curl = "*"
 pip = "*"
-
-[feature.test.pypi-dependencies]
 bokeh_sampledata = ">=2025.0"
 
 [feature.lint.dependencies]
@@ -63,7 +60,8 @@ prepare = { depends-on = ["download-data"] }
 jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
 jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
 dashboard = { cmd = "cd tutorial && panel serve 06_Dashboards.ipynb --show", depends-on = ["download-data"] }
-test = { cmd = "pytest --nbsmoke-run -k .ipynb --ignore envs", depends-on = ["download-data"], default-environment = "test" }
+test = { cmd = "pytest --nbsmoke-run -k .ipynb --ignore envs", depends-on = ["download-data"] }
 lint = { cmd = "pytest --nbsmoke-lint -k .ipynb --ignore envs", depends-on = ["download-data", "lint-install", "clean_notebook"], default-environment = "lint" }
-doc-rst = { cmd = "nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc", depends-on = ["download-data"] }
-doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc", depends-on = ["download-data"] }
+doc-clean = { cmd = "rm -rf ../builtdocs ../jupyter_execute ../.jupyter_cache .jupyter_cache && git clean -fdX ../doc", depends-on = ["download-data"] }
+doc-rst = { cmd = "nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc", depends-on = ["doc-clean"] }
+doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc", depends-on = ["doc-rst"] }
