@@ -38,6 +38,9 @@ jobs:
     name: Documentation
     needs: [pre_commit]
     runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        working-directory: examples/
     timeout-minutes: 120
     env:
       MPLBACKEND: "Agg"
