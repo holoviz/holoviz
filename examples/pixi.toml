@@ -64,4 +64,4 @@ test = { cmd = "pytest --nbsmoke-run -k .ipynb --ignore envs", depends-on = ["do
 lint = { cmd = "pytest --nbsmoke-lint -k .ipynb --ignore envs", depends-on = ["download-data", "lint-install", "clean_notebook"], default-environment = "lint" }
 doc-clean = { cmd = "rm -rf ../builtdocs ../jupyter_execute ../.jupyter_cache .jupyter_cache && git clean -fdX ../doc", depends-on = ["download-data"] }
 doc-rst = { cmd = "nbsite generate-rst --org holoviz --project-name holoviz --offset 1 --skip envs --project-root .. --doc doc", depends-on = ["doc-clean"] }
-doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc", depends-on = ["doc-rst"] }
+doc-build = { cmd = "nbsite build --what=html --output=../builtdocs --org holoviz --project-name holoviz --project-root .. --doc doc --disable-parallel", depends-on = ["doc-rst"] }
