@@ -162,7 +162,7 @@ rediraffe_redirects = {
     # When the navbar was reworked
     'background': 'learn/background',
     'talks': 'learn/presentations/Overview',
-    'contributing': 'contribute',
+    'contributing': 'contribute/index',
     'roadmap': 'about/roadmap',
     'FAQ': 'learn/FAQ',
 }
