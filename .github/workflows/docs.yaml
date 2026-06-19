@@ -160,5 +160,5 @@ jobs:
       - name: Upload tutorial
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
-          (github.event_name == 'push' && !(contains(needs.build_docs.outputs.tag, 'a') || contains(needs.build_docs.outputs.tag, 'b') || contains(needs.build_docs.outputs.tag, 'rc')))
+          (github.event_name == 'push' && !(contains(github.ref_name, 'a') || contains(github.ref_name, 'b') || contains(github.ref_name, 'rc')))
         run: aws s3 cp ./holoviz_tutorial.zip s3://assets.holoviz.org/holoviz/tutorial/
