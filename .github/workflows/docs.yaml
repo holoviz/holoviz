@@ -38,16 +38,11 @@ jobs:
     name: Documentation
     needs: [pre_commit]
     runs-on: "ubuntu-latest"
-    permissions:
-      contents: write
     timeout-minutes: 120
     env:
       MPLBACKEND: "Agg"
       MOZ_HEADLESS: 1
       DISPLAY: ":99.0"
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: "eu-west-1"
     steps:
       - name: Install humor sans fonts for XKCD Matplotlib plots
         run: |
@@ -82,26 +77,12 @@ jobs:
         run: |
           git status
           git diff
-      - name: Deploy dev
-        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
-        if: |
-          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'dev') ||
-          (github.event_name == 'push' && (contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: holoviz-dev/holoviz
-          publish_dir: ./builtdocs
-          force_orphan: true
-      - name: Deploy main
-        if: |
-          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
-          (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
-        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./builtdocs
-          cname: holoviz.org
-          force_orphan: true
+          name: docs
+          path: builtdocs
+          if-no-files-found: error
       # Upload the tutorial
       - name: git clean
         run: git clean -fxd .
@@ -112,14 +93,72 @@ jobs:
           FDATETIME: ${{ steps.vars.outputs.fdatetime }}
           TAG: ${{ steps.vars.outputs.tag }}
         run: cp holoviz_tutorial.zip holoviz_tutorial_"$FDATETIME"_"$TAG".zip
+      - name: Upload tutorial artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: holoviz-tutorial
+          path: holoviz_tutorial*.zip
+          if-no-files-found: error
+
+    outputs:
+      tag: ${{ steps.vars.outputs.tag }}
+      fdatetime: ${{ steps.vars.outputs.fdatetime }}
+
+  deploy_github:
+    name: Publish Documentation
+    needs: [build_docs]
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
+    steps:
+      - name: Download docs artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: docs
+          path: builtdocs/
+      - name: Deploy dev
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
+        if: |
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'dev') ||
+          (github.event_name == 'push' && (contains(needs.build_docs.outputs.tag, 'a') || contains(needs.build_docs.outputs.tag, 'b') || contains(needs.build_docs.outputs.tag, 'rc')))
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          external_repository: holoviz-dev/holoviz
+          publish_dir: ./builtdocs
+          force_orphan: true
+      - name: Deploy main
+        if: |
+          (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
+          (github.event_name == 'push' && !(contains(needs.build_docs.outputs.tag, 'a') || contains(needs.build_docs.outputs.tag, 'b') || contains(needs.build_docs.outputs.tag, 'rc')))
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./builtdocs
+          cname: holoviz.org
+          force_orphan: true
+
+  deploy_aws:
+    name: AWS deployment
+    needs: [build_docs]
+    runs-on: "ubuntu-latest"
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: "eu-west-1"
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    steps:
+      - name: Download tutorial artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: holoviz-tutorial
       - name: Upload tutorial
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
         env:
-          FDATETIME: ${{ steps.vars.outputs.fdatetime }}
-          TAG: ${{ steps.vars.outputs.tag }}
+          FDATETIME: ${{ needs.build_docs.outputs.fdatetime }}
+          TAG: ${{ needs.build_docs.outputs.tag }}
         run: aws s3 cp ./holoviz_tutorial_"$FDATETIME"_"$TAG".zip s3://assets.holoviz.org/holoviz/tutorial/
       - name: Upload tutorial
         if: |
           (github.event_name == 'workflow_dispatch' && github.event.inputs.target == 'main') ||
-          (github.event_name == 'push' && !(contains(steps.vars.outputs.tag, 'a') || contains(steps.vars.outputs.tag, 'b') || contains(steps.vars.outputs.tag, 'rc')))
+          (github.event_name == 'push' && !(contains(needs.build_docs.outputs.tag, 'a') || contains(needs.build_docs.outputs.tag, 'b') || contains(needs.build_docs.outputs.tag, 'rc')))
         run: aws s3 cp ./holoviz_tutorial.zip s3://assets.holoviz.org/holoviz/tutorial/
