@@ -38,6 +38,8 @@ jobs:
     name: Documentation
     needs: [pre_commit]
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
     timeout-minutes: 120
     env:
       MPLBACKEND: "Agg"
