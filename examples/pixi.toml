@@ -56,6 +56,8 @@ curl -fsSL -o data/earthquakes-projected.parq https://datasets.holoviz.org/earth
 curl -fsSL -o data/usgs_logo.png https://raw.githubusercontent.com/holoviz/holoviz/main/examples/assets/usgs_logo.png
 """, outputs = ["data/"]}
 
+install = "pixi install"
+setup = { depends-on = ["install", "download-data", "lint-install"], description = "Set up the notebook environment." }
 prepare = { depends-on = ["download-data"] }
 jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
 jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
