@@ -87,7 +87,7 @@ jobs:
       - name: git clean
         run: git clean -fxd .
       - name: zip tutorial
-        run: mv examples holoviz_tutorial && zip -r holoviz_tutorial3.zip holoviz_tutorial -x "holoviz_tutorial/data/*" ; mv holoviz_tutorial examples
+        run: mv examples holoviz_tutorial && zip -r holoviz_tutorial.zip holoviz_tutorial -x "holoviz_tutorial/data/*" ; mv holoviz_tutorial examples
       - name: save old
         env:
           FDATETIME: ${{ steps.vars.outputs.fdatetime }}
