@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>General Contributing Guidelines &#8212; HoloViz 0.17.5 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsite.css?v=d9d93254" />
+    <link rel="stylesheet" type="text/css" href="../_static/notebook.css?v=19946987" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css?v=0a3248cd" />
+    <link rel="stylesheet" type="text/css" href="../_static/alert.css?v=c26666be" />
+    <link rel="stylesheet" type="text/css" href="../_static/dataframe.css?v=a0f274c1" />
+    <link rel="stylesheet" type="text/css" href="../_static/scroller.css?v=2dcde208" />
+    <link rel="stylesheet" type="text/css" href="../_static/hv-sidebar-dropdown.css?v=3e2b0152" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=54344a33"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script async="async" data-goatcounter="https://holoviz.goatcounter.com/count" src="../_static/js/goatcounter.js?v=f53f84b8"></script>
+    <script>
+    window.goatcounter = {
+        path: function(p) { return location.host + p }
+    }
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contribute/index';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Operating guide for maintainers" href="operating_guide.html" />
+    <link rel="prev" title="The HoloViz community" href="../community.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="2026-06-29"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/holoviz-logo-unstacked.svg" class="logo__image only-light" alt="HoloViz 0.17.5 documentation - Home"/>
+    <script>document.write(`<img src="../_static/holoviz-logo-unstacked.svg" class="logo__image only-dark" alt="HoloViz 0.17.5 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Contribute
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="">General Contributing Guidelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="operating_guide.html">Operating guide for maintainers</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/heps/index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><nav class="navbar-nav">
+    <ul class="bd-navbar-elements navbar-nav">
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Learn
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/presentations/index.html">Presentations</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/background.html">Background</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../learn/FAQ.html">FAQ</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Tutorial
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/index.html">Start</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Setup.html">Setup</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Overview.html">Overview</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Plotting.html">Plotting</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Composing_Plots.html">Composing Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Plotting.html">Exercise 1</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Interlinked_Plots.html">Interlinked Plots</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Linking_Plots.html">Exercise 2</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Building_Pipelines.html">Exercise 3</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Dashboards.html">Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Custom_Interactivity.html">Custom Interactivity</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Custom_Dashboards.html">Custom Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://examples.holoviz.org/">Examples</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-internal" href="../community.html">Community</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        Contribute
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="">General Contributing Guidelines</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="operating_guide.html">Operating guide for maintainers</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+            
+                <!-- Regular link for items without children -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link nav-external" href="https://blog.holoviz.org/">Blog</a>
+                    
+                </li>
+            
+        
+            
+                <!-- Dropdown for items with children -->
+                <div class="nav-item dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle nav-item" data-bs-toggle="dropdown" type="button">
+                        About
+                    </button>
+                    <div class="dropdown-menu">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/index.html">About Us</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/governance/index.html">Governance</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/heps/index.html">HEPs</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/roadmap.html">Roadmap</a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link nav-internal" href="../about/funding.html">Funding</a>
+                            </li>
+                        
+                    </div>
+                </div>
+            
+        
+    </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/holoviz/holoviz" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/HoloViz_Org" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discourse.holoviz.org/" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><!-- Adapted from sidebar-nav-bs.html (1.15.2) with the following changes
+
+  - Commented out the tag that adds the "Section Navigation" title
+  - Call generate_toctree_html with startdepth=0
+
+Please update this file when required when bumping the max pin of pydata-sphinx-theme.
+-->
+
+
+<nav class="bd-docs-nav bd-links"
+      aria-label="Section Navigation">
+  <!-- <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p> -->
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../learn/index.html">Learn</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../learn/presentations/index.html">Presentations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../learn/presentations/Overview.html">HoloViz Overview</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learn/FAQ.html">FAQ</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorial/index.html">Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/index.html">Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Setup.html">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Composing_Plots.html">Composing Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/exercises/Plotting.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Interlinked_Plots.html">Interlinked Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/exercises/Linking_Plots.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Interactive_Pipelines.html">Interactive Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/exercises/Building_Pipelines.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Dashboards.html">Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/exercises/Building_a_Dashboard.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Custom_Interactivity.html">Custom Interactivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Custom_Dashboards.html">Custom Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/Advanced_Dashboards.html">Advanced Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/exercises/Advanced_Dashboarding.html">Exercise 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://examples.holoviz.org/">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community.html">Community</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Contribute</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">General Contributing Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating_guide.html">Operating guide for maintainers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://blog.holoviz.org/">Blog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about/index.html">About</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/index.html">About Us</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../about/governance/index.html">Governance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/org-docs/CHARTER.html">Charter for the HoloViz Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/org-docs/ANTITRUST.html">Antitrust Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/org-docs/CODE-OF-CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/org-docs/STEERING-COMMITTEE.html">Steering Committee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/org-docs/TRADEMARKS.html">Trademarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/project-docs/CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/project-docs/GOVERNANCE.html">Governance Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/project-docs/LICENSE.html">License</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/governance/project-docs/MEMBERS.html">Maintainers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../about/heps/index.html">HEPs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/heps/hep0.html">HEP 0 - HEP Purpose, Policy, and Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/heps/hep1.html">HEP 1 - Python Version Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/heps/hep2.html">HEP 2: Release and deprecation policies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/funding.html">Funding</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div class="hv-sb-dd">
+  <div class="btn-group">
+    
+    <span class="btn hv-sb-dd-value">HoloViz Sites</span>
+    
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden"></span>
+    </button>
+    <ul class="dropdown-menu">
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone servable dashboard">Panel<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://hvplot.holoviz.org" target="_blank" title="Quickly return interactive HoloViews, GeoViews, or Panel objects from Pandas, Xarray, or other data structures">hvPlot<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://holoviews.org" target="_blank" title="Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications">HoloViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://geoviews.org" target="_blank" title="Visualizable geographic data that that can be mixed and matched with HoloViews objects">GeoViews<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://datashader.org" target="_blank" title="Rasterizing huge datasets quickly as fixed-size images">Datashader<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://param.holoviz.org" target="_blank" title="Make your Python code clearer and more reliable by declaring Parameters">Param<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://lumen.holoviz.org" target="_blank" title="Framework for visual analytics that allows users to build data-driven dashboards from a simple YAML specification">Lumen<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+        <li><a class="dropdown-item" href="https://colorcet.holoviz.org" target="_blank" title="A wide range of perceptually uniform continuous colormaps and perceptually based categorical color sets for use with the other libraries">Colorcet<i class="fa fa-external-link hv-icon" aria-hidden="true"></i></a></li>
+      
+      
+      
+    </ul>
+  </div>
+</div>
+</div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">General...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="general-contributing-guidelines">
+<h1>General Contributing Guidelines<a class="headerlink" href="#general-contributing-guidelines" title="Link to this heading">#</a></h1>
+<p>This guide includes general guidelines on how to contribute to HoloViz. Read the <a class="reference internal" href="operating_guide.html#operating-guide"><span class="std std-ref">Operating Guide</span></a> if you are interested in learning how an Open-Source project like HoloViz operates.</p>
+<section id="contributing-yes-wait-but-why">
+<h2>Contributing? Yes! Wait, but why?<a class="headerlink" href="#contributing-yes-wait-but-why" title="Link to this heading">#</a></h2>
+<p>There are many reasons why you would want to contribute to the HoloViz project, including:</p>
+<ul class="simple">
+<li><p>You appreciate the HoloViz project, its mission and values, and would like to help</p></li>
+<li><p>You are a user of one of the HoloViz packages and need a bug to be fixed or a new feature to be implemented, and you are willing to tackle that in some ways</p></li>
+<li><p>You are looking for some open-source experience</p></li>
+<li><p>You have been reading one of the HoloViz websites and found something to improve, even just a simple typo</p></li>
+</ul>
+<p>These reasons, or whatever reason brought you here, are all valid in our eyes. We <strong>welcome anyone</strong> who wishes to contribute, and as you will see, there are <strong>many</strong> ways to contribute!</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Contributing to the HoloViz project might even get you a job, which has been the case for a couple of HoloViz members.</p>
+</div>
+</section>
+<section id="using-ai-readme">
+<h2>Using AI README<a class="headerlink" href="#using-ai-readme" title="Link to this heading">#</a></h2>
+<p><strong>Maintainers are humans and have finite time and energy to review contributions</strong>. As such, they need to prioritize their work, and they may not have the time to review all contributions. We will be especially reluctant to take time to review submissions that seem to be of low effort on the part of the submitter. Conversely, we especially value contributions that arise from real user use cases, i.e. actually using HoloViz packages like Lumen, Panel, HoloViews, hvPlot, Datashader, and others to build something you care about, but encounter a bug or missing feature.</p>
+<p>If you are a new contributor and are contributing a PR though, you can use AI tools, <strong>but you must follow these rules in the PR description</strong>:</p>
+<ul class="simple">
+<li><p>Follow the repos’ PR template</p></li>
+<li><p>Explain what motivated the PR (were you trying to achieve something, but encountered …?)</p></li>
+<li><p>Do NOT list out what changed, unless you want to bring attention to specific changes</p></li>
+<li><p>Include reproduction steps, ideally a Minimal Reproducible Verifiable Example</p></li>
+<li><p>Screenshots or screen recordings (before changes and after changes) must be included</p></li>
+<li><p>Cite sources and docs you referenced with working links</p></li>
+<li><p>Do NOT copy full output of AI summary and instead curate a description yourself</p></li>
+</ul>
+<p>Please limit to 2 open PRs at a time across our repos; if you have more than 2 open PRs, they may be closed, especially if it is your first time contributing to HoloViz.</p>
+<p>Separately, please refrain from tagging maintainers shortly after opening a PR/issue, as reviews will happen when time allows. Only bump a PR/issue that has been open for a longer period of time (weeks) without a response.</p>
+<p>Maintainers reserve the right to close PRs they deem low-effort or AI-generated without review.</p>
+<p>Remember, contributions don’t just have to be Pull Request(s) (PR)s either! Filing bugs, helping others on Discord or Discourse, writing blog posts, or sharing things you built on social media all count! See below for more ideas!</p>
+<p>As an example, Andrew saw a cool chart online and tried to reproduce it with HoloViews, but noticed that the labels’ text color doesn’t cycle through alongside the points’ color. This motivated him to <a class="reference external" href="https://github.com/holoviz/holoviews/issues/5887">create an issue to report it</a> and separately <a class="reference external" href="https://github.com/holoviz/holoviews/pull/5888">create a PR to fix it</a>.</p>
+<p>Let’s continue building a meaningful community!</p>
+</section>
+<section id="what-and-how-to-contribute">
+<h2>What and how to contribute?<a class="headerlink" href="#what-and-how-to-contribute" title="Link to this heading">#</a></h2>
+<p>If you end up on this page it is quite likely that you are interested in contributing code to HoloViz. However, as you will see, there are many other areas where you could contribute, and in some of these areas, the HoloViz project would really appreciate some help!</p>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
+<p>Each core HoloViz package has its own website. Maintaining the content of these websites is a lot of work, and you can easily help by:</p>
+<ul class="simple">
+<li><p>Submitting a Pull Request (PR) to fix a typo</p></li>
+<li><p>Submitting a PR to clarify a section</p></li>
+<li><p>Submitting a PR to document an undocumented feature</p></li>
+<li><p>Submitting a PR to update a section that should have been updated</p></li>
+</ul>
+<p>How the websites look and feel can also be improved. If you happen to have some front-end development expertise, your help would be greatly appreciated.</p>
+<p>Finally, the documentation also lies within the code, and in Python, it is found in the so-called <em>docstrings</em> that accompany modules, classes, methods and functions. You can easily improve the docstrings by:</p>
+<ul class="simple">
+<li><p>Submitting a PR to fix a typo</p></li>
+<li><p>Submitting a PR to clarify a definition</p></li>
+<li><p>Submitting a PR to fix or document the default value of a parameter</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Documentation fixes/improvements that are of a small scope usually do not need an issue to be opened beforehand. If you don’t have the time to open a pull request, we would appreciate it if you could record your suggestion in an issue on Github. That would already be an excellent contribution!</p>
+</div>
+</section>
+<section id="support">
+<h3>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h3>
+<p>HoloViz users are recommended to ask their usage questions on the <a class="reference external" href="https://discourse.holoviz.org/">HoloViz Discourse Forum</a>. This forum is only helpful if questions can find answers, and you can be the one writing that answer, which will make somebody else’s life so much easier! The HoloViz team members monitor the forum and try to contribute regularly, yet the more we are, the better.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Answering questions on the HoloViz Discourse Forum, or even just trying to answer some random questions, is a very good way to learn how to use the HoloViz tools.</p>
+</div>
+<p>Some users also ask questions on <a class="reference external" href="https://stackoverflow.com/">StackOverflow</a>, which isn’t much monitored by the HoloViz team, so we would greatly appreciate any help there.</p>
+</section>
+<section id="outreach">
+<h3>Outreach<a class="headerlink" href="#outreach" title="Link to this heading">#</a></h3>
+<p>Before addressing how to contribute code to HoloViz, it is important to mention that a beneficial way to contribute to HoloViz is by communicating more about it. Tweeting, writing blog posts, creating Youtube videos, presenting your work with one or more of the HoloViz tools, etc., are all outreach activities that serve the purpose of HoloViz.</p>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h3>
+<p>Contributing code includes:</p>
+<ul class="simple">
+<li><p>fixing an existing bug: the recommended practice is to add one or more unit test(s) that would have failed before the bug fix was implemented.</p></li>
+<li><p>adding a new feature: again, the recommended practice is to add unit test(s) to test the new feature’s functionality.</p></li>
+<li><p>improving performance: while slow code isn’t necessarily a bug, users always appreciate faster code. Performance improvements should be demonstrated by some benchmark comparing the performance before and after the changes.</p></li>
+<li><p>adding tests: test coverage can always be improved. Adding tests is a good way for beginners to contribute to a project and familiarize themselves with its code base and workflows.</p></li>
+<li><p>refactoring: refactoring can be a good way to improve a code base.</p></li>
+</ul>
+</section>
+<section id="developer-instructions">
+<h3>Developer Instructions<a class="headerlink" href="#developer-instructions" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The HoloViz projects usually provide specific instructions on how to set up your environment to be ready to contribute documentation or code to the project. The instructions provided hereafter are meant to be general enough to apply to each project. Refer to the documentation of the project you are working on for more details.</p>
+</div>
+<p>Before making anything beyond a minimal contribution (e.g., fixing a typo), the first step is usually to open a <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues">GitHub Issue</a> that documents what you are trying to fix/improve. Writing a good issue is important and will affect how it is going to be perceived by the project maintainers, contributors and watchers. Read for instance this <a class="reference external" href="https://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports">blog post</a> that describes what a good issue should look like.  Once an issue is opened, a discussion can take place with the maintainers to see if what is suggested is relevant, which can guide the next steps.</p>
+<section id="getting-started">
+<h4>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h4>
+<p>The first step to working on any source code is to install Git as the source codes are stored in <a class="reference external" href="https://git-scm.com">Git</a> source control repositories. To install Git on any platform, refer to the <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Installing Git</a> section of the <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git Book</a>.</p>
+<p>As an external contributor, you do not have permission to submit code directly to any of the repositories. Github offers you the ability to fork the repository, which will create a copy of the repository, on which you will have the right to work freely. Follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">these instructions</a> to find out how to fork and clone a repository.</p>
+</section>
+<section id="environment-setup">
+<h4>Environment Setup<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h4>
+<p>The HoloViz developers rely on <a class="reference external" href="https://pixi.sh/latest">Pixi</a>, a developer tool that facilitates maintaining all of the HoloViz projects. See <a class="reference internal" href="operating_guide.html#pixi-guide"><span class="std std-ref">Pixi</span></a> for more details.</p>
+</section>
+<section id="contributing-changes">
+<h4>Contributing Changes<a class="headerlink" href="#contributing-changes" title="Link to this heading">#</a></h4>
+<p>After you have cloned the repo and set up Pixi, the next step is to create a branch and start making changes. Before committing these changes, make sure the tests still pass by running <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">run</span> <span class="pre">test-unit</span></code> and that the code meets style guidelines by running <code class="docutils literal notranslate"><span class="pre">pixi</span> <span class="pre">run</span> <span class="pre">lint</span></code>. Once you are done with your changes, you can commit them. It is good practice to break down big changes into smaller chunks, and each chunk has its own commit with a message that summarizes it.</p>
+</section>
+<section id="submitting-your-contribution">
+<h4>Submitting Your Contribution<a class="headerlink" href="#submitting-your-contribution" title="Link to this heading">#</a></h4>
+<p>Now you can push the branch to your clone and create a <em>pull request</em> from your clone to the original repository. This <a class="reference external" href="https://gist.github.com/Chaser324/ce0505fbed06b947d962">Github Gist</a> describes these GitHub steps in more detail.</p>
+<p>The <em>pull request</em> you make should reference the <em>issue</em> you are attempting to close (i.e. <code class="docutils literal notranslate"><span class="pre">Fixes</span> <span class="pre">#issuenumber</span></code>) and include a description of the changes you made.
+See <a class="reference external" href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">linking a pull request to an issue</a> for more detailed instructions on how to do that. Changes affecting the visual properties should include screenshots or GIFs.</p>
+<p>Your <em>pull request</em> should now be reviewed by one of the project’s maintainers. This may take a while given how busy the maintainers are, so try to be patient :). Your pull request will be evaluated to ensure that it is within the scope of the project (again, it’s a good idea to create an issue first to outline your intent and give the maintainers an opportunity to weigh in before you spend the effort creating a pull request). If it’s decided to proceed, the review will be conducted, and once the review is done you may be required to make some changes. You may also be asked to <em>resolve conflicts</em> if the changes you made appear to conflict with changes made to the source code after you submitted the <em>pull request</em>.</p>
+<p>When your PR is merged, enjoy, and repeat!</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../community.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The HoloViz community</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="operating_guide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operating guide for maintainers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div class="github-star-badge">
+    <a href="https://github.com/holoviz/holoviz">
+        <img src="https://img.shields.io/github/stars/holoviz/holoviz?style=social&label=Star%20on%20%20GitHub%E2%AD%90" alt="Support us with a star on GitHub">
+    </a>
+</div></div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-yes-wait-but-why">Contributing? Yes! Wait, but why?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-ai-readme">Using AI README</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-how-to-contribute">What and how to contribute?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outreach">Outreach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-instructions">Developer Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-changes">Contributing Changes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-your-contribution">Submitting Your Contribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p class="nbsite-copyright-last-updated">
+    <span class="copyright">
+            &copy; Copyright 2017-2026 Holoviz contributors.
+    </span>
+    <span class="last-updated">Last updated on 2026-06-29.</span><br>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
