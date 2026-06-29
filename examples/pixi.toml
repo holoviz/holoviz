@@ -44,8 +44,6 @@ format = { cmd = "ruff format .", description = "Format code with ruff" }
 check = { cmd = "ruff check .", description = "Lint code with ruff" }
 clean_notebook = { cmd = "pre-commit run --all-files", description = "Run all pre-commit hooks" }
 
-
-
 [tasks]
 download-data = { cmd = """
 mkdir -p data/raster && \
@@ -57,7 +55,7 @@ curl -fsSL -o data/usgs_logo.png https://raw.githubusercontent.com/holoviz/holov
 """, outputs = ["data/"]}
 
 install = "pixi install"
-setup = { depends-on = ["install", "download-data", "lint-install"], description = "Set up the notebook environment." }
+setup = { depends-on = ["install", "download-data"], description = "Set up the notebook environment." }
 prepare = { depends-on = ["download-data"] }
 jupyter-lab = { cmd = "jupyter lab", depends-on = ["download-data"] }
 jupyter-notebook = { cmd = "jupyter notebook", depends-on = ["download-data"] }
