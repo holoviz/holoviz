@@ -99,6 +99,9 @@ def get_parsed_toc_from_builder(builder):
 
 
 project = "HoloViz"
+# HoloViz is a website rather than a library, so avoid the theme's default
+# "<project> <version> documentation" browser tab title.
+html_title = project
 authors = 'HoloViz authors'
 copyright_years['start_year'] = '2017'
 copyright = copyright_fmt.format(**copyright_years)
